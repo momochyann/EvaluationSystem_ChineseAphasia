@@ -1,0 +1,96 @@
+{
+    "FileVersion": "2.0.0",
+    "EnableAddressable": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildPipeline": "BuiltinBuildPipeline",
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "Simulate",
+    "AssetList": [
+        {
+            "Address": "HotFixSceneBackImage",
+            "AssetPath": "Assets/[0]Cilent/Textures/HotFixSceneBackImage.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0
+        },
+        {
+            "Address": "HotBadgeConfig",
+            "AssetPath": "Assets/[0]Cilent/Config/HotBadgeConfig.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1
+        },
+        {
+            "Address": "RainbowHierarchyRuleset",
+            "AssetPath": "Assets/[0]Cilent/Config/RainbowHierarchyRuleset.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1
+        },
+        {
+            "Address": "Procedural Image",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/Procedural Image.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "StartInit",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/StartInit.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "GameStartScene",
+            "AssetPath": "Assets/[0]Cilent/Scenes/GameStartScene.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures.bundle",
+            "UnityCRC": 0,
+            "FileHash": "d30bb58538600de165617e9de850b3c1",
+            "FileCRC": "00000000",
+            "FileSize": 283125,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_config.bundle",
+            "UnityCRC": 0,
+            "FileHash": "f54af62739934d0db1ea8e9f0afff112",
+            "FileCRC": "00000000",
+            "FileSize": 2867,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
+            "UnityCRC": 0,
+            "FileHash": "444c688867d23c8ca9706d122e55d66b",
+            "FileCRC": "00000000",
+            "FileSize": 4689,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
+            "UnityCRC": 0,
+            "FileHash": "126775fa7e901c0e0f5f4949cbc38bf8",
+            "FileCRC": "00000000",
+            "FileSize": 7884,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        }
+    ]
+}
