@@ -14,6 +14,7 @@ public class GameStartAfterLoad : MonoBehaviour
     async void GameLoadedInit()
     {
         Debug.Log("GameHotedInit7");
+        Application.targetFrameRate = 120;
         await WaitLoadAnimation(this.GetCancellationTokenOnDestroy());
         Debug.Log("加载数据完成222");
 #if !UNITY_EDITOR
@@ -23,7 +24,7 @@ public class GameStartAfterLoad : MonoBehaviour
         // var HotUI = await LoadYooAssetsTool.LoadAsset<GameObject>("LoadNewGameVesion");
         // Instantiate(HotUI, FindObjectOfType<Canvas>().transform);
         //    LoadYooAssetsTool.LoadSceneAsync("GameStartScene").Forget();
-        LoadYooAssetsTool.LoadSceneAsync("TestScene", true).Forget();
+        LoadYooAssetsTool.LoadSceneAsync("GameStartScene").Forget();
     }
     async UniTask WaitLoadAnimation(CancellationToken cancellationToken)
     {

@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 247855215
+CRC: 2158812593
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -7,7 +7,8 @@ AssetBundleManifest:
       Dependencies: {}
     Info_1:
       Name: localdefaultpackage_assets_[1]local_ui_hotinit.bundle
-      Dependencies: {}
+      Dependencies:
+        Dependency_0: localdefaultpackage_share_assets_qframework_toolkits__corekit_packagekit_markdown_resources_skin.bundle
     Info_2:
       Name: localdefaultpackage_assets_[1]local_ui.bundle
       Dependencies: {}
@@ -16,4 +17,29 @@ AssetBundleManifest:
       Dependencies: {}
     Info_4:
       Name: localdefaultpackage_assets_[1]local_scenes.bundle
+      Dependencies:
+        Dependency_0: localdefaultpackage_assets_[1]local_textures_hotinit.bundle
+        Dependency_1: localdefaultpackage_share_assets_proceduraluiimage_resources.bundle
+        Dependency_2: localdefaultpackage_share_assets_[0]cilent_config.bundle
+        Dependency_3: localdefaultpackage_share_assets_plugins_allin1spriteshader_demo_textures.bundle
+    Info_5:
+      Name: localdefaultpackage_assets_[1]local_textures_hotinit.bundle
+      Dependencies: {}
+    Info_6:
+      Name: localdefaultpackage_assets_[1]local_textures.bundle
+      Dependencies: {}
+    Info_7:
+      Name: localdefaultpackage_share_assets_qframework_toolkits__corekit_packagekit_markdown_resources_skin.bundle
+      Dependencies: {}
+    Info_8:
+      Name: localdefaultpackage_share_assets_editor_proceduraluiimage_editor.bundle
+      Dependencies: {}
+    Info_9:
+      Name: localdefaultpackage_share_assets_proceduraluiimage_resources.bundle
+      Dependencies: {}
+    Info_10:
+      Name: localdefaultpackage_share_assets_[0]cilent_config.bundle
+      Dependencies: {}
+    Info_11:
+      Name: localdefaultpackage_share_assets_plugins_allin1spriteshader_demo_textures.bundle
       Dependencies: {}

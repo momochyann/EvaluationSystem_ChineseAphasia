@@ -1,0 +1,294 @@
+{
+    "FileVersion": "2.0.0",
+    "EnableAddressable": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildPipeline": "BuiltinBuildPipeline",
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "25-0711-162504",
+    "AssetList": [
+        {
+            "Address": "HotFixSceneBackImage",
+            "AssetPath": "Assets/[0]Cilent/Textures/HotFixSceneBackImage.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0
+        },
+        {
+            "Address": "蓝牙",
+            "AssetPath": "Assets/[0]Cilent/Textures/蓝牙.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0
+        },
+        {
+            "Address": "HotBadgeConfig",
+            "AssetPath": "Assets/[0]Cilent/Config/HotBadgeConfig.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1
+        },
+        {
+            "Address": "RainbowHierarchyRuleset",
+            "AssetPath": "Assets/[0]Cilent/Config/RainbowHierarchyRuleset.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1
+        },
+        {
+            "Address": "Procedural Image",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/Procedural Image.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "StartInit",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/StartInit.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "提示框_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/提示框_PC.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 3
+        },
+        {
+            "Address": "评人目_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/评人目_PC.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 3
+        },
+        {
+            "Address": "BLE蓝牙链域",
+            "AssetPath": "Assets/[0]Cilent/Scenes/BLE蓝牙链域.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 4
+        },
+        {
+            "Address": "GameStartScene",
+            "AssetPath": "Assets/[0]Cilent/Scenes/GameStartScene.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 4
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures.bundle",
+            "UnityCRC": 280385828,
+            "FileHash": "7d2fb08545d85858afdcadb2306394d0",
+            "FileCRC": "b06a11d5",
+            "FileSize": 414249,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_config.bundle",
+            "UnityCRC": 1385901487,
+            "FileHash": "3ee5e2ac44a134787c975b626b98aa50",
+            "FileCRC": "0c45f2ea",
+            "FileSize": 3032,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
+            "UnityCRC": 3600688064,
+            "FileHash": "8a7783b751d51dac5588f45802dbe363",
+            "FileCRC": "3150f2f1",
+            "FileSize": 4580,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": [
+                6
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用.bundle",
+            "UnityCRC": 3667004682,
+            "FileHash": "749d09b14f1803643b8624454d8ed8b5",
+            "FileCRC": "39e2471b",
+            "FileSize": 13683,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependIDs": [
+                11,
+                12,
+                8
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
+            "UnityCRC": 575109382,
+            "FileHash": "85034f8f949a4b8b5404eb5ae98968c5",
+            "FileCRC": "d6b5e023",
+            "FileSize": 43600,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": [
+                1,
+                0,
+                16,
+                11,
+                13,
+                12,
+                9,
+                15,
+                14,
+                8
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_editor_proceduraluiimage_editor.bundle",
+            "UnityCRC": 4211986628,
+            "FileHash": "335c203302a627413e2723aee5756e69",
+            "FileCRC": "8cc8bc4b",
+            "FileSize": 2271,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_proceduraluiimage_resources.bundle",
+            "UnityCRC": 773907762,
+            "FileHash": "7d5b4b9bddeec6e6a77f98e0f1fa8fd7",
+            "FileCRC": "88507fbb",
+            "FileSize": 4172,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_nova_icons.bundle",
+            "UnityCRC": 3077885931,
+            "FileHash": "41b4f1ec85a2db4fb4a3b03be3e5ae43",
+            "FileCRC": "ba8c9b74",
+            "FileSize": 3323,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_unityshaders.bundle",
+            "UnityCRC": 37096265,
+            "FileHash": "8a9636427f564b038529c4d0844a9ca1",
+            "FileCRC": "1c72f567",
+            "FileSize": 33660,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle",
+            "UnityCRC": 3622610160,
+            "FileHash": "2297df132237a41627c24878b57a7eae",
+            "FileCRC": "143f0160",
+            "FileSize": 17672,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": [
+                12,
+                14,
+                8
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_packages_com_unity_textmeshpro_editor_resources_gizmos.bundle",
+            "UnityCRC": 2390950842,
+            "FileHash": "10731cb88b91dff9907ddcf16986e1e1",
+            "FileCRC": "68a03cfb",
+            "FileSize": 1233,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+            "UnityCRC": 2631715038,
+            "FileHash": "3fe5f551ac42147ae114dc30f8d0d635",
+            "FileCRC": "0c757eb3",
+            "FileSize": 7980241,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependIDs": [
+                8
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+            "UnityCRC": 2705200275,
+            "FileHash": "df8d19f2928c08841d16569a641af214",
+            "FileCRC": "7248e97e",
+            "FileSize": 244442,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependIDs": [
+                8
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[5]utility&tool_bleapi.bundle",
+            "UnityCRC": 2893276488,
+            "FileHash": "a1a9d03d17a424bff020526007189909",
+            "FileCRC": "5ba0e1b8",
+            "FileSize": 14674,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle",
+            "UnityCRC": 2335483641,
+            "FileHash": "e7f401e7ba687002ec06f86cdc079fce",
+            "FileCRC": "6752bcd4",
+            "FileSize": 6798,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle",
+            "UnityCRC": 1407036853,
+            "FileHash": "e8f705b4fb50121c2f2a85e195e8d8f4",
+            "FileCRC": "e34b6aba",
+            "FileSize": 12445,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": [
+                12,
+                8
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets.bundle",
+            "UnityCRC": 1607555458,
+            "FileHash": "1ddd8473c342d0517484d1628d3ee92d",
+            "FileCRC": "853041ce",
+            "FileSize": 10268,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        }
+    ]
+}

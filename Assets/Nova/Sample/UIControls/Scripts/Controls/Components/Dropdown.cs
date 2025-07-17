@@ -14,12 +14,12 @@ namespace NovaSamples.UIControls
 
         [SerializeField]
         [Tooltip("The data used to populate the list of selectable items in the dropdown.")]
-        private DropdownData DropdownOptions = new DropdownData();
+        public DropdownData DropdownOptions = new DropdownData();
 
         /// <summary>
         /// The visuals associated with this dropdown control
         /// </summary>
-        private DropdownVisuals Visuals => View.Visuals as DropdownVisuals;
+        public DropdownVisuals Visuals => View.Visuals as DropdownVisuals;
 
         public void Expand()
         {
@@ -57,7 +57,10 @@ namespace NovaSamples.UIControls
             // Ensure label is initialized
             Visuals.InitSelectionLabel(DropdownOptions.CurrentSelection);
         }
-
+        public void 载始项()
+        {
+            Visuals.InitSelectionLabel(DropdownOptions.CurrentSelection);
+        }
         private void OnDisable()
         {
             // Unsubscribe from events

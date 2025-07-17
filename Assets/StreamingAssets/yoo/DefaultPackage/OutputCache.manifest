@@ -1,13 +1,56 @@
 ManifestFileVersion: 0
-CRC: 639292253
+CRC: 2368911049
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: defaultpackage_assets_[0]cilent_config.bundle
+      Name: defaultpackage_assets_[0]cilent_textures.bundle
       Dependencies: {}
     Info_1:
-      Name: defaultpackage_assets_[0]cilent_prefabs.bundle
+      Name: defaultpackage_assets_[0]cilent_config.bundle
       Dependencies: {}
     Info_2:
+      Name: defaultpackage_assets_[0]cilent_prefabs.bundle
+      Dependencies:
+        Dependency_0: defaultpackage_share_assets_proceduraluiimage_resources.bundle
+    Info_3:
       Name: defaultpackage_assets_[0]cilent_scenes.bundle
+      Dependencies:
+        Dependency_0: defaultpackage_assets_[0]cilent_config.bundle
+        Dependency_1: defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[5]utility&tool_bleapi.bundle
+        Dependency_2: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle
+        Dependency_3: defaultpackage_share_assets_[0]cilent_fonts.bundle
+        Dependency_4: defaultpackage_share_packages_com_unity_render-pipelines_universal_runtime_materials.bundle
+    Info_4:
+      Name: defaultpackage_share_assets_editor_proceduraluiimage_editor.bundle
       Dependencies: {}
+    Info_5:
+      Name: defaultpackage_share_assets_proceduraluiimage_resources.bundle
+      Dependencies: {}
+    Info_6:
+      Name: defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[5]utility&tool_bleapi.bundle
+      Dependencies: {}
+    Info_7:
+      Name: defaultpackage_share_assets_nova_icons.bundle
+      Dependencies: {}
+    Info_8:
+      Name: defaultpackage_unityshaders.bundle
+      Dependencies: {}
+    Info_9:
+      Name: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle
+      Dependencies:
+        Dependency_0: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
+    Info_10:
+      Name: defaultpackage_share_packages_com_unity_textmeshpro_editor_resources_gizmos.bundle
+      Dependencies: {}
+    Info_11:
+      Name: defaultpackage_share_assets_[0]cilent_fonts.bundle
+      Dependencies:
+        Dependency_0: defaultpackage_unityshaders.bundle
+    Info_12:
+      Name: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
+      Dependencies:
+        Dependency_0: defaultpackage_unityshaders.bundle
+    Info_13:
+      Name: defaultpackage_share_packages_com_unity_render-pipelines_universal_runtime_materials.bundle
+      Dependencies:
+        Dependency_0: defaultpackage_unityshaders.bundle

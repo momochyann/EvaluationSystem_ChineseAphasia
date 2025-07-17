@@ -3,7 +3,7 @@ using QFramework;
 using Cysharp.Threading.Tasks;
 using System;
 using System.IO;
-using NativeGalleryNamespace;
+
 
 public interface IImagePickerUtility : IUtility
 {
@@ -72,7 +72,7 @@ public class ImagePickerUtility : IImagePickerUtility
     /// <summary>
     /// 从相册选择图片
     /// </summary>
-    public async UniTask<Texture2D> PickImageFromGalleryAsync(int maxSize = 1024)
+     public async UniTask<Texture2D> PickImageFromGalleryAsync(int maxSize = 1024)
     {
         try
         {
