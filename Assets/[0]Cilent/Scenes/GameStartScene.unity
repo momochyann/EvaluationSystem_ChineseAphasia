@@ -763,18 +763,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2735003766774693711, guid: 3a3ec8571dcbaa64dbef8ff712d67bcd, type: 3}
-      propertyPath: Rules.Array.data[5].GameObject
-      value: 
-      objectReference: {fileID: 7599235839416724443}
-    - target: {fileID: 2735003766774693711, guid: 3a3ec8571dcbaa64dbef8ff712d67bcd, type: 3}
-      propertyPath: Rules.Array.data[6].GameObject
-      value: 
-      objectReference: {fileID: 805952016}
-    - target: {fileID: 2735003766774693711, guid: 3a3ec8571dcbaa64dbef8ff712d67bcd, type: 3}
-      propertyPath: Rules.Array.data[8].GameObject
-      value: 
-      objectReference: {fileID: 1036910192}
     - target: {fileID: 5893471940533887367, guid: 3a3ec8571dcbaa64dbef8ff712d67bcd, type: 3}
       propertyPath: m_Name
       value: RainbowHierarchyRuleset
@@ -1000,7 +988,7 @@ Transform:
   m_GameObject: {fileID: 841779780}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 240.60098, z: 0}
+  m_LocalPosition: {x: 0, y: 300.601, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5893,7 +5881,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.009259259, y: 0.009259259, z: 0.009259259}
+  m_LocalScale: {x: 0.008333334, y: 0.008333334, z: 0.008333334}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1222317305}
@@ -5928,7 +5916,7 @@ MonoBehaviour:
         Raw: 1920
         Type: 0
       Y:
-        Raw: 1080
+        Raw: 1200
         Type: 0
       Z:
         Raw: 0
