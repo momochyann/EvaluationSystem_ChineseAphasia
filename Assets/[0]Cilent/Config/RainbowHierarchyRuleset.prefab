@@ -81,9 +81,9 @@ MonoBehaviour:
     BackgroundTexture: {fileID: 0}
     IsBackgroundRecursive: 0
     IsHidden: 0
-  - Type: 0
-    Name: 
-    GameObject: {fileID: 5893471940533887367}
+  - Type: 1
+    Name: RainbowHierarchyRuleset
+    GameObject: {fileID: 0}
     Ordinal: 3
     Priority: 0
     IconType: 103000
@@ -93,22 +93,10 @@ MonoBehaviour:
     BackgroundTexture: {fileID: 0}
     IsBackgroundRecursive: 0
     IsHidden: 0
-  - Type: 0
-    Name: 
+  - Type: 1
+    Name: UIRoot
     GameObject: {fileID: 0}
     Ordinal: 4
-    Priority: 0
-    IconType: 0
-    IconTexture: {fileID: 0}
-    IsIconRecursive: 1
-    BackgroundType: 0
-    BackgroundTexture: {fileID: 0}
-    IsBackgroundRecursive: 0
-    IsHidden: 0
-  - Type: 0
-    Name: 
-    GameObject: {fileID: 0}
-    Ordinal: 5
     Priority: 0
     IconType: 161000
     IconTexture: {fileID: 0}
@@ -117,10 +105,10 @@ MonoBehaviour:
     BackgroundTexture: {fileID: 0}
     IsBackgroundRecursive: 0
     IsHidden: 0
-  - Type: 0
-    Name: 
+  - Type: 1
+    Name: EventSystem
     GameObject: {fileID: 0}
-    Ordinal: 6
+    Ordinal: 5
     Priority: 0
     IconType: 138600
     IconTexture: {fileID: 0}
@@ -129,22 +117,10 @@ MonoBehaviour:
     BackgroundTexture: {fileID: 0}
     IsBackgroundRecursive: 0
     IsHidden: 0
-  - Type: 0
-    Name: 
+  - Type: 1
+    Name: SerialPortManager
     GameObject: {fileID: 0}
-    Ordinal: 7
-    Priority: 0
-    IconType: 0
-    IconTexture: {fileID: 0}
-    IsIconRecursive: 0
-    BackgroundType: 0
-    BackgroundTexture: {fileID: 0}
-    IsBackgroundRecursive: 0
-    IsHidden: 0
-  - Type: 0
-    Name: 
-    GameObject: {fileID: 0}
-    Ordinal: 8
+    Ordinal: 6
     Priority: 0
     IconType: 103000
     IconTexture: {fileID: 0}
