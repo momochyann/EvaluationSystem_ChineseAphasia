@@ -3,6 +3,7 @@
     "dotnet.defaultSolution": "评测系统_汉语失语症.sln",
     "files.exclude": {
         "**/*.prefab": true,
-        "**/*.prefab.meta": true
+        "**/*.prefab.meta": true,
+        "**/*.meta": true,
     }
 }

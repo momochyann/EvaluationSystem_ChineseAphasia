@@ -11,6 +11,7 @@ public class SerialPortUtilityManager : MonoSingleton<SerialPortUtilityManager>
     [SerializeField] int ComPortName;
     public UnityAction<byte[]> OnSerialDataReceived;
     SerialPortUtilityPro serialPortUtilityPro;
+    
     [HideInInspector] public bool serialPortSetPanelIsActive = false;
     void Start()
     {
