@@ -1,9 +1,14 @@
 {
-    "dotnet.preferCSharpExtension": true,
     "dotnet.defaultSolution": "EvaluationSystem_ChineseAphasia.sln",
+    "files.associations": {
+        "*.cs": "csharp",
+        "*.csproj": "xml"
+    },
     "files.exclude": {
-        "**/*.prefab": true,
-        "**/*.prefab.meta": true,
         "**/*.meta": true,
-    }
+        "**/Library/**": true,
+        "**/Temp/**": true,
+        "**/Logs/**": true
+    },
+    "git.ignoreLimitWarning": true,
 }
