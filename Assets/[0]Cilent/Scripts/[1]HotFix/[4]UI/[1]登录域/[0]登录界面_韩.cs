@@ -88,7 +88,7 @@ public class 登录界面_韩 : MonoBehaviour, IController
         }
         else
         {
-            var 用户录 = this.GetModel<用户录>();
+            var 用户录 = this.GetModel<评人录>();
             var 用户 = 用户录.GetDataList().Find(x => x.账号 == 用户名.Text);
             if (用户 != null)   // 判断用户是否存在
             {
@@ -103,6 +103,9 @@ public class 登录界面_韩 : MonoBehaviour, IController
                 {
                     Debug.Log("[0]登录界面_韩 密码错误");
                 }
+            }else
+            {
+                Debug.Log("[0]登录界面_韩 用户不存在");
             }
         }
     }

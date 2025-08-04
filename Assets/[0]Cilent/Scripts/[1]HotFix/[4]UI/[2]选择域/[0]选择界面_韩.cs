@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using NovaSamples.UIControls;
-
+using Cysharp.Threading.Tasks;
 
 using QFramework;
 
@@ -32,7 +32,6 @@ public class 选择界面_韩 : MonoBehaviour, IController
     public void 执行退出()
     {
         Debug.Log("退出");
-        Debug.Log("[0]选择界面_韩 设置自动登录为false");
         PlayerPrefs.SetString("自动登录", "false");
         LoadYooAssetsTool.LoadSceneAsync("登录界面场景").Forget();
 
@@ -41,8 +40,8 @@ public class 选择界面_韩 : MonoBehaviour, IController
     public void 执行功能(string 功能名称)
     {
         Debug.Log("执行功能：" + 功能名称);
-        LoadYooAssetsTool.LoadSceneAsync("主场景").Forget();
-        
+        功能名称 = 功能名称 + "显示_PC";
+        静态传递_韩.SwitchSceneWithPanel("主场景",功能名称);
     }
 
     public IArchitecture GetArchitecture()

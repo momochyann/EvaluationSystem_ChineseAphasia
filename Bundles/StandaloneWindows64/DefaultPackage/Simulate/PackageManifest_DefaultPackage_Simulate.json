@@ -65,8 +65,8 @@
             "BundleID": 3
         },
         {
-            "Address": "748365407e37bd7281a524023c77150",
-            "AssetPath": "Assets/[0]Cilent/Textures/ui界面/背景界面9/748365407e37bd7281a524023c77150.jpg",
+            "Address": "总背景",
+            "AssetPath": "Assets/[0]Cilent/Textures/ui界面/背景界面9/总背景.jpg",
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 4
@@ -312,53 +312,44 @@
             "BundleID": 12
         },
         {
-            "Address": "档案管理2_PC",
-            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/档案管理/档案管理2_PC.prefab",
-            "AssetGUID": "",
-            "AssetTags": [
-                "UI"
-            ],
-            "BundleID": 13
-        },
-        {
-            "Address": "档案管理_PC",
-            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/档案管理/档案管理_PC.prefab",
-            "AssetGUID": "",
-            "AssetTags": [
-                "UI"
-            ],
-            "BundleID": 13
-        },
-        {
-            "Address": "用户管理2_PC",
-            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户管理2_PC.prefab",
-            "AssetGUID": "",
-            "AssetTags": [
-                "UI"
-            ],
-            "BundleID": 14
-        },
-        {
-            "Address": "用户管理_PC",
-            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户管理_PC.prefab",
-            "AssetGUID": "",
-            "AssetTags": [
-                "UI"
-            ],
-            "BundleID": 14
-        },
-        {
             "Address": "上目录底色_PC",
-            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/上目录底色_PC.prefab",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/上目录底色_PC.prefab",
             "AssetGUID": "",
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 15
+            "BundleID": 13
         },
         {
             "Address": "左目录底色_PC",
-            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/左目录底色_PC.prefab",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/左目录底色_PC.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 13
+        },
+        {
+            "Address": "档案管理显示_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/档案管理/档案管理显示_PC.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 14
+        },
+        {
+            "Address": "档案管理添加_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/档案管理/档案管理添加_PC.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 14
+        },
+        {
+            "Address": "用户条目_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户条目_PC.prefab",
             "AssetGUID": "",
             "AssetTags": [
                 "UI"
@@ -366,8 +357,8 @@
             "BundleID": 15
         },
         {
-            "Address": "评定人管理2_PC",
-            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人管理2_PC.prefab",
+            "Address": "用户管理显示_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户管理显示_PC.prefab",
             "AssetGUID": "",
             "AssetTags": [
                 "UI"
@@ -375,13 +366,40 @@
             "BundleID": 15
         },
         {
-            "Address": "评定人管理_PC",
-            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人管理_PC.prefab",
+            "Address": "用户管理添加_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户管理添加_PC.prefab",
             "AssetGUID": "",
             "AssetTags": [
                 "UI"
             ],
             "BundleID": 15
+        },
+        {
+            "Address": "评定人条目_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人条目_PC.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 16
+        },
+        {
+            "Address": "评定人管理显示_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人管理显示_PC.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 16
+        },
+        {
+            "Address": "评定人管理添加_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人管理添加_PC.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 16
         },
         {
             "Address": "量表评估3_PC",
@@ -390,7 +408,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 16
+            "BundleID": 17
         },
         {
             "Address": "量表评估4_PC",
@@ -399,7 +417,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 16
+            "BundleID": 17
         },
         {
             "Address": "量表评估_PC",
@@ -408,7 +426,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 16
+            "BundleID": 17
         },
         {
             "Address": "提示框_PC",
@@ -417,7 +435,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 17
+            "BundleID": 18
         },
         {
             "Address": "评人目_PC",
@@ -426,42 +444,42 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 17
+            "BundleID": 18
         },
         {
             "Address": "BLE蓝牙链域",
             "AssetPath": "Assets/[0]Cilent/Scenes/BLE蓝牙链域.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 18
+            "BundleID": 19
         },
         {
             "Address": "GameStartScene",
             "AssetPath": "Assets/[0]Cilent/Scenes/GameStartScene.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 18
+            "BundleID": 19
         },
         {
             "Address": "主场景",
             "AssetPath": "Assets/[0]Cilent/Scenes/主场景.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 18
+            "BundleID": 19
         },
         {
             "Address": "登录界面场景",
             "AssetPath": "Assets/[0]Cilent/Scenes/登录界面场景.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 18
+            "BundleID": 19
         },
         {
             "Address": "选择场景",
             "AssetPath": "Assets/[0]Cilent/Scenes/选择场景.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 18
+            "BundleID": 19
         }
     ],
     "BundleList": [
@@ -596,11 +614,21 @@
             "DependIDs": []
         },
         {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景.bundle",
+            "UnityCRC": 0,
+            "FileHash": "b2849c1e8ad1a249d43ddfb9218b63a4",
+            "FileCRC": "00000000",
+            "FileSize": 260294,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_档案管理.bundle",
             "UnityCRC": 0,
             "FileHash": "fbdf99caae01f053cd673ae2694ca388",
             "FileCRC": "00000000",
-            "FileSize": 2258306,
+            "FileSize": 2256745,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -610,7 +638,7 @@
             "UnityCRC": 0,
             "FileHash": "31ecba857877e74cdb8d17127938f1eb",
             "FileCRC": "00000000",
-            "FileSize": 1407664,
+            "FileSize": 1383183,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -620,7 +648,7 @@
             "UnityCRC": 0,
             "FileHash": "8ccf3e66eb2249ff225f19ffaa276846",
             "FileCRC": "00000000",
-            "FileSize": 2741905,
+            "FileSize": 818473,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -650,7 +678,7 @@
             "UnityCRC": 0,
             "FileHash": "93434aa9d7a1e7ced9474205042a4a78",
             "FileCRC": "00000000",
-            "FileSize": 670168,
+            "FileSize": 627108,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
