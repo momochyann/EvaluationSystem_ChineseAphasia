@@ -2080,7 +2080,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -83.91169, y: -18.164738, z: -83.91169, w: -18.164738}
+  m_margin: {x: -0.054630008, y: -0.021024002, z: -0.054630008, w: -0.021024002}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -8841,7 +8841,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -101.19859, y: -32.425922, z: -101.19859, w: -32.425922}
+  m_margin: {x: -0.0658845, y: -0.037530005, z: -0.0658845, w: -0.037530005}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -10498,7 +10498,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -83.91169, y: -18.164738, z: -83.91169, w: -18.164738}
+  m_margin: {x: -0.054630008, y: -0.021024002, z: -0.054630008, w: -0.021024002}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -11583,7 +11583,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -101.19859, y: -32.425922, z: -101.19859, w: -32.425922}
+  m_margin: {x: -0.0658845, y: -0.037530005, z: -0.0658845, w: -0.037530005}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -14434,7 +14434,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -101.19859, y: -32.425922, z: -101.19859, w: -32.425922}
+  m_margin: {x: -0.0658845, y: -0.037530005, z: -0.0658845, w: -0.037530005}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -15815,7 +15815,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -83.91169, y: -18.164738, z: -83.91169, w: -18.164738}
+  m_margin: {x: -0.054630008, y: -0.021024002, z: -0.054630008, w: -0.021024002}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -20045,7 +20045,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -101.19859, y: -32.425922, z: -101.19859, w: -32.425922}
+  m_margin: {x: -0.0658845, y: -0.037530005, z: -0.0658845, w: -0.037530005}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -23258,7 +23258,7 @@ GameObject:
   - component: {fileID: 3402588563824529614}
   - component: {fileID: 5285921605426570508}
   - component: {fileID: 6788452191680020837}
-  - component: {fileID: 2335719456873385596}
+  - component: {fileID: 8242106764951392231}
   m_Layer: 0
   m_Name: "\u8BC4\u5B9A\u4EBA\u7BA1\u7406\u6DFB\u52A0_PC"
   m_TagString: Untagged
@@ -23275,7 +23275,7 @@ Transform:
   m_GameObject: {fileID: 8596005995454898836}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 164.283, y: -50.952003, z: 0}
+  m_LocalPosition: {x: 160, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23551,7 +23551,7 @@ MonoBehaviour:
     FillEnabled: 1
   texture: {fileID: 0}
   sprite: {fileID: 0}
---- !u!114 &2335719456873385596
+--- !u!114 &8242106764951392231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23560,7 +23560,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8596005995454898836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98eaf9d937eb3d84f84d875d554ea29d, type: 3}
+  m_Script: {fileID: 11500000, guid: 86fe02d2aec80db43a8f3858a5a72d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   "\u767B\u5F55\u8D26\u53F7": {fileID: 317880852053246556}
@@ -24222,7 +24222,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -138.24, y: -38.448, z: -138.24, w: -38.448}
+  m_margin: {x: -0.09, y: -0.0445, z: -0.09, w: -0.0445}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0

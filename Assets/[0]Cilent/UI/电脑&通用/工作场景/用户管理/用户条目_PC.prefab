@@ -2115,7 +2115,7 @@ GameObject:
   - component: {fileID: 2140854833267446909}
   - component: {fileID: 1035605779720202957}
   - component: {fileID: 8131194456855644764}
-  - component: {fileID: 7459805143760917886}
+  - component: {fileID: 5656609509534026372}
   m_Layer: 0
   m_Name: "\u7528\u6237\u6761\u76EE_PC"
   m_TagString: Untagged
@@ -2132,7 +2132,7 @@ Transform:
   m_GameObject: {fileID: 3336473151199759394}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 211.12402, z: 0}
+  m_LocalPosition: {x: 0, y: -216.81601, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2141,8 +2141,8 @@ Transform:
   - {fileID: 7365640620582496558}
   - {fileID: 8969283011979916528}
   - {fileID: 4774192897126129245}
-  - {fileID: 9010959357555185881}
   - {fileID: 2398301794726468445}
+  - {fileID: 9010959357555185881}
   - {fileID: 3130666880888594578}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2335,7 +2335,7 @@ MonoBehaviour:
     LightingModel: 0
     ShadowCastingMode: 2
     ReceiveShadows: 1
-  PreviewSize: {x: 1, y: 1, z: 0}
+  PreviewSize: {x: 1441.326, y: 53.632004, z: 0}
   visuals:
     Color: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     CornerRadius:
@@ -2405,7 +2405,7 @@ MonoBehaviour:
     FillEnabled: 1
   texture: {fileID: 0}
   sprite: {fileID: 0}
---- !u!114 &7459805143760917886
+--- !u!114 &5656609509534026372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2414,7 +2414,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3336473151199759394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99254ac0b8900b045b1b84c1ba20e708, type: 3}
+  m_Script: {fileID: 11500000, guid: 7df63598a6ca0704db26d9fa502eed5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   "\u8D26\u53F7": {fileID: 8310778862388805217}

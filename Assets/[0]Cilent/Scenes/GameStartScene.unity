@@ -988,7 +988,7 @@ Transform:
   m_GameObject: {fileID: 841779780}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 300.601, z: 0}
+  m_LocalPosition: {x: 0, y: 240.60098, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5881,7 +5881,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.008333334, y: 0.008333334, z: 0.008333334}
+  m_LocalScale: {x: 0.009259259, y: 0.009259259, z: 0.009259259}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1222317305}
@@ -5916,7 +5916,7 @@ MonoBehaviour:
         Raw: 1920
         Type: 0
       Y:
-        Raw: 1200
+        Raw: 1080
         Type: 0
       Z:
         Raw: 0
@@ -6202,7 +6202,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4927630577929465215}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d2c69814e7c39348b72f74e4067e960, type: 3}
+  m_Script: {fileID: 11500000, guid: 561943432772cbf4fb5e30c55b847ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UIRoot: {fileID: 0}

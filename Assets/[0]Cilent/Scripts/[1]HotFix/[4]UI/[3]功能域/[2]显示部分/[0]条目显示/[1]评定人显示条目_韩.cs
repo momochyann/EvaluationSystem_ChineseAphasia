@@ -5,7 +5,7 @@ using NovaSamples.UIControls;
 using Nova;
 using QFramework;
     
-public class 评定人显示条目_韩 : MonoBehaviour, IController /*,显示条目接口*/
+public class 评定人显示条目_韩 : MonoBehaviour, IController ,IentryDis/*,显示条目接口*/
 {
     // Start is called before the first frame update
 
@@ -38,6 +38,7 @@ public class 评定人显示条目_韩 : MonoBehaviour, IController /*,显示条
         
         var 评定人 = this.GetModel<评人录>();
         var 当前人员 = 评定人.GetDataList()[索引];
+        Debug.Log($"[ [0] 评定人显示条目_韩] 显示信息 索引: {索引}, 账号: {当前人员.账号}, 姓名: {当前人员.名}");
         账号.Text = 当前人员.账号;
         姓名.Text = 当前人员.名;
         性别.Text = 当前人员.性别;

@@ -88,11 +88,11 @@ public class 登录界面_韩 : MonoBehaviour, IController
         }
         else
         {
-            var 用户录 = this.GetModel<评人录>();
-            var 用户 = 用户录.GetDataList().Find(x => x.账号 == 用户名.Text);
-            if (用户 != null)   // 判断用户是否存在
+            var 评人录 = this.GetModel<评人录>();
+            var 评人 = 评人录.GetDataList().Find(x => x.账号 == 用户名.Text);
+            if (评人 != null)   // 判断用户是否存在
             {
-                if (用户.密码 == 密码.Text)
+                if (评人.密码 == 密码.Text)
                 {
                     Debug.Log("[0]登录界面_韩 登录成功");
                     PlayerPrefs.SetString("用户名", 用户名.Text);
@@ -103,10 +103,20 @@ public class 登录界面_韩 : MonoBehaviour, IController
                 {
                     Debug.Log("[0]登录界面_韩 密码错误");
                 }
-            }else
-            {
-                Debug.Log("[0]登录界面_韩 用户不存在");
             }
+            else
+            {
+                if(用户名.Text == "admin" && 密码.Text == "123456")
+                {
+                    Debug.Log("[0]登录界面_韩 管理员登录成功");
+                    跳转界面("选择场景");
+                }
+                else
+                {
+                    Debug.Log("[0]登录界面_韩 用户不存在");
+                }
+            }
+        
         }
     }
 

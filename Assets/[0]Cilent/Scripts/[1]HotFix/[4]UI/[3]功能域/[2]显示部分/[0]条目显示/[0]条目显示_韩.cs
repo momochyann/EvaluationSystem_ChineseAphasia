@@ -5,12 +5,8 @@ using QFramework;
 using NovaSamples.UIControls;
 using Nova;
 
-// public interface 显示条目接口
-// {
-//     void 显示信息(int 索引 = -1);
-// }
 
-public class 显示条目_韩 : MonoBehaviour,IController
+public class 显示条目_韩 : MonoBehaviour, IController
 {
     [Header("基础配置")]
     [SerializeField] public GameObject prefeb;
@@ -18,12 +14,12 @@ public class 显示条目_韩 : MonoBehaviour,IController
     [SerializeField] public bool 是否刷新 = false;
     void Start()
     {
-        if(prefeb == null)
+        if (prefeb == null)
         {
             Debug.Log("[显示条目_韩] prefeb为空");
             return;
         }
-        if(ModelName == null)
+        if (ModelName == null)
         {
             Debug.Log("[显示条目_韩] ModelName为空");
             return;
@@ -66,19 +62,20 @@ public class 显示条目_韩 : MonoBehaviour,IController
             Debug.LogError($"[显示条目_韩] 无法找到模型: {ModelName}");
             return;
         }
-        
+
         var 数据 = 录.GetAllItems();
         var 索引下标 = 数据.Count;
-        for(int i = 0; i < 索引下标; i++)
+        for (int i = 0; i < 索引下标; i++)
         {
+            Debug.Log(this.transform.parent.gameObject.name);
             var 条目 = Instantiate(prefeb, this.transform);
-            
+
             // 现在可以使用接口了，因为组件实现了接口
-            var 显示条目 = 条目.GetComponent</*显示条目接口*//*评定人显示条目_韩*/用户显示条目_韩>();
+            var 显示条目 = 条目.GetComponent<IentryDis>();
             if (显示条目 != null)
             {
                 显示条目.显示信息(i);
-                Debug.Log("[显示条目_韩] 条目显示" + 条目.GetComponent<用户显示条目_韩>().姓名.Text);
+                //Debug.Log("[显示条目_韩] 条目显示" + 条目.GetComponent<用户显示条目_韩>().姓名.Text);
             }
             else
             {
@@ -95,7 +92,7 @@ public class 显示条目_韩 : MonoBehaviour,IController
             Destroy(this.transform.GetChild(i).gameObject);
         }
     }
-        
+
     public IArchitecture GetArchitecture()
     {
         return HotFixTemplateArchitecture.Interface;
@@ -104,4 +101,13 @@ public class 显示条目_韩 : MonoBehaviour,IController
     {
         this.UnRegisterEvent<Can2ListModelChangeEvent>(On模型数据变化);
     }
+}
+
+// public interface I显示条目接口
+// {
+//     void 显示信息(int 索引 = -1);
+// }
+public interface IentryDis
+{
+    void 显示信息(int 索引 = -1);
 }
