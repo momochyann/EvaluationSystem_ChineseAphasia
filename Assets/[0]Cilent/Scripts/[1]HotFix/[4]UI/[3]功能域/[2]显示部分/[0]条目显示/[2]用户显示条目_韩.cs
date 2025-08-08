@@ -5,7 +5,7 @@ using TMPro;
 using NovaSamples.UIControls;
 using Nova;
 using QFramework;
-public class 用户显示条目_韩 : MonoBehaviour,IController
+public class 用户显示条目_韩 : MonoBehaviour,IController,IentryDis
 {
     // Start is called before the first frame update
     [SerializeField] public TextBlock 账号;

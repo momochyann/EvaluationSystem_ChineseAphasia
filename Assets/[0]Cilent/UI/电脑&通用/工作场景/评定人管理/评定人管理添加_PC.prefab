@@ -1658,7 +1658,7 @@ MonoBehaviour:
     ReceiveShadows: 1
   PreviewSize: {x: 1, y: 1, z: 0}
   visuals:
-    Color: {r: 0, g: 0, b: 0, a: 1}
+    Color: {r: 0.3283019, g: 0.3283019, b: 0.3283019, a: 1}
     CornerRadius:
       Raw: 0
       Type: 0
@@ -1724,7 +1724,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 7f4aeb06ad548084e95b871ec7a2af92, type: 3}
+  texture: {fileID: 2800000, guid: 1a64613d5da36f3418945d27725b9299, type: 3}
   sprite: {fileID: 0}
 --- !u!1 &842811643547608434
 GameObject:
@@ -2080,7 +2080,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.054630008, y: -0.021024002, z: -0.054630008, w: -0.021024002}
+  m_margin: {x: -83.91169, y: -20.183043, z: -83.91169, w: -20.183043}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -6293,7 +6293,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 5561087ff005b46488cb3311a36fd5c5, type: 3}
+  texture: {fileID: 2800000, guid: ee1b1f7aa1cc16543afe0f3bbfad7722, type: 3}
   sprite: {fileID: 0}
 --- !u!1 &2244418820684445064
 GameObject:
@@ -8841,7 +8841,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0658845, y: -0.037530005, z: -0.0658845, w: -0.037530005}
+  m_margin: {x: -101.19859, y: -36.0288, z: -101.19859, w: -36.0288}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -10498,7 +10498,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.054630008, y: -0.021024002, z: -0.054630008, w: -0.021024002}
+  m_margin: {x: -83.91169, y: -20.183043, z: -83.91169, w: -20.183043}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -11583,7 +11583,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0658845, y: -0.037530005, z: -0.0658845, w: -0.037530005}
+  m_margin: {x: -101.19859, y: -36.0288, z: -101.19859, w: -36.0288}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -12325,7 +12325,7 @@ MonoBehaviour:
     - rid: 5441992528286187525
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 2636819732421356347}
         DefaultColor: {r: 1, g: 1, b: 1, a: 1}
         HoveredColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
@@ -14434,7 +14434,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0658845, y: -0.037530005, z: -0.0658845, w: -0.037530005}
+  m_margin: {x: -101.19859, y: -36.0288, z: -101.19859, w: -36.0288}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -14733,7 +14733,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 435089bd7d229fa44b7256d2e56b07c5, type: 3}
+  texture: {fileID: 2800000, guid: 6ff517812ee816b48a284df2a8cf60f1, type: 3}
   sprite: {fileID: 0}
 --- !u!1 &5887607870021650286
 GameObject:
@@ -15815,7 +15815,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.054630008, y: -0.021024002, z: -0.054630008, w: -0.021024002}
+  m_margin: {x: -83.91169, y: -20.183043, z: -83.91169, w: -20.183043}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -18590,7 +18590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6936184793783235095
 Transform:
   m_ObjectHideFlags: 0
@@ -20045,7 +20045,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0658845, y: -0.037530005, z: -0.0658845, w: -0.037530005}
+  m_margin: {x: -101.19859, y: -36.0288, z: -101.19859, w: -36.0288}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -21611,7 +21611,7 @@ MonoBehaviour:
     - rid: 5441992528286187526
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 8464103935620844252}
         DefaultColor: {r: 1, g: 1, b: 1, a: 1}
         HoveredColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
@@ -24222,7 +24222,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.09, y: -0.0445, z: -0.09, w: -0.0445}
+  m_margin: {x: -138.24, y: -42.72, z: -138.24, w: -42.72}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0

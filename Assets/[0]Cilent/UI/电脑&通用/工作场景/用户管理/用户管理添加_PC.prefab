@@ -706,7 +706,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 5561087ff005b46488cb3311a36fd5c5, type: 3}
+  texture: {fileID: 2800000, guid: ee1b1f7aa1cc16543afe0f3bbfad7722, type: 3}
   sprite: {fileID: 0}
 --- !u!1 &225968548878112030
 GameObject:
@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.047850005, y: -0.019080002, z: -0.047850005, w: -0.019080002}
+  m_margin: {x: -73.773224, y: -18.568659, z: -73.773224, w: -18.568659}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -1777,7 +1777,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0587195, y: -0.022379003, z: -0.0587195, w: -0.022379003}
+  m_margin: {x: -90.53138, y: -21.77925, z: -90.53138, w: -21.77925}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -7818,7 +7818,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.042636503, y: -0.018444002, z: -0.042636503, w: -0.018444002}
+  m_margin: {x: -65.73525, y: -17.949703, z: -65.73525, w: -17.949703}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -9255,7 +9255,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.047850005, y: -0.019080002, z: -0.047850005, w: -0.019080002}
+  m_margin: {x: -73.773224, y: -18.568659, z: -73.773224, w: -18.568659}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -12380,7 +12380,7 @@ MonoBehaviour:
     - rid: 5441992528286187525
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 8950933558948754933}
         DefaultColor: {r: 1, g: 1, b: 1, a: 1}
         HoveredColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
@@ -13816,7 +13816,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0280545, y: -0.024327002, z: -0.0280545, w: -0.024327002}
+  m_margin: {x: -43.253307, y: -23.675041, z: -43.253307, w: -23.675041}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -14958,7 +14958,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.04438, y: -0.012243002, z: -0.04438, w: -0.012243002}
+  m_margin: {x: -68.42331, y: -11.91489, z: -68.42331, w: -11.91489}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -15323,7 +15323,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.04438, y: -0.012243002, z: -0.04438, w: -0.012243002}
+  m_margin: {x: -68.42331, y: -11.91489, z: -68.42331, w: -11.91489}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -16344,7 +16344,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.047850005, y: -0.019080002, z: -0.047850005, w: -0.019080002}
+  m_margin: {x: -73.773224, y: -18.568659, z: -73.773224, w: -18.568659}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -19505,7 +19505,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0587195, y: -0.022379003, z: -0.0587195, w: -0.022379003}
+  m_margin: {x: -90.53138, y: -21.77925, z: -90.53138, w: -21.77925}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -20233,7 +20233,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0530975, y: -0.014946002, z: -0.0530975, w: -0.014946002}
+  m_margin: {x: -81.8636, y: -14.545449, z: -81.8636, w: -14.545449}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -20466,7 +20466,7 @@ MonoBehaviour:
     ReceiveShadows: 1
   PreviewSize: {x: 1, y: 1, z: 0}
   visuals:
-    Color: {r: 0, g: 0, b: 0, a: 1}
+    Color: {r: 0.12452829, g: 0.12452829, b: 0.12452829, a: 1}
     CornerRadius:
       Raw: 0
       Type: 0
@@ -20532,7 +20532,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 7f4aeb06ad548084e95b871ec7a2af92, type: 3}
+  texture: {fileID: 2800000, guid: 1a64613d5da36f3418945d27725b9299, type: 3}
   sprite: {fileID: 0}
 --- !u!1 &4405866001091897166
 GameObject:
@@ -22632,7 +22632,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.020148521, y: -0.0081171105, z: -0.020148521, w: -0.0081171105}
+  m_margin: {x: -31.064184, y: -7.899573, z: -31.064184, w: -7.899573}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -22661,7 +22661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1473623326284715774
 Transform:
   m_ObjectHideFlags: 0
@@ -24461,7 +24461,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.015261649, y: -0.0131365815, z: -0.015261649, w: -0.0131365815}
+  m_margin: {x: -23.5298, y: -12.784523, z: -23.5298, w: -12.784523}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -26679,7 +26679,7 @@ MonoBehaviour:
     - rid: 5441992528286187526
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 8786583106572959855}
         DefaultColor: {r: 1, g: 1, b: 1, a: 1}
         HoveredColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
@@ -31719,7 +31719,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.020148521, y: -0.0081171105, z: -0.020148521, w: -0.0081171105}
+  m_margin: {x: -31.064184, y: -7.899573, z: -31.064184, w: -7.899573}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -32374,7 +32374,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.019522803, y: -0.013012562, z: -0.019522803, w: -0.013012562}
+  m_margin: {x: -30.099478, y: -12.663826, z: -30.099478, w: -12.663826}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -34897,7 +34897,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.054630008, y: -0.021024002, z: -0.054630008, w: -0.021024002}
+  m_margin: {x: -84.226364, y: -20.46056, z: -84.226364, w: -20.46056}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -35261,7 +35261,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0587195, y: -0.022379003, z: -0.0587195, w: -0.022379003}
+  m_margin: {x: -90.53138, y: -21.77925, z: -90.53138, w: -21.77925}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -35625,7 +35625,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.047850005, y: -0.09416139, z: -0.047850005, w: -0.09416139}
+  m_margin: {x: -73.773224, y: -91.63787, z: -73.773224, w: -91.63787}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -38176,7 +38176,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.037950005, y: -0.019952597, z: -0.037950005, w: -0.019952597}
+  m_margin: {x: -58.5098, y: -19.417868, z: -58.5098, w: -19.417868}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -40804,7 +40804,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.054630008, y: -0.021024002, z: -0.054630008, w: -0.021024002}
+  m_margin: {x: -84.226364, y: -20.46056, z: -84.226364, w: -20.46056}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -41824,7 +41824,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.047850005, y: -0.09416139, z: -0.047850005, w: -0.09416139}
+  m_margin: {x: -73.773224, y: -91.63787, z: -73.773224, w: -91.63787}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -42902,7 +42902,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.054630008, y: -0.021024002, z: -0.054630008, w: -0.021024002}
+  m_margin: {x: -84.226364, y: -20.46056, z: -84.226364, w: -20.46056}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -44575,7 +44575,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.024106268, y: -0.0099092, z: -0.024106268, w: -0.0099092}
+  m_margin: {x: -37.166077, y: -9.643634, z: -37.166077, w: -9.643634}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -46474,7 +46474,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0587195, y: -0.022379003, z: -0.0587195, w: -0.022379003}
+  m_margin: {x: -90.53138, y: -21.77925, z: -90.53138, w: -21.77925}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -46837,7 +46837,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.036893573, y: -0.016398627, z: -0.036893573, w: -0.016398627}
+  m_margin: {x: -56.881035, y: -15.959145, z: -56.881035, w: -15.959145}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -49808,7 +49808,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0587195, y: -0.022379003, z: -0.0587195, w: -0.022379003}
+  m_margin: {x: -90.53138, y: -21.77925, z: -90.53138, w: -21.77925}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -52186,7 +52186,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.047850005, y: -0.09416139, z: -0.047850005, w: -0.09416139}
+  m_margin: {x: -73.773224, y: -91.63787, z: -73.773224, w: -91.63787}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0

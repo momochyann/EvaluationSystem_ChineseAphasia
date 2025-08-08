@@ -24,7 +24,7 @@ public class GameStartAfterLoad : MonoBehaviour
         // var HotUI = await LoadYooAssetsTool.LoadAsset<GameObject>("LoadNewGameVesion");
         // Instantiate(HotUI, FindObjectOfType<Canvas>().transform);
         //    LoadYooAssetsTool.LoadSceneAsync("GameStartScene").Forget();
-        LoadYooAssetsTool.LoadSceneAsync("GameStartScene").Forget();
+        LoadYooAssetsTool.LoadSceneAsync("登录界面场景").Forget();
     }
     async UniTask WaitLoadAnimation(CancellationToken cancellationToken)
     {

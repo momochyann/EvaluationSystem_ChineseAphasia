@@ -1,56 +1,149 @@
 ManifestFileVersion: 0
-CRC: 2368911049
+CRC: 1221495055
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: defaultpackage_assets_[0]cilent_textures.bundle
       Dependencies: {}
     Info_1:
-      Name: defaultpackage_assets_[0]cilent_config.bundle
+      Name: "defaultpackage_assets_[0]cilent_textures_ui\u754C\u9762_\u6863\u6848\u7BA1\u74069.bundle"
       Dependencies: {}
     Info_2:
-      Name: defaultpackage_assets_[0]cilent_prefabs.bundle
-      Dependencies:
-        Dependency_0: defaultpackage_share_assets_proceduraluiimage_resources.bundle
+      Name: "defaultpackage_assets_[0]cilent_textures_ui\u754C\u9762_\u7528\u6237\u7BA1\u74069.bundle"
+      Dependencies: {}
     Info_3:
-      Name: defaultpackage_assets_[0]cilent_scenes.bundle
-      Dependencies:
-        Dependency_0: defaultpackage_assets_[0]cilent_config.bundle
-        Dependency_1: defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[5]utility&tool_bleapi.bundle
-        Dependency_2: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle
-        Dependency_3: defaultpackage_share_assets_[0]cilent_fonts.bundle
-        Dependency_4: defaultpackage_share_packages_com_unity_render-pipelines_universal_runtime_materials.bundle
+      Name: "defaultpackage_assets_[0]cilent_textures_ui\u754C\u9762_\u767B\u5F55\u754C\u97629.bundle"
+      Dependencies: {}
     Info_4:
-      Name: defaultpackage_share_assets_editor_proceduraluiimage_editor.bundle
+      Name: "defaultpackage_assets_[0]cilent_textures_ui\u754C\u9762_\u80CC\u666F\u754C\u97629.bundle"
       Dependencies: {}
     Info_5:
-      Name: defaultpackage_share_assets_proceduraluiimage_resources.bundle
+      Name: "defaultpackage_assets_[0]cilent_textures_ui\u754C\u9762_\u8BC4\u5B9A\u4EBA\u7BA1\u74069.bundle"
       Dependencies: {}
     Info_6:
-      Name: defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[5]utility&tool_bleapi.bundle
+      Name: "defaultpackage_assets_[0]cilent_textures_ui\u754C\u9762_\u9009\u62E9\u754C\u97629.bundle"
       Dependencies: {}
     Info_7:
-      Name: defaultpackage_share_assets_nova_icons.bundle
+      Name: "defaultpackage_assets_[0]cilent_textures_ui\u754C\u9762_\u91CF\u8868\u8BC4\u4F309.bundle"
       Dependencies: {}
     Info_8:
-      Name: defaultpackage_unityshaders.bundle
+      Name: "defaultpackage_assets_[0]cilent_textures_\u5DE6\u9762\u5206\u7C7B8.bundle"
       Dependencies: {}
     Info_9:
-      Name: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle
-      Dependencies:
-        Dependency_0: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
+      Name: "defaultpackage_assets_[0]cilent_textures_\u7528\u6237\u7BA1\u74068.bundle"
+      Dependencies: {}
     Info_10:
-      Name: defaultpackage_share_packages_com_unity_textmeshpro_editor_resources_gizmos.bundle
+      Name: defaultpackage_assets_[0]cilent_config.bundle
       Dependencies: {}
     Info_11:
+      Name: defaultpackage_assets_[0]cilent_prefabs.bundle
+      Dependencies:
+        Dependency_0: "defaultpackage_assets_[0]cilent_textures_ui\u754C\u9762_\u767B\u5F55\u754C\u97629.bundle"
+        Dependency_1: defaultpackage_share_assets_proceduraluiimage_resources.bundle
+        Dependency_2: defaultpackage_share_assets_[0]cilent_fonts.bundle
+        Dependency_3: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
+        Dependency_4: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle
+        Dependency_5: defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle
+    Info_12:
+      Name: "defaultpackage_assets_[0]cilent_ui_\u5B89\u5353_\u7EC4\u4EF6.bundle"
+      Dependencies:
+        Dependency_0: defaultpackage_assets_[0]cilent_textures.bundle
+        Dependency_1: defaultpackage_share_assets.bundle
+    Info_13:
+      Name: "defaultpackage_assets_[0]cilent_ui_\u7535\u8111&\u901A\u7528_\u5DE5\u4F5C\u573A\u666F.bundle"
+      Dependencies:
+        Dependency_0: defaultpackage_share_assets_[0]cilent_fonts.bundle
+    Info_14:
+      Name: "defaultpackage_assets_[0]cilent_ui_\u7535\u8111&\u901A\u7528_\u5DE5\u4F5C\u573A\u666F_\u6863\u6848\u7BA1\u7406.bundle"
+      Dependencies:
+        Dependency_0: defaultpackage_share_assets_[0]cilent_fonts.bundle
+    Info_15:
+      Name: "defaultpackage_assets_[0]cilent_ui_\u7535\u8111&\u901A\u7528_\u5DE5\u4F5C\u573A\u666F_\u7528\u6237\u7BA1\u7406.bundle"
+      Dependencies:
+        Dependency_0: "defaultpackage_assets_[0]cilent_textures_\u7528\u6237\u7BA1\u74068.bundle"
+        Dependency_1: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle
+        Dependency_2: defaultpackage_share_assets_[0]cilent_fonts.bundle
+        Dependency_3: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle
+        Dependency_4: defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle
+    Info_16:
+      Name: "defaultpackage_assets_[0]cilent_ui_\u7535\u8111&\u901A\u7528_\u5DE5\u4F5C\u573A\u666F_\u8BC4\u5B9A\u4EBA\u7BA1\u7406.bundle"
+      Dependencies:
+        Dependency_0: "defaultpackage_assets_[0]cilent_textures_\u7528\u6237\u7BA1\u74068.bundle"
+        Dependency_1: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle
+        Dependency_2: defaultpackage_share_assets_[0]cilent_fonts.bundle
+        Dependency_3: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle
+        Dependency_4: defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle
+    Info_17:
+      Name: "defaultpackage_assets_[0]cilent_ui_\u7535\u8111&\u901A\u7528_\u5DE5\u4F5C\u573A\u666F_\u91CF\u8868\u8BC4\u4F30.bundle"
+      Dependencies:
+        Dependency_0: defaultpackage_share_assets_[0]cilent_fonts.bundle
+        Dependency_1: defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle
+    Info_18:
+      Name: "defaultpackage_assets_[0]cilent_ui_\u7535\u8111&\u901A\u7528.bundle"
+      Dependencies:
+        Dependency_0: defaultpackage_share_assets_[0]cilent_fonts.bundle
+        Dependency_1: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
+    Info_19:
+      Name: defaultpackage_assets_[0]cilent_scenes.bundle
+      Dependencies:
+        Dependency_0: "defaultpackage_assets_[0]cilent_textures_ui\u754C\u9762_\u7528\u6237\u7BA1\u74069.bundle"
+        Dependency_1: "defaultpackage_assets_[0]cilent_textures_ui\u754C\u9762_\u767B\u5F55\u754C\u97629.bundle"
+        Dependency_2: "defaultpackage_assets_[0]cilent_textures_ui\u754C\u9762_\u80CC\u666F\u754C\u97629.bundle"
+        Dependency_3: "defaultpackage_assets_[0]cilent_textures_ui\u754C\u9762_\u9009\u62E9\u754C\u97629.bundle"
+        Dependency_4: "defaultpackage_assets_[0]cilent_textures_\u5DE6\u9762\u5206\u7C7B8.bundle"
+        Dependency_5: "defaultpackage_assets_[0]cilent_textures_\u7528\u6237\u7BA1\u74068.bundle"
+        Dependency_6: defaultpackage_assets_[0]cilent_config.bundle
+        Dependency_7: defaultpackage_assets_[0]cilent_prefabs.bundle
+        Dependency_8: "defaultpackage_assets_[0]cilent_ui_\u5B89\u5353_\u7EC4\u4EF6.bundle"
+        Dependency_9: "defaultpackage_assets_[0]cilent_ui_\u7535\u8111&\u901A\u7528_\u5DE5\u4F5C\u573A\u666F_\u7528\u6237\u7BA1\u7406.bundle"
+        Dependency_10: "defaultpackage_assets_[0]cilent_ui_\u7535\u8111&\u901A\u7528_\u5DE5\u4F5C\u573A\u666F_\u8BC4\u5B9A\u4EBA\u7BA1\u7406.bundle"
+        Dependency_11: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle
+        Dependency_12: defaultpackage_share_assets_[0]cilent_fonts.bundle
+        Dependency_13: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle
+        Dependency_14: defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[5]utility&tool_bleapi.bundle
+        Dependency_15: defaultpackage_share_assets_nova_sample_uicontrols_prefabs.bundle
+    Info_20:
+      Name: defaultpackage_share_assets_editor_proceduraluiimage_editor.bundle
+      Dependencies: {}
+    Info_21:
+      Name: defaultpackage_share_assets_proceduraluiimage_resources.bundle
+      Dependencies: {}
+    Info_22:
+      Name: defaultpackage_share_assets_nova_icons.bundle
+      Dependencies: {}
+    Info_23:
+      Name: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle
+      Dependencies:
+        Dependency_0: defaultpackage_share_assets_[0]cilent_fonts.bundle
+        Dependency_1: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
+        Dependency_2: defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle
+    Info_24:
+      Name: defaultpackage_unityshaders.bundle
+      Dependencies: {}
+    Info_25:
+      Name: defaultpackage_share_packages_com_unity_textmeshpro_editor_resources_gizmos.bundle
+      Dependencies: {}
+    Info_26:
       Name: defaultpackage_share_assets_[0]cilent_fonts.bundle
       Dependencies:
         Dependency_0: defaultpackage_unityshaders.bundle
-    Info_12:
+    Info_27:
       Name: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
       Dependencies:
         Dependency_0: defaultpackage_unityshaders.bundle
-    Info_13:
-      Name: defaultpackage_share_packages_com_unity_render-pipelines_universal_runtime_materials.bundle
+    Info_28:
+      Name: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle
       Dependencies:
-        Dependency_0: defaultpackage_unityshaders.bundle
+        Dependency_0: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
+    Info_29:
+      Name: defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle
+      Dependencies: {}
+    Info_30:
+      Name: defaultpackage_share_assets.bundle
+      Dependencies: {}
+    Info_31:
+      Name: defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[5]utility&tool_bleapi.bundle
+      Dependencies: {}
+    Info_32:
+      Name: defaultpackage_share_assets_nova_sample_uicontrols_prefabs.bundle
+      Dependencies: {}

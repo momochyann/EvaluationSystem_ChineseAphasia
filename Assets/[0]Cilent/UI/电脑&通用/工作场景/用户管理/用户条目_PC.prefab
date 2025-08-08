@@ -290,7 +290,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: b4fd2f21424e2ef40bb03d206377992b, type: 3}
+  texture: {fileID: 2800000, guid: 5a627e3cadaa4bc48a1e19d2edca95fe, type: 3}
   sprite: {fileID: 0}
 --- !u!1 &594813372254922115
 GameObject:
@@ -1476,7 +1476,7 @@ Transform:
   m_GameObject: {fileID: 2106646715343974279}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.15886188, y: -24.999998, z: 0}
+  m_LocalPosition: {x: -9.930307, y: -24.99948, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1511,20 +1511,20 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 1.003
+        Raw: 0.989
         Type: 1
       Y:
-        Raw: 0.03
+        Raw: 0.030000001
         Type: 1
       Z:
         Raw: 0
         Type: 0
     Position:
       X:
-        Raw: -2.0031254
+        Raw: -2.003
         Type: 0
       Y:
-        Raw: 51.01152
+        Raw: 51.011
         Type: 0
       Z:
         Raw: 0
@@ -2188,7 +2188,7 @@ MonoBehaviour:
         Raw: 0
         Type: 0
       Y:
-        Raw: 190
+        Raw: 0
         Type: 0
       Z:
         Raw: 0
@@ -3077,7 +3077,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 290e19e43edb0054ebe425ca9d510a78, type: 3}
+  texture: {fileID: 2800000, guid: a1ecdf796e23a964ba05e3df10ba21c6, type: 3}
   sprite: {fileID: 0}
 --- !u!1 &5059725662399892678
 GameObject:

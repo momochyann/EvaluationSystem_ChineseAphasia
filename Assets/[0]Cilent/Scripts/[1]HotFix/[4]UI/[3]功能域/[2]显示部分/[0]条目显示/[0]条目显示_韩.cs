@@ -84,7 +84,7 @@ public class 显示条目_韩 : MonoBehaviour, IController
         }
 
     }
-    void 清除现有显示()
+    public void 清除现有显示()
     {
         Debug.Log("[显示条目_韩] 清除现有显示transform.childCount:" + transform.childCount);
         for (int i = transform.childCount - 1; i >= 0; i--)

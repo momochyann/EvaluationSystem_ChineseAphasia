@@ -80,7 +80,7 @@ namespace NovaSamples.UIControls
             }
 
             // Update the dropdown arrow rotation
-            DropdownArrow.transform.localRotation = Quaternion.Euler(0, 0, 90);
+            DropdownArrow.transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace NovaSamples.UIControls
             ExpandedViewRoot.gameObject.SetActive(false);
 
             // Update the dropdown arrow rotation
-            DropdownArrow.transform.localRotation = Quaternion.identity;
+            DropdownArrow.transform.localRotation =  Quaternion.Euler(0, 0, 90);
         }
 
         /// <summary>

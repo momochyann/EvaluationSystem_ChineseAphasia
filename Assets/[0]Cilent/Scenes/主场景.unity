@@ -138,65 +138,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2189819981498968969, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 251.52063
-      objectReference: {fileID: 0}
-    - target: {fileID: 2189819981498968969, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.206707
-      objectReference: {fileID: 0}
-    - target: {fileID: 2435046875530489469, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -258.96082
-      objectReference: {fileID: 0}
-    - target: {fileID: 2435046875530489469, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.206707
-      objectReference: {fileID: 0}
-    - target: {fileID: 2497165772812671427, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -579.3617
-      objectReference: {fileID: 0}
-    - target: {fileID: 2497165772812671427, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.206707
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464442921582955548, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 537.36145
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464442921582955548, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.228707
-      objectReference: {fileID: 0}
-    - target: {fileID: 5943701846902375517, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -410.16125
-      objectReference: {fileID: 0}
-    - target: {fileID: 5943701846902375517, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.253293
-      objectReference: {fileID: 0}
-    - target: {fileID: 7278195908066716762, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -63.84027
-      objectReference: {fileID: 0}
-    - target: {fileID: 7278195908066716762, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.206707
-      objectReference: {fileID: 0}
-    - target: {fileID: 7333788837163784145, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.84796834
-      objectReference: {fileID: 0}
     - target: {fileID: 8744414582665552374, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 160.625
+      value: 162
       objectReference: {fileID: 0}
     - target: {fileID: 8744414582665552374, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.47100002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8744414582665552374, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -233,43 +181,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2148820551727537289, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 18707677}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
 --- !u!4 &18707675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8744414582665552374, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
   m_PrefabInstance: {fileID: 18707674}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &18707676 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2148820551727537289, guid: ff609bd0f7e0cbb4f8d759029991491d, type: 3}
-  m_PrefabInstance: {fileID: 18707674}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &18707677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 18707676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86fe02d2aec80db43a8f3858a5a72d0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "\u767B\u5F55\u8D26\u53F7": {fileID: 0}
-  "\u767B\u5F55\u5BC6\u7801": {fileID: 0}
-  "\u59D3\u540D": {fileID: 0}
-  "\u6027\u522B": {fileID: 0}
-  "\u8054\u7CFB\u65B9\u5F0F": {fileID: 0}
-  "\u8EAB\u4EFD\u8BC1": {fileID: 0}
-  "\u51FA\u751F\u65E5\u671F": {fileID: 0}
-  "\u786E\u5B9A": {fileID: 0}
-  "\u53D6\u6D88": {fileID: 0}
-  "\u4E34\u65F6\u6DFB\u52A0": {fileID: 0}
 --- !u!1 &109633558
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +466,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: aee853ff299aa4447bc60641acdf8637, type: 3}
+  texture: {fileID: 2800000, guid: 2faaa86c5e4c5d949946e1648a4fb85e, type: 3}
   sprite: {fileID: 0}
 --- !u!114 &109633561
 MonoBehaviour:
@@ -1771,7 +1689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7599235840010813287, guid: 46640eb424e726547b5f2426e3180e95, type: 3}
       propertyPath: m_Name
-      value: UIRoot
+      value: asdsds
       objectReference: {fileID: 0}
     - target: {fileID: 7599235840010813287, guid: 46640eb424e726547b5f2426e3180e95, type: 3}
       propertyPath: m_IsActive
@@ -2171,7 +2089,7 @@ MonoBehaviour:
     ReceiveShadows: 1
   PreviewSize: {x: 1, y: 1, z: 0}
   visuals:
-    Color: {r: 1, g: 1, b: 1, a: 0.3019608}
+    Color: {r: 1, g: 1, b: 1, a: 0.38039216}
     CornerRadius:
       Raw: 0
       Type: 0
@@ -2237,7 +2155,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 347956935888c3f44a5c21f8a784bdd2, type: 3}
+  texture: {fileID: 2800000, guid: 6fe205d104fc31d419f07f43c2fda853, type: 3}
   sprite: {fileID: 0}
 --- !u!114 &1314769910
 MonoBehaviour:
@@ -3463,7 +3381,7 @@ MonoBehaviour:
     ReceiveShadows: 1
   PreviewSize: {x: 1, y: 1, z: 0}
   visuals:
-    Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    Color: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     CornerRadius:
       Raw: 0
       Type: 0
@@ -4200,7 +4118,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: aee853ff299aa4447bc60641acdf8637, type: 3}
+  texture: {fileID: 2800000, guid: 2faaa86c5e4c5d949946e1648a4fb85e, type: 3}
   sprite: {fileID: 0}
 --- !u!114 &1713988312
 MonoBehaviour:
@@ -5978,18 +5896,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visuals:
-    rid: 5441992528286187524
+    rid: 5279414091921489921
   references:
     version: 2
     RefIds:
-    - rid: 5441992528286187524
+    - rid: 5279414091921489921
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
-        transitionTarget: {fileID: 7444238131684621009}
+        TransitionType: 0
+        transitionTarget: {fileID: 0}
         DefaultColor: {r: 1, g: 1, b: 1, a: 1}
-        HoveredColor: {r: 0.75, g: 0.75, b: 0.75, a: 0}
-        PressedColor: {r: 0.23921569, g: 0.63529414, b: 1, a: 1}
+        HoveredColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
+        PressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
         TransitionDuration: 0.1
         Sprites:
           DefaultSprite: {fileID: 0}
@@ -8193,7 +8111,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 86f4b4d65bbfb2546a44ecb7e32e2678, type: 3}
+  texture: {fileID: 2800000, guid: 81e9f3667f745044ca5c4ba816e85c83, type: 3}
   sprite: {fileID: 0}
 --- !u!114 &2201527048130977034
 MonoBehaviour:
@@ -9195,7 +9113,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: d8633e929f3e158428e1b94e6c55bdda, type: 3}
+  texture: {fileID: 2800000, guid: c34a22c4bcd77f64a8432242c2626241, type: 3}
   sprite: {fileID: 0}
 --- !u!1 &2520457489062146076
 GameObject:
@@ -9626,7 +9544,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 4fdd0de1a8623164eb2fbfc86bbeb011, type: 3}
+  texture: {fileID: 2800000, guid: 058666f8d0bd3494d8530bf1fcef7d77, type: 3}
   sprite: {fileID: 0}
 --- !u!4 &2879517283504594734
 Transform:
@@ -9763,8 +9681,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10991,7 +10909,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 2bbeab0e2d1207e4285e792242a2fa31, type: 3}
+  texture: {fileID: 2800000, guid: 718cead4fd8d90841aee006d4b853a05, type: 3}
   sprite: {fileID: 0}
 --- !u!114 &3368437631094700324
 MonoBehaviour:
@@ -11486,7 +11404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &3552503844327764064
 GameObject:
   m_ObjectHideFlags: 0
@@ -13713,6 +13631,7 @@ GameObject:
   - component: {fileID: 4209447901715478922}
   - component: {fileID: 6616630631957352769}
   - component: {fileID: 6616630631957352770}
+  - component: {fileID: 6616630631957352771}
   m_Layer: 0
   m_Name: "\u5DE6\u76EE\u5F55\u5E95\u8272_PC"
   m_TagString: Untagged
@@ -14306,7 +14225,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: dd12c0ed9c7e0ff4a885c09e8cf86e5b, type: 3}
+  texture: {fileID: 2800000, guid: 07b2f8768ebd83e428600d04eea900dc, type: 3}
   sprite: {fileID: 0}
 --- !u!114 &4880833517926729214
 MonoBehaviour:
@@ -15893,7 +15812,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: b28dfd123d109204eaeff8b42205283f, type: 3}
+  texture: {fileID: 2800000, guid: 8ff9c850ca5b22d4e94f7701a6fd99dd, type: 3}
   sprite: {fileID: 0}
 --- !u!114 &6003714699239284607
 MonoBehaviour:
@@ -16232,7 +16151,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 77a592795d39d5b4397bb243fa815f78, type: 3}
+  texture: {fileID: 2800000, guid: a853dcd9c3250f54590a798a31a047b3, type: 3}
   sprite: {fileID: 0}
 --- !u!114 &6012173775267393376
 MonoBehaviour:
@@ -16930,7 +16849,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 914ac06859123244281982e03fe590ac, type: 3}
+  texture: {fileID: 2800000, guid: 28ebc962a9b995347a62b1c0e8b9409d, type: 3}
   sprite: {fileID: 0}
 --- !u!114 &6326197610629414826
 MonoBehaviour:
@@ -17326,7 +17245,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 4c6f4c842055fc544b3fb30e86db82fb, type: 3}
+  texture: {fileID: 2800000, guid: 6bcefcf54e1e1ad4ab2e0d7bfd672a3c, type: 3}
   sprite: {fileID: 0}
 --- !u!114 &6510169581439516227
 MonoBehaviour:
@@ -18075,6 +17994,19 @@ MonoBehaviour:
   - {fileID: 2821984857350691869}
   - {fileID: 7862475708702774948}
   - {fileID: 6485329255086641486}
+--- !u!114 &6616630631957352771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497209489704937498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85fbe851951369141ba6534885328de7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "\u9009\u4E2D\u989C\u8272": {r: 0.28627452, g: 0.627451, b: 0.9450981, a: 1}
 --- !u!114 &6633415855201281814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19317,7 +19249,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 3809a692983702b4da0a7b181dda0d41, type: 3}
+  texture: {fileID: 2800000, guid: ef4c89e067e0ac742af12abe95d267ea, type: 3}
   sprite: {fileID: 0}
 --- !u!114 &7139238217686585001
 MonoBehaviour:
@@ -20065,7 +19997,7 @@ MonoBehaviour:
     - rid: 5441992528286187521
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 6832274494496937706}
         DefaultColor: {r: 1, g: 1, b: 1, a: 1}
         HoveredColor: {r: 0.75, g: 0.75, b: 0.75, a: 0}
@@ -21852,7 +21784,7 @@ MonoBehaviour:
     - rid: 5441992528286187523
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 6546006831473424541}
         DefaultColor: {r: 1, g: 1, b: 1, a: 1}
         HoveredColor: {r: 0.75, g: 0.75, b: 0.75, a: 0}
@@ -21980,7 +21912,7 @@ MonoBehaviour:
     - rid: 5441992528286187520
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 1326926039728655619}
         DefaultColor: {r: 1, g: 1, b: 1, a: 1}
         HoveredColor: {r: 0.75, g: 0.75, b: 0.75, a: 0}
@@ -22186,7 +22118,7 @@ MonoBehaviour:
     - rid: 5441992513734049794
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 7167411134235534911}
         DefaultColor: {r: 1, g: 1, b: 1, a: 1}
         HoveredColor: {r: 0.75, g: 0.75, b: 0.75, a: 0}
@@ -22706,7 +22638,7 @@ MonoBehaviour:
     - rid: 5441992528286187522
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 7639912905210077044}
         DefaultColor: {r: 1, g: 1, b: 1, a: 1}
         HoveredColor: {r: 0.75, g: 0.75, b: 0.75, a: 0}

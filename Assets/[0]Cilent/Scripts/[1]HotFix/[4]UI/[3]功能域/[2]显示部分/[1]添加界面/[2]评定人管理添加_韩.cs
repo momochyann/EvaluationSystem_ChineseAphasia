@@ -30,22 +30,22 @@ public class 评定人管理添加_韩 : 界面基础_韩
     }
     void 添加账号()
     {
-        if(登录账号.Text == "")
+        if (登录账号.Text == "")
         {
             Debug.Log("[ [2] 评定人管理添加_韩]添加账号失败，请检查登录账号");
             return;
         }
-        if(登录密码.Text == "")
+        if (登录密码.Text == "")
         {
             Debug.Log("[ [2] 评定人管理添加_韩]添加账号失败，请检查登录密码");
             return;
         }
-        if(姓名.Text == "")
+        if (姓名.Text == "")
         {
             Debug.Log("[ [2] 评定人管理添加_韩]添加账号失败，请检查姓名");
             return;
         }
-        
+
         评人 新评人 = new 评人();
         新评人.账号 = 登录账号.Text;
         新评人.密码 = 登录密码.Text;
@@ -56,12 +56,15 @@ public class 评定人管理添加_韩 : 界面基础_韩
         新评人.诞辰 = 出生日期.Text;
         this.SendCommand(new 增记于录(新评人, "评人录"));
         Debug.Log("[ [2] 评定人管理添加_韩]添加账号" + 新评人.名);
+        清空文本框内容();
         FindObjectOfType<界面管理器_韩>().显示界面("评定人管理显示_PC");
     }
     void 取消添加()
     {
         Debug.Log("[ [2] 评定人管理添加_韩]取消添加");
+        清空文本框内容();
         FindObjectOfType<界面管理器_韩>().显示界面("评定人管理显示_PC");
+
     }
 
     protected override void OnShow()
@@ -85,6 +88,16 @@ public class 评定人管理添加_韩 : 界面基础_韩
         this.SendCommand(new 增记于录(新评人, "评人录"));
         Debug.Log("[ [2] 评定人管理添加_韩]临时添加信息" + 新评人.名);
         FindObjectOfType<界面管理器_韩>().显示界面("评定人管理显示_PC");
+    }
+    public void 清空文本框内容()
+    {
+        登录账号.Text = "";
+        登录密码.Text = "";
+        姓名.Text = "";
+        性别.Text = "";
+        联系方式.Text = "";
+        身份证.Text = "";
+        出生日期.Text = "";
     }
     void OnDestroy()
     {

@@ -13,13 +13,6 @@ public class 索录栏_茉 : MonoBehaviour, IController
 {
     // Start is called before the first frame update
     [SerializeField] string 录名;
-    [Serializable]
-    public struct 下拉框帜
-    {
-        public string 示;
-        public string 帜;
-    }
-    
     [SerializeField] List<下拉框帜> 下拉框帜集;
     [SerializeField] TextField 输入框;
     [SerializeField] Dropdown 下拉框;
@@ -60,7 +53,6 @@ public class 索录栏_茉 : MonoBehaviour, IController
         List<I记贞> 记集 = new List<I记贞>();
         foreach (var field in fields)
         {
-            记干名.Add(field.Name);
         }
         foreach (var property in properties)
         {
@@ -91,4 +83,10 @@ public class 索录栏_茉 : MonoBehaviour, IController
     {
         return HotFixTemplateArchitecture.Interface;
     }
+}
+[Serializable]
+public struct 下拉框帜
+{
+    public string 示;
+    public string 帜;
 }
