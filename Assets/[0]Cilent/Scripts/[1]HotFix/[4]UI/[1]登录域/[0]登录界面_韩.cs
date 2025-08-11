@@ -226,7 +226,6 @@ public class 登录界面_韩 : MonoBehaviour, IController
         {
             await UniTask.Delay(100);
         }
-        
         if (加载动画.GetComponent<加载动画_韩>().加载动画状态 == 加载动画状态.取消)
         {
             Debug.Log("[0]登录界面_韩 取消加载");
@@ -293,6 +292,28 @@ public class 登录界面_韩 : MonoBehaviour, IController
         }
     }
 
+    public void ShowAndroidKeyboard()
+    {
+        try
+        {
+            AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+            AndroidJavaObject activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+            AndroidJavaClass inputMethodManager = new AndroidJavaClass("android.view.inputmethod.InputMethodManager");
+            
+            activity.Call("runOnUiThread", new AndroidJavaRunnable(() =>
+            {
+                AndroidJavaObject inputMethod = inputMethodManager.CallStatic<AndroidJavaObject>(
+                    "getInstance", activity);
+                AndroidJavaObject window = activity.Call<AndroidJavaObject>("getWindow");
+                AndroidJavaObject decorView = window.Call<AndroidJavaObject>("getDecorView");
+                inputMethod.Call("showSoftInput", decorView, 0);
+            }));
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Failed to show keyboard: " + e.Message);
+        }
+    }
     // 实现IController接口，返回架构实例
     public IArchitecture GetArchitecture()
     {
