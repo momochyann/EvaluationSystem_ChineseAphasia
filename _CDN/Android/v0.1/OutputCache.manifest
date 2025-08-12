@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 1221495055
+CRC: 2657955489
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -41,9 +41,8 @@ AssetBundleManifest:
         Dependency_0: "defaultpackage_assets_[0]cilent_textures_ui\u754C\u9762_\u767B\u5F55\u754C\u97629.bundle"
         Dependency_1: defaultpackage_share_assets_proceduraluiimage_resources.bundle
         Dependency_2: defaultpackage_share_assets_[0]cilent_fonts.bundle
-        Dependency_3: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
-        Dependency_4: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle
-        Dependency_5: defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle
+        Dependency_3: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle
+        Dependency_4: defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle
     Info_12:
       Name: "defaultpackage_assets_[0]cilent_ui_\u5B89\u5353_\u7EC4\u4EF6.bundle"
       Dependencies:
@@ -82,7 +81,6 @@ AssetBundleManifest:
       Name: "defaultpackage_assets_[0]cilent_ui_\u7535\u8111&\u901A\u7528.bundle"
       Dependencies:
         Dependency_0: defaultpackage_share_assets_[0]cilent_fonts.bundle
-        Dependency_1: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
     Info_19:
       Name: defaultpackage_assets_[0]cilent_scenes.bundle
       Dependencies:
@@ -115,8 +113,8 @@ AssetBundleManifest:
       Name: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle
       Dependencies:
         Dependency_0: defaultpackage_share_assets_[0]cilent_fonts.bundle
-        Dependency_1: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
-        Dependency_2: defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle
+        Dependency_1: defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle
+        Dependency_2: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
     Info_24:
       Name: defaultpackage_unityshaders.bundle
       Dependencies: {}
@@ -128,22 +126,22 @@ AssetBundleManifest:
       Dependencies:
         Dependency_0: defaultpackage_unityshaders.bundle
     Info_27:
-      Name: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
-      Dependencies:
-        Dependency_0: defaultpackage_unityshaders.bundle
-    Info_28:
       Name: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle
       Dependencies:
         Dependency_0: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
-    Info_29:
+    Info_28:
       Name: defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle
       Dependencies: {}
-    Info_30:
+    Info_29:
       Name: defaultpackage_share_assets.bundle
       Dependencies: {}
-    Info_31:
+    Info_30:
       Name: defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[5]utility&tool_bleapi.bundle
       Dependencies: {}
+    Info_31:
+      Name: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
+      Dependencies:
+        Dependency_0: defaultpackage_unityshaders.bundle
     Info_32:
       Name: defaultpackage_share_assets_nova_sample_uicontrols_prefabs.bundle
       Dependencies: {}

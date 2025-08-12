@@ -6,7 +6,7 @@
     "OutputNameStyle": 0,
     "BuildPipeline": "BuiltinBuildPipeline",
     "PackageName": "DefaultPackage",
-    "PackageVersion": "25-0808-093625",
+    "PackageVersion": "25-0812-111950",
     "AssetList": [
         {
             "Address": "HotFixSceneBackImage",
@@ -284,6 +284,13 @@
         {
             "Address": "界面加载动画",
             "AssetPath": "Assets/[0]Cilent/Prefabs/界面加载动画.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 11
+        },
+        {
+            "Address": "监视器",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/监视器.prefab",
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 11
@@ -608,18 +615,18 @@
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
-            "UnityCRC": 1267688898,
-            "FileHash": "4a5f6b5b65851f87160c8ad3b5e5099f",
-            "FileCRC": "98927cd1",
-            "FileSize": 2014306,
+            "UnityCRC": 2936456708,
+            "FileHash": "d94efe507332a71d43c4c6286cb38106",
+            "FileCRC": "e17213ad",
+            "FileSize": 2014405,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": [
                 3,
                 26,
+                31,
                 27,
                 28,
-                29,
                 21,
                 24
             ]
@@ -636,7 +643,7 @@
             ],
             "DependIDs": [
                 0,
-                30
+                29
             ]
         },
         {
@@ -671,10 +678,10 @@
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_用户管理.bundle",
-            "UnityCRC": 3649174862,
-            "FileHash": "cae7dcd123538d44bbf1beb0cf13e42c",
-            "FileCRC": "315ea390",
-            "FileSize": 75949,
+            "UnityCRC": 2922649310,
+            "FileHash": "3edac3275f11cabd8d3206896db6644e",
+            "FileCRC": "bd3ae63a",
+            "FileSize": 75951,
             "Encrypted": false,
             "Tags": [
                 "UI"
@@ -682,19 +689,19 @@
             "DependIDs": [
                 9,
                 26,
-                27,
+                31,
                 23,
+                27,
                 28,
-                29,
                 24
             ]
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_评定人管理.bundle",
-            "UnityCRC": 2775113179,
-            "FileHash": "6101f21457e471bb7406959e08f3b8af",
-            "FileCRC": "923a6885",
-            "FileSize": 50967,
+            "UnityCRC": 649288511,
+            "FileHash": "f81adfd00e46f91ac7283b95b92db205",
+            "FileCRC": "bb9bad03",
+            "FileSize": 50968,
             "Encrypted": false,
             "Tags": [
                 "UI"
@@ -702,10 +709,10 @@
             "DependIDs": [
                 9,
                 26,
-                27,
+                31,
                 23,
+                27,
                 28,
-                29,
                 24
             ]
         },
@@ -721,32 +728,31 @@
             ],
             "DependIDs": [
                 26,
-                29,
+                28,
                 24
             ]
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用.bundle",
-            "UnityCRC": 2304697439,
-            "FileHash": "87f9815f57cd40ad770f9b219e68784f",
-            "FileCRC": "5af25573",
-            "FileSize": 13654,
+            "UnityCRC": 3990252314,
+            "FileHash": "ae1aa00e6fd318848aeaa9e273eee83d",
+            "FileCRC": "5d38ee6c",
+            "FileSize": 13554,
             "Encrypted": false,
             "Tags": [
                 "UI"
             ],
             "DependIDs": [
                 26,
-                27,
                 24
             ]
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
-            "UnityCRC": 1067210809,
-            "FileHash": "bcac58989df8fe5a1d115b0676655865",
-            "FileCRC": "425938a2",
-            "FileSize": 151412,
+            "UnityCRC": 4163129242,
+            "FileHash": "544dd4e18ac13a65309ec5002473e0c0",
+            "FileCRC": "84e5abbc",
+            "FileSize": 152737,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": [
@@ -762,24 +768,24 @@
                 12,
                 15,
                 16,
-                30,
+                29,
                 26,
+                30,
                 31,
-                27,
                 32,
                 23,
+                27,
                 28,
-                29,
                 21,
                 24
             ]
         },
         {
             "BundleName": "defaultpackage_share_assets_editor_proceduraluiimage_editor.bundle",
-            "UnityCRC": 4211986628,
-            "FileHash": "335c203302a627413e2723aee5756e69",
-            "FileCRC": "8cc8bc4b",
-            "FileSize": 2271,
+            "UnityCRC": 3018142804,
+            "FileHash": "70925bc17e7b9564139e8e46e97939ff",
+            "FileCRC": "d0323bbb",
+            "FileSize": 1200,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -796,28 +802,28 @@
         },
         {
             "BundleName": "defaultpackage_share_assets_nova_icons.bundle",
-            "UnityCRC": 2398619760,
-            "FileHash": "bfb6a02a2dea5ace31948257743f6d55",
-            "FileCRC": "b4078259",
-            "FileSize": 18418,
+            "UnityCRC": 3175473262,
+            "FileHash": "0443ddfa9b3209a915519aedd3673804",
+            "FileCRC": "c2fc81ce",
+            "FileSize": 1415,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
         },
         {
             "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle",
-            "UnityCRC": 3049372677,
-            "FileHash": "d6238e177b442fe86e771df3e041aa13",
-            "FileCRC": "0e128ef4",
-            "FileSize": 19297,
+            "UnityCRC": 3900223963,
+            "FileHash": "5067e38bd4787ba20db286d51fcf9bdd",
+            "FileCRC": "4be998d2",
+            "FileSize": 19414,
             "Encrypted": false,
             "Tags": [
                 "UI"
             ],
             "DependIDs": [
                 26,
-                27,
-                29,
+                31,
+                28,
                 24
             ]
         },
@@ -835,34 +841,20 @@
         },
         {
             "BundleName": "defaultpackage_share_packages_com_unity_textmeshpro_editor_resources_gizmos.bundle",
-            "UnityCRC": 2478717152,
-            "FileHash": "e3bde2f7a8eca8c402e878ee3d265243",
-            "FileCRC": "a6857ffb",
-            "FileSize": 3990,
+            "UnityCRC": 2390950842,
+            "FileHash": "10731cb88b91dff9907ddcf16986e1e1",
+            "FileCRC": "68a03cfb",
+            "FileSize": 1233,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
         },
         {
             "BundleName": "defaultpackage_share_assets_[0]cilent_fonts.bundle",
-            "UnityCRC": 3417009410,
-            "FileHash": "3211d4e4eba4e8ceba34701999ef9f14",
-            "FileCRC": "e2d56659",
-            "FileSize": 8511720,
-            "Encrypted": false,
-            "Tags": [
-                "UI"
-            ],
-            "DependIDs": [
-                24
-            ]
-        },
-        {
-            "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
-            "UnityCRC": 2705200275,
-            "FileHash": "df8d19f2928c08841d16569a641af214",
-            "FileCRC": "7248e97e",
-            "FileSize": 244442,
+            "UnityCRC": 3197881692,
+            "FileHash": "b7a57981c7a671368d736b7ffe48fc25",
+            "FileCRC": "bf3ac57a",
+            "FileSize": 8512946,
             "Encrypted": false,
             "Tags": [
                 "UI"
@@ -882,7 +874,7 @@
                 "UI"
             ],
             "DependIDs": [
-                27,
+                31,
                 24
             ]
         },
@@ -919,6 +911,20 @@
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+            "UnityCRC": 2705200275,
+            "FileHash": "df8d19f2928c08841d16569a641af214",
+            "FileCRC": "7248e97e",
+            "FileSize": 244442,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependIDs": [
+                24
+            ]
         },
         {
             "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_prefabs.bundle",

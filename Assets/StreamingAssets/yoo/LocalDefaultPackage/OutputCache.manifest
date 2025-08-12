@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 1561586703
+CRC: 3828140520
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -20,8 +20,10 @@ AssetBundleManifest:
       Dependencies:
         Dependency_0: localdefaultpackage_assets_[1]local_textures_hotinit.bundle
         Dependency_1: localdefaultpackage_share_assets_proceduraluiimage_resources.bundle
-        Dependency_2: localdefaultpackage_share_assets_[0]cilent_config.bundle
-        Dependency_3: localdefaultpackage_share_assets_plugins_allin1spriteshader_demo_textures.bundle
+        Dependency_2: "localdefaultpackage_share_assets_[0]cilent_textures_ui\u754C\u9762_\u767B\u5F55\u754C\u97629.bundle"
+        Dependency_3: localdefaultpackage_share_assets_[0]cilent_prefabs.bundle
+        Dependency_4: localdefaultpackage_share_assets_[0]cilent_config.bundle
+        Dependency_5: localdefaultpackage_share_assets_plugins_allin1spriteshader_demo_textures.bundle
     Info_5:
       Name: localdefaultpackage_assets_[1]local_textures_hotinit.bundle
       Dependencies: {}
@@ -38,8 +40,14 @@ AssetBundleManifest:
       Name: localdefaultpackage_share_assets_proceduraluiimage_resources.bundle
       Dependencies: {}
     Info_10:
-      Name: localdefaultpackage_share_assets_[0]cilent_config.bundle
+      Name: "localdefaultpackage_share_assets_[0]cilent_textures_ui\u754C\u9762_\u767B\u5F55\u754C\u97629.bundle"
       Dependencies: {}
     Info_11:
+      Name: localdefaultpackage_share_assets_[0]cilent_prefabs.bundle
+      Dependencies: {}
+    Info_12:
+      Name: localdefaultpackage_share_assets_[0]cilent_config.bundle
+      Dependencies: {}
+    Info_13:
       Name: localdefaultpackage_share_assets_plugins_allin1spriteshader_demo_textures.bundle
       Dependencies: {}

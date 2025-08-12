@@ -2,13 +2,13 @@
     "Summary": {
         "YooVersion": "2.1.2",
         "UnityVersion": "2022.3.44f1c1",
-        "BuildDate": "2025/8/8 9:36:44",
-        "BuildSeconds": 18,
+        "BuildDate": "2025/8/12 11:20:10",
+        "BuildSeconds": 19,
         "BuildTarget": 13,
         "BuildMode": 0,
         "BuildPipeline": "BuiltinBuildPipeline",
         "BuildPackageName": "DefaultPackage",
-        "BuildPackageVersion": "25-0808-093625",
+        "BuildPackageVersion": "25-0812-111950",
         "UniqueBundleName": true,
         "EnableAddressable": true,
         "LocationToLower": false,
@@ -21,10 +21,10 @@
         "CompressOption": 2,
         "DisableWriteTypeTree": false,
         "IgnoreTypeTreeChanges": true,
-        "AssetFileTotalCount": 97,
-        "MainAssetTotalCount": 64,
+        "AssetFileTotalCount": 98,
+        "MainAssetTotalCount": 65,
         "AllBundleTotalCount": 33,
-        "AllBundleTotalSize": 22028292,
+        "AllBundleTotalSize": 22010131,
         "EncryptedBundleTotalCount": 0,
         "EncryptedBundleTotalSize": 0
     },
@@ -368,7 +368,7 @@
             "AssetGUID": "161b55647687efb4c83700f1d5d7190b",
             "AssetTags": [],
             "MainBundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
-            "MainBundleSize": 2014306,
+            "MainBundleSize": 2014405,
             "DependAssets": [
                 "Assets/Editor/ProceduralUIImage/Editor/procedural_image_inspector_icon.png",
                 "Assets/ProceduralUIImage/Resources/procedural_ui_image_default_sprite.png"
@@ -380,7 +380,7 @@
             "AssetGUID": "72c77e01529b85a439fd2106e7bcbdd2",
             "AssetTags": [],
             "MainBundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
-            "MainBundleSize": 2014306,
+            "MainBundleSize": 2014405,
             "DependAssets": []
         },
         {
@@ -389,7 +389,7 @@
             "AssetGUID": "280c1d54fa4bb9d4cb2004e92db18796",
             "AssetTags": [],
             "MainBundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
-            "MainBundleSize": 2014306,
+            "MainBundleSize": 2014405,
             "DependAssets": [
                 "Assets/Nova/Icons/UIBlockActivatorIcon.png",
                 "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/Button_Dark.prefab",
@@ -402,10 +402,17 @@
                 "Assets/[0]Cilent/Fonts/苹方字体.ttf",
                 "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
                 "Assets/[0]Cilent/Textures/ui界面/登录界面9/加载界面.png",
-                "Assets/Nova/Icons/TextBlockIcon.png",
-                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
-                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset"
+                "Assets/Nova/Icons/TextBlockIcon.png"
             ]
+        },
+        {
+            "Address": "监视器",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/监视器.prefab",
+            "AssetGUID": "609ecbef681765142879c64099310b1d",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
+            "MainBundleSize": 2014405,
+            "DependAssets": []
         },
         {
             "Address": "输入框",
@@ -413,7 +420,7 @@
             "AssetGUID": "29e81642a664fdc4aab8e6380221a75e",
             "AssetTags": [],
             "MainBundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
-            "MainBundleSize": 2014306,
+            "MainBundleSize": 2014405,
             "DependAssets": [
                 "Assets/Nova/Icons/UIBlockActivatorIcon.png",
                 "Assets/Nova/Icons/ScrollerIcon.png",
@@ -436,7 +443,7 @@
             "AssetGUID": "9d9e8029103d0b549bb95236742954f0",
             "AssetTags": [],
             "MainBundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
-            "MainBundleSize": 2014306,
+            "MainBundleSize": 2014405,
             "DependAssets": [
                 "Assets/Nova/Icons/UIBlockActivatorIcon.png",
                 "Assets/Nova/Icons/InteractableIcon.png",
@@ -587,7 +594,7 @@
                 "UI"
             ],
             "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_用户管理.bundle",
-            "MainBundleSize": 75949,
+            "MainBundleSize": 75951,
             "DependAssets": [
                 "Assets/Nova/Icons/UIBlockActivatorIcon.png",
                 "Assets/[0]Cilent/Textures/用户管理8/删除1.png",
@@ -611,7 +618,7 @@
                 "UI"
             ],
             "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_用户管理.bundle",
-            "MainBundleSize": 75949,
+            "MainBundleSize": 75951,
             "DependAssets": [
                 "Assets/Nova/Icons/ScrollerIcon.png",
                 "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
@@ -647,7 +654,7 @@
                 "UI"
             ],
             "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_用户管理.bundle",
-            "MainBundleSize": 75949,
+            "MainBundleSize": 75951,
             "DependAssets": [
                 "Assets/Nova/Icons/UIBlockActivatorIcon.png",
                 "Assets/Nova/Icons/ScrollerIcon.png",
@@ -676,7 +683,7 @@
                 "UI"
             ],
             "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_评定人管理.bundle",
-            "MainBundleSize": 50967,
+            "MainBundleSize": 50968,
             "DependAssets": [
                 "Assets/Nova/Icons/UIBlockActivatorIcon.png",
                 "Assets/[0]Cilent/Textures/用户管理8/删除1.png",
@@ -700,7 +707,7 @@
                 "UI"
             ],
             "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_评定人管理.bundle",
-            "MainBundleSize": 50967,
+            "MainBundleSize": 50968,
             "DependAssets": [
                 "Assets/Nova/Icons/ScrollerIcon.png",
                 "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
@@ -736,7 +743,7 @@
                 "UI"
             ],
             "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_评定人管理.bundle",
-            "MainBundleSize": 50967,
+            "MainBundleSize": 50968,
             "DependAssets": [
                 "Assets/[0]Cilent/Textures/用户管理8/账号信息1.png",
                 "Assets/Nova/Icons/UIBlockActivatorIcon.png",
@@ -834,7 +841,7 @@
                 "UI"
             ],
             "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用.bundle",
-            "MainBundleSize": 13654,
+            "MainBundleSize": 13554,
             "DependAssets": [
                 "Assets/Nova/Icons/UIBlockActivatorIcon.png",
                 "Assets/Nova/Icons/UIBlock2DIcon.png"
@@ -848,7 +855,7 @@
                 "UI"
             ],
             "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用.bundle",
-            "MainBundleSize": 13654,
+            "MainBundleSize": 13554,
             "DependAssets": [
                 "Assets/Nova/Icons/UIBlockActivatorIcon.png",
                 "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/Button_Dark.prefab",
@@ -860,9 +867,7 @@
                 "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
                 "Assets/[0]Cilent/Fonts/苹方字体.ttf",
                 "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
-                "Assets/Nova/Icons/TextBlockIcon.png",
-                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
-                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset"
+                "Assets/Nova/Icons/TextBlockIcon.png"
             ]
         },
         {
@@ -871,7 +876,7 @@
             "AssetGUID": "0490507c22760a846a7f3f4e0cdbe835",
             "AssetTags": [],
             "MainBundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
-            "MainBundleSize": 151412,
+            "MainBundleSize": 152737,
             "DependAssets": [
                 "Assets/[0]Cilent/Scripts/[1]HotFix/[5]Utility&Tool/BleAPI/BleDeviceDis.prefab",
                 "Assets/[0]Cilent/Scripts/[1]HotFix/[5]Utility&Tool/BleAPI/BleScanerPanel.prefab"
@@ -883,7 +888,7 @@
             "AssetGUID": "b0e12921701a963438ebc88365a0969d",
             "AssetTags": [],
             "MainBundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
-            "MainBundleSize": 151412,
+            "MainBundleSize": 152737,
             "DependAssets": [
                 "Assets/Nova/Icons/ScrollerIcon.png",
                 "Assets/Nova/Sample/UIControls/Textures/Arrow.png",
@@ -922,7 +927,7 @@
             "AssetGUID": "445c8dc5032dcc345a3bbe083fa3ca0e",
             "AssetTags": [],
             "MainBundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
-            "MainBundleSize": 151412,
+            "MainBundleSize": 152737,
             "DependAssets": [
                 "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
                 "Assets/Nova/Icons/ListViewIcon.png",
@@ -979,7 +984,7 @@
             "AssetGUID": "b05e893c517f2f048a65184e16a742df",
             "AssetTags": [],
             "MainBundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
-            "MainBundleSize": 151412,
+            "MainBundleSize": 152737,
             "DependAssets": [
                 "Assets/Nova/Icons/ScrollerIcon.png",
                 "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
@@ -999,8 +1004,8 @@
                 "Assets/Nova/Icons/ItemViewIcon.png",
                 "Assets/Nova/Icons/UIBlock2DIcon.png",
                 "Assets/Nova/Icons/SortGroupIcon.png",
-                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
                 "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
                 "Assets/[0]Cilent/Fonts/苹方字体.ttf",
                 "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
                 "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
@@ -1013,7 +1018,7 @@
             "AssetGUID": "33bf146c99c07024e801856bf10e1155",
             "AssetTags": [],
             "MainBundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
-            "MainBundleSize": 151412,
+            "MainBundleSize": 152737,
             "DependAssets": [
                 "Assets/Nova/Icons/UIBlockActivatorIcon.png",
                 "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/Button_Dark.prefab",
@@ -1023,10 +1028,10 @@
                 "Assets/Nova/Icons/SortGroupIcon.png",
                 "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
                 "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
                 "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
                 "Assets/Nova/Icons/TextBlockIcon.png",
-                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
-                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
                 "Assets/[0]Cilent/Config/RainbowHierarchyRuleset.prefab",
                 "Assets/[0]Cilent/Textures/ui界面/选择界面9/选择界面.jpg",
                 "Assets/Nova/Icons/ScreenSpaceIcon.png"
@@ -1209,10 +1214,10 @@
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
-            "FileName": "4a5f6b5b65851f87160c8ad3b5e5099f.bundle",
-            "FileHash": "4a5f6b5b65851f87160c8ad3b5e5099f",
-            "FileCRC": "98927cd1",
-            "FileSize": 2014306,
+            "FileName": "d94efe507332a71d43c4c6286cb38106.bundle",
+            "FileHash": "d94efe507332a71d43c4c6286cb38106",
+            "FileCRC": "e17213ad",
+            "FileSize": 2014405,
             "Encrypted": false,
             "Tags": [],
             "DependBundles": [
@@ -1228,6 +1233,7 @@
                 "Assets/[0]Cilent/Prefabs/Procedural Image.prefab",
                 "Assets/[0]Cilent/Prefabs/StartInit.prefab",
                 "Assets/[0]Cilent/Prefabs/界面加载动画.prefab",
+                "Assets/[0]Cilent/Prefabs/监视器.prefab",
                 "Assets/[0]Cilent/Prefabs/输入框.prefab",
                 "Assets/[0]Cilent/Prefabs/选择框.prefab"
             ]
@@ -1291,10 +1297,10 @@
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_用户管理.bundle",
-            "FileName": "cae7dcd123538d44bbf1beb0cf13e42c.bundle",
-            "FileHash": "cae7dcd123538d44bbf1beb0cf13e42c",
-            "FileCRC": "315ea390",
-            "FileSize": 75949,
+            "FileName": "3edac3275f11cabd8d3206896db6644e.bundle",
+            "FileHash": "3edac3275f11cabd8d3206896db6644e",
+            "FileCRC": "bd3ae63a",
+            "FileSize": 75951,
             "Encrypted": false,
             "Tags": [
                 "UI"
@@ -1316,10 +1322,10 @@
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_评定人管理.bundle",
-            "FileName": "6101f21457e471bb7406959e08f3b8af.bundle",
-            "FileHash": "6101f21457e471bb7406959e08f3b8af",
-            "FileCRC": "923a6885",
-            "FileSize": 50967,
+            "FileName": "f81adfd00e46f91ac7283b95b92db205.bundle",
+            "FileHash": "f81adfd00e46f91ac7283b95b92db205",
+            "FileCRC": "bb9bad03",
+            "FileSize": 50968,
             "Encrypted": false,
             "Tags": [
                 "UI"
@@ -1362,17 +1368,16 @@
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用.bundle",
-            "FileName": "87f9815f57cd40ad770f9b219e68784f.bundle",
-            "FileHash": "87f9815f57cd40ad770f9b219e68784f",
-            "FileCRC": "5af25573",
-            "FileSize": 13654,
+            "FileName": "ae1aa00e6fd318848aeaa9e273eee83d.bundle",
+            "FileHash": "ae1aa00e6fd318848aeaa9e273eee83d",
+            "FileCRC": "5d38ee6c",
+            "FileSize": 13554,
             "Encrypted": false,
             "Tags": [
                 "UI"
             ],
             "DependBundles": [
                 "defaultpackage_share_assets_[0]cilent_fonts.bundle",
-                "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
                 "defaultpackage_unityshaders.bundle"
             ],
             "AllBuiltinAssets": [
@@ -1382,10 +1387,10 @@
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
-            "FileName": "bcac58989df8fe5a1d115b0676655865.bundle",
-            "FileHash": "bcac58989df8fe5a1d115b0676655865",
-            "FileCRC": "425938a2",
-            "FileSize": 151412,
+            "FileName": "544dd4e18ac13a65309ec5002473e0c0.bundle",
+            "FileHash": "544dd4e18ac13a65309ec5002473e0c0",
+            "FileCRC": "84e5abbc",
+            "FileSize": 152737,
             "Encrypted": false,
             "Tags": [],
             "DependBundles": [
@@ -1422,10 +1427,10 @@
         },
         {
             "BundleName": "defaultpackage_share_assets_editor_proceduraluiimage_editor.bundle",
-            "FileName": "335c203302a627413e2723aee5756e69.bundle",
-            "FileHash": "335c203302a627413e2723aee5756e69",
-            "FileCRC": "8cc8bc4b",
-            "FileSize": 2271,
+            "FileName": "70925bc17e7b9564139e8e46e97939ff.bundle",
+            "FileHash": "70925bc17e7b9564139e8e46e97939ff",
+            "FileCRC": "d0323bbb",
+            "FileSize": 1200,
             "Encrypted": false,
             "Tags": [],
             "DependBundles": [],
@@ -1448,10 +1453,10 @@
         },
         {
             "BundleName": "defaultpackage_share_assets_nova_icons.bundle",
-            "FileName": "bfb6a02a2dea5ace31948257743f6d55.bundle",
-            "FileHash": "bfb6a02a2dea5ace31948257743f6d55",
-            "FileCRC": "b4078259",
-            "FileSize": 18418,
+            "FileName": "0443ddfa9b3209a915519aedd3673804.bundle",
+            "FileHash": "0443ddfa9b3209a915519aedd3673804",
+            "FileCRC": "c2fc81ce",
+            "FileSize": 1415,
             "Encrypted": false,
             "Tags": [],
             "DependBundles": [],
@@ -1471,10 +1476,10 @@
         },
         {
             "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle",
-            "FileName": "d6238e177b442fe86e771df3e041aa13.bundle",
-            "FileHash": "d6238e177b442fe86e771df3e041aa13",
-            "FileCRC": "0e128ef4",
-            "FileSize": 19297,
+            "FileName": "5067e38bd4787ba20db286d51fcf9bdd.bundle",
+            "FileHash": "5067e38bd4787ba20db286d51fcf9bdd",
+            "FileCRC": "4be998d2",
+            "FileSize": 19414,
             "Encrypted": false,
             "Tags": [
                 "UI"
@@ -1510,10 +1515,10 @@
         },
         {
             "BundleName": "defaultpackage_share_packages_com_unity_textmeshpro_editor_resources_gizmos.bundle",
-            "FileName": "e3bde2f7a8eca8c402e878ee3d265243.bundle",
-            "FileHash": "e3bde2f7a8eca8c402e878ee3d265243",
-            "FileCRC": "a6857ffb",
-            "FileSize": 3990,
+            "FileName": "10731cb88b91dff9907ddcf16986e1e1.bundle",
+            "FileHash": "10731cb88b91dff9907ddcf16986e1e1",
+            "FileCRC": "68a03cfb",
+            "FileSize": 1233,
             "Encrypted": false,
             "Tags": [],
             "DependBundles": [],
@@ -1523,10 +1528,10 @@
         },
         {
             "BundleName": "defaultpackage_share_assets_[0]cilent_fonts.bundle",
-            "FileName": "3211d4e4eba4e8ceba34701999ef9f14.bundle",
-            "FileHash": "3211d4e4eba4e8ceba34701999ef9f14",
-            "FileCRC": "e2d56659",
-            "FileSize": 8511720,
+            "FileName": "b7a57981c7a671368d736b7ffe48fc25.bundle",
+            "FileHash": "b7a57981c7a671368d736b7ffe48fc25",
+            "FileCRC": "bf3ac57a",
+            "FileSize": 8512946,
             "Encrypted": false,
             "Tags": [
                 "UI"
@@ -1537,24 +1542,6 @@
             "AllBuiltinAssets": [
                 "Assets/[0]Cilent/Fonts/苹方字体.ttf",
                 "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset"
-            ]
-        },
-        {
-            "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
-            "FileName": "df8d19f2928c08841d16569a641af214.bundle",
-            "FileHash": "df8d19f2928c08841d16569a641af214",
-            "FileCRC": "7248e97e",
-            "FileSize": 244442,
-            "Encrypted": false,
-            "Tags": [
-                "UI"
-            ],
-            "DependBundles": [
-                "defaultpackage_unityshaders.bundle"
-            ],
-            "AllBuiltinAssets": [
-                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
-                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset"
             ]
         },
         {
@@ -1620,6 +1607,24 @@
             "AllBuiltinAssets": [
                 "Assets/[0]Cilent/Scripts/[1]HotFix/[5]Utility&Tool/BleAPI/BleDeviceDis.prefab",
                 "Assets/[0]Cilent/Scripts/[1]HotFix/[5]Utility&Tool/BleAPI/BleScanerPanel.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+            "FileName": "df8d19f2928c08841d16569a641af214.bundle",
+            "FileHash": "df8d19f2928c08841d16569a641af214",
+            "FileCRC": "7248e97e",
+            "FileSize": 244442,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf"
             ]
         },
         {
