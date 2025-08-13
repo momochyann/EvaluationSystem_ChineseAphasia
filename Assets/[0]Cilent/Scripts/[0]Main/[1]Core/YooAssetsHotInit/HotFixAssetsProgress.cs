@@ -33,7 +33,7 @@ public class HotFixAssetsProgress : MonoBehaviour
     public void PlaySupplementaryMetadataLoadingAnimation(float progress)
     {
         string tipText = progress == 1 ? "加载数据完成,准备进入" : null;
-        float duration = 0.3f;
+        float duration = 0.03f;
         #if UNITY_EDITOR
         duration = 0.01f;
         #endif
@@ -51,7 +51,7 @@ public class HotFixAssetsProgress : MonoBehaviour
         AddDynamicLoadingAnimation(DOTween.To(_value =>
             {
                 progressImage.fillAmount = _value;
-            }, _lastSetProgress, targetProgress, 0.02f).SetEase(Ease.Linear));
+            }, _lastSetProgress, targetProgress, 0.01f).SetEase(Ease.Linear));
         _lastSetProgress = targetProgress;
     }
 
@@ -74,7 +74,7 @@ public class HotFixAssetsProgress : MonoBehaviour
             AddDynamicLoadingAnimation(DOTween.To(_value =>
             {
                 progressImage.fillAmount = _value;
-            }, 0, 1f, 0.3f).SetEase(Ease.Linear), tipText);
+            }, 0, 1f, 0.03f).SetEase(Ease.Linear), tipText);
         }
     }
     void AddDynamicLoadingAnimation(Tweener tweener, string tipText = null)
