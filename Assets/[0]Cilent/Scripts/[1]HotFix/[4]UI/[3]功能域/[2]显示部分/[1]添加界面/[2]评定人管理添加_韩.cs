@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using QFramework;
+using System;
 public class 评定人管理添加_韩 : 界面基础_韩
 {
     // Start is called before the first frame update
@@ -15,7 +16,7 @@ public class 评定人管理添加_韩 : 界面基础_韩
     [SerializeField] public NovaSamples.UIControls.Button 确定;
     [SerializeField] public NovaSamples.UIControls.Button 取消;
     [SerializeField] public NovaSamples.UIControls.Button 临时添加;
-    void Start()
+    private void Awake()
     {
         登录账号.Text = "";
         登录密码.Text = "";
@@ -24,10 +25,31 @@ public class 评定人管理添加_韩 : 界面基础_韩
         联系方式.Text = "";
         身份证.Text = "";
         出生日期.Text = "";
+        显示信息 += 显示信息详情;
+    }
+    void Start()
+    {
+
         确定.OnClicked.AddListener(() => 添加账号());
         取消.OnClicked.AddListener(() => 取消添加());
         临时添加.OnClicked.AddListener(临时添加信息);
+
     }
+
+    private void 显示信息详情(I记贞 记)
+    {
+        Debug.Log("显示详情");
+        评人 评人 = 记 as 评人;
+        登录账号.Text = 评人.账号;
+        登录密码.Text = 评人.密码;
+        姓名.Text = 评人.名;
+        性别.Text = 评人.性别;
+        联系方式.Text = 评人.电话;
+        身份证.Text = 评人.身份证;
+        出生日期.Text = 评人.诞辰;
+
+    }
+
     void 添加账号()
     {
         if (登录账号.Text == "")

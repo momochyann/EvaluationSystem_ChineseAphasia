@@ -1117,7 +1117,7 @@ Transform:
   m_GameObject: {fileID: 1588666093912493135}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.427, y: -0.5, z: 0}
+  m_LocalPosition: {x: 714.736, y: -26.816, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1320,7 +1320,7 @@ MonoBehaviour:
     LightingModel: 0
     ShadowCastingMode: 2
     ReceiveShadows: 1
-  PreviewSize: {x: 1, y: 1, z: 0}
+  PreviewSize: {x: 1441.326, y: 53.632, z: 0}
   visuals:
     Color: {r: 1, g: 1, b: 1, a: 0}
     CornerRadius:
@@ -1786,6 +1786,7 @@ GameObject:
   - component: {fileID: 8444966733618107156}
   - component: {fileID: 5289986090961056562}
   - component: {fileID: 2002525623062713071}
+  - component: {fileID: 4083542780095302016}
   m_Layer: 0
   m_Name: "\u67E5\u770B"
   m_TagString: Untagged
@@ -2169,6 +2170,20 @@ MonoBehaviour:
   OnClicked:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4083542780095302016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3809870150123568001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280b11cace355e1449fe9f0590e26ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "\u5F55\u5E1C": "\u8BC4\u4EBA\u5F55"
+  "\u6DFB\u52A0\u9762\u677F\u540D": "\u8BC4\u5B9A\u4EBA\u7BA1\u7406\u6DFB\u52A0"
 --- !u!1 &5177186752131678209
 GameObject:
   m_ObjectHideFlags: 0

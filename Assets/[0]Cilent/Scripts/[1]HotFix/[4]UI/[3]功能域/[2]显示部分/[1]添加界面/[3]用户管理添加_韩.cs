@@ -33,7 +33,10 @@ public class 用户管理添加_韩 : 界面基础_韩
     [SerializeField] public NovaSamples.UIControls.Button 取消;
     [SerializeField] public NovaSamples.UIControls.Button 临时添加;
 
-
+    private void Awake()
+    {
+        显示信息 += 显示信息详情;
+    }
     void Start()
     {
         this.确定.OnClicked.AddListener(添加账号);
@@ -113,6 +116,28 @@ public class 用户管理添加_韩 : 界面基础_韩
         母亲电话.Text = "";
         是否为本地户籍.ToggledOn = false;
         居住地址.Text = "";
+    }
+    void 显示信息详情(I记贞 记)
+    {
+        Debug.Log("[ [3] 用户管理添加_韩]显示信息详情");
+        用户 用户 = 记 as 用户;
+        编号.Text = 用户.编号;
+        姓名.Text = 用户.名;
+        性别.Text = 用户.性别;
+        身份证.Text = 用户.身份证;
+        出生日期.Text = 用户.诞辰;
+        民族.Text = 用户.民族;
+        怀孕时间.Text = 用户.怀孕时间;
+        分娩方式.Text = 用户.分娩方式;
+        出生身长.Text = 用户.出生身长;
+        出生体重.Text = 用户.出生体重;
+        出生头围.Text = 用户.出生头围;
+        父亲.Text = 用户.父亲;
+        父亲电话.Text = 用户.父亲电话;
+        母亲.Text = 用户.母亲;
+        母亲电话.Text = 用户.母亲电话;
+        是否为本地户籍.ToggledOn = 用户.是否为本地户籍;
+        居住地址.Text = 用户.居住地址;
     }
     void 临时添加信息()
     {

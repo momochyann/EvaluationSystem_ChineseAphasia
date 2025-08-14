@@ -669,6 +669,7 @@ GameObject:
   - component: {fileID: 5232776367239943221}
   - component: {fileID: 5541795881985465626}
   - component: {fileID: 1091613367793490366}
+  - component: {fileID: 7031162224604859874}
   m_Layer: 0
   m_Name: "\u67E5\u770B"
   m_TagString: Untagged
@@ -1052,6 +1053,20 @@ MonoBehaviour:
   OnClicked:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7031162224604859874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595321957385670394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280b11cace355e1449fe9f0590e26ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "\u5F55\u5E1C": "\u7528\u6237\u5F55"
+  "\u6DFB\u52A0\u9762\u677F\u540D": "\u7528\u6237\u7BA1\u7406\u6DFB\u52A0"
 --- !u!1 &766542337107748756
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,7 +2147,7 @@ Transform:
   m_GameObject: {fileID: 3336473151199759394}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -216.81601, z: 0}
+  m_LocalPosition: {x: 0, y: -26.816002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

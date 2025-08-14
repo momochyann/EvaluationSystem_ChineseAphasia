@@ -110,4 +110,5 @@ public class 显示条目_韩 : MonoBehaviour, IController
 public interface IentryDis
 {
     void 显示信息(int 索引 = -1);
+    int 索引下标{get;set;}
 }

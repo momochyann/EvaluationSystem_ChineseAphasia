@@ -14,7 +14,7 @@ public class 界面管理器_韩 : MonoBehaviour
 
     
     // 当前显示的面板
-    private 界面基础_韩 _currentPanel;
+    public 界面基础_韩 _currentPanel;
     
     // 已加载的面板缓存（键：面板唯一标识，值：面板实例）
     // 缓存避免重复加载，提高性能

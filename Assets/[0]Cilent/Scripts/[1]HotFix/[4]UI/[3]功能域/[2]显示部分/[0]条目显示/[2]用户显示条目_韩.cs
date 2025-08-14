@@ -16,7 +16,9 @@ public class 用户显示条目_韩 : MonoBehaviour,IController,IentryDis
     [SerializeField] public NovaSamples.UIControls.Button 查看;
     [SerializeField] public NovaSamples.UIControls.Button 删除; 
     private int 当前索引 = -1; // 存储当前条目的索引
-    
+
+    public int 索引下标 { get; set; }
+
     void Start()
     {
         // 初始化时添加监听器
