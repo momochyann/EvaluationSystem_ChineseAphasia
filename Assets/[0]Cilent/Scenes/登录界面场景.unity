@@ -1365,7 +1365,6 @@ GameObject:
   - component: {fileID: 1482478962}
   - component: {fileID: 1482478964}
   - component: {fileID: 1482478963}
-  - component: {fileID: 1482478965}
   - component: {fileID: 1482478966}
   m_Layer: 0
   m_Name: "\u767B\u5F55\u754C\u9762\u80CC\u666F\u56FE\u7247"
@@ -1653,23 +1652,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9117b6d975111c47b064a4373cc67ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1482478965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482478961}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df3ae20afe5bece41af04e2402c22ede, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "\u7528\u6237\u540D": {fileID: 1602183313}
-  "\u5BC6\u7801": {fileID: 215964355}
-  "\u8BB0\u4F4F\u5BC6\u7801": {fileID: 1880254458}
-  "\u81EA\u52A8\u767B\u5F55": {fileID: 1345574512}
-  "\u767B\u5F55\u6309\u952E": {fileID: 518398240}
 --- !u!114 &1482478966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2208,7 +2190,7 @@ MonoBehaviour:
         Raw: 1920
         Type: 0
       Y:
-        Raw: 1080
+        Raw: 1200
         Type: 0
       Z:
         Raw: 0
@@ -2445,7 +2427,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.009259259, y: 0.009259259, z: 0.009259259}
+  m_LocalScale: {x: 0.008333334, y: 0.008333334, z: 0.008333334}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1074111587}
