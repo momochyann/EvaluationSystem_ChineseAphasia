@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using Nova;
 using QFramework;
-using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System;
 using NovaSamples.UIControls;
 using Cysharp.Threading.Tasks;
 using System.Linq;
+
 // 登录界面逻辑类，实现IController接口
 public class 登录界面_茉 : MonoBehaviour, IController
 {
 
     // Start在第一帧更新前调用
-    [SerializeField] NovaSamples.UIControls.TextField 用户名;  // 用户名输入框
-    [SerializeField] NovaSamples.UIControls.TextField 密码;     // 密码输入框
+    [SerializeField] UIBlock2D 名状昭;
+    [SerializeField] UIBlock2D 缄状昭;
+    [SerializeField] TextField 用户名;  // 用户名输入框
+    [SerializeField] TextField 密码;     // 密码输入框
     [SerializeField] TextBlock 密码inputDIs;     // 密码输入框
-    [SerializeField] NovaSamples.UIControls.Toggle 记住密码;   // 记住密码复选框
+    [SerializeField] Toggle 记住密码;   // 记住密码复选框
     [SerializeField] NovaSamples.UIControls.Toggle 自动登录;   // 自动登录复选框
     [SerializeField] NovaSamples.UIControls.Button 登录按键;    // 登录按钮
     private bool _needUpdateCursor = false;  // 标记是否需要更新光标位置
@@ -80,6 +82,8 @@ public class 登录界面_茉 : MonoBehaviour, IController
             PlayerPrefs.SetString("密码", "");
             输入数据 = "";
         }
+        缄状昭.Hide();
+        名状昭.Hide();
     }
     char lastChar = ' ';
     int lastIndex = -1;
@@ -163,21 +167,28 @@ public class 登录界面_茉 : MonoBehaviour, IController
                 }
                 else
                 {
+                    缄状昭.Show();
                     Debug.Log("[0]登录界面_韩 密码错误");
                 }
             }
-            else
+            else if (用户名.Text == "admin")
             {
                 // 管理员账号验证
-                if (用户名.Text == "admin" && 输入数据 == "123456")
+                if (输入数据 == "123456")
                 {
                     Debug.Log("[0]登录界面_韩 管理员登录成功");
                     跳转界面("选择场景");
                 }
                 else
                 {
-                    Debug.Log("[0]登录界面_韩 用户不存在");
+                    缄状昭.Show();
+                    Debug.Log("[0]登录界面_韩 管理员密码错误");
                 }
+            }
+            else 
+            {
+                名状昭.Show();
+                Debug.Log("[0]登录界面_韩 用户不存在");
             }
         }
     }

@@ -74,7 +74,7 @@ public class HotFixAssetsProgress : MonoBehaviour
             AddDynamicLoadingAnimation(DOTween.To(_value =>
             {
                 progressImage.fillAmount = _value;
-            }, 0, 1f, 0.03f).SetEase(Ease.Linear), tipText);
+            }, 0, 1f, 0.013f).SetEase(Ease.Linear), tipText);
         }
     }
     void AddDynamicLoadingAnimation(Tweener tweener, string tipText = null)
