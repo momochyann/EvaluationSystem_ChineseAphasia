@@ -8,6 +8,7 @@ public static class BleManager
 {
 	public static bool isInit;
 	public static bool isScanning;
+	public static bool isConnected;
 	public static HashSet<string> deviceHashSet = new HashSet<string>();
 	public static UnityAction<string, string> discoveredPeripheralAction;
 	public static UnityAction<string, string, byte[]> onCharacteristicNotificationAction;

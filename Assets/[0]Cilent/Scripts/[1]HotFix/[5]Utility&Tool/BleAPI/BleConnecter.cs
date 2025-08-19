@@ -28,6 +28,7 @@ public class BleConnecter : MonoBehaviour
     {
         connectBtn = this.GetComponent<Button>();
         this.GetComponent<UIBlock2D>().Color = Color.gray;
+        this.GetComponentInChildren<TextBlock>().Text = "蓝牙未连接";
         // UIBlock2D = this.GetComponent<UIBlock2D>();
         connectBtn.OnClicked.AddListener(() =>
         {
@@ -60,6 +61,7 @@ public class BleConnecter : MonoBehaviour
 
     async UniTaskVoid ConnectBLE()
     {
+        Debug.Log("开始连接蓝牙");
         await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
         BleManager.StartScan();
     }
@@ -90,6 +92,7 @@ public class BleConnecter : MonoBehaviour
     void OnNotificationSuccess(string serviceUUID, string characteristicUUID)
     {
         // SendDataLoop().Forget();
+        BleManager.isConnected = true;
         this.GetComponent<UIBlock2D>().Color = Color.blue;
         Debug.Log($"订阅Noity成功{serviceUUID}{characteristicUUID}");
     }

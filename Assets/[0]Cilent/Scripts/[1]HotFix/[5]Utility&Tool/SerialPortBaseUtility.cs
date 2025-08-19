@@ -43,7 +43,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     [DllImport("SetupAPI.dll", CharSet = CharSet.Auto)]
     private static extern void spapDeviceList(int index, StringBuilder deviceInfo, int bufferSize);
 
-    public bool IsConnected => isConnected;
+    public bool IsConnected => isConnected; 
     public string CurrentPortName => currentPortName;
 
     public event Action<bool> OnConnectionStatusChanged;

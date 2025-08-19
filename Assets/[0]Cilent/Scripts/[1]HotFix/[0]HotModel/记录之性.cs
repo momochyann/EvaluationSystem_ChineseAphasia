@@ -207,8 +207,31 @@ public abstract class 录元<T> : AbstractModel, ICanGetSystem, I录贞 where T 
         return new List<int>();
     }
 
+    public bool 纳记于信(string 信, bool 清空 = false)
+    {
+        List<T> data = null;
+        try
+        {
+            data = JsonMapper.ToObject<List<T>>(信);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"纳记于信失败: {e.Message}");
+            return false;
+        }
+        if (清空)
+        {
+            ClearItems();
+        }
+        foreach (var item in data)
+        {
+            AddItem(item, false);
+        }
+        SaveData();
+        return true;
+    }
     #region JSON导入导出功能
-    
+
     /// <summary>
     /// 导出数据为JSON文件
     /// </summary>
@@ -217,51 +240,51 @@ public abstract class 录元<T> : AbstractModel, ICanGetSystem, I录贞 where T 
     public bool ExportToJson(string fileName = null)
     {
         var jsonUtility = this.GetUtility<JsonDataUtility>();
-        if(fileName == null)
+        if (fileName == null)
         {
             fileName = GetStorageKey();
         }
         return jsonUtility.ExportToJson(dataList, fileName);
     }
-    
+
     /// <summary>
     /// 从JSON文件导入数据
     /// </summary>
     /// <param name="fileName">文件名（含或不含扩展名）</param>
     /// <param name="clearExisting">是否清空现有数据</param>
     /// <returns>是否导入成功</returns>
-    public bool ImportFromJson(bool clearExisting = true,string fileName = null)
+    public bool ImportFromJson(bool clearExisting = true, string fileName = null)
     {
         var jsonUtility = this.GetUtility<JsonDataUtility>();
-        if(fileName == null)
+        if (fileName == null)
         {
             fileName = GetStorageKey();
         }
         var importedData = jsonUtility.ImportFromJson<T>(fileName);
-        
+
         if (importedData == null)
         {
             return false;
         }
-        
+
         // 清空现有数据（如果需要）
         if (clearExisting)
         {
             dataList.Clear();
         }
-        
+
         // 添加导入的数据
         foreach (var item in importedData)
         {
             dataList.Add(item);
         }
-        
+
         // 保存数据
         SaveData();
-        
+
         return true;
     }
-    
+
     /// <summary>
     /// 获取所有可用的JSON文件名
     /// </summary>
@@ -271,7 +294,7 @@ public abstract class 录元<T> : AbstractModel, ICanGetSystem, I录贞 where T 
         var jsonUtility = this.GetUtility<JsonDataUtility>();
         return jsonUtility.GetAvailableJsonFileNames();
     }
-    
+
     /// <summary>
     /// 打开导出目录
     /// </summary>
@@ -280,7 +303,7 @@ public abstract class 录元<T> : AbstractModel, ICanGetSystem, I录贞 where T 
         var jsonUtility = this.GetUtility<JsonDataUtility>();
         jsonUtility.OpenExportDirectory();
     }
-    
+
     #endregion
 }
 public abstract class CrisisIncidentFileBaseModel<T> : 录元<T> where T : I记贞
@@ -308,7 +331,7 @@ public abstract class CrisisIncidentFileBaseModel<T> : 录元<T> where T : I记�
                 return false;
         }
     }
-    
+
     /// <summary>
     /// 导出为CSV格式（可选功能）
     /// </summary>
@@ -319,7 +342,7 @@ public abstract class CrisisIncidentFileBaseModel<T> : 录元<T> where T : I记�
         Debug.LogWarning("CSV导出功能需要子类实现");
         return false;
     }
-    
+
     /// <summary>
     /// 导出为XML格式（可选功能）
     /// </summary>

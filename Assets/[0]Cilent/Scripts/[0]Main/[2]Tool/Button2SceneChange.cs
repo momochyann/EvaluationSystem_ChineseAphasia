@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Button2SceneChange : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -11,7 +12,11 @@ public class Button2SceneChange : MonoBehaviour
     public bool isLocalLoad = false;
     void Start()
     {
-        GetComponent<Button>().onClick.AddListener(OnClickButton);
+        if (GetComponent<Button>() != null)
+        {
+            GetComponent<Button>().onClick.AddListener(OnClickButton);
+        }
+       
     }
 
     private void OnClickButton()
