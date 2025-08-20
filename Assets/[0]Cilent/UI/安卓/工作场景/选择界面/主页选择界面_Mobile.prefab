@@ -725,7 +725,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -408.00003, y: -42.945503, z: -408.00003, w: -42.945503}
+  m_margin: {x: -391.68002, y: -42.945503, z: -391.68002, w: -42.945503}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -8798,8 +8798,9 @@ GameObject:
   - component: {fileID: 1061936549491342073}
   - component: {fileID: 5776999884334677144}
   - component: {fileID: 2154007068480216051}
+  - component: {fileID: 7125647467308239430}
   m_Layer: 0
-  m_Name: "\u9009\u62E9\u754C\u9762\u5B89\u5353\u7AEF"
+  m_Name: "\u4E3B\u9875\u9009\u62E9\u754C\u9762_Mobile"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9080,3 +9081,24 @@ MonoBehaviour:
     FillEnabled: 1
   texture: {fileID: 2800000, guid: 778fc228ba6ae1b4d893cd018240f3b3, type: 3}
   sprite: {fileID: 0}
+--- !u!114 &7125647467308239430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8709894944486462528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 545285cbd6bbe424b987d13e74184b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "\u7528\u6237\u540D": {fileID: 1029767596478109835}
+  "\u9000\u51FA": {fileID: 5357600825557425084}
+  "\u529F\u80FD\u5217\u8868":
+  - {fileID: 6703136700299422193}
+  - {fileID: 486959717096636800}
+  - {fileID: 3480171720917025840}
+  - {fileID: 2947387465418875714}
+  - {fileID: 467997943998114340}
+  - {fileID: 7854269362350297197}
