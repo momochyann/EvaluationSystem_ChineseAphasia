@@ -4,18 +4,44 @@ using UnityEngine;
 using QFramework;
 using Cysharp.Threading.Tasks;
 
-public class 界面管理器_韩 : MonoBehaviour
+public class 界面管理器_韩 : MonoBehaviour, IController
 {
-    
+
     void Start()
     {
-        
+#if UNITY_EDITOR
+        if (UnityEditor.EditorPrefs.GetInt("TestPlatform", 0) == 0)
+        {
+            var pc背景 = GameObject.Find("PC背景");
+            var mobile背景 = GameObject.Find("安卓背景");
+            if(pc背景 != null) pc背景.SetActive(true);
+            if(mobile背景 != null) mobile背景.SetActive(false);
+        }
+        else{
+            Debug.Log("安卓背景");
+            var pc背景 = GameObject.Find("PC背景");
+            var mobile背景 = GameObject.Find("安卓背景");
+            if(pc背景 != null) pc背景.SetActive(false);
+            if(mobile背景 != null) mobile背景.SetActive(true);
+        }
+#elif UNITY_ANDROID
+        var pc背景 = GameObject.Find("PC背景");
+        var mobile背景 = GameObject.Find("安卓背景");
+        if(pc背景 != null) pc背景.SetActive(false);
+        if(mobile背景 != null) mobile背景.SetActive(true);
+#else
+        var pc背景 = GameObject.Find("PC背景");
+        var mobile背景 = GameObject.Find("安卓背景");
+        if(pc背景 != null) pc背景.SetActive(true);
+        if(mobile背景 != null) mobile背景.SetActive(false);
+#endif
+
     }
 
-    
+
     // 当前显示的面板
     public 界面基础_韩 _currentPanel;
-    
+
     // 已加载的面板缓存（键：面板唯一标识，值：面板实例）
     // 缓存避免重复加载，提高性能
     private Dictionary<string, 界面基础_韩> _loadedPanels = new Dictionary<string, 界面基础_韩>();
@@ -29,6 +55,7 @@ public class 界面管理器_韩 : MonoBehaviour
     {
         // 获取面板的唯一标识（资源路径）
         string panelKey = GetPanelKey<T>();
+        Debug.Log("显示界面" + panelKey);
         // 调用字符串版本的ShowPanel方法
         显示界面(panelKey);
     }
@@ -87,7 +114,7 @@ public class 界面管理器_韩 : MonoBehaviour
             {
                 _currentPanel = null;
             }
-            
+
             // 销毁面板游戏对象
             Destroy(panel.gameObject);
             // 从缓存中移除
@@ -104,15 +131,17 @@ public class 界面管理器_韩 : MonoBehaviour
         try
         {
             // 使用项目中已有的LoadYooAssetsTool来加载资源
-            GameObject panelPrefab = await LoadYooAssetsTool.LoadAsset<GameObject>(panelKey);
-            
+            Debug.Log("加载界面" + panelKey);
+            GameObject panelPrefab = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb(panelKey);
+            // GameObject panelPrefab = await LoadYooAssetsTool.LoadAsset<GameObject>(panelKey);
+
             if (panelPrefab != null)
             {
                 // 加载成功，实例化面板预制体
                 GameObject panelObj = Instantiate(panelPrefab);
                 // 将面板设置为管理器的子对象，方便场景管理
                 panelObj.transform.SetParent(transform, false);
-                
+
                 // 获取面板上的界面基础_韩组件
                 界面基础_韩 panel = panelObj.GetComponent<界面基础_韩>();
                 if (panel == null)
@@ -171,5 +200,10 @@ public class 界面管理器_韩 : MonoBehaviour
         // 清空缓存
         _loadedPanels.Clear();
         _currentPanel = null;
+    }
+
+    public IArchitecture GetArchitecture()
+    {
+        return HotFixTemplateArchitecture.Interface;
     }
 }

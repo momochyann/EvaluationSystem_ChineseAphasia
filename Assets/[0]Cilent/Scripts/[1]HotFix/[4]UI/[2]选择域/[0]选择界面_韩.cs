@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using NovaSamples.UIControls;
 using Cysharp.Threading.Tasks;
-
 using QFramework;
 
 public class 选择界面_韩 : MonoBehaviour, IController
@@ -40,7 +39,7 @@ public class 选择界面_韩 : MonoBehaviour, IController
     public void 执行功能(string 功能名称)
     {
         Debug.Log("执行功能：" + 功能名称);
-        功能名称 = 功能名称 + "显示_PC";
+        功能名称 = 功能名称 + "显示";
         静态传递_韩.SwitchSceneWithPanel("主场景",功能名称);
     }
 
