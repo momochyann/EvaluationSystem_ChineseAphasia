@@ -16,7 +16,10 @@ public class Button2SceneChange : MonoBehaviour
         {
             GetComponent<Button>().onClick.AddListener(OnClickButton);
         }
-       
+        else if(GetComponent<NovaSamples.UIControls.Button>()!=null)
+        {
+            GetComponent<NovaSamples.UIControls.Button>().OnClicked.AddListener(OnClickButton);
+        }
     }
 
     private void OnClickButton()

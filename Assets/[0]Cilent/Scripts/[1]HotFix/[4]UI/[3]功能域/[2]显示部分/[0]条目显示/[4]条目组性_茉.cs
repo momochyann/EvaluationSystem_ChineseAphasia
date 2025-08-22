@@ -19,8 +19,9 @@ public class 条目组性_茉 : MonoBehaviour, IController
     {
         长生();
     }
-    void 长生()
+    async void 长生()
     {
+        await UniTask.Delay(100);
         钮组 = GetComponentsInChildren<Button>();
         foreach (var 钮 in 钮组)
         {
@@ -50,7 +51,15 @@ public class 条目组性_茉 : MonoBehaviour, IController
     {
         await UniTask.Delay(100);
         if (CurrentSelectedEntries.Contains(勾.transform.parent.gameObject))
+        {
+            if (!是否选中)
+            {
+                CurrentSelectedEntries.Remove(勾.transform.parent.gameObject);
+                勾.transform.parent.GetComponent<UIBlock2D>().Color = Color.white;
+            }
             return;
+        }
+
         if (是否选中)
         {
             CurrentSelectedEntries.Add(勾.transform.parent.gameObject);
@@ -60,6 +69,7 @@ public class 条目组性_茉 : MonoBehaviour, IController
         {
             CurrentSelectedEntries.Remove(勾.transform.parent.gameObject);
             勾.transform.parent.GetComponent<UIBlock2D>().Color = Color.white;
+
         }
     }
 
