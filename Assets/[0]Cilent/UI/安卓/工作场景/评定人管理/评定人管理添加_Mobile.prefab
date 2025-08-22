@@ -1521,7 +1521,7 @@ MonoBehaviour:
   inputField: {fileID: 129202361355773164}
   selector: {fileID: 1320938780269173691}
   allowNewlines: 1
-  keyboardType: 0
+  keyboardType: 6
   autoCorrect: 1
   secure: 0
 --- !u!114 &8281586308912886203
@@ -4636,7 +4636,7 @@ MonoBehaviour:
   inputField: {fileID: 8631874118537110174}
   selector: {fileID: 5374448589148121602}
   allowNewlines: 1
-  keyboardType: 0
+  keyboardType: 6
   autoCorrect: 1
   secure: 0
 --- !u!114 &3439093738814269319
@@ -14746,7 +14746,7 @@ MonoBehaviour:
     - rid: 0
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 3294382640005817747}
         DefaultColor: {r: 1, g: 1, b: 1, a: 0}
         HoveredColor: {r: 1, g: 1, b: 1, a: 0}
@@ -16276,7 +16276,7 @@ MonoBehaviour:
   inputField: {fileID: 1500848671148713802}
   selector: {fileID: 8361221711619071682}
   allowNewlines: 1
-  keyboardType: 0
+  keyboardType: 6
   autoCorrect: 1
   secure: 0
 --- !u!114 &942355569847489675
@@ -16984,7 +16984,7 @@ MonoBehaviour:
   inputField: {fileID: 3015922783489988892}
   selector: {fileID: 5303178757111314916}
   allowNewlines: 1
-  keyboardType: 0
+  keyboardType: 6
   autoCorrect: 1
   secure: 0
 --- !u!114 &1248943044176356227
@@ -19437,7 +19437,7 @@ MonoBehaviour:
   inputField: {fileID: 1561441805090557590}
   selector: {fileID: 1463201019967079357}
   allowNewlines: 1
-  keyboardType: 0
+  keyboardType: 6
   autoCorrect: 1
   secure: 0
 --- !u!114 &2216885938045104909

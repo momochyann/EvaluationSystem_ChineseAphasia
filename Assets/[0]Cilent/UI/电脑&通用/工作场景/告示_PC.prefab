@@ -354,7 +354,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -190.00002, y: -55.3212, z: -190.00002, w: -55.3212}
+  m_margin: {x: -0.095000006, y: -0.046101004, z: -0.095000006, w: -0.046101004}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -679,7 +679,7 @@ MonoBehaviour:
     - rid: 0
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 7352489655627993454}
         DefaultColor: {r: 0.003921569, g: 0.4, b: 1, a: 1}
         HoveredColor: {r: 1, g: 1, b: 1, a: 0}
@@ -1113,7 +1113,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -249.66002, y: -47.044804, z: -249.66002, w: -47.044804}
+  m_margin: {x: -0.12483001, y: -0.039204, z: -0.12483001, w: -0.039204}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -1749,7 +1749,7 @@ MonoBehaviour:
     - rid: 0
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 3821697515337044731}
         DefaultColor: {r: 0.003921569, g: 0.4, b: 1, a: 1}
         HoveredColor: {r: 1, g: 1, b: 1, a: 0}
