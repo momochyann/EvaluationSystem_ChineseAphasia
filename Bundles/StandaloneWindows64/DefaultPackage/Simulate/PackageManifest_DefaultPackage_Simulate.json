@@ -289,6 +289,13 @@
             "BundleID": 11
         },
         {
+            "Address": "监视器",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/监视器.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 11
+        },
+        {
             "Address": "输入框",
             "AssetPath": "Assets/[0]Cilent/Prefabs/输入框.prefab",
             "AssetGUID": "",
@@ -312,6 +319,15 @@
             "BundleID": 12
         },
         {
+            "Address": "万年历_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/万年历_PC.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 13
+        },
+        {
             "Address": "上目录底色_PC",
             "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/上目录底色_PC.prefab",
             "AssetGUID": "",
@@ -323,6 +339,15 @@
         {
             "Address": "左目录底色_PC",
             "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/左目录底色_PC.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 13
+        },
+        {
+            "Address": "滚轮显示预制体_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/滚轮显示预制体_PC.prefab",
             "AssetGUID": "",
             "AssetTags": [
                 "UI"
@@ -420,8 +445,8 @@
             "BundleID": 17
         },
         {
-            "Address": "量表评估4_PC",
-            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/量表评估/量表评估4_PC.prefab",
+            "Address": "量表评估_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/量表评估/量表评估_PC.prefab",
             "AssetGUID": "",
             "AssetTags": [
                 "UI"
@@ -429,8 +454,8 @@
             "BundleID": 17
         },
         {
-            "Address": "量表评估_PC",
-            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/量表评估/量表评估_PC.prefab",
+            "Address": "量表评估弹出_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/量表评估/量表评估弹出_PC.prefab",
             "AssetGUID": "",
             "AssetTags": [
                 "UI"
@@ -607,7 +632,7 @@
             "UnityCRC": 0,
             "FileHash": "2bc64a6620a18ccf664941ea34885d4a",
             "FileCRC": "00000000",
-            "FileSize": 111222,
+            "FileSize": 107048,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -627,7 +652,7 @@
             "UnityCRC": 0,
             "FileHash": "b2849c1e8ad1a249d43ddfb9218b63a4",
             "FileCRC": "00000000",
-            "FileSize": 260294,
+            "FileSize": 338590,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -637,7 +662,7 @@
             "UnityCRC": 0,
             "FileHash": "fbdf99caae01f053cd673ae2694ca388",
             "FileCRC": "00000000",
-            "FileSize": 2371503,
+            "FileSize": 908983,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -647,7 +672,7 @@
             "UnityCRC": 0,
             "FileHash": "31ecba857877e74cdb8d17127938f1eb",
             "FileCRC": "00000000",
-            "FileSize": 1445166,
+            "FileSize": 1552664,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -657,7 +682,7 @@
             "UnityCRC": 0,
             "FileHash": "8ccf3e66eb2249ff225f19ffaa276846",
             "FileCRC": "00000000",
-            "FileSize": 853445,
+            "FileSize": 860997,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -667,7 +692,7 @@
             "UnityCRC": 0,
             "FileHash": "9f231d07124db95dfc222c233f9b2341",
             "FileCRC": "00000000",
-            "FileSize": 2106237,
+            "FileSize": 2106909,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -687,7 +712,7 @@
             "UnityCRC": 0,
             "FileHash": "93434aa9d7a1e7ced9474205042a4a78",
             "FileCRC": "00000000",
-            "FileSize": 886003,
+            "FileSize": 867546,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []

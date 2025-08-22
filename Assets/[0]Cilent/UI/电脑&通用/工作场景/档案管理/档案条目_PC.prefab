@@ -1758,7 +1758,7 @@ GameObject:
   - component: {fileID: 2706951582234780428}
   - component: {fileID: 4753953822136219607}
   m_Layer: 0
-  m_Name: "\u7BA1\u7406\u5458"
+  m_Name: "\u8BC4\u4F30\u4EBA\u5458"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4585,6 +4585,7 @@ GameObject:
   - component: {fileID: 5589253047303012154}
   - component: {fileID: 5367805726674952994}
   - component: {fileID: 2031226058293496773}
+  - component: {fileID: 4501142287774322757}
   m_Layer: 0
   m_Name: "\u6863\u6848\u6761\u76EE_PC"
   m_TagString: Untagged
@@ -4875,3 +4876,23 @@ MonoBehaviour:
     FillEnabled: 1
   texture: {fileID: 0}
   sprite: {fileID: 0}
+--- !u!114 &4501142287774322757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585597841181959526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd30fd0f4cff34646a3744319bf0a47a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "\u59D3\u540D": {fileID: 269592209231318044}
+  "\u6027\u522B": {fileID: 8362057475084154207}
+  "\u51FA\u751F\u65E5\u671F": {fileID: 6240896856469334146}
+  "\u8EAB\u4EFD\u8BC1": {fileID: 4219633914731227065}
+  "\u8BC4\u4F30\u65F6\u95F4": {fileID: 8334321704307477939}
+  "\u8BC4\u4F30\u4EBA\u5458": {fileID: 2706951582234780428}
+  "\u67E5\u770B\u6309\u94AE": {fileID: 2410915901312090355}
+  "\u5220\u9664\u6309\u94AE": {fileID: 8897005160823052390}
