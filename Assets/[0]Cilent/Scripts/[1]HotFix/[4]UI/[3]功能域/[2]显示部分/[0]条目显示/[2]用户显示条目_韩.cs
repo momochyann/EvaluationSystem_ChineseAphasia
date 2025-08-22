@@ -22,8 +22,8 @@ public class 用户显示条目_韩 : MonoBehaviour,IController,IentryDis
     void Start()
     {
         // 初始化时添加监听器
-        删除.OnClicked.AddListener(() => 删除信息());
-        查看.OnClicked.AddListener(() => 查看信息());
+        if (删除 != null) 删除.OnClicked.AddListener(() => 删除信息());
+        if (查看 != null) 查看.OnClicked.AddListener(() => 查看信息());
     }
 
     public void 显示信息(int 索引 = -1)

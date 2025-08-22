@@ -4110,7 +4110,7 @@ MonoBehaviour:
     - rid: 0
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 3031105777436929356}
         DefaultColor: {r: 0.023529412, g: 0.41960785, b: 0.99607843, a: 1}
         HoveredColor: {r: 1, g: 1, b: 1, a: 1}
@@ -7746,7 +7746,7 @@ MonoBehaviour:
     - rid: 0
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 7537548540209980398}
         DefaultColor: {r: 0.023529412, g: 0.41960785, b: 0.99607843, a: 1}
         HoveredColor: {r: 1, g: 1, b: 1, a: 1}
