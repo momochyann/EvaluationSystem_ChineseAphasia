@@ -21,6 +21,12 @@ public class 删记于录 : AbstractCommand
         this.deleteValue = deleteValue;
         this.entryModelName = entryModelName;
     }
+    public 删记于录(int index, string entryModelName)
+    {
+        this.index = index;
+        this.entryModelName = entryModelName;
+    }
+    int index = -1;
     I记贞 deleteValue;
     string entryModelName;
 
@@ -29,7 +35,14 @@ public class 删记于录 : AbstractCommand
         var model = this.按名取录(entryModelName);
         if (model != null)
         {
-            model.RemoveItem(deleteValue);
+            if (index != -1)
+            {
+                model.RemoveItem(model.GetAllItems()[index]);
+            }
+            else
+            {
+                model.RemoveItem(deleteValue);
+            }
             Debug.Log("[删记于录]删除" + entryModelName);
         }
         else
@@ -37,8 +50,9 @@ public class 删记于录 : AbstractCommand
             Debug.LogError("[删记于录]找不到" + entryModelName);
         }
     }
-
 }
+
+
 public class 改记于录 : AbstractCommand
 {
     public 改记于录(I记贞 oldValue, I记贞 newValue, string entryModelName)
@@ -57,7 +71,7 @@ public class 改记于录 : AbstractCommand
         {
             model.EditItem(oldValue, newValue);
             Debug.Log("[改记于录]编辑" + entryModelName);
-        //    WorkSceneManager.Instance.加载提示("编辑成功");
+            //    WorkSceneManager.Instance.加载提示("编辑成功");
         }
     }
 }

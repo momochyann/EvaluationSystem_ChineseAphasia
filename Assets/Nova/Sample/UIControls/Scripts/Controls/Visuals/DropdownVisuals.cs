@@ -2,7 +2,8 @@ using Nova;
 using System;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
-
+using DG.Tweening;
+using UnityEngine.Events;
 namespace NovaSamples.UIControls
 {
     /// <summary>
@@ -50,7 +51,10 @@ namespace NovaSamples.UIControls
         /// The datasource used to populate this dropdown control and its list of options.
         /// </summary>
         public DropdownData DataSource { get; private set; }
-
+        [HideInInspector]
+        public UnityAction OnExpand;
+        [HideInInspector]
+        public UnityAction OnCollapse;
         /// <summary>
         /// Expand this dropdown control and populate its expanded 
         /// <see cref="OptionsView"/> with the options in the datasource.
@@ -80,7 +84,9 @@ namespace NovaSamples.UIControls
             }
 
             // Update the dropdown arrow rotation
-            DropdownArrow.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            DropdownArrow.transform.DORotate(new Vector3(0, 0, 90), 0.3f);
+            //   DropdownArrow.transform.localRotation = Quaternion.Euler(0, 0, 90);
+            OnExpand?.Invoke();
         }
 
         /// <summary>
@@ -92,7 +98,9 @@ namespace NovaSamples.UIControls
             ExpandedViewRoot.gameObject.SetActive(false);
 
             // Update the dropdown arrow rotation
-            DropdownArrow.transform.localRotation =  Quaternion.Euler(0, 0, 90);
+            DropdownArrow.transform.DORotate(new Vector3(0, 0, 180), 0.3f);
+            // DropdownArrow.transform.localRotation =  Quaternion.Euler(0, 0, 180);
+            OnCollapse?.Invoke();
         }
 
         /// <summary>

@@ -16,7 +16,7 @@ public class 评定人显示条目_韩 : MonoBehaviour, IController, IentryDis/*
     [SerializeField] public TextBlock 出生日期;
     [SerializeField] public NovaSamples.UIControls.Button 查看;
     [SerializeField] public NovaSamples.UIControls.Button 删除;
-
+   
     private int 当前索引 = -1; // 存储当前条目的索引
 
     public int 索引下标 { get; set; }
@@ -24,8 +24,10 @@ public class 评定人显示条目_韩 : MonoBehaviour, IController, IentryDis/*
     void Start()
     {
         // 初始化时添加监听器
-        查看.OnClicked.AddListener(() => 查看信息());
-        删除.OnClicked.AddListener(() => 删除信息());
+       if (查看 != null) 查看.OnClicked.AddListener(() => 查看信息());
+       if (删除 != null) 删除.OnClicked.AddListener(() => 删除信息());
+        
+        
     }
 
     public void 显示信息(int 索引 = -1)
