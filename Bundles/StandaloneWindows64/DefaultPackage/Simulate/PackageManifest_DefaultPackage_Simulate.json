@@ -65,6 +65,13 @@
             "BundleID": 3
         },
         {
+            "Address": "登陆框",
+            "AssetPath": "Assets/[0]Cilent/Textures/ui界面/登录界面9/登陆框.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3
+        },
+        {
             "Address": "总背景",
             "AssetPath": "Assets/[0]Cilent/Textures/ui界面/背景界面9/总背景.jpg",
             "AssetGUID": "",
@@ -163,169 +170,468 @@
             "BundleID": 8
         },
         {
+            "Address": "取消-xA",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/取消-xA.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 9
+        },
+        {
+            "Address": "登录界面A-2000-bg",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/登录界面A-2000-bg.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 9
+        },
+        {
+            "Address": "登录界面A",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/登录界面A.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 9
+        },
+        {
+            "Address": "确认-勾A",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/确认-勾A.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 9
+        },
+        {
+            "Address": "2000x1200-bgd",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/2000x1200-bgd.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 10
+        },
+        {
+            "Address": "iconStart (1)",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (1).png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 10
+        },
+        {
+            "Address": "iconStart (2)",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (2).png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 10
+        },
+        {
+            "Address": "iconStart (3)",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (3).png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 10
+        },
+        {
+            "Address": "iconStart (4)",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (4).png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 10
+        },
+        {
+            "Address": "iconStart (5)",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (5).png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 10
+        },
+        {
+            "Address": "iconStart (6)",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (6).png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 10
+        },
+        {
+            "Address": "主界面-6个icon-new",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/主界面-6个icon-new.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 10
+        },
+        {
+            "Address": "用户名1A",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/用户名1A.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 10
+        },
+        {
+            "Address": "退出A",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/退出A.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 10
+        },
+        {
+            "Address": "2000x1200-bg",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/2000x1200-bg.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 11
+        },
+        {
+            "Address": "删除",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/删除.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 11
+        },
+        {
+            "Address": "取消-x透",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/取消-x透.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 11
+        },
+        {
+            "Address": "搜索1A",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/搜索1A.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 11
+        },
+        {
+            "Address": "添加",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/添加.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 11
+        },
+        {
+            "Address": "确认-勾",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/确认-勾.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 11
+        },
+        {
+            "Address": "管理",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/管理.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 11
+        },
+        {
+            "Address": "蓝牙-高亮",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/蓝牙-高亮.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 11
+        },
+        {
+            "Address": "蓝牙-黄色-link",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/蓝牙-黄色-link.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 11
+        },
+        {
+            "Address": "返回",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 11
+        },
+        {
+            "Address": "评定人管理-列表",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/评定人管理-列表.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 12
+        },
+        {
+            "Address": "账号信息",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/账号信息.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 12
+        },
+        {
+            "Address": "用户管理-信息",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/4-用户管理/用户管理-信息.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 13
+        },
+        {
+            "Address": "用户管理-列表",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/4-用户管理/用户管理-列表.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 13
+        },
+        {
+            "Address": "弹出界面",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/5-通用/弹出效果图/弹出界面.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 14
+        },
+        {
+            "Address": "登录界面-1920-bg",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/老平板尺寸1920x1200/1-登录界面/登录界面-1920-bg.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 15
+        },
+        {
+            "Address": "bg-1920x1200AA",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/老平板尺寸1920x1200/2-主界面/bg-1920x1200AA.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 16
+        },
+        {
+            "Address": "评定人管理-列表1920",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/老平板尺寸1920x1200/3-评定人管理/评定人管理-列表1920.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 17
+        },
+        {
+            "Address": "账号信息1920",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/老平板尺寸1920x1200/3-评定人管理/账号信息1920.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 17
+        },
+        {
+            "Address": "bg-1920x1200",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/老平板尺寸1920x1200/bg-1920x1200.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 18
+        },
+        {
             "Address": "保存1",
             "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/保存1.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 9
+            "BundleID": 19
         },
         {
             "Address": "删除1",
             "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/删除1.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 9
+            "BundleID": 19
         },
         {
             "Address": "加号1",
             "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/加号1.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 9
+            "BundleID": 19
         },
         {
             "Address": "取消1",
             "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/取消1.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 9
+            "BundleID": 19
         },
         {
             "Address": "搜索1",
             "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/搜索1.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 9
+            "BundleID": 19
         },
         {
             "Address": "替换1",
             "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/替换1.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 9
+            "BundleID": 19
         },
         {
             "Address": "查看1",
             "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/查看1.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 9
+            "BundleID": 19
         },
         {
             "Address": "用户名1",
             "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/用户名1.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 9
+            "BundleID": 19
         },
         {
             "Address": "确定1",
             "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/确定1.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 9
+            "BundleID": 19
         },
         {
             "Address": "系统设置1",
             "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/系统设置1.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 9
+            "BundleID": 19
         },
         {
             "Address": "蓝牙1",
             "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/蓝牙1.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 9
+            "BundleID": 19
         },
         {
             "Address": "账号信息1",
             "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/账号信息1.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 9
+            "BundleID": 19
         },
         {
             "Address": "退出1",
             "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/退出1.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 9
+            "BundleID": 19
         },
         {
             "Address": "HotBadgeConfig",
             "AssetPath": "Assets/[0]Cilent/Config/HotBadgeConfig.asset",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 10
+            "BundleID": 20
         },
         {
             "Address": "RainbowHierarchyRuleset",
             "AssetPath": "Assets/[0]Cilent/Config/RainbowHierarchyRuleset.prefab",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 10
+            "BundleID": 20
         },
         {
             "Address": "Procedural Image",
             "AssetPath": "Assets/[0]Cilent/Prefabs/Procedural Image.prefab",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 11
+            "BundleID": 21
         },
         {
             "Address": "StartInit",
             "AssetPath": "Assets/[0]Cilent/Prefabs/StartInit.prefab",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 11
+            "BundleID": 21
         },
         {
             "Address": "界面加载动画",
             "AssetPath": "Assets/[0]Cilent/Prefabs/界面加载动画.prefab",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 11
+            "BundleID": 21
         },
         {
             "Address": "监视器",
             "AssetPath": "Assets/[0]Cilent/Prefabs/监视器.prefab",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 11
+            "BundleID": 21
         },
         {
             "Address": "输入框",
             "AssetPath": "Assets/[0]Cilent/Prefabs/输入框.prefab",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 11
+            "BundleID": 21
+        },
+        {
+            "Address": "选择下拉框",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/选择下拉框.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 21
         },
         {
             "Address": "选择框",
             "AssetPath": "Assets/[0]Cilent/Prefabs/选择框.prefab",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 11
+            "BundleID": 21
         },
         {
-            "Address": "蓝牙连接",
-            "AssetPath": "Assets/[0]Cilent/UI/安卓/组件/蓝牙连接.prefab",
+            "Address": "用户条目_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/用户管理/用户条目_Mobile.prefab",
             "AssetGUID": "",
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 12
+            "BundleID": 22
         },
         {
-            "Address": "万年历_PC",
-            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/万年历_PC.prefab",
+            "Address": "用户管理显示_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/用户管理/用户管理显示_Mobile.prefab",
             "AssetGUID": "",
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 13
+            "BundleID": 22
+        },
+        {
+            "Address": "用户管理添加_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/用户管理/用户管理添加_Mobile.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 22
+        },
+        {
+            "Address": "评定人条目_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/评定人管理/评定人条目_Mobile.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 23
+        },
+        {
+            "Address": "评定人管理显示_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/评定人管理/评定人管理显示_Mobile.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 23
+        },
+        {
+            "Address": "评定人管理添加_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/评定人管理/评定人管理添加_Mobile.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 23
+        },
+        {
+            "Address": "主页选择界面_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/选择界面/主页选择界面_Mobile.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 24
+        },
+        {
+            "Address": "蓝牙连接_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/组件/蓝牙连接_Mobile.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 25
         },
         {
             "Address": "上目录底色_PC",
@@ -334,7 +640,16 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 13
+            "BundleID": 26
+        },
+        {
+            "Address": "告示_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/告示_PC.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 26
         },
         {
             "Address": "左目录底色_PC",
@@ -343,16 +658,16 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 13
+            "BundleID": 26
         },
         {
-            "Address": "滚轮显示预制体_PC",
-            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/滚轮显示预制体_PC.prefab",
+            "Address": "择日器_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/择日器_PC.prefab",
             "AssetGUID": "",
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 13
+            "BundleID": 26
         },
         {
             "Address": "档案条目_PC",
@@ -361,7 +676,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 14
+            "BundleID": 27
         },
         {
             "Address": "档案管理显示_PC",
@@ -370,7 +685,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 14
+            "BundleID": 27
         },
         {
             "Address": "档案管理添加_PC",
@@ -379,7 +694,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 14
+            "BundleID": 27
         },
         {
             "Address": "用户条目_PC",
@@ -388,7 +703,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 15
+            "BundleID": 28
         },
         {
             "Address": "用户管理显示_PC",
@@ -397,7 +712,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 15
+            "BundleID": 28
         },
         {
             "Address": "用户管理添加_PC",
@@ -406,7 +721,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 15
+            "BundleID": 28
         },
         {
             "Address": "评定人条目_PC",
@@ -415,7 +730,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 16
+            "BundleID": 29
         },
         {
             "Address": "评定人管理显示_PC",
@@ -424,7 +739,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 16
+            "BundleID": 29
         },
         {
             "Address": "评定人管理添加_PC",
@@ -433,7 +748,16 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 16
+            "BundleID": 29
+        },
+        {
+            "Address": "主页选择界面_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/选择界面/主页选择界面_PC.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 30
         },
         {
             "Address": "量表评估3_PC",
@@ -442,7 +766,16 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 17
+            "BundleID": 31
+        },
+        {
+            "Address": "量表评估4_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/量表评估/量表评估4_PC.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 31
         },
         {
             "Address": "量表评估_PC",
@@ -451,16 +784,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 17
-        },
-        {
-            "Address": "量表评估弹出_PC",
-            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/量表评估/量表评估弹出_PC.prefab",
-            "AssetGUID": "",
-            "AssetTags": [
-                "UI"
-            ],
-            "BundleID": 17
+            "BundleID": 31
         },
         {
             "Address": "提示框_PC",
@@ -469,7 +793,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 18
+            "BundleID": 32
         },
         {
             "Address": "评人目_PC",
@@ -478,42 +802,42 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 18
+            "BundleID": 32
         },
         {
             "Address": "BLE蓝牙链域",
             "AssetPath": "Assets/[0]Cilent/Scenes/BLE蓝牙链域.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 19
+            "BundleID": 33
         },
         {
             "Address": "GameStartScene",
             "AssetPath": "Assets/[0]Cilent/Scenes/GameStartScene.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 19
+            "BundleID": 33
         },
         {
             "Address": "主场景",
             "AssetPath": "Assets/[0]Cilent/Scenes/主场景.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 19
+            "BundleID": 33
         },
         {
             "Address": "登录界面场景",
             "AssetPath": "Assets/[0]Cilent/Scenes/登录界面场景.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 19
+            "BundleID": 33
         },
         {
             "Address": "选择场景",
             "AssetPath": "Assets/[0]Cilent/Scenes/选择场景.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 19
+            "BundleID": 33
         }
     ],
     "BundleList": [
@@ -552,7 +876,7 @@
             "UnityCRC": 0,
             "FileHash": "81e9e385e2a07ad67d733be143b34554",
             "FileCRC": "00000000",
-            "FileSize": 2333114,
+            "FileSize": 2415202,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -608,6 +932,106 @@
             "DependIDs": []
         },
         {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_1-登录界面.bundle",
+            "UnityCRC": 0,
+            "FileHash": "960f6bcdc7af1b576504df89058237b2",
+            "FileCRC": "00000000",
+            "FileSize": 2683164,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+            "UnityCRC": 0,
+            "FileHash": "e374cfe037883ea0861bff926d346889",
+            "FileCRC": "00000000",
+            "FileSize": 2956724,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+            "UnityCRC": 0,
+            "FileHash": "d0adeb84b6745dbdcf98b4d9dadb05ac",
+            "FileCRC": "00000000",
+            "FileSize": 1091981,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理.bundle",
+            "UnityCRC": 0,
+            "FileHash": "9f99d6ec2b3160da24b24fda7ecaf76e",
+            "FileCRC": "00000000",
+            "FileSize": 900033,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_4-用户管理.bundle",
+            "UnityCRC": 0,
+            "FileHash": "e309cc07678d1eebb168b670f8d0f674",
+            "FileCRC": "00000000",
+            "FileSize": 950047,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_5-通用_弹出效果图.bundle",
+            "UnityCRC": 0,
+            "FileHash": "2eb809e688445e86b37aa167fc7685f9",
+            "FileCRC": "00000000",
+            "FileSize": 382974,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_老平板尺寸1920x1200_1-登录界面.bundle",
+            "UnityCRC": 0,
+            "FileHash": "e3c9a91b0814f0407e9d1acaedb2a69a",
+            "FileCRC": "00000000",
+            "FileSize": 1320677,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_老平板尺寸1920x1200_2-主界面.bundle",
+            "UnityCRC": 0,
+            "FileHash": "88809d8dfc031fcf59f891aaead11744",
+            "FileCRC": "00000000",
+            "FileSize": 1026380,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_老平板尺寸1920x1200_3-评定人管理.bundle",
+            "UnityCRC": 0,
+            "FileHash": "cbe956a4a370d35397fae1bdf37c57d7",
+            "FileCRC": "00000000",
+            "FileSize": 900033,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_老平板尺寸1920x1200.bundle",
+            "UnityCRC": 0,
+            "FileHash": "f969dfa0f0f7ce254b54eaba2127ac8d",
+            "FileCRC": "00000000",
+            "FileSize": 1026380,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
             "BundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
             "UnityCRC": 0,
             "FileHash": "d14d49aa2c74e906aec1b244ab30cae5",
@@ -632,7 +1056,37 @@
             "UnityCRC": 0,
             "FileHash": "2bc64a6620a18ccf664941ea34885d4a",
             "FileCRC": "00000000",
-            "FileSize": 107048,
+            "FileSize": 144861,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_用户管理.bundle",
+            "UnityCRC": 0,
+            "FileHash": "09d5434848aaf5c2541b307122334743",
+            "FileCRC": "00000000",
+            "FileSize": 1243048,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_评定人管理.bundle",
+            "UnityCRC": 0,
+            "FileHash": "227fac4b752d1c22da6d043668aa83bf",
+            "FileCRC": "00000000",
+            "FileSize": 946371,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_选择界面.bundle",
+            "UnityCRC": 0,
+            "FileHash": "3309479ed7ed4e63354d7778b97bb2ab",
+            "FileCRC": "00000000",
+            "FileSize": 206232,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -642,7 +1096,7 @@
             "UnityCRC": 0,
             "FileHash": "be8966f2933b5109f80966e9855a4778",
             "FileCRC": "00000000",
-            "FileSize": 15593,
+            "FileSize": 15600,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -652,7 +1106,7 @@
             "UnityCRC": 0,
             "FileHash": "b2849c1e8ad1a249d43ddfb9218b63a4",
             "FileCRC": "00000000",
-            "FileSize": 338590,
+            "FileSize": 596778,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -662,7 +1116,7 @@
             "UnityCRC": 0,
             "FileHash": "fbdf99caae01f053cd673ae2694ca388",
             "FileCRC": "00000000",
-            "FileSize": 908983,
+            "FileSize": 2371503,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -672,7 +1126,7 @@
             "UnityCRC": 0,
             "FileHash": "31ecba857877e74cdb8d17127938f1eb",
             "FileCRC": "00000000",
-            "FileSize": 1552664,
+            "FileSize": 1553214,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -682,7 +1136,17 @@
             "UnityCRC": 0,
             "FileHash": "8ccf3e66eb2249ff225f19ffaa276846",
             "FileCRC": "00000000",
-            "FileSize": 860997,
+            "FileSize": 913610,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_选择界面.bundle",
+            "UnityCRC": 0,
+            "FileHash": "5d0173bfa1784f820b059201f4dc1cba",
+            "FileCRC": "00000000",
+            "FileSize": 69954,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -692,7 +1156,7 @@
             "UnityCRC": 0,
             "FileHash": "9f231d07124db95dfc222c233f9b2341",
             "FileCRC": "00000000",
-            "FileSize": 2106909,
+            "FileSize": 2106237,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -712,7 +1176,7 @@
             "UnityCRC": 0,
             "FileHash": "93434aa9d7a1e7ced9474205042a4a78",
             "FileCRC": "00000000",
-            "FileSize": 867546,
+            "FileSize": 884340,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
