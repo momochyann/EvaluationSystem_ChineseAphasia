@@ -6,6 +6,7 @@ using NovaSamples.UIControls;
 using Nova;
 using DG.Tweening;
 using Cysharp.Threading.Tasks;
+using System;
 public class 用户管理添加安卓_茉 : 界面基础_韩
 {
     // Start is called before the first frame update
@@ -36,6 +37,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         显示信息 += 显示信息详情;
         性别.Visuals.SelectionLabel.Color = Color.gray * 0.8f;
         性别.Visuals.SelectionLabel.Text = "请选择";
+        编号.Text = $"{(char)UnityEngine.Random.Range(65, 90)}{DateTime.Now.ToString("yyMMddHH")}{UnityEngine.Random.Range(0, 99):D2}"; // 使用时间戳+随机数组合,格式为:字母+年月日时+2位随机数
     }
     void Start()
     {

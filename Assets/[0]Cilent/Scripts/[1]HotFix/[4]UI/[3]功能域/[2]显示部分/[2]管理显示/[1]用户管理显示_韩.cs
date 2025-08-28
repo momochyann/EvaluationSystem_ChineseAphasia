@@ -14,7 +14,7 @@ public class 用户管理显示_韩 : 界面基础_韩
     void 添加新数据()
     {
         Debug.Log("[ [1] 用户管理显示_韩] 添加新数据");
-        FindObjectOfType<界面管理器_韩>().显示界面("用户管理添加_PC");
+        FindObjectOfType<界面管理器_韩>().显示界面("用户管理添加");
     }
     protected override void OnShow()
     {

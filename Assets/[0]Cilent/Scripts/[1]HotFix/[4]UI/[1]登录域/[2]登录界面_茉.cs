@@ -46,6 +46,8 @@ public class 登录界面_茉 : MonoBehaviour, IController
     {
         // 订阅密码输入变化事件
         密码.OnTextChanged += On密码变化;
+        // 订阅用户名输入变化事件，当用户开始输入时隐藏错误提示
+        用户名.OnTextChanged += On用户名变化;
         Debug.Log("[0]登录界面_韩r Start");
 
         // 绑定登录按钮点击事件
@@ -87,11 +89,23 @@ public class 登录界面_茉 : MonoBehaviour, IController
     }
     char lastChar = ' ';
     int lastIndex = -1;
+
+    // 用户名输入变化时触发，隐藏错误提示
+    private void On用户名变化()
+    {
+        // 当用户开始输入用户名时，隐藏所有错误提示
+        缄状昭.Hide();
+        名状昭.Hide();
+    }
+
     // 密码输入变化时触发
     private void On密码变化()
     {
         输入数据 = 密码.Text;
         密码inputDIs.Text = 显示数据;
+        // 当用户开始输入密码时，隐藏所有错误提示
+        缄状昭.Hide();
+        名状昭.Hide();
     }
 
 
@@ -138,15 +152,21 @@ public class 登录界面_茉 : MonoBehaviour, IController
     // 登录逻辑
     void 登录()
     {
+        // 在开始验证前，先隐藏所有错误提示
+        缄状昭.Hide();
+        名状昭.Hide();
+
         if (用户名.Text == "")
         {
             Debug.Log("[0]登录界面_韩 用户名不能为空");
+            名状昭.Show();
             return;
         }
         // 验证密码时使用隐藏的真实密码
         else if (string.IsNullOrEmpty(输入数据))
         {
             Debug.Log("[0]登录界面_韩 密码不能为空");
+            缄状昭.Show();
             return;
         }
         else
@@ -185,10 +205,11 @@ public class 登录界面_茉 : MonoBehaviour, IController
                     Debug.Log("[0]登录界面_韩 管理员密码错误");
                 }
             }
-            else 
+            else
             {
                 名状昭.Show();
                 Debug.Log("[0]登录界面_韩 用户不存在");
+                
             }
         }
     }

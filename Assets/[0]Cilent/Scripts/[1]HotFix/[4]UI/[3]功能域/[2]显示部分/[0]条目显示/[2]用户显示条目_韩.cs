@@ -74,8 +74,8 @@ public class 用户显示条目_韩 : MonoBehaviour,IController,IentryDis
 
     void OnDestroy()
     {
-        查看.OnClicked.RemoveAllListeners();
-        删除.OnClicked.RemoveAllListeners();
+        if (查看 != null) 查看.OnClicked.RemoveAllListeners();
+        if (删除 != null) 删除.OnClicked.RemoveAllListeners();
     }   
     public IArchitecture GetArchitecture()
     {

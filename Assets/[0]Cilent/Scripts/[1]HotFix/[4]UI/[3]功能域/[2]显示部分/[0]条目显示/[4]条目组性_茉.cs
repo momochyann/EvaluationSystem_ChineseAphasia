@@ -15,6 +15,7 @@ public class 条目组性_茉 : MonoBehaviour, IController
     [SerializeField] Color 择色;
     Button[] 钮组;
     public List<Toggle> 勾组;
+    bool first = true;
     void Start()
     {
         长生();
@@ -32,6 +33,13 @@ public class 条目组性_茉 : MonoBehaviour, IController
         {
             勾.OnToggled.AddListener((bool 是否选中) => 择(勾, 是否选中));
         }
+        first = false;
+    }
+    private async void OnEnable() {
+        if(first)
+        return;
+        await UniTask.Delay(100);
+        沐浴();
     }
     public void 沐浴()
     {

@@ -162,7 +162,7 @@ public class 用户管理添加_韩 : 界面基础_韩
         新用户.居住地址 = "北京市海淀区";
         this.SendCommand(new 增记于录(新用户, "用户录"));
         Debug.Log("[ [3] 用户管理添加_韩]临时添加信息" + 新用户.名);
-        FindObjectOfType<界面管理器_韩>().显示界面("用户管理显示_PC");
+        FindObjectOfType<界面管理器_韩>().显示界面("用户管理显示");
     }
     protected override void OnShow()
     {

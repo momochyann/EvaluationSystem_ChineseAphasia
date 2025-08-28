@@ -3327,7 +3327,7 @@ MonoBehaviour:
   "\u6027\u522B": {fileID: 3892595836013381971}
   "\u8EAB\u4EFD\u8BC1": {fileID: 6305694935543101794}
   "\u51FA\u751F\u65E5\u671F\u9009\u62E9\u6309\u94AE": {fileID: 1921816061900763364}
-  "\u51FA\u751F\u65E5\u671F\u6587\u672C": {fileID: 6614281218937340351}
+  "\u51FA\u751F\u65E5\u671F\u6587\u672C": {fileID: 4030666940899992646}
   "\u6C11\u65CF": {fileID: 6253624484493990657}
   "\u76D1\u62A4\u4EBA": {fileID: 4126393534350270931}
   "\u5173\u7CFB": {fileID: 4921821570945990278}
@@ -3335,8 +3335,8 @@ MonoBehaviour:
   "\u5C45\u4F4F\u5730\u5740": {fileID: 101343395474965836}
   "\u786E\u5B9A": {fileID: 5245929690376805118}
   "\u53D6\u6D88": {fileID: 7019983261868473540}
-  "\u8FD4\u56DE": {fileID: 0}
-  inputSetColor: {r: 0.8886792, g: 0.95943284, b: 1, a: 0}
+  "\u8FD4\u56DE": {fileID: 1175235563164703166}
+  inputSetColor: {r: 0.8886792, g: 0.95943284, b: 1, a: 1}
 --- !u!1 &794160571936276506
 GameObject:
   m_ObjectHideFlags: 0
@@ -13135,7 +13135,6 @@ GameObject:
   - component: {fileID: 5189244594266507626}
   - component: {fileID: 3437006532823754833}
   - component: {fileID: 1175235563164703166}
-  - component: {fileID: 5703861947295173364}
   m_Layer: 0
   m_Name: "\u8D26\u6237\u7BA1\u7406"
   m_TagString: Untagged
@@ -13519,20 +13518,6 @@ MonoBehaviour:
   OnClicked:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5703861947295173364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2997842837330012686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8f49c9ba293dc4498c592c2ec31f32c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: "\u9009\u62E9\u573A\u666F"
-  isLocalLoad: 0
 --- !u!1 &3290530412324837777
 GameObject:
   m_ObjectHideFlags: 0

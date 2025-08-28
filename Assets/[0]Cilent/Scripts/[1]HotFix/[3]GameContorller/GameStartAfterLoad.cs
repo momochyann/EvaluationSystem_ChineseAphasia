@@ -18,7 +18,7 @@ public class GameStartAfterLoad : MonoBehaviour
         await WaitLoadAnimation(this.GetCancellationTokenOnDestroy());
         Debug.Log("加载数据完成222");
 #if !UNITY_EDITOR
-  await UniTask.Delay(3000);
+  //await UniTask.Delay(3000);
 #endif
 
         // var HotUI = await LoadYooAssetsTool.LoadAsset<GameObject>("LoadNewGameVesion");

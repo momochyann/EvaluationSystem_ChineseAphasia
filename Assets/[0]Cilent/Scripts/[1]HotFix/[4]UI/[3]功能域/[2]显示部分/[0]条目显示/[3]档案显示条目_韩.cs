@@ -17,6 +17,9 @@ public class 档案显示条目_韩 : MonoBehaviour,IController,IentryDis
     public Button 查看按钮;
     public Button 删除按钮;
     private int 当前索引 = -1; // 存储当前条目的索引
+
+    public int 索引下标 { get => 当前索引; set => 当前索引 = value; }
+
     void Start()
     {
         查看按钮.OnClicked.AddListener(() => 查看信息());

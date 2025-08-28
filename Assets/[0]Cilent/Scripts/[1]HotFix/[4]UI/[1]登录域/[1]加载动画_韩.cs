@@ -11,7 +11,7 @@ public class 加载动画_韩 : MonoBehaviour, IController
     // Start is called before the first frame update
     [SerializeField] public TextBlock 加载动画文本;
     [SerializeField] public NovaSamples.UIControls.Button 取消按钮;
-    private float totalLoadingTime = 3f; // 总加载时间（3秒）
+    private float totalLoadingTime = 1f; // 总加载时间（3秒）
     private float elapsedTime = 0f; // 已过去的时间
     public 加载动画状态 加载动画状态 = 加载动画状态.加载中;
     void Start()
