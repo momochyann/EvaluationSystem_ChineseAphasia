@@ -14,19 +14,11 @@ public class 用户管理添加_韩 : 界面基础_韩
     [SerializeField] public NovaSamples.UIControls.TextField 身份证;
     [SerializeField] public NovaSamples.UIControls.TextField 出生日期;
     [SerializeField] public NovaSamples.UIControls.TextField 民族;
-    [Header("出生信息")]
-    [SerializeField] public NovaSamples.UIControls.TextField 怀孕时间;
-    [SerializeField] public NovaSamples.UIControls.TextField 分娩方式;
-    [SerializeField] public NovaSamples.UIControls.TextField 出生身长;
-    [SerializeField] public NovaSamples.UIControls.TextField 出生体重;
-    [SerializeField] public NovaSamples.UIControls.TextField 出生头围;
 
-    [Header("父母信息")]
-    [SerializeField] public NovaSamples.UIControls.TextField 父亲;
-    [SerializeField] public NovaSamples.UIControls.TextField 父亲电话;
-    [SerializeField] public NovaSamples.UIControls.TextField 母亲;
-    [SerializeField] public NovaSamples.UIControls.TextField 母亲电话;
-    [SerializeField] public NovaSamples.UIControls.Toggle 是否为本地户籍;
+    [Header("监护人信息")]
+    [SerializeField] public NovaSamples.UIControls.TextField 监护人;
+    [SerializeField] public NovaSamples.UIControls.TextField 关系;
+    [SerializeField] public NovaSamples.UIControls.TextField 联系方式;
     [SerializeField] public NovaSamples.UIControls.TextField 居住地址;
     [Header("按钮")]
     [SerializeField] public NovaSamples.UIControls.Button 确定;
@@ -83,16 +75,9 @@ public class 用户管理添加_韩 : 界面基础_韩
         新用户.身份证 = 身份证.Text;
         新用户.诞辰 = 出生日期.Text;
         新用户.民族 = 民族.Text;
-        新用户.怀孕时间 = 怀孕时间.Text;
-        新用户.分娩方式 = 分娩方式.Text;
-        新用户.出生身长 = 出生身长.Text;
-        新用户.出生体重 = 出生体重.Text;
-        新用户.出生头围 = 出生头围.Text;
-        新用户.父亲 = 父亲.Text;
-        新用户.父亲电话 = 父亲电话.Text;
-        新用户.母亲 = 母亲.Text;
-        新用户.母亲电话 = 母亲电话.Text;
-        新用户.是否为本地户籍 = 是否为本地户籍.ToggledOn;
+        新用户.监护人 = 监护人.Text;
+        新用户.关系 = 关系.Text;
+        新用户.联系方式 = 联系方式.Text;
         新用户.居住地址 = 居住地址.Text;
         this.SendCommand(new 增记于录(新用户, "用户录"));
         Debug.Log("[ [3] 用户管理添加_韩]添加账号" + 新用户.名);
@@ -105,16 +90,9 @@ public class 用户管理添加_韩 : 界面基础_韩
         身份证.Text = "";
         出生日期.Text = "";
         民族.Text = "";
-        怀孕时间.Text = "";
-        分娩方式.Text = "";
-        出生身长.Text = "";
-        出生体重.Text = "";
-        出生头围.Text = "";
-        父亲.Text = "";
-        父亲电话.Text = "";
-        母亲.Text = "";
-        母亲电话.Text = "";
-        是否为本地户籍.ToggledOn = false;
+        监护人.Text = "";
+        关系.Text = "";
+        联系方式.Text = "";
         居住地址.Text = "";
     }
     void 显示信息详情(I记贞 记)
@@ -127,16 +105,9 @@ public class 用户管理添加_韩 : 界面基础_韩
         身份证.Text = 用户.身份证;
         出生日期.Text = 用户.诞辰;
         民族.Text = 用户.民族;
-        怀孕时间.Text = 用户.怀孕时间;
-        分娩方式.Text = 用户.分娩方式;
-        出生身长.Text = 用户.出生身长;
-        出生体重.Text = 用户.出生体重;
-        出生头围.Text = 用户.出生头围;
-        父亲.Text = 用户.父亲;
-        父亲电话.Text = 用户.父亲电话;
-        母亲.Text = 用户.母亲;
-        母亲电话.Text = 用户.母亲电话;
-        是否为本地户籍.ToggledOn = 用户.是否为本地户籍;
+        监护人.Text = 用户.监护人;
+        关系.Text = 用户.关系;
+        联系方式.Text = 用户.联系方式;
         居住地址.Text = 用户.居住地址;
     }
     void 临时添加信息()
@@ -149,16 +120,10 @@ public class 用户管理添加_韩 : 界面基础_韩
         新用户.身份证 = "1234567890";
         新用户.诞辰 = "2020-01-01";
         新用户.民族 = "汉族";
-        新用户.怀孕时间 = "2020-01-01";
-        新用户.分娩方式 = "顺产";
-        新用户.出生身长 = "50";
-        新用户.出生体重 = "3000";
-        新用户.出生头围 = "30";
-        新用户.父亲 = "张三";
-        新用户.父亲电话 = "1234567890";
-        新用户.母亲 = "李四";
-        新用户.母亲电话 = "1234567890";
-        新用户.是否为本地户籍 = true;
+    
+        新用户.监护人 = "张三";
+        新用户.关系 = "父子";
+        新用户.联系方式 = "1234567890";
         新用户.居住地址 = "北京市海淀区";
         this.SendCommand(new 增记于录(新用户, "用户录"));
         Debug.Log("[ [3] 用户管理添加_韩]临时添加信息" + 新用户.名);

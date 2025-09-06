@@ -23,7 +23,8 @@ public class 条目组性_茉 : MonoBehaviour, IController
     async void 长生()
     {
         await UniTask.Delay(100);
-        钮组 = GetComponentsInChildren<Button>();
+        钮组 = transform.GetComponentsInChildren<Button>(false).Where(btn => btn.transform.parent == transform).ToArray();
+        Debug.Log("钮组数量"+钮组.Length);
         foreach (var 钮 in 钮组)
         {
             钮.OnClicked.AddListener(() => 择(钮));

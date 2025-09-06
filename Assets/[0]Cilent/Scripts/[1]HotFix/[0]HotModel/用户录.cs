@@ -9,15 +9,9 @@ public class 用户 : I记贞
     public string 身份证;
     public string 诞辰;
     public string 民族;
-    public string 怀孕时间;
-    public string 分娩方式;
-    public string 出生身长;
-    public string 出生体重;
-    public string 出生头围;
-    public string 父亲;
-    public string 母亲;
-    public string 父亲电话;
-    public string 母亲电话;
+    public string 监护人;
+    public string 关系;
+    public string 联系方式;
     public bool 是否为本地户籍;
     public string 居住地址;
 }

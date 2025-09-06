@@ -85,6 +85,7 @@ GetComponent<MyScript>().Show();
 #endif
         public static T Show<T>(this T selfComponent) where T : Component
         {
+            
             selfComponent.gameObject.Show();
             return selfComponent;
         }
@@ -116,6 +117,7 @@ GetComponent<MyScript>().Hide();
 #endif
         public static T Hide<T>(this T selfComponent) where T : Component
         {
+            
             selfComponent.gameObject.Hide();
             return selfComponent;
         }

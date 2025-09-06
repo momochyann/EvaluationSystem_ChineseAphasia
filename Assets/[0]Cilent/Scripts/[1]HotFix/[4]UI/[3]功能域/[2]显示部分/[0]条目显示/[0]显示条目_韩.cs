@@ -4,6 +4,8 @@ using UnityEngine;
 using QFramework;
 using NovaSamples.UIControls;
 using Nova;
+using DG.Tweening;
+using UnityEngine.UI;
 
 
 public class 显示条目_韩 : MonoBehaviour, IController
@@ -12,6 +14,8 @@ public class 显示条目_韩 : MonoBehaviour, IController
     [SerializeField] public GameObject prefeb;
     [SerializeField] public string ModelName; // 设置为与模型类名一致
     [SerializeField] public bool 是否刷新 = false;
+    [SerializeField] Scroller 滚动条;
+
     void Start()
     {
         if (prefeb == null)
@@ -47,13 +51,6 @@ public class 显示条目_韩 : MonoBehaviour, IController
     public void 刷新显示()
     {
         清除现有显示();
-        // 获取数据
-        //var 数据列表 = 获取数据列表();
-        // if (数据列表 == null)
-        // {
-        //     Debug.LogWarning($"[显示条目_韩] 无法获取 {ModelName} 的数据列表");
-        //     return;
-        // }
 
         // 重新获取数据并显示
         var 录 = this.GetUtility<按名索录之器>().寻录<I录贞>(ModelName);
@@ -69,6 +66,11 @@ public class 显示条目_韩 : MonoBehaviour, IController
         {
             Debug.Log(this.transform.parent.gameObject.name);
             var 条目 = Instantiate(prefeb, this.transform);
+            var mask = 条目.GetComponent<ClipMask>();
+            DOTween.To((float value) =>
+           {
+               mask.Tint = new Color(mask.Tint.r, mask.Tint.g, mask.Tint.b, value);
+           }, 0, 1, 0.5f).SetDelay(0.05f*i);
 
             // 现在可以使用接口了，因为组件实现了接口
             var 显示条目 = 条目.GetComponent<IentryDis>();
@@ -83,7 +85,32 @@ public class 显示条目_韩 : MonoBehaviour, IController
             }
         }
 
+        // 控制滚动条状态
+        控制滚动条状态(索引下标);
     }
+
+    /// <summary>
+    /// 控制滚动条状态：>7启用，<=7禁用
+    /// </summary>
+    /// <param name="条目数量">当前条目数量</param>
+    private void 控制滚动条状态(int 条目数量)
+    {
+        if (滚动条 == null) return;
+
+        bool 应该启用滚动 = 条目数量 > 7;
+
+        if (应该启用滚动)
+        {
+            滚动条.enabled = true;
+            Debug.Log($"[显示条目_韩] 条目数量({条目数量}) > 7，已启用滚动");
+        }
+        else
+        {
+            滚动条.enabled = false;
+            Debug.Log($"[显示条目_韩] 条目数量({条目数量}) <= 7，已禁用滚动");
+        }
+    }
+
     public void 清除现有显示()
     {
         Debug.Log("[显示条目_韩] 清除现有显示transform.childCount:" + transform.childCount);
@@ -97,9 +124,16 @@ public class 显示条目_韩 : MonoBehaviour, IController
     {
         return HotFixTemplateArchitecture.Interface;
     }
+
     void OnDestroy()
     {
         this.UnRegisterEvent<Can2ListModelChangeEvent>(On模型数据变化);
+
+        // 恢复滚动条状态
+        if (滚动条 != null)
+        {
+            滚动条.enabled = true;
+        }
     }
 }
 
@@ -110,5 +144,5 @@ public class 显示条目_韩 : MonoBehaviour, IController
 public interface IentryDis
 {
     void 显示信息(int 索引 = -1);
-    int 索引下标{get;set;}
+    int 索引下标 { get; set; }
 }

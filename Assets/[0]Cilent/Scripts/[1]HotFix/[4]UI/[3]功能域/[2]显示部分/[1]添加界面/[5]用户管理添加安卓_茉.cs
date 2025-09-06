@@ -32,11 +32,18 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
     [SerializeField] public NovaSamples.UIControls.Button 返回;
     [SerializeField] public Color inputSetColor;
 
+    I记贞 旧记;
+
     private void Awake()
     {
         显示信息 += 显示信息详情;
         性别.Visuals.SelectionLabel.Color = Color.gray * 0.8f;
         性别.Visuals.SelectionLabel.Text = "请选择";
+        编号.Text = $"{(char)UnityEngine.Random.Range(65, 90)}{DateTime.Now.ToString("yyMMddHH")}{UnityEngine.Random.Range(0, 99):D2}"; // 使用时间戳+随机数组合,格式为:字母+年月日时+2位随机数
+    }
+    private void OnEnable()
+    {
+        旧记 = null;
         编号.Text = $"{(char)UnityEngine.Random.Range(65, 90)}{DateTime.Now.ToString("yyMMddHH")}{UnityEngine.Random.Range(0, 99):D2}"; // 使用时间戳+随机数组合,格式为:字母+年月日时+2位随机数
     }
     void Start()
@@ -60,7 +67,16 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
     private void 返回上个界面()
     {
         清空信息();
-        FindObjectOfType<界面管理器_韩>().显示界面("用户管理显示");
+        var 界面管理器_韩 = FindObjectOfType<界面管理器_韩>();
+        if (界面管理器_韩 != null)
+        {
+            界面管理器_韩.显示界面("用户管理显示");
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
     }
     async UniTaskVoid 选择出生日期()
     {
@@ -156,10 +172,22 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         新用户.身份证 = 身份证.Text;
         新用户.诞辰 = 出生日期文本.Text;
         新用户.民族 = 民族.Text;
-
+        新用户.监护人 = 监护人.Text;
+        新用户.关系 = 关系.Text;
+        新用户.联系方式 = 联系方式.Text;
         新用户.居住地址 = 居住地址.Text;
-        this.SendCommand(new 增记于录(新用户, "用户录"));
-        Debug.Log("[ [3] 用户管理添加_韩]添加账号" + 新用户.名);
+     
+
+        if (旧记 != null)
+        {
+            this.SendCommand(new 改记于录(旧记, 新用户, "用户录"));
+        }
+        else
+        {
+            this.SendCommand(new 增记于录(新用户, "用户录"));
+        }
+
+
     }
     void 清空信息()
     {
@@ -171,6 +199,9 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         出生日期文本.Text = "";
         民族.Text = "";
         居住地址.Text = "";
+        监护人.Text = "";
+        关系.Text = "";
+        联系方式.Text = "";
     }
     void 显示信息详情(I记贞 记)
     {
@@ -183,6 +214,10 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         出生日期文本.Text = 用户.诞辰;
         民族.Text = 用户.民族;
         居住地址.Text = 用户.居住地址;
+        监护人.Text = 用户.监护人;
+        关系.Text = 用户.关系;
+        联系方式.Text = 用户.联系方式;
+        旧记 = 记;
     }
 
     protected override void OnShow()
@@ -195,8 +230,17 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
     }
     void OnDestroy()
     {
+        Debug.Log("[3]用户管理添加安卓_茉 OnDestroy - 清理键盘状态");
+        
+        // 强制关闭TouchScreenKeyboard
+#if UNITY_ANDROID && !UNITY_EDITOR
+        if (TouchScreenKeyboard.visible)
+        {
+            TouchScreenKeyboard.hideInput = true;
+        }
+#endif
+        
         this.取消.OnClicked.RemoveAllListeners();
         this.确定.OnClicked.RemoveAllListeners();
-
     }
 }

@@ -16,6 +16,7 @@ public class 评人 : I记贞
 }
 public class 评人录 : 录元<评人>
 {
+    public 评人 登陆评人;
     protected override string GetStorageKey()
     {
         return "评人录";
@@ -51,8 +52,44 @@ public class 管理员 : I记贞
 
 }
 
-public class 管员录 : 录元<管理员>
+public class 管员录 : 录元<评人>
 {
+    public 评人 登陆管理员;
+    protected override void OnInit()
+    {
+        base.OnInit();
+        // 检查是否需要添加默认管理员账号
+        CreateDefaultAdminIfNeeded();
+    }
+    
+    /// <summary>
+    /// 如果管理员列表为空，创建默认的admin账号
+    /// </summary>
+    private void CreateDefaultAdminIfNeeded()
+    {
+        // 检查是否已存在admin账号
+        bool hasAdmin = dataList.Exists(admin => admin.账号 == "admin");
+        
+        if (!hasAdmin)
+        {
+            // 创建默认管理员账号
+            评人 defaultAdmin = new 评人
+            {
+                名 = "初始管理员",
+                账号 = "admin",
+                密码 = "123456"
+            };
+            
+            // 添加到列表（不插入到开头，因为这是系统默认的）
+            AddItem(defaultAdmin, false);
+            Debug.Log("[管员录] 已创建默认管理员账号：admin/123456");
+        }
+        else
+        {
+            Debug.Log("[管员录] 默认管理员账号已存在");
+        }
+    }
+    
     protected override string GetStorageKey()
     {
         return "管理员录";

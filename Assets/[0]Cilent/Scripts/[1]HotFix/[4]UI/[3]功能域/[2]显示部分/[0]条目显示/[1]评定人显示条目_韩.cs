@@ -4,6 +4,7 @@ using UnityEngine;
 using NovaSamples.UIControls;
 using Nova;
 using QFramework;
+using Cysharp.Threading.Tasks;
 
 public class 评定人显示条目_韩 : MonoBehaviour, IController, IentryDis/*,显示条目接口*/
 {
@@ -12,11 +13,11 @@ public class 评定人显示条目_韩 : MonoBehaviour, IController, IentryDis/*
     [SerializeField] public TextBlock 账号;
     [SerializeField] public TextBlock 姓名;
     [SerializeField] public TextBlock 性别;
-    [SerializeField] public TextBlock 联系方式;
+    [SerializeField] public TextBlock 身份信息;
     [SerializeField] public TextBlock 出生日期;
     [SerializeField] public NovaSamples.UIControls.Button 查看;
     [SerializeField] public NovaSamples.UIControls.Button 删除;
-   
+
     private int 当前索引 = -1; // 存储当前条目的索引
 
     public int 索引下标 { get; set; }
@@ -24,10 +25,10 @@ public class 评定人显示条目_韩 : MonoBehaviour, IController, IentryDis/*
     void Start()
     {
         // 初始化时添加监听器
-       if (查看 != null) 查看.OnClicked.AddListener(() => 查看信息());
-       if (删除 != null) 删除.OnClicked.AddListener(() => 删除信息());
-        
-        
+        if (查看 != null) 查看.OnClicked.AddListener(() => 查看信息());
+        if (删除 != null) 删除.OnClicked.AddListener(() => 删除信息());
+
+
     }
 
     public void 显示信息(int 索引 = -1)
@@ -46,13 +47,17 @@ public class 评定人显示条目_韩 : MonoBehaviour, IController, IentryDis/*
         账号.Text = 当前人员.账号;
         姓名.Text = 当前人员.名;
         性别.Text = 当前人员.性别;
-        联系方式.Text = 当前人员.电话;
+        身份信息.Text = 当前人员.身份证;
         出生日期.Text = 当前人员.诞辰;
 
     }
 
-    void 查看信息()
+    async void 查看信息()
     {
+        var 界面 = FindObjectOfType<界面管理器_韩>();
+        界面.显示界面("评定人管理添加");
+        await UniTask.Delay(100);
+        界面._currentPanel.GetComponent<评定人管理添加安卓_茉>().显示信息(this.GetModel<评人录>().GetDataList()[当前索引]);
         Debug.Log($"查看索引 {当前索引} 的信息");
     }
 

@@ -397,7 +397,7 @@ MonoBehaviour:
   inputField: {fileID: 8687563272180266088}
   selector: {fileID: 6465438494186797229}
   allowNewlines: 1
-  keyboardType: 0
+  keyboardType: 6
   autoCorrect: 1
   secure: 0
 --- !u!114 &4813956072038266350
@@ -1822,7 +1822,7 @@ Transform:
   m_GameObject: {fileID: 8381240572150438583}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -91.5, y: 454.8, z: 0}
+  m_LocalPosition: {x: 563.44, y: -76.608, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2018,7 +2018,7 @@ MonoBehaviour:
     LightingModel: 0
     ShadowCastingMode: 2
     ReceiveShadows: 1
-  PreviewSize: {x: 270.94, y: 77.32, z: 0}
+  PreviewSize: {x: 370.38, y: 77.32, z: 0}
   visuals:
     Color: {r: 0.14901961, g: 0.14901961, b: 0.14901961, a: 0}
     CornerRadius:

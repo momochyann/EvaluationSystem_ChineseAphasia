@@ -15,7 +15,7 @@ public class GameStartAfterLoad : MonoBehaviour
     {
         Debug.Log("GameHotedInit7");
         Application.targetFrameRate = 120;
-        await WaitLoadAnimation(this.GetCancellationTokenOnDestroy());
+    //    await WaitLoadAnimation(this.GetCancellationTokenOnDestroy());
         Debug.Log("加载数据完成222");
 #if !UNITY_EDITOR
   //await UniTask.Delay(3000);

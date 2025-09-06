@@ -22,6 +22,9 @@ public class 评定人管理添加安卓_茉 : 界面基础_韩
     [SerializeField] public NovaSamples.UIControls.Button 确定;
     [SerializeField] public NovaSamples.UIControls.Button 取消;
     [SerializeField] public NovaSamples.UIControls.Button 返回;
+
+    bool 择日器显示 = false;
+    I记贞 旧记;
     private void Awake()
     {
         登录账号.Text = "";
@@ -32,6 +35,7 @@ public class 评定人管理添加安卓_茉 : 界面基础_韩
         联系方式.Text = "";
         身份证.Text = "";
         出生日期文本.Text = "";
+        旧记 = null;
         显示信息 += 显示信息详情;
     }
     void Start()
@@ -51,11 +55,22 @@ public class 评定人管理添加安卓_茉 : 界面基础_韩
         });
 
     }
-
+    private void OnEnable()
+    {
+        旧记 = null;
+    }
     private void 返回上个界面()
     {
         清空文本框内容();
-        FindObjectOfType<界面管理器_韩>().显示界面("评定人管理显示");
+        var 界面管理器_韩 = FindObjectOfType<界面管理器_韩>();
+        if (界面管理器_韩 != null)
+        {
+            界面管理器_韩.显示界面("评定人管理显示");
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void FixedUpdate()
@@ -71,12 +86,18 @@ public class 评定人管理添加安卓_茉 : 界面基础_韩
     }
     async UniTaskVoid 选择出生日期()
     {
+        if (择日器显示)
+        {
+            return;
+        }
+        择日器显示 = true;
         var 择日器气 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("择日器");
         var 择日器 = Instantiate(择日器气, this.transform);
         择日器.GetComponent<择日器_茉>().On保存日期 += (年, 月, 日) =>
         {
             Debug.Log("出生日期选择");
             出生日期文本.Text = $"{年}-{月}-{日}";
+            择日器显示 = false;
         };
     }
     void 性别等下拉选择框点击(Dropdown 选择框)
@@ -139,10 +160,11 @@ public class 评定人管理添加安卓_茉 : 界面基础_韩
         登录密码.Text = 评人.密码;
         姓名.Text = 评人.名;
         性别.DropdownOptions.SelectedIndex = 评人.性别 == "男" ? 0 : 1;
+        性别.载始项();
         联系方式.Text = 评人.电话;
         身份证.Text = 评人.身份证;
         出生日期文本.Text = 评人.诞辰;
-
+        旧记 = 记;
     }
 
     void 添加账号()
@@ -171,10 +193,42 @@ public class 评定人管理添加安卓_茉 : 界面基础_韩
         新评人.电话 = 联系方式.Text;
         新评人.身份证 = 身份证.Text;
         新评人.诞辰 = 出生日期文本.Text;
-        this.SendCommand(new 增记于录(新评人, "评人录"));
+         
+        var 管员录 = this.GetModel<管员录>();
+        var 旧评人 = 旧记 as 评人;
+        if (旧记 != null)
+        {
+            if (管员录.GetDataList().Find(x => x.账号 == 旧评人.账号) != null)
+            {
+                this.SendCommand(new 改记于录(旧记, 新评人, "管员录"));
+                this.GetModel<管员录>().登陆管理员 = 新评人;
+            }
+            else
+            {
+                this.SendCommand(new 改记于录(旧记, 新评人, "评人录"));
+            }
+        }
+        else
+        {
+            this.SendCommand(new 增记于录(新评人, "评人录"));
+        }
+
+
+
+
+
         Debug.Log("[ [2] 评定人管理添加_韩]添加账号" + 新评人.名);
         清空文本框内容();
-        FindObjectOfType<界面管理器_韩>().显示界面("评定人管理显示");
+        var 界面管理器_韩 = FindObjectOfType<界面管理器_韩>();
+        if (界面管理器_韩 != null)
+        {
+            界面管理器_韩.显示界面("评定人管理显示");
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
 
     }
 
@@ -182,7 +236,16 @@ public class 评定人管理添加安卓_茉 : 界面基础_韩
     {
         Debug.Log("[ [2] 评定人管理添加_韩]取消添加");
         清空文本框内容();
-        FindObjectOfType<界面管理器_韩>().显示界面("评定人管理显示");
+        var 界面管理器_韩 = FindObjectOfType<界面管理器_韩>();
+        if (界面管理器_韩 != null)
+        {
+            界面管理器_韩.显示界面("评定人管理显示");
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
 
     }
 
