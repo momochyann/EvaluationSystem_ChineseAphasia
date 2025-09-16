@@ -158,6 +158,7 @@ public class 界面管理器_韩 : MonoBehaviour, IController
                 panel.显示界面();
                 // 设置为当前面板
                 _currentPanel = panel;
+                Debug.Log("当前面板" + _currentPanel.name);
             }
             else
             {

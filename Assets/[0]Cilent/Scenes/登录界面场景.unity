@@ -2956,7 +2956,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 426.54703}
+  m_AnchoredPosition: {x: -0.16900001, y: 426.54703}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1385065587
@@ -3042,7 +3042,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -787.00006, y: -108.75001, z: -787.00006, w: -108.75001}
+  m_margin: {x: -1000, y: -108.75001, z: -1000, w: -108.75001}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -3068,7 +3068,7 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 0.78700006
+        Raw: 1
         Type: 1
       Y:
         Raw: 0.17400001
@@ -3078,7 +3078,7 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: 0
+        Raw: -0.16900001
         Type: 0
       Y:
         Raw: 426.54703
@@ -3600,6 +3600,7 @@ MonoBehaviour:
   "\u5BC6\u7801inputDIs": {fileID: 1168908911}
   "\u767B\u5F55\u6309\u952E": {fileID: 569203802}
   "\u9000\u51FA\u6309\u952E": {fileID: 578340170}
+  "\u8F6F\u4EF6\u540D\u79F0": {fileID: 1385065588}
   "\u6B63\u786E\u56FE\u6807": {fileID: 21300000, guid: dd98c6dec9351a6498bf5ba46a1f5395, type: 3}
   "\u9519\u8BEF\u56FE\u6807": {fileID: 21300000, guid: ed4b7625cbf4fb846b8e4786a2b6a68c, type: 3}
   "\u7528\u6237\u540D\u56FE\u6807\u663E\u793A": {fileID: 191295769}

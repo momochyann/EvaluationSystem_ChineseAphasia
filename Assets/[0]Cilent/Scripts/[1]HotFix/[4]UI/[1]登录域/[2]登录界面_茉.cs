@@ -20,7 +20,8 @@ public class 登录界面_茉 : MonoBehaviour, IController
     [SerializeField] TextBlock 密码inputDIs;     // 密码输入框
     [SerializeField] NovaSamples.UIControls.Button 登录按键;    // 登录按钮
     [SerializeField] NovaSamples.UIControls.Button 退出按键;    // 退出按钮
-
+    [SerializeField] TextBlock 软件名称;
+    // [SerializeField] TextBlock 版权信息;
     // 图标相关组件
     [SerializeField] Sprite 正确图标;
     [SerializeField] Sprite 错误图标;
@@ -83,6 +84,7 @@ public class 登录界面_茉 : MonoBehaviour, IController
         var 管员录 = this.GetModel<管员录>();
         评人录.登陆评人 = null;
         管员录.登陆管理员 = null;
+        加载软件名称();
     }
     char lastChar = ' ';
     int lastIndex = -1;
@@ -107,7 +109,19 @@ public class 登录界面_茉 : MonoBehaviour, IController
         用户名占位符.Color = new Color(0.6f, 0.6f, 0.6f, 1f); // 恢复正常的占位符颜色
 
     }
+    void 加载软件名称()
+    {
+        var 软件配置录 = this.GetModel<软件配置录>();
+        if (软件配置录.当前配置 != null)
+        {
+            软件名称.Text = string.IsNullOrEmpty(软件配置录.当前配置.软件名称) ? "汉语失语症评测系统" : 软件配置录.当前配置.软件名称;
 
+        }
+        else
+        {
+            软件名称.Text = "汉语失语症评测系统";
+        }
+    }
     // 密码输入变化时触发
     private void On密码变化()
     {
@@ -301,7 +315,21 @@ public class 登录界面_茉 : MonoBehaviour, IController
         {
             // 登录成功 - 不显示图标，直接跳转
             Debug.Log("[0]登录界面_韩 登录成功");
-            跳转界面("选择场景");
+#if UNITY_EDITOR
+            // 在编辑器中根据选择的平台返回后缀
+            if (UnityEditor.EditorPrefs.GetInt("TestPlatform", 0) == 0)
+            {
+                  静态传递_韩.SwitchSceneWithPanel("主场景", "评定人管理显示");
+            }
+            else
+            {
+                跳转界面("选择场景");
+            }
+#elif UNITY_ANDROID || UNITY_IOS
+       跳转界面("选择场景");
+#else
+        静态传递_韩.SwitchSceneWithPanel("主场景", "评定人管理显示");
+#endif
         }
     }
 
@@ -316,18 +344,18 @@ public class 登录界面_茉 : MonoBehaviour, IController
         if (确认)
         {
 
-            #if UNITY_EDITOR
-                        // 在Unity编辑器中停止播放
-                        UnityEditor.EditorApplication.isPlaying = false;
-                        Debug.Log("[0]登录界面_韩 在编辑器中停止播放");
-            #elif UNITY_IOS
+#if UNITY_EDITOR
+            // 在Unity编辑器中停止播放
+            UnityEditor.EditorApplication.isPlaying = false;
+            Debug.Log("[0]登录界面_韩 在编辑器中停止播放");
+#elif UNITY_IOS
                     // iOS不允许程序自己退出，这是苹果的政策
                     Debug.Log("[0]登录界面_韩 iOS平台不支持程序退出");
-            #else
+#else
                     // 安卓、PC等其他平台
                     Application.Quit();
                     Debug.Log("[0]登录界面_韩 应用程序已退出");
-            #endif
+#endif
         }
         else
         {
@@ -351,7 +379,7 @@ public class 登录界面_茉 : MonoBehaviour, IController
     void OnDestroy()
     {
         Debug.Log("[0]登录界面_茉 OnDestroy - 清理键盘状态");
-        
+
         // 强制关闭TouchScreenKeyboard
 #if UNITY_ANDROID && !UNITY_EDITOR
         if (TouchScreenKeyboard.visible)
@@ -359,13 +387,13 @@ public class 登录界面_茉 : MonoBehaviour, IController
             TouchScreenKeyboard.hideInput = true;
         }
 #endif
-        
+
         // 移除事件监听
         if (密码 != null)
             密码.OnTextChanged -= On密码变化;
         if (用户名 != null)
             用户名.OnTextChanged -= On用户名变化;
-        
+
         // 移除按钮监听
         登录按键?.OnClicked.RemoveAllListeners();
         退出按键?.OnClicked.RemoveAllListeners();

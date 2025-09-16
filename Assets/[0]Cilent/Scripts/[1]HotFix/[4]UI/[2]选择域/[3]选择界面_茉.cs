@@ -15,6 +15,7 @@ public class 选择界面_茉 : MonoBehaviour, IController
     [SerializeField] public Button 蓝牙连接按钮;
     [SerializeField] Button 设置按钮;
     [SerializeField] GameObject 设置详情;
+    [SerializeField] TextBlock 软件名称;
     private 评人录 评人录;
     private 管员录 管员录;
 
@@ -38,7 +39,19 @@ public class 选择界面_茉 : MonoBehaviour, IController
         {
             item.OnClicked.AddListener(() => 执行功能(item.name));
         }
-
+        加载软件名称();
+    }
+    void 加载软件名称()
+    {
+        var 软件配置录 = this.GetModel<软件配置录>();
+        if(软件配置录.当前配置 != null)
+        {
+            软件名称.Text = string.IsNullOrEmpty(软件配置录.当前配置.软件名称) ? "汉语失语症评测系统" : 软件配置录.当前配置.软件名称;
+        }
+        else
+        {
+            软件名称.Text = "汉语失语症评测系统";
+        }
     }
 
     private void 展示设置()

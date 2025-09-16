@@ -7,7 +7,9 @@
     <type fullname="DG.Tweening.DOTween" preserve="all" />
     <type fullname="DG.Tweening.Plugins.Options.ColorOptions" preserve="all" />
     <type fullname="DG.Tweening.Plugins.Options.VectorOptions" preserve="all" />
+    <type fullname="DG.Tweening.Sequence" preserve="all" />
     <type fullname="DG.Tweening.ShortcutExtensions" preserve="all" />
+    <type fullname="DG.Tweening.TweenCallback" preserve="all" />
     <type fullname="DG.Tweening.TweenSettingsExtensions" preserve="all" />
     <type fullname="DG.Tweening.Tweener" preserve="all" />
   </assembly>
@@ -35,6 +37,9 @@
     <type fullname="Nova.Axis" preserve="all" />
     <type fullname="Nova.AxisIndex" preserve="all" />
     <type fullname="Nova.Border" preserve="all" />
+    <type fullname="Nova.ClipMask" preserve="all" />
+    <type fullname="Nova.Gesture" preserve="all" />
+    <type fullname="Nova.Gesture/OnClick" preserve="all" />
     <type fullname="Nova.GestureRecognizer" preserve="all" />
     <type fullname="Nova.ImageAdjustment" preserve="all" />
     <type fullname="Nova.ImageScaleMode" preserve="all" />
@@ -42,18 +47,25 @@
     <type fullname="Nova.Length2" preserve="all" />
     <type fullname="Nova.Length3" preserve="all" />
     <type fullname="Nova.Length3/Calculated" preserve="all" />
+    <type fullname="Nova.ListView" preserve="all" />
     <type fullname="Nova.RadialGradient" preserve="all" />
     <type fullname="Nova.Scroller" preserve="all" />
     <type fullname="Nova.Shadow" preserve="all" />
     <type fullname="Nova.TextBlock" preserve="all" />
     <type fullname="Nova.UIBlock" preserve="all" />
     <type fullname="Nova.UIBlock2D" preserve="all" />
+    <type fullname="Nova.UIEventHandler`1" preserve="all" />
   </assembly>
   <assembly fullname="Nova.UIControls">
     <type fullname="NovaSamples.UIControls.Button" preserve="all" />
     <type fullname="NovaSamples.UIControls.Dropdown" preserve="all" />
     <type fullname="NovaSamples.UIControls.DropdownData" preserve="all" />
+    <type fullname="NovaSamples.UIControls.DropdownVisuals" preserve="all" />
     <type fullname="NovaSamples.UIControls.TextField" preserve="all" />
+    <type fullname="NovaSamples.UIControls.TextFieldInputProvider" preserve="all" />
+    <type fullname="NovaSamples.UIControls.TextFieldSelector" preserve="all" />
+    <type fullname="NovaSamples.UIControls.TextPosition" preserve="all" />
+    <type fullname="NovaSamples.UIControls.TextPositionExtensions" preserve="all" />
     <type fullname="NovaSamples.UIControls.Toggle" preserve="all" />
   </assembly>
   <assembly fullname="QFramework">
@@ -61,6 +73,7 @@
     <type fullname="QFramework.AbstractCommand`1" preserve="all" />
     <type fullname="QFramework.AbstractModel" preserve="all" />
     <type fullname="QFramework.Architecture`1" preserve="all" />
+    <type fullname="QFramework.BindableProperty`1" preserve="all" />
     <type fullname="QFramework.CanGetModelExtension" preserve="all" />
     <type fullname="QFramework.CanGetUtilityExtension" preserve="all" />
     <type fullname="QFramework.CanRegisterEventExtension" preserve="all" />
@@ -82,9 +95,11 @@
     <type fullname="QFramework.IUnRegister" preserve="all" />
     <type fullname="QFramework.IUtility" preserve="all" />
     <type fullname="QFramework.TypeEventSystem" preserve="all" />
+    <type fullname="QFramework.UnRegisterExtension" preserve="all" />
   </assembly>
   <assembly fullname="QFramework.CoreKit">
     <type fullname="QFramework.UnityEngineCameraExtension" preserve="all" />
+    <type fullname="QFramework.UnityEngineGameObjectExtension" preserve="all" />
   </assembly>
   <assembly fullname="SerialPortUtilityPro">
     <type fullname="SerialPortUtility.SPUPEventObject" preserve="all" />
@@ -118,9 +133,9 @@
     <type fullname="TMPro.TextMeshPro" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.AndroidJNIModule">
-    <type fullname="UnityEngine.Android.Permission" preserve="all" />
     <type fullname="UnityEngine.AndroidJavaClass" preserve="all" />
     <type fullname="UnityEngine.AndroidJavaObject" preserve="all" />
+    <type fullname="UnityEngine.AndroidJavaRunnable" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.AudioModule">
     <type fullname="UnityEngine.AudioClip" preserve="all" />
@@ -128,6 +143,7 @@
   <assembly fullname="UnityEngine.CoreModule">
     <type fullname="UnityEngine.Application" preserve="all" />
     <type fullname="UnityEngine.Application/LogCallback" preserve="all" />
+    <type fullname="UnityEngine.Behaviour" preserve="all" />
     <type fullname="UnityEngine.Bounds" preserve="all" />
     <type fullname="UnityEngine.Camera" preserve="all" />
     <type fullname="UnityEngine.CameraClearFlags" preserve="all" />
@@ -143,6 +159,7 @@
     <type fullname="UnityEngine.Events.UnityEvent" preserve="all" />
     <type fullname="UnityEngine.Events.UnityEventBase" preserve="all" />
     <type fullname="UnityEngine.Events.UnityEvent`1" preserve="all" />
+    <type fullname="UnityEngine.FullScreenMode" preserve="all" />
     <type fullname="UnityEngine.GameObject" preserve="all" />
     <type fullname="UnityEngine.Graphics" preserve="all" />
     <type fullname="UnityEngine.HeaderAttribute" preserve="all" />
@@ -161,6 +178,8 @@
     <type fullname="UnityEngine.RenderTexture" preserve="all" />
     <type fullname="UnityEngine.RenderTextureFormat" preserve="all" />
     <type fullname="UnityEngine.RenderTextureReadWrite" preserve="all" />
+    <type fullname="UnityEngine.RuntimeInitializeLoadType" preserve="all" />
+    <type fullname="UnityEngine.RuntimeInitializeOnLoadMethodAttribute" preserve="all" />
     <type fullname="UnityEngine.SceneManagement.LoadSceneMode" preserve="all" />
     <type fullname="UnityEngine.SceneManagement.Scene" preserve="all" />
     <type fullname="UnityEngine.SceneManagement.SceneManager" preserve="all" />
@@ -178,7 +197,6 @@
     <type fullname="UnityEngine.Transform" preserve="all" />
     <type fullname="UnityEngine.Vector2" preserve="all" />
     <type fullname="UnityEngine.Vector3" preserve="all" />
-    <type fullname="UnityEngine.WaitForEndOfFrame" preserve="all" />
     <type fullname="UnityEngine.WaitForSeconds" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.IMGUIModule">
@@ -229,6 +247,7 @@
     <type fullname="System.Collections.Generic.HashSet`1/Enumerator" preserve="all" />
     <type fullname="System.Collections.Generic.IEnumerable`1" preserve="all" />
     <type fullname="System.Collections.Generic.IEnumerator`1" preserve="all" />
+    <type fullname="System.Collections.Generic.IList`1" preserve="all" />
     <type fullname="System.Collections.Generic.KeyValuePair`2" preserve="all" />
     <type fullname="System.Collections.Generic.List`1" preserve="all" />
     <type fullname="System.Collections.Generic.List`1/Enumerator" preserve="all" />
@@ -239,7 +258,9 @@
     <type fullname="System.ComponentModel.EditorBrowsableState" preserve="all" />
     <type fullname="System.Convert" preserve="all" />
     <type fullname="System.DateTime" preserve="all" />
+    <type fullname="System.DateTimeOffset" preserve="all" />
     <type fullname="System.Delegate" preserve="all" />
+    <type fullname="System.Diagnostics.ConditionalAttribute" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute/DebuggingModes" preserve="all" />
     <type fullname="System.Diagnostics.DebuggerHiddenAttribute" preserve="all" />
@@ -247,7 +268,9 @@
     <type fullname="System.Diagnostics.ProcessStartInfo" preserve="all" />
     <type fullname="System.Enum" preserve="all" />
     <type fullname="System.Environment" preserve="all" />
+    <type fullname="System.Environment/SpecialFolder" preserve="all" />
     <type fullname="System.Exception" preserve="all" />
+    <type fullname="System.Func`1" preserve="all" />
     <type fullname="System.Func`2" preserve="all" />
     <type fullname="System.GC" preserve="all" />
     <type fullname="System.IDisposable" preserve="all" />
@@ -285,6 +308,8 @@
     <type fullname="System.RuntimeFieldHandle" preserve="all" />
     <type fullname="System.RuntimeTypeHandle" preserve="all" />
     <type fullname="System.SByte" preserve="all" />
+    <type fullname="System.Security.Cryptography.HashAlgorithm" preserve="all" />
+    <type fullname="System.Security.Cryptography.MD5" preserve="all" />
     <type fullname="System.Security.Cryptography.RandomNumberGenerator" preserve="all" />
     <type fullname="System.Single" preserve="all" />
     <type fullname="System.Span`1" preserve="all" />
@@ -304,6 +329,7 @@
     <type fullname="System.UInt32" preserve="all" />
     <type fullname="System.ValueTuple`2" preserve="all" />
     <type fullname="System.ValueTuple`3" preserve="all" />
+    <type fullname="System.ValueTuple`5" preserve="all" />
     <type fullname="System.ValueType" preserve="all" />
   </assembly>
 </linker>

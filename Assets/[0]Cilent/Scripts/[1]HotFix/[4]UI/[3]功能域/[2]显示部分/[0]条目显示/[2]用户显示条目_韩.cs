@@ -12,7 +12,7 @@ public class 用户显示条目_韩 : MonoBehaviour, IController, IentryDis
     [SerializeField] public TextBlock 账号;
     [SerializeField] public TextBlock 姓名;
     [SerializeField] public TextBlock 性别;
-    [SerializeField] public TextBlock 联系方式;
+    [SerializeField] public TextBlock 身份信息;
     [SerializeField] public TextBlock 出生日期;
     [SerializeField] public NovaSamples.UIControls.Button 查看;
     [SerializeField] public NovaSamples.UIControls.Button 删除;
@@ -36,13 +36,13 @@ public class 用户显示条目_韩 : MonoBehaviour, IController, IentryDis
         }
 
         当前索引 = 索引; // 保存索引
-
+        索引下标 = 索引;
         var 用户录 = this.GetModel<用户录>();
         var 当前人员 = 用户录.GetDataList()[索引];
         账号.Text = 当前人员.编号;
         姓名.Text = 当前人员.名;
         性别.Text = 当前人员.性别;
-        联系方式.Text = 当前人员.身份证;
+        身份信息.Text = 当前人员.身份证;
         出生日期.Text = 当前人员.诞辰;
 
         // 注意：这里不需要重复添加监听器，因为已经在Start()中添加过了
@@ -73,7 +73,8 @@ public class 用户显示条目_韩 : MonoBehaviour, IController, IentryDis
         var 界面 = FindObjectOfType<界面管理器_韩>();
         界面.显示界面("用户管理添加");
         await UniTask.Delay(100);
-        界面._currentPanel.GetComponent<用户管理添加安卓_茉>().显示信息(this.GetModel<用户录>().GetDataList()[当前索引]);
+        界面._currentPanel.GetComponent<界面基础_韩>().显示信息?.Invoke(this.GetModel<用户录>().GetDataList()[当前索引]);
+        //界面._currentPanel.GetComponent<用户管理添加安卓_茉>().显示信息(this.GetModel<用户录>().GetDataList()[当前索引]);
         Debug.Log($"查看索引 {当前索引} 的信息");
     }
 

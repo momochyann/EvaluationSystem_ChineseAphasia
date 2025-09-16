@@ -6,6 +6,7 @@ using NovaSamples.UIControls;
 using QFramework;
 using System.Linq;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 public class 索录栏契韩_茉 : MonoBehaviour, IController
 {
     // Start is called before the first frame update
@@ -48,7 +49,7 @@ public class 索录栏契韩_茉 : MonoBehaviour, IController
         foreach (var property in properties)
         {
             Debug.Log("记干名" + property.Name);
-           
+
         }
         foreach (var item in 记干名)
         {
@@ -60,7 +61,7 @@ public class 索录栏契韩_茉 : MonoBehaviour, IController
                     if (matchedField != null)
                     {
                         var fieldValue = matchedField.GetValue(记);
-//                        Debug.Log(fieldValue.ToString() + " " + 输入框.Text);
+                        //                        Debug.Log(fieldValue.ToString() + " " + 输入框.Text);
                         if (fieldValue != null && fieldValue.ToString().Contains(输入框.Text))
                         {
 
@@ -86,6 +87,15 @@ public class 索录栏契韩_茉 : MonoBehaviour, IController
             Debug.Log("记名" + 记);
             var 显记 = Instantiate(目气, 显示条目_韩.transform);
             显记.GetComponent<IentryDis>().显示信息(录.GetIndex(记));
+            var mask = 显记.GetComponent<ClipMask>();
+            if (mask != null)
+            {
+               DOTween.To((float value) =>
+               {
+                   mask.Tint = new Color(mask.Tint.r, mask.Tint.g, mask.Tint.b, value);
+               }, 0, 1, 0.5f);
+            }
+
         }
     }
     public IArchitecture GetArchitecture()

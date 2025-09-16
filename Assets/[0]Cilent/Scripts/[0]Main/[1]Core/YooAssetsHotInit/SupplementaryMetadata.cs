@@ -21,7 +21,8 @@ public class SupplementaryMetadata : MonoBehaviour
             "QFramework.Core.dll",
             "DOTween.dll",
             "UnityEngine.CoreModule.dll",
-            "UniTask.Linq.dll"
+            "UniTask.Linq.dll",
+            "UnityEngine.ScreenCaptureModule.dll"
         };
     private void Awake()
     {

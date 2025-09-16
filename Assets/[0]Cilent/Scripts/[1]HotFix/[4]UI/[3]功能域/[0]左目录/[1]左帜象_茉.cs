@@ -8,6 +8,7 @@ using DG.Tweening;
 public class 左帜象_茉 : MonoBehaviour
 {
     [SerializeField] Color 选中颜色;
+    [SerializeField] Color 未选中颜色;
     TextField textField;
     左目录选择_韩 目录形;
     void Start()
@@ -22,15 +23,15 @@ public class 左帜象_茉 : MonoBehaviour
     private void 显切象(Button button)
     {
         var uiBlock = button.GetComponent<UIBlock2D>();
-        更新Block2D颜色(button.transform.Find("图标").GetComponent<UIBlock2D>(), Color.white);
+       // 更新Block2D颜色(button.transform.Find("图标").GetComponent<UIBlock2D>(), Color.white);
         更新Block2D颜色(uiBlock, 选中颜色);
         更新Block2D颜色(button.transform.Find("标题").GetComponent<TextBlock>(), Color.white);
         foreach (var item in 目录形.目录列表)
         {
             if (item != button)
             {
-                更新Block2D颜色(item.GetComponent<UIBlock2D>(), Color.white);
-                更新Block2D颜色(item.transform.Find("图标").GetComponent<UIBlock2D>(), Color.black);
+                更新Block2D颜色(item.GetComponent<UIBlock2D>(), 未选中颜色);
+               // 更新Block2D颜色(item.transform.Find("图标").GetComponent<UIBlock2D>(), 未选中颜色);
                 更新Block2D颜色(item.transform.Find("标题").GetComponent<TextBlock>(), Color.black);
             }
         }

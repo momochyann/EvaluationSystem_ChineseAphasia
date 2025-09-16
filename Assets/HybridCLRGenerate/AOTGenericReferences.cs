@@ -14,6 +14,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		"UniTask.dll",
 		"UnityEngine.AndroidJNIModule.dll",
 		"UnityEngine.CoreModule.dll",
+		"UnityEngine.ScreenCaptureModule.dll",
 		"mscorlib.dll",
 	};
 	// }}

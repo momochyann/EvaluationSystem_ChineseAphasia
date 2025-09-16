@@ -15,9 +15,24 @@ public class 显示条目_韩 : MonoBehaviour, IController
     [SerializeField] public string ModelName; // 设置为与模型类名一致
     [SerializeField] public bool 是否刷新 = false;
     [SerializeField] Scroller 滚动条;
-
+    int 条目解锁数量;
     void Start()
     {
+        #if UNITY_EDITOR
+        // 在编辑器中根据选择的平台返回后缀
+        if (UnityEditor.EditorPrefs.GetInt("TestPlatform", 0) == 0)
+        {
+            条目解锁数量 = 12;
+        }
+        else
+        {
+            条目解锁数量 = 7;
+        }
+#elif UNITY_ANDROID || UNITY_IOS
+        条目解锁数量 = 7;
+#else
+        条目解锁数量 = 12;
+#endif
         if (prefeb == null)
         {
             Debug.Log("[显示条目_韩] prefeb为空");
@@ -59,9 +74,10 @@ public class 显示条目_韩 : MonoBehaviour, IController
             Debug.LogError($"[显示条目_韩] 无法找到模型: {ModelName}");
             return;
         }
-
+       
         var 数据 = 录.GetAllItems();
         var 索引下标 = 数据.Count;
+        Debug.Log("索引下标" + 索引下标);
         for (int i = 0; i < 索引下标; i++)
         {
             Debug.Log(this.transform.parent.gameObject.name);
@@ -97,7 +113,7 @@ public class 显示条目_韩 : MonoBehaviour, IController
     {
         if (滚动条 == null) return;
 
-        bool 应该启用滚动 = 条目数量 > 7;
+        bool 应该启用滚动 = 条目数量 > 条目解锁数量;
 
         if (应该启用滚动)
         {
