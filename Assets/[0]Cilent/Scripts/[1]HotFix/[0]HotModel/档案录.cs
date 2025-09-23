@@ -11,6 +11,12 @@ public class 档案 : I记贞
     public string 评估时间;
     public string 评估人员;
 }
+
+public class 谈话档案 
+{
+    
+}
+
 public class 档案录 : 录元<档案>
 {
     protected override void OnInit()

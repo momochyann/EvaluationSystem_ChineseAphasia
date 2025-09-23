@@ -1,0 +1,78 @@
+# Add directories or file patterns to ignore during indexing (e.g. foo/ or *.csv)
+
+# Unity generated files and directories
+*.meta
+Library/
+Temp/
+obj/
+Logs/
+UserSettings/
+.vs/
+.vscode/
+
+# Asset bundles and builds
+Bundles/
+_CDN/
+*.bundle
+*.bytes
+
+# Unity specific temporary files
+*.tmp
+*.asset.backup
+*.prefab.backup
+*.unity.backup
+
+# Version control
+.git/
+.gitignore
+
+# Documentation and readme files (optional, remove if you want to index them)
+*.pdf
+*.md
+README*
+
+# Large data files that don't need indexing
+StreamingAssets/
+HybridCLRData/
+
+# Package manager files
+Packages/
+packages-lock.json
+
+# IDE files
+*.sln
+*.csproj
+*.user
+*.suo
+*.cache
+
+# Binary files
+*.dll
+*.exe
+*.app
+*.apk
+*.ipa
+
+# Image files (optional, remove if you want to index them)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tga
+*.psd
+
+# Audio files (optional)
+*.wav
+*.mp3
+*.ogg
+*.aiff
+
+# Video files (optional)
+*.mp4
+*.mov
+*.avi
+
+# Font files (optional)
+*.ttf
+*.otf

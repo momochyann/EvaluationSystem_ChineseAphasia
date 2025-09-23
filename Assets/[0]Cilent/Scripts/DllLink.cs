@@ -4,7 +4,7 @@ using UnityEngine;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using TMPro;
-
+using System.Runtime.InteropServices;
 //using NativeGalleryNamespace;
 using QFramework;
 public class DllLink : MonoBehaviour
@@ -16,8 +16,20 @@ public class DllLink : MonoBehaviour
     void Start()
     {
         PickImageFromGalleryAsync().Forget();
-        // 添加AOT泛型预热
-        AOTGenericWarmup();
+        // Marshal相关
+ // 添加P/Invoke元数据引用
+        System.Runtime.InteropServices.Marshal.SizeOf<System.IntPtr>();
+        System.Runtime.InteropServices.Marshal.GetLastWin32Error();
+        
+
+
+    }
+    [DllImport("comdlg32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+    private static extern bool GetOpenFileNameAOT(System.IntPtr ofn);
+    void sss()
+    {
+        // Marshal.SizeOf<ImagePickerUtility.OpenFileName>();
+        Marshal.GetLastWin32Error();
     }
     public void Show()
     {
@@ -28,7 +40,7 @@ public class DllLink : MonoBehaviour
     public void Hide()
     {
         canvasGroup.DOFade(0, 0.3f);
-        DOVirtual.EasedValue(0,1,0.5f,Ease.Linear);
+        DOVirtual.EasedValue(0, 1, 0.5f, Ease.Linear);
     }
     async UniTask<Texture2D> PickImageFromGalleryAsync()
     {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using QFramework;
+
 public class HotFixTemplateArchitecture : Architecture<HotFixTemplateArchitecture>
 {
     protected override void Init()
@@ -13,6 +14,7 @@ public class HotFixTemplateArchitecture : Architecture<HotFixTemplateArchitectur
         this.GetUtility<YooAssetPfbPoolUtility>().Init();
         RegisterUtility<SerialPortCenterUtility>(new SerialPortCenterUtility());
         
+    
         RegisterUtility<ImagePickerUtility>(new ImagePickerUtility());
         // 注册截图和PDF工具类
         RegisterUtility<IScreenshotPDFUtility>(new ScreenshotPDFUtility());

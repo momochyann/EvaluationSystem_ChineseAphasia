@@ -36,12 +36,11 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     protected bool isMonitoring = false;
     protected readonly object lockObject = new object();
 
-    // Windows API声明（用于获取串口信息）
-    [DllImport("SetupAPI.dll", CharSet = CharSet.Auto)]
-    private static extern int spapDeviceListAvailable();
+    [DllImport("spap", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+    static extern int spapDeviceListAvailable();
 
-    [DllImport("SetupAPI.dll", CharSet = CharSet.Auto)]
-    private static extern void spapDeviceList(int index, StringBuilder deviceInfo, int bufferSize);
+    [DllImport("spap", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+    static extern int spapDeviceList(int deviceNum, [MarshalAs(UnmanagedType.LPStr)] StringBuilder deviceInfo, int buffer_size);
 
     public bool IsConnected => isConnected; 
     public string CurrentPortName => currentPortName;
@@ -57,7 +56,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     /// <summary>
     /// 串口波特率配置
     /// </summary>
-    protected virtual int BaudRate => 115200;
+    protected virtual int BaudRate => 9600;
 
     /// <summary>
     /// 连接超时时间（毫秒）
@@ -89,7 +88,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
                     if (comIndex > 0)
                         comPort = comPort.Substring(0, comIndex);
                     
-                    if (comPort.Length >= 4 && comPort.StartsWith("COM"))
+                    if (comPort.Length >= 4 && comPort.StartsWith("COM") )
                     {
                         // 正确解析COM端口号：COM3 -> Skip = 3
                         int portSkip = int.Parse(comPort[3..]);
@@ -145,6 +144,10 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
         // 逐个尝试连接COM端口
         foreach (var (portName, portSkip) in comPorts)
         {
+            if(portName.Contains("COM12")||portName.Contains("COM27")||portName.Contains("COM11")||portName.Contains("COM17"))
+            {
+                continue;
+            }
             if (await TryConnectPort(portName, portSkip))
             {
                 OnDeviceFound?.Invoke($"在端口 {portName} 发现{DeviceName}设备");

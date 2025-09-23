@@ -3,6 +3,11 @@ using QFramework;
 using Cysharp.Threading.Tasks;
 using System;
 using System.IO;
+using System.Linq;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 
 public interface IImagePickerUtility : IUtility
@@ -69,6 +74,15 @@ public class ImagePickerUtility : IImagePickerUtility
     private string ImageCacheDirectory => Path.Combine(Application.persistentDataPath, "ImageCache");
     private const string LAST_IMAGE_RECORD_KEY = "LastDisplayedImage";
     
+    // 自制文件选择器的配置
+    private static readonly string[] ImageExtensions = { "*.png", "*.jpg", "*.jpeg", "*.bmp", "*.tga", "*.gif" };
+    private static readonly string[] SearchDirectories = {
+        "MyPictures",
+        "Desktop", 
+        "Downloads",
+        "Documents"
+    };
+    
     /// <summary>
     /// 从相册选择图片
     /// </summary>
@@ -76,12 +90,91 @@ public class ImagePickerUtility : IImagePickerUtility
     {
         try
         {
-            Debug.Log("开始从相册选择图片...");
+            Debug.Log("开始选择图片...");
+            Debug.Log($"当前平台: {Application.platform}");
+            Debug.Log($"是否为编辑器: {Application.isEditor}");
             
-            // 编辑器模式直接返回测试纹理
-            if (Application.isEditor)
+            // 检查是否为PC平台
+            bool isPCPlatform = IsPCPlatform();
+            Debug.Log($"是否为PC平台: {isPCPlatform}");
+            
+            if (isPCPlatform)
             {
-                return CreateTestTexture();
+                Debug.Log("使用PC端文件对话框选择图片");
+                return await PickImageFromFileDialogAsync(maxSize);
+            }
+            
+            // 移动平台使用相册
+            Debug.Log("使用移动端相册选择图片");
+            return await PickImageFromMobileGalleryAsync(maxSize);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"选择图片失败: {e.Message}");
+            return null;
+        }
+    }
+    
+    /// <summary>
+    /// PC平台使用文件选择器选择图片
+    /// </summary>
+    private async UniTask<Texture2D> PickImageFromFileDialogAsync(int maxSize = 1024)
+    {
+        try
+        {
+            Debug.Log("PC端开始选择图片...");
+            
+#if UNITY_EDITOR
+            // 编辑器模式使用EditorUtility
+            string path = EditorUtility.OpenFilePanel("选择图片", "", "png,jpg,jpeg,bmp,tga");
+            if (string.IsNullOrEmpty(path))
+            {
+                Debug.Log("用户取消选择图片");
+                return null;
+            }
+            
+            return await LoadTextureFromFileAsync(path, maxSize);
+#else
+            // PC运行时模式使用自制文件选择器
+            Debug.Log("使用自制文件选择器");
+            string path = await ShowCustomFilePickerAsync();
+            
+            Debug.Log($"文件选择器返回路径: {path}");
+            
+            if (string.IsNullOrEmpty(path))
+            {
+                Debug.Log("用户取消选择或未找到图片");
+                return null;
+            }
+            
+            Debug.Log($"准备加载图片文件: {path}");
+            return await LoadTextureFromFileAsync(path, maxSize);
+#endif
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"PC端选择图片失败: {e.Message}");
+            return null;
+        }
+    }
+    
+    /// <summary>
+    /// 移动平台使用相册选择图片
+    /// </summary>
+    private async UniTask<Texture2D> PickImageFromMobileGalleryAsync(int maxSize = 1024)
+    {
+        try
+        {
+            Debug.Log("移动端开始从相册选择图片...");
+            
+            // 双重检查确保是移动平台
+            bool isMobilePlatform = Application.platform == RuntimePlatform.Android ||
+                                   Application.platform == RuntimePlatform.IPhonePlayer;
+            
+            if (!isMobilePlatform)
+            {
+                Debug.LogError("当前不是移动平台，无法使用相册功能");
+                return CreateTestTexture(); // 返回测试纹理作为备用
             }
             
             // 检查权限
@@ -94,6 +187,7 @@ public class ImagePickerUtility : IImagePickerUtility
             // 使用NativeGallery选择图片
             var tcs = new UniTaskCompletionSource<Texture2D>();
             
+            Debug.Log("调用NativeGallery.GetImageFromGallery");
             NativeGallery.GetImageFromGallery((path) =>
             {
                 if (string.IsNullOrEmpty(path))
@@ -131,9 +225,266 @@ public class ImagePickerUtility : IImagePickerUtility
         }
         catch (Exception e)
         {
-            Debug.LogError($"选择图片失败: {e.Message}");
+            Debug.LogError($"移动端选择图片失败: {e.Message}");
+            return CreateTestTexture(); // 出错时返回测试纹理
+        }
+    }
+    
+    /// <summary>
+    /// 从文件路径加载纹理
+    /// </summary>
+    private async UniTask<Texture2D> LoadTextureFromFileAsync(string filePath, int maxSize = 1024)
+    {
+        try
+        {
+            if (!File.Exists(filePath))
+            {
+                Debug.LogError($"文件不存在: {filePath}");
+                return null;
+            }
+            
+            // 异步读取文件
+            byte[] fileData = await File.ReadAllBytesAsync(filePath);
+            
+            // 创建纹理
+            Texture2D texture = new Texture2D(2, 2);
+            
+            if (texture.LoadImage(fileData))
+            {
+                // 如果需要缩放
+                if (maxSize > 0 && (texture.width > maxSize || texture.height > maxSize))
+                {
+                    texture = ResizeTexture(texture, maxSize);
+                }
+                
+                Debug.Log($"图片加载成功: {filePath} ({texture.width}x{texture.height})");
+                return texture;
+            }
+            else
+            {
+                Debug.LogError($"无法加载图片: {filePath}");
+                UnityEngine.Object.Destroy(texture);
+                return null;
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"加载图片文件异常: {e.Message}");
             return null;
         }
+    }
+    
+    /// <summary>
+    /// 调整纹理大小
+    /// </summary>
+    private Texture2D ResizeTexture(Texture2D source, int maxSize)
+    {
+        if (source == null) return null;
+        
+        int newWidth = source.width;
+        int newHeight = source.height;
+        
+        // 计算缩放比例
+        float scale = 1f;
+        if (newWidth > newHeight)
+        {
+            if (newWidth > maxSize)
+            {
+                scale = (float)maxSize / newWidth;
+            }
+        }
+        else
+        {
+            if (newHeight > maxSize)
+            {
+                scale = (float)maxSize / newHeight;
+            }
+        }
+        
+        newWidth = Mathf.RoundToInt(newWidth * scale);
+        newHeight = Mathf.RoundToInt(newHeight * scale);
+        
+        // 创建RenderTexture进行缩放
+        RenderTexture renderTexture = RenderTexture.GetTemporary(newWidth, newHeight);
+        Graphics.Blit(source, renderTexture);
+        
+        RenderTexture previous = RenderTexture.active;
+        RenderTexture.active = renderTexture;
+        
+        Texture2D resizedTexture = new Texture2D(newWidth, newHeight);
+        resizedTexture.ReadPixels(new Rect(0, 0, newWidth, newHeight), 0, 0);
+        resizedTexture.Apply();
+        
+        RenderTexture.active = previous;
+        RenderTexture.ReleaseTemporary(renderTexture);
+        
+        // 销毁原纹理
+        UnityEngine.Object.Destroy(source);
+        
+        return resizedTexture;
+    }
+    
+
+
+    /// <summary>
+    /// 显示自制文件选择器
+    /// </summary>
+    private async UniTask<string> ShowCustomFilePickerAsync()
+    {
+        Debug.Log("=== 自制文件选择器开始执行 ===");
+        
+        try
+        {
+            // 搜索图片文件
+            var foundImages = await ScanImageFilesAsync();
+            
+            if (foundImages.Count == 0)
+            {
+                Debug.LogWarning("未找到任何图片文件");
+                return null;
+            }
+            
+            // 选择最新的图片文件
+            string selectedPath = SelectLatestImage(foundImages);
+            Debug.Log($"自动选择最新图片: {selectedPath}");
+            
+            return selectedPath;
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"自制文件选择器异常: {e.Message}");
+            return null;
+        }
+        finally
+        {
+            Debug.Log("=== 自制文件选择器执行结束 ===");
+        }
+    }
+    
+    /// <summary>
+    /// 扫描图片文件
+    /// </summary>
+    private async UniTask<System.Collections.Generic.List<FileInfo>> ScanImageFilesAsync()
+    {
+        var imageFiles = new System.Collections.Generic.List<FileInfo>();
+        
+        await UniTask.Run(() =>
+        {
+            Debug.Log("开始扫描图片文件...");
+            
+            // 获取搜索目录
+            string[] searchPaths = GetSearchDirectories();
+            
+            foreach (string dirPath in searchPaths)
+            {
+                if (!Directory.Exists(dirPath))
+                {
+                    Debug.Log($"目录不存在，跳过: {dirPath}");
+                    continue;
+                }
+                
+                Debug.Log($"扫描目录: {dirPath}");
+                
+                try
+                {
+                    foreach (string extension in ImageExtensions)
+                    {
+                        string[] files = Directory.GetFiles(dirPath, extension, SearchOption.TopDirectoryOnly);
+                        foreach (string file in files)
+                        {
+                            var fileInfo = new FileInfo(file);
+                            imageFiles.Add(fileInfo);
+                            Debug.Log($"找到图片: {fileInfo.Name}");
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.LogWarning($"扫描目录失败 {dirPath}: {e.Message}");
+                }
+            }
+            
+            Debug.Log($"总共找到 {imageFiles.Count} 个图片文件");
+        });
+        
+        return imageFiles;
+    }
+    
+    /// <summary>
+    /// 获取搜索目录路径
+    /// </summary>
+    private string[] GetSearchDirectories()
+    {
+        var directories = new System.Collections.Generic.List<string>();
+        
+        foreach (string dirName in SearchDirectories)
+        {
+            try
+            {
+                string path = null;
+                switch (dirName)
+                {
+                    case "MyPictures":
+                        path = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+                        break;
+                    case "Desktop":
+                        path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                        break;
+                    case "Downloads":
+                        path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
+                        break;
+                    case "Documents":
+                        path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                        break;
+                }
+                
+                if (!string.IsNullOrEmpty(path))
+                {
+                    directories.Add(path);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning($"获取目录路径失败 {dirName}: {e.Message}");
+            }
+        }
+        
+        // 添加应用数据目录
+        directories.Add(Application.persistentDataPath);
+        
+        return directories.ToArray();
+    }
+    
+    /// <summary>
+    /// 选择最新的图片文件
+    /// </summary>
+    private string SelectLatestImage(System.Collections.Generic.List<FileInfo> imageFiles)
+    {
+        if (imageFiles == null || imageFiles.Count == 0)
+            return null;
+        
+        // 按修改时间排序，选择最新的
+        var sortedFiles = imageFiles.OrderByDescending(f => f.LastWriteTime).ToArray();
+        
+        var latestFile = sortedFiles[0];
+        Debug.Log($"选择最新图片: {latestFile.FullName} (修改时间: {latestFile.LastWriteTime})");
+        
+        return latestFile.FullName;
+    }
+    
+    /// <summary>
+    /// 检查是否为PC平台
+    /// </summary>
+    private bool IsPCPlatform()
+    {
+        RuntimePlatform platform = Application.platform;
+        
+        return platform == RuntimePlatform.WindowsPlayer ||
+               platform == RuntimePlatform.WindowsEditor ||
+               platform == RuntimePlatform.OSXPlayer ||
+               platform == RuntimePlatform.OSXEditor ||
+               platform == RuntimePlatform.LinuxPlayer ||
+               platform == RuntimePlatform.LinuxEditor;
     }
     
     /// <summary>

@@ -1,0 +1,2866 @@
+{
+    "Summary": {
+        "YooVersion": "2.1.2",
+        "UnityVersion": "2022.3.44f1c1",
+        "BuildDate": "2025/9/17 16:43:38",
+        "BuildSeconds": 25,
+        "BuildTarget": 19,
+        "BuildMode": 0,
+        "BuildPipeline": "BuiltinBuildPipeline",
+        "BuildPackageName": "DefaultPackage",
+        "BuildPackageVersion": "25-0917-164313",
+        "UniqueBundleName": true,
+        "EnableAddressable": true,
+        "LocationToLower": false,
+        "IncludeAssetGUID": false,
+        "AutoCollectShaders": true,
+        "IgnoreRuleName": "YooAsset.Editor.NormalIgnoreRule",
+        "EnableSharePackRule": true,
+        "EncryptionClassName": "null",
+        "FileNameStyle": 0,
+        "CompressOption": 2,
+        "DisableWriteTypeTree": false,
+        "IgnoreTypeTreeChanges": true,
+        "AssetFileTotalCount": 154,
+        "MainAssetTotalCount": 109,
+        "AllBundleTotalCount": 45,
+        "AllBundleTotalSize": 42666037,
+        "EncryptedBundleTotalCount": 0,
+        "EncryptedBundleTotalSize": 0
+    },
+    "AssetInfos": [
+        {
+            "Address": "1c296539239e282116f2043db1c9f32b",
+            "AssetPath": "Assets/[0]Cilent/Textures/1c296539239e282116f2043db1c9f32b.jpg",
+            "AssetGUID": "4b3367f23947d234c8d51d1067df4c2d",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures.bundle",
+            "MainBundleSize": 644942,
+            "DependAssets": []
+        },
+        {
+            "Address": "HotFixSceneBackImage",
+            "AssetPath": "Assets/[0]Cilent/Textures/HotFixSceneBackImage.png",
+            "AssetGUID": "ec7fb5d4488c1ab419c87078300d37df",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures.bundle",
+            "MainBundleSize": 644942,
+            "DependAssets": []
+        },
+        {
+            "Address": "备份",
+            "AssetPath": "Assets/[0]Cilent/Textures/备份.png",
+            "AssetGUID": "7923db73bc9de3f4bab82c32f3945a02",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures.bundle",
+            "MainBundleSize": 644942,
+            "DependAssets": []
+        },
+        {
+            "Address": "蓝牙",
+            "AssetPath": "Assets/[0]Cilent/Textures/蓝牙.png",
+            "AssetGUID": "e61c571da6b8d914ea23dd12ad02661d",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures.bundle",
+            "MainBundleSize": 644942,
+            "DependAssets": []
+        },
+        {
+            "Address": "蓝牙已连接",
+            "AssetPath": "Assets/[0]Cilent/Textures/蓝牙已连接.png",
+            "AssetGUID": "73f4c7cbe732a12479e33b5821e1c1d2",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures.bundle",
+            "MainBundleSize": 644942,
+            "DependAssets": []
+        },
+        {
+            "Address": "蓝牙未连接",
+            "AssetPath": "Assets/[0]Cilent/Textures/蓝牙未连接.png",
+            "AssetGUID": "b914862ff636a26498bb8b0a191847f8",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures.bundle",
+            "MainBundleSize": 644942,
+            "DependAssets": []
+        },
+        {
+            "Address": "蓝牙未连接状态",
+            "AssetPath": "Assets/[0]Cilent/Textures/蓝牙未连接状态.png",
+            "AssetGUID": "e31b01dfd7fd83e4a88c5ac4f020e3f4",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures.bundle",
+            "MainBundleSize": 644942,
+            "DependAssets": []
+        },
+        {
+            "Address": "还原",
+            "AssetPath": "Assets/[0]Cilent/Textures/还原.png",
+            "AssetGUID": "e9635599c772b5043ad4c2c8c3e4adec",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures.bundle",
+            "MainBundleSize": 644942,
+            "DependAssets": []
+        },
+        {
+            "Address": "取消-xA",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/取消-xA.png",
+            "AssetGUID": "ed4b7625cbf4fb846b8e4786a2b6a68c",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_1-登录界面.bundle",
+            "MainBundleSize": 2654040,
+            "DependAssets": []
+        },
+        {
+            "Address": "登录界面A-2000-bg",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/登录界面A-2000-bg.jpg",
+            "AssetGUID": "36d8b08764a42d34ca5ce9f935724dbf",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_1-登录界面.bundle",
+            "MainBundleSize": 2654040,
+            "DependAssets": []
+        },
+        {
+            "Address": "登录界面A",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/登录界面A.jpg",
+            "AssetGUID": "04aacb08924dc19479eb3490357e4cc5",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_1-登录界面.bundle",
+            "MainBundleSize": 2654040,
+            "DependAssets": []
+        },
+        {
+            "Address": "确认-勾A",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/确认-勾A.png",
+            "AssetGUID": "dd98c6dec9351a6498bf5ba46a1f5395",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_1-登录界面.bundle",
+            "MainBundleSize": 2654040,
+            "DependAssets": []
+        },
+        {
+            "Address": "2000x1200-bgd",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/2000x1200-bgd.jpg",
+            "AssetGUID": "778fc228ba6ae1b4d893cd018240f3b3",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+            "MainBundleSize": 2994293,
+            "DependAssets": []
+        },
+        {
+            "Address": "iconStart (1)",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (1).png",
+            "AssetGUID": "9957833f6396d6949b77dbdc0e4d9fa8",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+            "MainBundleSize": 2994293,
+            "DependAssets": []
+        },
+        {
+            "Address": "iconStart (2)",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (2).png",
+            "AssetGUID": "41f2c4abd9eaa604d9c5d301fb21bee2",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+            "MainBundleSize": 2994293,
+            "DependAssets": []
+        },
+        {
+            "Address": "iconStart (3)",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (3).png",
+            "AssetGUID": "aad3158c727ad2540813350e5dfe74e4",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+            "MainBundleSize": 2994293,
+            "DependAssets": []
+        },
+        {
+            "Address": "iconStart (4)",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (4).png",
+            "AssetGUID": "826c74b89abbd0f4b8ef8343628884a6",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+            "MainBundleSize": 2994293,
+            "DependAssets": []
+        },
+        {
+            "Address": "iconStart (5)",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (5).png",
+            "AssetGUID": "6792d5beb1cbbec4d829c55dd89de2ad",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+            "MainBundleSize": 2994293,
+            "DependAssets": []
+        },
+        {
+            "Address": "iconStart (6)",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (6).png",
+            "AssetGUID": "7821681f071f0e541a2f5251f51f26d2",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+            "MainBundleSize": 2994293,
+            "DependAssets": []
+        },
+        {
+            "Address": "主界面-6个icon-new",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/主界面-6个icon-new.jpg",
+            "AssetGUID": "b673d550a2668fe4fbd4e3805217807a",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+            "MainBundleSize": 2994293,
+            "DependAssets": []
+        },
+        {
+            "Address": "用户名1A",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/用户名1A.png",
+            "AssetGUID": "36d2f377fc3919440a636739b6a5651e",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+            "MainBundleSize": 2994293,
+            "DependAssets": []
+        },
+        {
+            "Address": "退出A",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/退出A.png",
+            "AssetGUID": "1f655a447ca4562409996ac1cef55e02",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+            "MainBundleSize": 2994293,
+            "DependAssets": []
+        },
+        {
+            "Address": "2000x1200-bg",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/2000x1200-bg.jpg",
+            "AssetGUID": "ba822240a8fb8994d80f860edadc05df",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+            "MainBundleSize": 1219651,
+            "DependAssets": []
+        },
+        {
+            "Address": "删除",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/删除.png",
+            "AssetGUID": "5f60c2e901a55a2449bb0dbe40361306",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+            "MainBundleSize": 1219651,
+            "DependAssets": []
+        },
+        {
+            "Address": "取消-x透",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/取消-x透.png",
+            "AssetGUID": "406b87094283f0b47abec8fee5cdb4b6",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+            "MainBundleSize": 1219651,
+            "DependAssets": []
+        },
+        {
+            "Address": "搜索1A",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/搜索1A.png",
+            "AssetGUID": "cea1c5711b18a5746a54885dc82f1f66",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+            "MainBundleSize": 1219651,
+            "DependAssets": []
+        },
+        {
+            "Address": "添加",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/添加.png",
+            "AssetGUID": "ea60b06b97d3e4543b0e0437c5248333",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+            "MainBundleSize": 1219651,
+            "DependAssets": []
+        },
+        {
+            "Address": "确认-勾",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/确认-勾.png",
+            "AssetGUID": "64e5133c2f7ccd84891762d88ed30914",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+            "MainBundleSize": 1219651,
+            "DependAssets": []
+        },
+        {
+            "Address": "管理",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/管理.png",
+            "AssetGUID": "a9d831962235a2348929663641c1be01",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+            "MainBundleSize": 1219651,
+            "DependAssets": []
+        },
+        {
+            "Address": "蓝牙-高亮",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/蓝牙-高亮.png",
+            "AssetGUID": "5332017c20c78a14e83c67b6eb3af780",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+            "MainBundleSize": 1219651,
+            "DependAssets": []
+        },
+        {
+            "Address": "蓝牙-黄色-link",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/蓝牙-黄色-link.png",
+            "AssetGUID": "380312d2801ec4148882cb7ebd6bbe91",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+            "MainBundleSize": 1219651,
+            "DependAssets": []
+        },
+        {
+            "Address": "返回",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png",
+            "AssetGUID": "ec3c69c6e6a1cee48be6ed1234de2c57",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+            "MainBundleSize": 1219651,
+            "DependAssets": []
+        },
+        {
+            "Address": "a1e10c75bbd1421a34bb52338a6cc9b0",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/a1e10c75bbd1421a34bb52338a6cc9b0.jpg",
+            "AssetGUID": "33ef375b4eb07a0429cb11117c2c659d",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200.bundle",
+            "MainBundleSize": 3483823,
+            "DependAssets": []
+        },
+        {
+            "Address": "登录界面-1920-bg",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/老平板尺寸1920x1200/1-登录界面/登录界面-1920-bg.jpg",
+            "AssetGUID": "98cf01c0789449d4b8e04fffb1033e5d",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_老平板尺寸1920x1200_1-登录界面.bundle",
+            "MainBundleSize": 1448089,
+            "DependAssets": []
+        },
+        {
+            "Address": "bg-1920x1200AA",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/老平板尺寸1920x1200/2-主界面/bg-1920x1200AA.jpg",
+            "AssetGUID": "9a949515784820f4fa090a0bc4fddcad",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_老平板尺寸1920x1200_2-主界面.bundle",
+            "MainBundleSize": 1253190,
+            "DependAssets": []
+        },
+        {
+            "Address": "089095edc8492e408e0791f6f58904e8",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/老平板尺寸1920x1200/089095edc8492e408e0791f6f58904e8.jpg",
+            "AssetGUID": "6ced8499b3d2a5843b3c8715813fbbc4",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_老平板尺寸1920x1200.bundle",
+            "MainBundleSize": 1926724,
+            "DependAssets": []
+        },
+        {
+            "Address": "bg-1920x1200",
+            "AssetPath": "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/老平板尺寸1920x1200/bg-1920x1200.jpg",
+            "AssetGUID": "8786e5e3d21758b48b217e9333ad531f",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_老平板尺寸1920x1200.bundle",
+            "MainBundleSize": 1926724,
+            "DependAssets": []
+        },
+        {
+            "Address": "保存1",
+            "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/保存1.png",
+            "AssetGUID": "1dab2756f0952f54b8fb955878228027",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+            "MainBundleSize": 18620,
+            "DependAssets": []
+        },
+        {
+            "Address": "删除1",
+            "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/删除1.png",
+            "AssetGUID": "a1ecdf796e23a964ba05e3df10ba21c6",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+            "MainBundleSize": 18620,
+            "DependAssets": []
+        },
+        {
+            "Address": "加号1",
+            "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/加号1.png",
+            "AssetGUID": "2faaa86c5e4c5d949946e1648a4fb85e",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+            "MainBundleSize": 18620,
+            "DependAssets": []
+        },
+        {
+            "Address": "取消1",
+            "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/取消1.png",
+            "AssetGUID": "1a64613d5da36f3418945d27725b9299",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+            "MainBundleSize": 18620,
+            "DependAssets": []
+        },
+        {
+            "Address": "搜索1",
+            "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/搜索1.png",
+            "AssetGUID": "b05e6773859a12a4683c641885c52670",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+            "MainBundleSize": 18620,
+            "DependAssets": []
+        },
+        {
+            "Address": "替换1",
+            "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/替换1.png",
+            "AssetGUID": "6e5d136072727df4fa6335b6eead7a28",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+            "MainBundleSize": 18620,
+            "DependAssets": []
+        },
+        {
+            "Address": "查看1",
+            "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/查看1.png",
+            "AssetGUID": "5a627e3cadaa4bc48a1e19d2edca95fe",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+            "MainBundleSize": 18620,
+            "DependAssets": []
+        },
+        {
+            "Address": "用户名1",
+            "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/用户名1.png",
+            "AssetGUID": "c34a22c4bcd77f64a8432242c2626241",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+            "MainBundleSize": 18620,
+            "DependAssets": []
+        },
+        {
+            "Address": "确定1",
+            "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/确定1.png",
+            "AssetGUID": "ee1b1f7aa1cc16543afe0f3bbfad7722",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+            "MainBundleSize": 18620,
+            "DependAssets": []
+        },
+        {
+            "Address": "系统设置1",
+            "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/系统设置1.png",
+            "AssetGUID": "28ebc962a9b995347a62b1c0e8b9409d",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+            "MainBundleSize": 18620,
+            "DependAssets": []
+        },
+        {
+            "Address": "蓝牙1",
+            "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/蓝牙1.png",
+            "AssetGUID": "a853dcd9c3250f54590a798a31a047b3",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+            "MainBundleSize": 18620,
+            "DependAssets": []
+        },
+        {
+            "Address": "账号信息1",
+            "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/账号信息1.png",
+            "AssetGUID": "6ff517812ee816b48a284df2a8cf60f1",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+            "MainBundleSize": 18620,
+            "DependAssets": []
+        },
+        {
+            "Address": "退出1",
+            "AssetPath": "Assets/[0]Cilent/Textures/用户管理8/退出1.png",
+            "AssetGUID": "6bcefcf54e1e1ad4ab2e0d7bfd672a3c",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+            "MainBundleSize": 18620,
+            "DependAssets": []
+        },
+        {
+            "Address": "f23b32d5c9e8f1a74c8097203f26262b",
+            "AssetPath": "Assets/[0]Cilent/Textures/电脑端目录Icon/f23b32d5c9e8f1a74c8097203f26262b.jpg",
+            "AssetGUID": "0759b7e31dcac1d4ca4486a5e5b5baa6",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_电脑端目录icon.bundle",
+            "MainBundleSize": 899973,
+            "DependAssets": []
+        },
+        {
+            "Address": "电脑端目录2",
+            "AssetPath": "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录2.png",
+            "AssetGUID": "a2056a3c60fc54c4c850430e60ca0d49",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_电脑端目录icon.bundle",
+            "MainBundleSize": 899973,
+            "DependAssets": []
+        },
+        {
+            "Address": "电脑端目录Icon1",
+            "AssetPath": "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon1.png",
+            "AssetGUID": "7afb942397843274594905080f548751",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_电脑端目录icon.bundle",
+            "MainBundleSize": 899973,
+            "DependAssets": []
+        },
+        {
+            "Address": "电脑端目录Icon3",
+            "AssetPath": "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon3.png",
+            "AssetGUID": "21974c5a867541345b1eb41532004a13",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_电脑端目录icon.bundle",
+            "MainBundleSize": 899973,
+            "DependAssets": []
+        },
+        {
+            "Address": "电脑端目录Icon4",
+            "AssetPath": "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon4.png",
+            "AssetGUID": "f3739f54093accc4e919f376242abcd1",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_电脑端目录icon.bundle",
+            "MainBundleSize": 899973,
+            "DependAssets": []
+        },
+        {
+            "Address": "电脑端目录Icon5",
+            "AssetPath": "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon5.png",
+            "AssetGUID": "65e3c500c4a94bd4c9f01b220b31722d",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_电脑端目录icon.bundle",
+            "MainBundleSize": 899973,
+            "DependAssets": []
+        },
+        {
+            "Address": "电脑端目录Icon6",
+            "AssetPath": "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon6.png",
+            "AssetGUID": "cca2e5459d8337a43835875045f574f2",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_textures_电脑端目录icon.bundle",
+            "MainBundleSize": 899973,
+            "DependAssets": []
+        },
+        {
+            "Address": "HotBadgeConfig",
+            "AssetPath": "Assets/[0]Cilent/Config/HotBadgeConfig.asset",
+            "AssetGUID": "195c542a8711ce5499a46f39bca92b97",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_config.bundle",
+            "MainBundleSize": 3069,
+            "DependAssets": []
+        },
+        {
+            "Address": "RainbowHierarchyRuleset",
+            "AssetPath": "Assets/[0]Cilent/Config/RainbowHierarchyRuleset.prefab",
+            "AssetGUID": "3a3ec8571dcbaa64dbef8ff712d67bcd",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_config.bundle",
+            "MainBundleSize": 3069,
+            "DependAssets": []
+        },
+        {
+            "Address": "Procedural Image",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/Procedural Image.prefab",
+            "AssetGUID": "161b55647687efb4c83700f1d5d7190b",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
+            "MainBundleSize": 447663,
+            "DependAssets": [
+                "Assets/Editor/ProceduralUIImage/Editor/procedural_image_inspector_icon.png",
+                "Assets/ProceduralUIImage/Resources/procedural_ui_image_default_sprite.png"
+            ]
+        },
+        {
+            "Address": "StartInit",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/StartInit.prefab",
+            "AssetGUID": "72c77e01529b85a439fd2106e7bcbdd2",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
+            "MainBundleSize": 447663,
+            "DependAssets": []
+        },
+        {
+            "Address": "界面加载动画",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/界面加载动画.prefab",
+            "AssetGUID": "280c1d54fa4bb9d4cb2004e92db18796",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
+            "MainBundleSize": 447663,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/Button_Dark.prefab",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/[1]Local/Textures/ui界面/登录界面9/加载界面.png",
+                "Assets/Nova/Icons/TextBlockIcon.png"
+            ]
+        },
+        {
+            "Address": "监视器",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/监视器.prefab",
+            "AssetGUID": "609ecbef681765142879c64099310b1d",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
+            "MainBundleSize": 447663,
+            "DependAssets": []
+        },
+        {
+            "Address": "输入框",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/输入框.prefab",
+            "AssetGUID": "29e81642a664fdc4aab8e6380221a75e",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
+            "MainBundleSize": 447663,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png"
+            ]
+        },
+        {
+            "Address": "选择下拉框",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/选择下拉框.prefab",
+            "AssetGUID": "7ab130016dda7824aad657332c45b2cf",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
+            "MainBundleSize": 447663,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "选择框",
+            "AssetPath": "Assets/[0]Cilent/Prefabs/选择框.prefab",
+            "AssetGUID": "9d9e8029103d0b549bb95236742954f0",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
+            "MainBundleSize": 447663,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png"
+            ]
+        },
+        {
+            "Address": "备份还原显示_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/备份还原显示_Mobile.prefab",
+            "AssetGUID": "91ee6ded58166b04ab5b48b4c534abbb",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景.bundle",
+            "MainBundleSize": 1559977,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/退出A.png",
+                "Assets/[0]Cilent/Textures/蓝牙未连接.png",
+                "Assets/[0]Cilent/Textures/用户管理8/系统设置1.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/2000x1200-bg.jpg",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Textures/还原.png",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/[0]Cilent/Textures/备份.png",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/[0]Cilent/Textures/1c296539239e282116f2043db1c9f32b.jpg",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "用户搜索栏_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/用户搜索栏_Mobile.prefab",
+            "AssetGUID": "a2e4056ca6753854daefac3146586490",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景.bundle",
+            "MainBundleSize": 1559977,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "评人搜索栏_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/评人搜索栏_Mobile.prefab",
+            "AssetGUID": "d2b579022c53aee488f5e76c640eef75",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景.bundle",
+            "MainBundleSize": 1559977,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "用户条目_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/用户管理/用户条目_Mobile.prefab",
+            "AssetGUID": "8dcc57d526c930244b3d27f26c96fdb1",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_用户管理.bundle",
+            "MainBundleSize": 1276030,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "用户管理显示_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/用户管理/用户管理显示_Mobile.prefab",
+            "AssetGUID": "e41e749d09bee70499521babf3b4c3a1",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_用户管理.bundle",
+            "MainBundleSize": 1276030,
+            "DependAssets": [
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/[0]Cilent/UI/安卓/工作场景/用户管理/用户条目_Mobile.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/搜索1A.png",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/2000x1200-bg.jpg",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/添加.png",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/管理.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/删除.png",
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/备份还原1.png",
+                "Assets/[0]Cilent/Textures/蓝牙未连接.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/[0]Cilent/Prefabs/选择下拉框.prefab",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "用户管理添加_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/用户管理/用户管理添加_Mobile.prefab",
+            "AssetGUID": "2991152874ac1db42981310b427c6f49",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_用户管理.bundle",
+            "MainBundleSize": 1276030,
+            "DependAssets": [
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/2000x1200-bg.jpg",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/取消-x透.png",
+                "Assets/[0]Cilent/Textures/蓝牙未连接.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/确认-勾.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "界面管理显示_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/界面管理界面01/界面管理显示_Mobile.prefab",
+            "AssetGUID": "026c622807e984746bd4e145adad3f0e",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_界面管理界面01.bundle",
+            "MainBundleSize": 2625837,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/取消-x透.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/[0]Cilent/Textures/蓝牙未连接.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/2000x1200-bg.jpg",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/确认-勾.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/登录界面A-2000-bg.jpg",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "评定人条目_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/评定人管理/评定人条目_Mobile.prefab",
+            "AssetGUID": "b4a1e0f778a4ac048bdb6c1db09ea962",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_评定人管理.bundle",
+            "MainBundleSize": 1271279,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "评定人管理显示_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/评定人管理/评定人管理显示_Mobile.prefab",
+            "AssetGUID": "1e4634779405bde42aa905ec93d82ea1",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_评定人管理.bundle",
+            "MainBundleSize": 1271279,
+            "DependAssets": [
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/搜索1A.png",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/2000x1200-bg.jpg",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/添加.png",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/管理.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/删除.png",
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/蓝牙-黄色-link.png",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/备份还原1.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/[0]Cilent/UI/安卓/工作场景/评定人管理/评定人条目_Mobile.prefab",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/[0]Cilent/Prefabs/选择下拉框.prefab",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "评定人管理添加_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/评定人管理/评定人管理添加_Mobile.prefab",
+            "AssetGUID": "df995b2f821f05f4388111286e728789",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_评定人管理.bundle",
+            "MainBundleSize": 1271279,
+            "DependAssets": [
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/取消-x透.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/蓝牙-黄色-link.png",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/2000x1200-bg.jpg",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/确认-勾.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "主页选择界面_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/选择界面/主页选择界面_Mobile.prefab",
+            "AssetGUID": "4511f8142318fc240ab2f24ee5e6be2c",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_选择界面.bundle",
+            "MainBundleSize": 4202334,
+            "DependAssets": [
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (2).png",
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/退出A.png",
+                "Assets/[0]Cilent/Textures/蓝牙未连接.png",
+                "Assets/[0]Cilent/Textures/用户管理8/系统设置1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/蓝牙1.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Textures/用户管理8/用户名1.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/蓝牙-高亮.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (5).png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (4).png",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (6).png",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (1).png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (3).png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/a1e10c75bbd1421a34bb52338a6cc9b0.jpg"
+            ]
+        },
+        {
+            "Address": "安卓蓝牙条目_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/选择界面/安卓蓝牙条目_Mobile.prefab",
+            "AssetGUID": "f20ba08eea678ce49816b7e6f797da5a",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_选择界面.bundle",
+            "MainBundleSize": 4202334,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "蓝牙连接界面_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/选择界面/蓝牙连接界面_Mobile.prefab",
+            "AssetGUID": "5532e9e9ff10a4a479f22646b5bf2844",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_选择界面.bundle",
+            "MainBundleSize": 4202334,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/取消-x透.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/蓝牙-高亮.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Icons/TextBlockIcon.png"
+            ]
+        },
+        {
+            "Address": "蓝牙连接_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/组件/蓝牙连接_Mobile.prefab",
+            "AssetGUID": "634debe73fca2334fb7771d03cdc4973",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_安卓_组件.bundle",
+            "MainBundleSize": 11296,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/[0]Cilent/Textures/蓝牙.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/蓝牙连接.controller"
+            ]
+        },
+        {
+            "Address": "万年历_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/万年历_PC.prefab",
+            "AssetGUID": "a131baf467b7c15459a7cf9f28b10ec5",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景.bundle",
+            "MainBundleSize": 773967,
+            "DependAssets": [
+                "Assets/Editor/ProceduralUIImage/Editor/procedural_image_inspector_icon.png",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/ProceduralUIImage/Resources/procedural_ui_image_default_sprite.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset"
+            ]
+        },
+        {
+            "Address": "上目录底色_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/上目录底色_PC.prefab",
+            "AssetGUID": "19b0498903cfd834a9749e0902578cb0",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景.bundle",
+            "MainBundleSize": 773967,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png"
+            ]
+        },
+        {
+            "Address": "告示_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/告示_PC.prefab",
+            "AssetGUID": "7b03a6ff4ee6859429185179db862e13",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景.bundle",
+            "MainBundleSize": 773967,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png"
+            ]
+        },
+        {
+            "Address": "左目录底色_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/左目录底色_PC.prefab",
+            "AssetGUID": "f8f4db75290b3bd41b706dd86f2e407f",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景.bundle",
+            "MainBundleSize": 773967,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png"
+            ]
+        },
+        {
+            "Address": "择日器_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/择日器_PC.prefab",
+            "AssetGUID": "d12c87ea56e569644bc2be61761fc681",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景.bundle",
+            "MainBundleSize": 773967,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/确认-勾.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_Day.prefab",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "滚轮显示预制体_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/滚轮显示预制体_PC.prefab",
+            "AssetGUID": "f46d2f1a2f7cd514a950baae3082d6b3",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景.bundle",
+            "MainBundleSize": 773967,
+            "DependAssets": [
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset"
+            ]
+        },
+        {
+            "Address": "首页界面显示_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/首页界面显示_PC.prefab",
+            "AssetGUID": "f8213f285df9208459c3b0d1ac77097c",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景.bundle",
+            "MainBundleSize": 773967,
+            "DependAssets": [
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/f23b32d5c9e8f1a74c8097203f26262b.jpg",
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "档案条目_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/档案管理/档案条目_PC.prefab",
+            "AssetGUID": "7801d83cff5ef2643b3ff9effbcbdbc1",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_档案管理.bundle",
+            "MainBundleSize": 41156,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png"
+            ]
+        },
+        {
+            "Address": "档案管理显示_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/档案管理/档案管理显示_PC.prefab",
+            "AssetGUID": "b1010a31f1bf3ac499b35f1610309e2a",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_档案管理.bundle",
+            "MainBundleSize": 41156,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/档案管理/档案条目_PC.prefab",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Icons/TextBlockIcon.png"
+            ]
+        },
+        {
+            "Address": "档案管理添加_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/档案管理/档案管理添加_PC.prefab",
+            "AssetGUID": "5f3618a7084bc86429d86aac27010276",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_档案管理.bundle",
+            "MainBundleSize": 41156,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png"
+            ]
+        },
+        {
+            "Address": "用户条目_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户条目_PC.prefab",
+            "AssetGUID": "ae879ec55269808428f1d89c8cc2acb9",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_用户管理.bundle",
+            "MainBundleSize": 63387,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/[0]Cilent/Textures/用户管理8/查看1.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png"
+            ]
+        },
+        {
+            "Address": "用户管理显示_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户管理显示_PC.prefab",
+            "AssetGUID": "ff609bd0f7e0cbb4f8d759029991491d",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_用户管理.bundle",
+            "MainBundleSize": 63387,
+            "DependAssets": [
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户条目_PC.prefab",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/[0]Cilent/Textures/用户管理8/删除1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/搜索1.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/[0]Cilent/Textures/用户管理8/查看1.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
+                "Assets/[0]Cilent/Textures/用户管理8/加号1.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "用户管理添加_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户管理添加_PC.prefab",
+            "AssetGUID": "018022ff0aeb3674681e1f75217536ce",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_用户管理.bundle",
+            "MainBundleSize": 63387,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/[0]Cilent/Textures/用户管理8/确定1.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/量表评估1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/取消1.png",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "备份还原显示_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/界面管理界面/备份还原显示_PC.prefab",
+            "AssetGUID": "bc4fdb21bec66bd4e9a6541c09ad15bf",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_界面管理界面.bundle",
+            "MainBundleSize": 2950475,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Textures/还原.png",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/[0]Cilent/Textures/备份.png",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/[0]Cilent/Textures/1c296539239e282116f2043db1c9f32b.jpg"
+            ]
+        },
+        {
+            "Address": "界面管理显示_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/界面管理界面/界面管理显示_PC.prefab",
+            "AssetGUID": "72a8f354fd732444cbe3b5ee5130441a",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_界面管理界面.bundle",
+            "MainBundleSize": 2950475,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/取消-x透.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/[0]Cilent/Textures/用户管理8/替换1.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/2000x1200-bg.jpg",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/确认-勾.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/登录界面A-2000-bg.jpg",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "评定人条目_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人条目_PC.prefab",
+            "AssetGUID": "958747b9cefe63f46aad68da67761700",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_评定人管理.bundle",
+            "MainBundleSize": 55349,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/[0]Cilent/Textures/用户管理8/删除1.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/[0]Cilent/Textures/用户管理8/查看1.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png"
+            ]
+        },
+        {
+            "Address": "评定人管理显示_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人管理显示_PC.prefab",
+            "AssetGUID": "d58863258f926e646b77f0b1826ec75b",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_评定人管理.bundle",
+            "MainBundleSize": 55349,
+            "DependAssets": [
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人条目_PC.prefab",
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/[0]Cilent/Textures/用户管理8/删除1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/搜索1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/查看1.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
+                "Assets/[0]Cilent/Textures/用户管理8/加号1.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "评定人管理添加_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人管理添加_PC.prefab",
+            "AssetGUID": "b03905e902c093445b9f2961ae47f006",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_评定人管理.bundle",
+            "MainBundleSize": 55349,
+            "DependAssets": [
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/[0]Cilent/Textures/用户管理8/账号信息1.png",
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/[0]Cilent/Textures/用户管理8/确定1.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/量表评估1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/取消1.png",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "主页选择界面_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/选择界面/主页选择界面_PC.prefab",
+            "AssetGUID": "98dc032bdab13b84b997046073a38f73",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_选择界面.bundle",
+            "MainBundleSize": 344573,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/Button_Dark.prefab",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/[1]Local/Textures/ui界面/选择界面9/选择界面.jpg"
+            ]
+        },
+        {
+            "Address": "量表评估3_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/量表评估/量表评估3_PC.prefab",
+            "AssetGUID": "0ddb74ba5078e4d4da9c0703c7c35faf",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_量表评估.bundle",
+            "MainBundleSize": 89196,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png"
+            ]
+        },
+        {
+            "Address": "量表评估_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/量表评估/量表评估_PC.prefab",
+            "AssetGUID": "fe95ee06ac16dfe428838e24d2765477",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_量表评估.bundle",
+            "MainBundleSize": 89196,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png"
+            ]
+        },
+        {
+            "Address": "量表评估弹出_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/量表评估/量表评估弹出_PC.prefab",
+            "AssetGUID": "73200e038b0614e4b955765d9fb5a145",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_量表评估.bundle",
+            "MainBundleSize": 89196,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png"
+            ]
+        },
+        {
+            "Address": "提示框_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/提示框_PC.prefab",
+            "AssetGUID": "9075b1958bf5eac49acf9bccd42e4062",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用.bundle",
+            "MainBundleSize": 13127,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png"
+            ]
+        },
+        {
+            "Address": "评人目_PC",
+            "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/评人目_PC.prefab",
+            "AssetGUID": "aef5d199e08834f4f8945005a59172af",
+            "AssetTags": [
+                "UI"
+            ],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用.bundle",
+            "MainBundleSize": 13127,
+            "DependAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/Button_Dark.prefab",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Icons/TextBlockIcon.png"
+            ]
+        },
+        {
+            "Address": "BLE蓝牙链域",
+            "AssetPath": "Assets/[0]Cilent/Scenes/BLE蓝牙链域.unity",
+            "AssetGUID": "0490507c22760a846a7f3f4e0cdbe835",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
+            "MainBundleSize": 237134,
+            "DependAssets": [
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[5]Utility&Tool/BleAPI/BleDeviceDis.prefab",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[5]Utility&Tool/BleAPI/BleScanerPanel.prefab"
+            ]
+        },
+        {
+            "Address": "GameStartScene",
+            "AssetPath": "Assets/[0]Cilent/Scenes/GameStartScene.unity",
+            "AssetGUID": "b0e12921701a963438ebc88365a0969d",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
+            "MainBundleSize": 237134,
+            "DependAssets": [
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/Nova/Sample/UIControls/Textures/Arrow.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/[0]Cilent/Textures/蓝牙.png",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/[0]Cilent/UI/安卓/组件/蓝牙连接_Mobile.prefab",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_Dark.prefab",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
+                "Assets/蓝牙连接.controller",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/Nova/Icons/ScreenSpaceIcon.png",
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/Button_Dark.prefab",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/Dropdown_Dark.prefab",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/ScrollableTextField_Dark.prefab",
+                "Assets/[0]Cilent/Config/RainbowHierarchyRuleset.prefab"
+            ]
+        },
+        {
+            "Address": "主场景",
+            "AssetPath": "Assets/[0]Cilent/Scenes/主场景.unity",
+            "AssetGUID": "445c8dc5032dcc345a3bbe083fa3ca0e",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
+            "MainBundleSize": 237134,
+            "DependAssets": [
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
+                "Assets/[0]Cilent/UI/安卓/工作场景/用户管理/用户条目_Mobile.prefab",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/[0]Cilent/UI/安卓/工作场景/界面管理界面01/界面管理显示_Mobile.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/2000x1200-bg.jpg",
+                "Assets/[0]Cilent/Textures/用户管理8/替换1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/确定1.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户条目_PC.prefab",
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon1.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/添加.png",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/首页界面显示_PC.prefab",
+                "Assets/[0]Cilent/UI/安卓/工作场景/评定人管理/评定人管理添加_Mobile.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/UIRoot.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/管理.png",
+                "Assets/Nova/Icons/ScreenSpaceIcon.png",
+                "Assets/[0]Cilent/UI/安卓/工作场景/用户管理/用户管理显示_Mobile.prefab",
+                "Assets/[0]Cilent/Textures/用户管理8/账号信息1.png",
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/f23b32d5c9e8f1a74c8097203f26262b.jpg",
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon6.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/蓝牙-黄色-link.png",
+                "Assets/[0]Cilent/Textures/用户管理8/删除1.png",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/备份还原1.png",
+                "Assets/[0]Cilent/Textures/蓝牙未连接.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/Button_Dark.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/界面管理界面/备份还原显示_PC.prefab",
+                "Assets/[0]Cilent/Textures/用户管理8/蓝牙1.png",
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon3.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/确认-勾.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人条目_PC.prefab",
+                "Assets/[0]Cilent/Textures/用户管理8/用户名1.png",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Textures/还原.png",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/评定人管理1.png",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
+                "Assets/[0]Cilent/Textures/1c296539239e282116f2043db1c9f32b.jpg",
+                "Assets/[0]Cilent/UI/安卓/工作场景/备份还原显示_Mobile.prefab",
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/[0]Cilent/UI/安卓/工作场景/评定人管理/评定人管理显示_Mobile.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/退出A.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/搜索1A.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户管理显示_PC.prefab",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/[0]Cilent/UI/安卓/工作场景/用户管理/用户管理添加_Mobile.prefab",
+                "Assets/[0]Cilent/Textures/用户管理8/退出1.png",
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon5.png",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人管理添加_PC.prefab",
+                "Assets/[1]Local/Textures/ui界面/背景界面9/总背景.jpg",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/量表评估1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/取消1.png",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人管理显示_PC.prefab",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset",
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/a1e10c75bbd1421a34bb52338a6cc9b0.jpg",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/删除.png",
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon4.png",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/档案管理1.png",
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/取消-x透.png",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/用户管理1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/系统设置1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/搜索1.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/[0]Cilent/Textures/用户管理8/查看1.png",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/界面管理1.png",
+                "Assets/[0]Cilent/UI/安卓/工作场景/评定人管理/评定人条目_Mobile.prefab",
+                "Assets/[1]Local/Textures/5-通用/弹出效果图/弹出界面.jpg",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户管理添加_PC.prefab",
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录2.png",
+                "Assets/[0]Cilent/Textures/备份.png",
+                "Assets/[0]Cilent/Prefabs/选择下拉框.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/登录界面A-2000-bg.jpg",
+                "Assets/[0]Cilent/Textures/用户管理8/加号1.png",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/界面管理界面/界面管理显示_PC.prefab",
+                "Assets/[0]Cilent/Config/RainbowHierarchyRuleset.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "Address": "登录界面场景",
+            "AssetPath": "Assets/[0]Cilent/Scenes/登录界面场景.unity",
+            "AssetGUID": "b05e893c517f2f048a65184e16a742df",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
+            "MainBundleSize": 237134,
+            "DependAssets": [
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/取消-xA.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/UIRoot.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/老平板尺寸1920x1200/1-登录界面/登录界面-1920-bg.jpg",
+                "Assets/Nova/Icons/ScreenSpaceIcon.png",
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/确认-勾A.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/Button_Dark.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_whilt.prefab",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/[0]Cilent/Config/RainbowHierarchyRuleset.prefab"
+            ]
+        },
+        {
+            "Address": "选择场景",
+            "AssetPath": "Assets/[0]Cilent/Scenes/选择场景.unity",
+            "AssetGUID": "33bf146c99c07024e801856bf10e1155",
+            "AssetTags": [],
+            "MainBundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
+            "MainBundleSize": 237134,
+            "DependAssets": [
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/退出A.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/[0]Cilent/UI/安卓/工作场景/选择界面/主页选择界面_Mobile.prefab",
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (4).png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (5).png",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (1).png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (3).png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/a1e10c75bbd1421a34bb52338a6cc9b0.jpg",
+                "Assets/Nova/Icons/ScreenSpaceIcon.png",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/选择界面/主页选择界面_PC.prefab",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (2).png",
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/[0]Cilent/Textures/蓝牙未连接.png",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/Button_Dark.prefab",
+                "Assets/[0]Cilent/Textures/用户管理8/系统设置1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/蓝牙1.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/蓝牙-高亮.png",
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Textures/用户管理8/用户名1.png",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (6).png",
+                "Assets/[0]Cilent/Config/RainbowHierarchyRuleset.prefab",
+                "Assets/[1]Local/Textures/ui界面/选择界面9/选择界面.jpg"
+            ]
+        }
+    ],
+    "BundleInfos": [
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures.bundle",
+            "FileName": "e40d9af910a129c55bfbeceabfd264bb.bundle",
+            "FileHash": "e40d9af910a129c55bfbeceabfd264bb",
+            "FileCRC": "312fcb38",
+            "FileSize": 644942,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Textures/1c296539239e282116f2043db1c9f32b.jpg",
+                "Assets/[0]Cilent/Textures/HotFixSceneBackImage.png",
+                "Assets/[0]Cilent/Textures/备份.png",
+                "Assets/[0]Cilent/Textures/蓝牙.png",
+                "Assets/[0]Cilent/Textures/蓝牙已连接.png",
+                "Assets/[0]Cilent/Textures/蓝牙未连接.png",
+                "Assets/[0]Cilent/Textures/蓝牙未连接状态.png",
+                "Assets/[0]Cilent/Textures/还原.png"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_1-登录界面.bundle",
+            "FileName": "1741f47b626517573f72d65c3c6d463f.bundle",
+            "FileHash": "1741f47b626517573f72d65c3c6d463f",
+            "FileCRC": "47278c7a",
+            "FileSize": 2654040,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/取消-xA.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/登录界面A-2000-bg.jpg",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/登录界面A.jpg",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/1-登录界面/确认-勾A.png"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+            "FileName": "fd8232dff6c4ea9332467d118a5cab4d.bundle",
+            "FileHash": "fd8232dff6c4ea9332467d118a5cab4d",
+            "FileCRC": "84807062",
+            "FileSize": 2994293,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/2000x1200-bgd.jpg",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (1).png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (2).png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (3).png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (4).png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (5).png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/iconStart (6).png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/主界面-6个icon-new.jpg",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/用户名1A.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/2-主界面/退出A.png"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+            "FileName": "c77418768d28416600f66b3f4d945261.bundle",
+            "FileHash": "c77418768d28416600f66b3f4d945261",
+            "FileCRC": "4eec24b9",
+            "FileSize": 1219651,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/2000x1200-bg.jpg",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/删除.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/取消-x透.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/搜索1A.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/添加.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/确认-勾.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/管理.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/蓝牙-高亮.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/蓝牙-黄色-link.png",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/3-评定人管理/icon/返回.png"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200.bundle",
+            "FileName": "210e95167bf4894e5235484185a4da79.bundle",
+            "FileHash": "210e95167bf4894e5235484185a4da79",
+            "FileCRC": "a02d910f",
+            "FileSize": 3483823,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/新平板尺寸2000x1200/a1e10c75bbd1421a34bb52338a6cc9b0.jpg"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_老平板尺寸1920x1200_1-登录界面.bundle",
+            "FileName": "3cda23abe24fa04e0706f48a09cf5192.bundle",
+            "FileHash": "3cda23abe24fa04e0706f48a09cf5192",
+            "FileCRC": "3bd95431",
+            "FileSize": 1448089,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/老平板尺寸1920x1200/1-登录界面/登录界面-1920-bg.jpg"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_老平板尺寸1920x1200_2-主界面.bundle",
+            "FileName": "00f722837d1b7c88cbbb76419f64a36a.bundle",
+            "FileHash": "00f722837d1b7c88cbbb76419f64a36a",
+            "FileCRC": "89f4c675",
+            "FileSize": 1253190,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/老平板尺寸1920x1200/2-主界面/bg-1920x1200AA.jpg"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_老平板尺寸1920x1200.bundle",
+            "FileName": "0f83a6937c229f0a96b62bb9201ee984.bundle",
+            "FileHash": "0f83a6937c229f0a96b62bb9201ee984",
+            "FileCRC": "79cefaec",
+            "FileSize": 1926724,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/老平板尺寸1920x1200/089095edc8492e408e0791f6f58904e8.jpg",
+                "Assets/[0]Cilent/Textures/庚申戊午/2025.8.16-ui界面-汉语失语症评测系统软件/老平板尺寸1920x1200/bg-1920x1200.jpg"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+            "FileName": "7f56fd306ed6904372187eda82ed69cf.bundle",
+            "FileHash": "7f56fd306ed6904372187eda82ed69cf",
+            "FileCRC": "120dd3fc",
+            "FileSize": 18620,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Textures/用户管理8/保存1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/删除1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/加号1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/取消1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/搜索1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/替换1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/查看1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/用户名1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/确定1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/系统设置1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/蓝牙1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/账号信息1.png",
+                "Assets/[0]Cilent/Textures/用户管理8/退出1.png"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_textures_电脑端目录icon.bundle",
+            "FileName": "8cc1ef826cadecde2031f92d0feccde8.bundle",
+            "FileHash": "8cc1ef826cadecde2031f92d0feccde8",
+            "FileCRC": "055667ea",
+            "FileSize": 899973,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/f23b32d5c9e8f1a74c8097203f26262b.jpg",
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录2.png",
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon1.png",
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon3.png",
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon4.png",
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon5.png",
+                "Assets/[0]Cilent/Textures/电脑端目录Icon/电脑端目录Icon6.png"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_config.bundle",
+            "FileName": "5fc2813914935e97482c08feb68fc4a1.bundle",
+            "FileHash": "5fc2813914935e97482c08feb68fc4a1",
+            "FileCRC": "0a1a15db",
+            "FileSize": 3069,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Config/HotBadgeConfig.asset",
+                "Assets/[0]Cilent/Config/RainbowHierarchyRuleset.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
+            "FileName": "8e145967bd183d0d90ef581a8ec02bfd.bundle",
+            "FileHash": "8e145967bd183d0d90ef581a8ec02bfd",
+            "FileCRC": "c640ca60",
+            "FileSize": 447663,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_share_assets_[1]local_textures_ui界面_登录界面9.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle",
+                "defaultpackage_share_assets_proceduraluiimage_resources.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Prefabs/Procedural Image.prefab",
+                "Assets/[0]Cilent/Prefabs/StartInit.prefab",
+                "Assets/[0]Cilent/Prefabs/界面加载动画.prefab",
+                "Assets/[0]Cilent/Prefabs/监视器.prefab",
+                "Assets/[0]Cilent/Prefabs/输入框.prefab",
+                "Assets/[0]Cilent/Prefabs/选择下拉框.prefab",
+                "Assets/[0]Cilent/Prefabs/选择框.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景.bundle",
+            "FileName": "07c8d54e3a9a27efde344ed6ed5cbcbb.bundle",
+            "FileHash": "07c8d54e3a9a27efde344ed6ed5cbcbb",
+            "FileCRC": "9060e958",
+            "FileSize": 1559977,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_assets_[0]cilent_textures.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+                "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/UI/安卓/工作场景/备份还原显示_Mobile.prefab",
+                "Assets/[0]Cilent/UI/安卓/工作场景/用户搜索栏_Mobile.prefab",
+                "Assets/[0]Cilent/UI/安卓/工作场景/评人搜索栏_Mobile.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_用户管理.bundle",
+            "FileName": "929ad706c05cfa7d588e704879a8e13a.bundle",
+            "FileHash": "929ad706c05cfa7d588e704879a8e13a",
+            "FileCRC": "fbfdff68",
+            "FileSize": 1276030,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_assets_[0]cilent_textures.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[4]ui_[1]登录域_左面分类8.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/UI/安卓/工作场景/用户管理/用户条目_Mobile.prefab",
+                "Assets/[0]Cilent/UI/安卓/工作场景/用户管理/用户管理显示_Mobile.prefab",
+                "Assets/[0]Cilent/UI/安卓/工作场景/用户管理/用户管理添加_Mobile.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_界面管理界面01.bundle",
+            "FileName": "582e383bb4c2cb51c3522a435bf0369e.bundle",
+            "FileHash": "582e383bb4c2cb51c3522a435bf0369e",
+            "FileCRC": "3eadcf4a",
+            "FileSize": 2625837,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_assets_[0]cilent_textures.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_1-登录界面.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/UI/安卓/工作场景/界面管理界面01/界面管理显示_Mobile.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_评定人管理.bundle",
+            "FileName": "59421e5e95406911c96ad3cce2edc27a.bundle",
+            "FileHash": "59421e5e95406911c96ad3cce2edc27a",
+            "FileCRC": "7c1255ad",
+            "FileSize": 1271279,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[4]ui_[1]登录域_左面分类8.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/UI/安卓/工作场景/评定人管理/评定人条目_Mobile.prefab",
+                "Assets/[0]Cilent/UI/安卓/工作场景/评定人管理/评定人管理显示_Mobile.prefab",
+                "Assets/[0]Cilent/UI/安卓/工作场景/评定人管理/评定人管理添加_Mobile.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_选择界面.bundle",
+            "FileName": "ac3dff676f42c5f0045192b8f302dc61.bundle",
+            "FileHash": "ac3dff676f42c5f0045192b8f302dc61",
+            "FileCRC": "0e8e0ab8",
+            "FileSize": 4202334,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_assets_[0]cilent_textures.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+                "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/UI/安卓/工作场景/选择界面/主页选择界面_Mobile.prefab",
+                "Assets/[0]Cilent/UI/安卓/工作场景/选择界面/安卓蓝牙条目_Mobile.prefab",
+                "Assets/[0]Cilent/UI/安卓/工作场景/选择界面/蓝牙连接界面_Mobile.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_组件.bundle",
+            "FileName": "f1e77368b35451203cac79e673c2a781.bundle",
+            "FileHash": "f1e77368b35451203cac79e673c2a781",
+            "FileCRC": "de1c3611",
+            "FileSize": 11296,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_assets_[0]cilent_textures.bundle",
+                "defaultpackage_share_assets.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/UI/安卓/组件/蓝牙连接_Mobile.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景.bundle",
+            "FileName": "2ec37189c5d622db9f8b826ec27cdd5a.bundle",
+            "FileHash": "2ec37189c5d622db9f8b826ec27cdd5a",
+            "FileCRC": "3eb8a4b1",
+            "FileSize": 773967,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+                "defaultpackage_assets_[0]cilent_textures_电脑端目录icon.bundle",
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle",
+                "defaultpackage_share_assets_proceduraluiimage_resources.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/万年历_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/上目录底色_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/告示_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/左目录底色_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/择日器_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/滚轮显示预制体_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/首页界面显示_PC.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_档案管理.bundle",
+            "FileName": "aec3c49a6ce5bb74902a4afe171fef84.bundle",
+            "FileHash": "aec3c49a6ce5bb74902a4afe171fef84",
+            "FileCRC": "fdd2f526",
+            "FileSize": 41156,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/档案管理/档案条目_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/档案管理/档案管理显示_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/档案管理/档案管理添加_PC.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_用户管理.bundle",
+            "FileName": "eb3378dc450a1edfcb465ca166ad7bc6.bundle",
+            "FileHash": "eb3378dc450a1edfcb465ca166ad7bc6",
+            "FileCRC": "d91140c2",
+            "FileSize": 63387,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+                "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[4]ui_[1]登录域_左面分类8.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户条目_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户管理显示_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/用户管理/用户管理添加_PC.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_界面管理界面.bundle",
+            "FileName": "61836448da68e4a1456239b91121f9af.bundle",
+            "FileHash": "61836448da68e4a1456239b91121f9af",
+            "FileCRC": "666af6a5",
+            "FileSize": 2950475,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_assets_[0]cilent_textures.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_1-登录界面.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+                "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/界面管理界面/备份还原显示_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/界面管理界面/界面管理显示_PC.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_评定人管理.bundle",
+            "FileName": "9549a319ca0526457786874142613c13.bundle",
+            "FileHash": "9549a319ca0526457786874142613c13",
+            "FileCRC": "a7ae63da",
+            "FileSize": 55349,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+                "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[4]ui_[1]登录域_左面分类8.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人条目_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人管理显示_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/评定人管理/评定人管理添加_PC.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_选择界面.bundle",
+            "FileName": "7d0989c0f1ff2ab372da4eed4d60c661.bundle",
+            "FileHash": "7d0989c0f1ff2ab372da4eed4d60c661",
+            "FileCRC": "adf9b7da",
+            "FileSize": 344573,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_share_assets_[1]local_textures_ui界面_选择界面9.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/选择界面/主页选择界面_PC.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_量表评估.bundle",
+            "FileName": "5e1130067c64a59912321917dfb1e11c.bundle",
+            "FileHash": "5e1130067c64a59912321917dfb1e11c",
+            "FileCRC": "9069933b",
+            "FileSize": 89196,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/量表评估/量表评估3_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/量表评估/量表评估_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/工作场景/量表评估/量表评估弹出_PC.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用.bundle",
+            "FileName": "03844153a410d7d47c1826f90802e75f.bundle",
+            "FileHash": "03844153a410d7d47c1826f90802e75f",
+            "FileCRC": "cb7a55c4",
+            "FileSize": 13127,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/UI/电脑&通用/提示框_PC.prefab",
+                "Assets/[0]Cilent/UI/电脑&通用/评人目_PC.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
+            "FileName": "28295669f85aac72c65ba7ed8b2aaeec.bundle",
+            "FileHash": "28295669f85aac72c65ba7ed8b2aaeec",
+            "FileCRC": "e696a780",
+            "FileSize": 237134,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "defaultpackage_assets_[0]cilent_config.bundle",
+                "defaultpackage_assets_[0]cilent_textures.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_1-登录界面.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_2-主界面.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_新平板尺寸2000x1200_3-评定人管理_icon.bundle",
+                "defaultpackage_assets_[0]cilent_textures_庚申戊午_2025_8_16-ui界面-汉语失语症评测系统软件_老平板尺寸1920x1200_1-登录界面.bundle",
+                "defaultpackage_assets_[0]cilent_textures_用户管理8.bundle",
+                "defaultpackage_assets_[0]cilent_textures_电脑端目录icon.bundle",
+                "defaultpackage_assets_[0]cilent_ui_安卓_工作场景.bundle",
+                "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_用户管理.bundle",
+                "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_界面管理界面01.bundle",
+                "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_评定人管理.bundle",
+                "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_选择界面.bundle",
+                "defaultpackage_assets_[0]cilent_ui_安卓_组件.bundle",
+                "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景.bundle",
+                "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_用户管理.bundle",
+                "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_界面管理界面.bundle",
+                "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_评定人管理.bundle",
+                "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景_选择界面.bundle",
+                "defaultpackage_share_assets.bundle",
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[4]ui_[1]登录域_左面分类8.bundle",
+                "defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[5]utility&tool_bleapi.bundle",
+                "defaultpackage_share_assets_[1]local_textures_5-通用_弹出效果图.bundle",
+                "defaultpackage_share_assets_[1]local_textures_ui界面_背景界面9.bundle",
+                "defaultpackage_share_assets_[1]local_textures_ui界面_选择界面9.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle",
+                "defaultpackage_share_assets_proceduraluiimage_resources.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Scenes/BLE蓝牙链域.unity",
+                "Assets/[0]Cilent/Scenes/GameStartScene.unity",
+                "Assets/[0]Cilent/Scenes/主场景.unity",
+                "Assets/[0]Cilent/Scenes/登录界面场景.unity",
+                "Assets/[0]Cilent/Scenes/选择场景.unity"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_editor_proceduraluiimage_editor.bundle",
+            "FileName": "4007f0bdf79cd2b8a65cd8f525343efe.bundle",
+            "FileHash": "4007f0bdf79cd2b8a65cd8f525343efe",
+            "FileCRC": "ec40c08a",
+            "FileSize": 1200,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/Editor/ProceduralUIImage/Editor/procedural_image_inspector_icon.png"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_proceduraluiimage_resources.bundle",
+            "FileName": "a5ed70d10d1915ec4130afec7adddaff.bundle",
+            "FileHash": "a5ed70d10d1915ec4130afec7adddaff",
+            "FileCRC": "300f841e",
+            "FileSize": 4172,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/ProceduralUIImage/Resources/procedural_ui_image_default_sprite.png"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_nova_icons.bundle",
+            "FileName": "d85ec5b3e4db7ebc3dbc2a14a9f967f4.bundle",
+            "FileHash": "d85ec5b3e4db7ebc3dbc2a14a9f967f4",
+            "FileCRC": "fd0aec30",
+            "FileSize": 1415,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/Nova/Icons/UIBlockActivatorIcon.png",
+                "Assets/Nova/Icons/InteractableIcon.png",
+                "Assets/Nova/Icons/ItemViewIcon.png",
+                "Assets/Nova/Icons/UIBlock2DIcon.png",
+                "Assets/Nova/Icons/TMPTextBlockIcon.png",
+                "Assets/Nova/Icons/TextBlockIcon.png",
+                "Assets/Nova/Icons/ScrollerIcon.png",
+                "Assets/Nova/Icons/ClipMaskIcon.png",
+                "Assets/Nova/Icons/ListViewIcon.png",
+                "Assets/Nova/Icons/SortGroupIcon.png",
+                "Assets/Nova/Icons/ScreenSpaceIcon.png"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle",
+            "FileName": "4c96dddc68c0b733318a30e77dbf7ddd.bundle",
+            "FileHash": "4c96dddc68c0b733318a30e77dbf7ddd",
+            "FileCRC": "518f142d",
+            "FileSize": 18393,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+                "defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/Button_Dark.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_White.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_Day.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/DropdownItem_Dark.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/Dropdown_Dark.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_unityshaders.bundle",
+            "FileName": "b147b50e0e6963ef38fdec2262c298e2.bundle",
+            "FileHash": "b147b50e0e6963ef38fdec2262c298e2",
+            "FileCRC": "8507e7aa",
+            "FileSize": 20298,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_packages_com_unity_textmeshpro_editor_resources_gizmos.bundle",
+            "FileName": "12e7a2e5e97a6d1e3d9e1fd83de9878d.bundle",
+            "FileHash": "12e7a2e5e97a6d1e3d9e1fd83de9878d",
+            "FileCRC": "330e3447",
+            "FileSize": 1265,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Text Component Icon.psd"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_[0]cilent_fonts.bundle",
+            "FileName": "0da52403ff1fe9141d5deed0737e0844.bundle",
+            "FileHash": "0da52403ff1fe9141d5deed0737e0844",
+            "FileCRC": "e8fd6a1e",
+            "FileSize": 8901747,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Fonts/苹方字体.ttf",
+                "Assets/[0]Cilent/Fonts/苹方字体 SDF.asset"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_[1]local_textures_ui界面_登录界面9.bundle",
+            "FileName": "5f60a6c2c64e1009a0816621bce070ff.bundle",
+            "FileHash": "5f60a6c2c64e1009a0816621bce070ff",
+            "FileCRC": "659d66b8",
+            "FileSize": 430094,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[1]Local/Textures/ui界面/登录界面9/加载界面.png"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle",
+            "FileName": "510f4ad09ef10a661f41a8c5f0883906.bundle",
+            "FileHash": "510f4ad09ef10a661f41a8c5f0883906",
+            "FileCRC": "c507ff3a",
+            "FileSize": 12580,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_Dark.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/TextHighlight_Dark.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/ScrollableTextField_Dark.prefab",
+                "Assets/Nova/Sample/UIControls/Prefabs/Style_Dark/TextField_Dark/Cursor_whilt.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle",
+            "FileName": "b13a23a43ab992fcdaeefd54f759e4c5.bundle",
+            "FileHash": "b13a23a43ab992fcdaeefd54f759e4c5",
+            "FileCRC": "394f252f",
+            "FileSize": 6425,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/Nova/Sample/UIControls/Textures/CheckMark.png",
+                "Assets/Nova/Sample/UIControls/Textures/Arrow.png"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle",
+            "FileName": "2f827a5c561cf59368c3374e9b54bce9.bundle",
+            "FileHash": "2f827a5c561cf59368c3374e9b54bce9",
+            "FileCRC": "93986aeb",
+            "FileSize": 89634,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [
+                "defaultpackage_unityshaders.bundle"
+            ],
+            "AllBuiltinAssets": [
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black.ttf",
+                "Assets/Nova/Sample/UIControls/Fonts/Nunito Sans/NunitoSans-Black SDF.asset"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[4]ui_[1]登录域_左面分类8.bundle",
+            "FileName": "33dbaeadf2f3524cd48c41f354a93b8c.bundle",
+            "FileHash": "33dbaeadf2f3524cd48c41f354a93b8c",
+            "FileCRC": "90d17e11",
+            "FileSize": 13197,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/备份还原1.png",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/量表评估1.png",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/评定人管理1.png",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/档案管理1.png",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/用户管理1.png",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[4]UI/[1]登录域/左面分类8/界面管理1.png"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets.bundle",
+            "FileName": "9b763761d27d927ff0835a33f3e0f597.bundle",
+            "FileHash": "9b763761d27d927ff0835a33f3e0f597",
+            "FileCRC": "6b98fa1c",
+            "FileSize": 10268,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/蓝牙连接.controller"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_[1]local_textures_ui界面_选择界面9.bundle",
+            "FileName": "6d53a010d1f153746a214a041da93199.bundle",
+            "FileHash": "6d53a010d1f153746a214a041da93199",
+            "FileCRC": "faf47722",
+            "FileSize": 338178,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[1]Local/Textures/ui界面/选择界面9/选择界面.jpg"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[5]utility&tool_bleapi.bundle",
+            "FileName": "43f558cf8ee5c1bffbebfd583c2ffc5f.bundle",
+            "FileHash": "43f558cf8ee5c1bffbebfd583c2ffc5f",
+            "FileCRC": "c27861bc",
+            "FileSize": 14675,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[5]Utility&Tool/BleAPI/BleDeviceDis.prefab",
+                "Assets/[0]Cilent/Scripts/[1]HotFix/[5]Utility&Tool/BleAPI/BleScanerPanel.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_prefabs.bundle",
+            "FileName": "a40689370d8e2b4867b11854c4d58f35.bundle",
+            "FileHash": "a40689370d8e2b4867b11854c4d58f35",
+            "FileCRC": "cd5644c4",
+            "FileSize": 6216,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/Nova/Sample/UIControls/Prefabs/UIRoot.prefab"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_[1]local_textures_ui界面_背景界面9.bundle",
+            "FileName": "cc7ee63a827504d43cd372f0bfe6fe6a.bundle",
+            "FileHash": "cc7ee63a827504d43cd372f0bfe6fe6a",
+            "FileCRC": "dda37bca",
+            "FileSize": 101891,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[1]Local/Textures/ui界面/背景界面9/总背景.jpg"
+            ]
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_[1]local_textures_5-通用_弹出效果图.bundle",
+            "FileName": "0aacbd2a1609bf5cac5110538d3dacaf.bundle",
+            "FileHash": "0aacbd2a1609bf5cac5110538d3dacaf",
+            "FileCRC": "fbc360a5",
+            "FileSize": 185195,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "AllBuiltinAssets": [
+                "Assets/[1]Local/Textures/5-通用/弹出效果图/弹出界面.jpg"
+            ]
+        }
+    ],
+    "IndependAssets": []
+}

@@ -94,7 +94,6 @@
     <type fullname="QFramework.IModel" preserve="all" />
     <type fullname="QFramework.IUnRegister" preserve="all" />
     <type fullname="QFramework.IUtility" preserve="all" />
-    <type fullname="QFramework.TypeEventSystem" preserve="all" />
     <type fullname="QFramework.UnRegisterExtension" preserve="all" />
   </assembly>
   <assembly fullname="QFramework.CoreKit">
@@ -113,7 +112,6 @@
     <type fullname="Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder" preserve="all" />
     <type fullname="Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1" preserve="all" />
     <type fullname="Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder" preserve="all" />
-    <type fullname="Cysharp.Threading.Tasks.DelayType" preserve="all" />
     <type fullname="Cysharp.Threading.Tasks.PlayerLoopTiming" preserve="all" />
     <type fullname="Cysharp.Threading.Tasks.UniTask" preserve="all" />
     <type fullname="Cysharp.Threading.Tasks.UniTask/Awaiter" preserve="all" />
@@ -180,6 +178,7 @@
     <type fullname="UnityEngine.RenderTextureReadWrite" preserve="all" />
     <type fullname="UnityEngine.RuntimeInitializeLoadType" preserve="all" />
     <type fullname="UnityEngine.RuntimeInitializeOnLoadMethodAttribute" preserve="all" />
+    <type fullname="UnityEngine.RuntimePlatform" preserve="all" />
     <type fullname="UnityEngine.SceneManagement.LoadSceneMode" preserve="all" />
     <type fullname="UnityEngine.SceneManagement.Scene" preserve="all" />
     <type fullname="UnityEngine.SceneManagement.SceneManager" preserve="all" />
@@ -232,7 +231,6 @@
     <type fullname="System.Action`3" preserve="all" />
     <type fullname="System.Action`4" preserve="all" />
     <type fullname="System.Activator" preserve="all" />
-    <type fullname="System.ArgumentException" preserve="all" />
     <type fullname="System.Array" preserve="all" />
     <type fullname="System.BitConverter" preserve="all" />
     <type fullname="System.Boolean" preserve="all" />
@@ -277,17 +275,19 @@
     <type fullname="System.IO.Directory" preserve="all" />
     <type fullname="System.IO.DirectoryInfo" preserve="all" />
     <type fullname="System.IO.File" preserve="all" />
+    <type fullname="System.IO.FileInfo" preserve="all" />
+    <type fullname="System.IO.FileSystemInfo" preserve="all" />
     <type fullname="System.IO.Path" preserve="all" />
-    <type fullname="System.Index" preserve="all" />
+    <type fullname="System.IO.SearchOption" preserve="all" />
     <type fullname="System.Int32" preserve="all" />
     <type fullname="System.Int64" preserve="all" />
     <type fullname="System.Linq.Enumerable" preserve="all" />
+    <type fullname="System.Linq.IOrderedEnumerable`1" preserve="all" />
     <type fullname="System.Math" preserve="all" />
     <type fullname="System.NotSupportedException" preserve="all" />
     <type fullname="System.Nullable`1" preserve="all" />
     <type fullname="System.Object" preserve="all" />
     <type fullname="System.Predicate`1" preserve="all" />
-    <type fullname="System.Range" preserve="all" />
     <type fullname="System.Reflection.BindingFlags" preserve="all" />
     <type fullname="System.Reflection.FieldInfo" preserve="all" />
     <type fullname="System.Reflection.MemberInfo" preserve="all" />
@@ -310,17 +310,13 @@
     <type fullname="System.SByte" preserve="all" />
     <type fullname="System.Security.Cryptography.HashAlgorithm" preserve="all" />
     <type fullname="System.Security.Cryptography.MD5" preserve="all" />
-    <type fullname="System.Security.Cryptography.RandomNumberGenerator" preserve="all" />
     <type fullname="System.Single" preserve="all" />
-    <type fullname="System.Span`1" preserve="all" />
     <type fullname="System.String" preserve="all" />
     <type fullname="System.StringSplitOptions" preserve="all" />
     <type fullname="System.Text.Encoding" preserve="all" />
     <type fullname="System.Text.StringBuilder" preserve="all" />
     <type fullname="System.Threading.CancellationToken" preserve="all" />
-    <type fullname="System.Threading.CancellationTokenSource" preserve="all" />
     <type fullname="System.Threading.Interlocked" preserve="all" />
-    <type fullname="System.Threading.Monitor" preserve="all" />
     <type fullname="System.Threading.Tasks.Task" preserve="all" />
     <type fullname="System.Threading.Tasks.Task`1" preserve="all" />
     <type fullname="System.TimeSpan" preserve="all" />
@@ -331,5 +327,8 @@
     <type fullname="System.ValueTuple`3" preserve="all" />
     <type fullname="System.ValueTuple`5" preserve="all" />
     <type fullname="System.ValueType" preserve="all" />
+  </assembly>
+  <assembly fullname="System.Windows.Forms" preserve="nothing">
+    <!-- 排除System.Windows.Forms程序集以避免Mono.Posix依赖问题 -->
   </assembly>
 </linker>

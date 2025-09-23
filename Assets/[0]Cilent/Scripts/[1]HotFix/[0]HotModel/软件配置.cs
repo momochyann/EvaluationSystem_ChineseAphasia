@@ -1,7 +1,7 @@
 using System;
 using QFramework;
 using UnityEngine;
-
+using UnityEngine.Events;
 /// <summary>
 /// 软件配置数据模型
 /// </summary>
@@ -27,6 +27,7 @@ public class 软件配置录 : 录元<软件配置>
     private 软件配置 _当前配置;
     string SAVE_KEY = "软件配置";
     bool BlueToothState = false;
+    public UnityAction<软件配置> 软件修改事件;
     public BindableProperty<bool> _蓝牙状态 = new BindableProperty<bool>();
     protected override void OnInit()
     {
@@ -47,7 +48,7 @@ public class 软件配置录 : 录元<软件配置>
             }
             return _当前配置;
         }
-        private set { _当前配置 = value; }
+        private set { _当前配置 = value; 软件修改事件?.Invoke(value);Debug.Log("软件配置修改"); }
     }
 
 
@@ -58,7 +59,7 @@ public class 软件配置录 : 录元<软件配置>
     public void 保存配置(软件配置 配置)
     {
         dataList[0] = 配置;
-        _当前配置 = 配置;
+        当前配置 = 配置;
         SaveData();
         // Save();
     }

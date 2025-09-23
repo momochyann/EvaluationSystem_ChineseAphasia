@@ -7,6 +7,7 @@ using DG.Tweening;
 
 public class 界面管理界面_茉 : 界面基础_韩
 {
+    public bool 是否输入框动画= true;
     [Header("输入框")]
     [SerializeField] private TextField 单位名称输入框;
     [SerializeField] private TextField 软件名称输入框;
@@ -69,8 +70,11 @@ public class 界面管理界面_茉 : 界面基础_韩
         // 绑定按钮事件
         保存按钮?.OnClicked.AddListener(保存配置);
         取消按钮?.OnClicked.AddListener(取消操作);
-        输入文本框点击(单位名称输入框);
-        输入文本框点击(软件名称输入框);
+        if(是否输入框动画)
+        {
+            输入文本框点击(单位名称输入框);
+            输入文本框点击(软件名称输入框);
+        }
         isFirst = false;
     }
     void OnEnable()
