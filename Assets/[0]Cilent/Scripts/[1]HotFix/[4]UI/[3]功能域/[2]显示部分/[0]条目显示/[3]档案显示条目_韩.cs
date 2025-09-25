@@ -11,7 +11,7 @@ public class 档案显示条目_韩 : MonoBehaviour,IController,IentryDis
     public TextBlock 姓名;
     public TextBlock 性别;
     public TextBlock 出生日期;
-    public TextBlock 身份证;
+    public TextBlock 档案编号;
     public TextBlock 评估时间;
     public TextBlock 评估人员;
     public Button 查看按钮;
@@ -39,7 +39,7 @@ public class 档案显示条目_韩 : MonoBehaviour,IController,IentryDis
         姓名.Text = 当前档案.姓名;
         性别.Text = 当前档案.性别;
         出生日期.Text = 当前档案.出生日期;
-        身份证.Text = 当前档案.身份证;
+        档案编号.Text = 当前档案.编号;
         评估时间.Text = 当前档案.评估时间;
         评估人员.Text = 当前档案.评估人员;
     }
