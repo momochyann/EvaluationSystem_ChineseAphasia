@@ -67,15 +67,7 @@ MonoBehaviour:
       GroupDesc: "\u6750\u8D28\u548C\u7740\u8272\u5668"
       AssetTags: 
       ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/[0]Cilent/Materials
-        CollectorGUID: 4480f372a0b8d0547ba75eadc2e58dab
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
+      Collectors: []
     - GroupName: Model
       GroupDesc: "\u6A21\u578B"
       AssetTags: 

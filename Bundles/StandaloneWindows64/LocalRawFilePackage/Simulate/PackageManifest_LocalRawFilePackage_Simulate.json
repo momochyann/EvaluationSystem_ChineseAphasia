@@ -4,7 +4,7 @@
     "LocationToLower": false,
     "IncludeAssetGUID": false,
     "OutputNameStyle": 0,
-    "BuildPipeline": "RawFileBuildPipeline",
+    "BuildPipeline": "BuiltinBuildPipeline",
     "PackageName": "LocalRawFilePackage",
     "PackageVersion": "Simulate",
     "AssetList": [
@@ -97,7 +97,7 @@
         {
             "BundleName": "localrawfilepackage_assets_[1]local_codemetadata_dotween_dll_bytes.rawfile",
             "UnityCRC": 0,
-            "FileHash": "c911001c9cc957cb1c728419f8c62ab9",
+            "FileHash": "4b4cf8510296b8e7456c80098c20873d",
             "FileCRC": "00000000",
             "FileSize": 175104,
             "Encrypted": false,
@@ -107,7 +107,7 @@
         {
             "BundleName": "localrawfilepackage_assets_[1]local_codemetadata_main_dll_bytes.rawfile",
             "UnityCRC": 0,
-            "FileHash": "f59ad5771d4cb0d14dda49570c1198e5",
+            "FileHash": "ca105b58cb217a12de484a88765bb950",
             "FileCRC": "00000000",
             "FileSize": 31232,
             "Encrypted": false,
@@ -117,7 +117,7 @@
         {
             "BundleName": "localrawfilepackage_assets_[1]local_codemetadata_mscorlib_dll_bytes.rawfile",
             "UnityCRC": 0,
-            "FileHash": "a9fc8f4a6ddd5592bbcadbe33a369673",
+            "FileHash": "9639293c4d76e9727ee440defc7e0617",
             "FileCRC": "00000000",
             "FileSize": 2545664,
             "Encrypted": false,
@@ -127,7 +127,7 @@
         {
             "BundleName": "localrawfilepackage_assets_[1]local_codemetadata_qframework_corekit_dll_bytes.rawfile",
             "UnityCRC": 0,
-            "FileHash": "032efc140561c6dca0093791127b1c68",
+            "FileHash": "8d0854b198170642687106e9314038fb",
             "FileCRC": "00000000",
             "FileSize": 761344,
             "Encrypted": false,
@@ -137,7 +137,7 @@
         {
             "BundleName": "localrawfilepackage_assets_[1]local_codemetadata_qframework_dll_bytes.rawfile",
             "UnityCRC": 0,
-            "FileHash": "220fccfe3eea6c9c4f861d32a4359624",
+            "FileHash": "a0400bc64a79ceb67f55d00dcf5605ff",
             "FileCRC": "00000000",
             "FileSize": 28160,
             "Encrypted": false,
@@ -147,7 +147,7 @@
         {
             "BundleName": "localrawfilepackage_assets_[1]local_codemetadata_system_core_dll_bytes.rawfile",
             "UnityCRC": 0,
-            "FileHash": "d0449a52088a255f2952ce4d49d54d67",
+            "FileHash": "9c6fbc323019daea59e4983873e6d82a",
             "FileCRC": "00000000",
             "FileSize": 449024,
             "Encrypted": false,
@@ -157,7 +157,7 @@
         {
             "BundleName": "localrawfilepackage_assets_[1]local_codemetadata_system_dll_bytes.rawfile",
             "UnityCRC": 0,
-            "FileHash": "8d55c05247b3fd0ec91f6506d38cc3fd",
+            "FileHash": "59f4f3c1f8bc2b6c66381639cc67ff81",
             "FileCRC": "00000000",
             "FileSize": 837120,
             "Encrypted": false,
@@ -167,7 +167,7 @@
         {
             "BundleName": "localrawfilepackage_assets_[1]local_codemetadata_unitask_dll_bytes.rawfile",
             "UnityCRC": 0,
-            "FileHash": "dcc3bb7716d05a0bf0a5b7a94f09a644",
+            "FileHash": "e88c83bc6730aa1233544b076b8bf3f1",
             "FileCRC": "00000000",
             "FileSize": 528896,
             "Encrypted": false,
@@ -177,7 +177,7 @@
         {
             "BundleName": "localrawfilepackage_assets_[1]local_codemetadata_unitask_linq_dll_bytes.rawfile",
             "UnityCRC": 0,
-            "FileHash": "dc175b411af4f0fa5244202edfae85a4",
+            "FileHash": "cd920e3b975ba239fe8f5b3bfb22f8a7",
             "FileCRC": "00000000",
             "FileSize": 696832,
             "Encrypted": false,
@@ -187,7 +187,7 @@
         {
             "BundleName": "localrawfilepackage_assets_[1]local_codemetadata_unityengine_androidjnimodule_dll_bytes.rawfile",
             "UnityCRC": 0,
-            "FileHash": "38f1eb2ad52fb4f57cdc90902d5ba17e",
+            "FileHash": "99d51863814c92b69bca73cf129d7c93",
             "FileCRC": "00000000",
             "FileSize": 78848,
             "Encrypted": false,
@@ -197,7 +197,7 @@
         {
             "BundleName": "localrawfilepackage_assets_[1]local_codemetadata_unityengine_coremodule_dll_bytes.rawfile",
             "UnityCRC": 0,
-            "FileHash": "59a128b33eb71395769cfdba026e6a30",
+            "FileHash": "b70ddc329c4f2fee2c412d88ac6bbe34",
             "FileCRC": "00000000",
             "FileSize": 719360,
             "Encrypted": false,
@@ -207,7 +207,7 @@
         {
             "BundleName": "localrawfilepackage_assets_[1]local_codemetadata_unityengine_screencapturemodule_dll_bytes.rawfile",
             "UnityCRC": 0,
-            "FileHash": "562f01f134d6066736514b46d24193f6",
+            "FileHash": "da40b00adcc1150a4537c907199ea384",
             "FileCRC": "00000000",
             "FileSize": 10240,
             "Encrypted": false,
