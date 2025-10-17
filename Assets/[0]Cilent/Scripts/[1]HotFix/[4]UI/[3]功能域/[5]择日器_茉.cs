@@ -7,13 +7,14 @@ using NovaSamples.UIControls;
 using DG.Tweening;
 public class 择日器_茉 : MonoBehaviour
 {
-        [Header("下拉框组件")]
+    [Header("下拉框组件")]
     [SerializeField] private Dropdown 年份下拉框;
-    [SerializeField] private Dropdown 月份下拉框;  
+    [SerializeField] private Dropdown 月份下拉框;
     [SerializeField] private Dropdown 日期下拉框;
-    
+
     [Header("按钮组件")]
     [SerializeField] private UIBlock 保存按钮;
+    [SerializeField] private Button 取消按钮;
 
     [Header("日期范围设置")]
     [SerializeField] private int 最小年份 = 1900;
@@ -29,12 +30,12 @@ public class 择日器_茉 : MonoBehaviour
 
     // 每月天数（非闰年）
     private readonly int[] 月份天数 = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-   
+
     /// <summary>
     /// 日期改变事件，参数为 (年, 月, 日)
     /// </summary>
     public event System.Action<int, int, int> On日期改变;
-    
+
     /// <summary>
     /// 保存按钮点击事件，参数为 (年, 月, 日)
     /// </summary>
@@ -44,13 +45,32 @@ public class 择日器_茉 : MonoBehaviour
     /// 获取当前选择的日期
     /// </summary>
     public DateTime 当前选择日期 => new DateTime(当前年份, 当前月份, 当前日期);
-    private void Awake() {
-        transform.DOScale(1,0.3f).From(0);
+    private void Awake()
+    {
+        var 现有择日器 = FindObjectsOfType<择日器_茉>();
+        if (现有择日器.Length > 1)
+        {
+            foreach (var 择日器 in 现有择日器)
+            {
+                if (择日器.gameObject != this.gameObject)
+                {
+                    Destroy(择日器.gameObject);
+                    return;
+                }
+            }
+        }
+
+        transform.DOScale(1, 0.3f).From(0);
     }
     void Start()
     {
         初始化日期选择器();
-       
+        取消按钮.OnClicked.AddListener(取消选择);
+    }
+
+    private void 取消选择()
+    {
+        Destroy(gameObject);
     }
 
     /// <summary>
@@ -83,13 +103,13 @@ public class 择日器_茉 : MonoBehaviour
         绑定保存按钮事件();
     }
 
-        /// <summary>
+    /// <summary>
     /// 填充年份下拉框
     /// </summary>
     private void 填充年份下拉框()
     {
         年份下拉框.DropdownOptions.Options.Clear();
-        
+
         for (int year = 最大年份; year >= 最小年份; year--)
         {
             年份下拉框.DropdownOptions.Options.Add(year.ToString());
@@ -102,7 +122,7 @@ public class 择日器_茉 : MonoBehaviour
     private void 填充月份下拉框()
     {
         月份下拉框.DropdownOptions.Options.Clear();
-        
+
         for (int month = 1; month <= 12; month++)
         {
             月份下拉框.DropdownOptions.Options.Add(month.ToString());
@@ -121,9 +141,9 @@ public class 择日器_茉 : MonoBehaviour
         {
             日期下拉框.DropdownOptions.Options.Add(day.ToString());
         }
-        
 
-        
+
+
 
     }
 
@@ -138,11 +158,11 @@ public class 择日器_茉 : MonoBehaviour
             // 方法1：直接调用ListView的Refresh方法
             日期下拉框.Visuals.OptionsView.Refresh();
             Debug.Log("调用ListView.Refresh()方法");
-            
+
             // 方法2：重新设置数据源
             日期下拉框.Visuals.OptionsView.SetDataSource(日期下拉框.DropdownOptions.Options);
             Debug.Log("重新设置ListView数据源");
-            
+
             // 方法3：再次调用Refresh确保更新
             日期下拉框.Visuals.OptionsView.Refresh();
             Debug.Log("再次调用Refresh确保更新完成");
@@ -151,7 +171,7 @@ public class 择日器_茉 : MonoBehaviour
 
 
 
-    
+
 
     /// <summary>
     /// 获取指定年月的最大天数
@@ -227,7 +247,7 @@ public class 择日器_茉 : MonoBehaviour
         }
     }
 
-        /// <summary>
+    /// <summary>
     /// 年份改变事件处理
     /// </summary>
     private void 年份改变时(string selectedValue)
@@ -235,16 +255,16 @@ public class 择日器_茉 : MonoBehaviour
         if (int.TryParse(selectedValue, out int year))
         {
             当前年份 = year;
-            
+
             // 获取新年份该月的最大天数（主要处理闰年2月的情况）
             int 最大日期 = 获取月份最大天数(当前年份, 当前月份);
-            
+
             // 保存当前日期值
             int 原日期值 = 当前日期;
-            
+
             // 重新填充日期下拉框（主要为了处理闰年）
             填充日期下拉框();
-            
+
             // 智能选择新的日期
             if (原日期值 <= 最大日期)
             {
@@ -258,7 +278,7 @@ public class 择日器_茉 : MonoBehaviour
                 当前日期 = 最大日期;
                 日期下拉框.DropdownOptions.SelectedIndex = 最大日期 - 1;
             }
-            
+
             // 刷新显示标签
             日期下拉框.载始项();
 
@@ -275,16 +295,16 @@ public class 择日器_茉 : MonoBehaviour
         if (int.TryParse(selectedValue, out int month))
         {
             当前月份 = month;
-            
+
             // 获取新月份的最大天数
             int 最大日期 = 获取月份最大天数(当前年份, 当前月份);
-            
+
             // 保存当前日期值
             int 原日期值 = 当前日期;
-            
+
             // 重新填充日期下拉框选项
             填充日期下拉框();
-            
+
             // 智能选择新的日期
             if (原日期值 <= 最大日期)
             {
@@ -298,7 +318,7 @@ public class 择日器_茉 : MonoBehaviour
                 当前日期 = 最大日期;
                 日期下拉框.DropdownOptions.SelectedIndex = 最大日期 - 1;
             }
-            
+
             // 刷新显示标签
             日期下拉框.载始项();
 
@@ -327,7 +347,7 @@ public class 择日器_茉 : MonoBehaviour
     {
         Debug.Log($"保存按钮被点击，当前日期: {当前年份}年{当前月份}月{当前日期}日");
         On保存日期?.Invoke(当前年份, 当前月份, 当前日期);
-        Destroy(this.gameObject,0.1f);
+        Destroy(this.gameObject, 0.1f);
     }
 
     /// <summary>
@@ -440,25 +460,26 @@ public class 择日器_茉 : MonoBehaviour
     public void 测试月份选择()
     {
         Debug.Log("=== 测试月份选择功能 ===");
-        
+
         // 测试31天→28天
         设置日期(2023, 1, 31);
         Debug.Log($"1月31日 → 选项数: {日期下拉框.DropdownOptions.Options.Count}");
-        
+
         // 展开下拉框，用户可以看到当前有31个选项
         日期下拉框.Expand();
         Debug.Log("日期下拉框已展开，请观察选项数量");
-        
+
         // 等待2秒让用户看到31个选项
         DOTween.Sequence()
             .AppendInterval(2f)
-            .AppendCallback(() => {
+            .AppendCallback(() =>
+            {
                 // 现在改变月份到2月
                 月份改变时("2");
                 Debug.Log($"2月 → 选项数: {日期下拉框.DropdownOptions.Options.Count}，日期: {当前日期}");
                 Debug.Log("现在应该看到选项数量变为28个");
             });
-        
+
         Debug.Log("=== 测试进行中，请观察UI变化 ===");
     }
 
@@ -474,7 +495,7 @@ public class 择日器_茉 : MonoBehaviour
             月份下拉框.OnValueChanged.RemoveListener(月份改变时);
         if (日期下拉框 != null)
             日期下拉框.OnValueChanged.RemoveListener(日期改变时);
-        
+
         // 清理保存按钮事件
         if (保存按钮 != null)
             保存按钮.RemoveGestureHandler<Gesture.OnClick>(保存按钮点击时);

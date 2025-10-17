@@ -14,16 +14,21 @@ public class 量表待添加条目_茉 : MonoBehaviour, IentryDis, IController
     [SerializeField] TextBlock 年龄;
     [SerializeField] TextBlock 添加时间;
     [SerializeField] TextBlock 评估状态文本;
+    [SerializeField] Button 评测按钮;
     private int 当前索引 = -1;
     void Start()
     {
-
+        if (评测按钮 != null)
+        {
+            评测按钮.OnClicked.AddListener(评测);
+        }
     }
 
 
     public void 显示信息(int 索引 = -1)
     {
         当前索引 = 索引;
+        索引下标 = 索引;
         var 档案录 = this.GetModel<档案录>();
         var 当前档案 = 档案录.GetDataList()[索引];
         if (当前档案.评估状态 != 评估状态.评估完成)
@@ -34,13 +39,41 @@ public class 量表待添加条目_茉 : MonoBehaviour, IentryDis, IController
             出生日期.Text = 当前档案.出生日期;
             年龄.Text = 当前档案.年龄;
             添加时间.Text = 当前档案.添加时间;
-            评估状态文本.Text = 当前档案.评估状态.ToString();
+            评估状态文本.Text = 当前档案.评估状态.ToString();   
         }
         else
         {
             Destroy(gameObject);
         }
     }
+
+    void 评测()
+    {
+        if (当前索引 == -1)
+        {
+            Debug.LogError("[评测] 当前索引无效");
+            return;
+        }
+
+        // 获取当前档案
+        var 档案录 = this.GetModel<档案录>();
+        var 当前档案 = 档案录.GetDataList()[当前索引];
+        档案录.当前档案 = 当前档案;
+        
+     
+        
+        // 跳转到量表评估显示界面
+        var 界面管理器 = FindObjectOfType<界面管理器_韩>();
+        界面管理器.显示界面("量表评估显示");
+
+        // 将当前档案传递给新界面
+        // 等待界面加载完成后传递档案信息
+  
+
+        Debug.Log($"[评测] 开始评测用户: {当前档案.姓名}(编号:{当前档案.编号})");
+    }
+
+
 
     // Start is called before the first frame update
 

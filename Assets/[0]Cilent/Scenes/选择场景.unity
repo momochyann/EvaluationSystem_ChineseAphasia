@@ -1014,7 +1014,7 @@ MonoBehaviour:
     ReceiveShadows: 1
   PreviewSize: {x: 1, y: 1, z: 0}
   visuals:
-    Color: {r: 1, g: 1, b: 1, a: 0.16470589}
+    Color: {r: 1, g: 1, b: 1, a: 0.52156866}
     CornerRadius:
       Raw: 0
       Type: 0
@@ -1080,7 +1080,7 @@ MonoBehaviour:
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 91bb8a753b554474f9c12f35ab316b34, type: 3}
+  texture: {fileID: 2800000, guid: e8e9feb0146f4af44a94e63e058de9c8, type: 3}
   sprite: {fileID: 0}
 --- !u!114 &1576898619
 MonoBehaviour:
@@ -1133,6 +1133,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8519571885887228098}
     m_Modifications:
+    - target: {fileID: 292605166806735655, guid: 4511f8142318fc240ab2f24ee5e6be2c, type: 3}
+      propertyPath: managedReferences[0].TransitionType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1061936549491342073, guid: 4511f8142318fc240ab2f24ee5e6be2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1173,9 +1177,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1506315673932750918, guid: 4511f8142318fc240ab2f24ee5e6be2c, type: 3}
+      propertyPath: managedReferences[0].TransitionType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765043172937864452, guid: 4511f8142318fc240ab2f24ee5e6be2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153452658376003669, guid: 4511f8142318fc240ab2f24ee5e6be2c, type: 3}
+      propertyPath: managedReferences[0].TransitionType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594736801125036960, guid: 4511f8142318fc240ab2f24ee5e6be2c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166587750338640489, guid: 4511f8142318fc240ab2f24ee5e6be2c, type: 3}
+      propertyPath: visibility.ZIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837370103411137135, guid: 4511f8142318fc240ab2f24ee5e6be2c, type: 3}
+      propertyPath: managedReferences[0].TransitionType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680369637076267719, guid: 4511f8142318fc240ab2f24ee5e6be2c, type: 3}
+      propertyPath: visibility.ZIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864491285897809703, guid: 4511f8142318fc240ab2f24ee5e6be2c, type: 3}
+      propertyPath: managedReferences[0].TransitionType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8709894944486462528, guid: 4511f8142318fc240ab2f24ee5e6be2c, type: 3}
       propertyPath: m_Name
       value: "\u4E3B\u9875\u9009\u62E9\u754C\u9762_Mobile"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709894944486462528, guid: 4511f8142318fc240ab2f24ee5e6be2c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957048052266409966, guid: 4511f8142318fc240ab2f24ee5e6be2c, type: 3}
+      propertyPath: managedReferences[0].TransitionType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

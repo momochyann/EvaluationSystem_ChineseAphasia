@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NovaSamples.UIControls;
 using System.Linq;
+using System;
 
 public class 选项组性_茉 : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class 选项组性_茉 : MonoBehaviour
     
     // 当前选中选项的名称（公开属性）
     public string 当前选中名称 => 当前选中选项 != null ? 当前选中选项.name : "";
+    
+    // 选择变化事件
+    public static event Action 选择变化事件;
     
     void Start()
     {
@@ -61,6 +65,9 @@ public class 选项组性_茉 : MonoBehaviour
             }
             Debug.Log("选项 " + 当前选项.name + " 被取消选中");
         }
+        
+        // 触发选择变化事件
+        选择变化事件?.Invoke();
     }
     
     /// <summary>

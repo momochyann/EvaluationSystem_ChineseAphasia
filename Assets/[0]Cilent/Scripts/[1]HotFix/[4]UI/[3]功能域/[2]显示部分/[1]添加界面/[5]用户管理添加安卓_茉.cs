@@ -39,12 +39,12 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         显示信息 += 显示信息详情;
         性别.Visuals.SelectionLabel.Color = Color.gray * 0.8f;
         性别.Visuals.SelectionLabel.Text = "请选择";
-        编号.Text = $"{(char)UnityEngine.Random.Range(65, 90)}{DateTime.Now.ToString("yyMMddHH")}{UnityEngine.Random.Range(0, 99):D2}"; // 使用时间戳+随机数组合,格式为:字母+年月日时+2位随机数
+        编号.Text = 编号管理界面_茉.生成用户编号(); // 使用编号管理界面配置的规则生成编号
     }
     private void OnEnable()
     {
         旧记 = null;
-        编号.Text = $"{(char)UnityEngine.Random.Range(65, 90)}{DateTime.Now.ToString("yyMMddHH")}{UnityEngine.Random.Range(0, 99):D2}"; // 使用时间戳+随机数组合,格式为:字母+年月日时+2位随机数
+        编号.Text = 编号管理界面_茉.生成用户编号(); // 使用编号管理界面配置的规则生成编号
     }
     void Start()
     {

@@ -8,6 +8,7 @@ public class 用户管理显示_韩 : 界面基础_韩
     [SerializeField] public NovaSamples.UIControls.Button 添加用户;
     void Start()
     {
+        if (添加用户 != null)
         添加用户.OnClicked.AddListener(添加新数据);
     }
 

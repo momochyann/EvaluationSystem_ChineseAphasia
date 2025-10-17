@@ -24,7 +24,7 @@ public class HotFixTemplateArchitecture : Architecture<HotFixTemplateArchitectur
         RegisterModel<评人录>(new 评人录());
         RegisterModel<管员录>(new 管员录());
         RegisterModel<软件配置录>(new 软件配置录());
-
+        RegisterModel<档案录>(new 档案录());
         // 注册系统
         // this.RegisterUtility<IDongleUtility>(new DongleUtility());
         

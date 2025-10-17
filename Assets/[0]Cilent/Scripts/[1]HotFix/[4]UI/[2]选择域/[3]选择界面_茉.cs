@@ -13,6 +13,7 @@ public class 选择界面_茉 : MonoBehaviour, IController
     [SerializeField] public Button 退出;
     [SerializeField] public List<Button> 功能列表;
     [SerializeField] public Button 蓝牙连接按钮;
+    [SerializeField] public Button 编号管理按钮;
     [SerializeField] Button 设置按钮;
     [SerializeField] GameObject 设置详情;
     [SerializeField] TextBlock 软件名称;
@@ -35,16 +36,26 @@ public class 选择界面_茉 : MonoBehaviour, IController
         退出.OnClicked.AddListener(执行退出);
         蓝牙连接按钮.OnClicked.AddListener(执行蓝牙连接);
         设置按钮.OnClicked.AddListener(展示设置);
+        编号管理按钮.OnClicked.AddListener(执行编号管理);
         foreach (var item in 功能列表)
         {
             item.OnClicked.AddListener(() => 执行功能(item.name));
         }
         加载软件名称();
     }
+
+    async private void 执行编号管理()
+    {
+        var 编号管理界面 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("编号管理栏");
+        var 编号管理界面实例 = Instantiate(编号管理界面, transform);
+      //  var 编号管理界面安卓 = 编号管理界面实例.GetComponent<编号管理界面_茉>();
+        //编号管理界面安卓.执行编号管理();
+    }
+
     void 加载软件名称()
     {
         var 软件配置录 = this.GetModel<软件配置录>();
-        if(软件配置录.当前配置 != null)
+        if (软件配置录.当前配置 != null)
         {
             软件名称.Text = string.IsNullOrEmpty(软件配置录.当前配置.软件名称) ? "汉语失语症评测系统" : 软件配置录.当前配置.软件名称;
         }
