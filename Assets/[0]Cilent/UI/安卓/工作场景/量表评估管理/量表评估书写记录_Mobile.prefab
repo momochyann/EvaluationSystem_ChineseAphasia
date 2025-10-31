@@ -1938,7 +1938,7 @@ Transform:
   m_GameObject: {fileID: 198087982110656398}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 558.15106, y: 567.083, z: 0}
+  m_LocalPosition: {x: 558.15106, y: 549.8987, z: 0}
   m_LocalScale: {x: 1.0416, y: 1.0416, z: 1.0416}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8896,7 +8896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -705.0814, y: 0.24113402}
+  m_AnchoredPosition: {x: -612, y: 3}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &2856240451502135877
@@ -8980,10 +8980,10 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: -0.423
+        Raw: -0.3671576
         Type: 1
       Y:
-        Raw: 0.006
+        Raw: 0.074647285
         Type: 1
       Z:
         Raw: 0
@@ -9151,7 +9151,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u540D\u5B57"
+  m_text: "\u5317\u4EAC\u662F\u4E16\u754C\u6587\u660E\u7684\u90FD\u5E02"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c21557c0ffc6be4686510e08712fb09, type: 2}
   m_sharedMaterial: {fileID: -7730855064177753811, guid: 9c21557c0ffc6be4686510e08712fb09, type: 2}
@@ -14872,7 +14872,7 @@ Transform:
   m_GameObject: {fileID: 1486265955147538885}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 804.71906, y: 539.937, z: 0}
+  m_LocalPosition: {x: 804.71906, y: 523.57526, z: 0}
   m_LocalScale: {x: 1.0416, y: 1.0416, z: 1.0416}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28712,6 +28712,8 @@ MonoBehaviour:
   "\u7EF4\u5EA6\u540D\u79F0": "\u770B\u56FE\u5199\u5B57"
   "\u7EC4\u7C7B\u578B": 1
   "\u603B\u5206\u663E\u793A": {fileID: 0}
+  "\u7EDF\u4E00\u5206\u6570\u6620\u5C04": []
+  "\u5355\u72EC\u5206\u6570\u6620\u5C04\u5217\u8868": []
   "\u83B7\u53D6\u6A21\u5F0F": 1
   "\u624B\u52A8\u9009\u9879\u7EC4\u7FA4": []
   "\u624B\u52A8\u8868\u5206\u62E9\u6027\u7FA4": []
@@ -42237,7 +42239,7 @@ Transform:
   m_GameObject: {fileID: 3760870269513566944}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 373.889, y: 536.63403, z: 0}
+  m_LocalPosition: {x: 373.889, y: 520.3724, z: 0}
   m_LocalScale: {x: 1.0416, y: 1.0416, z: 1.0416}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -57306,6 +57308,8 @@ MonoBehaviour:
   "\u7EF4\u5EA6\u540D\u79F0": "\u542C\u5199"
   "\u7EC4\u7C7B\u578B": 1
   "\u603B\u5206\u663E\u793A": {fileID: 0}
+  "\u7EDF\u4E00\u5206\u6570\u6620\u5C04": []
+  "\u5355\u72EC\u5206\u6570\u6620\u5C04\u5217\u8868": []
   "\u83B7\u53D6\u6A21\u5F0F": 1
   "\u624B\u52A8\u9009\u9879\u7EC4\u7FA4": []
   "\u624B\u52A8\u8868\u5206\u62E9\u6027\u7FA4": []
@@ -61332,7 +61336,7 @@ Transform:
   m_GameObject: {fileID: 5392389258567008319}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -841.8145, z: 0}
+  m_LocalPosition: {x: 0, y: -856.11957, z: 0}
   m_LocalScale: {x: 0.9995999, y: 0.9995999, z: 0.9995999}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -62945,7 +62949,7 @@ Transform:
   m_GameObject: {fileID: 5514861902361783655}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.038000003, y: -27.730001, z: 0}
+  m_LocalPosition: {x: -0.038000003, y: -26.889698, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -72198,6 +72202,8 @@ MonoBehaviour:
   "\u7EF4\u5EA6\u540D\u79F0": "\u7CFB\u5217\u4E66\u5199"
   "\u7EC4\u7C7B\u578B": 1
   "\u603B\u5206\u663E\u793A": {fileID: 0}
+  "\u7EDF\u4E00\u5206\u6570\u6620\u5C04": []
+  "\u5355\u72EC\u5206\u6570\u6620\u5C04\u5217\u8868": []
   "\u83B7\u53D6\u6A21\u5F0F": 1
   "\u624B\u52A8\u9009\u9879\u7EC4\u7FA4": []
   "\u624B\u52A8\u8868\u5206\u62E9\u6027\u7FA4": []
@@ -80321,7 +80327,7 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: 16.092127
+        Raw: 16.092125
         Type: 0
       Y:
         Raw: 0
@@ -84234,6 +84240,8 @@ MonoBehaviour:
   "\u7EF4\u5EA6\u540D\u79F0": "\u6284\u5199"
   "\u7EC4\u7C7B\u578B": 1
   "\u603B\u5206\u663E\u793A": {fileID: 0}
+  "\u7EDF\u4E00\u5206\u6570\u6620\u5C04": []
+  "\u5355\u72EC\u5206\u6570\u6620\u5C04\u5217\u8868": []
   "\u83B7\u53D6\u6A21\u5F0F": 1
   "\u624B\u52A8\u9009\u9879\u7EC4\u7FA4": []
   "\u624B\u52A8\u8868\u5206\u62E9\u6027\u7FA4": []
@@ -97751,6 +97759,8 @@ MonoBehaviour:
   "\u7EF4\u5EA6\u540D\u79F0": "\u5199\u59D3\u540D\u5730\u5740"
   "\u7EC4\u7C7B\u578B": 1
   "\u603B\u5206\u663E\u793A": {fileID: 0}
+  "\u7EDF\u4E00\u5206\u6570\u6620\u5C04": []
+  "\u5355\u72EC\u5206\u6570\u6620\u5C04\u5217\u8868": []
   "\u83B7\u53D6\u6A21\u5F0F": 1
   "\u624B\u52A8\u9009\u9879\u7EC4\u7FA4": []
   "\u624B\u52A8\u8868\u5206\u62E9\u6027\u7FA4": []

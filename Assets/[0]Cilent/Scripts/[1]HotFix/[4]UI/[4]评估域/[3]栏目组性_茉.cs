@@ -23,12 +23,20 @@ public enum 组件获取模式
     自动寻找模式   // 使用GetComponentsInChildren自动获取
 }
 
+
 public class 栏目组性_茉 : MonoBehaviour
 {
     [Header("基础配置")]
     [SerializeField] public string 维度名称; // 维度名称，如"词命名"、"词复述"等
     [SerializeField] public 栏目组类型 组类型 = 栏目组类型.选项组性; // 栏目组类型
     [SerializeField] TextBlock 总分显示; // 可选的总分显示组件
+    
+    [Header("自定义分数映射（可选）")]
+    [Tooltip("统一分数映射：所有选项组共用此分数列表，留空则使用索引作为分数")]
+    [SerializeField] public List<float> 统一分数映射 = new List<float>();
+    
+    [Tooltip("单独分数映射：为特定选项组单独配置分数，优先级高于统一映射")]
+    [SerializeField] public List<选项组分数映射> 单独分数映射列表 = new List<选项组分数映射>();
     
     [Header("组件获取方式")]
     [Tooltip("选择如何获取子组件：拖动模式-手动在Inspector中拖入；自动寻找模式-自动查找子物体")]
@@ -146,6 +154,25 @@ public class 栏目组性_茉 : MonoBehaviour
     }
     
     /// <summary>
+    /// 获取选项组的分数（支持单独映射、统一映射、默认索引）
+    /// 优先级：单独映射 > 统一映射 > 索引
+    /// </summary>
+    private float 获取选项组分数(int 选项组索引, int 选中索引)
+    {
+        // 1. 优先查找单独分数映射
+        var 单独映射 = 单独分数映射列表?.Find(m => m.选项组索引 == 选项组索引);
+        if (单独映射 != null && 单独映射.分数列表 != null && 选中索引 < 单独映射.分数列表.Count)
+            return 单独映射.分数列表[选中索引];
+        
+        // 2. 其次使用统一分数映射
+        if (统一分数映射 != null && 统一分数映射.Count > 0 && 选中索引 < 统一分数映射.Count)
+            return 统一分数映射[选中索引];
+        
+        // 3. 最后使用索引作为分数
+        return 选中索引;
+    }
+    
+    /// <summary>
     /// 计算选项组总分
     /// </summary>
     private void 计算选项组总分()
@@ -159,10 +186,11 @@ public class 栏目组性_茉 : MonoBehaviour
         }
         
         是否全部已选择 = true;
-        int 总分 = 0;
+        float 总分 = 0;
         
-        foreach (var 选项组 in 子选项组群)
+        for (int i = 0; i < 子选项组群.Count; i++)
         {
+            var 选项组 = 子选项组群[i];
             if (选项组 == null) continue;
             
             if (选项组.当前选中索引 == -1)
@@ -172,11 +200,11 @@ public class 栏目组性_茉 : MonoBehaviour
             }
             else
             {
-                总分 += 选项组.当前选中索引;
+                总分 += 获取选项组分数(i, 选项组.当前选中索引);
             }
         }
         
-        当前总分 = 总分;
+        当前总分 = Mathf.RoundToInt(总分);
         更新总分显示(是否全部已选择 ? 总分.ToString() : "待选择完");
     }
     
@@ -462,4 +490,16 @@ public class 栏目组性_茉 : MonoBehaviour
         计算总分();
         Debug.Log($"[{维度名称}] 子组件已刷新");
     }
+}
+/// <summary>
+/// 单独选项组分数映射配置
+/// </summary>
+[System.Serializable]
+public class 选项组分数映射
+{
+    [Tooltip("选项组在列表中的索引（从0开始）")]
+    public int 选项组索引;
+    
+    [Tooltip("该选项组每个选项的自定义分数")]
+    public List<float> 分数列表 = new List<float>();
 }

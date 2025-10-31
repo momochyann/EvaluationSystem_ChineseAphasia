@@ -13,7 +13,7 @@ public class GameStartAfterLoad : MonoBehaviour
     }
     async void GameLoadedInit()
     {
-        Debug.Log("GameHotedInit7");
+        Debug.Log("GameHotedInit8");
         Application.targetFrameRate = 120;
     //    await WaitLoadAnimation(this.GetCancellationTokenOnDestroy());
         Debug.Log("加载数据完成222");

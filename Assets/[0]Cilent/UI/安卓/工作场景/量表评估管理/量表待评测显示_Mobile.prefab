@@ -2353,7 +2353,7 @@ MonoBehaviour:
     - rid: 0
       type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
       data:
-        TransitionType: 1
+        TransitionType: 0
         transitionTarget: {fileID: 4557212318377958567}
         DefaultColor: {r: 1, g: 1, b: 1, a: 0}
         HoveredColor: {r: 1, g: 1, b: 1, a: 0}
@@ -16450,7 +16450,7 @@ Transform:
   m_GameObject: {fileID: 7695815600248623249}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -754.43506, y: 538.124, z: 0}
+  m_LocalPosition: {x: -754.43506, y: 521.8172, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

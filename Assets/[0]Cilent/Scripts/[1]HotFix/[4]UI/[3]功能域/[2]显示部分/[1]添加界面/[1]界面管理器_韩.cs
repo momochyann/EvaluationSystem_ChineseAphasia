@@ -18,6 +18,7 @@ public class 界面管理器_韩 : MonoBehaviour, IController
             if(mobile背景 != null) mobile背景.SetActive(false);
         }
         else{
+
             Debug.Log("安卓背景");
             var pc背景 = GameObject.Find("PC背景");
             var mobile背景 = GameObject.Find("安卓背景");

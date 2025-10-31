@@ -13,7 +13,7 @@ public class 量表评估显示 : 界面基础_韩
     private 档案 当前档案;
     [SerializeField] Button 返回按钮;
     [SerializeField] GameObject 提示界面;
-
+    [SerializeField] Button 下一步按钮;
 
     void Start()
     {
@@ -44,6 +44,19 @@ public class 量表评估显示 : 界面基础_韩
                 FindObjectOfType<界面管理器_韩>().显示界面("量表待评测显示");
             });
         }
+
+        // 初始化下一步按钮（如果存在）
+        if (下一步按钮 != null)
+        {
+            下一步按钮.gameObject.SetActive(false);
+            // 可以在这里添加下一步按钮的点击事件
+            下一步按钮.OnClicked.AddListener(() =>
+            {
+                // TODO: 添加下一步的逻辑
+                FindObjectOfType<界面管理器_韩>().显示界面("量表评估模板选择");
+            });
+        }
+        更新按钮显示状态();
     }
 
     protected override void OnShow()
@@ -52,7 +65,7 @@ public class 量表评估显示 : 界面基础_韩
         // 获取当前档案
         var 档案录 = this.GetModel<档案录>();
         当前档案 = 档案录.当前档案;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
         // 更新所有按钮的显示状态
         更新按钮显示状态();
         当前档案 = 档案录.当前档案;
@@ -84,6 +97,9 @@ public class 量表评估显示 : 界面基础_韩
         {
             更新单个按钮状态(按钮);
         }
+
+        // 检查是否所有评估都已完成，更新下一步按钮的显示状态
+        更新下一步按钮状态();
     }
 
     /// <summary>
@@ -233,5 +249,45 @@ public class 量表评估显示 : 界面基础_韩
     {
         更新记录状态(记录名称, 评估状态.评估完成);
         更新按钮显示状态(); // 刷新按钮显示
+    }
+
+    /// <summary>
+    /// 检查所有评估是否已完成
+    /// </summary>
+    /// <returns>如果所有评估都已完成返回true，否则返回false</returns>
+    private bool 检查所有评估是否完成()
+    {
+        if (当前档案 == null || 评估按钮 == null || 评估按钮.Count == 0)
+            return false;
+
+        foreach (var 按钮 in 评估按钮)
+        {
+            string 按钮名称 = 按钮.gameObject.name;
+            var 记录状态 = 获取记录完成状态(按钮名称);
+
+            // 只要有一个不是"评估完成"状态，就返回false
+            if (记录状态 != 评估状态.评估完成)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// 更新下一步按钮的显示状态
+    /// </summary>
+    private void 更新下一步按钮状态()
+    {
+        if (下一步按钮 == null) return;
+
+        bool 所有评估完成 = 检查所有评估是否完成();
+        下一步按钮.gameObject.SetActive(所有评估完成);
+
+        if (所有评估完成)
+        {
+            Debug.Log("所有评估已完成，显示下一步按钮");
+        }
     }
 }

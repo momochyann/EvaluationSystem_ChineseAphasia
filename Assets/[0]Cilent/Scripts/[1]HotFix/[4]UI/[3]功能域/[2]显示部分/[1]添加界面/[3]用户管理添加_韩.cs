@@ -17,7 +17,7 @@ public class 用户管理添加_韩 : 界面基础_韩
     [SerializeField] public NovaSamples.UIControls.TextField 身份证;
 
     [SerializeField] public NovaSamples.UIControls.TextField 民族;
-
+    
     [Header("监护人信息")]
     [SerializeField] public NovaSamples.UIControls.TextField 监护人;
     [SerializeField] public NovaSamples.UIControls.TextField 关系;

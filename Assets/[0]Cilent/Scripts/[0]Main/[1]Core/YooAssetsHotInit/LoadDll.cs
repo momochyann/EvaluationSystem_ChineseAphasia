@@ -332,7 +332,9 @@ public class LoadDll : MonoBehaviour
 #endif
         Debug.Log("StartGame");
         var go = await LoadYooAssetsTool.LoadAsset<GameObject>(HotPrefabName);
+        Debug.Log("StartGame2");
         Instantiate(go);
+        Debug.Log("StartGame3");
     }
 
     private class RemoteServices : IRemoteServices      //请求网址容器

@@ -14,6 +14,12 @@ public class 表分择性_茉 : MonoBehaviour
     // 选择变化事件
     public static event Action 表分选择变化事件;
     
+    // 下拉框展开事件 - 用于通知其他表分择性收起
+    public static event Action<表分择性_茉> 下拉框展开事件;
+    
+    // 静态列表，保存所有实例
+    private static List<表分择性_茉> 所有实例 = new List<表分择性_茉>();
+    
     void Start()
     {
         if (分数文本 == null)
@@ -29,10 +35,24 @@ public class 表分择性_茉 : MonoBehaviour
         if (表分选择 != null)
         {
             表分选择.OnValueChanged.AddListener(处理选择变化);
+            // 订阅展开事件
+            if (表分选择.Visuals != null)
+            {
+                表分选择.Visuals.OnExpand += 处理下拉框展开;
+            }
         }
 
         // 初始化填充下拉框
         填充表分选择下拉框();
+        
+        // 添加到所有实例列表
+        if (!所有实例.Contains(this))
+        {
+            所有实例.Add(this);
+        }
+        
+        // 订阅下拉框展开事件
+        下拉框展开事件 += 处理其他下拉框展开;
     }
     
     void OnDestroy()
@@ -41,7 +61,18 @@ public class 表分择性_茉 : MonoBehaviour
         if (表分选择 != null)
         {
             表分选择.OnValueChanged.RemoveListener(处理选择变化);
+            // 取消订阅展开事件
+            if (表分选择.Visuals != null)
+            {
+                表分选择.Visuals.OnExpand -= 处理下拉框展开;
+            }
         }
+        
+        // 从所有实例列表中移除
+        所有实例.Remove(this);
+        
+        // 取消订阅下拉框展开事件
+        下拉框展开事件 -= 处理其他下拉框展开;
     }
     
     /// <summary>
@@ -52,6 +83,39 @@ public class 表分择性_茉 : MonoBehaviour
     {
         // 触发静态事件，通知其他组件
         表分选择变化事件?.Invoke();
+    }
+    
+    /// <summary>
+    /// 处理下拉框展开
+    /// </summary>
+    private void 处理下拉框展开()
+    {
+        // 通知其他表分择性，当前这个下拉框展开了
+        下拉框展开事件?.Invoke(this);
+    }
+    
+    /// <summary>
+    /// 处理其他下拉框展开的事件
+    /// </summary>
+    /// <param name="展开的实例">展开的表分择性实例</param>
+    private void 处理其他下拉框展开(表分择性_茉 展开的实例)
+    {
+        // 如果不是自己，就收起自己的下拉框
+        if (展开的实例 != this && 表分选择 != null)
+        {
+            收起下拉框();
+        }
+    }
+    
+    /// <summary>
+    /// 收起下拉框
+    /// </summary>
+    private void 收起下拉框()
+    {
+        if (表分选择 != null && 表分选择.Visuals != null && 表分选择.Visuals.IsExpanded)
+        {
+            表分选择.Collapse();
+        }
     }
 
     // Update is called once per frame

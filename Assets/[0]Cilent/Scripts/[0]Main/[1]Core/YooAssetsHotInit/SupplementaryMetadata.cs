@@ -27,6 +27,7 @@ public class SupplementaryMetadata : MonoBehaviour
     private void Awake()
     {
         // LoadMetadataForAOTAssemblies();
+        Debug.Log("LoadMetadataForAOTAssemblies");
         LoadMetadataForAOTAssemblies().Forget();
 
     }
