@@ -6,7 +6,7 @@
     "OutputNameStyle": 0,
     "BuildPipeline": "BuiltinBuildPipeline",
     "PackageName": "DefaultPackage",
-    "PackageVersion": "25-1103-170538",
+    "PackageVersion": "25-1105-171632",
     "AssetList": [
         {
             "Address": "1c296539239e282116f2043db1c9f32b",
@@ -1031,6 +1031,15 @@
             "BundleID": 28
         },
         {
+            "Address": "100分点",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/组件/100分点.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 29
+        },
+        {
             "Address": "蓝牙连接_Mobile",
             "AssetPath": "Assets/[0]Cilent/UI/安卓/组件/蓝牙连接_Mobile.prefab",
             "AssetGUID": "",
@@ -1049,13 +1058,22 @@
             "BundleID": 30
         },
         {
+            "Address": "版权信息预制体",
+            "AssetPath": "Assets/[0]Cilent/UI/版权信息预制体.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 31
+        },
+        {
             "Address": "万年历_PC",
             "AssetPath": "Assets/[0]Cilent/UI/电脑&通用/工作场景/万年历_PC.prefab",
             "AssetGUID": "",
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 31
+            "BundleID": 32
         },
         {
             "Address": "上目录底色_PC",
@@ -1064,7 +1082,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 31
+            "BundleID": 32
         },
         {
             "Address": "告示_PC",
@@ -1073,7 +1091,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 31
+            "BundleID": 32
         },
         {
             "Address": "左目录底色_PC",
@@ -1082,7 +1100,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 31
+            "BundleID": 32
         },
         {
             "Address": "择日器_PC",
@@ -1091,7 +1109,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 31
+            "BundleID": 32
         },
         {
             "Address": "滚轮显示预制体_PC",
@@ -1100,7 +1118,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 31
+            "BundleID": 32
         },
         {
             "Address": "首页界面显示_PC",
@@ -1109,7 +1127,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 31
+            "BundleID": 32
         },
         {
             "Address": "档案条目_PC",
@@ -1118,7 +1136,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 32
+            "BundleID": 33
         },
         {
             "Address": "档案管理显示_PC",
@@ -1127,7 +1145,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 32
+            "BundleID": 33
         },
         {
             "Address": "档案管理添加_PC",
@@ -1136,7 +1154,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 32
+            "BundleID": 33
         },
         {
             "Address": "用户条目_PC",
@@ -1145,7 +1163,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 33
+            "BundleID": 34
         },
         {
             "Address": "用户管理显示_PC",
@@ -1154,7 +1172,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 33
+            "BundleID": 34
         },
         {
             "Address": "用户管理添加_PC",
@@ -1163,7 +1181,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 33
+            "BundleID": 34
         },
         {
             "Address": "备份还原显示_PC",
@@ -1172,7 +1190,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 34
+            "BundleID": 35
         },
         {
             "Address": "界面管理显示_PC",
@@ -1181,7 +1199,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 34
+            "BundleID": 35
         },
         {
             "Address": "评定人条目_PC",
@@ -1190,7 +1208,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 35
+            "BundleID": 36
         },
         {
             "Address": "评定人管理显示_PC",
@@ -1199,7 +1217,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 35
+            "BundleID": 36
         },
         {
             "Address": "评定人管理添加_PC",
@@ -1208,7 +1226,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 35
+            "BundleID": 36
         },
         {
             "Address": "主页选择界面_PC",
@@ -1217,7 +1235,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 36
+            "BundleID": 37
         },
         {
             "Address": "量表评估3_PC",
@@ -1226,7 +1244,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 37
+            "BundleID": 38
         },
         {
             "Address": "量表评估_PC",
@@ -1235,7 +1253,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 37
+            "BundleID": 38
         },
         {
             "Address": "量表评估弹出_PC",
@@ -1244,7 +1262,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 37
+            "BundleID": 38
         },
         {
             "Address": "提示框_PC",
@@ -1253,7 +1271,7 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 38
+            "BundleID": 39
         },
         {
             "Address": "评人目_PC",
@@ -1262,42 +1280,42 @@
             "AssetTags": [
                 "UI"
             ],
-            "BundleID": 38
+            "BundleID": 39
         },
         {
             "Address": "BLE蓝牙链域",
             "AssetPath": "Assets/[0]Cilent/Scenes/BLE蓝牙链域.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 39
+            "BundleID": 40
         },
         {
             "Address": "GameStartScene",
             "AssetPath": "Assets/[0]Cilent/Scenes/GameStartScene.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 39
+            "BundleID": 40
         },
         {
             "Address": "主场景",
             "AssetPath": "Assets/[0]Cilent/Scenes/主场景.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 39
+            "BundleID": 40
         },
         {
             "Address": "登录界面场景",
             "AssetPath": "Assets/[0]Cilent/Scenes/登录界面场景.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 39
+            "BundleID": 40
         },
         {
             "Address": "选择场景",
             "AssetPath": "Assets/[0]Cilent/Scenes/选择场景.unity",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 39
+            "BundleID": 40
         }
     ],
     "BundleList": [
@@ -1533,22 +1551,22 @@
             ],
             "DependIDs": [
                 3,
-                43,
-                48,
-                51,
-                47,
-                49,
                 44,
-                46,
-                41
+                49,
+                52,
+                48,
+                50,
+                45,
+                47,
+                42
             ]
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景.bundle",
-            "UnityCRC": 3426877231,
-            "FileHash": "92811a461ce66f912dfdb7ca8da8f06c",
-            "FileCRC": "b647a0cd",
-            "FileSize": 3134374,
+            "UnityCRC": 249300762,
+            "FileHash": "2ec7ff5cdee8de57b6900128bb4090cd",
+            "FileCRC": "e6918ca1",
+            "FileSize": 3134266,
             "Encrypted": false,
             "Tags": [
                 "UI"
@@ -1559,44 +1577,47 @@
                 3,
                 8,
                 10,
-                43,
-                51,
-                47,
-                49,
                 44,
-                41
+                52,
+                48,
+                50,
+                45,
+                42
             ]
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_档案管理.bundle",
-            "UnityCRC": 2975155955,
-            "FileHash": "c218a89ace396f82bec286ad18d6a3bc",
-            "FileCRC": "b96bbfc8",
-            "FileSize": 1386097,
+            "UnityCRC": 104556821,
+            "FileHash": "a050b32e5762c4c36fcf3125fa92ce71",
+            "FileCRC": "ce37bf34",
+            "FileSize": 1393386,
             "Encrypted": false,
             "Tags": [
                 "UI"
             ],
             "DependIDs": [
+                20,
                 0,
                 2,
                 3,
                 8,
-                43,
-                50,
-                51,
-                47,
-                49,
                 44,
-                41
+                51,
+                49,
+                52,
+                48,
+                50,
+                45,
+                47,
+                42
             ]
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_用户管理.bundle",
-            "UnityCRC": 3039679100,
-            "FileHash": "6b40e215bfdb283f4bee3634ec2bac90",
-            "FileCRC": "6201170e",
-            "FileSize": 1363831,
+            "UnityCRC": 3518546731,
+            "FileHash": "afb1b038a476d4af71052e362e44f0d3",
+            "FileCRC": "36681305",
+            "FileSize": 1363822,
             "Encrypted": false,
             "Tags": [
                 "UI"
@@ -1604,13 +1625,13 @@
             "DependIDs": [
                 0,
                 3,
-                43,
-                50,
-                51,
-                47,
-                49,
                 44,
-                41
+                51,
+                52,
+                48,
+                50,
+                45,
+                42
             ]
         },
         {
@@ -1627,31 +1648,31 @@
                 0,
                 1,
                 3,
-                43,
-                51,
-                49,
-                41
+                44,
+                52,
+                50,
+                42
             ]
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_评定人管理.bundle",
-            "UnityCRC": 1414587400,
-            "FileHash": "e2851079a7eb0c4d51141d680cc52d18",
-            "FileCRC": "7d24c1ed",
-            "FileSize": 1274166,
+            "UnityCRC": 330609555,
+            "FileHash": "1d4eb3f113ae307b555e94ca614b8c0f",
+            "FileCRC": "acf8da1a",
+            "FileSize": 1274183,
             "Encrypted": false,
             "Tags": [
                 "UI"
             ],
             "DependIDs": [
                 3,
-                43,
-                50,
-                51,
-                47,
-                49,
                 44,
-                41
+                51,
+                52,
+                48,
+                50,
+                45,
+                42
             ]
         },
         {
@@ -1670,21 +1691,21 @@
                 2,
                 3,
                 8,
-                43,
-                50,
-                51,
-                47,
-                49,
                 44,
-                41
+                51,
+                52,
+                48,
+                50,
+                45,
+                42
             ]
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_量表评估管理.bundle",
-            "UnityCRC": 1807736721,
-            "FileHash": "41def2ea53cb66cc1b45146e64652a96",
-            "FileCRC": "3c8a90e8",
-            "FileSize": 7704479,
+            "UnityCRC": 801935181,
+            "FileHash": "43ae5ab97cc8f21c4dba53002deef2b1",
+            "FileCRC": "65db247f",
+            "FileSize": 7724734,
             "Encrypted": false,
             "Tags": [
                 "UI"
@@ -1699,15 +1720,15 @@
                 11,
                 15,
                 23,
-                43,
-                50,
-                48,
-                51,
-                47,
-                49,
                 44,
-                46,
-                41
+                51,
+                49,
+                52,
+                48,
+                50,
+                45,
+                47,
+                42
             ]
         },
         {
@@ -1726,29 +1747,29 @@
                 2,
                 3,
                 8,
-                43,
-                48,
-                51,
-                47,
-                49,
                 44,
-                46,
-                41
+                49,
+                52,
+                48,
+                50,
+                45,
+                47,
+                42
             ]
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_组件.bundle",
-            "UnityCRC": 72349058,
-            "FileHash": "e6f1008f8db03765a6e647e132951e4f",
-            "FileCRC": "0b410957",
-            "FileSize": 12072,
+            "UnityCRC": 1976545544,
+            "FileHash": "c2fb0af46d0f523c5a20821330753018",
+            "FileCRC": "c79fdab5",
+            "FileSize": 12258,
             "Encrypted": false,
             "Tags": [
                 "UI"
             ],
             "DependIDs": [
                 0,
-                52
+                53
             ]
         },
         {
@@ -1764,6 +1785,21 @@
             "DependIDs": []
         },
         {
+            "BundleName": "defaultpackage_assets_[0]cilent_ui.bundle",
+            "UnityCRC": 520011150,
+            "FileHash": "cd0abad7bdcff7827f15bc7db3b3ac37",
+            "FileCRC": "c583ff61",
+            "FileSize": 8012,
+            "Encrypted": false,
+            "Tags": [
+                "UI"
+            ],
+            "DependIDs": [
+                44,
+                42
+            ]
+        },
+        {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_电脑&通用_工作场景.bundle",
             "UnityCRC": 221543588,
             "FileHash": "79036ff8e525053da56732e8e8ca56c4",
@@ -1776,12 +1812,12 @@
             "DependIDs": [
                 3,
                 9,
-                43,
-                51,
-                47,
                 44,
-                46,
-                41
+                52,
+                48,
+                45,
+                47,
+                42
             ]
         },
         {
@@ -1795,8 +1831,8 @@
                 "UI"
             ],
             "DependIDs": [
-                43,
-                41
+                44,
+                42
             ]
         },
         {
@@ -1812,13 +1848,13 @@
             "DependIDs": [
                 3,
                 8,
-                43,
-                50,
-                51,
-                47,
-                49,
                 44,
-                41
+                51,
+                52,
+                48,
+                50,
+                45,
+                42
             ]
         },
         {
@@ -1836,10 +1872,10 @@
                 1,
                 3,
                 8,
-                43,
-                51,
-                49,
-                41
+                44,
+                52,
+                50,
+                42
             ]
         },
         {
@@ -1855,13 +1891,13 @@
             "DependIDs": [
                 3,
                 8,
-                43,
-                50,
-                51,
-                47,
-                49,
                 44,
-                41
+                51,
+                52,
+                48,
+                50,
+                45,
+                42
             ]
         },
         {
@@ -1875,7 +1911,7 @@
                 "UI"
             ],
             "DependIDs": [
-                53
+                54
             ]
         },
         {
@@ -1889,9 +1925,9 @@
                 "UI"
             ],
             "DependIDs": [
-                43,
                 44,
-                41
+                45,
+                42
             ]
         },
         {
@@ -1905,16 +1941,16 @@
                 "UI"
             ],
             "DependIDs": [
-                43,
-                41
+                44,
+                42
             ]
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
-            "UnityCRC": 2277942043,
-            "FileHash": "74f524e01e60aef3ec027bb093cc2eea",
-            "FileCRC": "e307d207",
-            "FileSize": 1109569,
+            "UnityCRC": 1088598276,
+            "FileHash": "02e6f00a1c83e9cdaac433298c900f63",
+            "FileCRC": "2c0812ef",
+            "FileSize": 1142793,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": [
@@ -1931,6 +1967,7 @@
                 10,
                 11,
                 15,
+                31,
                 21,
                 22,
                 23,
@@ -1940,34 +1977,36 @@
                 27,
                 28,
                 29,
-                31,
-                33,
+                32,
                 34,
                 35,
                 36,
-                52,
-                43,
-                50,
-                54,
-                57,
-                48,
-                56,
+                37,
                 53,
+                44,
                 51,
                 55,
-                47,
+                59,
+                56,
+                60,
                 49,
-                44,
-                46,
-                41
+                58,
+                54,
+                52,
+                57,
+                48,
+                50,
+                45,
+                47,
+                42
             ]
         },
         {
             "BundleName": "defaultpackage_share_assets_nova_icons.bundle",
-            "UnityCRC": 3175473262,
-            "FileHash": "0443ddfa9b3209a915519aedd3673804",
-            "FileCRC": "c2fc81ce",
-            "FileSize": 1415,
+            "UnityCRC": 3149111769,
+            "FileHash": "8d014f74be272ad60e4908ed99f87ca6",
+            "FileCRC": "c387b81b",
+            "FileSize": 3263,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -1986,26 +2025,26 @@
         },
         {
             "BundleName": "defaultpackage_share_packages_com_unity_textmeshpro_editor_resources_gizmos.bundle",
-            "UnityCRC": 897052885,
-            "FileHash": "ea6e425bcf337c3ee69c2e599c85d5a6",
-            "FileCRC": "19f11928",
-            "FileSize": 1265,
+            "UnityCRC": 3072455905,
+            "FileHash": "4cc5fa6ecf9a7eb18a91c17cfb751f12",
+            "FileCRC": "916a161d",
+            "FileSize": 3844,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
         },
         {
             "BundleName": "defaultpackage_share_assets_[0]cilent_fonts.bundle",
-            "UnityCRC": 3630640703,
-            "FileHash": "10fef51a310c82c08e64575a87e0afb7",
-            "FileCRC": "4106d403",
-            "FileSize": 10054597,
+            "UnityCRC": 4023136429,
+            "FileHash": "55476022f44dc29ed653f74b378d0735",
+            "FileCRC": "0ba70e27",
+            "FileSize": 9653661,
             "Encrypted": false,
             "Tags": [
                 "UI"
             ],
             "DependIDs": [
-                41
+                42
             ]
         },
         {
@@ -2022,10 +2061,10 @@
         },
         {
             "BundleName": "defaultpackage_share_assets_editor_proceduraluiimage_editor.bundle",
-            "UnityCRC": 3018142804,
-            "FileHash": "70925bc17e7b9564139e8e46e97939ff",
-            "FileCRC": "d0323bbb",
-            "FileSize": 1200,
+            "UnityCRC": 4211986628,
+            "FileHash": "335c203302a627413e2723aee5756e69",
+            "FileCRC": "8cc8bc4b",
+            "FileSize": 2271,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -2053,10 +2092,10 @@
                 "UI"
             ],
             "DependIDs": [
-                43,
-                51,
                 44,
-                41
+                52,
+                45,
+                42
             ]
         },
         {
@@ -2082,8 +2121,8 @@
                 "UI"
             ],
             "DependIDs": [
-                51,
-                41
+                52,
+                42
             ]
         },
         {
@@ -2109,7 +2148,7 @@
                 "UI"
             ],
             "DependIDs": [
-                41
+                42
             ]
         },
         {
@@ -2147,6 +2186,16 @@
             "DependIDs": []
         },
         {
+            "BundleName": "defaultpackage_share_assets_[1]local_textures_1104马庆.bundle",
+            "UnityCRC": 4251683013,
+            "FileHash": "1b0af9b6349b0444ca2fc5d2ddfe4add",
+            "FileCRC": "314ab3c6",
+            "FileSize": 625248,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
             "BundleName": "defaultpackage_share_assets_nova_sample_uicontrols_prefabs.bundle",
             "UnityCRC": 447763422,
             "FileHash": "d2f7584ec5d4d3369772513b9db01a64",
@@ -2162,6 +2211,16 @@
             "FileHash": "5c457f91c2065cd58dde6934661d8b59",
             "FileCRC": "f513bf71",
             "FileSize": 419330,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "defaultpackage_share_assets_[1]local_textures_1018量表评估&档案管理_1018档案管理.bundle",
+            "UnityCRC": 244663602,
+            "FileHash": "5b275d2ed444c7f943376b7f920738bc",
+            "FileCRC": "a747c340",
+            "FileSize": 1012242,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []

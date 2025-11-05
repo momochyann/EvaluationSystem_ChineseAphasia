@@ -6,6 +6,7 @@ using Nova;
 using System.Linq;
 using Cysharp.Threading.Tasks;
 using System;
+using NovaSamples.UIControls;
 
 public class 档案管理报告界面显示 : 界面基础_韩
 {
@@ -72,7 +73,12 @@ public class 档案管理报告界面显示 : 界面基础_韩
     [SerializeField] private TextBlock 面部动作总分;
     [SerializeField] private TextBlock 上肢动作总分;
     [SerializeField] private TextBlock 复杂动作总分;
-    [SerializeField] private TextBlock 利手评定总分;
+  
+     [Header("评估结果")]
+     [SerializeField] private TextBlock 利手评定结果;
+     [SerializeField] private TextBlock 失语症评定;
+     [SerializeField] private TextBlock BDAE严重程度;
+     [SerializeField] private Dropdown BDAE严重程度下拉框;
     
     [Header("操作按钮")]
     [SerializeField] private NovaSamples.UIControls.Button 保存按钮;
@@ -103,6 +109,70 @@ public class 档案管理报告界面显示 : 界面基础_韩
         // 绑定按钮事件
         保存按钮?.OnClicked.AddListener(() => 处理保存按钮点击().Forget());
         取消按钮?.OnClicked.AddListener(() => 处理取消按钮点击().Forget());
+        
+        // 初始化BDAE严重程度下拉框
+        初始化BDAE严重程度下拉框();
+    }
+    
+    /// <summary>
+    /// 初始化BDAE严重程度下拉框
+    /// </summary>
+    void 初始化BDAE严重程度下拉框()
+    {
+        if (BDAE严重程度下拉框 == null) return;
+        
+        // 获取等级选项列表
+        var 等级选项 = BDAE严重程度评定工具.获取等级选项列表();
+        
+        // 设置下拉框选项（使用DropdownOptions.Options）
+        BDAE严重程度下拉框.DropdownOptions.Options.Clear();
+        foreach (var 选项 in 等级选项)
+        {
+            BDAE严重程度下拉框.DropdownOptions.Options.Add(选项);
+        }
+        
+        // 绑定选择变化事件
+        BDAE严重程度下拉框.OnValueChanged.AddListener(处理BDAE严重程度选择变化);
+        
+        Debug.Log($"[档案报告] BDAE严重程度下拉框初始化完成，选项数: {等级选项.Length}");
+    }
+    
+    /// <summary>
+    /// 处理BDAE严重程度下拉框选择变化
+    /// </summary>
+    void 处理BDAE严重程度选择变化(string 选中值)
+    {
+        if (BDAE严重程度 == null || 当前显示档案 == null || string.IsNullOrEmpty(选中值)) return;
+        
+        // 从选中值解析等级（例如"0级" -> 0）
+        int 等级 = 解析等级(选中值);
+        if (等级 == -1) return;
+        
+        // 更新显示文本
+        string 描述 = BDAE严重程度评定工具.获取严重程度描述(等级);
+        BDAE严重程度.Text = 描述;
+        
+        // 保存到档案中
+        当前显示档案.BDAE严重程度等级 = 等级;
+        
+        Debug.Log($"[档案报告] BDAE严重程度选择变化: {等级}级 - {描述}");
+    }
+    
+    /// <summary>
+    /// 从字符串解析等级（例如"0级" -> 0）
+    /// </summary>
+    int 解析等级(string 等级字符串)
+    {
+        if (string.IsNullOrEmpty(等级字符串)) return -1;
+        
+        // 尝试提取数字
+        string 数字部分 = 等级字符串.Replace("级", "").Trim();
+        if (int.TryParse(数字部分, out int 等级))
+        {
+            return 等级;
+        }
+        
+        return -1;
     }
     
     /// <summary>
@@ -295,8 +365,75 @@ public class 档案管理报告界面显示 : 界面基础_韩
         // 利手记录
         if (档案.利手记录 != null)
         {
-            if (利手评定总分 != null) 利手评定总分.Text = 档案.利手记录.利手评定总分.ToString();
+            if (利手评定结果 != null) 利手评定结果.Text = 档案.利手记录.利手评定结果 ?? "";
         }
+        
+        // 失语症评定 - 自动计算并显示
+        显示失语症评定结果(档案);
+    }
+    
+    /// <summary>
+    /// 显示失语症评定结果
+    /// </summary>
+    void 显示失语症评定结果(档案 档案)
+    {
+        if (失语症评定 == null) return;
+        
+        // 计算失语症类型
+        string 失语症类型 = 失语症评定工具.计算失语症类型(档案);
+        
+        // 获取完整名称
+        string 完整名称 = 失语症评定工具.获取失语症类型全称(失语症类型);
+        
+        // 显示结果
+        失语症评定.Text = 完整名称;
+        
+        // 同时保存到档案中
+        档案.失语症类型 = 失语症类型;
+        
+        Debug.Log($"[档案报告] 失语症评定结果: {完整名称}");
+        
+        // 自动推荐BDAE严重程度等级
+        显示BDAE严重程度推荐(档案, 失语症类型);
+    }
+    
+    /// <summary>
+    /// 显示BDAE严重程度推荐
+    /// </summary>
+    void 显示BDAE严重程度推荐(档案 档案, string 失语症类型)
+    {
+        if (BDAE严重程度下拉框 == null || BDAE严重程度 == null) return;
+        
+        int 等级 = 0;
+        
+        // 检查档案中是否已有保存的等级
+        if (档案.BDAE严重程度等级 >= 0 && 档案.BDAE严重程度等级 <= 5)
+        {
+            等级 = 档案.BDAE严重程度等级;
+            Debug.Log($"[档案报告] 使用档案中保存的BDAE严重程度: {等级}级");
+        }
+        else
+        {
+            // 根据失语症类型推荐严重程度等级
+            等级 = BDAE严重程度评定工具.推荐严重程度等级(档案, 失语症类型);
+            Debug.Log($"[档案报告] BDAE严重程度推荐: {等级}级");
+        }
+        
+        // 设置下拉框选中项（使用SelectedIndex）
+        BDAE严重程度下拉框.DropdownOptions.SelectedIndex = 等级;
+        
+        // 手动更新文本显示
+        string 描述 = BDAE严重程度评定工具.获取严重程度描述(等级);
+        BDAE严重程度.Text = 描述;
+        
+        // 如果下拉框的Visuals可用，更新显示
+        if (BDAE严重程度下拉框.Visuals != null && BDAE严重程度下拉框.Visuals.SelectionLabel != null)
+        {
+            BDAE严重程度下拉框.Visuals.SelectionLabel.Text = $"{等级}级";
+        }
+        
+        // 保存到档案
+        档案.BDAE严重程度等级 = 等级;
     }
     
     /// <summary>

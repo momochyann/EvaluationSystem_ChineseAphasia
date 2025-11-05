@@ -6336,6 +6336,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u9009\u9879\u7EC4\u540D\u79F0": "\u8171\u53CD\u5C04\u4F4D\u7F6E"
+  IsAnimationOnSelect: 0
+  "\u80CC\u666F\u5757": {fileID: 0}
+  "GetForm\u7236\u7269\u4F53": 0
+  "\u9009\u4E2D\u900F\u660E\u5EA6": 1
+  "\u672A\u9009\u4E2D\u900F\u660E\u5EA6": 0
   "\u5F53\u524D\u9009\u4E2D\u9009\u9879": {fileID: 0}
 --- !u!1 &558391516550606086
 GameObject:
@@ -19589,6 +19594,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u9009\u9879\u7EC4\u540D\u79F0": "Brunnstrom\u5206\u7EA7"
+  IsAnimationOnSelect: 0
+  "\u80CC\u666F\u5757": {fileID: 0}
+  "GetForm\u7236\u7269\u4F53": 0
+  "\u9009\u4E2D\u900F\u660E\u5EA6": 1
+  "\u672A\u9009\u4E2D\u900F\u660E\u5EA6": 0
   "\u5F53\u524D\u9009\u4E2D\u9009\u9879": {fileID: 0}
 --- !u!1 &1513002888826009942
 GameObject:
@@ -20853,7 +20863,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571838618693163323}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 388f1fceb3d2beb408ed2d18963ab884, type: 3}
   m_Name: 
@@ -34920,6 +34930,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u9009\u9879\u7EC4\u540D\u79F0": "\u8171\u53CD\u5C04\u4F4D\u7F6E"
+  IsAnimationOnSelect: 0
+  "\u80CC\u666F\u5757": {fileID: 0}
+  "GetForm\u7236\u7269\u4F53": 0
+  "\u9009\u4E2D\u900F\u660E\u5EA6": 1
+  "\u672A\u9009\u4E2D\u900F\u660E\u5EA6": 0
   "\u5F53\u524D\u9009\u4E2D\u9009\u9879": {fileID: 0}
 --- !u!1 &2626255681860260052
 GameObject:
@@ -37057,6 +37072,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u9009\u9879\u7EC4\u540D\u79F0": "\u8171\u53CD\u5C04\u4F4D\u7F6E"
+  IsAnimationOnSelect: 0
+  "\u80CC\u666F\u5757": {fileID: 0}
+  "GetForm\u7236\u7269\u4F53": 0
+  "\u9009\u4E2D\u900F\u660E\u5EA6": 1
+  "\u672A\u9009\u4E2D\u900F\u660E\u5EA6": 0
   "\u5F53\u524D\u9009\u4E2D\u9009\u9879": {fileID: 0}
 --- !u!1 &2849642633421510995
 GameObject:
@@ -50377,6 +50397,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u9009\u9879\u7EC4\u540D\u79F0": "\u762B\u75EA\u4FA7"
+  IsAnimationOnSelect: 0
+  "\u80CC\u666F\u5757": {fileID: 0}
+  "GetForm\u7236\u7269\u4F53": 0
+  "\u9009\u4E2D\u900F\u660E\u5EA6": 1
+  "\u672A\u9009\u4E2D\u900F\u660E\u5EA6": 0
   "\u5F53\u524D\u9009\u4E2D\u9009\u9879": {fileID: 0}
 --- !u!1 &3644179527872855918
 GameObject:
@@ -61824,6 +61849,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u9009\u9879\u7EC4\u540D\u79F0": "\u65B9\u8A00"
+  IsAnimationOnSelect: 0
+  "\u80CC\u666F\u5757": {fileID: 0}
+  "GetForm\u7236\u7269\u4F53": 0
+  "\u9009\u4E2D\u900F\u660E\u5EA6": 1
+  "\u672A\u9009\u4E2D\u900F\u660E\u5EA6": 0
   "\u5F53\u524D\u9009\u4E2D\u9009\u9879": {fileID: 0}
 --- !u!1 &4564065823525295149
 GameObject:
@@ -63887,6 +63917,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u9009\u9879\u7EC4\u540D\u79F0": "\u611F\u89C9\u969C\u788D\u5DE6\u53F3"
+  IsAnimationOnSelect: 0
+  "\u80CC\u666F\u5757": {fileID: 0}
+  "GetForm\u7236\u7269\u4F53": 0
+  "\u9009\u4E2D\u900F\u660E\u5EA6": 1
+  "\u672A\u9009\u4E2D\u900F\u660E\u5EA6": 0
   "\u5F53\u524D\u9009\u4E2D\u9009\u9879": {fileID: 0}
 --- !u!1 &4719141712036337711
 GameObject:
@@ -68924,6 +68959,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u9009\u9879\u7EC4\u540D\u79F0": "\u611F\u89C9\u969C\u788D\u4E0A\u4E0B\u80A2"
+  IsAnimationOnSelect: 0
+  "\u80CC\u666F\u5757": {fileID: 0}
+  "GetForm\u7236\u7269\u4F53": 0
+  "\u9009\u4E2D\u900F\u660E\u5EA6": 1
+  "\u672A\u9009\u4E2D\u900F\u660E\u5EA6": 0
   "\u5F53\u524D\u9009\u4E2D\u9009\u9879": {fileID: 0}
 --- !u!1 &5218086323466405897
 GameObject:
@@ -76713,6 +76753,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u9009\u9879\u7EC4\u540D\u79F0": "\u611F\u89C9\u969C\u788D\u6DF1\u6D45"
+  IsAnimationOnSelect: 0
+  "\u80CC\u666F\u5757": {fileID: 0}
+  "GetForm\u7236\u7269\u4F53": 0
+  "\u9009\u4E2D\u900F\u660E\u5EA6": 1
+  "\u672A\u9009\u4E2D\u900F\u660E\u5EA6": 0
   "\u5F53\u524D\u9009\u4E2D\u9009\u9879": {fileID: 0}
 --- !u!1 &5610754285455614568
 GameObject:
@@ -88254,6 +88299,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u9009\u9879\u7EC4\u540D\u79F0": "\u70DF"
+  IsAnimationOnSelect: 0
+  "\u80CC\u666F\u5757": {fileID: 0}
+  "GetForm\u7236\u7269\u4F53": 0
+  "\u9009\u4E2D\u900F\u660E\u5EA6": 1
+  "\u672A\u9009\u4E2D\u900F\u660E\u5EA6": 0
   "\u5F53\u524D\u9009\u4E2D\u9009\u9879": {fileID: 0}
 --- !u!1 &6571890661965071005
 GameObject:
@@ -88927,6 +88977,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u9009\u9879\u7EC4\u540D\u79F0": "\u541E\u54BD\u969C\u788D"
+  IsAnimationOnSelect: 0
+  "\u80CC\u666F\u5757": {fileID: 0}
+  "GetForm\u7236\u7269\u4F53": 0
+  "\u9009\u4E2D\u900F\u660E\u5EA6": 1
+  "\u672A\u9009\u4E2D\u900F\u660E\u5EA6": 0
   "\u5F53\u524D\u9009\u4E2D\u9009\u9879": {fileID: 0}
 --- !u!1 &6591767328753001238
 GameObject:
@@ -111569,6 +111624,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u9009\u9879\u7EC4\u540D\u79F0": "\u8171\u53CD\u5C04\u5F3A\u5EA6"
+  IsAnimationOnSelect: 0
+  "\u80CC\u666F\u5757": {fileID: 0}
+  "GetForm\u7236\u7269\u4F53": 0
+  "\u9009\u4E2D\u900F\u660E\u5EA6": 1
+  "\u672A\u9009\u4E2D\u900F\u660E\u5EA6": 0
   "\u5F53\u524D\u9009\u4E2D\u9009\u9879": {fileID: 0}
 --- !u!1 &8045825131140876956
 GameObject:
@@ -128212,6 +128272,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u9009\u9879\u7EC4\u540D\u79F0": "\u9152"
+  IsAnimationOnSelect: 0
+  "\u80CC\u666F\u5757": {fileID: 0}
+  "GetForm\u7236\u7269\u4F53": 0
+  "\u9009\u4E2D\u900F\u660E\u5EA6": 1
+  "\u672A\u9009\u4E2D\u900F\u660E\u5EA6": 0
   "\u5F53\u524D\u9009\u4E2D\u9009\u9879": {fileID: 0}
 --- !u!1 &8956129536392661230
 GameObject:
@@ -128522,6 +128587,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u9009\u9879\u7EC4\u540D\u79F0": "\u5FC3\u810F\u75C5"
+  IsAnimationOnSelect: 0
+  "\u80CC\u666F\u5757": {fileID: 0}
+  "GetForm\u7236\u7269\u4F53": 0
+  "\u9009\u4E2D\u900F\u660E\u5EA6": 1
+  "\u672A\u9009\u4E2D\u900F\u660E\u5EA6": 0
   "\u5F53\u524D\u9009\u4E2D\u9009\u9879": {fileID: 0}
 --- !u!1 &8972223371900846491
 GameObject:

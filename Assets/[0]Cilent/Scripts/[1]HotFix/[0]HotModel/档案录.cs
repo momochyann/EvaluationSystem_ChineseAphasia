@@ -175,8 +175,8 @@ public class 利手记录 : 档案记录接口
     public string 评估时间 { get; set; }
     public 评估状态 是否完成 { get; set; }
     
-    // 一个维度的分数
-    public int 利手评定总分;
+    // 利手评定结果（"左利手"、"右利手"或"混合利手"）
+    public string 利手评定结果;
     
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
@@ -231,6 +231,10 @@ public class 档案 : I记贞
     // 综合评价和指导建议
     public string 综合评价 = "";
     public string 指导建议 = "";
+    
+    // 失语症评定结果
+    public string 失语症类型 = "";
+    public int BDAE严重程度等级 = 0; // 0-5级
 }
 
 

@@ -20,7 +20,7 @@ public class 择木栏安卓_茉 : MonoBehaviour, IController
     [SerializeField] Button 搜索确认按钮;
     [SerializeField] Button 取消按钮;
     [SerializeField] UIBlock 面板容器; // 整个搜索面板的容器
-    public  UnityAction 索后行;
+    public UnityAction 索后行;
     private void Awake()
     {
         面板容器.transform.DOScale(1, 0.3f).From(0);
@@ -124,6 +124,11 @@ public class 择木栏安卓_茉 : MonoBehaviour, IController
             Debug.Log("记名" + 记);
             var 显记 = Instantiate(目气, 显示条目_韩.transform);
             显记.GetComponent<IentryDis>().显示信息(录.GetIndex(记));
+            var mask = 显记.GetComponent<ClipMask>();
+            DOTween.To((float value) =>
+           {
+               mask.Tint = new Color(mask.Tint.r, mask.Tint.g, mask.Tint.b, value);
+           }, 0, 1, 0.5f);
         }
         索后行?.Invoke();
         Destroy(gameObject, 0.1f);

@@ -16,8 +16,8 @@ public class 选项组性_茉 : MonoBehaviour, IController
     [Header("选中动画设置")]
     [SerializeField] private UIBlock2D 背景块;  // 用于显示选中提示的背景
     [SerializeField] private bool GetForm父物体 = false;  // 是否从第一个子物体获取背景块
-    [SerializeField] private float 渐显时长 = 0.15f;
-    [SerializeField] private float 渐隐时长 = 0.1f;
+    private float 渐显时长 = 0f;
+    private float 渐隐时长 = 0f;
     [SerializeField] private float 选中透明度 = 1f;
     [SerializeField] private float 未选中透明度 = 0f;
 
@@ -109,10 +109,11 @@ public class 选项组性_茉 : MonoBehaviour, IController
             // 播放选中动画 - 显示这个选项组正在被操作
             if (IsAnimationOnSelect)
             {
-                if (背景块.Color.a == 选中透明度) return;
-                播放选中动画();
-                // 通过 System 通知其他选项组取消高亮
+                // 先通过 System 通知其他选项组取消高亮
+                // 这样可以避免使用共享父物体背景时，自己的高亮被其他组的取消操作覆盖
                 this.GetSystem<选项组高亮管理System>().设置高亮组(this);
+                // 最后播放自己的选中动画，确保不会被覆盖
+                播放选中动画();
             }
         }
         else
@@ -219,6 +220,7 @@ public class 选项组性_茉 : MonoBehaviour, IController
         else
         {
             // 使用 DOTween 动画
+            // 不需要提前设置当前颜色，DOTween会自动从当前值开始动画
             当前动画 = DOTween.To(
                 () => 背景块.Color,
                 x => 背景块.Color = x,
