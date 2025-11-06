@@ -3042,7 +3042,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -990, y: -104.40001, z: -990, w: -104.40001}
+  m_margin: {x: -960, y: -104.40001, z: -960, w: -104.40001}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -4022,7 +4022,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -779.13007, y: -104.40001, z: -779.13007, w: -104.40001}
+  m_margin: {x: -755.5201, y: -104.40001, z: -755.5201, w: -104.40001}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -8369,7 +8369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 382774518}
-  referenceResolution: {x: 1980, y: 1200}
+  referenceResolution: {x: 1920, y: 1200}
   fillMode: 0
   planeDistance: 10
   haveConfiguredSortGroup: 1
@@ -8403,7 +8403,7 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 1980
+        Raw: 1920
         Type: 0
       Y:
         Raw: 1200
