@@ -18,15 +18,15 @@ public class 档案管理报告界面显示 : 界面基础_韩
     [SerializeField] private TextBlock 年龄;
     [SerializeField] private TextBlock 评估人员;
     [SerializeField] private TextBlock 评估时间;
-    
+
     [Header("个人信息")]
     [SerializeField] private TextBlock 身份证;
 
-    
+
     [Header("家庭信息")]
     [SerializeField] private TextBlock 联系方式;
 
-    
+
     [Header("背景信息")]
     [SerializeField] private TextBlock 发病日期;
     [SerializeField] private TextBlock 文化程度;
@@ -36,18 +36,18 @@ public class 档案管理报告界面显示 : 界面基础_韩
     [SerializeField] private TextBlock 发病前后语言状态;
     [SerializeField] private TextBlock 发病时状况;
     [SerializeField] private TextBlock 既往病史;
-    
+
     [Header("综合信息")]
     [SerializeField] private TextBlock 综合评价;
     [SerializeField] private TextBlock 指导建议;
-    
+
     [Header("量表评估分数")]
     [SerializeField] private TextBlock 谈话信息量总分;
     [SerializeField] private TextBlock 谈话流利性总分;
     [SerializeField] private TextBlock 系列语言总分;
     [SerializeField] private TextBlock 是否题总分;
     [SerializeField] private TextBlock 听辨认总分;
-   
+
     [SerializeField] private TextBlock 口头指令总分;
     [SerializeField] private TextBlock 词复述总分;
     [SerializeField] private TextBlock 句复述总分;
@@ -73,108 +73,132 @@ public class 档案管理报告界面显示 : 界面基础_韩
     [SerializeField] private TextBlock 面部动作总分;
     [SerializeField] private TextBlock 上肢动作总分;
     [SerializeField] private TextBlock 复杂动作总分;
-  
-     [Header("评估结果")]
-     [SerializeField] private TextBlock 利手评定结果;
-     [SerializeField] private TextBlock 失语症评定;
-     [SerializeField] private TextBlock BDAE严重程度;
-     [SerializeField] private Dropdown BDAE严重程度下拉框;
-    
+
+    [Header("评估结果")]
+    [SerializeField] private TextBlock 利手评定结果;
+    [SerializeField] private TextBlock 失语症评定;
+    [SerializeField] private TextBlock BDAE严重程度;
+    [SerializeField] private Dropdown BDAE严重程度下拉框;
+
     [Header("操作按钮")]
     [SerializeField] private NovaSamples.UIControls.Button 保存按钮;
     [SerializeField] private NovaSamples.UIControls.Button 取消按钮;
-    
+    [SerializeField] private Button 打印按钮;
+    [SerializeField] private Button 下载按钮;
+    [SerializeField] private Toggle 量表报告勾选;
+    [SerializeField] private Toggle 量表表格勾选;
+    [SerializeField] private Button 选择确认按钮;
+    bool 是否是打印=false;
     // 存储选项组性和选项组性多选
     private List<选项组性_茉> 选项组性列表 = new List<选项组性_茉>();
     private List<选项组性多选_茉> 选项组性多选列表 = new List<选项组性多选_茉>();
-    
+
     // 存储传入的档案数据
     private 档案 当前显示档案;
-    
+
     // 按钮委托
     public Action On保存确认;
 
     public Action On取消确认;
- 
-    
+
+
     void Awake()
     {
         // 在Awake中订阅显示信息事件
         初始化选项组();
         显示信息 += 显示档案详情;
     }
-    
+
     void Start()
     {
         // 绑定按钮事件
+        
         保存按钮?.OnClicked.AddListener(() => 处理保存按钮点击().Forget());
         取消按钮?.OnClicked.AddListener(() => 处理取消按钮点击().Forget());
-        
+        //打印按钮?.OnClicked.AddListener(() => 处理打印按钮点击().Forget());
+        下载按钮?.OnClicked.AddListener(() => 是否是打印=false);
+        打印按钮?.OnClicked.AddListener(() => 是否是打印=true);
+        选择确认按钮?.OnClicked.AddListener(() => 处理选择确认按钮点击().Forget());
         // 初始化BDAE严重程度下拉框
         初始化BDAE严重程度下拉框();
     }
-    
+
+    private async UniTaskVoid 处理选择确认按钮点击()
+    {
+        var 界面管理器 = FindObjectOfType<界面管理器_韩>();
+        界面管理器.显示界面("打印报告界面");
+        await UniTask.WaitUntil(() => 界面管理器._currentPanel != null && 界面管理器._currentPanel.name.Contains("打印报告界面"));
+        var 打印报告界面 = 界面管理器._currentPanel.GetComponent<打印报告界面_茉>();
+        if (打印报告界面 != null)
+        {
+            打印报告界面.是否为打印 = 是否是打印;
+            打印报告界面.显示信息?.Invoke(当前显示档案);
+
+        }
+    }
+
+
     /// <summary>
     /// 初始化BDAE严重程度下拉框
     /// </summary>
     void 初始化BDAE严重程度下拉框()
     {
         if (BDAE严重程度下拉框 == null) return;
-        
+
         // 获取等级选项列表
         var 等级选项 = BDAE严重程度评定工具.获取等级选项列表();
-        
+
         // 设置下拉框选项（使用DropdownOptions.Options）
         BDAE严重程度下拉框.DropdownOptions.Options.Clear();
         foreach (var 选项 in 等级选项)
         {
             BDAE严重程度下拉框.DropdownOptions.Options.Add(选项);
         }
-        
+
         // 绑定选择变化事件
         BDAE严重程度下拉框.OnValueChanged.AddListener(处理BDAE严重程度选择变化);
-        
+
         Debug.Log($"[档案报告] BDAE严重程度下拉框初始化完成，选项数: {等级选项.Length}");
     }
-    
+
     /// <summary>
     /// 处理BDAE严重程度下拉框选择变化
     /// </summary>
     void 处理BDAE严重程度选择变化(string 选中值)
     {
         if (BDAE严重程度 == null || 当前显示档案 == null || string.IsNullOrEmpty(选中值)) return;
-        
+
         // 从选中值解析等级（例如"0级" -> 0）
         int 等级 = 解析等级(选中值);
         if (等级 == -1) return;
-        
+
         // 更新显示文本
         string 描述 = BDAE严重程度评定工具.获取严重程度描述(等级);
         BDAE严重程度.Text = 描述;
-        
+
         // 保存到档案中
         当前显示档案.BDAE严重程度等级 = 等级;
-        
+
         Debug.Log($"[档案报告] BDAE严重程度选择变化: {等级}级 - {描述}");
     }
-    
+
     /// <summary>
     /// 从字符串解析等级（例如"0级" -> 0）
     /// </summary>
     int 解析等级(string 等级字符串)
     {
         if (string.IsNullOrEmpty(等级字符串)) return -1;
-        
+
         // 尝试提取数字
         string 数字部分 = 等级字符串.Replace("级", "").Trim();
         if (int.TryParse(数字部分, out int 等级))
         {
             return 等级;
         }
-        
+
         return -1;
     }
-    
+
     /// <summary>
     /// 初始化所有子物体中的选项组性和选项组性多选
     /// </summary>
@@ -182,50 +206,50 @@ public class 档案管理报告界面显示 : 界面基础_韩
     {
         选项组性列表.Clear();
         选项组性多选列表.Clear();
-        
+
         选项组性列表.AddRange(GetComponentsInChildren<选项组性_茉>(true));
         选项组性多选列表.AddRange(GetComponentsInChildren<选项组性多选_茉>(true));
-        
+
         Debug.Log($"[档案报告] 找到 {选项组性列表.Count} 个选项组性，{选项组性多选列表.Count} 个选项组性多选");
     }
-    
+
     /// <summary>
     /// 显示档案详情（通过界面基础_韩的显示信息事件调用）
     /// </summary>
     void 显示档案详情(I记贞 记)
     {
         当前显示档案 = 记 as 档案;
-        
+
         if (当前显示档案 == null)
         {
             Debug.LogWarning("[档案报告] 传入的档案数据为空");
             return;
         }
-        
+
         Debug.Log($"[档案报告] 显示档案: {当前显示档案.姓名}(编号:{当前显示档案.编号})");
-        
+
         // 显示基本信息
         显示基本信息(当前显示档案);
-        
+
         // 显示个人信息
         显示个人信息(当前显示档案);
-        
+
         // 显示家庭信息
         显示家庭信息(当前显示档案);
-        
+
         // 显示背景信息
         显示背景信息(当前显示档案);
-        
+
         // 显示综合信息
         显示综合信息(当前显示档案);
-        
+
         // 显示量表评估分数
         显示量表评估分数(当前显示档案);
-        
+
         // 还原选项组选择
         还原背景信息选项组(当前显示档案);
     }
-    
+
     /// <summary>
     /// 显示基本信息
     /// </summary>
@@ -239,16 +263,16 @@ public class 档案管理报告界面显示 : 界面基础_韩
         if (评估人员 != null) 评估人员.Text = 档案.评估人员 ?? "";
         if (评估时间 != null) 评估时间.Text = 档案.评估时间 ?? "";
     }
-    
+
     /// <summary>
     /// 显示个人信息
     /// </summary>
     void 显示个人信息(档案 档案)
     {
         if (身份证 != null) 身份证.Text = 档案.身份证 ?? "";
-   
+
     }
-    
+
     /// <summary>
     /// 显示家庭信息
     /// </summary>
@@ -256,9 +280,9 @@ public class 档案管理报告界面显示 : 界面基础_韩
     {
 
         if (联系方式 != null) 联系方式.Text = 档案.联系方式 ?? "";
-     
+
     }
-    
+
     /// <summary>
     /// 显示背景信息
     /// </summary>
@@ -273,7 +297,7 @@ public class 档案管理报告界面显示 : 界面基础_韩
         if (发病时状况 != null) 发病时状况.Text = 档案.发病时状况 ?? "";
         if (既往病史 != null) 既往病史.Text = 档案.既往病史 ?? "";
     }
-    
+
     /// <summary>
     /// 显示综合信息
     /// </summary>
@@ -282,7 +306,7 @@ public class 档案管理报告界面显示 : 界面基础_韩
         if (综合评价 != null) 综合评价.Text = 档案.综合评价 ?? "";
         if (指导建议 != null) 指导建议.Text = 档案.指导建议 ?? "";
     }
-    
+
     /// <summary>
     /// 显示量表评估分数
     /// </summary>
@@ -295,7 +319,7 @@ public class 档案管理报告界面显示 : 界面基础_韩
             if (谈话流利性总分 != null) 谈话流利性总分.Text = 档案.谈话记录.谈话流利性总分.ToString();
             if (系列语言总分 != null) 系列语言总分.Text = 档案.谈话记录.系列语言总分.ToString();
         }
-        
+
         // 理解记录
         if (档案.理解记录 != null)
         {
@@ -303,14 +327,14 @@ public class 档案管理报告界面显示 : 界面基础_韩
             if (听辨认总分 != null) 听辨认总分.Text = 档案.理解记录.听辨认图形总分.ToString();
             if (口头指令总分 != null) 口头指令总分.Text = 档案.理解记录.口头指令总分.ToString();
         }
-        
+
         // 复述记录
         if (档案.复述记录 != null)
         {
             if (词复述总分 != null) 词复述总分.Text = 档案.复述记录.词复述总分.ToString();
             if (句复述总分 != null) 句复述总分.Text = 档案.复述记录.句复述总分.ToString();
         }
-        
+
         // 命名记录
         if (档案.命名记录 != null)
         {
@@ -319,23 +343,23 @@ public class 档案管理报告界面显示 : 界面基础_韩
             if (颜色命名总分 != null) 颜色命名总分.Text = 档案.命名记录.颜色命名总分.ToString();
             if (反应性命名总分 != null) 反应性命名总分.Text = 档案.命名记录.反应性命名总分.ToString();
         }
-        
+
         // 阅读记录
         if (档案.阅读记录 != null)
         {
             if (视读总分 != null) 视读总分.Text = 档案.阅读记录.视读总分.ToString();
             if (阅读指令总分 != null) 阅读指令总分.Text = 档案.阅读记录.阅读指令总分.ToString();
-            if (字画匹配总分 != null) 字画匹配总分.Text = (档案.阅读记录.字画匹配朗读总分+档案.阅读记录.字画匹配配画总分).ToString();
-            if (执行指令总分 != null) 执行指令总分.Text = (档案.阅读记录.执行指令朗读总分+档案.阅读记录.执行指令配画总分).ToString();
+            if (字画匹配总分 != null) 字画匹配总分.Text = (档案.阅读记录.字画匹配朗读总分 + 档案.阅读记录.字画匹配配画总分).ToString();
+            if (执行指令总分 != null) 执行指令总分.Text = (档案.阅读记录.执行指令朗读总分 + 档案.阅读记录.执行指令配画总分).ToString();
             if (填空总分 != null) 填空总分.Text = 档案.阅读记录.填空总分.ToString();
         }
-        
+
         // 计算记录
         if (档案.计算记录 != null)
         {
             if (运算总分 != null) 运算总分.Text = 档案.计算记录.运算总分.ToString();
         }
-        
+
         // 书写记录
         if (档案.书写记录 != null)
         {
@@ -346,14 +370,14 @@ public class 档案管理报告界面显示 : 界面基础_韩
             if (看图写字总分 != null) 看图写字总分.Text = 档案.书写记录.看图写字总分.ToString();
             if (写病情总分 != null) 写病情总分.Text = 档案.书写记录.写病情分数.ToString();
         }
-        
+
         // 结构与空间记录
         if (档案.结构与空间记录 != null)
         {
             if (照画图总分 != null) 照画图总分.Text = 档案.结构与空间记录.照画图总分.ToString();
             if (摆方块总分 != null) 摆方块总分.Text = 档案.结构与空间记录.摆方块总分.ToString();
         }
-        
+
         // 运用记录
         if (档案.运用记录 != null)
         {
@@ -361,51 +385,51 @@ public class 档案管理报告界面显示 : 界面基础_韩
             if (上肢动作总分 != null) 上肢动作总分.Text = 档案.运用记录.上肢动作总分.ToString();
             if (复杂动作总分 != null) 复杂动作总分.Text = 档案.运用记录.复杂动作总分.ToString();
         }
-        
+
         // 利手记录
         if (档案.利手记录 != null)
         {
             if (利手评定结果 != null) 利手评定结果.Text = 档案.利手记录.利手评定结果 ?? "";
         }
-        
+
         // 失语症评定 - 自动计算并显示
         显示失语症评定结果(档案);
     }
-    
+
     /// <summary>
     /// 显示失语症评定结果
     /// </summary>
     void 显示失语症评定结果(档案 档案)
     {
         if (失语症评定 == null) return;
-        
+
         // 计算失语症类型
         string 失语症类型 = 失语症评定工具.计算失语症类型(档案);
-        
+
         // 获取完整名称
         string 完整名称 = 失语症评定工具.获取失语症类型全称(失语症类型);
-        
+
         // 显示结果
         失语症评定.Text = 完整名称;
-        
+
         // 同时保存到档案中
         档案.失语症类型 = 失语症类型;
-        
+
         Debug.Log($"[档案报告] 失语症评定结果: {完整名称}");
-        
+
         // 自动推荐BDAE严重程度等级
         显示BDAE严重程度推荐(档案, 失语症类型);
     }
-    
+
     /// <summary>
     /// 显示BDAE严重程度推荐
     /// </summary>
     void 显示BDAE严重程度推荐(档案 档案, string 失语症类型)
     {
         if (BDAE严重程度下拉框 == null || BDAE严重程度 == null) return;
-        
+
         int 等级 = 0;
-        
+
         // 检查档案中是否已有保存的等级
         if (档案.BDAE严重程度等级 >= 0 && 档案.BDAE严重程度等级 <= 5)
         {
@@ -418,24 +442,24 @@ public class 档案管理报告界面显示 : 界面基础_韩
             等级 = BDAE严重程度评定工具.推荐严重程度等级(档案, 失语症类型);
             Debug.Log($"[档案报告] BDAE严重程度推荐: {等级}级");
         }
-        
+
         // 设置下拉框选中项（使用SelectedIndex）
         BDAE严重程度下拉框.DropdownOptions.SelectedIndex = 等级;
-        
+
         // 手动更新文本显示
         string 描述 = BDAE严重程度评定工具.获取严重程度描述(等级);
         BDAE严重程度.Text = 描述;
-        
+
         // 如果下拉框的Visuals可用，更新显示
         if (BDAE严重程度下拉框.Visuals != null && BDAE严重程度下拉框.Visuals.SelectionLabel != null)
         {
             BDAE严重程度下拉框.Visuals.SelectionLabel.Text = $"{等级}级";
         }
-        
+
         // 保存到档案
         档案.BDAE严重程度等级 = 等级;
     }
-    
+
     /// <summary>
     /// 还原背景信息的选项组选择
     /// </summary>
@@ -446,7 +470,7 @@ public class 档案管理报告界面显示 : 界面基础_韩
         // 还原单选选项组
         foreach (var 选项组 in 选项组性列表)
         {
-            if (选项组 != null && !string.IsNullOrEmpty(选项组.选项组名称) && 
+            if (选项组 != null && !string.IsNullOrEmpty(选项组.选项组名称) &&
                 档案.背景信息选项组选择.ContainsKey(选项组.选项组名称))
             {
                 var 数据 = 档案.背景信息选项组选择[选项组.选项组名称].Split('|');
@@ -458,11 +482,11 @@ public class 档案管理报告界面显示 : 界面基础_韩
                     选项组.设置选中选项(索引);
             }
         }
-        
+
         // 还原多选选项组
         foreach (var 选项组 in 选项组性多选列表)
         {
-            if (选项组 != null && !string.IsNullOrEmpty(选项组.选项组名称) && 
+            if (选项组 != null && !string.IsNullOrEmpty(选项组.选项组名称) &&
                 档案.背景信息选项组选择.ContainsKey(选项组.选项组名称))
             {
                 var 数据 = 档案.背景信息选项组选择[选项组.选项组名称].Split('|');
@@ -479,22 +503,22 @@ public class 档案管理报告界面显示 : 界面基础_韩
             }
         }
     }
-    
+
     protected override void OnShow()
     {
         base.OnShow();
         Debug.Log("[档案报告] 界面显示");
     }
-    
+
     protected override void OnHide()
     {
         base.OnHide();
         Debug.Log("[档案报告] 界面隐藏");
-        
+
         // 清空当前显示的档案
         当前显示档案 = null;
     }
-    
+
     /// <summary>
     /// 处理保存按钮点击
     /// </summary>
@@ -504,7 +528,7 @@ public class 档案管理报告界面显示 : 界面基础_韩
         var 界面管理器 = FindObjectOfType<界面管理器_韩>();
         var ins = Instantiate(告示, 界面管理器.transform);
         var 用户选择 = await ins.GetComponent<告示_茉>().等待确认显示("保存确认", "确定要保存当前报告吗？");
-        
+
         if (用户选择)
         {
             Debug.Log("[档案报告] 用户确认保存");
@@ -515,10 +539,10 @@ public class 档案管理报告界面显示 : 界面基础_韩
         {
             Debug.Log("[档案报告] 用户取消保存");
         }
-        
+
         Destroy(ins);
     }
-    
+
     /// <summary>
     /// 处理取消按钮点击
     /// </summary>
@@ -528,7 +552,7 @@ public class 档案管理报告界面显示 : 界面基础_韩
         var 界面管理器 = FindObjectOfType<界面管理器_韩>();
         var ins = Instantiate(告示, 界面管理器.transform);
         var 用户选择 = await ins.GetComponent<告示_茉>().等待确认显示("取消确认", "确定要取消并退出吗？");
-        
+
         if (用户选择)
         {
             Debug.Log("[档案报告] 用户确认取消");
@@ -537,18 +561,18 @@ public class 档案管理报告界面显示 : 界面基础_韩
         else
         {
             Debug.Log("[档案报告] 用户取消取消操作");
-           
+
         }
-        
+
         Destroy(ins);
     }
-    
+
     void OnDestroy()
     {
         // 清理按钮事件
         保存按钮?.OnClicked.RemoveAllListeners();
         取消按钮?.OnClicked.RemoveAllListeners();
-        
+
         // 取消订阅显示信息事件
         显示信息 -= 显示档案详情;
     }
