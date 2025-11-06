@@ -6,7 +6,7 @@
     "OutputNameStyle": 0,
     "BuildPipeline": "BuiltinBuildPipeline",
     "PackageName": "DefaultPackage",
-    "PackageVersion": "25-1105-171632",
+    "PackageVersion": "25-1106-151004",
     "AssetList": [
         {
             "Address": "1c296539239e282116f2043db1c9f32b",
@@ -788,6 +788,24 @@
             "BundleID": 22
         },
         {
+            "Address": "量表评估打印报告_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/档案管理/量表评估打印报告_Mobile.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 22
+        },
+        {
+            "Address": "量表评估打印表格_Mobile",
+            "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/档案管理/量表评估打印表格_Mobile.prefab",
+            "AssetGUID": "",
+            "AssetTags": [
+                "UI"
+            ],
+            "BundleID": 22
+        },
+        {
             "Address": "用户条目_Mobile",
             "AssetPath": "Assets/[0]Cilent/UI/安卓/工作场景/用户管理/用户条目_Mobile.prefab",
             "AssetGUID": "",
@@ -1541,10 +1559,10 @@
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_prefabs.bundle",
-            "UnityCRC": 322828386,
-            "FileHash": "4e958ed098fe80c1775f52e708f0c023",
-            "FileCRC": "4337dc04",
-            "FileSize": 2018878,
+            "UnityCRC": 126133037,
+            "FileHash": "5271524be185a8b87e36036badfa603e",
+            "FileCRC": "e38bb65c",
+            "FileSize": 2018883,
             "Encrypted": false,
             "Tags": [
                 "UI"
@@ -1587,10 +1605,10 @@
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_档案管理.bundle",
-            "UnityCRC": 104556821,
-            "FileHash": "a050b32e5762c4c36fcf3125fa92ce71",
-            "FileCRC": "ce37bf34",
-            "FileSize": 1393386,
+            "UnityCRC": 3469683353,
+            "FileHash": "7713496e1bfb0f6e81a92f5a560ac17a",
+            "FileCRC": "971a44b1",
+            "FileSize": 1595144,
             "Encrypted": false,
             "Tags": [
                 "UI"
@@ -1702,10 +1720,10 @@
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_ui_安卓_工作场景_量表评估管理.bundle",
-            "UnityCRC": 801935181,
-            "FileHash": "43ae5ab97cc8f21c4dba53002deef2b1",
-            "FileCRC": "65db247f",
-            "FileSize": 7724734,
+            "UnityCRC": 3336677735,
+            "FileHash": "f6d0b4631ce556318ac810bacf150e0f",
+            "FileCRC": "e82ff3a0",
+            "FileSize": 7761915,
             "Encrypted": false,
             "Tags": [
                 "UI"
@@ -1716,6 +1734,7 @@
                 2,
                 3,
                 8,
+                9,
                 10,
                 11,
                 15,
@@ -1947,10 +1966,10 @@
         },
         {
             "BundleName": "defaultpackage_assets_[0]cilent_scenes.bundle",
-            "UnityCRC": 1088598276,
-            "FileHash": "02e6f00a1c83e9cdaac433298c900f63",
-            "FileCRC": "2c0812ef",
-            "FileSize": 1142793,
+            "UnityCRC": 2332169187,
+            "FileHash": "e16e86bc8b1ed3e6958de8667a2a9e28",
+            "FileCRC": "cbf0823b",
+            "FileSize": 1150654,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": [
@@ -2003,10 +2022,10 @@
         },
         {
             "BundleName": "defaultpackage_share_assets_nova_icons.bundle",
-            "UnityCRC": 3149111769,
-            "FileHash": "8d014f74be272ad60e4908ed99f87ca6",
-            "FileCRC": "c387b81b",
-            "FileSize": 3263,
+            "UnityCRC": 3175473262,
+            "FileHash": "0443ddfa9b3209a915519aedd3673804",
+            "FileCRC": "c2fc81ce",
+            "FileSize": 1415,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -2035,10 +2054,10 @@
         },
         {
             "BundleName": "defaultpackage_share_assets_[0]cilent_fonts.bundle",
-            "UnityCRC": 4023136429,
-            "FileHash": "55476022f44dc29ed653f74b378d0735",
-            "FileCRC": "0ba70e27",
-            "FileSize": 9653661,
+            "UnityCRC": 1328964554,
+            "FileHash": "d70e55523f51ce66efc897f281a01fd2",
+            "FileCRC": "acd64095",
+            "FileSize": 9486831,
             "Encrypted": false,
             "Tags": [
                 "UI"
@@ -2186,11 +2205,11 @@
             "DependIDs": []
         },
         {
-            "BundleName": "defaultpackage_share_assets_[1]local_textures_1104马庆.bundle",
-            "UnityCRC": 4251683013,
-            "FileHash": "1b0af9b6349b0444ca2fc5d2ddfe4add",
-            "FileCRC": "314ab3c6",
-            "FileSize": 625248,
+            "BundleName": "defaultpackage_share_assets_[1]local_textures_1027电脑评估.bundle",
+            "UnityCRC": 3425685615,
+            "FileHash": "861b19335f8ae02197b567d1595d6d36",
+            "FileCRC": "7e58f2f6",
+            "FileSize": 952815,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
