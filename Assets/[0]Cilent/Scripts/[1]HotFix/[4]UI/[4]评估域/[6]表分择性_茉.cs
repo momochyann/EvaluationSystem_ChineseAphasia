@@ -20,6 +20,12 @@ public class 表分择性_茉 : MonoBehaviour
     // 静态列表，保存所有实例
     private static List<表分择性_茉> 所有实例 = new List<表分择性_茉>();
     
+    // 标记是否已初始化
+    private bool 是否已初始化 = false;
+    
+    // 待还原的分数值(-1表示无待还原数据)
+    private int 待还原分数 = -1;
+    
     void Start()
     {
         if (分数文本 == null)
@@ -44,6 +50,15 @@ public class 表分择性_茉 : MonoBehaviour
 
         // 初始化填充下拉框
         填充表分选择下拉框();
+        
+        // 如果有待还原的分数,现在还原它
+        if (待还原分数 >= 0)
+        {
+            设置选中分数内部(待还原分数);
+            待还原分数 = -1;
+        }
+        
+        是否已初始化 = true;
         
         // 添加到所有实例列表
         if (!所有实例.Contains(this))
@@ -210,14 +225,31 @@ public class 表分择性_茉 : MonoBehaviour
     }
     
     /// <summary>
-    /// 设置选中的分数值
+    /// 设置选中的分数值(公共接口)
     /// </summary>
     /// <param name="分数">要选中的分数值</param>
     public void 设置选中分数(int 分数)
     {
+        if (!是否已初始化)
+        {
+            // 如果还未初始化,保存待还原的分数,等Start执行后再设置
+            待还原分数 = 分数;
+            Debug.Log($"[{name}] 表分择性还未初始化,保存待还原分数: {分数}");
+            return;
+        }
+        
+        设置选中分数内部(分数);
+    }
+    
+    /// <summary>
+    /// 设置选中的分数值(内部方法)
+    /// </summary>
+    /// <param name="分数">要选中的分数值</param>
+    private void 设置选中分数内部(int 分数)
+    {
         if (表分选择 == null)
         {
-            Debug.LogWarning("表分选择组件为空");
+            Debug.LogWarning($"[{name}] 表分选择组件为空");
             return;
         }
         
@@ -228,11 +260,13 @@ public class 表分择性_茉 : MonoBehaviour
         if (索引 >= 0)
         {
             表分选择.DropdownOptions.SelectedIndex = 索引;
-            Debug.Log($"表分择性设置选中分数: {分数}");
+            Debug.Log($"[{name}] 表分择性设置选中分数成功: {分数}, 索引: {索引}");
         }
         else
         {
-            Debug.LogWarning($"未找到分数 {分数} 对应的选项");
+            Debug.LogWarning($"[{name}] 未找到分数 {分数} 对应的选项, 当前选项数: {表分选择.DropdownOptions.Options.Count}");
+            // 打印所有可用选项用于调试
+            Debug.Log($"[{name}] 可用选项: {string.Join(", ", 表分选择.DropdownOptions.Options)}");
         }
     }
     

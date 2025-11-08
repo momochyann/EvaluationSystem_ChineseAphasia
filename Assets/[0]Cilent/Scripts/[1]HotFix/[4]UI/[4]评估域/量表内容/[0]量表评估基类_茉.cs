@@ -80,12 +80,28 @@ public abstract class 量表评估基类_茉 : 界面基础_韩
         var 选项组选择字段 = 记录.GetType().GetField("选项组选择");
         var 选项组选择 = 选项组选择字段?.GetValue(记录) as Dictionary<string, int>;
         
+        // 尝试获取表分择性选择(如果存在)
+        var 表分择性选择字段 = 记录.GetType().GetField("表分择性选择");
+        var 表分择性选择 = 表分择性选择字段?.GetValue(记录) as Dictionary<string, int>;
         
-        if (选项组选择 != null && 选项组选择.Count > 0)
+        bool 有数据 = (选项组选择 != null && 选项组选择.Count > 0) || 
+                     (表分择性选择 != null && 表分择性选择.Count > 0);
+        
+        if (有数据)
         {
             foreach (var 栏目组 in 栏目组性群)
             {
-                栏目组?.设置选项组选择(选项组选择);
+                if (栏目组 == null) continue;
+                
+                // 根据栏目组类型设置对应的选择
+                if (栏目组.组类型 == 栏目组类型.选项组性 && 选项组选择 != null)
+                {
+                    栏目组.设置选项组选择(选项组选择);
+                }
+                else if (栏目组.组类型 == 栏目组类型.表分择性 && 表分择性选择 != null)
+                {
+                    栏目组.设置选项组选择(表分择性选择); // 内部会调用设置表分择性选择
+                }
             }
             还原其他数据(记录);
         }
@@ -196,7 +212,7 @@ public abstract class 量表评估基类_茉 : 界面基础_韩
             
             foreach (var 栏目组 in 栏目组性群)
             {
-                if (栏目组 == null) continue;
+                if (栏目组 == null || 栏目组.组类型 != 栏目组类型.选项组性) continue;
                 foreach (var 项 in 栏目组.获取选项组选择())
                 {
                     选项组选择[项.Key] = 项.Value;
@@ -204,6 +220,26 @@ public abstract class 量表评估基类_茉 : 界面基础_韩
             }
             
             选项组选择字段.SetValue(记录, 选项组选择);
+        }
+        
+        // 保存表分择性选择(如果存在)
+        var 表分择性选择字段 = 记录.GetType().GetField("表分择性选择");
+        if (表分择性选择字段 != null)
+        {
+            var 表分择性选择 = 表分择性选择字段.GetValue(记录) as Dictionary<string, int> 
+                           ?? new Dictionary<string, int>();
+            表分择性选择.Clear();
+            
+            foreach (var 栏目组 in 栏目组性群)
+            {
+                if (栏目组 == null || 栏目组.组类型 != 栏目组类型.表分择性) continue;
+                foreach (var 项 in 栏目组.获取选项组选择())
+                {
+                    表分择性选择[项.Key] = 项.Value;
+                }
+            }
+            
+            表分择性选择字段.SetValue(记录, 表分择性选择);
         }
         
         // 保存额外数据

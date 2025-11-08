@@ -125,15 +125,31 @@ public class 档案管理报告界面显示 : 界面基础_韩
 
     private async UniTaskVoid 处理选择确认按钮点击()
     {
+        // 检查勾选状态
+        bool 勾选了量表报告 = 量表报告勾选 != null && 量表报告勾选.ToggledOn;
+        bool 勾选了量表表格 = 量表表格勾选 != null && 量表表格勾选.ToggledOn;
+        
+        // 如果都没勾选，提示用户
+        if (!勾选了量表报告 && !勾选了量表表格)
+        {
+            Debug.LogWarning("[档案报告] 未勾选任何选项，默认显示量表报告");
+            勾选了量表报告 = true;
+        }
+        
+        Debug.Log($"[档案报告] 勾选状态 - 量表报告:{勾选了量表报告}, 量表表格:{勾选了量表表格}, 是否打印:{是否是打印}");
+        
+        var _当前显示档案 = 当前显示档案;
         var 界面管理器 = FindObjectOfType<界面管理器_韩>();
         界面管理器.显示界面("打印报告界面");
         await UniTask.WaitUntil(() => 界面管理器._currentPanel != null && 界面管理器._currentPanel.name.Contains("打印报告界面"));
+        
         var 打印报告界面 = 界面管理器._currentPanel.GetComponent<打印报告界面_茉>();
         if (打印报告界面 != null)
         {
             打印报告界面.是否为打印 = 是否是打印;
-            打印报告界面.显示信息?.Invoke(当前显示档案);
-
+            打印报告界面.显示量表报告 = 勾选了量表报告;
+            打印报告界面.显示量表表格 = 勾选了量表表格;
+            打印报告界面.显示信息?.Invoke(_当前显示档案);
         }
     }
 

@@ -19,6 +19,7 @@ public class 选择界面_茉 : MonoBehaviour, IController
     [SerializeField] TextBlock 软件名称;
     private 评人录 评人录;
     private 管员录 管员录;
+    private bool 正在跳转 = false;
 
     void Start()
     {
@@ -117,6 +118,14 @@ public class 选择界面_茉 : MonoBehaviour, IController
 
     public void 执行功能(string 功能名称)
     {
+        // 防止多次点击导致重复跳转
+        if (正在跳转)
+        {
+            Debug.Log("正在跳转中,忽略重复点击");
+            return;
+        }
+        
+        正在跳转 = true;
         Debug.Log("执行功能：" + 功能名称);
         功能名称 = 功能名称 + "显示";
         静态传递_韩.SwitchSceneWithPanel("主场景", 功能名称);
