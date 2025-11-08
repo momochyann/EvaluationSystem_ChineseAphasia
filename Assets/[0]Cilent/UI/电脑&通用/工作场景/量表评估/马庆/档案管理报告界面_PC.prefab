@@ -28713,6 +28713,11 @@ MonoBehaviour:
   "BDAE\u4E25\u91CD\u7A0B\u5EA6\u4E0B\u62C9\u6846": {fileID: 9082861786803788793}
   "\u4FDD\u5B58\u6309\u94AE": {fileID: 4835061506650952272}
   "\u53D6\u6D88\u6309\u94AE": {fileID: 6211284766710959291}
+  "\u6253\u5370\u6309\u94AE": {fileID: 0}
+  "\u4E0B\u8F7D\u6309\u94AE": {fileID: 0}
+  "\u91CF\u8868\u62A5\u544A\u52FE\u9009": {fileID: 0}
+  "\u91CF\u8868\u8868\u683C\u52FE\u9009": {fileID: 0}
+  "\u9009\u62E9\u786E\u8BA4\u6309\u94AE": {fileID: 0}
 --- !u!1 &1621511856918933584
 GameObject:
   m_ObjectHideFlags: 0
@@ -121139,7 +121144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5527932825377722235
 Transform:
   m_ObjectHideFlags: 0

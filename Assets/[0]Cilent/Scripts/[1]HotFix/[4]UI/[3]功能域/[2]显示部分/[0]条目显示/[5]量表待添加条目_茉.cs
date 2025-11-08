@@ -33,13 +33,13 @@ public class 量表待添加条目_茉 : MonoBehaviour, IentryDis, IController
         var 当前档案 = 档案录.GetDataList()[索引];
         if (当前档案.评估状态 != 评估状态.评估完成)
         {
-            用户编号.Text = 当前档案.编号;
-            姓名.Text = 当前档案.姓名;
-            性别.Text = 当前档案.性别;
-            出生日期.Text = 当前档案.出生日期;
-            年龄.Text = 当前档案.年龄;
-            添加时间.Text = 当前档案.添加时间;
-            评估状态文本.Text = 当前档案.评估状态.ToString();   
+            if (用户编号 != null) 用户编号.Text = 当前档案.编号;
+            if (姓名 != null) 姓名.Text = 当前档案.姓名;
+            if (性别 != null) 性别.Text = 当前档案.性别;
+            if (出生日期 != null) 出生日期.Text = 当前档案.出生日期;
+            if (年龄 != null) 年龄.Text = 当前档案.年龄;
+            if (添加时间 != null) 添加时间.Text = 当前档案.添加时间;
+            if (评估状态文本 != null) 评估状态文本.Text = 当前档案.评估状态.ToString();   
         }
         else
         {

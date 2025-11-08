@@ -24,10 +24,13 @@ public class 量表评估显示 : 界面基础_韩
                 进入评估界面(评估按钮);
             });
         }
-        返回按钮.OnClicked.AddListener(() =>
+        if (返回按钮 != null)
         {
-            FindObjectOfType<界面管理器_韩>().显示界面("量表待评测显示");
-        });
+            返回按钮.OnClicked.AddListener(() =>
+            {
+                FindObjectOfType<界面管理器_韩>().显示界面("量表待评测显示");
+            });
+        }
 
         // 为提示界面添加点击关闭功能
         if (提示界面 != null)
