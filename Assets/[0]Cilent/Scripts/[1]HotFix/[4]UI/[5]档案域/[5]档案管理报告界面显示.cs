@@ -572,7 +572,15 @@ public class 档案管理报告界面显示 : 界面基础_韩
         if (用户选择)
         {
             Debug.Log("[档案报告] 用户确认取消");
-            On取消确认?.Invoke();
+            // On取消确认?.Invoke();
+            if(On取消确认 != null)
+            {
+                On取消确认.Invoke();
+            }
+            else
+            {
+                界面管理器.显示界面("档案管理显示");
+            }
         }
         else
         {
