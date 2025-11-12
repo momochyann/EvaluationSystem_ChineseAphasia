@@ -29,7 +29,7 @@ public class 选项组高亮管理System : AbstractSystem
         if (!已注册选项组.Contains(选项组))
         {
             已注册选项组.Add(选项组);
-            Debug.Log($"[选项组高亮管理] 注册选项组: {选项组.选项组名称}，当前总数: {已注册选项组.Count}");
+          //  Debug.Log($"[选项组高亮管理] 注册选项组: {选项组.选项组名称}，当前总数: {已注册选项组.Count}");
         }
     }
 
@@ -43,7 +43,7 @@ public class 选项组高亮管理System : AbstractSystem
         
         if (已注册选项组.Remove(选项组))
         {
-            Debug.Log($"[选项组高亮管理] 注销选项组: {选项组.选项组名称}，当前总数: {已注册选项组.Count}");
+           // Debug.Log($"[选项组高亮管理] 注销选项组: {选项组.选项组名称}，当前总数: {已注册选项组.Count}");
             
             // 如果注销的是当前高亮组，清空当前高亮组引用
             if (当前高亮组 == 选项组)
@@ -65,7 +65,7 @@ public class 选项组高亮管理System : AbstractSystem
         // 如果已经是当前高亮组，不需要重复处理
         if (当前高亮组 == 目标选项组) return;
 
-        Debug.Log($"[选项组高亮管理] 设置高亮组: {目标选项组.选项组名称}");
+    //   Debug.Log($"[选项组高亮管理] 设置高亮组: {目标选项组.选项组名称}");
 
         // 取消之前的高亮组
         if (当前高亮组 != null && 当前高亮组 != 目标选项组)
@@ -99,7 +99,7 @@ public class 选项组高亮管理System : AbstractSystem
     /// </summary>
     public void 取消所有高亮()
     {
-        Debug.Log("[选项组高亮管理] 取消所有高亮");
+      //  Debug.Log("[选项组高亮管理] 取消所有高亮");
         
         foreach (var 选项组 in 已注册选项组)
         {

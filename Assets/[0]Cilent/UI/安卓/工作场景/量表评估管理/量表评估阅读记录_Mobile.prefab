@@ -62494,7 +62494,9 @@ MonoBehaviour:
   "\u7EF4\u5EA6\u540D\u79F0": "\u9605\u8BFB\u6307\u4EE4"
   "\u7EC4\u7C7B\u578B": 0
   "\u603B\u5206\u663E\u793A": {fileID: 0}
-  "\u7EDF\u4E00\u5206\u6570\u6620\u5C04": []
+  "\u7EDF\u4E00\u5206\u6570\u6620\u5C04":
+  - 1
+  - 0
   "\u5355\u72EC\u5206\u6570\u6620\u5C04\u5217\u8868": []
   "\u83B7\u53D6\u6A21\u5F0F": 1
   "\u624B\u52A8\u9009\u9879\u7EC4\u7FA4": []
@@ -172151,7 +172153,9 @@ MonoBehaviour:
   "\u7EF4\u5EA6\u540D\u79F0": "\u89C6\u8BFB"
   "\u7EC4\u7C7B\u578B": 0
   "\u603B\u5206\u663E\u793A": {fileID: 0}
-  "\u7EDF\u4E00\u5206\u6570\u6620\u5C04": []
+  "\u7EDF\u4E00\u5206\u6570\u6620\u5C04":
+  - 1
+  - 0
   "\u5355\u72EC\u5206\u6570\u6620\u5C04\u5217\u8868": []
   "\u83B7\u53D6\u6A21\u5F0F": 1
   "\u624B\u52A8\u9009\u9879\u7EC4\u7FA4": []
@@ -308083,7 +308087,7 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: 16.092125
+        Raw: 16.092127
         Type: 0
       Y:
         Raw: 0
