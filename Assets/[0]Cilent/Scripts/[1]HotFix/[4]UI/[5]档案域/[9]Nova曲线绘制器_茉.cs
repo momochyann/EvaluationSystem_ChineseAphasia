@@ -41,8 +41,8 @@ public class Nova曲线绘制器_茉 : MonoBehaviour
             绘制点列表 = 点列表;
         }
 
-        Debug.Log($"[Nova曲线] 准备绘制 {绘制点列表.Count - 1} 条线段");
-        Debug.Log($"[Nova曲线] 第一个点: {绘制点列表[0]}, 最后一个点: {绘制点列表[绘制点列表.Count-1]}");
+        // Debug.Log($"[Nova曲线] 准备绘制 {绘制点列表.Count - 1} 条线段");
+        // Debug.Log($"[Nova曲线] 第一个点: {绘制点列表[0]}, 最后一个点: {绘制点列表[绘制点列表.Count-1]}");
 
         // 创建线段连接各点
         for (int i = 0; i < 绘制点列表.Count - 1; i++)
@@ -89,12 +89,12 @@ public class Nova曲线绘制器_茉 : MonoBehaviour
 
         线段列表.Add(uiBlock);
         
-        if (索引 < 3) // 只打印前几个用于调试
-        {
-            Debug.Log($"[Nova曲线] 创建线段{索引}: 起点{起点} → 终点{终点}");
-            Debug.Log($"  中点:{中点}, 长度:{长度}, 角度:{角度}");
-            Debug.Log($"  Position: X={中点.x}, Y={中点.y}");
-        }
+        // if (索引 < 3) // 只打印前几个用于调试
+        // {
+        //     Debug.Log($"[Nova曲线] 创建线段{索引}: 起点{起点} → 终点{终点}");
+        //     Debug.Log($"  中点:{中点}, 长度:{长度}, 角度:{角度}");
+        //     Debug.Log($"  Position: X={中点.x}, Y={中点.y}");
+        // }
     }
 
     /// <summary>

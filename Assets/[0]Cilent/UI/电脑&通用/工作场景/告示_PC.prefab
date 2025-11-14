@@ -260,7 +260,7 @@ MonoBehaviour:
       alignment: -1
       ExpandToGrid: 0
   visibility:
-    ZIndex: 0
+    ZIndex: 1
     BlockType: 2
     Visible: 1
   surface:
@@ -579,7 +579,7 @@ MonoBehaviour:
       alignment: -1
       ExpandToGrid: 0
   visibility:
-    ZIndex: 0
+    ZIndex: 1
     BlockType: 1
     Visible: 1
   surface:
@@ -1019,7 +1019,7 @@ MonoBehaviour:
       alignment: -1
       ExpandToGrid: 0
   visibility:
-    ZIndex: 0
+    ZIndex: 1
     BlockType: 2
     Visible: 1
   surface:
@@ -1134,6 +1134,7 @@ GameObject:
   - component: {fileID: 8074361115769784222}
   - component: {fileID: 438914532328742310}
   - component: {fileID: 937289252084239890}
+  - component: {fileID: 2989103071502422589}
   m_Layer: 0
   m_Name: "\u544A\u793A_PC"
   m_TagString: Untagged
@@ -1336,7 +1337,7 @@ MonoBehaviour:
       alignment: -1
       ExpandToGrid: 0
   visibility:
-    ZIndex: 0
+    ZIndex: 1
     BlockType: 1
     Visible: 1
   surface:
@@ -1433,6 +1434,56 @@ MonoBehaviour:
   "\u5185\u5BB9\u6846": {fileID: 8833161224434908397}
   "\u786E\u5B9A": {fileID: 5074405582554076040}
   "\u53D6\u6D88": {fileID: 1023948107111245584}
+--- !u!114 &2989103071502422589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060740927695651562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2541297f90fa9c14eab33d90c1489959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstructDrags: 1
+  DragThreshold: 1
+  LowAccuracyDragThreshold: 30
+  ClickBehavior: 2
+  navigable: 1
+  onSelect: 2
+  autoSelect: 0
+  Navigation:
+    Left:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Right:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Down:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Up:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Forward:
+      Type: 1
+      Fallback: 1
+      Target: {fileID: 0}
+    Back:
+      Type: 1
+      Fallback: 1
+      Target: {fileID: 0}
+  OverscrollEffect: 0
+  VectorScrollMultiplier: 1
+  dragScrolling: 1
+  vectorScrolling: 1
+  scrollbarVisual: {fileID: 0}
+  draggableScrollbar: 0
 --- !u!1 &2272571124931357652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,7 +1700,7 @@ MonoBehaviour:
       alignment: -1
       ExpandToGrid: 0
   visibility:
-    ZIndex: 0
+    ZIndex: 1
     BlockType: 1
     Visible: 1
   surface:
@@ -2089,7 +2140,7 @@ MonoBehaviour:
       alignment: -1
       ExpandToGrid: 0
   visibility:
-    ZIndex: 0
+    ZIndex: 1
     BlockType: 2
     Visible: 1
   surface:
@@ -2452,7 +2503,7 @@ MonoBehaviour:
       alignment: -1
       ExpandToGrid: 0
   visibility:
-    ZIndex: 0
+    ZIndex: 1
     BlockType: 2
     Visible: 1
   surface:
@@ -2771,7 +2822,7 @@ MonoBehaviour:
       alignment: -1
       ExpandToGrid: 0
   visibility:
-    ZIndex: 0
+    ZIndex: 1
     BlockType: 1
     Visible: 1
   surface:

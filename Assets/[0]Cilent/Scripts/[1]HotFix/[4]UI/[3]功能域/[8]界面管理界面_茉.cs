@@ -167,10 +167,6 @@ public class 界面管理界面_茉 : 界面基础_韩
         保存按钮?.OnClicked.RemoveAllListeners();
         取消按钮?.OnClicked.RemoveAllListeners();
 
-        // 强制关闭键盘
-#if UNITY_ANDROID && !UNITY_EDITOR
-        GlobalKeyboardManager.ForceCloseKeyboard();
-#endif
     }
 
  

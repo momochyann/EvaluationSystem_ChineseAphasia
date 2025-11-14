@@ -21,7 +21,7 @@ public class 量表表格可视化_茉 : MonoBehaviour
     [SerializeField] private Nova曲线绘制器_茉 Nova曲线绘制器; // 手动在Inspector中赋值
     
     [Header("调试选项")]
-    [SerializeField] private bool 显示详细日志 = true;
+    [SerializeField] private bool 显示详细日志 = false;
     
     void Start()
     {
@@ -41,6 +41,7 @@ public class 量表表格可视化_茉 : MonoBehaviour
             if (分数字典.ContainsKey(维度.维度名称))
             {
                 维度.当前分数 = 分数字典[维度.维度名称];
+                Debug.Log($"[量表表格可视化] 设置 {维度.维度名称} 的分数为 {维度.当前分数}");
             }
         }
 

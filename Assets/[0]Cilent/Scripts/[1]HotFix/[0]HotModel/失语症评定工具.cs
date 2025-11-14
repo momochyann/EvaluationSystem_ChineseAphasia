@@ -11,8 +11,14 @@ public static class 失语症评定工具
     /// </summary>
     /// <param name="档案">包含各项评估数据的档案</param>
     /// <returns>失语症类型字符串</returns>
+    /// static int 谈话流利性满分 = 54;
+    static int 听辨认满分 = 20;
+    static int 复述满分 = 100;
+    static int 词命名满分 = 40;
+    static int 谈话流利性满分 = 54;
     public static string 计算失语症类型(档案 档案)
     {
+
         if (档案 == null)
         {
             Debug.LogWarning("[失语症评定] 档案为空");
@@ -20,7 +26,7 @@ public static class 失语症评定工具
         }
 
         // 检查必要的评估记录是否存在
-        if (档案.谈话记录 == null || 档案.理解记录 == null || 
+        if (档案.谈话记录 == null || 档案.理解记录 == null ||
             档案.复述记录 == null || 档案.命名记录 == null)
         {
             Debug.LogWarning("[失语症评定] 缺少必要的评估记录");
@@ -46,7 +52,7 @@ public static class 失语症评定工具
     private static string 执行决策树判断(int 谈话流利性, int 听辨认, int 词复述, int 句复述, int 词命名)
     {
         // 第一级：谈话流利性判断
-        if (谈话流利性 >= 67)
+        if (谈话流利性 / 谈话流利性满分 * 100f >= 67)
         {
             // 流畅组（≥67）：WA、TCS、AA、CA
             return 判断流畅组(听辨认, 词复述, 句复述);
@@ -64,7 +70,7 @@ public static class 失语症评定工具
     private static string 判断流畅组(int 听辨认, int 词复述, int 句复述)
     {
         // 第二级：听辨认判断
-        if (听辨认 >= 80)
+        if (听辨认 / 听辨认满分 * 100f >= 80)
         {
             // 听辨认较好（≥80）：AA、CA
             return 判断流畅组_听辨认好(词复述, 句复述);
@@ -82,7 +88,7 @@ public static class 失语症评定工具
     private static string 判断流畅组_听辨认好(int 词复述, int 句复述)
     {
         // 第三级：句复述判断
-        if (句复述 >= 86)
+        if ((句复述+词复述) / 复述满分 * 100f >= 86)
         {
             return "AA"; // 异常性失语(Anomic Aphasia)
         }
@@ -98,7 +104,7 @@ public static class 失语症评定工具
     private static string 判断流畅组_听辨认差(int 词复述, int 句复述)
     {
         // 第三级：句复述判断
-        if (句复述 >= 75)
+        if ((句复述+词复述) / 复述满分 * 100f >= 75)
         {
             return "TCA"; // 经皮质感觉性失语(Transcortical Sensory Aphasia)
         }
@@ -114,7 +120,7 @@ public static class 失语症评定工具
     private static string 判断不流畅组(int 听辨认, int 词复述, int 句复述, int 词命名)
     {
         // 第二级：听辨认判断
-        if (听辨认 >= 55)
+        if (听辨认 / 听辨认满分 * 100f >= 55)
         {
             // 听辨认好的（≥55）
             return 判断不流畅组_听辨认好(词复述, 句复述, 词命名);
@@ -132,7 +138,7 @@ public static class 失语症评定工具
     private static string 判断不流畅组_听辨认好(int 词复述, int 句复述, int 词命名)
     {
         // 第三级：句复述判断
-        if (句复述 >= 72)
+        if ((句复述+词复述) / 复述满分 * 100f >= 72)
         {
             // 句复述好（≥72）：TCM、TA、BaA
             return 判断不流畅组_复述好(词命名);
@@ -150,7 +156,7 @@ public static class 失语症评定工具
     private static string 判断不流畅组_复述好(int 词命名)
     {
         // 第四级：词命名判断
-        if (词命名 >= 80)
+        if (词命名 / 词命名满分 * 100f >= 80)
         {
             return "TCM"; // 经皮质运动性失语(Transcortical Motor Aphasia)
         }
@@ -166,7 +172,7 @@ public static class 失语症评定工具
     private static string 判断不流畅组_听辨认差(int 词复述, int 句复述)
     {
         // 第三级：句复述判断
-        if (句复述 >= 58)
+        if ((句复述+词复述) / 复述满分 * 100f >= 58)
         {
             // 句复述好的（≥58）
             return "MT"; // 混合性经皮质失语(Mixed Transcortical Aphasia)

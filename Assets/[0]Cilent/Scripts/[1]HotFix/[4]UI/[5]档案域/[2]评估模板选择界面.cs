@@ -22,6 +22,8 @@ public class 评估模板选择界面 : 界面基础_韩
     [Header("操作按钮")]
     [SerializeField] private Button 保存按钮;
     [SerializeField] private Button 返回按钮;
+    [SerializeField] private Button 返回按钮2;
+     [SerializeField] private Button 返回按钮3;
 
     [Header("模板设置界面")]
     [SerializeField] private 评估模板设置显示 模板设置界面;
@@ -61,6 +63,20 @@ public class 评估模板选择界面 : 界面基础_韩
         if (返回按钮 != null)
         {
             返回按钮.OnClicked.AddListener(() =>
+            {
+                返回上一界面().Forget();
+            });
+        }
+        if (返回按钮2 != null)
+        {
+            返回按钮2.OnClicked.AddListener(() =>
+            {
+                返回上一界面().Forget();
+            });
+        }
+        if (返回按钮3 != null)
+        {
+            返回按钮3.OnClicked.AddListener(() =>
             {
                 返回上一界面().Forget();
             });
@@ -190,11 +206,12 @@ public class 评估模板选择界面 : 界面基础_韩
         界面管理器.显示界面("档案管理报告界面");
         await UniTask.WaitUntil(() => 界面管理器._currentPanel != null && 界面管理器._currentPanel.name.Contains("档案管理报告界面"));
         界面管理器._currentPanel.显示信息?.Invoke(更新档案);
-        界面管理器._currentPanel.GetComponent<档案管理报告界面显示>().On取消确认 += () =>{
+        界面管理器._currentPanel.GetComponent<档案管理报告界面显示>().On取消确认 += () =>
+        {
             // Destroy(界面管理器._currentPanel.gameObject);
             FindObjectOfType<界面管理器_韩>().显示界面("量表评估模板选择");
         };
- 
+
     }
 
     /// <summary>

@@ -1,0 +1,31 @@
+{
+    "FileVersion": "2.0.0",
+    "EnableAddressable": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildPipeline": "RawFileBuildPipeline",
+    "PackageName": "RawFilePackage",
+    "PackageVersion": "25-1114-172433",
+    "AssetList": [
+        {
+            "Address": "HotFix.dll",
+            "AssetPath": "Assets/[0]Cilent/Code/HotFix.dll.bytes",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "rawfilepackage_assets_[0]cilent_code_hotfix_dll_bytes.rawfile",
+            "UnityCRC": 0,
+            "FileHash": "9c4ceb8ef32cc61c231c5efa6a6dc79d",
+            "FileCRC": "c8323fa0",
+            "FileSize": 373248,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        }
+    ]
+}

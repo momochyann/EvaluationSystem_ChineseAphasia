@@ -123,9 +123,15 @@ public class 安卓功能栏 : MonoBehaviour, IController
         var 户择 = await ins.GetComponent<告示_茉>().等待确认显示("删除确认", "确定要删除这个项目吗？");
         if (户择)
         {
+            List<int> 条目下标集 = new List<int>();
             foreach (var 条目 in 条组.CurrentSelectedEntries)
             {
                 var 条目下标 = 条目.GetComponent<IentryDis>().索引下标;
+                条目下标集.Add(条目下标);
+            }
+            条目下标集 = 条目下标集.OrderByDescending(x => x).ToList();
+            foreach (var 条目下标 in 条目下标集)
+            {
                 this.SendCommand(new 删记于录(条目下标, 录名));
             }
             条组.CurrentSelectedEntries.Clear();

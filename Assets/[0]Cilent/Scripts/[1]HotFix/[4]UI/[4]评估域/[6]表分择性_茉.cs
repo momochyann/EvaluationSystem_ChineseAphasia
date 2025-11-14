@@ -159,7 +159,7 @@ public class 表分择性_茉 : MonoBehaviour
         {
             // 清空现有选项
             表分选择.DropdownOptions.Options.Clear();
-            表分选择.DropdownOptions.Options.Add("选择");
+            表分选择.DropdownOptions.Options.Add("  ");
             // 从0到最大分数填充选项
             for (int i = 0; i <= 最大分数; i++)
             {

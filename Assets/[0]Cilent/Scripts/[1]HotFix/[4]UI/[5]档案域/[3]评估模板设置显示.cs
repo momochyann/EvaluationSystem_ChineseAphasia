@@ -172,7 +172,19 @@ public class 评估模板设置显示 : 界面基础_韩
             已生成的条目.Add(条目对象);
         }
     }
-
+    public void 删除模板修改(评估模板 模板)
+    {
+        if (当前模板类型 == 评估模板类型.综合评价)
+        {
+            this.SendCommand(new 删记于录(模板, "综合评价模板录"));
+        }
+        else
+        {
+            this.SendCommand(new 删记于录(模板, "指导建议模板录"));
+        }
+        // 刷新模板列表
+        刷新模板列表();
+    }
     protected override void OnShow()
     {
         base.OnShow();

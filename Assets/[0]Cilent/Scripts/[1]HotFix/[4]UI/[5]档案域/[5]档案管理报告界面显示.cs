@@ -55,6 +55,7 @@ public class 档案管理报告界面显示 : 界面基础_韩
     [SerializeField] private TextBlock 颜色识别总分;
     [SerializeField] private TextBlock 颜色命名总分;
     [SerializeField] private TextBlock 反应性命名总分;
+    [SerializeField] private TextBlock 列名输入;
     [SerializeField] private TextBlock 视读总分;
     [SerializeField] private TextBlock 阅读指令总分;
     [SerializeField] private TextBlock 字画匹配总分;
@@ -79,6 +80,7 @@ public class 档案管理报告界面显示 : 界面基础_韩
     [SerializeField] private TextBlock 失语症评定;
     [SerializeField] private TextBlock BDAE严重程度;
     [SerializeField] private Dropdown BDAE严重程度下拉框;
+    bool 是否已经初始化严重程度;
 
     [Header("操作按钮")]
     [SerializeField] private NovaSamples.UIControls.Button 保存按钮;
@@ -88,7 +90,7 @@ public class 档案管理报告界面显示 : 界面基础_韩
     [SerializeField] private Toggle 量表报告勾选;
     [SerializeField] private Toggle 量表表格勾选;
     [SerializeField] private Button 选择确认按钮;
-    bool 是否是打印=false;
+    bool 是否是打印 = false;
     // 存储选项组性和选项组性多选
     private List<选项组性_茉> 选项组性列表 = new List<选项组性_茉>();
     private List<选项组性多选_茉> 选项组性多选列表 = new List<选项组性多选_茉>();
@@ -112,12 +114,12 @@ public class 档案管理报告界面显示 : 界面基础_韩
     void Start()
     {
         // 绑定按钮事件
-        
+
         保存按钮?.OnClicked.AddListener(() => 处理保存按钮点击().Forget());
         取消按钮?.OnClicked.AddListener(() => 处理取消按钮点击().Forget());
         //打印按钮?.OnClicked.AddListener(() => 处理打印按钮点击().Forget());
-        下载按钮?.OnClicked.AddListener(() => 是否是打印=false);
-        打印按钮?.OnClicked.AddListener(() => 是否是打印=true);
+        下载按钮?.OnClicked.AddListener(() => 是否是打印 = false);
+        打印按钮?.OnClicked.AddListener(() => 是否是打印 = true);
         选择确认按钮?.OnClicked.AddListener(() => 处理选择确认按钮点击().Forget());
         // 初始化BDAE严重程度下拉框
         初始化BDAE严重程度下拉框();
@@ -128,21 +130,21 @@ public class 档案管理报告界面显示 : 界面基础_韩
         // 检查勾选状态
         bool 勾选了量表报告 = 量表报告勾选 != null && 量表报告勾选.ToggledOn;
         bool 勾选了量表表格 = 量表表格勾选 != null && 量表表格勾选.ToggledOn;
-        
+
         // 如果都没勾选，提示用户
         if (!勾选了量表报告 && !勾选了量表表格)
         {
             Debug.LogWarning("[档案报告] 未勾选任何选项，默认显示量表报告");
             勾选了量表报告 = true;
         }
-        
+
         Debug.Log($"[档案报告] 勾选状态 - 量表报告:{勾选了量表报告}, 量表表格:{勾选了量表表格}, 是否打印:{是否是打印}");
-        
+
         var _当前显示档案 = 当前显示档案;
         var 界面管理器 = FindObjectOfType<界面管理器_韩>();
         界面管理器.显示界面("打印报告界面");
         await UniTask.WaitUntil(() => 界面管理器._currentPanel != null && 界面管理器._currentPanel.name.Contains("打印报告界面"));
-        
+
         var 打印报告界面 = 界面管理器._currentPanel.GetComponent<打印报告界面_茉>();
         if (打印报告界面 != null)
         {
@@ -160,6 +162,7 @@ public class 档案管理报告界面显示 : 界面基础_韩
     void 初始化BDAE严重程度下拉框()
     {
         if (BDAE严重程度下拉框 == null) return;
+
 
         // 获取等级选项列表
         var 等级选项 = BDAE严重程度评定工具.获取等级选项列表();
@@ -194,7 +197,8 @@ public class 档案管理报告界面显示 : 界面基础_韩
 
         // 保存到档案中
         当前显示档案.BDAE严重程度等级 = 等级;
-
+        当前显示档案.是否选择BDAE等级 = true;
+        BDAE严重程度下拉框.gameObject.SetActive(false);
         Debug.Log($"[档案报告] BDAE严重程度选择变化: {等级}级 - {描述}");
     }
 
@@ -264,6 +268,15 @@ public class 档案管理报告界面显示 : 界面基础_韩
 
         // 还原选项组选择
         还原背景信息选项组(当前显示档案);
+        if (当前显示档案.是否选择BDAE等级)
+        {
+            BDAE严重程度下拉框.gameObject.SetActive(false);
+            //  string 描述 = BDAE严重程度评定工具.获取严重程度描述(等级);
+        }
+        else
+        {
+            BDAE严重程度下拉框.gameObject.SetActive(true);
+        }
     }
 
     /// <summary>
@@ -358,6 +371,7 @@ public class 档案管理报告界面显示 : 界面基础_韩
             if (颜色识别总分 != null) 颜色识别总分.Text = 档案.命名记录.颜色识别总分.ToString();
             if (颜色命名总分 != null) 颜色命名总分.Text = 档案.命名记录.颜色命名总分.ToString();
             if (反应性命名总分 != null) 反应性命名总分.Text = 档案.命名记录.反应性命名总分.ToString();
+            if (列名输入 != null) 列名输入.Text = 档案.命名记录.列名 ?? "";
         }
 
         // 阅读记录
@@ -523,6 +537,9 @@ public class 档案管理报告界面显示 : 界面基础_韩
     protected override void OnShow()
     {
         base.OnShow();
+
+
+
         Debug.Log("[档案报告] 界面显示");
     }
 
@@ -573,7 +590,7 @@ public class 档案管理报告界面显示 : 界面基础_韩
         {
             Debug.Log("[档案报告] 用户确认取消");
             // On取消确认?.Invoke();
-            if(On取消确认 != null)
+            if (On取消确认 != null)
             {
                 On取消确认.Invoke();
             }

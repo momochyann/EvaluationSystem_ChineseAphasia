@@ -6,8 +6,8 @@ using QFramework;
 
 public interface 档案记录接口
 {
-    public string 评估时间{get;set;}
-    public 评估状态 是否完成{get;set;}
+    public string 评估时间 { get; set; }
+    public 评估状态 是否完成 { get; set; }
 }
 /// <summary>
 /// 谈话记录 - 包含3个维度的评估数据
@@ -19,12 +19,12 @@ public class 谈话记录 : 档案记录接口
     public string 谈话内容;
     public string 评估时间 { get; set; }
     public 评估状态 是否完成 { get; set; }
-    
+
     // 三个维度的分数
     public int 谈话信息量总分;
     public int 谈话流利性总分;
     public int 系列语言总分;
-    
+
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
 }
@@ -37,13 +37,13 @@ public class 理解记录 : 档案记录接口
 {
     public string 评估时间 { get; set; }
     public 评估状态 是否完成 { get; set; }
-    
+
     // 四个维度的分数
     public int 是否题总分;
     public int 听辨认实物总分;
     public int 听辨认图形总分;
     public int 口头指令总分;
-    
+
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
 }
@@ -53,7 +53,7 @@ public class 复述记录 : 档案记录接口
     public int 句复述总分;
     public string 评估时间 { get; set; }
     public 评估状态 是否完成 { get; set; }
-    
+
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
     // 存储表分择性名称和选中索引的映射
@@ -64,14 +64,14 @@ public class 命名记录 : 档案记录接口
 {
     public string 评估时间 { get; set; }
     public 评估状态 是否完成 { get; set; }
-    
+
     // 五个维度的分数
     public int 词命名总分;
     public string 列名; // 输入方式
     public int 颜色识别总分;
     public int 颜色命名总分;
     public int 反应性命名总分;
-    
+
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
 }
@@ -83,7 +83,7 @@ public class 阅读记录 : 档案记录接口
 {
     public string 评估时间 { get; set; }
     public 评估状态 是否完成 { get; set; }
-    
+
     // 七个维度的分数
     public int 视读总分;
     public int 阅读指令总分;
@@ -92,7 +92,7 @@ public class 阅读记录 : 档案记录接口
     public int 执行指令朗读总分;
     public int 执行指令配画总分;
     public int 填空总分;
-    
+
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
 }
@@ -104,10 +104,10 @@ public class 计算记录 : 档案记录接口
 {
     public string 评估时间 { get; set; }
     public 评估状态 是否完成 { get; set; }
-    
+
     // 一个维度的分数
     public int 运算总分;
-    
+
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
 }
@@ -119,7 +119,7 @@ public class 书写记录 : 档案记录接口
 {
     public string 评估时间 { get; set; }
     public 评估状态 是否完成 { get; set; }
-    
+
     // 六个维度的分数
     public int 写姓名地址总分;
     public int 抄写总分;
@@ -127,7 +127,7 @@ public class 书写记录 : 档案记录接口
     public int 听写总分;
     public int 看图写字总分;
     public int 写病情分数; // 直接输入0-5分
-    
+
     // 存储选项组名称和选中索引的映射（表分择性使用）
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
 }
@@ -138,11 +138,11 @@ public class 结构与空间记录 : 档案记录接口
 {
     public string 评估时间 { get; set; }
     public 评估状态 是否完成 { get; set; }
-    
+
     // 两个维度的分数
     public int 照画图总分;
     public int 摆方块总分;
-    
+
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
 }
@@ -158,12 +158,12 @@ public class 运用记录 : 档案记录接口
 {
     public string 评估时间 { get; set; }
     public 评估状态 是否完成 { get; set; }
-    
+
     // 三个维度的分数
     public int 面部动作总分;
     public int 上肢动作总分;
     public int 复杂动作总分;
-    
+
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
 }
@@ -174,10 +174,10 @@ public class 利手记录 : 档案记录接口
 {
     public string 评估时间 { get; set; }
     public 评估状态 是否完成 { get; set; }
-    
+
     // 利手评定结果（"左利手"、"右利手"或"混合利手"）
     public string 利手评定结果;
-    
+
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
 }
@@ -209,7 +209,7 @@ public class 档案 : I记贞
     public 视觉记录 视觉记录;
     public 运用记录 运用记录;
     public 利手记录 利手记录;
-    
+
     // 背景信息（从用户录复制过来）
     public string 身份证;
     public string 民族;
@@ -227,14 +227,15 @@ public class 档案 : I记贞
     public string 既往病史;
     // 格式："内容|索引"或"内容1,内容2|索引1,索引2"（多选）
     public Dictionary<string, string> 背景信息选项组选择 = new Dictionary<string, string>();
-    
+
     // 综合评价和指导建议
     public string 综合评价 = "";
     public string 指导建议 = "";
-    
+
     // 失语症评定结果
     public string 失语症类型 = "";
     public int BDAE严重程度等级 = 0; // 0-5级
+    public bool 是否选择BDAE等级 = false;
 }
 
 

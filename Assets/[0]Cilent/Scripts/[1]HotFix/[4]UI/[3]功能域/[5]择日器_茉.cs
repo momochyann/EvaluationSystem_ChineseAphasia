@@ -54,7 +54,7 @@ public class 择日器_茉 : MonoBehaviour
             {
                 if (择日器.gameObject != this.gameObject)
                 {
-                    Destroy(择日器.gameObject);
+                    Destroy(择日器.gameObject); 
                     return;
                 }
             }
