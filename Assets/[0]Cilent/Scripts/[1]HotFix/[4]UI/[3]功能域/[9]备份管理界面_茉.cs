@@ -9,7 +9,8 @@ public class 备份管理界面_茉 : 界面基础_韩
     [Header("UI组件")]
     [SerializeField] private Button 确认备份按钮;
     [SerializeField] private Button 确认还原按钮;
-  
+    [SerializeField] private Button 蓝牙同步按钮;
+    
 
     评人录 评人录;
     void Start()
@@ -23,7 +24,12 @@ public class 备份管理界面_茉 : 界面基础_韩
     {
         确认备份按钮.OnClicked.AddListener(执行备份);
         确认还原按钮.OnClicked.AddListener(执行还原);
-    
+        蓝牙同步按钮.OnClicked.AddListener(执行蓝牙同步);
+    }
+    private void 执行蓝牙同步()
+    {
+        Debug.Log("执行蓝牙同步");
+        // TODO: 实现蓝牙同步逻辑
     }
     private void ImportTemplate()
     {

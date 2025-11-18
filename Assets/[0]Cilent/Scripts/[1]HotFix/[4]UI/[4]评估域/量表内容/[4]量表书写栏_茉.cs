@@ -11,6 +11,12 @@ public class 量表书写栏_茉 : 量表评估基类_茉
     [Tooltip("写病情分数输入框（0-5分）")]
     [SerializeField] private TextField 写病情输入框;
     
+    [Header("按钮开启对象")]
+    [Tooltip("Nova UI Button，点击后启用目标对象")]
+    [SerializeField] private Button 点击开启按钮;
+    [Tooltip("被启用的目标对象")]
+    [SerializeField] private GameObject 需要启用的对象;
+    
     private int 写病情当前分数 = 0;
     
     protected override string 获取记录字段名称() => "书写记录";
@@ -53,6 +59,11 @@ public class 量表书写栏_茉 : 量表评估基类_茉
             // 监听输入框文本变化事件
             写病情输入框.OnTextChanged += 处理输入框文本变化;
         }
+
+        if (点击开启按钮 != null)
+        {
+            点击开启按钮.OnClicked.AddListener(当按钮被点击时);
+        }
     }
     
     protected override void OnDestroyExtra()
@@ -61,6 +72,11 @@ public class 量表书写栏_茉 : 量表评估基类_茉
         if (写病情输入框 != null)
         {
             写病情输入框.OnTextChanged -= 处理输入框文本变化;
+        }
+
+        if (点击开启按钮 != null)
+        {
+            点击开启按钮.OnClicked.RemoveListener(当按钮被点击时);
         }
     }
     
@@ -173,5 +189,18 @@ public class 量表书写栏_茉 : 量表评估基类_茉
     public int 获取写病情分数()
     {
         return 写病情当前分数;
+    }
+
+    /// <summary>
+    /// 点击按钮时启用目标对象
+    /// </summary>
+    private void 当按钮被点击时()
+    {
+        if (需要启用的对象 == null) return;
+
+        if (!需要启用的对象.activeSelf)
+        {
+            需要启用的对象.SetActive(true);
+        }
     }
 }

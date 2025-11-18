@@ -411,8 +411,8 @@ public class 档案管理报告界面显示 : 界面基础_韩
         // 运用记录
         if (档案.运用记录 != null)
         {
-            if (面部动作总分 != null) 面部动作总分.Text = 档案.运用记录.面部动作总分.ToString();
-            if (上肢动作总分 != null) 上肢动作总分.Text = 档案.运用记录.上肢动作总分.ToString();
+            if (面部动作总分 != null) 面部动作总分.Text = 档案.运用记录.面部动作总分.ToString("0.##");
+            if (上肢动作总分 != null) 上肢动作总分.Text = 档案.运用记录.上肢动作总分.ToString("0.##");
             if (复杂动作总分 != null) 复杂动作总分.Text = 档案.运用记录.复杂动作总分.ToString();
         }
 

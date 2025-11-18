@@ -160,8 +160,8 @@ public class 运用记录 : 档案记录接口
     public 评估状态 是否完成 { get; set; }
 
     // 三个维度的分数
-    public int 面部动作总分;
-    public int 上肢动作总分;
+    public float 面部动作总分;
+    public float 上肢动作总分;
     public int 复杂动作总分;
 
     // 存储选项组名称和选中索引的映射

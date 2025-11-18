@@ -2219,6 +2219,7 @@ GameObject:
   - component: {fileID: 1074111587}
   - component: {fileID: 1074111589}
   - component: {fileID: 1074111588}
+  - component: {fileID: 1074111590}
   m_Layer: 0
   m_Name: Bgd
   m_TagString: Untagged
@@ -2500,6 +2501,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9117b6d975111c47b064a4373cc67ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1074111590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074111586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf6f5e34497585645a8927924e49eedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetUIBlock2D: {fileID: 0}
 --- !u!1 &1168908908
 GameObject:
   m_ObjectHideFlags: 0

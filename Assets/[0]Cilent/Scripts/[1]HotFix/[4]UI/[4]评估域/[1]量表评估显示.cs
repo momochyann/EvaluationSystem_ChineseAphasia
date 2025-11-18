@@ -12,6 +12,7 @@ public class 量表评估显示 : 界面基础_韩
     [SerializeField] List<Button> 评估按钮;
     private 档案 当前档案;
     [SerializeField] Button 返回按钮;
+    [SerializeField] Button 返回按钮1;
     [SerializeField] GameObject 提示界面;
     [SerializeField] Button 下一步按钮;
 
@@ -19,6 +20,7 @@ public class 量表评估显示 : 界面基础_韩
     {
         foreach (var 评估按钮 in 评估按钮)
         {
+            
             评估按钮.OnClicked.AddListener(() =>
             {
                 进入评估界面(评估按钮);
@@ -27,6 +29,13 @@ public class 量表评估显示 : 界面基础_韩
         if (返回按钮 != null)
         {
             返回按钮.OnClicked.AddListener(() =>
+            {
+                FindObjectOfType<界面管理器_韩>().显示界面("量表待评测显示");
+            });
+        }
+        if (返回按钮1 != null)
+        {
+            返回按钮1.OnClicked.AddListener(() =>
             {
                 FindObjectOfType<界面管理器_韩>().显示界面("量表待评测显示");
             });

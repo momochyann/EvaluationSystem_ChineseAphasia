@@ -51,8 +51,10 @@ public class 栏目组性_茉 : MonoBehaviour
     List<选项组性_茉> 子选项组群; // 实际使用的所有选项组（组类型为选项组性时使用）
     List<表分择性_茉> 子表分择性群; // 实际使用的所有表分择性（组类型为表分择性时使用）
     
-    // 当前维度的总分
+    // 当前维度的总分（整型：用于大多数量表）
     public int 当前总分 { get; private set; }
+    // 当前维度的原始总分（浮点：用于需要保留小数的量表，如运用）
+    public float 当前总分原始值 { get; private set; }
     
     // 是否所有组件都已选择
     public bool 是否全部已选择 { get; private set; }
@@ -206,6 +208,7 @@ public class 栏目组性_茉 : MonoBehaviour
             }
         }
         
+        当前总分原始值 = 总分;
         当前总分 = Mathf.RoundToInt(总分);
         更新总分显示(是否全部已选择 ? 总分.ToString() : "待选择完");
     }
@@ -242,6 +245,7 @@ public class 栏目组性_茉 : MonoBehaviour
             }
         }
         
+        当前总分原始值 = 总分;
         当前总分 = 总分;
         更新总分显示(是否全部已选择 ? 总分.ToString() : "待选择完");
     }

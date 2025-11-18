@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 2612894474
+CRC: 1763635487
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -156,6 +156,7 @@ AssetBundleManifest:
         Dependency_11: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle
         Dependency_12: "defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[4]ui_[1]\u767B\u5F55\u57DF_\u5DE6\u9762\u5206\u7C7B8.bundle"
         Dependency_13: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
+        Dependency_14: "defaultpackage_share_assets_[1]local_textures_\u4E01\u4EA5\u5E9A\u5BC5_\u91CF\u8868\u8BC4\u4F30-icon.bundle"
     Info_28:
       Name: "defaultpackage_assets_[0]cilent_ui_\u5B89\u5353_\u5DE5\u4F5C\u573A\u666F_\u91CF\u8868\u8BC4\u4F30\u7BA1\u7406_\u6A21\u677F.bundle"
       Dependencies:
@@ -346,26 +347,29 @@ AssetBundleManifest:
       Dependencies:
         Dependency_0: defaultpackage_unityshaders.bundle
     Info_54:
-      Name: defaultpackage_share_assets.bundle
+      Name: "defaultpackage_share_assets_[1]local_textures_\u4E01\u4EA5\u5E9A\u5BC5_\u91CF\u8868\u8BC4\u4F30-icon.bundle"
       Dependencies: {}
     Info_55:
-      Name: "defaultpackage_share_assets_[1]local_textures_ui\u754C\u9762_\u9009\u62E9\u754C\u97629.bundle"
+      Name: defaultpackage_share_assets.bundle
       Dependencies: {}
     Info_56:
-      Name: "defaultpackage_share_assets_[1]local_textures_1027\u7535\u8111\u8BC4\u4F30.bundle"
+      Name: "defaultpackage_share_assets_[1]local_textures_ui\u754C\u9762_\u9009\u62E9\u754C\u97629.bundle"
       Dependencies: {}
     Info_57:
-      Name: defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[5]utility&tool_bleapi.bundle
+      Name: "defaultpackage_share_assets_[1]local_textures_1027\u7535\u8111\u8BC4\u4F30.bundle"
       Dependencies: {}
     Info_58:
-      Name: defaultpackage_share_assets_nova_sample_uicontrols_prefabs.bundle
+      Name: defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[5]utility&tool_bleapi.bundle
       Dependencies: {}
     Info_59:
-      Name: "defaultpackage_share_assets_[1]local_textures_ui\u754C\u9762_\u80CC\u666F\u754C\u97629.bundle"
+      Name: defaultpackage_share_assets_nova_sample_uicontrols_prefabs.bundle
       Dependencies: {}
     Info_60:
-      Name: "defaultpackage_share_assets_[1]local_textures_1018\u91CF\u8868\u8BC4\u4F30&\u6863\u6848\u7BA1\u7406_1018\u6863\u6848\u7BA1\u7406.bundle"
+      Name: "defaultpackage_share_assets_[1]local_textures_ui\u754C\u9762_\u80CC\u666F\u754C\u97629.bundle"
       Dependencies: {}
     Info_61:
+      Name: "defaultpackage_share_assets_[1]local_textures_1018\u91CF\u8868\u8BC4\u4F30&\u6863\u6848\u7BA1\u7406_1018\u6863\u6848\u7BA1\u7406.bundle"
+      Dependencies: {}
+    Info_62:
       Name: "defaultpackage_share_assets_[1]local_textures_5-\u901A\u7528_\u5F39\u51FA\u6548\u679C\u56FE.bundle"
       Dependencies: {}
