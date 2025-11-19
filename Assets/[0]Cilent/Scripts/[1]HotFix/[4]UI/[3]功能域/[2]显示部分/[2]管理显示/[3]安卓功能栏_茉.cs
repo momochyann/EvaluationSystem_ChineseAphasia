@@ -34,15 +34,19 @@ public class 安卓功能栏 : MonoBehaviour, IController
     [SerializeField] Button 消寻钮;
     [SerializeField] 条目组性_茉 条组;
     [SerializeField] Toggle 全选勾选;
+   
     bool 全选监听;
     void Start()
     {
-        管钮.OnClicked.AddListener(管);
-        删钮.OnClicked.AddListener(() => 删().Forget());
-        寻钮.OnClicked.AddListener(寻);
-        消寻钮.OnClicked.AddListener(消寻);
-        全选勾选.OnToggled.AddListener(全选);
-        消寻钮.gameObject.SetActive(false);
+        if (管钮 != null) 管钮.OnClicked.AddListener(管);
+        if (删钮 != null) 删钮.OnClicked.AddListener(() => 删().Forget());
+        if (寻钮 != null) 寻钮.OnClicked.AddListener(寻);
+        if (消寻钮 != null)
+        {
+            消寻钮.OnClicked.AddListener(消寻);
+            消寻钮.gameObject.SetActive(false);
+        }
+        if (全选勾选 != null) 全选勾选.OnToggled.AddListener(全选);
     }
 
     private void 全选(bool 是否选中)
@@ -160,5 +164,19 @@ public class 安卓功能栏 : MonoBehaviour, IController
         return HotFixTemplateArchitecture.Interface;
     }
 
+    public void 设置全选(bool 是否选中)
+    {
+        if (全选勾选 == null)
+        {
+            return;
+        }
 
+        全选(是否选中);
+        全选勾选.ToggledOn = 是否选中;
+    }
+
+    public IReadOnlyList<GameObject> 获取当前选中条目()
+    {
+        return 条组?.CurrentSelectedEntries;
+    }
 }
