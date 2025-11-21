@@ -319,7 +319,7 @@ public class 登录界面_茉 : MonoBehaviour, IController
             // 在编辑器中根据选择的平台返回后缀
             if (UnityEditor.EditorPrefs.GetInt("TestPlatform", 0) == 0)
             {
-                  静态传递_韩.SwitchSceneWithPanel("主场景", "评定人管理显示");
+                  静态传递_韩.SwitchSceneWithPanel("主场景online", "评定人管理显示");
             }
             else
             {
@@ -328,7 +328,7 @@ public class 登录界面_茉 : MonoBehaviour, IController
 #elif UNITY_ANDROID || UNITY_IOS
        跳转界面("选择场景");
 #else
-        静态传递_韩.SwitchSceneWithPanel("主场景", "评定人管理显示");
+        静态传递_韩.SwitchSceneWithPanel("主场景online", "评定人管理显示");
 #endif
         }
     }

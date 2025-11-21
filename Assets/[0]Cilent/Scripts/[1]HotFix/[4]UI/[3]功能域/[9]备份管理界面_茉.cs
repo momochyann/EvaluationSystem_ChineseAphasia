@@ -138,7 +138,7 @@ public class 备份管理界面_茉 : 界面基础_韩
         日期下一步按钮?.OnClicked.AddListener(() => 处理日期确认().Forget());
         日期上一步按钮?.OnClicked.AddListener(返回备份选择界面);
         返回日期选择按钮?.OnClicked.AddListener(返回日期选择界面);
-        批量同步按钮?.OnClicked.AddListener(处理批量同步);
+        批量同步按钮?.OnClicked.AddListener(() => 处理批量同步().Forget());
     //    执行同步按钮?.OnClicked.AddListener(处理开始同步);
     }
 
@@ -469,7 +469,7 @@ public class 备份管理界面_茉 : 界面基础_韩
             var 是否全选 = await 显示全选确认(总条数);
             保存待同步数据(待同步列表);
             构建同步条目缓存();
-            更新数据显示界面();
+            // 更新数据显示界面();
             设置界面显隐(false, false, true);
             显示条目面板?.刷新显示();
 
@@ -664,7 +664,7 @@ public class 备份管理界面_茉 : 界面基础_韩
         待同步数据录.ClearItems();
     }
 
-    private void 处理批量同步()
+    private async UniTaskVoid 处理批量同步()
     {
         if (同步安卓功能栏 == null)
         {
@@ -678,7 +678,15 @@ public class 备份管理界面_茉 : 界面基础_韩
             Debug.Log("[备份蓝牙同步] 当前没有已选条目可用于批量同步");
             return;
         }
-
+        var 告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
+        var 界面管理器 = FindObjectOfType<界面管理器_韩>();
+        var ins = Instantiate(告示, 界面管理器.transform);
+        var 户择 = await ins.GetComponent<告示_茉>().等待确认显示("提示", "所有选中数据将同步至客户端，是否继续？");
+        if (户择)
+        {
+            Debug.Log("[备份蓝牙同步] 确认批量同步按钮被点击");
+        }
+        Destroy(ins);
         Debug.Log($"[备份蓝牙同步] 执行批量同步，条目数：{选中条目.Count}");
         // TODO: 实现具体同步逻辑
     }
@@ -787,6 +795,7 @@ public class 备份管理界面_茉 : 界面基础_韩
         日期上一步按钮?.OnClicked.RemoveAllListeners();
         返回日期选择按钮?.OnClicked.RemoveAllListeners();
         批量同步按钮?.OnClicked.RemoveAllListeners();
+        
        // 执行同步按钮?.OnClicked.RemoveAllListeners();
     }
 

@@ -206,11 +206,11 @@ public class 评估模板选择界面 : 界面基础_韩
         界面管理器.显示界面("档案管理报告界面");
         await UniTask.WaitUntil(() => 界面管理器._currentPanel != null && 界面管理器._currentPanel.name.Contains("档案管理报告界面"));
         界面管理器._currentPanel.显示信息?.Invoke(更新档案);
-        界面管理器._currentPanel.GetComponent<档案管理报告界面显示>().On取消确认 += () =>
-        {
-            // Destroy(界面管理器._currentPanel.gameObject);
-            FindObjectOfType<界面管理器_韩>().显示界面("量表评估模板选择");
-        };
+        // 界面管理器._currentPanel.GetComponent<档案管理报告界面显示>().On取消确认 += () =>
+        // {
+        //     // Destroy(界面管理器._currentPanel.gameObject);
+        //     FindObjectOfType<界面管理器_韩>().显示界面("量表评估模板选择");
+        // };
 
     }
 

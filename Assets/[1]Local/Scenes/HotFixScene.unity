@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -890,7 +890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BadgeKey: c74078fd-115d-442a-a861-b4f7063092fe
-  badge: 2
+  badge: 1
   PlayMode: 2
   HotDllName: HotFix.dll
   HotPrefabName: StartInit
@@ -988,7 +988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3520932188452993501, guid: 609ecbef681765142879c64099310b1d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8903596508015866111, guid: 609ecbef681765142879c64099310b1d, type: 3}
       propertyPath: m_LocalPosition.x

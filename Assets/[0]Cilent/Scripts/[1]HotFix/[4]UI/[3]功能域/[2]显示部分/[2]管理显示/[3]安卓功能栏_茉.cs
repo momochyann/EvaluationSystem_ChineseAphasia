@@ -166,13 +166,28 @@ public class 安卓功能栏 : MonoBehaviour, IController
 
     public void 设置全选(bool 是否选中)
     {
-        if (全选勾选 == null)
+        延迟设置全选(是否选中).Forget();
+    }
+
+    private async UniTaskVoid 延迟设置全选(bool 是否选中)
+    {
+        if (全选勾选 == null || 条组 == null)
         {
             return;
         }
 
+        if (!条组已就绪())
+        {
+            await UniTask.WaitUntil(条组已就绪);
+        }
+
         全选(是否选中);
         全选勾选.ToggledOn = 是否选中;
+    }
+
+    private bool 条组已就绪()
+    {
+        return 条组 != null && 条组.勾组 != null && 条组.勾组.Count > 0;
     }
 
     public IReadOnlyList<GameObject> 获取当前选中条目()

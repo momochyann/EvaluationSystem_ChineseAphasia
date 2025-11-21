@@ -4,6 +4,7 @@ using UnityEngine;
 using Nova;
 using NovaSamples.UIControls;
 using QFramework;
+using Cysharp.Threading.Tasks;
 
 /// <summary>
 /// 备份同步场 - 待同步数据条目显示
@@ -31,7 +32,7 @@ public class 待同步数据条目显示_茉 : MonoBehaviour, IentryDis, IContro
     {
         if (同步按钮 != null)
         {
-            同步按钮.OnClicked.AddListener(执行同步占位);
+            同步按钮.OnClicked.AddListener(() => 执行同步占位().Forget());
         }
     }
 
@@ -75,8 +76,17 @@ public class 待同步数据条目显示_茉 : MonoBehaviour, IentryDis, IContro
     /// <summary>
     /// 同步按钮点击：暂时只做占位打印
     /// </summary>
-    private void 执行同步占位()
+    private async UniTaskVoid 执行同步占位()
     {
+        var 告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
+        var 界面管理器 = FindObjectOfType<界面管理器_韩>();
+        var ins = Instantiate(告示, 界面管理器.transform);
+        var 户择 = await ins.GetComponent<告示_茉>().等待确认显示("提示", "即将同步数据，请确保蓝牙设备连接正常");
+        if (户择)
+        {
+            Debug.Log("[待同步数据条目显示_茉] 确认同步按钮被点击");
+        }
+        Destroy(ins);
         if (当前待同步数据 == null)
         {
             Debug.LogWarning("[待同步数据条目显示_茉] 当前待同步数据为空，无法执行同步占位");

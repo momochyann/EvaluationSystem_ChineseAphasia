@@ -196,8 +196,10 @@ public class 档案管理报告界面显示 : 界面基础_韩
         BDAE严重程度.Text = 描述;
 
         // 保存到档案中
-        当前显示档案.BDAE严重程度等级 = 等级;
-        当前显示档案.是否选择BDAE等级 = true;
+        var 更新档案 = 当前显示档案;
+        更新档案.BDAE严重程度等级 = 等级;
+        更新档案.是否选择BDAE等级 = true;
+        this.SendCommand(new 改记于录(当前显示档案, 更新档案, "档案录"));
         BDAE严重程度下拉框.gameObject.SetActive(false);
         Debug.Log($"[档案报告] BDAE严重程度选择变化: {等级}级 - {描述}");
     }

@@ -128,7 +128,7 @@ public class 选择界面_茉 : MonoBehaviour, IController
         正在跳转 = true;
         Debug.Log("执行功能：" + 功能名称);
         功能名称 = 功能名称 + "显示";
-        静态传递_韩.SwitchSceneWithPanel("主场景", 功能名称);
+        静态传递_韩.SwitchSceneWithPanel("主场景online", 功能名称);
     }
 
     public IArchitecture GetArchitecture()

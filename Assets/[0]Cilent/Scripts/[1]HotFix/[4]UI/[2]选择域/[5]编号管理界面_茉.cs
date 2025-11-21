@@ -59,6 +59,15 @@ public class 编号管理界面_茉 : MonoBehaviour, IController
             下拉框.DropdownOptions.SelectedIndex = 0;
         }
         
+        // 刷新下拉框选项视图
+        下拉框.Visuals.OptionsView.Refresh();
+        
+        // 手动更新SelectionLabel显示文本
+        if (下拉框.Visuals != null && 下拉框.Visuals.SelectionLabel != null)
+        {
+            下拉框.Visuals.SelectionLabel.Text = 下拉框.DropdownOptions.CurrentSelection;
+        }
+        
         更新预览(string.Empty);
     }
 
