@@ -181,7 +181,8 @@ public class 登录界面_茉 : MonoBehaviour, IController
             if (field != null)
             {
                 field.SetValue(provider, false);
-                Debug.Log($"[0]登录界面_韩 已禁用{textField.name}的换行符输入");
+               
+            //    Debug.Log($"[0]登录界面_韩 已禁用{textField.name}的换行符输入");
             }
         }
     }

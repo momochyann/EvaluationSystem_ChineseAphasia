@@ -891,7 +891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BadgeKey: c74078fd-115d-442a-a861-b4f7063092fe
   badge: 1
-  PlayMode: 2
+  PlayMode: 0
   HotDllName: HotFix.dll
   HotPrefabName: StartInit
 --- !u!114 &1595567172
@@ -988,7 +988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3520932188452993501, guid: 609ecbef681765142879c64099310b1d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8903596508015866111, guid: 609ecbef681765142879c64099310b1d, type: 3}
       propertyPath: m_LocalPosition.x

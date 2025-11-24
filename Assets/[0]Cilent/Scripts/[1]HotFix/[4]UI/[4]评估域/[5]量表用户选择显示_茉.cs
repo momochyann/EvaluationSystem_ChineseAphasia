@@ -24,8 +24,9 @@ public class 量表用户选择显示_茉 : 界面基础_韩
         {
             取消按钮.OnClicked.AddListener(取消);
         }
+        if (全选勾选 != null)
+            全选勾选.OnToggled.AddListener(全选);
 
-        全选勾选.OnToggled.AddListener(全选);
         是否为第一次加载 = false;
 
     }
@@ -152,7 +153,7 @@ public class 量表用户选择显示_茉 : 界面基础_韩
             年龄 = 计算年龄(当前用户.诞辰),
             评估人员 = 当前评人, // 可根据需要设置当前评估人员
             评估时间 = "",
-            
+
             // 复制背景信息
             身份证 = 当前用户.身份证,
             民族 = 当前用户.民族,

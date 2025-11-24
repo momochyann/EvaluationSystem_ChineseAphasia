@@ -37,6 +37,13 @@
             "BundleID": 3
         },
         {
+            "Address": "GameStartScene",
+            "AssetPath": "Assets/[1]Local/Scenes/GameStartScene.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 4
+        },
+        {
             "Address": "HotFixScene",
             "AssetPath": "Assets/[1]Local/Scenes/HotFixScene.unity",
             "AssetGUID": "",
@@ -454,7 +461,7 @@
             "UnityCRC": 0,
             "FileHash": "a7d153f9907c1e182238a5cb4ed5634c",
             "FileCRC": "00000000",
-            "FileSize": 49528,
+            "FileSize": 204691,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []

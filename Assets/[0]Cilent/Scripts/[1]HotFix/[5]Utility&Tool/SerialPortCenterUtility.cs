@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using System.Linq;
+using System.Collections.Generic;
 using QFramework;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
@@ -32,13 +33,12 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
     private const byte BLUETOOTH_FUNC_CODE = 0x03;
     
     // 握手指令
-    private static readonly byte[] HANDSHAKE_COMMAND = { 0x57, 0x73, 0x3A, 0x7E }; // "ws:~"
-    private static readonly byte[] HANDSHAKE_RESPONSE = { 0x57, 0x73, 0x3A, 0x7E };
+    private static readonly byte[] HANDSHAKE_COMMAND = { 0x57, 0x73, 0x3A ,0x7E}; // "ws:~"
+    private static readonly byte[] HANDSHAKE_RESPONSE = { 0x57, 0x73, 0x3A };
     
     // 状态变量
     private bool bIsEncrypted = false;
     private bool bHandshakeCompleted = false;
-    private string sDeviceId = "";
     
     public event Action<bool> OnEncryptionStatusChanged;
     public event Action<byte[]> OnBluetoothDataReceived;
@@ -105,9 +105,9 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
         try
         {
             // 检查握手响应
-            if (!bHandshakeCompleted && data.Length >= 4)
+            if (!bHandshakeCompleted && data.Length >= 3)
             {
-                if (data.Take(4).SequenceEqual(HANDSHAKE_RESPONSE))
+                if (data.Take(3).SequenceEqual(HANDSHAKE_RESPONSE))
                 {
                     bHandshakeCompleted = true;
                     Debug.Log($"[{DeviceName}] 收到握手响应");
@@ -159,32 +159,48 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
     {
         try
         {
-            // 帧格式: 0xAA | 0x02 | 时间戳(4字节) | 状态码(1字节) | 校验和 | 0x7E
-            if (frame.Length != 8)
+            // 使用SerialPortUtilityManager中的解析方法
+            if (ParseDongleResponse(frame, out bool authSuccess))
             {
-                Debug.LogError($"[{DeviceName}] 加密响应帧长度错误: {frame.Length}");
-                return;
+                bIsEncrypted = authSuccess;
+                OnEncryptionStatusChanged?.Invoke(authSuccess);
             }
-            
-            // 验证校验和
-            if (!VerifyChecksum(frame))
-            {
-                Debug.LogError($"[{DeviceName}] 加密响应校验和错误");
-                return;
-            }
-            
-            byte ucStatusCode = frame[6]; // 状态码位置
-            bool bSuccess = (ucStatusCode == 0x01);
-            
-            bIsEncrypted = bSuccess;
-            OnEncryptionStatusChanged?.Invoke(bSuccess);
-            
-            Debug.Log($"[{DeviceName}] 加密验证{(bSuccess ? "成功" : "失败")}，状态码: 0x{ucStatusCode:X2}");
         }
         catch (Exception ex)
         {
             Debug.LogError($"[{DeviceName}] 处理加密响应异常: {ex.Message}");
         }
+    }
+
+    /// <summary>
+    /// 解析加密狗响应
+    /// </summary>
+    private bool ParseDongleResponse(byte[] data, out bool authSuccess)
+    {
+        authSuccess = false;
+
+        if (data.Length < 8) return false;
+        if (data[0] != FRAME_HEADER) return false;
+        if (data[1] != ENCRYPT_RESPONSE_CODE) return false;
+        
+        Debug.Log($"[{DeviceName}] 收到加密狗响应: {data[0]}, 原始数据: {FRAME_HEADER}");
+        
+        // 校验和验证(除帧头帧尾外的所有字节相加取低八位)
+        byte checksum = 0;
+        for (int i = 1; i < data.Length - 1; i++)
+        {
+            checksum += data[i];
+        }
+        
+        Debug.Log($"[{DeviceName}] 校验和: {checksum}, 数据: {data[data.Length - 1]}");
+        if (checksum != data[data.Length - 1]) return false;
+
+        // 解析状态码
+        byte statusCode = data[6]; // 时间戳4字节后的状态码
+        authSuccess = (statusCode == 0x01);
+
+        Debug.Log($"[{DeviceName}] 收到加密狗响应，状态码: 0x{statusCode:X2}, 认证结果: {(authSuccess ? "成功" : "失败")}");
+        return true;
     }
     
     /// <summary>
@@ -241,16 +257,19 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
         
         try
         {
-            // 获取Unity设备ID
-            sDeviceId = SystemInfo.deviceUniqueIdentifier;
-            if (string.IsNullOrEmpty(sDeviceId))
+            // 获取设备MAC地址
+            string macAddress = GetMacAddress();
+            if (string.IsNullOrEmpty(macAddress))
             {
-                Debug.LogError($"[{DeviceName}] 无法获取设备ID");
+                Debug.LogError($"[{DeviceName}] 无法获取设备硬件地址");
                 return false;
             }
             
+            // 生成时间戳
+            uint timestamp = (uint)(DateTime.Now.Ticks / TimeSpan.TicksPerSecond);
+            
             // 构建解锁请求帧
-            byte[] unlockFrame = BuildUnlockFrame();
+            byte[] unlockFrame = CreateDongleRequestFrame(macAddress, timestamp);
             
             // 重置加密状态
             bIsEncrypted = false;
@@ -284,66 +303,112 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
     }
     
     /// <summary>
-    /// 构建解锁请求帧
+    /// 创建加密狗请求帧
     /// </summary>
-    private byte[] BuildUnlockFrame()
+    private byte[] CreateDongleRequestFrame(string macAddress, uint timestamp)
     {
-        // 帧格式: 0xAA | 0x01 | 时间戳(4字节) | 加密设备ID(6字节) | 校验和 | 0x7E
-        byte[] frame = new byte[13];
-        
-        frame[0] = FRAME_HEADER;
-        frame[1] = ENCRYPT_REQUEST_CODE;
-        
-        // 生成时间戳（当前时间的Unix时间戳）
-        uint uwTimestamp = (uint)((DateTimeOffset.UtcNow.ToUnixTimeSeconds()) & 0xFFFFFFFF);
-        byte[] timestampBytes = BitConverter.GetBytes(uwTimestamp);
-        if (BitConverter.IsLittleEndian)            Array.Reverse(timestampBytes); // 转为大端序
-        
-        Array.Copy(timestampBytes, 0, frame, 2, 4);
-        
-        // 加密设备ID
-        byte[] encryptedDeviceId = EncryptDeviceId(sDeviceId, uwTimestamp);
-        Array.Copy(encryptedDeviceId, 0, frame, 6, 6);
-        
-        // 计算校验和
-        frame[12] = CalculateChecksum(frame, 12);
-        frame[13] = FRAME_TAIL;
-        
-        return frame;
+        List<byte> frame = new List<byte>();
+
+        // 帧头
+        frame.Add(FRAME_HEADER);
+        // 功能码
+        frame.Add(ENCRYPT_REQUEST_CODE);
+        // 时间戳(4字节)
+        frame.AddRange(BitConverter.GetBytes(timestamp));
+        // 加密MAC(6字节)
+        frame.AddRange(EncryptMac(macAddress, timestamp));
+
+        // 计算校验和(除帧头帧尾外的所有字节相加取低八位)
+        byte checksum = 0;
+        for (int i = 1; i < frame.Count; i++)
+        {
+            checksum += frame[i];
+        }
+        frame.Add(checksum);
+
+        // 帧尾
+        frame.Add(FRAME_TAIL);
+
+        return frame.ToArray();
     }
-    
+
     /// <summary>
-    /// 加密设备ID
+    /// MAC地址加密
     /// </summary>
-    private byte[] EncryptDeviceId(string deviceId, uint uwTimestamp)
+    private byte[] EncryptMac(string macAddress, uint timestamp)
     {
-        // 将设备ID转换为6字节
-        byte[] deviceBytes = new byte[6];
-        byte[] hash = System.Security.Cryptography.MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(deviceId));
-        Array.Copy(hash, 0, deviceBytes, 0, 6); // 取MD5的前6字节
-        
-        // 时间戳循环加密：取低6字节循环
-        byte[] timestampBytes = BitConverter.GetBytes(uwTimestamp);
-        byte[] encryptKey = new byte[6];
+        // 解析MAC地址: AA:BB:CC:DD:EE:FF → 0xAA 0xBB 0xCC 0xDD 0xEE 0xFF
+        string cleanMac = macAddress.Replace("-", "").Replace(":", "");
+        byte[] macBytes = new byte[6];
         for (int i = 0; i < 6; i++)
         {
-            encryptKey[i] = timestampBytes[i % 4];
+            macBytes[i] = Convert.ToByte(cleanMac.Substring(i * 2, 2), 16);
         }
-        
+
+        // 时间戳循环密钥: 0x64A1B2C3 → 取低6字节循环: 0xC3 0xB2 0xA1 0x64 0xC3 0xB2
+        byte[] timestampBytes = BitConverter.GetBytes(timestamp);
+        byte[] keyBytes = new byte[6];
+        for (int i = 0; i < 6; i++)
+        {
+            keyBytes[i] = timestampBytes[3 - (i % 4)]; // 从低位开始循环取值
+        }
+
         // 异或加密
-        byte[] encrypted = new byte[6];
+        byte[] encryptedMac = new byte[6];
         for (int i = 0; i < 6; i++)
         {
-            encrypted[i] = (byte)(deviceBytes[i] ^ encryptKey[i]);
+            encryptedMac[i] = (byte)(macBytes[i] ^ keyBytes[i]);
         }
-        
-        Debug.Log($"[{DeviceName}] 设备ID: {deviceId}");
-        Debug.Log($"[{DeviceName}] 设备字节: {BitConverter.ToString(deviceBytes)}");
-        Debug.Log($"[{DeviceName}] 时间戳: 0x{uwTimestamp:X8}");
-        Debug.Log($"[{DeviceName}] 加密密钥: {BitConverter.ToString(encryptKey)}");
-        Debug.Log($"[{DeviceName}] 加密结果: {BitConverter.ToString(encrypted)}");
-        
-        return encrypted;
+
+        Debug.Log($"[{DeviceName}] 原始MAC: {macAddress}, 加密后: {BitConverter.ToString(encryptedMac)}");
+        return encryptedMac;
+    }
+
+    /// <summary>
+    /// 获取设备硬件地址
+    /// </summary>
+    private string GetMacAddress()
+    {
+        try
+        {
+            // 获取Unity设备唯一标识符
+            string deviceId = SystemInfo.deviceUniqueIdentifier;
+            
+            if (string.IsNullOrEmpty(deviceId))
+            {
+                Debug.LogError($"[{DeviceName}] 无法获取设备唯一标识符");
+                return "";
+            }
+            
+            // 将设备ID转换为MAC地址格式 (取前12个字符，每2个字符一组)
+            string macAddress = "";
+            for (int i = 0; i < Math.Min(12, deviceId.Length); i += 2)
+            {
+                if (i + 1 < deviceId.Length)
+                {
+                    macAddress += deviceId.Substring(i, 2);
+                }
+                else
+                {
+                    macAddress += deviceId.Substring(i, 1) + "0"; // 如果字符数不够，补0
+                }
+            }
+            
+            // 如果长度不够12位，用设备ID的哈希值补充
+            if (macAddress.Length < 12)
+            {
+                string hashSuffix = deviceId.GetHashCode().ToString("X8");
+                macAddress = (macAddress + hashSuffix).Substring(0, 12);
+            }
+            
+            Debug.Log($"[{DeviceName}] 获取到设备硬件地址: {macAddress} (来源设备ID: {deviceId})");
+            return macAddress.ToUpper();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"[{DeviceName}] 获取设备硬件地址失败: {e.Message}");
+            return "";
+        }
     }
     
     /// <summary>
@@ -374,7 +439,13 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
             
             Array.Copy(data, 0, frame, 3, data.Length);
             
-            frame[frame.Length - 2] = CalculateChecksum(frame, frame.Length - 2);
+            // 计算校验和(除帧头帧尾外的所有字节相加取低八位)
+            byte checksum = 0;
+            for (int i = 1; i < frame.Length - 1; i++)
+            {
+                checksum += frame[i];
+            }
+            frame[frame.Length - 2] = checksum;
             frame[frame.Length - 1] = FRAME_TAIL;
             
             bool bSuccess = SendData(frame);
@@ -393,16 +464,16 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
     }
     
     /// <summary>
-    /// 计算校验和
+    /// 计算校验和(除帧头帧尾外的所有字节相加取低八位)
     /// </summary>
-    private byte CalculateChecksum(byte[] data, int length)
+    private byte CalculateChecksum(byte[] data, int startIndex, int length)
     {
-        byte ucChecksum = 0;
-        for (int i = 0; i < length; i++)
+        byte checksum = 0;
+        for (int i = startIndex; i < startIndex + length; i++)
         {
-            ucChecksum ^= data[i];
+            checksum += data[i];
         }
-        return ucChecksum;
+        return checksum;
     }
     
     /// <summary>
@@ -412,10 +483,16 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
     {
         if (frame.Length < 3) return false;
         
-        byte ucExpectedChecksum = CalculateChecksum(frame, frame.Length - 2);
-        byte ucActualChecksum = frame[frame.Length - 2];
+        // 计算除帧头帧尾外的所有字节相加
+        byte expectedChecksum = 0;
+        for (int i = 1; i < frame.Length - 1; i++)
+        {
+            expectedChecksum += frame[i];
+        }
         
-        return ucExpectedChecksum == ucActualChecksum;
+        byte actualChecksum = frame[frame.Length - 2];
+        
+        return expectedChecksum == actualChecksum;
     }
     
     /// <summary>
@@ -425,7 +502,6 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
     {
         bIsEncrypted = false;
         bHandshakeCompleted = false;
-        sDeviceId = "";
         
         OnEncryptionStatusChanged?.Invoke(false);
         

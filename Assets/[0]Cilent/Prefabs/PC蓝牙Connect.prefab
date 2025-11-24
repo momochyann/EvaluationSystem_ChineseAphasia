@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53a53d4c59daf742b7221e854c30bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsAutoOpen: 1
+  IsAutoOpen: 0
   OpenMethod: 0
   ReadProtocol: 3
   BaudRate: 9600

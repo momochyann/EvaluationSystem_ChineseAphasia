@@ -7811,18 +7811,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0ec8dd7ff17104c8d2346a56b5c25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\u5F55\u540D": "\u8BC4\u4EBA\u5F55"
+  "\u5F55\u540D": "\u6863\u6848\u5F55"
   "\u4E0B\u62C9\u6846\u5E1C\u96C6":
   - "\u793A": "\u59D3\u540D"
-    "\u5E1C": "\u540D"
-  - "\u793A": "\u8D26\u53F7"
-    "\u5E1C": "\u8D26\u53F7"
+    "\u5E1C": "\u59D3\u540D"
+  - "\u793A": "\u7F16\u53F7"
+    "\u5E1C": "\u7F16\u53F7"
   - "\u793A": "\u6027\u522B"
     "\u5E1C": "\u6027\u522B"
   "\u8F93\u5165\u6846": {fileID: 8325834817785121919}
   "\u4E0B\u62C9\u6846": {fileID: 3219737299162319284}
   "\u7D22\u6309\u94AE": {fileID: 131414916489620001}
-  "\u76EE\u6C14\u540D": "\u8BC4\u5B9A\u4EBA\u6761\u76EE"
+  "\u76EE\u6C14\u540D": "\u6863\u6848\u6761\u76EE"
 --- !u!1 &5173411492631298057
 GameObject:
   m_ObjectHideFlags: 0

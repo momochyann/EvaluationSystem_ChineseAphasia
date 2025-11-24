@@ -4,7 +4,7 @@ using UnityEngine;
 using QFramework;
 using Cysharp.Threading.Tasks;
 using System;
-
+using SerialPortUtility;
 public class 电脑端蓝牙串口检测 : MonoBehaviour, IController
 {
     // Start is called before the first frame update
@@ -14,9 +14,9 @@ public class 电脑端蓝牙串口检测 : MonoBehaviour, IController
     }
     async UniTask 启动连接加密狗()
     {
-
+        await UniTask.Delay(100);
         var centerUtility = this.GetUtility<SerialPortCenterUtility>();
-
+        
         // 注册事件
         centerUtility.OnConnectionStatusChanged += (connected) =>
         {
@@ -32,7 +32,10 @@ public class 电脑端蓝牙串口检测 : MonoBehaviour, IController
         {
             Debug.Log($"收到蓝牙数据: {BitConverter.ToString(data)}");
         };
-
+        var serialPortUtility = this.GetComponent<SerialPortUtilityPro>();
+        Debug.Log("传入串口工具"+serialPortUtility.gameObject.name);
+        centerUtility.BindSreialPortUtility(serialPortUtility);
+        await UniTask.Delay(100);
         // 搜索并连接设备
         bool connected = await centerUtility.SearchAndConnectAsync();
 

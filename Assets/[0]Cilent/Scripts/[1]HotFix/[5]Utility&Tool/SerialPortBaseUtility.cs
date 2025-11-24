@@ -42,7 +42,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     [DllImport("spap", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
     static extern int spapDeviceList(int deviceNum, [MarshalAs(UnmanagedType.LPStr)] StringBuilder deviceInfo, int buffer_size);
 
-    public bool IsConnected => isConnected; 
+    public bool IsConnected => isConnected;
     public string CurrentPortName => currentPortName;
 
     public event Action<bool> OnConnectionStatusChanged;
@@ -69,12 +69,12 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     protected async UniTask<List<(string portName, int portSkip)>> GetComPortsWithSkip()
     {
         List<(string portName, int portSkip)> comPorts = new List<(string, int)>();
-        
+
         try
         {
             int deviceNum = spapDeviceListAvailable();
             await UniTask.Yield();
-            
+
             for (int i = 0; i < deviceNum; i++)
             {
                 StringBuilder deviceInfo = new StringBuilder(1024);
@@ -87,8 +87,8 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
                     int comIndex = comPort.IndexOf(',');
                     if (comIndex > 0)
                         comPort = comPort.Substring(0, comIndex);
-                    
-                    if (comPort.Length >= 4 && comPort.StartsWith("COM") )
+
+                    if (comPort.Length >= 4 && comPort.StartsWith("COM"))
                     {
                         // 正确解析COM端口号：COM3 -> Skip = 3
                         int portSkip = int.Parse(comPort[3..]);
@@ -114,17 +114,21 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     protected virtual List<(string portName, int portSkip)> GetComPortsFallback()
     {
         List<(string portName, int portSkip)> comPorts = new List<(string, int)>();
-        
+
         // 尝试常见的COM端口
         for (int i = 1; i <= 20; i++)
         {
             comPorts.Add(($"COM{i}", i));
         }
-        
+
         Debug.Log($"[{DeviceName}] 使用备用COM端口列表");
         return comPorts;
     }
-
+    public void BindSreialPortUtility(SerialPortUtilityPro serialPortUtility)
+    {
+        serialPort = serialPortUtility;
+        Debug.Log("传入串口工具"+serialPortUtility.gameObject.name);
+    }
     /// <summary>
     /// 搜索并连接设备（可重写）
     /// </summary>
@@ -134,7 +138,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
 
         // 获取系统中所有COM端口
         var comPorts = await GetComPortsWithSkip();
-        
+
         if (comPorts.Count == 0)
         {
             Debug.LogWarning($"[{DeviceName}] 未发现可用的COM端口");
@@ -144,7 +148,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
         // 逐个尝试连接COM端口
         foreach (var (portName, portSkip) in comPorts)
         {
-            if(portName.Contains("COM12")||portName.Contains("COM27")||portName.Contains("COM11")||portName.Contains("COM17"))
+            if (portName.Contains("COM12") || portName.Contains("COM27") || portName.Contains("COM11") || portName.Contains("COM17"))
             {
                 continue;
             }
@@ -167,19 +171,24 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
         try
         {
             // 清理之前的连接
-            CleanupSerialPort();
+          // CleanupSerialPort();
 
             // 创建专用的GameObject来管理串口
-            serialPortObject = new GameObject($"{DeviceName}Serial_{portName}");
-            
-            // 防止在切换场景时被销毁（可选）
-            UnityEngine.Object.DontDestroyOnLoad(serialPortObject);
-            
-            serialPort = serialPortObject.AddComponent<SerialPortUtilityPro>();
+            // serialPortObject = new GameObject($"{DeviceName}Serial_{portName}");
 
+            // // 防止在切换场景时被销毁（可选）
+            // UnityEngine.Object.DontDestroyOnLoad(serialPortObject);
+
+            // serialPort = serialPortObject.AddComponent<SerialPortUtilityPro>();
+            // Debug.Log("serialPortObject" + serialPortObject.name);
             // 配置串口参数
+            // ConfigureSerialPort(portSkip);
+            if (serialPort == null)
+            {
+                Debug.LogError($"[{DeviceName}] 没有对应的串口连接工具");
+                return false;
+            }
             ConfigureSerialPort(portSkip);
-
             // 绑定数据接收事件
             serialPort.ReadCompleteEventObject.AddListener(OnDataReceived);
 
@@ -200,7 +209,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
 
             // 执行设备识别逻辑
             bool deviceRecognized = await RecognizeDevice(portName, portSkip);
-            
+
             if (deviceRecognized)
             {
                 isConnected = true;
@@ -251,7 +260,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
         {
             var bytes = (byte[])data;
             Debug.Log($"[{DeviceName}] 收到数据: {BitConverter.ToString(bytes)}");
-            
+
             // 子类可以重写此方法来处理具体的数据协议
             ProcessReceivedData(bytes);
         }
@@ -399,4 +408,4 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
         OnConnectionStatusChanged?.Invoke(false);
         Debug.Log($"[{DeviceName}] 已断开连接");
     }
-} 
+}

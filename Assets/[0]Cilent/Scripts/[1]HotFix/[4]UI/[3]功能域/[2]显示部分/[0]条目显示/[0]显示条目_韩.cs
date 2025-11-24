@@ -83,6 +83,7 @@ public class 显示条目_韩 : MonoBehaviour, IController
             Debug.Log(this.transform.parent.gameObject.name);
             var 条目 = Instantiate(prefeb, this.transform);
             var mask = 条目.GetComponent<ClipMask>();
+            
             DOTween.To((float value) =>
            {
                mask.Tint = new Color(mask.Tint.r, mask.Tint.g, mask.Tint.b, value);

@@ -6583,18 +6583,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0ec8dd7ff17104c8d2346a56b5c25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\u5F55\u540D": "\u8BC4\u4EBA\u5F55"
+  "\u5F55\u540D": "\u6863\u6848\u5F55"
   "\u4E0B\u62C9\u6846\u5E1C\u96C6":
   - "\u793A": "\u59D3\u540D"
-    "\u5E1C": "\u540D"
-  - "\u793A": "\u8D26\u53F7"
-    "\u5E1C": "\u8D26\u53F7"
+    "\u5E1C": "\u59D3\u540D"
+  - "\u793A": "\u7F16\u53F7"
+    "\u5E1C": "\u7F16\u53F7"
   - "\u793A": "\u6027\u522B"
     "\u5E1C": "\u6027\u522B"
   "\u8F93\u5165\u6846": {fileID: 3710934513430757254}
   "\u4E0B\u62C9\u6846": {fileID: 7112093661309712809}
   "\u7D22\u6309\u94AE": {fileID: 6943904445477171397}
-  "\u76EE\u6C14\u540D": "\u8BC4\u5B9A\u4EBA\u6761\u76EE"
+  "\u76EE\u6C14\u540D": "\u91CF\u8868\u5F85\u8BC4\u6D4B\u663E\u793A\u6761\u76EE"
 --- !u!1 &5001178963472198334
 GameObject:
   m_ObjectHideFlags: 0
@@ -7368,7 +7368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84bb9af7d2b85d04f95a2c85a255d0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\u5F55\u540D": "\u7528\u6237\u5F55"
+  "\u5F55\u540D": "\u6863\u6848\u5F55"
   "\u6761\u76EE\u663E\u793A\u9762\u677F": {fileID: 8336984566563661532}
   "\u5220\u9664\u6309\u94AE": {fileID: 5769802592353037814}
 --- !u!1 &5921502755422222644

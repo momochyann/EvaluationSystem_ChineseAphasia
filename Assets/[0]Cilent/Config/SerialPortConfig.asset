@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e68564cb52bed4f9f03c60bcab8304, type: 3}
+  m_Name: SerialPortConfig
+  m_EditorClassIdentifier: 
+  serialPortPrefabPath: SerialPortPrefab
+  isLocalPackage: 0
+  baudRate: 9600
+  connectionTimeoutMs: 2000
+  dataBit: 8
+  stopBit: 0
+  parity: 0
+  skip: 0
+  isAutoOpen: 0
+  openMethod: 0

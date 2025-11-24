@@ -17,15 +17,21 @@ public class GameStartAfterLoad : MonoBehaviour
         Application.targetFrameRate = 120;
     //    await WaitLoadAnimation(this.GetCancellationTokenOnDestroy());
         Debug.Log("加载数据完成222");
-#if !UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN
+    var 电脑加密狗串口 = await LoadYooAssetsTool.LoadAsset<GameObject>("电脑加密狗串口");
+    Instantiate(电脑加密狗串口);
   //await UniTask.Delay(3000);
-#endif
+#endif 
 
         // var HotUI = await LoadYooAssetsTool.LoadAsset<GameObject>("LoadNewGameVesion");
         // Instantiate(HotUI, FindObjectOfType<Canvas>().transform);
         //    LoadYooAssetsTool.LoadSceneAsync("GameStartScene").Forget();
+        
+        
         LoadYooAssetsTool.LoadSceneAsync("登录界面场景").Forget();
+        
     }
+  
     async UniTask WaitLoadAnimation(CancellationToken cancellationToken)
     {
         var progress = FindObjectOfType<HotFixAssetsProgress>();

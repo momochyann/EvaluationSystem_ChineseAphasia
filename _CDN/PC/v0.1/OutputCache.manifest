@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 811569568
+CRC: 1467620632
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -247,7 +247,7 @@ AssetBundleManifest:
         Dependency_0: defaultpackage_assets_[0]cilent_textures.bundle
         Dependency_1: "defaultpackage_assets_[0]cilent_textures_\u5E9A\u7533\u620A\u5348_2025_8_16-ui\u754C\u9762-\u6C49\u8BED\u5931\u8BED\u75C7\u8BC4\u6D4B\u7CFB\u7EDF\u8F6F\u4EF6_\u65B0\u5E73\u677F\u5C3A\u5BF82000x1200_2-\u4E3B\u754C\u9762.bundle"
         Dependency_2: "defaultpackage_assets_[0]cilent_textures_\u5E9A\u7533\u620A\u5348_2025_8_16-ui\u754C\u9762-\u6C49\u8BED\u5931\u8BED\u75C7\u8BC4\u6D4B\u7CFB\u7EDF\u8F6F\u4EF6_\u65B0\u5E73\u677F\u5C3A\u5BF82000x1200_3-\u8BC4\u5B9A\u4EBA\u7BA1\u7406_icon.bundle"
-        Dependency_3: "defaultpackage_assets_[0]cilent_textures_\u5E9A\u7533\u620A\u5348_2025_8_16-ui\u754C\u9762-\u6C49\u8BED\u5931\u8BED\u75C7\u8BC4\u6D4B\u7CFB\u7EDF\u8F6F\u4EF6_\u65B0\u5E73\u677F\u5C3A\u5BF82000x1200.bundle"
+        Dependency_3: "defaultpackage_assets_[0]cilent_textures_\u5E9A\u7533\u620A\u5348_2025_8_16-ui\u754C\u9762-\u6C49\u8BED\u5931\u8BED\u75C7\u8BC4\u6D4B\u7CFB\u7EDF\u8F6F\u4EF6_\u8001\u5E73\u677F\u5C3A\u5BF81920x1200.bundle"
         Dependency_4: "defaultpackage_assets_[0]cilent_textures_\u7528\u6237\u7BA1\u74068.bundle"
         Dependency_5: "defaultpackage_assets_[0]cilent_textures_\u7BA1\u7406\u754C\u9762ui_\u4E66\u5199.bundle"
         Dependency_6: "defaultpackage_assets_[0]cilent_textures_\u7BA1\u7406\u754C\u9762ui_\u7ED3\u6784\u4E0E\u7A7A\u95F4.bundle"
@@ -258,7 +258,7 @@ AssetBundleManifest:
         Dependency_11: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle
         Dependency_12: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle
         Dependency_13: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
-        Dependency_14: "defaultpackage_share_assets_[1]local_textures_1027\u7535\u8111\u8BC4\u4F30.bundle"
+        Dependency_14: "defaultpackage_share_assets_[1]local_textures_\u4E01\u4EA5\u5E9A\u5BC5_\u91CF\u8868\u8BC4\u4F30-icon.bundle"
     Info_40:
       Name: "defaultpackage_assets_[0]cilent_ui_\u7535\u8111&\u901A\u7528_\u5DE5\u4F5C\u573A\u666F_\u91CF\u8868\u8BC4\u4F30_\u9A6C\u5E86.bundle"
       Dependencies:
@@ -351,11 +351,8 @@ AssetBundleManifest:
       Name: "defaultpackage_share_assets_[1]local_textures_ui\u754C\u9762_\u9009\u62E9\u754C\u97629.bundle"
       Dependencies: {}
     Info_58:
-      Name: "defaultpackage_share_assets_[1]local_textures_1027\u7535\u8111\u8BC4\u4F30.bundle"
-      Dependencies: {}
-    Info_59:
       Name: defaultpackage_share_assets_[0]cilent_scripts_[1]hotfix_[5]utility&tool_bleapi.bundle
       Dependencies: {}
-    Info_60:
+    Info_59:
       Name: defaultpackage_share_assets_nova_sample_uicontrols_prefabs.bundle
       Dependencies: {}
