@@ -119,12 +119,12 @@ public class 显示条目_韩 : MonoBehaviour, IController
         if (应该启用滚动)
         {
             滚动条.enabled = true;
-            Debug.Log($"[显示条目_韩] 条目数量({条目数量}) > 7，已启用滚动");
+            Debug.Log($"[显示条目_韩] 条目数量({条目数量}) > {条目解锁数量} ，已启用滚动");
         }
         else
         {
             滚动条.enabled = false;
-            Debug.Log($"[显示条目_韩] 条目数量({条目数量}) <= 7，已禁用滚动");
+            Debug.Log($"[显示条目_韩] 条目数量({条目数量}) <= {条目解锁数量} ，已禁用滚动");
         }
     }
 

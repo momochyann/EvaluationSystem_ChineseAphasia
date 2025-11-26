@@ -93,6 +93,8 @@ public class 用户管理添加_韩 : 界面基础_韩
     {
         用户 新用户 = new 用户();
         新用户.编号 = 编号.Text;
+        编号管理界面_茉.每日档案注册计数++;
+        Debug.Log("[ [3] 用户管理添加_韩]" + 编号管理界面_茉.每日档案注册计数);
         新用户.名 = 姓名.Text;
         新用户.性别 = 性别.DropdownOptions.Options[性别.DropdownOptions.SelectedIndex];
         新用户.身份证 = 身份证.Text;

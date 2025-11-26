@@ -72,32 +72,36 @@ public class 量表用户选择显示_茉 : 界面基础_韩
     async void 确认()
     {
         // FindObjectOfType<界面管理器_韩>().显示界面("量表待评测显示");
-        var 告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
-        var 界面管理器 = FindObjectOfType<界面管理器_韩>();
-        var ins = Instantiate(告示, 界面管理器.transform);
-        var 户择 = await ins.GetComponent<告示_茉>().等待确认显示("确认添加", "确定要添加为待测试人员吗？");
-        if (户择)
+        if(条组.CurrentSelectedEntries.Count != 0)
         {
-            int 选择数量 = 条组.CurrentSelectedEntries.Count;
-            foreach (var 条目 in 条组.CurrentSelectedEntries)
+            var 告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
+            var 界面管理器 = FindObjectOfType<界面管理器_韩>();
+            var ins = Instantiate(告示, 界面管理器.transform);
+            var 户择 = await ins.GetComponent<告示_茉>().等待确认显示("确认添加", "确定要添加为待测试人员吗？");
+            if (户择)
             {
-                var 条目下标 = 条目.GetComponent<IentryDis>().索引下标;
+                int 选择数量 = 条组.CurrentSelectedEntries.Count;
+                foreach (var 条目 in 条组.CurrentSelectedEntries)
+                {
+                    var 条目下标 = 条目.GetComponent<IentryDis>().索引下标;
 
-                // 根据用户下标创建档案（该方法内部会处理重复检查）
-                await 添加档案(条目下标);
+                    // 根据用户下标创建档案（该方法内部会处理重复检查）
+                    await 添加档案(条目下标);
+                }
+
+                条组.CurrentSelectedEntries.Clear();
+                await UniTask.Delay(100);
+                条组.沐浴();
+
+                // 显示操作结果
+                Debug.Log($"[确认] 处理完成，共选择 {选择数量} 个用户");
+
+                // 切换到量表待评测显示界面
+                FindObjectOfType<界面管理器_韩>().显示界面("量表待评测显示");
             }
-
-            条组.CurrentSelectedEntries.Clear();
-            await UniTask.Delay(100);
-            条组.沐浴();
-
-            // 显示操作结果
-            Debug.Log($"[确认] 处理完成，共选择 {选择数量} 个用户");
-
-            // 切换到量表待评测显示界面
-            FindObjectOfType<界面管理器_韩>().显示界面("量表待评测显示");
+            Destroy(ins);
         }
-        Destroy(ins);
+        
         // Debug.Log("确认");
     }
 

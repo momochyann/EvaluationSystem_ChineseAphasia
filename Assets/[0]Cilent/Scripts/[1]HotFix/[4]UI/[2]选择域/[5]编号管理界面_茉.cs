@@ -17,6 +17,7 @@ public class 编号管理界面_茉 : MonoBehaviour, IController
     [SerializeField] Button 取消按钮;
     [SerializeField] UIBlock 面板容器;
     [SerializeField] TextBlock 预览文本; // 可选：用于显示生成规则预览
+    [SerializeField] public static int 每日档案注册计数;
     
     private const string 编号规则配置键 = "编号规则配置";
     private 编号规则配置 当前配置;
@@ -194,8 +195,7 @@ public class 编号管理界面_茉 : MonoBehaviour, IController
             if (用户录接口 != null)
             {
                 var 所有用户 = 用户录接口.GetAllItems();
-                int 今日数量 = 0;
-                
+                bool flag = false;
                 foreach (var 用户 in 所有用户)
                 {
                     if (用户 is 用户 u && !string.IsNullOrEmpty(u.编号))
@@ -203,12 +203,18 @@ public class 编号管理界面_茉 : MonoBehaviour, IController
                         // 检查编号中是否包含今天的日期
                         if (u.编号.Contains(日期部分))
                         {
-                            今日数量++;
+                            flag = true;
+                            Debug.Log($"找到今日部分信息{u.编号}");
                         }
                     }
                 }
-                
-                return 今日数量 + 1;
+                if(!flag)
+                {
+                    每日档案注册计数 = 0;
+                    PlayerPrefs.SetInt("[ [5] 编号管理界面]每日档案注册计数",0);
+                    Debug.Log("[ [5] 编号管理界面]设置今日注册数量为0");
+                }
+                return 每日档案注册计数+1;
             }
         }
         catch (Exception e)
