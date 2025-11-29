@@ -9,7 +9,7 @@ using Cysharp.Threading.Tasks;
 public class 用户显示条目_韩 : MonoBehaviour, IController, IentryDis
 {
     // Start is called before the first frame update
-    [SerializeField] public TextBlock 账号;
+    [SerializeField] public TextBlock 编号;
     [SerializeField] public TextBlock 姓名;
     [SerializeField] public TextBlock 性别;
     [SerializeField] public TextBlock 身份信息;
@@ -39,7 +39,7 @@ public class 用户显示条目_韩 : MonoBehaviour, IController, IentryDis
         索引下标 = 索引;
         var 用户录 = this.GetModel<用户录>();
         var 当前人员 = 用户录.GetDataList()[索引];
-        账号.Text = 当前人员.编号;
+        编号.Text = 当前人员.编号;
         姓名.Text = 当前人员.名;
         性别.Text = 当前人员.性别;
         身份信息.Text = 当前人员.身份证;
