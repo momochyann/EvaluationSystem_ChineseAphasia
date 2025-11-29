@@ -245,6 +245,10 @@ namespace SerialPortUtility
 		private GameObject DebugConsoleObject = null;
 		private bool IsErrFinished = false;
 		private bool IsOpenProcess = false;
+		[SerializeField]
+		[Tooltip("LineFeedDataTo(Binary/String)模式下未收到分隔符时，强制分包的时间间隔（毫秒）")]
+		private float LineFeedForceFlushIntervalMs = 50f;
+		private float lineFeedLastAppendTime = 0f;
 
 		//equal code : system fixed
 		private const string equalChar = "=";
@@ -315,6 +319,7 @@ namespace SerialPortUtility
 			IsOpenProcess = false;
 			SerialPortHandle = SPAPHANDLE_ERROR;
 			IsErrFinished = false;
+			lineFeedLastAppendTime = Time.realtimeSinceStartup;
 
 #if UNITY_ANDROID && !UNITY_EDITOR
 			// Plugin
@@ -614,6 +619,7 @@ namespace SerialPortUtility
 
 				//buffer
 				dataBuffer.AddRange(dataArray.Take(iRet));
+				lineFeedLastAppendTime = Time.realtimeSinceStartup;
 
 				//for debug Log
 				string stringData = System.Text.Encoding.UTF8.GetString(dataArray, 0, iRet);
@@ -713,6 +719,10 @@ namespace SerialPortUtility
 					UpdateOnStreaming(false);
 				if (ReadProtocol == SerialPortUtilityPro.MethodSystem.BinaryStreaming && EnableTrans)
 					UpdateOnStreaming(true);
+				if (EnableTrans && ReadProtocol == SerialPortUtilityPro.MethodSystem.LineFeedDataToBinary)
+					FlushLineFeedByTimeout(true);
+				if (EnableTrans && ReadProtocol == SerialPortUtilityPro.MethodSystem.LineFeedDataToString)
+					FlushLineFeedByTimeout(false);
 			}
 		}
 
@@ -976,28 +986,83 @@ namespace SerialPortUtility
 
 		private void UpdateLineFeed(bool BinaryMode)
 		{
-			int d;
 			string fcode = ViewToControlCode(FeedCode);
+			byte[] fcodeBytes = System.Text.Encoding.UTF8.GetBytes(fcode);
+			if (fcodeBytes == null || fcodeBytes.Length == 0) return;
 
-			string dsbuf = System.Text.Encoding.UTF8.GetString(dataBuffer.ToArray());
-			while ((d = dsbuf.IndexOf(fcode, 0)) >= 0)
+			int idx = IndexOfSequence(dataBuffer, fcodeBytes);
+			while (idx >= 0)
 			{
 				if (BinaryMode)
 				{
-					byte[] dataByte = dataBuffer.GetRange(0, d).ToArray();
-					dataBuffer.RemoveRange(0, d + fcode.Length);
+					byte[] dataByte = dataBuffer.GetRange(0, idx).ToArray();
+					dataBuffer.RemoveRange(0, idx + fcodeBytes.Length);
 					if (ReadCompleteEventObject != null)
 						ReadCompleteEventObject.Invoke((object)dataByte);
 				}
 				else
 				{
-					string dataStr = dsbuf.Substring(0, d);
-					dataBuffer.RemoveRange(0, d + fcode.Length);
+					byte[] dataBytes = dataBuffer.GetRange(0, idx).ToArray();
+					string dataStr = System.Text.Encoding.UTF8.GetString(dataBytes);
+					dataBuffer.RemoveRange(0, idx + fcodeBytes.Length);
 					if (ReadCompleteEventObject != null)
 						ReadCompleteEventObject.Invoke((object)dataStr);
 				}
 
-				dsbuf = System.Text.Encoding.UTF8.GetString(dataBuffer.ToArray());
+				idx = IndexOfSequence(dataBuffer, fcodeBytes);
+			}
+
+			if (BinaryMode)
+				FlushLineFeedByTimeout(true);
+			else
+				FlushLineFeedByTimeout(false);
+		}
+
+		private int IndexOfSequence(List<byte> buffer, byte[] sequence)
+		{
+			if (buffer == null || sequence == null) return -1;
+			int blen = buffer.Count;
+			int slen = sequence.Length;
+			if (slen == 0 || blen < slen) return -1;
+			for (int i = 0; i <= blen - slen; i++)
+			{
+				bool match = true;
+				for (int j = 0; j < slen; j++)
+				{
+					if (buffer[i + j] != sequence[j]) { match = false; break; }
+				}
+				if (match) return i;
+			}
+			return -1;
+		}
+
+		private void FlushLineFeedByTimeout(bool binaryMode)
+		{
+			if (dataBuffer.Count == 0)
+				return;
+
+			float timeoutSeconds = Mathf.Max(0f, LineFeedForceFlushIntervalMs) * 0.001f;
+			if (timeoutSeconds <= 0f)
+				return;
+
+			if (Time.realtimeSinceStartup - lineFeedLastAppendTime < timeoutSeconds)
+				return;
+
+			if (binaryMode)
+			{
+				byte[] dataByte = dataBuffer.ToArray();
+				dataBuffer.Clear();
+				lineFeedLastAppendTime = Time.realtimeSinceStartup;
+				if (ReadCompleteEventObject != null)
+					ReadCompleteEventObject.Invoke((object)dataByte);
+			}
+			else
+			{
+				string dataStr = System.Text.Encoding.UTF8.GetString(dataBuffer.ToArray());
+				dataBuffer.Clear();
+				lineFeedLastAppendTime = Time.realtimeSinceStartup;
+				if (ReadCompleteEventObject != null)
+					ReadCompleteEventObject.Invoke((object)dataStr);
 			}
 		}
 

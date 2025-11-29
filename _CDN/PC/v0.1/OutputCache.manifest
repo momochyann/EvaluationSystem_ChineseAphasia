@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 1467620632
+CRC: 473498261
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -289,8 +289,8 @@ AssetBundleManifest:
         Dependency_5: "defaultpackage_assets_[0]cilent_textures_\u7535\u8111\u7AEF\u76EE\u5F55icon.bundle"
         Dependency_6: "defaultpackage_assets_[0]cilent_textures_\u7BA1\u7406\u754C\u9762ui_\u4E66\u5199.bundle"
         Dependency_7: defaultpackage_assets_[0]cilent_config.bundle
-        Dependency_8: "defaultpackage_assets_[0]cilent_ui_\u5B89\u5353_\u5DE5\u4F5C\u573A\u666F_\u9009\u62E9\u754C\u9762.bundle"
-        Dependency_9: "defaultpackage_assets_[0]cilent_ui_\u5B89\u5353_\u7EC4\u4EF6.bundle"
+        Dependency_8: defaultpackage_assets_[0]cilent_prefabs.bundle
+        Dependency_9: "defaultpackage_assets_[0]cilent_ui_\u5B89\u5353_\u5DE5\u4F5C\u573A\u666F_\u9009\u62E9\u754C\u9762.bundle"
         Dependency_10: defaultpackage_assets_[0]cilent_ui.bundle
         Dependency_11: "defaultpackage_assets_[0]cilent_ui_\u7535\u8111&\u901A\u7528_\u5DE5\u4F5C\u573A\u666F_\u9009\u62E9\u754C\u9762.bundle"
         Dependency_12: defaultpackage_share_assets_[0]cilent_fonts.bundle
@@ -326,14 +326,12 @@ AssetBundleManifest:
       Dependencies:
         Dependency_0: defaultpackage_share_assets_[0]cilent_fonts.bundle
         Dependency_1: defaultpackage_share_assets_nova_sample_uicontrols_textures.bundle
-        Dependency_2: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
     Info_51:
       Name: "defaultpackage_share_assets_[1]local_textures_ui\u754C\u9762_\u767B\u5F55\u754C\u97629.bundle"
       Dependencies: {}
     Info_52:
       Name: defaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle
-      Dependencies:
-        Dependency_0: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
+      Dependencies: {}
     Info_53:
       Name: defaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
       Dependencies:

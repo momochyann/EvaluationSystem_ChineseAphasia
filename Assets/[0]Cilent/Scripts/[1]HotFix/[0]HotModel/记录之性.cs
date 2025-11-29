@@ -63,6 +63,7 @@ public interface I录贞 : IModel
     /// <param name="keyword">关键字</param>
     /// <returns>搜索到的项的索引列表</returns>
     List<int> SearchByName(string keyword);
+    bool 纳记于信(string 信, bool 清空 = false);
 }
 [Serializable]
 public abstract class 录元<T> : AbstractModel, ICanGetSystem, I录贞 where T : I记贞
@@ -209,24 +210,36 @@ public abstract class 录元<T> : AbstractModel, ICanGetSystem, I录贞 where T 
 
     public bool 纳记于信(string 信, bool 清空 = false)
     {
-        List<T> data = null;
+        if (string.IsNullOrWhiteSpace(信))
+        {
+            Debug.LogWarning("纳记于信失败: 传入内容为空");
+            return false;
+        }
+
+        T 数据;
         try
         {
-            data = JsonMapper.ToObject<List<T>>(信);
+            数据 = JsonMapper.ToObject<T>(信);
         }
         catch (Exception e)
         {
             Debug.LogError($"纳记于信失败: {e.Message}");
             return false;
         }
+
+        if (数据 == null)
+        {
+            Debug.LogWarning("纳记于信结束: 解析结果为空");
+            return false;
+        }
+
         if (清空)
         {
             ClearItems();
         }
-        foreach (var item in data)
-        {
-            AddItem(item, false);
-        }
+
+        AddItem(数据, false);
+        Debug.Log($"纳记于信成功: {typeof(T).Name}");
         SaveData();
         return true;
     }

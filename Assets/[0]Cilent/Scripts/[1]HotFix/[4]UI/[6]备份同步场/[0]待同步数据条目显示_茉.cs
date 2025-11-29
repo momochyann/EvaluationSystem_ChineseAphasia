@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using Nova;
 using NovaSamples.UIControls;
 using QFramework;
 using Cysharp.Threading.Tasks;
+using LitJson;
 
 /// <summary>
 /// 备份同步场 - 待同步数据条目显示
@@ -74,27 +77,73 @@ public class 待同步数据条目显示_茉 : MonoBehaviour, IentryDis, IContro
     }
 
     /// <summary>
-    /// 同步按钮点击：暂时只做占位打印
+    /// 同步按钮点击：执行真正的同步逻辑
     /// </summary>
     private async UniTaskVoid 执行同步占位()
     {
+        // 显示确认对话框
         var 告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
         var 界面管理器 = FindObjectOfType<界面管理器_韩>();
         var ins = Instantiate(告示, 界面管理器.transform);
         var 户择 = await ins.GetComponent<告示_茉>().等待确认显示("提示", "即将同步数据，请确保蓝牙设备连接正常");
-        if (户择)
-        {
-            Debug.Log("[待同步数据条目显示_茉] 确认同步按钮被点击");
-        }
         Destroy(ins);
-        if (当前待同步数据 == null)
+        
+        if (!户择)
         {
-            Debug.LogWarning("[待同步数据条目显示_茉] 当前待同步数据为空，无法执行同步占位");
+            Debug.Log("[待同步数据条目显示_茉] 用户取消同步");
             return;
         }
 
-        Debug.Log($"[待同步数据条目显示_茉] 同步占位触发，来源录: {当前待同步数据.原数据录名称}，原索引: {当前待同步数据.待同步索引}，当前索引: {索引下标}");
-        // TODO: 后续在这里接入真正的同步逻辑
+        if (当前待同步数据 == null)
+        {
+            Debug.LogWarning("[待同步数据条目显示_茉] 当前待同步数据为空，无法执行同步");
+            await 显示提示("错误", "当前待同步数据为空");
+            return;
+        }
+
+        Debug.Log($"[待同步数据条目显示_茉] 开始同步，来源录: {当前待同步数据.原数据录名称}，原索引: {当前待同步数据.待同步索引}");
+
+        // 获取蓝牙数据同步工具
+        var 同步工具 = this.GetUtility<I蓝牙数据同步工具>();
+        if (同步工具 == null)
+        {
+            Debug.LogError("[待同步数据条目显示_茉] 无法获取蓝牙数据同步工具");
+            await 显示提示("错误", "无法获取蓝牙数据同步工具，请检查设备连接");
+            return;
+        }
+
+        // 执行同步
+        bool 同步成功 = await 同步工具.发送待同步数据(当前待同步数据);
+        
+        if (同步成功)
+        {
+            Debug.Log($"[待同步数据条目显示_茉] 同步成功: {当前待同步数据.姓名} ({当前待同步数据.类型})");
+            await 显示提示("成功", $"数据同步成功\n{当前待同步数据.姓名} ({当前待同步数据.类型})");
+        }
+        else
+        {
+            Debug.LogError($"[待同步数据条目显示_茉] 同步失败: {当前待同步数据.姓名} ({当前待同步数据.类型})");
+            await 显示提示("失败", $"数据同步失败\n{当前待同步数据.姓名} ({当前待同步数据.类型})");
+        }
+    }
+
+    /// <summary>
+    /// 显示提示信息
+    /// </summary>
+    private async UniTask 显示提示(string 标题, string 内容)
+    {
+        var utility = this.GetUtility<YooAssetPfbPoolUtility>();
+        var prefab = await utility.LoadPfb("告示");
+        if (prefab == null)
+        {
+            Debug.LogError("[待同步数据条目显示_茉] 加载告示预制体失败");
+            return;
+        }
+
+        var 界面管理器 = FindObjectOfType<界面管理器_韩>();
+        var tips = Instantiate(prefab, 界面管理器.transform);
+        await tips.GetComponent<告示_茉>().等待确认显示(标题, 内容);
+        Destroy(tips);
     }
 
     public IArchitecture GetArchitecture()

@@ -8,6 +8,8 @@ using UnityEngine;
 using Nova;
 using NovaSamples.UIControls;
 using QFramework;
+using System.Linq;
+using LitJson;
 
 public class 备份管理界面_茉 : 界面基础_韩
 {
@@ -532,8 +534,11 @@ public class 备份管理界面_茉 : 界面基础_韩
             {
                 continue;
             }
-
-            var 时间文本 = 获取首个非空(档案.添加时间, 档案.评估时间);
+            if(档案.评估状态 != 评估状态.评估完成)
+            {
+                continue;
+            }
+            var 时间文本 = 获取首个非空(档案.评估时间, 档案.添加时间);
             if (!Try解析日期(时间文本, out var 时间) || !日期在范围内(时间, 范围开始, 范围结束))
             {
                 continue;
@@ -682,14 +687,95 @@ public class 备份管理界面_茉 : 界面基础_韩
         var 界面管理器 = FindObjectOfType<界面管理器_韩>();
         var ins = Instantiate(告示, 界面管理器.transform);
         var 户择 = await ins.GetComponent<告示_茉>().等待确认显示("提示", "所有选中数据将同步至客户端，是否继续？");
-        if (户择)
-        {
-            Debug.Log("[备份蓝牙同步] 确认批量同步按钮被点击");
-        }
         Destroy(ins);
+        
+        if (!户择)
+        {
+            Debug.Log("[备份蓝牙同步] 用户取消批量同步");
+            return;
+        }
+
         Debug.Log($"[备份蓝牙同步] 执行批量同步，条目数：{选中条目.Count}");
-        // TODO: 实现具体同步逻辑
+        
+        // 获取蓝牙数据同步工具
+        var 同步工具 = this.GetUtility<I蓝牙数据同步工具>();
+        if (同步工具 == null)
+        {
+            await 显示提示信息("错误", "无法获取蓝牙数据同步工具，请检查设备连接");
+            return;
+        }
+
+        // 获取待同步数据录
+        if (待同步数据录 == null)
+        {
+            await 显示提示信息("错误", "待同步数据录为空，无法执行同步");
+            return;
+        }
+
+        var 待同步列表 = 待同步数据录.GetDataList();
+        if (待同步列表 == null || 待同步列表.Count == 0)
+        {
+            await 显示提示信息("错误", "待同步数据列表为空");
+            return;
+        }
+
+        int 成功数量 = 0;
+        int 失败数量 = 0;
+
+        // 遍历选中的条目
+        foreach (var 条目对象 in 选中条目)
+        {
+            if (条目对象 == null) continue;
+
+            // 获取条目显示组件
+            var 条目显示 = 条目对象.GetComponent<待同步数据条目显示_茉>();
+            if (条目显示 == null)
+            {
+                Debug.LogWarning($"[备份蓝牙同步] 条目对象 {条目对象.name} 缺少 待同步数据条目显示_茉 组件");
+                失败数量++;
+                continue;
+            }
+
+            // 获取索引
+            int 索引 = 条目显示.索引下标;
+            if (索引 < 0 || 索引 >= 待同步列表.Count)
+            {
+                Debug.LogWarning($"[备份蓝牙同步] 索引无效: {索引}");
+                失败数量++;
+                continue;
+            }
+
+            // 获取待同步数据
+            var 待同步数据 = 待同步列表[索引];
+            if (待同步数据 == null)
+            {
+                Debug.LogWarning($"[备份蓝牙同步] 待同步数据为空，索引: {索引}");
+                失败数量++;
+                continue;
+            }
+
+            // 使用工具类发送数据
+            bool 发送成功 = await 同步工具.发送待同步数据(待同步数据);
+            if (发送成功)
+            {
+                成功数量++;
+                Debug.Log($"[备份蓝牙同步] 成功发送数据: {待同步数据.姓名} ({待同步数据.类型})");
+            }
+            else
+            {
+                失败数量++;
+                Debug.LogWarning($"[备份蓝牙同步] 发送失败: {待同步数据.姓名} ({待同步数据.类型})");
+            }
+
+            // 添加小延迟，避免发送过快
+            await UniTask.Delay(50);
+        }
+
+        // 显示同步结果
+        var 结果消息 = $"同步完成\n成功: {成功数量} 条\n失败: {失败数量} 条";
+        await 显示提示信息("同步结果", 结果消息);
     }
+
 
     private string 获取首个非空(params string[] 文本集合)
     {

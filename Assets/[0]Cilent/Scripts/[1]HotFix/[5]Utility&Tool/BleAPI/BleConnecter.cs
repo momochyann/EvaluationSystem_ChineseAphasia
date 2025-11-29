@@ -55,7 +55,7 @@ public class BleConnecter : MonoBehaviour
         while (true)
         {
             await UniTask.Delay(TimeSpan.FromSeconds(2), cancellationToken: this.GetCancellationTokenOnDestroy());
-            BleManager.SendData(bleAddress, bleServiceUUID, bleCharacteristicUUID, new sbyte[2] { 0x01, 0x02 });
+            BleManager.SendData(bleAddress, bleServiceUUID, bleCharacteristicUUID, new byte[2] { 0x01, 0x02 });
         }
     }
 

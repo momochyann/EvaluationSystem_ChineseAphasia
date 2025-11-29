@@ -6,6 +6,7 @@ using QFramework;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 
+
 /// <summary>
 /// 蓝牙加密狗串口工具类接口
 /// </summary>
@@ -24,13 +25,14 @@ public interface ISerialPortCenterUtility : ISerialPortBaseUtility
 /// </summary>
 public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterUtility
 {
+    
     // 协议常量
     private const byte FRAME_HEADER = 0xAA;
     private const byte FRAME_TAIL = 0x7E;
-    private const byte HANDSHAKE_FUNC_CODE = 0x01;
     private const byte ENCRYPT_REQUEST_CODE = 0x01;
     private const byte ENCRYPT_RESPONSE_CODE = 0x02;
     private const byte BLUETOOTH_FUNC_CODE = 0x03;
+    private const byte STATUS_AUTH_SUCCESS = 0x01;
     
     // 握手指令
     private static readonly byte[] HANDSHAKE_COMMAND = { 0x57, 0x73, 0x3A ,0x7E}; // "ws:~"
@@ -45,6 +47,67 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
     
     protected override string DeviceName => "蓝牙加密狗";
     
+    /// <summary>
+    /// 直接验证设备（跳过握手，直接验证加密狗）
+    /// </summary>
+    protected override async UniTask<bool> VerifyDeviceDirectly(string portName, int portSkip)
+    {
+        try
+        {
+            Debug.Log($"[{DeviceName}] 跳过握手，直接验证加密狗...");
+            
+            // 获取设备MAC地址
+            string macAddress = GetMacAddress();
+            if (string.IsNullOrEmpty(macAddress))
+            {
+                Debug.LogError($"[{DeviceName}] 无法获取设备硬件地址");
+                return false;
+            }
+            
+            // 生成时间戳
+            uint timestamp = (uint)(DateTime.Now.Ticks / TimeSpan.TicksPerSecond);
+            
+            // 构建解锁请求帧
+            byte[] unlockFrame = CreateDongleRequestFrame(macAddress, timestamp);
+            
+            // 重置加密状态
+            bIsEncrypted = false;
+            
+            // 发送解锁请求
+            if (!SendData(unlockFrame))
+            {
+                Debug.LogError($"[{DeviceName}] 发送解锁请求失败");
+                return false;
+            }
+            
+            Debug.Log($"[{DeviceName}] 已发送解锁请求: {BitConverter.ToString(unlockFrame)}");
+            
+            // 等待响应
+            int uwTimeoutMs = 5000; // 5秒超时
+            int uwElapsedMs = 0;
+            
+            while (!bIsEncrypted && uwElapsedMs < uwTimeoutMs)
+            {
+                await UniTask.Delay(100);
+                uwElapsedMs += 100;
+            }
+            
+            if (bIsEncrypted)
+            {
+                Debug.Log($"[{DeviceName}] 加密狗验证成功，设备识别完成");
+                return true;
+            }
+            
+            Debug.LogWarning($"[{DeviceName}] 加密狗验证超时或失败");
+            return false;
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"[{DeviceName}] 直接验证设备异常: {ex.Message}");
+            return false;
+        }
+    }
+
     /// <summary>
     /// 设备识别逻辑 - 发送握手指令
     /// </summary>
@@ -104,88 +167,66 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
     {
         try
         {
+            // 打印原始数据（与SerialPortUtilityManager保持一致）
+            string hexString = BitConverter.ToString(data).Replace("-", " ");
+            Debug.Log($"[{DeviceName}] 数据接收(HEX): {hexString}");
+            
             // 检查握手响应
-            if (!bHandshakeCompleted && data.Length >= 3)
+            if (!bHandshakeCompleted && data.Length >= HANDSHAKE_RESPONSE.Length)
             {
-                if (data.Take(3).SequenceEqual(HANDSHAKE_RESPONSE))
+                if (data.Take(HANDSHAKE_RESPONSE.Length).SequenceEqual(HANDSHAKE_RESPONSE))
                 {
                     bHandshakeCompleted = true;
                     Debug.Log($"[{DeviceName}] 收到握手响应");
                     return;
                 }
             }
-            
-            // 解析协议帧
-            if (data.Length >= 5 && data[0] == FRAME_HEADER && data[data.Length - 1] == FRAME_TAIL)
+
+            // 与SerialPortUtilityManager保持一致：先尝试解析加密狗响应，再解析蓝牙帧
+            if (ParseDongleResponse(data, out bool authResult))
             {
-                ParseProtocolFrame(data);
+                bIsEncrypted = authResult;
+                OnEncryptionStatusChanged?.Invoke(authResult);
+                if (authResult)
+                {
+                    Debug.Log($"[{DeviceName}] 收到加密狗认证成功响应");
+                }
+                else
+                {
+                    Debug.LogWarning($"[{DeviceName}] 收到加密狗认证失败响应");
+                }
+                return;
             }
+
+            if (ParseBluetoothFrame(data, out byte[] bluetoothData))
+            {
+                OnBluetoothDataReceived?.Invoke(bluetoothData);
+                Debug.Log($"[{DeviceName}] 收到蓝牙数据: {BitConverter.ToString(bluetoothData)}");
+                return;
+            }
+            else
+            Debug.Log("不是蓝牙帧");
         }
         catch (Exception ex)
         {
             Debug.LogError($"[{DeviceName}] 处理数据异常: {ex.Message}");
         }
     }
-    
-    /// <summary>
-    /// 解析协议帧
-    /// </summary>
-    private void ParseProtocolFrame(byte[] frame)
-    {
-        if (frame.Length < 5) return;
-        
-        byte ucFunctionCode = frame[1];
-        
-        switch (ucFunctionCode)
-        {
-            case ENCRYPT_RESPONSE_CODE:
-                HandleEncryptResponse(frame);
-                break;
-                
-            case BLUETOOTH_FUNC_CODE:
-                HandleBluetoothData(frame);
-                break;
-                
-            default:
-                Debug.LogWarning($"[{DeviceName}] 未知功能码: 0x{ucFunctionCode:X2}");
-                break;
-        }
-    }
-    
-    /// <summary>
-    /// 处理加密响应
-    /// </summary>
-    private void HandleEncryptResponse(byte[] frame)
-    {
-        try
-        {
-            // 使用SerialPortUtilityManager中的解析方法
-            if (ParseDongleResponse(frame, out bool authSuccess))
-            {
-                bIsEncrypted = authSuccess;
-                OnEncryptionStatusChanged?.Invoke(authSuccess);
-            }
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError($"[{DeviceName}] 处理加密响应异常: {ex.Message}");
-        }
-    }
 
     /// <summary>
-    /// 解析加密狗响应
+    /// 解析加密狗响应（与SerialPortUtilityManager完全一致）
     /// </summary>
     private bool ParseDongleResponse(byte[] data, out bool authSuccess)
     {
         authSuccess = false;
-
+    
         if (data.Length < 8) return false;
         if (data[0] != FRAME_HEADER) return false;
         if (data[1] != ENCRYPT_RESPONSE_CODE) return false;
         
         Debug.Log($"[{DeviceName}] 收到加密狗响应: {data[0]}, 原始数据: {FRAME_HEADER}");
         
-        // 校验和验证(除帧头帧尾外的所有字节相加取低八位)
+        // 校验和验证（与SerialPortUtilityManager完全一致）
         byte checksum = 0;
         for (int i = 1; i < data.Length - 1; i++)
         {
@@ -197,51 +238,45 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
 
         // 解析状态码
         byte statusCode = data[6]; // 时间戳4字节后的状态码
-        authSuccess = (statusCode == 0x01);
+        authSuccess = (statusCode == STATUS_AUTH_SUCCESS);
 
         Debug.Log($"[{DeviceName}] 收到加密狗响应，状态码: 0x{statusCode:X2}, 认证结果: {(authSuccess ? "成功" : "失败")}");
         return true;
     }
     
     /// <summary>
-    /// 处理蓝牙数据
+    /// 解析蓝牙帧
     /// </summary>
-    private void HandleBluetoothData(byte[] frame)
+    private bool ParseBluetoothFrame(byte[] data, out byte[] bluetoothData)
     {
-        try
+        bluetoothData = null;
+            // 如果最后一字节不是0x7E，则补上
+        if (data.Length == 0 || data[data.Length - 1] != 0x7E)
         {
-            // 帧格式: 0xAA | 0x03 | 0x16(长度) | Data区 | 校验和 | 0x7E
-            if (frame.Length < 5)
-            {
-                Debug.LogError($"[{DeviceName}] 蓝牙数据帧长度错误: {frame.Length}");
-                return;
-            }
-            
-            byte ucLength = frame[2];
-            if (frame.Length != ucLength + 5) // 头+功能码+长度+数据+校验+尾
-            {
-                Debug.LogError($"[{DeviceName}] 蓝牙数据帧长度不匹配: 期望{ucLength + 5}, 实际{frame.Length}");
-                return;
-            }
-            
-            // 验证校验和
-            if (!VerifyChecksum(frame))
-            {
-                Debug.LogError($"[{DeviceName}] 蓝牙数据校验和错误");
-                return;
-            }
-            
-            // 提取数据区
-            byte[] data = new byte[ucLength];
-            Array.Copy(frame, 3, data, 0, ucLength);
-            
-            OnBluetoothDataReceived?.Invoke(data);
-            Debug.Log($"[{DeviceName}] 收到蓝牙数据: {BitConverter.ToString(data)}");
+            var newData = new byte[data.Length + 1];
+            Array.Copy(data, 0, newData, 0, data.Length);
+            newData[newData.Length - 1] = 0x7E;
+            data = newData;
         }
-        catch (Exception ex)
+        if (data.Length < 6) return false; // 最小帧长度
+        if (data[0] != FRAME_HEADER || data[data.Length - 1] != FRAME_TAIL) return false;
+        if (data[1] != BLUETOOTH_FUNC_CODE) return false;
+
+        byte dataLength = data[2];
+        if (data.Length != dataLength + 5) return false; // 帧头+功能码+长度+数据+校验+帧尾
+
+        // 校验和验证
+        byte checksum = 0;
+        for (int i = 1; i < data.Length - 2; i++)
         {
-            Debug.LogError($"[{DeviceName}] 处理蓝牙数据异常: {ex.Message}");
+            checksum += data[i];
         }
+        if (checksum != data[data.Length - 2]) return false;
+
+        // 提取蓝牙数据
+        bluetoothData = data;
+
+        return true;
     }
     
     /// <summary>
@@ -412,7 +447,7 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
     }
     
     /// <summary>
-    /// 发送蓝牙数据
+    /// 发送蓝牙数据（通过串口发送到加密狗，加密狗会通过BLE发送）
     /// </summary>
     public bool SendBluetoothData(byte[] data)
     {
@@ -430,30 +465,12 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
         
         try
         {
-            // 构建蓝牙数据帧: 0xAA | 0x03 | 长度 | Data区 | 校验和 | 0x7E
-            byte[] frame = new byte[data.Length + 5];
-            
-            frame[0] = FRAME_HEADER;
-            frame[1] = BLUETOOTH_FUNC_CODE;
-            frame[2] = (byte)data.Length;
-            
-            Array.Copy(data, 0, frame, 3, data.Length);
-            
-            // 计算校验和(除帧头帧尾外的所有字节相加取低八位)
-            byte checksum = 0;
-            for (int i = 1; i < frame.Length - 1; i++)
-            {
-                checksum += frame[i];
-            }
-            frame[frame.Length - 2] = checksum;
-            frame[frame.Length - 1] = FRAME_TAIL;
-            
+            byte[] frame = CreateBluetoothFrame(data);
             bool bSuccess = SendData(frame);
             if (bSuccess)
             {
-                Debug.Log($"[{DeviceName}] 发送蓝牙数据成功: {BitConverter.ToString(data)}");
+                Debug.Log($"[{DeviceName}] 发送蓝牙数据成功: {BitConverter.ToString(frame).Replace("-", " ")}");
             }
-            
             return bSuccess;
         }
         catch (Exception ex)
@@ -463,36 +480,24 @@ public class SerialPortCenterUtility : SerialPortBaseUtility, ISerialPortCenterU
         }
     }
     
-    /// <summary>
-    /// 计算校验和(除帧头帧尾外的所有字节相加取低八位)
-    /// </summary>
-    private byte CalculateChecksum(byte[] data, int startIndex, int length)
+    private byte[] CreateBluetoothFrame(byte[] data)
     {
+        List<byte> frame = new List<byte>();
+
+        frame.Add(FRAME_HEADER);
+        frame.Add(BLUETOOTH_FUNC_CODE);
+        frame.Add((byte)data.Length);
+        frame.AddRange(data);
+
         byte checksum = 0;
-        for (int i = startIndex; i < startIndex + length; i++)
+        for (int i = 1; i < frame.Count; i++)
         {
-            checksum += data[i];
+            checksum += frame[i];
         }
-        return checksum;
-    }
-    
-    /// <summary>
-    /// 验证校验和
-    /// </summary>
-    private bool VerifyChecksum(byte[] frame)
-    {
-        if (frame.Length < 3) return false;
-        
-        // 计算除帧头帧尾外的所有字节相加
-        byte expectedChecksum = 0;
-        for (int i = 1; i < frame.Length - 1; i++)
-        {
-            expectedChecksum += frame[i];
-        }
-        
-        byte actualChecksum = frame[frame.Length - 2];
-        
-        return expectedChecksum == actualChecksum;
+        frame.Add(checksum);
+        frame.Add(FRAME_TAIL);
+
+        return frame.ToArray();
     }
     
     /// <summary>

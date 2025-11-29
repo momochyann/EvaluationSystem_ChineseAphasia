@@ -13,7 +13,7 @@ public class HotFixTemplateArchitecture : Architecture<HotFixTemplateArchitectur
         RegisterUtility<YooAssetPfbPoolUtility>(new YooAssetPfbPoolUtility());
         this.GetUtility<YooAssetPfbPoolUtility>().Init();
         RegisterUtility<SerialPortCenterUtility>(new SerialPortCenterUtility());
-        
+        RegisterUtility<I蓝牙数据同步工具>(new 蓝牙数据同步工具());
     
         RegisterUtility<ImagePickerUtility>(new ImagePickerUtility());
         // 注册截图和PDF工具类

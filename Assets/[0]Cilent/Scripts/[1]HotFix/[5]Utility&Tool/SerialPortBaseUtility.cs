@@ -56,12 +56,54 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     /// <summary>
     /// 串口波特率配置
     /// </summary>
-    protected virtual int BaudRate => 9600;
+    protected virtual int BaudRate => 115200;
 
     /// <summary>
     /// 连接超时时间（毫秒）
     /// </summary>
     protected virtual int ConnectionTimeoutMs => 2000;
+
+    /// <summary>
+    /// 获取保存端口序号的PlayerPrefs键名
+    /// </summary>
+    protected virtual string SavedPortSkipKey => $"SerialPort_{DeviceName}_LastPortSkip";
+
+    /// <summary>
+    /// 保存端口序号
+    /// </summary>
+    protected virtual void SavePortSkip(int portSkip)
+    {
+        PlayerPrefs.SetInt(SavedPortSkipKey, portSkip);
+        PlayerPrefs.Save();
+        Debug.Log($"[{DeviceName}] 已保存端口序号: {portSkip}");
+    }
+
+    /// <summary>
+    /// 加载保存的端口序号
+    /// </summary>
+    protected virtual int? LoadSavedPortSkip()
+    {
+        if (PlayerPrefs.HasKey(SavedPortSkipKey))
+        {
+            int savedPortSkip = PlayerPrefs.GetInt(SavedPortSkipKey);
+            Debug.Log($"[{DeviceName}] 加载保存的端口序号: {savedPortSkip}");
+            return savedPortSkip;
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// 清除保存的端口序号
+    /// </summary>
+    protected virtual void ClearSavedPortSkip()
+    {
+        if (PlayerPrefs.HasKey(SavedPortSkipKey))
+        {
+            PlayerPrefs.DeleteKey(SavedPortSkipKey);
+            PlayerPrefs.Save();
+            Debug.Log($"[{DeviceName}] 已清除保存的端口序号");
+        }
+    }
 
     /// <summary>
     /// 获取系统中所有COM端口信息
@@ -136,6 +178,30 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     {
         Debug.Log($"[{DeviceName}] 开始搜索设备...");
 
+        // 先尝试使用保存的端口序号
+        int? savedPortSkip = LoadSavedPortSkip();
+        if (savedPortSkip.HasValue)
+        {
+            string savedPortName = $"COM{savedPortSkip.Value}";
+            Debug.Log($"[{DeviceName}] 优先尝试保存的端口: {savedPortName} (Skip: {savedPortSkip.Value})");
+            
+            // 检查保存的端口是否在排除列表中
+            if (!savedPortName.Contains("COM12") && !savedPortName.Contains("COM27") && 
+                !savedPortName.Contains("COM11") && !savedPortName.Contains("COM17"))
+            {
+                // 保存的端口跳过握手，直接打开并验证加密狗
+                if (await TryConnectPort(savedPortName, savedPortSkip.Value, skipHandshake: true))
+                {
+                    OnDeviceFound?.Invoke($"在端口 {savedPortName} 发现{DeviceName}设备");
+                    return true;
+                }
+                else
+                {
+                    Debug.Log($"[{DeviceName}] 保存的端口连接失败，开始全量搜索...");
+                }
+            }
+        }
+
         // 获取系统中所有COM端口
         var comPorts = await GetComPortsWithSkip();
 
@@ -148,6 +214,12 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
         // 逐个尝试连接COM端口
         foreach (var (portName, portSkip) in comPorts)
         {
+            // 跳过已尝试的保存端口
+            if (savedPortSkip.HasValue && portSkip == savedPortSkip.Value)
+            {
+                continue;
+            }
+
             if (portName.Contains("COM12") || portName.Contains("COM27") || portName.Contains("COM11") || portName.Contains("COM17"))
             {
                 continue;
@@ -166,7 +238,10 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     /// <summary>
     /// 尝试连接指定COM端口
     /// </summary>
-    protected virtual async UniTask<bool> TryConnectPort(string portName, int portSkip)
+    /// <param name="portName">端口名称</param>
+    /// <param name="portSkip">端口序号</param>
+    /// <param name="skipHandshake">是否跳过握手，直接验证设备（用于保存的端口）</param>
+    protected virtual async UniTask<bool> TryConnectPort(string portName, int portSkip, bool skipHandshake = false)
     {
         try
         {
@@ -207,13 +282,26 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
 
             Debug.Log($"[{DeviceName}] 成功打开端口: {portName} (Skip: {portSkip})，正在检测设备...");
 
-            // 执行设备识别逻辑
-            bool deviceRecognized = await RecognizeDevice(portName, portSkip);
+            bool deviceRecognized = false;
+
+            if (skipHandshake)
+            {
+                // 跳过握手，直接验证设备（用于保存的端口）
+                Debug.Log($"[{DeviceName}] 跳过握手，直接验证设备...");
+                deviceRecognized = await VerifyDeviceDirectly(portName, portSkip);
+            }
+            else
+            {
+                // 执行设备识别逻辑（握手）
+                deviceRecognized = await RecognizeDevice(portName, portSkip);
+            }
 
             if (deviceRecognized)
             {
                 isConnected = true;
                 currentPortName = portName;
+                // 保存成功连接的端口序号
+                SavePortSkip(portSkip);
                 OnConnectionStatusChanged?.Invoke(true);
                 Debug.Log($"[{DeviceName}] 连接到设备，端口: {portName} (Skip: {portSkip})");
                 return true;
@@ -252,6 +340,19 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     protected abstract UniTask<bool> RecognizeDevice(string portName, int portSkip);
 
     /// <summary>
+    /// 直接验证设备（跳过握手，用于保存的端口）
+    /// 子类可以重写此方法来实现直接验证逻辑（如直接验证加密狗）
+    /// 默认实现返回false，子类应该重写
+    /// </summary>
+    protected virtual async UniTask<bool> VerifyDeviceDirectly(string portName, int portSkip)
+    {
+        // 默认实现：如果子类没有重写，返回false
+        await UniTask.Yield();
+        Debug.LogWarning($"[{DeviceName}] VerifyDeviceDirectly 未实现，子类应该重写此方法");
+        return false;
+    }
+
+    /// <summary>
     /// 串口数据接收处理（可重写）
     /// </summary>
     protected virtual void OnDataReceived(object data)
@@ -259,7 +360,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
         try
         {
             var bytes = (byte[])data;
-            Debug.Log($"[{DeviceName}] 收到数据: {BitConverter.ToString(bytes)}");
+            Debug.Log($"[{DeviceName}] [{DateTime.Now:HH:mm:ss.fff}] 收到数据: {BitConverter.ToString(bytes)}");
 
             // 子类可以重写此方法来处理具体的数据协议
             ProcessReceivedData(bytes);
@@ -407,5 +508,6 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
         currentPortName = "";
         OnConnectionStatusChanged?.Invoke(false);
         Debug.Log($"[{DeviceName}] 已断开连接");
+        // 注意：不断除保存的端口序号，以便下次优先尝试
     }
 }

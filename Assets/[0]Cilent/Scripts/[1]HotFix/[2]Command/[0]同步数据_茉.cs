@@ -29,12 +29,7 @@ public class 同数令_茉 : AbstractCommand
         string bleCharacteristicUUID = PlayerPrefs.GetString("BLECharacteristicUUID");
         string jsonData = JsonMapper.ToJson(数据);
         byte[] bytes = System.Text.Encoding.UTF8.GetBytes(jsonData);
-        sbyte[] sBytes = new sbyte[bytes.Length];
-        for(int i = 0; i < bytes.Length; i++)
-        {
-            sBytes[i] = (sbyte)bytes[i];
-        }
-        BleManager.SendData(bleAddress, bleServiceUUID, bleCharacteristicUUID, sBytes);
+        BleManager.SendData(bleAddress, bleServiceUUID, bleCharacteristicUUID, bytes);
 #endif
     
 
