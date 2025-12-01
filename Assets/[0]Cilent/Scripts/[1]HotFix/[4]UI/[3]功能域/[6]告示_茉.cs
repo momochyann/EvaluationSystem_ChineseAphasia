@@ -35,6 +35,44 @@ public class 告示_茉 : MonoBehaviour, IController
         bool 户择 = await 等待完成.Task;
         return 户择;
     }
+    
+    /// <summary>
+    /// 更新内容（用于动态显示进度）
+    /// </summary>
+    public void 更新内容(string 内容)
+    {
+        if (内容框 != null)
+        {
+            内容框.Text = 内容;
+        }
+    }
+    
+    /// <summary>
+    /// 显示进度信息（不等待确认，用于显示同步进度）
+    /// </summary>
+    public void 显示进度(string 标题, string 内容)
+    {
+        if (标题框 != null) 标题框.Text = 标题;
+        if (内容框 != null) 内容框.Text = 内容;
+        // 隐藏确认和取消按钮（如果存在）
+        if (确定 != null) 确定.gameObject.SetActive(false);
+        if (取消 != null) 取消.gameObject.SetActive(false);
+    }
+    
+    /// <summary>
+    /// 关闭告示（用于进度显示完成后）
+    /// </summary>
+    public void 关闭()
+    {
+        if (栏 != null)
+        {
+            栏.DOScale(0, 0.2f).OnComplete(() => Destroy(gameObject));
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     public void 退()
     {
 

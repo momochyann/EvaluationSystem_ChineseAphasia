@@ -12,7 +12,8 @@ public class HotFixTemplateArchitecture : Architecture<HotFixTemplateArchitectur
         RegisterUtility<按名索录之器>(new 按名索录之器());
         RegisterUtility<YooAssetPfbPoolUtility>(new YooAssetPfbPoolUtility());
         this.GetUtility<YooAssetPfbPoolUtility>().Init();
-        RegisterUtility<SerialPortCenterUtility>(new SerialPortCenterUtility());
+        RegisterUtility<SerialPortDongleUtility>(new SerialPortDongleUtility());
+        RegisterUtility<SerialPortBluetoothUtility>(new SerialPortBluetoothUtility());
         RegisterUtility<I蓝牙数据同步工具>(new 蓝牙数据同步工具());
     
         RegisterUtility<ImagePickerUtility>(new ImagePickerUtility());

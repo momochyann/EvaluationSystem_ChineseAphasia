@@ -169,7 +169,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     public void BindSreialPortUtility(SerialPortUtilityPro serialPortUtility)
     {
         serialPort = serialPortUtility;
-        Debug.Log("传入串口工具"+serialPortUtility.gameObject.name);
+        Debug.Log("传入串口工具" + serialPortUtility.gameObject.name);
     }
     /// <summary>
     /// 搜索并连接设备（可重写）
@@ -184,9 +184,9 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
         {
             string savedPortName = $"COM{savedPortSkip.Value}";
             Debug.Log($"[{DeviceName}] 优先尝试保存的端口: {savedPortName} (Skip: {savedPortSkip.Value})");
-            
+
             // 检查保存的端口是否在排除列表中
-            if (!savedPortName.Contains("COM12") && !savedPortName.Contains("COM27") && 
+            if (!savedPortName.Contains("COM12") && !savedPortName.Contains("COM27") &&
                 !savedPortName.Contains("COM11") && !savedPortName.Contains("COM17"))
             {
                 // 保存的端口跳过握手，直接打开并验证加密狗
@@ -197,7 +197,8 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
                 }
                 else
                 {
-                    Debug.Log($"[{DeviceName}] 保存的端口连接失败，开始全量搜索...");
+                    Debug.Log($"[{DeviceName}] 保存的端口连接失败，清除缓存后开始全量搜索...");
+                    ClearSavedPortSkip();
                 }
             }
         }
@@ -246,7 +247,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
         try
         {
             // 清理之前的连接
-          // CleanupSerialPort();
+            // CleanupSerialPort();
 
             // 创建专用的GameObject来管理串口
             // serialPortObject = new GameObject($"{DeviceName}Serial_{portName}");

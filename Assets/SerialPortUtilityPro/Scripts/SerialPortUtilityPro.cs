@@ -245,10 +245,6 @@ namespace SerialPortUtility
 		private GameObject DebugConsoleObject = null;
 		private bool IsErrFinished = false;
 		private bool IsOpenProcess = false;
-		[SerializeField]
-		[Tooltip("LineFeedDataTo(Binary/String)模式下未收到分隔符时，强制分包的时间间隔（毫秒）")]
-		private float LineFeedForceFlushIntervalMs = 50f;
-		private float lineFeedLastAppendTime = 0f;
 
 		//equal code : system fixed
 		private const string equalChar = "=";
@@ -319,7 +315,6 @@ namespace SerialPortUtility
 			IsOpenProcess = false;
 			SerialPortHandle = SPAPHANDLE_ERROR;
 			IsErrFinished = false;
-			lineFeedLastAppendTime = Time.realtimeSinceStartup;
 
 #if UNITY_ANDROID && !UNITY_EDITOR
 			// Plugin
@@ -619,7 +614,6 @@ namespace SerialPortUtility
 
 				//buffer
 				dataBuffer.AddRange(dataArray.Take(iRet));
-				lineFeedLastAppendTime = Time.realtimeSinceStartup;
 
 				//for debug Log
 				string stringData = System.Text.Encoding.UTF8.GetString(dataArray, 0, iRet);
@@ -719,10 +713,6 @@ namespace SerialPortUtility
 					UpdateOnStreaming(false);
 				if (ReadProtocol == SerialPortUtilityPro.MethodSystem.BinaryStreaming && EnableTrans)
 					UpdateOnStreaming(true);
-				if (EnableTrans && ReadProtocol == SerialPortUtilityPro.MethodSystem.LineFeedDataToBinary)
-					FlushLineFeedByTimeout(true);
-				if (EnableTrans && ReadProtocol == SerialPortUtilityPro.MethodSystem.LineFeedDataToString)
-					FlushLineFeedByTimeout(false);
 			}
 		}
 
@@ -1011,11 +1001,6 @@ namespace SerialPortUtility
 
 				idx = IndexOfSequence(dataBuffer, fcodeBytes);
 			}
-
-			if (BinaryMode)
-				FlushLineFeedByTimeout(true);
-			else
-				FlushLineFeedByTimeout(false);
 		}
 
 		private int IndexOfSequence(List<byte> buffer, byte[] sequence)
@@ -1034,36 +1019,6 @@ namespace SerialPortUtility
 				if (match) return i;
 			}
 			return -1;
-		}
-
-		private void FlushLineFeedByTimeout(bool binaryMode)
-		{
-			if (dataBuffer.Count == 0)
-				return;
-
-			float timeoutSeconds = Mathf.Max(0f, LineFeedForceFlushIntervalMs) * 0.001f;
-			if (timeoutSeconds <= 0f)
-				return;
-
-			if (Time.realtimeSinceStartup - lineFeedLastAppendTime < timeoutSeconds)
-				return;
-
-			if (binaryMode)
-			{
-				byte[] dataByte = dataBuffer.ToArray();
-				dataBuffer.Clear();
-				lineFeedLastAppendTime = Time.realtimeSinceStartup;
-				if (ReadCompleteEventObject != null)
-					ReadCompleteEventObject.Invoke((object)dataByte);
-			}
-			else
-			{
-				string dataStr = System.Text.Encoding.UTF8.GetString(dataBuffer.ToArray());
-				dataBuffer.Clear();
-				lineFeedLastAppendTime = Time.realtimeSinceStartup;
-				if (ReadCompleteEventObject != null)
-					ReadCompleteEventObject.Invoke((object)dataStr);
-			}
 		}
 
 		private void UpdateModbus(bool RtuMode)

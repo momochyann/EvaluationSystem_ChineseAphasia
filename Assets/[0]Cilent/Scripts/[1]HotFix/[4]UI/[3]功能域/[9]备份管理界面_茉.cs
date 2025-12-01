@@ -10,6 +10,7 @@ using NovaSamples.UIControls;
 using QFramework;
 using System.Linq;
 using LitJson;
+using System.IO;
 
 public class 备份管理界面_茉 : 界面基础_韩
 {
@@ -102,21 +103,287 @@ public class 备份管理界面_茉 : 界面基础_韩
     {
         var tip = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
         var tips = Instantiate(tip, this.transform);
-        await tips.GetComponent<告示_茉>().等待确认显示("提示", "执行备份操作");
+        var 确认 = await tips.GetComponent<告示_茉>().等待确认显示("提示", "确认备份数据？");
         Destroy(tips);
-        // Debug.Log("执行备份操作");
-        // TODO: 实现备份逻辑
+        
+        if (!确认)
+        {
+            return;
+        }
+
+        try
+        {
+            // 显示备份进度
+            var 进度告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
+            var 进度告示实例 = Instantiate(进度告示, this.transform);
+            var 告示组件 = 进度告示实例.GetComponent<告示_茉>();
+            告示组件.显示进度("备份中", "正在备份数据...");
+
+            // 获取三个录的数据
+            var 评人列表 = 评人录?.GetDataList() ?? new List<评人>();
+            var 用户列表 = 用户录?.GetDataList() ?? new List<用户>();
+            var 档案列表 = 档案录?.GetDataList() ?? new List<档案>();
+
+            int 总条数 = 评人列表.Count + 用户列表.Count + 档案列表.Count;
+            告示组件.更新内容($"正在备份...\n共 {总条数} 条");
+
+            // 构建备份数据结构
+            var 备份数据 = new Dictionary<string, object>
+            {
+                ["评人录"] = 评人列表,
+                ["用户录"] = 用户列表,
+                ["档案录"] = 档案列表,
+                ["备份时间"] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                ["版本"] = Application.version
+            };
+
+            // 序列化为JSON
+            string json数据 = JsonMapper.ToJson(备份数据);
+
+            告示组件.更新内容("正在保存备份文件...");
+
+            // 获取备份目录
+            string 备份目录 = 获取备份目录();
+            if (!Directory.Exists(备份目录))
+            {
+                Directory.CreateDirectory(备份目录);
+            }
+
+            // 生成备份文件名（包含时间戳）
+            string 文件名 = $"备份_{DateTime.Now:yyyyMMdd_HHmmss}.json";
+            string 文件路径 = Path.Combine(备份目录, 文件名);
+
+            // 保存文件
+            await File.WriteAllTextAsync(文件路径, json数据, Encoding.UTF8);
+
+            // 显示成功提示
+            告示组件.显示进度("备份成功", $"备份完成\n共 {总条数} 条");
+            
+            await UniTask.Delay(2000);
+            告示组件.关闭();
+            Destroy(进度告示实例);
+
+            Debug.Log($"[备份管理] 备份成功: {文件路径}");
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"[备份管理] 备份失败: {ex.Message}\n{ex.StackTrace}");
+            var 错误告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
+            var 错误告示实例 = Instantiate(错误告示, this.transform);
+            await 错误告示实例.GetComponent<告示_茉>().等待确认显示("备份失败", ex.Message);
+            Destroy(错误告示实例);
+        }
     }
 
     async void 执行还原()
     {
         var tip = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
         var tips = Instantiate(tip, this.transform);
-        await tips.GetComponent<告示_茉>().等待确认显示("确认一键还原吗", "一旦还原将不能恢复哦");
+        var 确认 = await tips.GetComponent<告示_茉>().等待确认显示("确认还原", "还原后将覆盖现有数据\n确认继续？");
         Destroy(tips);
 
-        // Debug.Log("执行还原操作");
-        // TODO: 实现还原逻辑
+        if (!确认)
+        {
+            return;
+        }
+
+        try
+        {
+            // 获取备份目录
+            string 备份目录 = 获取备份目录();
+            if (!Directory.Exists(备份目录))
+            {
+                await 显示提示信息("还原失败", "备份目录不存在");
+                return;
+            }
+
+            // 查找最新的备份文件
+            string[] 备份文件 = Directory.GetFiles(备份目录, "备份_*.json");
+            if (备份文件 == null || 备份文件.Length == 0)
+            {
+                await 显示提示信息("还原失败", "未找到备份文件");
+                return;
+            }
+
+            // 按修改时间排序，获取最新的备份文件
+            string 最新备份文件 = 备份文件.OrderByDescending(f => new FileInfo(f).LastWriteTime).FirstOrDefault();
+            if (string.IsNullOrEmpty(最新备份文件) || !File.Exists(最新备份文件))
+            {
+                await 显示提示信息("还原失败", "备份文件不存在或已损坏");
+                return;
+            }
+
+            // 显示还原进度
+            var 进度告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
+            var 进度告示实例 = Instantiate(进度告示, this.transform);
+            var 告示组件 = 进度告示实例.GetComponent<告示_茉>();
+            告示组件.显示进度("还原中", "正在还原...");
+
+            // 读取备份文件
+            告示组件.更新内容("正在读取备份文件...");
+            string json数据 = await File.ReadAllTextAsync(最新备份文件, Encoding.UTF8);
+
+            // 解析JSON数据
+            告示组件.更新内容("正在解析备份数据...");
+            JsonData 备份数据 = JsonMapper.ToObject(json数据);
+            if (备份数据 == null)
+            {
+                throw new Exception("备份文件格式错误，无法解析");
+            }
+
+            int 还原成功数量 = 0;
+            int 还原失败数量 = 0;
+
+            // 先清空现有数据
+            告示组件.更新内容("正在清空现有数据...");
+            评人录?.ClearItems();
+            用户录?.ClearItems();
+            档案录?.ClearItems();
+
+            // 还原评人录
+            if (备份数据.Keys.Contains("评人录") && 评人录 != null)
+            {
+                告示组件.更新内容("正在还原评人录...");
+                try
+                {
+                    var 评人数据 = 备份数据["评人录"];
+                    if (评人数据 != null && 评人数据.IsArray)
+                    {
+                        var 评人列表 = JsonMapper.ToObject<List<评人>>(评人数据.ToJson());
+                        if (评人列表 != null)
+                        {
+                            foreach (var 评人 in 评人列表)
+                            {
+                                if (评人 != null)
+                                {
+                                    评人录.AddItem(评人, false);
+                                    还原成功数量++;
+                                }
+                                else
+                                {
+                                    还原失败数量++;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError($"[备份管理] 还原评人录失败: {ex.Message}");
+                    还原失败数量++;
+                }
+            }
+
+            // 还原用户录
+            if (备份数据.Keys.Contains("用户录") && 用户录 != null)
+            {
+                告示组件.更新内容("正在还原用户录...");
+                try
+                {
+                    var 用户数据 = 备份数据["用户录"];
+                    if (用户数据 != null && 用户数据.IsArray)
+                    {
+                        var 用户列表 = JsonMapper.ToObject<List<用户>>(用户数据.ToJson());
+                        if (用户列表 != null)
+                        {
+                            foreach (var 用户 in 用户列表)
+                            {
+                                if (用户 != null)
+                                {
+                                    用户录.AddItem(用户, false);
+                                    还原成功数量++;
+                                }
+                                else
+                                {
+                                    还原失败数量++;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError($"[备份管理] 还原用户录失败: {ex.Message}");
+                    还原失败数量++;
+                }
+            }
+
+            // 还原档案录
+            if (备份数据.Keys.Contains("档案录") && 档案录 != null)
+            {
+                告示组件.更新内容("正在还原档案录...");
+                try
+                {
+                    var 档案数据 = 备份数据["档案录"];
+                    if (档案数据 != null && 档案数据.IsArray)
+                    {
+                        var 档案列表 = JsonMapper.ToObject<List<档案>>(档案数据.ToJson());
+                        if (档案列表 != null)
+                        {
+                            foreach (var 档案 in 档案列表)
+                            {
+                                if (档案 != null)
+                                {
+                                    档案录.AddItem(档案, false);
+                                    还原成功数量++;
+                                }
+                                else
+                                {
+                                    还原失败数量++;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError($"[备份管理] 还原档案录失败: {ex.Message}");
+                    还原失败数量++;
+                }
+            }
+
+            // 显示还原结果
+            string 结果消息 = 还原失败数量 > 0 
+                ? $"还原完成\n成功: {还原成功数量} 条\n失败: {还原失败数量} 条"
+                : $"还原完成\n成功: {还原成功数量} 条";
+            告示组件.显示进度("还原成功", 结果消息);
+            
+            await UniTask.Delay(2000);
+            告示组件.关闭();
+            Destroy(进度告示实例);
+
+            Debug.Log($"[备份管理] 还原成功: 成功 {还原成功数量} 条, 失败 {还原失败数量} 条");
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"[备份管理] 还原失败: {ex.Message}\n{ex.StackTrace}");
+            var 错误告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
+            var 错误告示实例 = Instantiate(错误告示, this.transform);
+            await 错误告示实例.GetComponent<告示_茉>().等待确认显示("还原失败", ex.Message);
+            Destroy(错误告示实例);
+        }
+    }
+
+    /// <summary>
+    /// 获取备份目录路径（跨平台）
+    /// </summary>
+    private string 获取备份目录()
+    {
+        string 备份目录;
+        
+#if UNITY_ANDROID && !UNITY_EDITOR
+        // 安卓端：使用persistentDataPath
+        备份目录 = Path.Combine(Application.persistentDataPath, "Backups");
+#elif UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
+        // 电脑端：使用persistentDataPath或文档目录
+        string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+        备份目录 = Path.Combine(documentsPath, Application.productName, "Backups");
+#else
+        // 其他平台：使用persistentDataPath
+        备份目录 = Path.Combine(Application.persistentDataPath, "Backups");
+#endif
+        
+        return 备份目录;
     }
 
     private void 显示备份选择界面()
@@ -719,8 +986,22 @@ public class 备份管理界面_茉 : 界面基础_韩
             return;
         }
 
+        // 显示同步进度告示
+        var 进度告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
+        var 进度告示实例 = Instantiate(进度告示, 界面管理器.transform);
+        var 告示组件 = 进度告示实例.GetComponent<告示_茉>();
+        
+        // 计算总预计时间
+        int 总预计秒数 = 计算批量同步预计时间(选中条目, 待同步列表);
+        string 预计时间文本 = 总预计秒数 > 0 ? $"预计耗时: {总预计秒数}秒" : "预计耗时: 计算中...";
+        
+        // 显示进度告示
+        告示组件.显示进度("批量同步中", $"正在同步 {选中条目.Count} 条数据...\n{预计时间文本}");
+        
         int 成功数量 = 0;
         int 失败数量 = 0;
+        int 当前进度 = 0;
+        var 开始时间 = DateTime.Now;
 
         // 遍历选中的条目
         foreach (var 条目对象 in 选中条目)
@@ -733,6 +1014,8 @@ public class 备份管理界面_茉 : 界面基础_韩
             {
                 Debug.LogWarning($"[备份蓝牙同步] 条目对象 {条目对象.name} 缺少 待同步数据条目显示_茉 组件");
                 失败数量++;
+                当前进度++;
+                更新批量同步进度(告示组件, 当前进度, 选中条目.Count, 总预计秒数, 开始时间);
                 continue;
             }
 
@@ -742,6 +1025,8 @@ public class 备份管理界面_茉 : 界面基础_韩
             {
                 Debug.LogWarning($"[备份蓝牙同步] 索引无效: {索引}");
                 失败数量++;
+                当前进度++;
+                更新批量同步进度(告示组件, 当前进度, 选中条目.Count, 总预计秒数, 开始时间);
                 continue;
             }
 
@@ -751,8 +1036,13 @@ public class 备份管理界面_茉 : 界面基础_韩
             {
                 Debug.LogWarning($"[备份蓝牙同步] 待同步数据为空，索引: {索引}");
                 失败数量++;
+                当前进度++;
+                更新批量同步进度(告示组件, 当前进度, 选中条目.Count, 总预计秒数, 开始时间);
                 continue;
             }
+
+            // 更新进度显示
+            更新批量同步进度(告示组件, 当前进度, 选中条目.Count, 总预计秒数, 开始时间, 待同步数据.姓名);
 
             // 使用工具类发送数据
             bool 发送成功 = await 同步工具.发送待同步数据(待同步数据);
@@ -767,15 +1057,116 @@ public class 备份管理界面_茉 : 界面基础_韩
                 Debug.LogWarning($"[备份蓝牙同步] 发送失败: {待同步数据.姓名} ({待同步数据.类型})");
             }
 
+            当前进度++;
+            更新批量同步进度(告示组件, 当前进度, 选中条目.Count, 总预计秒数, 开始时间);
+
             // 添加小延迟，避免发送过快
             await UniTask.Delay(50);
         }
 
-        // 显示同步结果
+        // 更新告示显示同步结果
         var 结果消息 = $"同步完成\n成功: {成功数量} 条\n失败: {失败数量} 条";
-        await 显示提示信息("同步结果", 结果消息);
+        告示组件.显示进度("同步成功", 结果消息);
+        
+        // 等待1秒后关闭告示
+        await UniTask.Delay(1000);
+        告示组件.关闭();
     }
 
+    /// <summary>
+    /// 计算批量同步预计时间（秒）
+    /// </summary>
+    private int 计算批量同步预计时间(System.Collections.Generic.IReadOnlyList<GameObject> 选中条目, List<待同步数据> 待同步列表)
+    {
+        try
+        {
+            int 总预计时间 = 0;
+            
+            foreach (var 条目对象 in 选中条目)
+            {
+                if (条目对象 == null) continue;
+                
+                var 条目显示 = 条目对象.GetComponent<待同步数据条目显示_茉>();
+                if (条目显示 == null) continue;
+                
+                int 索引 = 条目显示.索引下标;
+                if (索引 < 0 || 索引 >= 待同步列表.Count) continue;
+                
+                var 待同步数据 = 待同步列表[索引];
+                if (待同步数据 == null) continue;
+                
+                // 根据数据类型估算时间
+                int 基础时间 = 2; // 基础时间2秒
+                int 额外时间 = 0;
+                
+                switch (待同步数据.原数据录名称)
+                {
+                    case nameof(档案录):
+                        额外时间 = 5; // 档案数据较大，额外5秒
+                        break;
+                    case nameof(评人录):
+                    case nameof(管员录):
+                    case nameof(用户录):
+                        额外时间 = 2; // 其他数据较小，额外2秒
+                        break;
+                    default:
+                        额外时间 = 3;
+                        break;
+                }
+                
+                总预计时间 += 基础时间 + 额外时间;
+            }
+            
+            return 总预计时间;
+        }
+        catch
+        {
+            // 默认估算：每条数据5秒
+            return 选中条目.Count * 5;
+        }
+    }
+
+    /// <summary>
+    /// 更新批量同步进度显示
+    /// </summary>
+    private void 更新批量同步进度(告示_茉 告示组件, int 当前进度, int 总数量, int 总预计秒数, DateTime 开始时间, string 当前姓名 = null)
+    {
+        if (告示组件 == null) return;
+        
+        var 已过时间 = DateTime.Now - 开始时间;
+        int 已过秒数 = (int)已过时间.TotalSeconds;
+        
+        // 根据进度估算剩余时间
+        int 剩余秒数 = 0;
+        if (当前进度 > 0 && 总数量 > 0)
+        {
+            float 进度比例 = (float)当前进度 / 总数量;
+            int 预计总时间 = (int)(已过秒数 / 进度比例);
+            剩余秒数 = Math.Max(0, 预计总时间 - 已过秒数);
+        }
+        else if (总预计秒数 > 0)
+        {
+            剩余秒数 = Math.Max(0, 总预计秒数 - 已过秒数);
+        }
+        
+        string 进度文本 = $"正在同步 {当前进度}/{总数量} 条数据...\n";
+        
+        if (!string.IsNullOrEmpty(当前姓名))
+        {
+            进度文本 += $"当前: {当前姓名}\n";
+        }
+        
+        if (剩余秒数 > 0)
+        {
+            进度文本 += $"预计剩余: {剩余秒数}秒";
+        }
+        else
+        {
+            进度文本 += "即将完成...";
+        }
+        
+        告示组件.更新内容(进度文本);
+    }
 
     private string 获取首个非空(params string[] 文本集合)
     {

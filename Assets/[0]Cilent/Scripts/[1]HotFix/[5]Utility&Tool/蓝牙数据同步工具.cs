@@ -86,12 +86,13 @@ public class 蓝牙数据同步工具 : I蓝牙数据同步工具
     private const byte 数据帧标记_分包开始 = 0x11;
     private const byte 数据帧标记_分包中间 = 0x12;
     private const byte 数据帧标记_分包结束 = 0x13;
-    private const int 单帧最大载荷 = 90; // data区最多100字节，扣除5字节元信息后剩余90字节
-    private SerialPortCenterUtility _串口工具;
+    private const int 单帧最大载荷 = 100; // data区最多100字节，扣除5字节元信息后剩余90字节
+    private SerialPortBluetoothUtility _串口工具;
 
     // 接收缓存与分包缓存（用于统一解析）
     private readonly List<byte> 数据缓冲区 = new List<byte>();
     private readonly Dictionary<byte, 分包缓存> 分包状态缓存 = new Dictionary<byte, 分包缓存>();
+    private readonly object 缓冲区锁 = new object(); // 保护数据缓冲区的锁
 
     public async UniTask 处理接收到的蓝牙原始数据(byte[] 原始数据)
     {
@@ -101,67 +102,122 @@ public class 蓝牙数据同步工具 : I蓝牙数据同步工具
             return;
         }
         Debug.Log($"处理接收到的蓝牙原始数据: {BitConverter.ToString(原始数据)}");
-        数据缓冲区.AddRange(原始数据);
-
-        if (数据缓冲区.Count > 最大缓冲区大小)
+        
+        // 使用锁保护缓冲区操作
+        lock (缓冲区锁)
         {
-            Debug.LogWarning($"[蓝牙数据同步工具] 数据缓冲区过大: {数据缓冲区.Count}，清空缓冲区");
-            数据缓冲区.Clear();
-            return;
+            数据缓冲区.AddRange(原始数据);
+
+            if (数据缓冲区.Count > 最大缓冲区大小)
+            {
+                Debug.LogWarning($"[蓝牙数据同步工具] 数据缓冲区过大: {数据缓冲区.Count}，清空缓冲区");
+                数据缓冲区.Clear();
+                return;
+            }
         }
 
-        while (数据缓冲区.Count > 0)
+        // 处理缓冲区中的数据帧
+        while (true)
         {
-            int 起始位置 = 数据缓冲区.FindIndex(b => b == FRAME_HEADER);
-            if (起始位置 < 0)
+            byte[] 完整数据帧 = null;
+            int 完整帧长度 = 0;
+            
+            // 在锁内查找和提取完整数据帧
+            lock (缓冲区锁)
             {
-                Debug.LogWarning("[蓝牙数据同步工具] 未找到数据帧起始符，清空缓冲区");
-                数据缓冲区.Clear();
-                break;
-            }
-
-            if (起始位置 > 0)
-            {
-                数据缓冲区.RemoveRange(0, 起始位置);
-            }
-
-            if (数据缓冲区.Count < 3)
-            {
-                break;
-            }
-
-            byte 数据长度 = 数据缓冲区[2];
-            int 完整帧长度 = 3 + 数据长度 + 2;
-
-            if (数据缓冲区.Count < 完整帧长度)
-            {
-                Debug.Log($"[蓝牙数据同步工具] 数据不完整，当前: {数据缓冲区.Count}，需要: {完整帧长度}，等待更多数据");
-                break;
-            }
-
-            byte[] 完整数据帧 = 数据缓冲区.Take(完整帧长度).ToArray();
-
-            if (验证数据帧(完整数据帧))
-            {
-                byte 功能码 = 完整数据帧[1];
-                if (功能码 != BLUETOOTH_FUNC_CODE)
+                if (数据缓冲区.Count == 0)
                 {
-                    Debug.LogWarning($"[蓝牙数据同步工具] 未知功能码: 0x{功能码:X2}");
-                    数据缓冲区.RemoveAt(0);
-                    continue;
+                    break; // 缓冲区为空，退出循环
                 }
 
-                byte 数据区长度 = 完整数据帧[2];
-                var data区 = new byte[数据区长度];
-                Array.Copy(完整数据帧, 3, data区, 0, 数据区长度);
+                int 起始位置 = 数据缓冲区.FindIndex(b => b == FRAME_HEADER);
+                if (起始位置 < 0)
+                {
+                    Debug.LogWarning("[蓝牙数据同步工具] 未找到数据帧起始符，清空缓冲区");
+                    数据缓冲区.Clear();
+                    break;
+                }
 
-                await 处理接收到的Data区(data区);
-                数据缓冲区.RemoveRange(0, 完整帧长度);
+                // 移除起始位置之前的数据
+                if (起始位置 > 0)
+                {
+                    if (起始位置 >= 数据缓冲区.Count)
+                    {
+                        Debug.LogError($"[蓝牙数据同步工具] 起始位置越界: {起始位置} >= {数据缓冲区.Count}");
+                        数据缓冲区.Clear();
+                        break;
+                    }
+                    数据缓冲区.RemoveRange(0, 起始位置);
+                }
+
+                // 检查是否有足够的数据读取长度字段
+                if (数据缓冲区.Count < 3)
+                {
+                    break; // 数据不完整，等待更多数据
+                }
+
+                byte 数据长度 = 数据缓冲区[2];
+                完整帧长度 = 3 + 数据长度 + 2;
+
+                // 检查是否有完整的帧
+                if (数据缓冲区.Count < 完整帧长度)
+                {
+                    Debug.Log($"[蓝牙数据同步工具] 数据不完整，当前: {数据缓冲区.Count}，需要: {完整帧长度}，等待更多数据");
+                    break; // 数据不完整，等待更多数据
+                }
+
+                // 提取完整数据帧
+                完整数据帧 = 数据缓冲区.Take(完整帧长度).ToArray();
+
+                if (验证数据帧(完整数据帧))
+                {
+                    byte 功能码 = 完整数据帧[1];
+                    if (功能码 != BLUETOOTH_FUNC_CODE)
+                    {
+                        Debug.LogWarning($"[蓝牙数据同步工具] 未知功能码: 0x{功能码:X2}");
+                        // 移除起始符，继续查找下一个帧
+                        if (数据缓冲区.Count > 0)
+                        {
+                            数据缓冲区.RemoveAt(0);
+                        }
+                        continue; // 继续处理下一个帧
+                    }
+
+                    // 验证通过，移除已处理的数据帧
+                    if (完整帧长度 > 数据缓冲区.Count)
+                    {
+                        Debug.LogError($"[蓝牙数据同步工具] 完整帧长度越界: {完整帧长度} > {数据缓冲区.Count}");
+                        数据缓冲区.Clear();
+                        break;
+                    }
+                    数据缓冲区.RemoveRange(0, 完整帧长度);
+                }
+                else
+                {
+                    Debug.LogWarning("[蓝牙数据同步工具] 数据帧验证失败，移除起始符继续查找");
+                    // 移除起始符，继续查找下一个帧
+                    if (数据缓冲区.Count > 0)
+                    {
+                        数据缓冲区.RemoveAt(0);
+                    }
+                    continue; // 继续处理下一个帧
+                }
             }
-            else
+
+            // 在锁外处理数据帧（避免长时间持有锁）
+            if (完整数据帧 != null && 完整数据帧.Length > 0)
             {
-                Debug.LogWarning("[蓝牙数据同步工具] 数据帧验证失败，移除起始符继续查找");
-                数据缓冲区.RemoveAt(0);
+                byte 数据区长度 = 完整数据帧[2];
+                if (完整数据帧.Length >= 3 + 数据区长度)
+                {
+                    var data区 = new byte[数据区长度];
+                    Array.Copy(完整数据帧, 3, data区, 0, 数据区长度);
+                    await 处理接收到的Data区(data区);
+                }
+                else
+                {
+                    Debug.LogError($"[蓝牙数据同步工具] 数据帧长度不足，无法提取data区");
+                }
             }
         }
     }
@@ -422,7 +478,7 @@ public class 蓝牙数据同步工具 : I蓝牙数据同步工具
 #if UNITY_EDITOR || UNITY_STANDALONE
         if (_串口工具 == null)
         {
-            _串口工具 = HotFixTemplateArchitecture.Interface?.GetUtility<SerialPortCenterUtility>();
+            _串口工具 = HotFixTemplateArchitecture.Interface?.GetUtility<SerialPortBluetoothUtility>();
             if (_串口工具 == null)
             {
                 Debug.LogError("[蓝牙数据同步工具] 无法获取蓝牙工具");

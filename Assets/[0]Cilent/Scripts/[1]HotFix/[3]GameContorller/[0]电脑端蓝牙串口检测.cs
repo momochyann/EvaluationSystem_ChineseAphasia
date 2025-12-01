@@ -4,6 +4,10 @@ using Cysharp.Threading.Tasks;
 using System;
 using SerialPortUtility;
 
+/// <summary>
+/// 电脑端蓝牙串口检测
+/// 负责蓝牙透传的连接和数据接收转发
+/// </summary>
 public class 电脑端蓝牙串口检测 : MonoBehaviour, IController
 {
     private I蓝牙数据同步工具 _同步工具;
@@ -11,48 +15,48 @@ public class 电脑端蓝牙串口检测 : MonoBehaviour, IController
     // Start is called before the first frame update
     void Start()
     {
-        启动连接加密狗().Forget();
+        启动连接蓝牙().Forget();
     }
 
-    async UniTask 启动连接加密狗()
+    public async UniTask 启动连接蓝牙()
     {
         await UniTask.Delay(100);
-        var centerUtility = this.GetUtility<SerialPortCenterUtility>();
+        var bluetoothUtility = this.GetUtility<SerialPortBluetoothUtility>();
         
-        // 注册事件
-        centerUtility.OnConnectionStatusChanged += (connected) =>
+        // 注册蓝牙事件
+        bluetoothUtility.OnConnectionStatusChanged += (connected) =>
         {
-            Debug.Log($"连接状态: {connected}");
+            Debug.Log($"蓝牙连接状态: {connected}");
         };
 
-        centerUtility.OnEncryptionStatusChanged += (encrypted) =>
-        {
-            Debug.Log($"加密状态: {encrypted}");
-        };
-
-        centerUtility.OnBluetoothDataReceived += (data) =>
+        bluetoothUtility.OnBluetoothDataReceived += (data) =>
         {
             Debug.Log($"[电脑端蓝牙串口检测] 收到蓝牙数据: {BitConverter.ToString(data)}");
             转发蓝牙数据(data).Forget();
         };
 
         var serialPortUtility = this.GetComponent<SerialPortUtilityPro>();
-        Debug.Log("传入串口工具" + serialPortUtility.gameObject.name);
-        centerUtility.BindSreialPortUtility(serialPortUtility);
+        if (serialPortUtility == null)
+        {
+            Debug.LogError("[电脑端蓝牙串口检测] 未找到 SerialPortUtilityPro 组件");
+            return;
+        }
+        
+        Debug.Log("传入串口工具到蓝牙工具: " + serialPortUtility.gameObject.name);
+        
+        // 绑定串口工具到蓝牙工具类
+        bluetoothUtility.BindSreialPortUtility(serialPortUtility);
         await UniTask.Delay(100);
         
-        // 搜索并连接设备
-        bool connected = await centerUtility.SearchAndConnectAsync();
-
-        if (connected)
+        // 连接蓝牙透传设备
+        bool bluetoothConnected = await bluetoothUtility.SearchAndConnectAsync();
+        if (bluetoothConnected)
         {
-            // 请求解锁
-            bool unlocked = await centerUtility.RequestUnlockAsync();
-
-            if (unlocked)
-            {
-                Debug.Log("[电脑端蓝牙串口检测] 加密狗解锁成功，等待接收数据");
-            }
+            Debug.Log("[电脑端蓝牙串口检测] 蓝牙透传连接成功，等待接收数据");
+        }
+        else
+        {
+            Debug.LogWarning("[电脑端蓝牙串口检测] 蓝牙透传连接失败");
         }
     }
 
