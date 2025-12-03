@@ -50,10 +50,11 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
     [SerializeField] public Color inputSetColor;
 
     I记贞 旧记;
-    
+
     // 存储选项组性和选项组性多选
     private List<选项组性_茉> 选项组性列表 = new List<选项组性_茉>();
     private List<选项组性多选_茉> 选项组性多选列表 = new List<选项组性多选_茉>();
+    private UniTaskCompletionSource 背景信息初始化完成Tcs = new UniTaskCompletionSource();
 
     private void Awake()
     {
@@ -64,6 +65,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         编号.Text = 编号管理界面_茉.生成用户编号(); // 使用静态方法生成编号，无需实例化组件
         编号管理界面_茉.每日档案注册计数 = PlayerPrefs.GetInt("每日档案注册计数");
         Debug.Log("[ [5] 用户管理添加安卓_茉]" + 编号管理界面_茉.每日档案注册计数);
+
         // 初始化显示个人信息界面
         显示个人信息界面();
     }
@@ -87,18 +89,18 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
             验证并显示背景信息界面().Forget();
         });
         this.上一步?.OnClicked.AddListener(显示个人信息界面);
-        
+
         // 个人信息文本框
         输入文本框点击(姓名);
         输入文本框点击(身份证);
         输入文本框点击(民族);
-        
+
         // 家庭信息文本框
         输入文本框点击(监护人);
         输入文本框点击(关系);
         输入文本框点击(联系方式);
         输入文本框点击(居住地址);
-        
+
         // 背景信息文本框
         if (文化程度 != null) 输入文本框点击(文化程度);
         if (血压 != null) 输入文本框点击(血压);
@@ -106,10 +108,10 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         if (发病前后语言状态 != null) 输入文本框点击(发病前后语言状态);
         if (发病时状况 != null) 输入文本框点击(发病时状况);
         if (既往病史 != null) 输入文本框点击(既往病史);
-        
+
         // 下拉框
         性别等下拉选择框点击(性别);
-        
+
         // 日期选择按钮
         出生日期选择按钮?.OnClicked.AddListener(() =>
         {
@@ -119,9 +121,9 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         {
             选择发病日期().Forget();
         });
-        
-        // 初始化选项组性和选项组性多选
-        初始化背景信息选项组();
+
+        // 初始化选项组性和选项组性多选（延迟一帧，等待所有子物体加载完成）
+        延迟初始化背景信息选项组().Forget();
     }
     private void 返回上个界面()
     {
@@ -147,7 +149,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
             出生日期文本.Text = $"{年}-{月}-{日}";
         };
     }
-    
+
     async UniTaskVoid 选择发病日期()
     {
         var 择日器气 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("择日器");
@@ -158,7 +160,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
             发病日期文本.Text = $"{年}-{月}-{日}";
         };
     }
-    
+
     /// <summary>
     /// 初始化背景信息的选项组性和选项组性多选
     /// </summary>
@@ -167,13 +169,27 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         // 获取所有子物体中的选项组性和选项组性多选组件
         选项组性列表.Clear();
         选项组性多选列表.Clear();
-        
-        选项组性列表.AddRange(GetComponentsInChildren<选项组性_茉>(true));
-        选项组性多选列表.AddRange(GetComponentsInChildren<选项组性多选_茉>(true));
-        
+
+        选项组性列表.AddRange(背景信息界面.GetComponentsInChildren<选项组性_茉>(true));
+        选项组性多选列表.AddRange(背景信息界面.GetComponentsInChildren<选项组性多选_茉>(true));
+
         Debug.Log($"[用户管理添加] 找到 {选项组性列表.Count} 个选项组性，{选项组性多选列表.Count} 个选项组性多选");
     }
-    
+
+    /// <summary>
+    /// 延迟等待一帧后再初始化背景信息（使用 UniTask，避免丢掉后续显示命令）
+    /// </summary>
+    private async UniTaskVoid 延迟初始化背景信息选项组()
+    {
+        // 等待一帧，确保其他组件的 Awake/OnEnable/Start 里创建的子物体已经就绪
+        await UniTask.Yield();
+
+        初始化背景信息选项组();
+
+        // 通知所有等待者：背景信息已经初始化完成
+        背景信息初始化完成Tcs.TrySetResult();
+    }
+
     /// <summary>
     /// 验证并显示背景信息界面
     /// </summary>
@@ -185,11 +201,11 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
             await 显示提示("提示", "请先填写姓名");
             return;
         }
-        
+
         // 验证通过，显示背景信息界面
         显示背景信息界面();
     }
-    
+
     /// <summary>
     /// 显示个人信息界面
     /// </summary>
@@ -205,7 +221,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
             背景信息界面.SetActive(false);
         }
     }
-    
+
     /// <summary>
     /// 显示背景信息界面
     /// </summary>
@@ -278,7 +294,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
     {
         验证并添加账号().Forget();
     }
-    
+
     async UniTaskVoid 验证并添加账号()
     {
         // 验证选项组性是否都已选择
@@ -293,13 +309,13 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
                 }
             }
         }
-        
+
         if (未填写的选项组.Count > 0)
         {
             string 提示内容 = "背景资料不完整，是否确认保存";
             var 确认 = await 显示确认("提示", 提示内容);
             if (!确认)
-            return;
+                return;
         }
 
         添加信息();
@@ -321,7 +337,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
     /// <summary>
     /// 显示确认
     /// </summary>
-     private async UniTask<bool> 显示确认(string 标题, string 内容)
+    private async UniTask<bool> 显示确认(string 标题, string 内容)
     {
         var 告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
         var 告示实例 = Instantiate(告示, FindObjectOfType<界面管理器_韩>().transform);
@@ -339,24 +355,24 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
     void 添加信息()
     {
         用户 新用户 = new 用户();
-        
+
         // 个人信息
         新用户.编号 = 编号.Text;
         编号管理界面_茉.每日档案注册计数++;
-        PlayerPrefs.SetInt("每日档案注册计数",编号管理界面_茉.每日档案注册计数);
+        PlayerPrefs.SetInt("每日档案注册计数", 编号管理界面_茉.每日档案注册计数);
         Debug.Log("[ [5] 用户管理添加安卓_茉]" + 编号管理界面_茉.每日档案注册计数);
         新用户.名 = 姓名.Text;
         新用户.性别 = 性别.DropdownOptions.Options[性别.DropdownOptions.SelectedIndex];
         新用户.身份证 = 身份证.Text;
         新用户.诞辰 = 出生日期文本.Text;
         新用户.民族 = 民族.Text;
-        
+
         // 家庭信息
         新用户.监护人 = 监护人.Text;
         新用户.关系 = 关系.Text;
         新用户.联系方式 = 联系方式.Text;
         新用户.居住地址 = 居住地址.Text;
-        
+
         // 背景信息 - TextField 直接输入的字段
         新用户.发病日期 = 发病日期文本 != null ? 发病日期文本.Text : "";
         新用户.文化程度 = 文化程度 != null ? 文化程度.Text : "";
@@ -368,7 +384,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         新用户.神志状态 = 神志状态 != null ? 神志状态.Text : "";
         // 背景信息 - 从子物体中的选项组性获取
         新用户.背景信息选项组选择.Clear();
-        
+
         // 保存所有选项组性的选择（格式："内容|索引"）
         foreach (var 选项组 in 选项组性列表)
         {
@@ -380,13 +396,13 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
                     新用户.神志状态 = 选项组.当前选中名称;
             }
         }
-        
+
         // 保存所有选项组性多选的选择（格式："内容1,内容2|索引1,索引2"）
         foreach (var 选项组 in 选项组性多选列表)
         {
             if (选项组 != null && !string.IsNullOrEmpty(选项组.选项组名称) && 选项组.选中数量 > 0)
             {
-                新用户.背景信息选项组选择[选项组.选项组名称] = 
+                新用户.背景信息选项组选择[选项组.选项组名称] =
                     $"{string.Join(",", 选项组.当前选中名称列表)}|{string.Join(",", 选项组.当前选中索引列表)}";
             }
         }
@@ -411,13 +427,13 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         身份证.Text = "";
         出生日期文本.Text = "";
         民族.Text = "";
-        
+
         // 家庭信息
         居住地址.Text = "";
         监护人.Text = "";
         关系.Text = "";
         联系方式.Text = "";
-        
+
         // 背景信息
         if (发病日期文本 != null) 发病日期文本.Text = "";
         if (文化程度 != null) 文化程度.Text = "";
@@ -426,7 +442,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         if (发病前后语言状态 != null) 发病前后语言状态.Text = "";
         if (发病时状况 != null) 发病时状况.Text = "";
         if (既往病史 != null) 既往病史.Text = "";
-        
+
         // 清空所有选项组性和选项组性多选的选择
         foreach (var 选项组 in 选项组性列表)
         {
@@ -439,9 +455,18 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
     }
     void 显示信息详情(I记贞 记)
     {
+        // 用 UniTask 异步等待背景信息初始化完成，再真正填充界面数据，避免丢掉显示命令
+        显示信息详情Async(记).Forget();
+    }
+
+    private async UniTaskVoid 显示信息详情Async(I记贞 记)
+    {
+        // 如果背景信息还没初始化，这里会等待；一旦初始化完成，所有排队的显示命令都会继续执行
+        await 背景信息初始化完成Tcs.Task;
+
         Debug.Log("[ [3] 用户管理添加_韩]显示信息详情");
         用户 用户 = 记 as 用户;
-        
+
         // 个人信息
         编号.Text = 用户.编号;
         姓名.Text = 用户.名;
@@ -449,7 +474,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         身份证.Text = 用户.身份证;
         出生日期文本.Text = 用户.诞辰;
         民族.Text = 用户.民族;
-        
+
         // 家庭信息
         居住地址.Text = 用户.居住地址;
         监护人.Text = 用户.监护人;
@@ -464,14 +489,14 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         if (发病前后语言状态 != null) 发病前后语言状态.Text = 用户.发病前后语言状态 ?? "";
         if (发病时状况 != null) 发病时状况.Text = 用户.发病时状况 ?? "";
         if (既往病史 != null) 既往病史.Text = 用户.既往病史 ?? "";
-        
+
         // 背景信息 - 还原子物体中选项组性的选择
         if (用户.背景信息选项组选择 != null && 用户.背景信息选项组选择.Count > 0)
         {
             // 还原单选选项组
             foreach (var 选项组 in 选项组性列表)
             {
-                if (选项组 != null && !string.IsNullOrEmpty(选项组.选项组名称) && 
+                if (选项组 != null && !string.IsNullOrEmpty(选项组.选项组名称) &&
                     用户.背景信息选项组选择.ContainsKey(选项组.选项组名称))
                 {
                     var 数据 = 用户.背景信息选项组选择[选项组.选项组名称].Split('|');
@@ -479,11 +504,11 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
                         选项组.设置选中选项(索引);
                 }
             }
-            
+
             // 还原多选选项组
             foreach (var 选项组 in 选项组性多选列表)
             {
-                if (选项组 != null && !string.IsNullOrEmpty(选项组.选项组名称) && 
+                if (选项组 != null && !string.IsNullOrEmpty(选项组.选项组名称) &&
                     用户.背景信息选项组选择.ContainsKey(选项组.选项组名称))
                 {
                     var 数据 = 用户.背景信息选项组选择[选项组.选项组名称].Split('|');
@@ -500,7 +525,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
                 }
             }
         }
-        
+
         旧记 = 记;
     }
 
@@ -515,7 +540,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
     void OnDestroy()
     {
         Debug.Log("[3]用户管理添加安卓_茉 OnDestroy - 清理键盘状态");
-        
+
         // 强制关闭TouchScreenKeyboard
 #if UNITY_ANDROID && !UNITY_EDITOR
         if (TouchScreenKeyboard.visible)
@@ -523,7 +548,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
             TouchScreenKeyboard.hideInput = true;
         }
 #endif
-        
+
         // 清理按钮事件
         this.取消?.OnClicked.RemoveAllListeners();
         this.确定?.OnClicked.RemoveAllListeners();

@@ -18,20 +18,20 @@ public class GameStartAfterLoad : MonoBehaviour
         //    await WaitLoadAnimation(this.GetCancellationTokenOnDestroy());
         Debug.Log("加载数据完成222");
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN
-        var 电脑加密狗串口生气 = await LoadYooAssetsTool.LoadAsset<GameObject>("加密狗工具");
-        var 电脑加密狗串口成气 = Instantiate(电脑加密狗串口生气, FindObjectOfType<Canvas>().transform);
-        var _电脑加密狗串口 = 电脑加密狗串口成气.GetComponent<电脑端加密狗串口检测>();
-        bool isLocked = await _电脑加密狗串口.启动连接加密狗();
-        _电脑加密狗串口.DisLockUI(isLocked);
+        // var 电脑加密狗串口生气 = await LoadYooAssetsTool.LoadAsset<GameObject>("加密狗工具");
+        // var 电脑加密狗串口成气 = Instantiate(电脑加密狗串口生气, FindObjectOfType<Canvas>().transform);
+        // var _电脑加密狗串口 = 电脑加密狗串口成气.GetComponent<电脑端加密狗串口检测>();
+        // bool isLocked = await _电脑加密狗串口.启动连接加密狗();
+        // _电脑加密狗串口.DisLockUI(isLocked);
 
-        if (isLocked)
-        {
-            var 电脑蓝牙串口生气 = await LoadYooAssetsTool.LoadAsset<GameObject>("电脑蓝牙串口");
-            var 电脑蓝牙串口成气 = Instantiate(电脑蓝牙串口生气, FindObjectOfType<Canvas>().transform);
-            var _电脑蓝牙串口 = 电脑蓝牙串口成气.GetComponent<电脑端蓝牙串口检测>();
-            await _电脑蓝牙串口.启动连接蓝牙();
-            LoadYooAssetsTool.LoadSceneAsync("登录界面场景").Forget();
-        }
+        // if (isLocked)
+        // {
+        var 电脑蓝牙串口生气 = await LoadYooAssetsTool.LoadAsset<GameObject>("电脑蓝牙串口");
+        var 电脑蓝牙串口成气 = Instantiate(电脑蓝牙串口生气, FindObjectOfType<Canvas>().transform);
+        var _电脑蓝牙串口 = 电脑蓝牙串口成气.GetComponent<电脑端蓝牙串口检测>();
+        await _电脑蓝牙串口.启动连接蓝牙();
+        LoadYooAssetsTool.LoadSceneAsync("登录界面场景").Forget();
+        // }
 
         //await UniTask.Delay(3000);
 #elif UNITY_ANDROID || UNITY_IOS
@@ -45,7 +45,10 @@ public class GameStartAfterLoad : MonoBehaviour
         //   LoadYooAssetsTool.LoadSceneAsync("登录界面场景").Forget();
 
     }
-
+    async UniTaskVoid 加载蓝牙串口()
+    {
+       
+    }
     async UniTask WaitLoadAnimation(CancellationToken cancellationToken)
     {
         var progress = FindObjectOfType<HotFixAssetsProgress>();

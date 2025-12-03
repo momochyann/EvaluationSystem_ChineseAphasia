@@ -18,12 +18,12 @@ public static class BleManager
 	public static UnityAction<string, string> onConnectSuccessAction;
 	public static UnityAction<string, string> onNotificationSuccessAction;
 
-#if UNITY_ANDROID || UNITY_IOS
+// #if UNITY_ANDROID || UNITY_IOS || UNITY_EDITOR
 	private static bool s_MtuRequestPending;
 	private static bool s_MtuNegotiated;
 	private static int s_CurrentMtu = DefaultMtu;
 	private static string s_MtuAddress;
-#endif
+// #endif
 	/// <summary>
 	/// 初始化蓝牙设备
 	/// </summary>
@@ -127,12 +127,12 @@ public static class BleManager
 			isScanning = false;
 		});
 
-#if UNITY_ANDROID || UNITY_IOS
+// #if UNITY_ANDROID || UNITY_IOS
 		s_MtuNegotiated = false;
 		s_MtuRequestPending = false;
 		s_MtuAddress = null;
 		s_CurrentMtu = DefaultMtu;
-#endif
+// #endif
 	}
 
 	static void Show(string info)
@@ -140,7 +140,7 @@ public static class BleManager
 		Debug.Log(info);
 	}
 
-#if UNITY_ANDROID || UNITY_IOS
+// #if UNITY_ANDROID || UNITY_IOS
 	public static void EnsureMtu(string address)
 	{
 		if (s_MtuNegotiated || s_MtuRequestPending)
@@ -173,5 +173,5 @@ public static class BleManager
 			}
 		});
 	}
-#endif
+// #endif
 }

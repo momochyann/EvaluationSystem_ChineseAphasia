@@ -24,6 +24,7 @@ public class 选项组性_茉 : MonoBehaviour, IController
     //[SerializeField] public  TextBlock
     // 选项组列表；
     List<Toggle> 选项组;
+    private bool 已初始化 = false;
 
     // 用于控制透明度的 Tweener，避免重复动画
     private Tweener 当前动画;
@@ -54,7 +55,17 @@ public class 选项组性_茉 : MonoBehaviour, IController
 
     void Start()
     {
-        选项组 = GetComponentsInChildren<Toggle>().ToList();
+        初始化选项组();
+    }
+
+    /// <summary>
+    /// 确保选项组相关引用已经初始化（即使对象尚未激活 Start 也能调用）
+    /// </summary>
+    private void 初始化选项组()
+    {
+        if (已初始化) return;
+
+        选项组 = GetComponentsInChildren<Toggle>(true).ToList();
 
         // 为每个选项添加事件监听
         foreach (var 选项 in 选项组)
@@ -82,6 +93,8 @@ public class 选项组性_茉 : MonoBehaviour, IController
         {
             设置背景透明度(未选中透明度, 0);
         }
+
+        已初始化 = true;
     }
 
     /// <summary>
@@ -140,6 +153,8 @@ public class 选项组性_茉 : MonoBehaviour, IController
     /// <param name="索引">要选中的选项索引</param>
     public void 设置选中选项(int 索引)
     {
+        初始化选项组();
+
         if (索引 >= 0 && 索引 < 选项组.Count)
         {
             选项组[索引].ToggledOn = true;
@@ -152,6 +167,8 @@ public class 选项组性_茉 : MonoBehaviour, IController
     /// <param name="选项名称">要选中的选项名称</param>
     public void 设置选中选项(string 选项名称)
     {
+        初始化选项组();
+
         var 目标选项 = 选项组.FirstOrDefault(x => x.name == 选项名称);
         if (目标选项 != null)
         {
@@ -164,6 +181,8 @@ public class 选项组性_茉 : MonoBehaviour, IController
     /// </summary>
     public void 清除所有选择()
     {
+        初始化选项组();
+
         if (选项组 == null) return;
         foreach (var 选项 in 选项组)
         {

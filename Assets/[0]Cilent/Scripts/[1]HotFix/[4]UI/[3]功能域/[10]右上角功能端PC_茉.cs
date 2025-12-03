@@ -91,7 +91,7 @@ public class 右上角功能端PC_茉 : MonoBehaviour, IController
                 
                 // 切换到窗口化，设置一个合适的窗口大小
                 int uwWindowWidth = 1280;
-                int uwWindowHeight = 720;
+                int uwWindowHeight = 800;
                 Screen.SetResolution(uwWindowWidth, uwWindowHeight, FullScreenMode.Windowed);
                 Debug.Log($"[右上角功能端] 切换到窗口模式: {uwWindowWidth}x{uwWindowHeight}");
             }

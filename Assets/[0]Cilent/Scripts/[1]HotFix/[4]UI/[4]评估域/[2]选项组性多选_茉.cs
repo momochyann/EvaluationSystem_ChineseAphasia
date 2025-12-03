@@ -10,6 +10,7 @@ public class 选项组性多选_茉 : MonoBehaviour
     [SerializeField] public string 选项组名称;
     // 选项组列表
     List<Toggle> 选项组;
+    private bool 已初始化 = false;
     
     // 当前选中的选项列表（公开属性）
     [HideInInspector] public List<Toggle> 当前选中选项列表 = new List<Toggle>();
@@ -50,13 +51,25 @@ public class 选项组性多选_茉 : MonoBehaviour
     
     void Start()
     {
-        选项组 = GetComponentsInChildren<Toggle>().ToList();
-        
+        初始化选项组();
+    }
+
+    /// <summary>
+    /// 确保选项组已经初始化（即使组件尚未激活也可调用）
+    /// </summary>
+    private void 初始化选项组()
+    {
+        if (已初始化) return;
+
+        选项组 = GetComponentsInChildren<Toggle>(true).ToList();
+
         // 为每个选项添加事件监听
         foreach (var 选项 in 选项组)
         {
             选项.OnToggled.AddListener((value) => 处理选项切换(选项, value));
         }
+
+        已初始化 = true;
     }
     
     /// <summary>
@@ -99,6 +112,8 @@ public class 选项组性多选_茉 : MonoBehaviour
     /// <param name="是否选中">true为选中，false为取消选中</param>
     public void 设置选中选项(int 索引, bool 是否选中 = true)
     {
+        初始化选项组();
+
         if (索引 >= 0 && 索引 < 选项组.Count)
         {
             选项组[索引].ToggledOn = 是否选中;
@@ -112,6 +127,8 @@ public class 选项组性多选_茉 : MonoBehaviour
     /// <param name="是否选中">true为选中，false为取消选中</param>
     public void 设置选中选项(string 选项名称, bool 是否选中 = true)
     {
+        初始化选项组();
+
         var 目标选项 = 选项组.FirstOrDefault(x => x.name == 选项名称);
         if (目标选项 != null)
         {
@@ -125,6 +142,8 @@ public class 选项组性多选_茉 : MonoBehaviour
     /// <param name="索引列表">要选中的选项索引列表</param>
     public void 批量设置选中选项(List<int> 索引列表)
     {
+        初始化选项组();
+
         清除所有选择();
         foreach (var 索引 in 索引列表)
         {
@@ -138,6 +157,8 @@ public class 选项组性多选_茉 : MonoBehaviour
     /// <param name="名称列表">要选中的选项名称列表</param>
     public void 批量设置选中选项(List<string> 名称列表)
     {
+        初始化选项组();
+
         清除所有选择();
         foreach (var 名称 in 名称列表)
         {
@@ -150,6 +171,8 @@ public class 选项组性多选_茉 : MonoBehaviour
     /// </summary>
     public void 清除所有选择()
     {
+        初始化选项组();
+
         if (选项组 == null) return;
         foreach (var 选项 in 选项组)
         {
@@ -163,6 +186,8 @@ public class 选项组性多选_茉 : MonoBehaviour
     /// </summary>
     public void 全选()
     {
+        初始化选项组();
+
         foreach (var 选项 in 选项组)
         {
             选项.ToggledOn = true;
@@ -174,6 +199,8 @@ public class 选项组性多选_茉 : MonoBehaviour
     /// </summary>
     public void 反选()
     {
+        初始化选项组();
+
         foreach (var 选项 in 选项组)
         {
             选项.ToggledOn = !选项.ToggledOn;
@@ -187,6 +214,8 @@ public class 选项组性多选_茉 : MonoBehaviour
     /// <returns>是否被选中</returns>
     public bool 是否选中(int 索引)
     {
+        初始化选项组();
+
         if (索引 >= 0 && 索引 < 选项组.Count)
         {
             return 当前选中选项列表.Contains(选项组[索引]);
@@ -201,6 +230,8 @@ public class 选项组性多选_茉 : MonoBehaviour
     /// <returns>是否被选中</returns>
     public bool 是否选中(string 选项名称)
     {
+        初始化选项组();
+
         var 目标选项 = 选项组.FirstOrDefault(x => x.name == 选项名称);
         if (目标选项 != null)
         {

@@ -22,6 +22,7 @@ public class 评定人管理添加_韩 : 界面基础_韩
     [SerializeField] public NovaSamples.UIControls.Button 取消;
  
     private bool 择日器显示;
+    private GameObject 当前择日器;
     private I记贞 旧记;
 
     private void Awake()
@@ -56,12 +57,31 @@ public class 评定人管理添加_韩 : 界面基础_韩
         择日器显示 = true;
         var 择日器气 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("择日器");
         var 择日器 = Instantiate(择日器气, this.transform);
+        当前择日器 = 择日器;
         择日器.GetComponent<择日器_茉>().On保存日期 += (年, 月, 日) =>
         {
             Debug.Log("出生日期选择");
             出生日期文本.Text = $"{年}-{月}-{日}";
             择日器显示 = false;
+            当前择日器 = null;
         };
+        // 监控择日器是否被销毁（用于处理取消关闭的情况）
+        监控择日器销毁(择日器).Forget();
+    }
+
+    async UniTaskVoid 监控择日器销毁(GameObject 择日器)
+    {
+        // 等待择日器被销毁
+        while (择日器 != null)
+        {
+            await UniTask.Yield();
+        }
+        // 择日器已被销毁，重置标志
+        if (择日器显示)
+        {
+            择日器显示 = false;
+            当前择日器 = null;
+        }
     }
 
     private void 显示信息详情(I记贞 记)
