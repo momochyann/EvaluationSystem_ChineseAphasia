@@ -105,18 +105,23 @@ public class 右上角功能端PC_茉 : MonoBehaviour, IController
     async private void 执行用户名管理()
     {
         var 界面管理器 = FindObjectOfType<界面管理器_韩>();
+        var 目标界面 = "首页界面显示";
         if (管员录.登陆管理员 != null)
         {
             界面管理器.显示界面("评定人管理添加");
             await UniTask.WaitUntil(() => 界面管理器._currentPanel != null && 界面管理器._currentPanel.name.Contains("评定人管理添加"));
-            界面管理器._currentPanel.GetComponent<评定人管理添加_韩>().显示信息(管员录.登陆管理员);
+            var 组件 = 界面管理器._currentPanel.GetComponent<评定人管理添加_韩>();
+            组件.设置退出目标界面(目标界面);
+            组件.显示信息(管员录.登陆管理员);
 
         }
         else if (评人录.登陆评人 != null)
         {
             界面管理器.显示界面("评定人管理添加");
             await UniTask.WaitUntil(() => 界面管理器._currentPanel != null && 界面管理器._currentPanel.name.Contains("评定人管理添加"));
-            界面管理器._currentPanel.GetComponent<评定人管理添加_韩>().显示信息(评人录.登陆评人);
+            var 组件 = 界面管理器._currentPanel.GetComponent<评定人管理添加_韩>();
+            组件.设置退出目标界面(目标界面);
+            组件.显示信息(评人录.登陆评人);
         }
     }
 

@@ -24,6 +24,9 @@ public class 评定人管理添加_韩 : 界面基础_韩
     private bool 择日器显示;
     private GameObject 当前择日器;
     private I记贞 旧记;
+    private const string 默认退出界面 = "评定人管理显示_PC";
+    private string 退出目标界面 = 默认退出界面;
+    private bool 使用自定义退出界面 = false;
 
     private void Awake()
     {
@@ -101,19 +104,27 @@ public class 评定人管理添加_韩 : 界面基础_韩
 
     void 添加账号()
     {
-        if (登录账号.Text == "")
+        验证并添加账号().Forget();
+    }
+
+    async UniTaskVoid 验证并添加账号()
+    {
+        if (string.IsNullOrEmpty(登录账号.Text))
         {
             Debug.Log("[ [2] 评定人管理添加_韩]添加账号失败，请检查登录账号");
+            await 显示提示("提示", "请先填写登录账号");
             return;
         }
-        if (登录密码.Text == "")
+        if (string.IsNullOrEmpty(登录密码.Text))
         {
             Debug.Log("[ [2] 评定人管理添加_韩]添加账号失败，请检查登录密码");
+            await 显示提示("提示", "请先填写登录密码");
             return;
         }
-        if (姓名.Text == "")
+        if (string.IsNullOrEmpty(姓名.Text))
         {
             Debug.Log("[ [2] 评定人管理添加_韩]添加账号失败，请检查姓名");
+            await 显示提示("提示", "请先填写姓名");
             return;
         }
 
@@ -145,10 +156,9 @@ public class 评定人管理添加_韩 : 界面基础_韩
             this.SendCommand(new 增记于录(新评人, "评人录"));
         }
 
-
-      
         Debug.Log("[ [2] 评定人管理添加_韩]添加账号" + 新评人.名);
         清空文本框内容();
+        重置退出目标界面();
         FindObjectOfType<界面管理器_韩>().显示界面("评定人管理显示");
     }
 
@@ -156,7 +166,8 @@ public class 评定人管理添加_韩 : 界面基础_韩
     {
         Debug.Log("[ [2] 评定人管理添加_韩]取消添加");
         清空文本框内容();
-        FindObjectOfType<界面管理器_韩>().显示界面("评定人管理显示_PC");
+        FindObjectOfType<界面管理器_韩>().显示界面(退出目标界面);
+        重置退出目标界面();
 
     }
 
@@ -167,6 +178,7 @@ public class 评定人管理添加_韩 : 界面基础_韩
     protected override void OnHide()
     {
         Debug.Log("[ [2] 评定人管理添加_韩]OnHide");
+        重置退出目标界面();
     }
 
     public void 清空文本框内容()
@@ -179,6 +191,51 @@ public class 评定人管理添加_韩 : 界面基础_韩
         联系方式.Text = "";
         身份证.Text = "";
         出生日期文本.Text = "";
+    }
+    public void 设置退出目标界面(string 界面名称)
+    {
+        if (string.IsNullOrEmpty(界面名称))
+        {
+            使用自定义退出界面 = false;
+            退出目标界面 = 默认退出界面;
+            return;
+        }
+        使用自定义退出界面 = true;
+        退出目标界面 = 界面名称;
+    }
+
+    private void 重置退出目标界面()
+    {
+        if (!使用自定义退出界面)
+        {
+            退出目标界面 = 默认退出界面;
+            return;
+        }
+
+        使用自定义退出界面 = false;
+        退出目标界面 = 默认退出界面;
+    }
+
+    private async UniTask 显示提示(string 标题, string 内容)
+    {
+        var utility = this.GetUtility<YooAssetPfbPoolUtility>();
+        var prefab = await utility.LoadPfb("告示");
+        if (prefab == null)
+        {
+            Debug.LogError("[ [2] 评定人管理添加_韩] 显示提示失败：未能加载告示预制体");
+            return;
+        }
+
+        var 界面管理器 = FindObjectOfType<界面管理器_韩>();
+        if (界面管理器 == null)
+        {
+            Debug.LogError("[ [2] 评定人管理添加_韩] 显示提示失败：未找到界面管理器");
+            return;
+        }
+
+        var 告示实例 = Instantiate(prefab, 界面管理器.transform);
+        await 告示实例.GetComponent<告示_茉>().等待确认显示(标题, 内容);
+        Destroy(告示实例);
     }
     void OnDestroy()
     {
