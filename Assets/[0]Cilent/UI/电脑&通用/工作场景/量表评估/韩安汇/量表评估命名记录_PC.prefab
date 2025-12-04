@@ -10149,7 +10149,7 @@ Transform:
   m_GameObject: {fileID: 714233249023091835}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.82766354, y: -3.2440536, z: 0}
+  m_LocalPosition: {x: -0.82917786, y: -3.1548884, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18981,7 +18981,7 @@ Transform:
   m_GameObject: {fileID: 1104762559811119244}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.66299945, y: 0.55252075, z: 0}
+  m_LocalPosition: {x: 0.7336548, y: -1.6124678, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19017,20 +19017,20 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 0.999172
+        Raw: 1.001
         Type: 1
       Y:
-        Raw: 0.99884385
+        Raw: 0.99500006
         Type: 1
       Z:
         Raw: 0
         Type: 0
     Position:
       X:
-        Raw: -0.000019791669
+        Raw: -0.00002
         Type: 1
       Y:
-        Raw: 0
+        Raw: 0.004228
         Type: 1
       Z:
         Raw: 0
@@ -19181,7 +19181,7 @@ MonoBehaviour:
   visuals:
     Color: {r: 1, g: 1, b: 1, a: 0.44313726}
     CornerRadius:
-      Raw: 32
+      Raw: 22.7
       Type: 0
     RadialFill:
       Center:
@@ -45520,7 +45520,7 @@ Transform:
   m_GameObject: {fileID: 2450047753543280695}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.622482, y: -1376.4069, z: 0}
+  m_LocalPosition: {x: -23.264633, y: -1388.3595, z: 0}
   m_LocalScale: {x: 0.9995999, y: 0.9995999, z: 0.9995999}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -51438,7 +51438,7 @@ MonoBehaviour:
         Raw: 0.79600006
         Type: 1
       Y:
-        Raw: 0.88500005
+        Raw: 0.864
         Type: 1
       Z:
         Raw: 0
@@ -51448,7 +51448,7 @@ MonoBehaviour:
         Raw: 171.70601
         Type: 0
       Y:
-        Raw: -38.125
+        Raw: -26.733002
         Type: 0
       Z:
         Raw: 0
