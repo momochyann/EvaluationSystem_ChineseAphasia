@@ -185,32 +185,36 @@ public static class 失语症评定工具
     }
 
     /// <summary>
-    /// 获取失语症类型的中文全称
+    /// 获取失语症类型的中文全称（与条形图显示格式一致）
     /// </summary>
     public static string 获取失语症类型全称(string 类型缩写)
     {
         switch (类型缩写)
         {
-            case "AA":
-                return "异常性失语 (Anomic Aphasia)";
-            case "CA":
-                return "传导性失语 (Conduction Aphasia)";
-            case "TCA":
-                return "经皮质感觉性失语 (Transcortical Sensory Aphasia)";
-            case "WA":
-                return "韦尼克失语 (Wernicke's Aphasia)";
             case "BA":
-                return "布洛卡失语 (Broca's Aphasia)";
+                return "Broca型(BA)";
+            case "WA":
+                return "Wernicke(WA)";
+            case "CA":
+                return "传导型(CA)";
             case "TCM":
-                return "经皮质运动性失语 (Transcortical Motor Aphasia)";
-            case "TA或BaA":
-                return "完全性失语/混合性经皮质失语 (Total Aphasia/Mixed Transcortical Aphasia)";
-            case "MT":
-                return "混合性经皮质失语 (Mixed Transcortical Aphasia)";
-            case "GA":
-                return "全面性失语 (Global Aphasia)";
+                return "经皮质运动型(TCM)";
             case "TCS":
-                return "经皮质感觉性失语 (Transcortical Sensory Aphasia)";
+            case "TCA": // TCA和TCS是同一类型
+                return "经皮质感觉型(TCS)";
+            case "MT":
+                return "经皮质混合型(MT)";
+            case "AA":
+                return "命名型(AA)";
+            case "GA":
+                return "完全型(GA)";
+            case "TA":
+                return "丘脑型(TA)";
+            case "BaA":
+                return "基底型(BaA)";
+            case "TA或BaA":
+                // 兼容旧数据，默认返回TA
+                return "丘脑型(TA)";
             default:
                 return 类型缩写;
         }

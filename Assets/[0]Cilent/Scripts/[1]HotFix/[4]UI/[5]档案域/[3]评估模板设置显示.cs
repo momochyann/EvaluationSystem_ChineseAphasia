@@ -4,6 +4,7 @@ using UnityEngine;
 using NovaSamples.UIControls;
 using Nova;
 using QFramework;
+using Cysharp.Threading.Tasks;
 
 /// <summary>
 /// 评估模板设置显示界面 - 用于添加和选择模板
@@ -24,6 +25,7 @@ public class 评估模板设置显示 : 界面基础_韩
 
     void Start()
     {
+      
         // 添加模板按钮事件
         if (添加模板按钮 != null)
         {
@@ -41,8 +43,16 @@ public class 评估模板设置显示 : 界面基础_韩
                 隐藏界面();
             });
         }
+       加载模板条目预制体().Forget();
     }
-
+async UniTaskVoid 加载模板条目预制体()
+{
+    var 模板条目预制体 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("评估评价模板");
+    if (模板条目预制体 != null)
+    {
+        this.模板条目预制体 = 模板条目预制体;
+    }
+}
     /// <summary>
     /// 初始化界面
     /// </summary>

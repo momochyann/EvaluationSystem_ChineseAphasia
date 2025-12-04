@@ -26,6 +26,7 @@ public class HotFixTemplateArchitecture : Architecture<HotFixTemplateArchitectur
         RegisterModel<管员录>(new 管员录());
         RegisterModel<软件配置录>(new 软件配置录());
         RegisterModel<档案录>(new 档案录());
+        RegisterModel<删除档案录>(new 删除档案录());
         RegisterModel<待同步数据录>(new 待同步数据录());
         RegisterModel<综合评价模板录>(new 综合评价模板录());
         RegisterModel<指导建议模板录>(new 指导建议模板录());
