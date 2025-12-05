@@ -59,20 +59,32 @@ public class PC端条目功能按钮_茉 : MonoBehaviour, IController
         var 户择 = await ins.GetComponent<告示_茉>().等待确认显示("删除确认", "确定要删除数据吗？");
         if (户择)
         {
+            // 先收集所有选中条目的索引下标
+            List<int> 条目下标集 = new List<int>();
             foreach (var 勾 in 勾组)
             {
                 var 条目 = 勾.transform.parent.GetComponent<IentryDis>();
                 var 条目下标 = 条目.索引下标;
+                条目下标集.Add(条目下标);
+            }
+            // 按降序排序，从大到小删除，避免删除后索引变化导致的问题
+            条目下标集 = 条目下标集.OrderByDescending(x => x).ToList();
+            foreach (var 条目下标 in 条目下标集)
+            {
                 this.SendCommand(new 删记于录(条目下标, 录名));
             }
-            // foreach (var 条目 in 条组.CurrentSelectedEntries)
-            // {
-            //     var 条目下标 = 条目.GetComponent<IentryDis>().索引下标;
-            //     this.SendCommand(new 删记于录(条目下标, 录名));
-            // }
-            // 条组.CurrentSelectedEntries.Clear();
-            // await UniTask.Delay(100);
-            // 条组.沐浴();
+            // 清空选中项并刷新显示
+            foreach (var 勾 in 勾组)
+            {
+                勾.ToggledOn = false;
+            }
+            await UniTask.Delay(100);
+            // 如果有条目组组件，调用刷新方法
+            var 条组 = 条目显示面板.GetComponent<条目组性_茉>();
+            if (条组 != null)
+            {
+                条组.沐浴();
+            }
         }
         Destroy(ins.gameObject, 0.1f);
     }

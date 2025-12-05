@@ -46,6 +46,11 @@ public class 打印报告界面_茉 : 界面基础_韩
     [SerializeField] private TextBlock 上肢动作总分;
     [SerializeField] private TextBlock 复杂动作总分;
 
+    [Header("打印相关")]
+    [SerializeField] private Scroller 报告Scroller; // 原始报告滚动容器
+    [SerializeField] private UIBlock2D 打印根Block; // 顶部需要铺满X、Y自适应的Block
+    [SerializeField] private List<GameObject> 打印时隐藏对象; // 打印时需要去除的按钮/控件
+
     [Header("评估结果")]
     [SerializeField] private TextBlock 利手评定结果;
     [SerializeField] private TextBlock 失语症评定;
@@ -83,12 +88,97 @@ public class 打印报告界面_茉 : 界面基础_韩
         var 界面管理器 = FindObjectOfType<界面管理器_韩>();
         var ins = Instantiate(告示, 界面管理器.transform);
         var 户择 = await ins.GetComponent<告示_茉>().等待确认显示("提示", "即将打印报告，请确保打印机连接正常");
-        if (户择)
-        {
-            Debug.Log("[打印报告] 确认打印按钮被点击");
-        }
         Destroy(ins);
-        Debug.Log("[打印报告] 确认打印按钮被点击");
+        if (!户择)
+        {
+            return;
+        }
+
+        var screenshotUtil = this.GetUtility<IScreenshotPDFUtility>();
+        if (screenshotUtil == null)
+        {
+            Debug.LogError("[打印报告] 未找到 ScreenshotPDFUtility");
+            return;
+        }
+
+        if (报告Scroller == null)
+        {
+            Debug.LogError("[打印报告] 报告Scroller 未绑定，无法截图");
+            return;
+        }
+
+        string fileBaseName = $"评估报告_{当前显示档案?.编号 ?? "未知"}_{System.DateTime.Now:yyyyMMdd_HHmmss}";
+
+        // 1) 克隆用于打印的 Scroller
+        var cloneGO = Instantiate(报告Scroller.gameObject, 报告Scroller.transform.parent.parent, false);
+        cloneGO.name = 报告Scroller.gameObject.name + "_PrintCopy";
+        cloneGO.SetActive(true); // 确保克隆体被激活并可见
+        await UniTask.Yield(); // 等一帧让父容器完成布局
+        cloneGO.transform.SetAsLastSibling(); // 放到父物体最后
+        var cloneScroller = cloneGO.GetComponentInChildren<Scroller>(true);
+        if (cloneScroller == null)
+        {
+            Debug.LogError("[打印报告] 克隆的 Scroller 获取失败");
+            Destroy(cloneGO);
+            return;
+        }
+        Debug.Log("克隆的 Scroller 获取成功" + cloneScroller.gameObject.name);
+
+        // 2) 去除打印时不需要的按钮/控件
+        if (打印时隐藏对象 != null)
+        {
+            foreach (var go in 打印时隐藏对象)
+            {
+                if (go == null) continue;
+                var target = 在克隆中按名查找(cloneGO.transform, go.name);
+                if (target != null)
+                {
+                    Destroy(target.gameObject);
+                }
+            }
+        }
+        var cloneRoot = cloneGO?.GetComponent<UIBlock2D>();
+        // 3) 调整顶部Block：X铺满，Y自适应
+        if (cloneRoot != null)
+        {
+            cloneRoot.AutoLayout.Offset = 0;
+            cloneRoot.AutoSize.Y = AutoSize.Expand;
+            cloneRoot.AutoSize.X = AutoSize.Expand;
+            cloneRoot.CornerRadius = 0;
+            cloneRoot.Position.Y=0;
+            cloneRoot.Position.X=0;
+        }
+        // 再次确保克隆排在最后，避免上面操作改变顺序
+        cloneGO.transform.SetAsLastSibling();
+
+        // 4) 用克隆的 Scroller 截图打印
+        string imgPath = await screenshotUtil.CaptureScrollViewAsync(cloneScroller, fileBaseName);
+        await UniTask.Delay(2000);
+        if (string.IsNullOrEmpty(imgPath))
+        {
+            Debug.LogError("[打印报告] 报告截图失败");
+            Destroy(cloneGO);
+            return;
+        }
+        Debug.Log($"[打印报告] 报告截图完成: {imgPath}");
+
+        string htmlPath = screenshotUtil.ConvertImageToHTML(imgPath, "评估报告");
+
+        if (string.IsNullOrEmpty(htmlPath))
+        {
+            Debug.LogError("[打印报告] 生成 HTML 失败");
+            Destroy(cloneGO);
+            return;
+        }
+        Debug.Log($"[打印报告] HTML 生成完成: {htmlPath}");
+
+        if (!screenshotUtil.PrintFile(htmlPath))
+        {
+            Debug.LogWarning("[打印报告] 发送打印失败，已尝试打开文件请手动打印");
+        }
+
+        // 5) 清理克隆
+        Destroy(cloneGO);
     }
     async UniTaskVoid 处理返回按钮点击()
     {
@@ -361,5 +451,18 @@ public class 打印报告界面_茉 : 界面基础_韩
     void OnDestroy()
     {
         显示信息 -= 显示档案详情;
+    }
+
+    /// <summary>
+    /// 在克隆的层级中按名称查找节点
+    /// </summary>
+    Transform 在克隆中按名查找(Transform root, string name)
+    {
+        var all = root.GetComponentsInChildren<Transform>(true);
+        foreach (var t in all)
+        {
+            if (t.name == name) return t;
+        }
+        return null;
     }
 }

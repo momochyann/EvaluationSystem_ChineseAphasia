@@ -155,11 +155,11 @@ public class 备份管理界面_茉 : 界面基础_韩
 
             // 保存文件
             await File.WriteAllTextAsync(文件路径, json数据, Encoding.UTF8);
-
+        
             // 显示成功提示
-            告示组件.显示进度("备份成功", $"备份完成\n共 {总条数} 条");
-            
-            await UniTask.Delay(2000);
+//            告示组件.显示进度("备份成功", $"备份完成！\n文件路径: {文件路径}");
+            await 告示组件.等待确认显示("备份成功", $"储存文件路径: {文件路径}");
+            // await UniTask.Delay(2000);
             告示组件.关闭();
             Destroy(进度告示实例);
 
@@ -217,7 +217,7 @@ public class 备份管理界面_茉 : 界面基础_韩
             var 进度告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
             var 进度告示实例 = Instantiate(进度告示, this.transform);
             var 告示组件 = 进度告示实例.GetComponent<告示_茉>();
-            告示组件.显示进度("还原中", "正在还原...");
+            告示组件.显示进度("还原中", $"正在从备份文件还原数据...\n文件: {Path.GetFileName(最新备份文件)}");
 
             // 读取备份文件
             告示组件.更新内容("正在读取备份文件...");
@@ -344,11 +344,11 @@ public class 备份管理界面_茉 : 界面基础_韩
 
             // 显示还原结果
             string 结果消息 = 还原失败数量 > 0 
-                ? $"还原完成\n成功: {还原成功数量} 条\n失败: {还原失败数量} 条"
-                : $"还原完成\n成功: {还原成功数量} 条";
-            告示组件.显示进度("还原成功", 结果消息);
+                ? $"从{Path.GetFileName(最新备份文件)}还原完成成功: {还原成功数量} 条\n失败: {还原失败数量} 条"
+                : $"从{Path.GetFileName(最新备份文件)}还原完成成功: {还原成功数量} 条";
+         await   告示组件.等待确认显示("还原成功", 结果消息);
             
-            await UniTask.Delay(2000);
+         //   await UniTask.Delay(2000);
             告示组件.关闭();
             Destroy(进度告示实例);
 

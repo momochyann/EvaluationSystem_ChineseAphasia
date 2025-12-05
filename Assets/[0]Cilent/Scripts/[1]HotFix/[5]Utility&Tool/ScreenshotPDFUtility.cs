@@ -217,8 +217,8 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
             float contentOverflow = contentSize[axis] - paddedSize[axis];
             if (contentOverflow > 0)
             {
-                // 移动到显示完整内容的位置
-                autoLayout.Offset = contentOverflow * 0.5f;
+                // 将内容起点对齐到顶部，避免截图偏下
+                autoLayout.Offset = 0;
                 uiBlock.AutoLayout = autoLayout; // 应用修改
                 
                 // 等待布局更新
@@ -305,31 +305,19 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
     <meta charset='utf-8'>
     <title>{title}</title>
     <style>
-        @page {{ margin: 1cm; size: A4; }}
+        @page {{ margin: 0; size: A4; }}
         body {{ margin: 0; padding: 0; font-family: Arial, sans-serif; }}
-        .document {{ page-break-inside: avoid; }}
-        .header {{ text-align: center; margin-bottom: 20px; }}
         .content {{ text-align: center; }}
-        .image {{ max-width: 100%; height: auto; border: 1px solid #ddd; }}
-        .footer {{ text-align: center; margin-top: 20px; font-size: 12px; color: #666; }}
+        .image {{ max-width: 100%; height: auto; }}
         @media print {{
             .no-print {{ display: none; }}
-            .image {{ max-height: 90vh; }}
+            .image {{ max-height: 100vh; }}
         }}
     </style>
 </head>
 <body>
-    <div class='document'>
-        <div class='header'>
-            <h2>{title}</h2>
-            <p>生成时间: {DateTime.Now:yyyy年MM月dd日 HH:mm:ss}</p>
-        </div>
-        <div class='content'>
-            <img src='file:///{imagePath.Replace("\\", "/")}' alt='截图' class='image'>
-        </div>
-        <div class='footer'>
-            <p>由失语症评测系统生成</p>
-        </div>
+    <div class='content'>
+        <img src='file:///{imagePath.Replace("\\", "/")}' alt='截图' class='image'>
     </div>
     <div class='no-print' style='position: fixed; top: 10px; right: 10px; z-index: 1000;'>
         <button onclick='window.print()' style='padding: 10px 20px; font-size: 14px;'>打印文档</button>

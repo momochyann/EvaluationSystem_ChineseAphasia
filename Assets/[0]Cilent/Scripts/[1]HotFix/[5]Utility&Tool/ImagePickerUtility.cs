@@ -123,7 +123,7 @@ public class ImagePickerUtility : IImagePickerUtility
         try
         {
             Debug.Log("PC端开始选择图片...");
-            
+              string patsssh = await ShowCustomFilePickerAsync();
 #if UNITY_EDITOR
             // 编辑器模式使用EditorUtility
             string path = EditorUtility.OpenFilePanel("选择图片", "", "png,jpg,jpeg,bmp,tga");

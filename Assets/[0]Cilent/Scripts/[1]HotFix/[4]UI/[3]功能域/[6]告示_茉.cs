@@ -29,6 +29,8 @@ public class 告示_茉 : MonoBehaviour, IController
     }
     public  async UniTask<bool> 等待确认显示(string 标题, string 内容)
     {
+         if (确定 != null) 确定.gameObject.SetActive(true);
+        if (取消 != null) 取消.gameObject.SetActive(true);
         标题框.Text = 标题;
         内容框.Text = 内容;
         等待完成 = new UniTaskCompletionSource<bool>();
