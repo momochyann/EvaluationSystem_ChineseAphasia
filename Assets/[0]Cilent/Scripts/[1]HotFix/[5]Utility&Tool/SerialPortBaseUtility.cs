@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
 using QFramework;
@@ -30,17 +31,35 @@ public interface ISerialPortBaseUtility : IUtility
 public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
 {
     protected SerialPortUtilityPro serialPort;
-    protected GameObject serialPortObject;
     protected bool isConnected = false;
     protected string currentPortName = "";
     protected bool isMonitoring = false;
     protected readonly object lockObject = new object();
 
-    [DllImport("spap", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-    static extern int spapDeviceListAvailable();
-
-    [DllImport("spap", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-    static extern int spapDeviceList(int deviceNum, [MarshalAs(UnmanagedType.LPStr)] StringBuilder deviceInfo, int buffer_size);
+    // 串口桥接接口（从Main程序集调用P/Invoke）
+    private static ISerialPortBridge _serialPortBridge;
+    
+    /// <summary>
+    /// 获取串口桥接实例
+    /// </summary>
+    protected static ISerialPortBridge GetSerialPortBridge()
+    {
+        if (_serialPortBridge == null)
+        {
+            try
+            {
+                // 直接创建桥接实例（HotFix程序集已引用Main程序集）
+                _serialPortBridge = new SerialPortBridge();
+                Debug.Log($"[SerialPortBaseUtility] 成功创建串口桥接实例");
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[SerialPortBaseUtility] 创建串口桥接失败: {ex.Message}");
+                // 如果创建失败，返回null，后续会使用备用方法
+            }
+        }
+        return _serialPortBridge;
+    }
 
     public bool IsConnected => isConnected;
     public string CurrentPortName => currentPortName;
@@ -64,22 +83,81 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     protected virtual int ConnectionTimeoutMs => 2000;
 
     /// <summary>
-    /// 获取保存端口序号的PlayerPrefs键名
+    /// 获取保存端口名称的PlayerPrefs键名
+    /// </summary>
+    protected virtual string SavedPortNameKey => $"SerialPort_{DeviceName}_LastPortName";
+    
+    /// <summary>
+    /// 获取保存端口序号的PlayerPrefs键名（保留用于兼容性）
     /// </summary>
     protected virtual string SavedPortSkipKey => $"SerialPort_{DeviceName}_LastPortSkip";
 
     /// <summary>
-    /// 保存端口序号
+    /// 保存端口名称（而不是Skip值，因为Skip值可能因USB Hub顺序变化）
     /// </summary>
     protected virtual void SavePortSkip(int portSkip)
     {
+        // 保存Skip值（用于兼容性）
         PlayerPrefs.SetInt(SavedPortSkipKey, portSkip);
+        // 同时保存端口名称，因为Skip值可能因USB Hub顺序变化
+        if (!string.IsNullOrEmpty(currentPortName))
+        {
+            PlayerPrefs.SetString(SavedPortNameKey, currentPortName);
+        }
         PlayerPrefs.Save();
-        Debug.Log($"[{DeviceName}] 已保存端口序号: {portSkip}");
+        Debug.Log($"[{DeviceName}] 已保存端口: {currentPortName} (Skip: {portSkip})");
     }
 
     /// <summary>
-    /// 加载保存的端口序号
+    /// 加载保存的端口名称，并找到对应的Skip值
+    /// </summary>
+    protected virtual async UniTask<(string portName, int portSkip)?> LoadSavedPortInfo()
+    {
+        // 先尝试加载端口名称
+        if (PlayerPrefs.HasKey(SavedPortNameKey))
+        {
+            string savedPortName = PlayerPrefs.GetString(SavedPortNameKey);
+            Debug.Log($"[{DeviceName}] 加载保存的端口名称: {savedPortName}");
+            
+            // 获取当前系统中的所有COM端口
+            var comPorts = await GetComPortsWithSkip();
+            
+            // 查找保存的端口名称对应的Skip值
+            var portInfo = comPorts.FirstOrDefault(port => port.portName == savedPortName);
+            if (portInfo.portName == savedPortName)
+            {
+                Debug.Log($"[{DeviceName}] 找到保存的端口: {savedPortName} (Skip: {portInfo.portSkip})");
+                return (savedPortName, portInfo.portSkip);
+            }
+            else
+            {
+                Debug.LogWarning($"[{DeviceName}] 保存的端口 {savedPortName} 不在当前系统端口列表中");
+            }
+        }
+        
+        // 如果没有保存的端口名称，尝试使用旧的Skip值（兼容性）
+        if (PlayerPrefs.HasKey(SavedPortSkipKey))
+        {
+            int savedPortSkip = PlayerPrefs.GetInt(SavedPortSkipKey);
+            Debug.Log($"[{DeviceName}] 加载保存的端口序号（兼容模式）: {savedPortSkip}");
+            
+            // 获取当前系统中的所有COM端口
+            var comPorts = await GetComPortsWithSkip();
+            
+            // 查找对应的端口
+            if (savedPortSkip >= 0 && savedPortSkip < comPorts.Count)
+            {
+                var portInfo = comPorts[savedPortSkip];
+                Debug.Log($"[{DeviceName}] 找到端口（兼容模式）: {portInfo.portName} (Skip: {portInfo.portSkip})");
+                return (portInfo.portName, portInfo.portSkip);
+            }
+        }
+        
+        return null;
+    }
+    
+    /// <summary>
+    /// 加载保存的端口序号（保留用于兼容性，但建议使用LoadSavedPortInfo）
     /// </summary>
     protected virtual int? LoadSavedPortSkip()
     {
@@ -93,20 +171,32 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     }
 
     /// <summary>
-    /// 清除保存的端口序号
+    /// 清除保存的端口信息
     /// </summary>
     protected virtual void ClearSavedPortSkip()
     {
+        bool cleared = false;
         if (PlayerPrefs.HasKey(SavedPortSkipKey))
         {
             PlayerPrefs.DeleteKey(SavedPortSkipKey);
+            cleared = true;
+        }
+        if (PlayerPrefs.HasKey(SavedPortNameKey))
+        {
+            PlayerPrefs.DeleteKey(SavedPortNameKey);
+            cleared = true;
+        }
+        if (cleared)
+        {
             PlayerPrefs.Save();
-            Debug.Log($"[{DeviceName}] 已清除保存的端口序号");
+            Debug.Log($"[{DeviceName}] 已清除保存的端口信息");
         }
     }
 
     /// <summary>
     /// 获取系统中所有COM端口信息
+    /// 关键修复：在NumberOrder模式下，Skip值应该是spapDeviceList的索引，而不是COM端口号
+    /// 因为USB Hub可能导致端口枚举顺序与COM端口号不一致
     /// </summary>
     protected async UniTask<List<(string portName, int portSkip)>> GetComPortsWithSkip()
     {
@@ -114,31 +204,31 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
 
         try
         {
-            int deviceNum = spapDeviceListAvailable();
             await UniTask.Yield();
 
-            for (int i = 0; i < deviceNum; i++)
+            // 使用桥接接口获取COM端口列表（从Main程序集调用P/Invoke）
+            var bridge = GetSerialPortBridge();
+            if (bridge != null)
             {
-                StringBuilder deviceInfo = new StringBuilder(1024);
-                spapDeviceList(i, deviceInfo, 1024);
-                string portInfo = deviceInfo.ToString();
-
-                if (portInfo.Contains("COM"))
+                try
                 {
-                    string comPort = portInfo.Substring(portInfo.IndexOf("COM"));
-                    int comIndex = comPort.IndexOf(',');
-                    if (comIndex > 0)
-                        comPort = comPort.Substring(0, comIndex);
-
-                    if (comPort.Length >= 4 && comPort.StartsWith("COM"))
+                    // 直接调用GetComPortsWithSkip方法
+                    comPorts = bridge.GetComPortsWithSkip();
+                    if (comPorts.Count > 0)
                     {
-                        // 正确解析COM端口号：COM3 -> Skip = 3
-                        int portSkip = int.Parse(comPort[3..]);
-                        comPorts.Add((comPort, portSkip));
-                        Debug.Log($"[{DeviceName}] 找到串口: {comPort} (Skip: {portSkip})");
+                        Debug.Log($"[{DeviceName}] 通过桥接接口获取到 {comPorts.Count} 个COM端口");
+                        return comPorts;
                     }
                 }
+                catch (Exception ex)
+                {
+                    Debug.LogError($"[{DeviceName}] 调用桥接接口失败: {ex.Message}");
+                }
             }
+
+            // 如果桥接接口不可用，使用备用方法
+            Debug.LogWarning($"[{DeviceName}] 串口桥接接口不可用，使用备用方法");
+            return GetComPortsFallback();
         }
         catch (Exception ex)
         {
@@ -146,8 +236,6 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
             // 如果API调用失败，使用备用方法
             return GetComPortsFallback();
         }
-
-        return comPorts;
     }
 
     /// <summary>
@@ -178,33 +266,45 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     {
         Debug.Log($"[{DeviceName}] 开始搜索设备...");
 
-        // 先尝试使用保存的端口序号
-        int? savedPortSkip = LoadSavedPortSkip();
-        if (savedPortSkip.HasValue)
-        {
-            string savedPortName = $"COM{savedPortSkip.Value}";
-            Debug.Log($"[{DeviceName}] 优先尝试保存的端口: {savedPortName} (Skip: {savedPortSkip.Value})");
+        // 获取系统中所有COM端口
+        var comPorts = await GetComPortsWithSkip();
 
-            // 检查保存的端口是否在排除列表中
-            if (!savedPortName.Contains("COM12") && !savedPortName.Contains("COM27") &&
-                !savedPortName.Contains("COM11") && !savedPortName.Contains("COM17"))
+        // 先尝试使用保存的端口信息
+        var savedPortInfo = await LoadSavedPortInfo();
+        if (savedPortInfo.HasValue)
+        {
+            string savedPortName = savedPortInfo.Value.portName;
+            int savedPortSkip = savedPortInfo.Value.portSkip;
+            Debug.Log($"[{DeviceName}] 优先尝试保存的端口: {savedPortName} (Skip: {savedPortSkip})");
+
+            // 检查保存的端口是否在系统COM端口列表中
+            bool savedPortExists = comPorts.Any(port => port.portName == savedPortName);
+
+            if (!savedPortExists)
             {
-                // 保存的端口跳过握手，直接打开并验证加密狗
-                if (await TryConnectPort(savedPortName, savedPortSkip.Value, skipHandshake: true))
+                Debug.Log($"[{DeviceName}] 保存的端口 {savedPortName} 不在系统COM端口列表中，清除缓存后开始全量搜索...");
+                ClearSavedPortSkip();
+            }
+            else
+            {
+                // 检查保存的端口是否在排除列表中
+                if (!savedPortName.Contains("COM12") && !savedPortName.Contains("COM27") &&
+                    !savedPortName.Contains("COM11") && !savedPortName.Contains("COM17"))
                 {
-                    OnDeviceFound?.Invoke($"在端口 {savedPortName} 发现{DeviceName}设备");
-                    return true;
-                }
-                else
-                {
-                    Debug.Log($"[{DeviceName}] 保存的端口连接失败，清除缓存后开始全量搜索...");
-                    ClearSavedPortSkip();
+                    // 保存的端口跳过握手，直接打开并验证加密狗
+                    if (await TryConnectPort(savedPortName, savedPortSkip, skipHandshake: true))
+                    {
+                        OnDeviceFound?.Invoke($"在端口 {savedPortName} 发现{DeviceName}设备");
+                        return true;
+                    }
+                    else
+                    {
+                        Debug.Log($"[{DeviceName}] 保存的端口连接失败，清除缓存后开始全量搜索...");
+                        ClearSavedPortSkip();
+                    }
                 }
             }
         }
-
-        // 获取系统中所有COM端口
-        var comPorts = await GetComPortsWithSkip();
 
         if (comPorts.Count == 0)
         {
@@ -216,7 +316,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
         foreach (var (portName, portSkip) in comPorts)
         {
             // 跳过已尝试的保存端口
-            if (savedPortSkip.HasValue && portSkip == savedPortSkip.Value)
+            if (savedPortInfo.HasValue && portName == savedPortInfo.Value.portName)
             {
                 continue;
             }
@@ -307,7 +407,6 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
                 Debug.Log($"[{DeviceName}] 连接到设备，端口: {portName} (Skip: {portSkip})");
                 return true;
             }
-
             // 如果不是目标设备，清理资源
             Debug.Log($"[{DeviceName}] 端口 {portName} (Skip: {portSkip}) 不是目标设备");
             CleanupSerialPort();
@@ -488,13 +587,8 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
             }
         }
 
-        if (serialPortObject != null)
-        {
-            UnityEngine.Object.Destroy(serialPortObject);
-            serialPortObject = null;
-        }
-
-        serialPort = null;
+     
+        // serialPort = null;
     }
 
     /// <summary>

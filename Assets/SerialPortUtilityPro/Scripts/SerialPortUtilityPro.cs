@@ -245,6 +245,9 @@ namespace SerialPortUtility
 		private GameObject DebugConsoleObject = null;
 		private bool IsErrFinished = false;
 		private bool IsOpenProcess = false;
+		// 用于LineFeedDataToBinary模式的超时机制
+		private float lastReceiveTime = 0f;
+		private const float LINE_FEED_BINARY_TIMEOUT = 0.05f; // 50ms超时
 
 		//equal code : system fixed
 		private const string equalChar = "=";
@@ -533,6 +536,9 @@ namespace SerialPortUtility
 			}
 			SerialDebugString = "";
 			dataBuffer.Clear();
+			
+			// 初始化超时状态
+			lastReceiveTime = 0f;
 
 			SerialPortHandle = SerialPortHandleSet;
 			IsOpenProcess = false;
@@ -557,6 +563,9 @@ namespace SerialPortUtility
 			spapClose(SerialPortHandle);
 #endif
 			SerialPortHandle = SPAPHANDLE_ERROR;
+			
+			// 重置超时状态
+			lastReceiveTime = 0f;
 
 			if (SystemEventObject != null)
 				SystemEventObject.Invoke(this, "CLOSED");
@@ -614,6 +623,12 @@ namespace SerialPortUtility
 
 				//buffer
 				dataBuffer.AddRange(dataArray.Take(iRet));
+
+				// 更新最后接收时间（用于LineFeedDataToBinary模式的超时机制）
+				if (ReadProtocol == SerialPortUtilityPro.MethodSystem.LineFeedDataToBinary)
+				{
+					lastReceiveTime = UnityEngine.Time.realtimeSinceStartup;
+				}
 
 				//for debug Log
 				string stringData = System.Text.Encoding.UTF8.GetString(dataArray, 0, iRet);
@@ -713,6 +728,11 @@ namespace SerialPortUtility
 					UpdateOnStreaming(false);
 				if (ReadProtocol == SerialPortUtilityPro.MethodSystem.BinaryStreaming && EnableTrans)
 					UpdateOnStreaming(true);
+				// 检查LineFeedDataToBinary模式的超时
+				if (ReadProtocol == SerialPortUtilityPro.MethodSystem.LineFeedDataToBinary && EnableTrans)
+				{
+					CheckLineFeedBinaryTimeout();
+				}
 			}
 		}
 
@@ -987,6 +1007,8 @@ namespace SerialPortUtility
 				{
 					byte[] dataByte = dataBuffer.GetRange(0, idx).ToArray();
 					dataBuffer.RemoveRange(0, idx + fcodeBytes.Length);
+					// 重置超时时间，因为已经收到完整帧
+					lastReceiveTime = 0f;
 					if (ReadCompleteEventObject != null)
 						ReadCompleteEventObject.Invoke((object)dataByte);
 				}
@@ -1000,6 +1022,31 @@ namespace SerialPortUtility
 				}
 
 				idx = IndexOfSequence(dataBuffer, fcodeBytes);
+			}
+		}
+
+		/// <summary>
+		/// 检查LineFeedDataToBinary模式的超时
+		/// 如果50ms内没有接收到新字符，即使没有结束字符，也认为接收到了一帧
+		/// </summary>
+		private void CheckLineFeedBinaryTimeout()
+		{
+			// 只有在BinaryMode下才检查超时
+			if (dataBuffer.Count > 0 && lastReceiveTime > 0f)
+			{
+				float currentTime = UnityEngine.Time.realtimeSinceStartup;
+				float elapsedTime = currentTime - lastReceiveTime;
+				
+				// 如果超过50ms没有接收到新数据，且缓冲区有数据，则认为接收到一帧
+				if (elapsedTime >= LINE_FEED_BINARY_TIMEOUT)
+				{
+					byte[] dataByte = dataBuffer.ToArray();
+					dataBuffer.Clear();
+					lastReceiveTime = 0f; // 重置超时时间
+					
+					if (ReadCompleteEventObject != null)
+						ReadCompleteEventObject.Invoke((object)dataByte);
+				}
 			}
 		}
 

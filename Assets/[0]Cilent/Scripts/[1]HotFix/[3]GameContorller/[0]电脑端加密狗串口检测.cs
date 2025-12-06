@@ -83,7 +83,11 @@ public class 电脑端加密狗串口检测 : MonoBehaviour, IController
             return false;
         }
     }
-
+    public void Disconnect()
+    {
+        var dongleUtility = this.GetUtility<SerialPortDongleUtility>();
+        dongleUtility.Disconnect();
+    }
     public IArchitecture GetArchitecture()
     {
         return HotFixTemplateArchitecture.Interface;

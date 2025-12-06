@@ -123,7 +123,7 @@ public class ImagePickerUtility : IImagePickerUtility
         try
         {
             Debug.Log("PC端开始选择图片...");
-              string patsssh = await ShowCustomFilePickerAsync();
+            
 #if UNITY_EDITOR
             // 编辑器模式使用EditorUtility
             string path = EditorUtility.OpenFilePanel("选择图片", "", "png,jpg,jpeg,bmp,tga");
@@ -135,20 +135,31 @@ public class ImagePickerUtility : IImagePickerUtility
             
             return await LoadTextureFromFileAsync(path, maxSize);
 #else
-            // PC运行时模式使用自制文件选择器
-            Debug.Log("使用自制文件选择器");
-            string path = await ShowCustomFilePickerAsync();
-            
-            Debug.Log($"文件选择器返回路径: {path}");
-            
-            if (string.IsNullOrEmpty(path))
+            // PC运行时模式：使用主程序集的文件选择对话框
+            try
             {
-                Debug.Log("用户取消选择或未找到图片");
+                // 使用主程序集的FilePickerBridge（会弹出Windows文件选择对话框）
+                IFilePickerBridge filePicker = new FilePickerBridge();
+                string path = filePicker.OpenFileDialog("选择图片", 
+                    "图片文件\0*.png;*.jpg;*.jpeg;*.bmp;*.tga;*.gif\0所有文件\0*.*\0",
+                    Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
+                
+                if (!string.IsNullOrEmpty(path))
+                {
+                    Debug.Log($"文件选择对话框返回路径: {path}");
+                    return await LoadTextureFromFileAsync(path, maxSize);
+                }
+                else
+                {
+                    Debug.Log("用户取消选择图片");
+                    return null;
+                }
+            }
+            catch (Exception e1)
+            {
+                Debug.LogError($"文件选择对话框失败: {e1.Message}");
                 return null;
             }
-            
-            Debug.Log($"准备加载图片文件: {path}");
-            return await LoadTextureFromFileAsync(path, maxSize);
 #endif
         }
         catch (Exception e)

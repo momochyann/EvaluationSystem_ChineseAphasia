@@ -80,7 +80,7 @@ public class SerialPortDongleUtility : SerialPortBaseUtility, ISerialPortDongleU
             Debug.Log($"[{DeviceName}] 已发送解锁请求: {BitConverter.ToString(unlockFrame)}");
             
             // 等待响应
-            int uwTimeoutMs = 5000; // 5秒超时
+            int uwTimeoutMs = 1000; // 1秒超时
             int uwElapsedMs = 0;
             
             while (!bIsEncrypted && uwElapsedMs < uwTimeoutMs)

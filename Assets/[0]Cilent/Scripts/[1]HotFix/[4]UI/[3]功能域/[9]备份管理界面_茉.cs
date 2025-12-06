@@ -12,6 +12,10 @@ using System.Linq;
 using LitJson;
 using System.IO;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class 备份管理界面_茉 : 界面基础_韩
 {
     [Header("UI组件")]
@@ -113,6 +117,37 @@ public class 备份管理界面_茉 : 界面基础_韩
 
         try
         {
+#if UNITY_EDITOR
+            // 编辑器模式使用EditorUtility
+            string 默认文件名 = $"备份_{DateTime.Now:yyyyMMdd_HHmmss}.json";
+            string 文件路径 = EditorUtility.SaveFilePanel("保存备份文件", 获取备份目录(), 默认文件名, "json");
+            
+            if (string.IsNullOrEmpty(文件路径))
+            {
+                Debug.Log("用户取消保存备份文件");
+                return;
+            }
+#else
+            // 运行时模式：使用文件选择对话框让用户选择保存位置
+            IFilePickerBridge filePicker = new FilePickerBridge();
+            string 默认文件名 = $"备份_{DateTime.Now:yyyyMMdd_HHmmss}.json";
+            string 文件路径 = filePicker.SaveFileDialog("保存备份文件", 默认文件名, 
+                "JSON文件\0*.json\0所有文件\0*.*\0",
+                Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+            
+            if (string.IsNullOrEmpty(文件路径))
+            {
+                Debug.Log("用户取消保存备份文件");
+                return;
+            }
+            
+            // 确保文件扩展名是.json
+            if (!文件路径.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
+            {
+                文件路径 += ".json";
+            }
+#endif
+
             // 显示备份进度
             var 进度告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
             var 进度告示实例 = Instantiate(进度告示, this.transform);
@@ -142,24 +177,18 @@ public class 备份管理界面_茉 : 界面基础_韩
 
             告示组件.更新内容("正在保存备份文件...");
 
-            // 获取备份目录
-            string 备份目录 = 获取备份目录();
-            if (!Directory.Exists(备份目录))
+            // 确保目录存在
+            string 目录 = Path.GetDirectoryName(文件路径);
+            if (!string.IsNullOrEmpty(目录) && !Directory.Exists(目录))
             {
-                Directory.CreateDirectory(备份目录);
+                Directory.CreateDirectory(目录);
             }
-
-            // 生成备份文件名（包含时间戳）
-            string 文件名 = $"备份_{DateTime.Now:yyyyMMdd_HHmmss}.json";
-            string 文件路径 = Path.Combine(备份目录, 文件名);
 
             // 保存文件
             await File.WriteAllTextAsync(文件路径, json数据, Encoding.UTF8);
         
             // 显示成功提示
-//            告示组件.显示进度("备份成功", $"备份完成！\n文件路径: {文件路径}");
             await 告示组件.等待确认显示("备份成功", $"储存文件路径: {文件路径}");
-            // await UniTask.Delay(2000);
             告示组件.关闭();
             Destroy(进度告示实例);
 
@@ -189,27 +218,34 @@ public class 备份管理界面_茉 : 界面基础_韩
 
         try
         {
-            // 获取备份目录
-            string 备份目录 = 获取备份目录();
-            if (!Directory.Exists(备份目录))
+            string 备份文件路径 = null;
+            
+#if UNITY_EDITOR
+            // 编辑器模式使用EditorUtility
+            备份文件路径 = EditorUtility.OpenFilePanel("选择备份文件", 获取备份目录(), "json");
+            
+            if (string.IsNullOrEmpty(备份文件路径))
             {
-                await 显示提示信息("还原失败", "备份目录不存在");
+                Debug.Log("用户取消选择备份文件");
                 return;
             }
-
-            // 查找最新的备份文件
-            string[] 备份文件 = Directory.GetFiles(备份目录, "备份_*.json");
-            if (备份文件 == null || 备份文件.Length == 0)
+#else
+            // 运行时模式：使用文件选择对话框让用户选择备份文件
+            IFilePickerBridge filePicker = new FilePickerBridge();
+            备份文件路径 = filePicker.OpenFileDialog("选择备份文件", 
+                "JSON文件\0*.json\0所有文件\0*.*\0",
+                Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+            
+            if (string.IsNullOrEmpty(备份文件路径))
             {
-                await 显示提示信息("还原失败", "未找到备份文件");
+                Debug.Log("用户取消选择备份文件");
                 return;
             }
+#endif
 
-            // 按修改时间排序，获取最新的备份文件
-            string 最新备份文件 = 备份文件.OrderByDescending(f => new FileInfo(f).LastWriteTime).FirstOrDefault();
-            if (string.IsNullOrEmpty(最新备份文件) || !File.Exists(最新备份文件))
+            if (!File.Exists(备份文件路径))
             {
-                await 显示提示信息("还原失败", "备份文件不存在或已损坏");
+                await 显示提示信息("还原失败", "选择的备份文件不存在");
                 return;
             }
 
@@ -217,11 +253,11 @@ public class 备份管理界面_茉 : 界面基础_韩
             var 进度告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
             var 进度告示实例 = Instantiate(进度告示, this.transform);
             var 告示组件 = 进度告示实例.GetComponent<告示_茉>();
-            告示组件.显示进度("还原中", $"正在从备份文件还原数据...\n文件: {Path.GetFileName(最新备份文件)}");
+            告示组件.显示进度("还原中", $"正在从备份文件还原数据...\n文件: {Path.GetFileName(备份文件路径)}");
 
             // 读取备份文件
             告示组件.更新内容("正在读取备份文件...");
-            string json数据 = await File.ReadAllTextAsync(最新备份文件, Encoding.UTF8);
+            string json数据 = await File.ReadAllTextAsync(备份文件路径, Encoding.UTF8);
 
             // 解析JSON数据
             告示组件.更新内容("正在解析备份数据...");
@@ -344,8 +380,8 @@ public class 备份管理界面_茉 : 界面基础_韩
 
             // 显示还原结果
             string 结果消息 = 还原失败数量 > 0 
-                ? $"从{Path.GetFileName(最新备份文件)}还原完成成功: {还原成功数量} 条\n失败: {还原失败数量} 条"
-                : $"从{Path.GetFileName(最新备份文件)}还原完成成功: {还原成功数量} 条";
+                ? $"从{Path.GetFileName(备份文件路径)}还原完成成功: {还原成功数量} 条\n失败: {还原失败数量} 条"
+                : $"从{Path.GetFileName(备份文件路径)}还原完成成功: {还原成功数量} 条";
          await   告示组件.等待确认显示("还原成功", 结果消息);
             
          //   await UniTask.Delay(2000);

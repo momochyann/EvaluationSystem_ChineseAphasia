@@ -15,7 +15,7 @@ public class 电脑端蓝牙串口检测 : MonoBehaviour, IController
     // Start is called before the first frame update
     void Start()
     {
-        启动连接蓝牙().Forget();
+        //启动连接蓝牙().Forget();
     }
 
     public async UniTask 启动连接蓝牙()

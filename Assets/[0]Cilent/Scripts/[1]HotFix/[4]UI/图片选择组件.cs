@@ -51,13 +51,6 @@ public class 图片选择组件 : MonoBehaviour, IController
         try
         {
             Debug.Log("打开相册选择图片");
-#if UNITY_STANDALONE_WIN
-            bool IsConfig = await 显示提示("自动选择系统最新添加的图片，请注意查看");
-            if (!IsConfig)
-            {
-                return;
-            }
-#endif
             var imageUtility = this.GetUtility<ImagePickerUtility>();
 
             var newTexture = await imageUtility.PickImageFromGalleryAsync(1024);

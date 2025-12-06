@@ -229,14 +229,34 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
             // 渲染
             renderCamera.Render();
             
-            // 读取像素
-            Texture2D screenshot = new Texture2D(textureWidth, textureHeight, TextureFormat.RGB24, false);
-            screenshot.ReadPixels(new Rect(0, 0, textureWidth, textureHeight), 0, 0);
-            screenshot.Apply();
+            // 等待渲染完成（等待多帧确保GPU渲染完成）
+            await UniTask.WaitForEndOfFrame();
+            await UniTask.Yield();
+            await UniTask.Yield();
             
-            // 保存文件
-            byte[] data = screenshot.EncodeToPNG();
-            await File.WriteAllBytesAsync(filePath, data);
+            // 确保在正确的时机读取像素
+            // 必须在主线程中，且RenderTexture.active必须正确设置
+            RenderTexture previousActive = RenderTexture.active;
+            RenderTexture.active = renderTexture;
+            
+            try
+            {
+                Texture2D screenshot = new Texture2D(textureWidth, textureHeight, TextureFormat.RGB24, false);
+                screenshot.ReadPixels(new Rect(0, 0, textureWidth, textureHeight), 0, 0);
+                screenshot.Apply();
+                
+                // 保存文件
+                byte[] data = screenshot.EncodeToPNG();
+                await File.WriteAllBytesAsync(filePath, data);
+                
+                // 清理screenshot
+                UnityEngine.Object.DestroyImmediate(screenshot);
+            }
+            finally
+            {
+                // 恢复之前的RenderTexture.active状态
+                RenderTexture.active = previousActive;
+            }
             
             // 恢复原始状态
             autoLayout.Offset = originalOffset;
@@ -248,8 +268,6 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
             renderCamera.backgroundColor = originalBackgroundColor;
             
             // 清理资源
-            RenderTexture.active = null;
-            UnityEngine.Object.DestroyImmediate(screenshot);
             UnityEngine.Object.DestroyImmediate(renderTexture);
             
             UnityEngine.Debug.Log($"NovaUI滚动视图截图成功: {filePath}");
@@ -338,7 +356,7 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
     }
     
     /// <summary>
-    /// 打印文件
+    /// 打印文件（适用于HybridCLR热更新环境）
     /// </summary>
     public bool PrintFile(string filePath)
     {
@@ -350,32 +368,92 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
                 return false;
             }
             
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = filePath,
-                UseShellExecute = true,
-                Verb = "print"
-            });
+            // 确保路径是绝对路径且格式正确
+            filePath = Path.GetFullPath(filePath);
+            UnityEngine.Debug.Log($"[打印] 尝试打开文件: {filePath}");
             
-            UnityEngine.Debug.Log($"文件已发送到打印机: {filePath}");
-            return true;
+            string extension = Path.GetExtension(filePath).ToLower();
+            
+            // 对于HTML文件，使用Application.OpenURL打开（HybridCLR热更新代码中可用）
+            if (extension == ".html" || extension == ".htm")
+            {
+                // 将文件路径转换为file://协议格式
+                string fileUrl = "file:///" + filePath.Replace("\\", "/");
+                
+                try
+                {
+                    // 方法1：使用Application.OpenURL（HybridCLR热更新代码中可用）
+                    Application.OpenURL(fileUrl);
+                    UnityEngine.Debug.Log($"已用浏览器打开HTML文件(Application.OpenURL): {fileUrl}");
+                    return true;
+                }
+                catch (Exception e1)
+                {
+                    UnityEngine.Debug.LogWarning($"Application.OpenURL失败: {e1.Message}，尝试备用方法");
+                    
+                    // 方法2：尝试使用Process.Start（备用）
+                    try
+                    {
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
+                        ProcessStartInfo startInfo = new ProcessStartInfo
+                        {
+                            FileName = filePath,
+                            UseShellExecute = true
+                        };
+                        Process.Start(startInfo);
+                        UnityEngine.Debug.Log($"已用浏览器打开HTML文件(Process.Start): {filePath}");
+                        return true;
+#else
+                        Application.OpenURL(fileUrl);
+                        return true;
+#endif
+                    }
+                    catch (Exception e2)
+                    {
+                        UnityEngine.Debug.LogError($"所有方法都失败了。最后错误: {e2.Message}");
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                // 其他文件类型尝试直接打印
+                try
+                {
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = filePath,
+                        UseShellExecute = true,
+                        Verb = "print"
+                    });
+                    UnityEngine.Debug.Log($"文件已发送到打印机: {filePath}");
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    UnityEngine.Debug.LogWarning($"直接打印失败: {e.Message}，尝试打开文件");
+                    // 打印失败时打开文件
+                    Application.OpenURL("file:///" + filePath.Replace("\\", "/"));
+                    return true;
+                }
+            }
         }
         catch (Exception e)
         {
             UnityEngine.Debug.LogError($"打印失败: {e.Message}");
+            UnityEngine.Debug.LogError($"异常堆栈: {e.StackTrace}");
             // 打印失败时打开文件让用户手动打印
             try
             {
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = filePath,
-                    UseShellExecute = true
-                });
+                string fileUrl = "file:///" + filePath.Replace("\\", "/");
+                Application.OpenURL(fileUrl);
                 UnityEngine.Debug.Log("已打开文件，请手动打印");
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                UnityEngine.Debug.LogError($"打开文件失败: {ex.Message}");
+                UnityEngine.Debug.LogError($"异常堆栈: {ex.StackTrace}");
                 return false;
             }
         }
