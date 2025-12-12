@@ -20,10 +20,17 @@ public class 新_量表谈话栏_茉 : 量表评估基类_茉
     protected override string 获取未完成提示信息() => "请完成全部谈话评估后保存";
     protected override void 还原其他数据(object 记录)
     {
+        Debug.Log($"[量表谈话栏] 还原其他数据: {记录}");
         var 谈话记录 = 记录 as 谈话记录;
         if (谈话记录 != null && 系列语言 != null)
         {
+            if(谈话记录.系列语言总分 <= 0)
+            {
+                系列语言.Text = "";
+            }
+            else
             系列语言.Text = 谈话记录.系列语言总分.ToString();
+
         }
     }
     protected override void 保存额外数据(object 记录)

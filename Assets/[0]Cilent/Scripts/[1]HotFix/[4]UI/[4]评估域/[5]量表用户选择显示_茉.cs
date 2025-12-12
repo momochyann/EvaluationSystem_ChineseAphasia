@@ -271,7 +271,7 @@ public class 量表用户选择显示_茉 : 界面基础_韩
         var 告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
         var 界面管理器 = FindObjectOfType<界面管理器_韩>();
         var ins = Instantiate(告示, 界面管理器.transform);
-        var 户择 = await ins.GetComponent<告示_茉>().等待确认显示("提示", "确认要取消吗？");
+        var 户择 = await ins.GetComponent<告示_茉>().等待确认显示("提示", "确认要返回吗？");
         if (户择)
         {
             FindObjectOfType<界面管理器_韩>().显示界面("量表待评测显示");

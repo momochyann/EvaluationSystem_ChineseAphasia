@@ -226,15 +226,15 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
                 }
             }
 
-            // 如果桥接接口不可用，使用备用方法
-            Debug.LogWarning($"[{DeviceName}] 串口桥接接口不可用，使用备用方法");
-            return GetComPortsFallback();
+            // 未获取到真实串口时不再尝试遍历所有端口，直接返回空列表
+            Debug.LogWarning($"[{DeviceName}] 未获取到可用COM端口");
+            return comPorts;
         }
         catch (Exception ex)
         {
             Debug.LogError($"[{DeviceName}] 获取COM端口失败: {ex.Message}");
-            // 如果API调用失败，使用备用方法
-            return GetComPortsFallback();
+            // 如果API调用失败，返回空列表，不再遍历所有端口
+            return comPorts;
         }
     }
 

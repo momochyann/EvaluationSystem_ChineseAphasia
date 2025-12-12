@@ -220,7 +220,7 @@ public class 档案管理数据环形图_茉 : MonoBehaviour, IController
             var 档案列表 = 档案录模型.GetDataList();
             if (档案列表 != null)
             {
-                现存量 = 档案列表.Count;
+                现存量 = 档案列表.Count(a => a != null && a.评估状态 == 评估状态.评估完成);
             }
         }
         
@@ -230,7 +230,7 @@ public class 档案管理数据环形图_茉 : MonoBehaviour, IController
             var 删除档案列表 = 删除档案录模型.GetDataList();
             if (删除档案列表 != null)
             {
-                删除量 = 删除档案列表.Count;
+                删除量 = 删除档案列表.Count(a => a != null && a.评估状态 == 评估状态.评估完成);
             }
         }
         

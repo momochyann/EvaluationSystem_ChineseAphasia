@@ -3326,7 +3326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -569.5542, y: 1.9075582}
+  m_AnchoredPosition: {x: -542.95123, y: 0.35755825}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &3469240042337202144
@@ -3410,10 +3410,10 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: 95.022
+        Raw: 121.62501
         Type: 0
       Y:
-        Raw: 2.069
+        Raw: 0.51900005
         Type: 0
       Z:
         Raw: 0
@@ -5264,7 +5264,7 @@ Transform:
   m_GameObject: {fileID: 2885572087799542357}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -360.2, y: 0.358, z: 0}
+  m_LocalPosition: {x: -307, y: 0.358, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5309,7 +5309,7 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: -360.2
+        Raw: -307
         Type: 0
       Y:
         Raw: 0.358
@@ -10663,7 +10663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191.15482, y: 0.7255582}
+  m_AnchoredPosition: {x: -166, y: 0.7255582}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &7750621785609168331
@@ -10747,7 +10747,7 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: 442.29202
+        Raw: 467.44684
         Type: 0
       Y:
         Raw: 0.887
@@ -11318,7 +11318,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -369.05252, y: 0.1625582}
+  m_AnchoredPosition: {x: -312, y: 0.1625582}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &6886577518923210626
@@ -11402,7 +11402,7 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: 268.738
+        Raw: 325.79053
         Type: 0
       Y:
         Raw: 0.324
@@ -13454,7 +13454,7 @@ Transform:
   m_GameObject: {fileID: 8993957102243299974}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -510.11304, y: 0.358, z: 0}
+  m_LocalPosition: {x: -428, y: 0.358, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13499,7 +13499,7 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: -510.11304
+        Raw: -428
         Type: 0
       Y:
         Raw: 0.358

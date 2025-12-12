@@ -260,13 +260,34 @@ public class 表分择性_茉 : MonoBehaviour
         if (索引 >= 0)
         {
             表分选择.DropdownOptions.SelectedIndex = 索引;
+            // 强制刷新显示文本，避免 SelectionLabel 未更新
+            if (表分选择.Visuals?.SelectionLabel != null)
+            {
+                表分选择.Visuals.SelectionLabel.Text = 表分选择.DropdownOptions.CurrentSelection;
+            }
             Debug.Log($"[{name}] 表分择性设置选中分数成功: {分数}, 索引: {索引}");
         }
         else
         {
-            Debug.LogWarning($"[{name}] 未找到分数 {分数} 对应的选项, 当前选项数: {表分选择.DropdownOptions.Options.Count}");
-            // 打印所有可用选项用于调试
-            Debug.Log($"[{name}] 可用选项: {string.Join(", ", 表分选择.DropdownOptions.Options)}");
+            // 可能分数文本尚未驱动下拉选项填充，尝试刷新后再选
+            Debug.LogWarning($"[{name}] 未找到分数 {分数} 对应的选项，尝试刷新下拉框后重试");
+            填充表分选择下拉框();
+            索引 = 表分选择.DropdownOptions.Options.IndexOf(分数字符串);
+            if (索引 >= 0)
+            {
+                表分选择.DropdownOptions.SelectedIndex = 索引;
+                if (表分选择.Visuals?.SelectionLabel != null)
+                {
+                    表分选择.Visuals.SelectionLabel.Text = 表分选择.DropdownOptions.CurrentSelection;
+                }
+                Debug.Log($"[{name}] 刷新后设置选中分数成功: {分数}, 索引: {索引}");
+            }
+            else
+            {
+                Debug.LogWarning($"[{name}] 刷新后仍未找到分数 {分数} 对应的选项, 当前选项数: {表分选择.DropdownOptions.Options.Count}");
+                // 打印所有可用选项用于调试
+                Debug.Log($"[{name}] 可用选项: {string.Join(", ", 表分选择.DropdownOptions.Options)}");
+            }
         }
     }
     

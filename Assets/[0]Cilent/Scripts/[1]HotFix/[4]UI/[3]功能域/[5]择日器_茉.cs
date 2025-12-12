@@ -15,6 +15,12 @@ public class 择日器_茉 : MonoBehaviour
     [Header("按钮组件")]
     [SerializeField] private UIBlock 保存按钮;
     [SerializeField] private Button 取消按钮;
+    [SerializeField] private UIBlock 切换输入按钮;
+
+    [Header("输入模式组件")]
+    [SerializeField] private GameObject 选择器容器;
+    [SerializeField] private GameObject 输入框容器;
+    [SerializeField] private TextField 日期输入框;
 
     [Header("日期范围设置")]
     [SerializeField] private int 最小年份 = 1900;
@@ -42,9 +48,40 @@ public class 择日器_茉 : MonoBehaviour
     public event System.Action<int, int, int> On保存日期;
 
     /// <summary>
+    /// 输入模式保存事件，参数为输入框的完整内容
+    /// </summary>
+    public event System.Action<string> On保存输入内容;
+
+    /// <summary>
     /// 获取当前选择的日期
     /// </summary>
-    public DateTime 当前选择日期 => new DateTime(当前年份, 当前月份, 当前日期);
+    public DateTime 当前选择日期
+    {
+        get
+        {
+            if (使用输入模式 && 尝试解析输入日期(out var 解析日期))
+            {
+                return 解析日期;
+            }
+            return new DateTime(当前年份, 当前月份, 当前日期);
+        }
+    }
+
+    /// <summary>
+    /// 当前是否处于输入模式
+    /// </summary>
+    public bool 使用输入模式 { get; private set; }
+
+    /// <summary>
+    /// 获取输入框当前内容（输入模式下可用）
+    /// </summary>
+    public string 当前输入内容 => 日期输入框 != null ? 日期输入框.Text : string.Empty;
+
+    /// <summary>
+    /// 输入框内容是否为有效日期
+    /// </summary>
+    public bool 输入框日期有效 => 尝试解析输入日期(out _);
+
     private void Awake()
     {
         var 现有择日器 = FindObjectsOfType<择日器_茉>();
@@ -66,6 +103,8 @@ public class 择日器_茉 : MonoBehaviour
     {
         初始化日期选择器();
         取消按钮.OnClicked.AddListener(取消选择);
+        绑定切换按钮事件();
+        初始化输入模式UI();
     }
 
     private void 取消选择()
@@ -101,6 +140,27 @@ public class 择日器_茉 : MonoBehaviour
         // 绑定事件
         绑定下拉框事件();
         绑定保存按钮事件();
+    }
+
+    /// <summary>
+    /// 初始化输入/选择模式的可见性
+    /// </summary>
+    private void 初始化输入模式UI()
+    {
+        使用输入模式 = false;
+        if (输入框容器 != null)
+        {
+            输入框容器.SetActive(false);
+        }
+        if (选择器容器 != null)
+        {
+            选择器容器.SetActive(true);
+        }
+
+        if (日期输入框 != null)
+        {
+            日期输入框.Text = 获取格式化日期();
+        }
     }
 
     /// <summary>
@@ -248,6 +308,21 @@ public class 择日器_茉 : MonoBehaviour
     }
 
     /// <summary>
+    /// 绑定切换输入模式按钮事件
+    /// </summary>
+    private void 绑定切换按钮事件()
+    {
+        if (切换输入按钮 != null)
+        {
+            切换输入按钮.AddGestureHandler<Gesture.OnClick>(切换输入模式);
+        }
+        else
+        {
+            Debug.LogWarning("择日器_茉: 切换输入按钮未赋值，无法切换模式");
+        }
+    }
+
+    /// <summary>
     /// 年份改变事件处理
     /// </summary>
     private void 年份改变时(string selectedValue)
@@ -345,8 +420,30 @@ public class 择日器_茉 : MonoBehaviour
     /// </summary>
     private void 保存按钮点击时(Gesture.OnClick evt)
     {
-        Debug.Log($"保存按钮被点击，当前日期: {当前年份}年{当前月份}月{当前日期}日");
-        On保存日期?.Invoke(当前年份, 当前月份, 当前日期);
+        if (使用输入模式)
+        {
+            string 输入内容 = 当前输入内容;
+            Debug.Log($"保存按钮被点击，当前输入内容: {输入内容}");
+
+            // 若能解析出有效日期，继续触发旧的 On保存日期 以兼容旧逻辑
+            if (尝试解析输入日期(out var 输入日期))
+            {
+                // 同步内部状态，保持与老逻辑一致
+                设置日期(输入日期.Year, 输入日期.Month, 输入日期.Day);
+                On保存日期?.Invoke(输入日期.Year, 输入日期.Month, 输入日期.Day);
+            }
+            else
+            {
+                Debug.LogWarning("输入模式保存时未能解析为有效日期，未触发旧的 On保存日期 回调");
+            }
+
+            On保存输入内容?.Invoke(输入内容);
+        }
+        else
+        {
+            Debug.Log($"保存按钮被点击，当前日期: {当前年份}年{当前月份}月{当前日期}日");
+            On保存日期?.Invoke(当前年份, 当前月份, 当前日期);
+        }
         Destroy(this.gameObject, 0.1f);
     }
 
@@ -423,8 +520,25 @@ public class 择日器_茉 : MonoBehaviour
     /// </summary>
     public void 手动保存()
     {
-        Debug.Log($"手动保存日期: {当前年份}年{当前月份}月{当前日期}日");
-        On保存日期?.Invoke(当前年份, 当前月份, 当前日期);
+        if (使用输入模式)
+        {
+            Debug.Log($"手动保存输入内容: {当前输入内容}");
+            if (尝试解析输入日期(out var 输入日期))
+            {
+                设置日期(输入日期.Year, 输入日期.Month, 输入日期.Day);
+                On保存日期?.Invoke(输入日期.Year, 输入日期.Month, 输入日期.Day);
+            }
+            else
+            {
+                Debug.LogWarning("手动保存时输入内容无法解析为日期，未触发 On保存日期");
+            }
+            On保存输入内容?.Invoke(当前输入内容);
+        }
+        else
+        {
+            Debug.Log($"手动保存日期: {当前年份}年{当前月份}月{当前日期}日");
+            On保存日期?.Invoke(当前年份, 当前月份, 当前日期);
+        }
     }
 
     /// <summary>
@@ -499,5 +613,62 @@ public class 择日器_茉 : MonoBehaviour
         // 清理保存按钮事件
         if (保存按钮 != null)
             保存按钮.RemoveGestureHandler<Gesture.OnClick>(保存按钮点击时);
+        if (切换输入按钮 != null)
+            切换输入按钮.RemoveGestureHandler<Gesture.OnClick>(切换输入模式);
+    }
+
+    /// <summary>
+    /// 切换输入与选择模式
+    /// </summary>
+    private void 切换输入模式(Gesture.OnClick evt)
+    {
+        bool 切换到输入模式 = !使用输入模式;
+
+        if (切换到输入模式)
+        {
+            // 切到输入模式时，用当前选择的日期预填
+            if (日期输入框 != null)
+            {
+                日期输入框.Text = 获取格式化日期();
+            }
+        }
+        else
+        {
+            // 切回选择模式时，如果输入可解析则同步到下拉框
+            if (日期输入框 != null && DateTime.TryParse(日期输入框.Text, out var 解析日期))
+            {
+                设置日期(解析日期.Year, 解析日期.Month, 解析日期.Day);
+            }
+        }
+
+        使用输入模式 = 切换到输入模式;
+        更新模式显示();
+    }
+
+    /// <summary>
+    /// 更新UI显示状态
+    /// </summary>
+    private void 更新模式显示()
+    {
+        if (选择器容器 != null)
+            选择器容器.SetActive(!使用输入模式);
+        if (输入框容器 != null)
+            输入框容器.SetActive(使用输入模式);
+        if (日期输入框 != null)
+            日期输入框.gameObject.SetActive(使用输入模式);
+    }
+
+    /// <summary>
+    /// 尝试从输入框解析日期
+    /// </summary>
+    private bool 尝试解析输入日期(out DateTime 解析结果)
+    {
+        if (日期输入框 == null)
+        {
+            解析结果 = default;
+            return false;
+        }
+
+        return DateTime.TryParse(日期输入框.Text, out 解析结果);
     }
 }

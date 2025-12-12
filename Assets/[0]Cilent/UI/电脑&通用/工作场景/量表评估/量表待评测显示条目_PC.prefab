@@ -328,7 +328,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -590.92175, y: -0.2220794}
+  m_AnchoredPosition: {x: -571.5, y: -0.2220794}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4425911082955795605
@@ -402,7 +402,7 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 0.124000005
+        Raw: 0.16000001
         Type: 1
       Y:
         Raw: 0.92
@@ -412,7 +412,7 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: 40.379
+        Raw: 33.856934
         Type: 0
       Y:
         Raw: 1.7930001
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -89.36222, y: -23.173422, z: -89.36222, w: -23.173422}
+  m_margin: {x: -115.30609, y: -23.173422, z: -115.30609, w: -23.173422}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -684,7 +684,7 @@ Transform:
   m_GameObject: {fileID: 3879963703421665584}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -683.155, y: -0.048999786, z: 0}
+  m_LocalPosition: {x: -702.4, y: -0.048999786, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -731,7 +731,7 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: -683.155
+        Raw: -702.4
         Type: 0
       Y:
         Raw: 11.737
@@ -1403,7 +1403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -423.507, y: 0.07214928}
+  m_AnchoredPosition: {x: -390.7, y: 0.07214928}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &7086585419907743423
@@ -1487,7 +1487,7 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: 230.85501
+        Raw: 263.662
         Type: 0
       Y:
         Raw: -0.5827522

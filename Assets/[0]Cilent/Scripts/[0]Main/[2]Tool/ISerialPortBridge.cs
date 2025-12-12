@@ -26,3 +26,9 @@ public interface ISerialPortBridge
     List<(string portName, int portSkip)> GetComPortsWithSkip();
 }
 
+
+
+
+
+
+

@@ -192,7 +192,7 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
             
             // 限制最大尺寸防止内存溢出
             textureWidth = Mathf.Min(textureWidth, 4096);
-            textureHeight = Mathf.Min(textureHeight, 8192);
+            textureHeight = Mathf.Min(textureHeight, 10000);
             
             UnityEngine.Debug.Log($"RenderTexture尺寸: {textureWidth}x{textureHeight}");
             
@@ -308,7 +308,7 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
     }
     
     /// <summary>
-    /// 将图片转换为HTML格式（便于打印）
+    /// 将图片转换为HTML格式（便于打印，支持自动分页）
     /// </summary>
     public string ConvertImageToHTML(string imagePath, string title = "截图文档")
     {
@@ -317,7 +317,154 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
             if (!File.Exists(imagePath))
                 return null;
             
+            // 获取图片尺寸
+            Vector2Int imageSize = GetImageSize(imagePath);
+            if (imageSize.x <= 0 || imageSize.y <= 0)
+            {
+                UnityEngine.Debug.LogWarning("无法获取图片尺寸，使用单页模式");
+                return ConvertImageToHTMLSinglePage(imagePath, title);
+            }
+            
+            // A4纸尺寸（96 DPI）：794 x 1123 像素
+            // 考虑到打印边距，使用稍小的尺寸：750 x 1050 像素
+            const int A4_WIDTH = 750;
+            const int A4_HEIGHT = 1050;
+            
+            // 如果图片高度小于等于A4高度，使用单页模式
+            if (imageSize.y <= A4_HEIGHT)
+            {
+                return ConvertImageToHTMLSinglePage(imagePath, title);
+            }
+            
+            // 计算图片缩放比例（确保宽度适应A4）
+            float scaleX = (float)A4_WIDTH / imageSize.x;
+            float scaledHeight = imageSize.y * scaleX;
+            
+            // 计算需要的页数（基于缩放后的高度）
+            int totalPages = Mathf.CeilToInt(scaledHeight / A4_HEIGHT);
+            UnityEngine.Debug.Log($"图片尺寸: {imageSize.x}x{imageSize.y}，缩放后: {A4_WIDTH}x{scaledHeight:F0}，将分割为 {totalPages} 页");
+            
+            // 将图片转换为base64，避免文件路径问题
+            string base64Image = "";
+            try
+            {
+                byte[] imageBytes = File.ReadAllBytes(imagePath);
+                string extension = Path.GetExtension(imagePath).ToLower();
+                string mimeType = extension == ".png" ? "image/png" : (extension == ".jpg" || extension == ".jpeg" ? "image/jpeg" : "image/png");
+                base64Image = "data:" + mimeType + ";base64," + Convert.ToBase64String(imageBytes);
+            }
+            catch (Exception e)
+            {
+                UnityEngine.Debug.LogError($"读取图片文件失败: {e.Message}");
+                // 如果base64失败，回退到文件路径方式
+                string imageUrl = "file:///" + imagePath.Replace("\\", "/");
+                base64Image = imageUrl;
+            }
+            
+            string pageContent = "";
+            
+            for (int page = 0; page < totalPages; page++)
+            {
+                // 计算当前页在缩放后图片中的位置（从顶部开始）
+                float scaledOffsetY = page * A4_HEIGHT;
+                float pageHeight = Mathf.Min(A4_HEIGHT, scaledHeight - scaledOffsetY);
+                
+                // 使用img标签配合绝对定位和overflow hidden来实现分页
+                // 每页显示图片的一个区域
+            pageContent += $@"
+    <div class='page'>
+        <div class='image-wrapper' style='position: absolute; top: -{scaledOffsetY:F0}px; left: 0; width: {A4_WIDTH}px; height: {scaledHeight:F0}px;'>
+            <img src='{base64Image}' alt='截图第{page + 1}页' style='width: {A4_WIDTH}px; height: {scaledHeight:F0}px; object-fit: contain; display: block;' />
+        </div>
+        <div class='footer'>© 北京心智超航科技有限公司 All Rights Reserved</div>
+    </div>";
+            }
+            
             string htmlContent = $@"<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>{title}</title>
+    <style>
+        @page {{
+            margin: 0;
+            size: A4;
+        }}
+        * {{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }}
+        body {{
+            font-family: Arial, sans-serif;
+            background: white;
+        }}
+        .page {{
+            width: {A4_WIDTH}px;
+            height: {A4_HEIGHT}px;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            overflow: hidden;
+            page-break-inside: avoid;
+            padding-bottom: 16px;
+        }}
+        .image-wrapper {{
+            position: absolute;
+        }}
+        .footer {{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }}
+        @media print {{
+            .no-print {{
+                display: none;
+            }}
+            .page {{
+                page-break-after: always;
+                page-break-inside: avoid;
+            }}
+        }}
+        @media screen {{
+            .page {{
+                margin-bottom: 20px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }}
+        }}
+    </style>
+</head>
+<body>
+{pageContent}
+    <div class='no-print' style='position: fixed; top: 10px; right: 10px; z-index: 1000; background: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);'>
+        <button onclick='window.print()' style='padding: 10px 20px; font-size: 14px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 3px;'>打印文档 ({totalPages} 页)</button>
+    </div>
+</body>
+</html>";
+            
+            string htmlPath = Path.ChangeExtension(imagePath, ".html");
+            File.WriteAllText(htmlPath, htmlContent, System.Text.Encoding.UTF8);
+            
+            UnityEngine.Debug.Log($"多页HTML生成成功: {htmlPath} ({totalPages} 页)");
+            return htmlPath;
+        }
+        catch (Exception e)
+        {
+            UnityEngine.Debug.LogError($"生成HTML失败: {e.Message}");
+            return null;
+        }
+    }
+    
+    /// <summary>
+    /// 单页HTML生成（用于小图片）
+    /// </summary>
+    private string ConvertImageToHTMLSinglePage(string imagePath, string title)
+    {
+        string htmlContent = $@"<!DOCTYPE html>
 <html>
 <head>
     <meta charset='utf-8'>
@@ -327,6 +474,7 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
         body {{ margin: 0; padding: 0; font-family: Arial, sans-serif; }}
         .content {{ text-align: center; }}
         .image {{ max-width: 100%; height: auto; }}
+        .footer {{ margin-top: 12px; text-align: center; font-size: 12px; color: #666; }}
         @media print {{
             .no-print {{ display: none; }}
             .image {{ max-height: 100vh; }}
@@ -336,22 +484,48 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
 <body>
     <div class='content'>
         <img src='file:///{imagePath.Replace("\\", "/")}' alt='截图' class='image'>
+        <div class='footer'>© 北京心智超航科技有限公司 All Rights Reserved</div>
     </div>
     <div class='no-print' style='position: fixed; top: 10px; right: 10px; z-index: 1000;'>
         <button onclick='window.print()' style='padding: 10px 20px; font-size: 14px;'>打印文档</button>
     </div>
 </body>
 </html>";
+        
+        string htmlPath = Path.ChangeExtension(imagePath, ".html");
+        File.WriteAllText(htmlPath, htmlContent, System.Text.Encoding.UTF8);
+        return htmlPath;
+    }
+    
+    /// <summary>
+    /// 获取图片尺寸
+    /// </summary>
+    private Vector2Int GetImageSize(string imagePath)
+    {
+        try
+        {
+            if (!File.Exists(imagePath))
+                return Vector2Int.zero;
             
-            string htmlPath = Path.ChangeExtension(imagePath, ".html");
-            File.WriteAllText(htmlPath, htmlContent, System.Text.Encoding.UTF8);
+            // 读取文件头信息来获取尺寸（避免加载整个图片到内存）
+            byte[] fileData = File.ReadAllBytes(imagePath);
             
-            return htmlPath;
+            // 使用Texture2D.LoadImage来获取尺寸（只加载元数据）
+            Texture2D tempTexture = new Texture2D(2, 2);
+            if (tempTexture.LoadImage(fileData, false)) // markNonReadable=false 可以更快
+            {
+                Vector2Int size = new Vector2Int(tempTexture.width, tempTexture.height);
+                UnityEngine.Object.DestroyImmediate(tempTexture);
+                return size;
+            }
+            
+            UnityEngine.Object.DestroyImmediate(tempTexture);
+            return Vector2Int.zero;
         }
         catch (Exception e)
         {
-            UnityEngine.Debug.LogError($"生成HTML失败: {e.Message}");
-            return null;
+            UnityEngine.Debug.LogError($"获取图片尺寸失败: {e.Message}");
+            return Vector2Int.zero;
         }
     }
     

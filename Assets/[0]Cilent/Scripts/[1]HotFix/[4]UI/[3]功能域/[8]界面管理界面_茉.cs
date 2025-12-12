@@ -4,6 +4,7 @@ using NovaSamples.UIControls;
 using Cysharp.Threading.Tasks;
 using Nova;
 using DG.Tweening;
+using System;
 
 public class 界面管理界面_茉 : 界面基础_韩
 {
@@ -20,7 +21,9 @@ public class 界面管理界面_茉 : 界面基础_韩
     [SerializeField] private NovaSamples.UIControls.Button 取消按钮;
 
     private 软件配置录 配置录;
+    private IWindowTitleBridge 窗口标题桥;
     [SerializeField] public Color inputSetColor;
+    private const string 默认窗口标题 = "汉语失语症评测系统";
     bool isFirst = true;
     void Start()
     {
@@ -66,6 +69,7 @@ public class 界面管理界面_茉 : 界面基础_韩
     private void InitializeUI()
     {
         配置录 = this.GetModel<软件配置录>();
+        窗口标题桥 = new WindowTitleBridge();
 
         // 绑定按钮事件
         保存按钮?.OnClicked.AddListener(保存配置);
@@ -98,6 +102,7 @@ public class 界面管理界面_茉 : 界面基础_韩
         var texture2D = await this.GetUtility<ImagePickerUtility>().LoadImageFromCacheAsync(config.图片缓存名称);
         图片选择器.SetDisplayImage(texture2D);
         // 图片选择器会自动加载上次的图片（如果启用了显示默认图片）
+        同步窗口标题(config.软件名称);
         Debug.Log("配置数据已加载到界面");
     }
 
@@ -120,6 +125,7 @@ public class 界面管理界面_茉 : 界面基础_韩
             if (IsConfig)
             {
                 配置录.保存配置(新配置);
+                同步窗口标题(新配置.软件名称);
             }
         }
         catch (System.Exception e)
@@ -132,7 +138,7 @@ public class 界面管理界面_茉 : 界面基础_韩
     /// <summary>
     /// 取消操作
     /// </summary>
-    private async void 取消操作()
+    private void 取消操作()
     {
         // 重新加载配置数据，恢复到保存的状态
         LoadConfigData();
@@ -159,6 +165,11 @@ public class 界面管理界面_茉 : 界面基础_韩
             Debug.LogWarning($"显示提示失败: {e.Message}");
         }
         return false;
+    }
+
+    private void 同步窗口标题(string 名称)
+    {
+        窗口标题桥?.SetTitle(名称, 默认窗口标题);
     }
 
     void OnDestroy()

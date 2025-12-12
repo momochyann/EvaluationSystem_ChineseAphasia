@@ -16,6 +16,7 @@ public class 右上角功能端PC_茉 : MonoBehaviour, IController
     [SerializeField] public Button 蓝牙连接按钮;
     [SerializeField] Button 设置按钮;
     [SerializeField] Button 全屏切换按钮;
+    [SerializeField] Button 编号管理按钮;
     private 评人录 评人录;
     private 管员录 管员录;
     private bool bIsFullScreen = true; // 记录当前是否为全屏状态
@@ -29,6 +30,7 @@ public class 右上角功能端PC_茉 : MonoBehaviour, IController
         大数据按钮.OnClicked.AddListener(显示大数据界面);
         设置按钮.OnClicked.AddListener(展示设置);
         全屏切换按钮.OnClicked.AddListener(切换全屏状态);
+        编号管理按钮.OnClicked.AddListener(执行编号管理);
         评人录 = this.GetModel<评人录>();
         管员录 = this.GetModel<管员录>();
         
@@ -100,6 +102,12 @@ public class 右上角功能端PC_茉 : MonoBehaviour, IController
         {
             Debug.LogError($"[右上角功能端] 切换屏幕模式失败: {ex.Message}");
         }
+    }
+
+    async private void 执行编号管理()
+    {
+        var 编号管理界面 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("编号管理栏");
+        var 编号管理界面实例 = Instantiate(编号管理界面, transform.parent.parent);
     }
 
     async private void 执行用户名管理()

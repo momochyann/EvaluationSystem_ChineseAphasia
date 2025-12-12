@@ -691,7 +691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -423.507, y: 0.07214928}
+  m_AnchoredPosition: {x: -399.2, y: 0.07214928}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1742066107251488094
@@ -775,7 +775,7 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: 230.85501
+        Raw: 255.16199
         Type: 0
       Y:
         Raw: -0.5827522
@@ -3505,7 +3505,7 @@ Transform:
   m_GameObject: {fileID: 5759037395939432218}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -683.155, y: -0.048999786, z: 0}
+  m_LocalPosition: {x: -702.3, y: -0.048999786, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3552,7 +3552,7 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: -683.155
+        Raw: -702.3
         Type: 0
       Y:
         Raw: 11.737
@@ -4153,7 +4153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -590.92175, y: -0.2220794}
+  m_AnchoredPosition: {x: -570.7433, y: -0.2220794}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &3629439416236990098
@@ -4227,7 +4227,7 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 0.124000005
+        Raw: 0.158
         Type: 1
       Y:
         Raw: 0.92
@@ -4237,7 +4237,7 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: 40.379
+        Raw: 36.055
         Type: 0
       Y:
         Raw: 1.7930001
@@ -4408,7 +4408,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dsadasdadasd
+  m_text: 2321313121131
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c21557c0ffc6be4686510e08712fb09, type: 2}
   m_sharedMaterial: {fileID: -7730855064177753811, guid: 9c21557c0ffc6be4686510e08712fb09, type: 2}
@@ -4471,7 +4471,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -89.36222, y: -23.173422, z: -89.36222, w: -23.173422}
+  m_margin: {x: -113.86476, y: -23.173422, z: -113.86476, w: -23.173422}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0

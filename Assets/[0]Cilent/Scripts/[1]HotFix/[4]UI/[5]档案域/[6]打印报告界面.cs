@@ -8,6 +8,27 @@ using Cysharp.Threading.Tasks;
 
 public class 打印报告界面_茉 : 界面基础_韩
 {
+    [Header("基本信息")]
+    [SerializeField] private TextBlock 姓名;
+    [SerializeField] private TextBlock 性别;
+    [SerializeField] private TextBlock 出生日期;
+    [SerializeField] private TextBlock 编号;
+    [SerializeField] private TextBlock 年龄;
+    [SerializeField] private TextBlock 评估人员;
+    [SerializeField] private TextBlock 评估时间;
+
+    [Header("个人/背景信息")]
+    [SerializeField] private TextBlock 身份证;
+    [SerializeField] private TextBlock 联系方式;
+    [SerializeField] private TextBlock 发病日期;
+    [SerializeField] private TextBlock 文化程度;
+    [SerializeField] private TextBlock 血压;
+    [SerializeField] private TextBlock 神志状态;
+    [SerializeField] private TextBlock 家庭成员;
+    [SerializeField] private TextBlock 发病前后语言状态;
+    [SerializeField] private TextBlock 发病时状况;
+    [SerializeField] private TextBlock 既往病史;
+
     [Header("界面容器")]
     [SerializeField] private GameObject 量表报告界面;
     [SerializeField] private GameObject 量表表格界面;
@@ -24,6 +45,7 @@ public class 打印报告界面_茉 : 界面基础_韩
     [SerializeField] private TextBlock 词复述总分;
     [SerializeField] private TextBlock 句复述总分;
     [SerializeField] private TextBlock 词命名总分;
+    [SerializeField] private TextBlock 列名总分;
     [SerializeField] private TextBlock 颜色识别总分;
     [SerializeField] private TextBlock 颜色命名总分;
     [SerializeField] private TextBlock 反应性命名总分;
@@ -56,6 +78,14 @@ public class 打印报告界面_茉 : 界面基础_韩
     [SerializeField] private TextBlock 失语症评定;
     [SerializeField] private TextBlock BDAE严重程度;
 
+    [Header("综合信息")]
+    [SerializeField] private TextBlock 综合评价;
+    [SerializeField] private TextBlock 指导建议;
+
+    // 背景信息选项组
+    private List<选项组性_茉> 选项组性列表 = new List<选项组性_茉>();
+    private List<选项组性多选_茉> 选项组性多选列表 = new List<选项组性多选_茉>();
+
     private 档案 当前显示档案;
 
     [HideInInspector] public bool 是否为打印;
@@ -67,6 +97,7 @@ public class 打印报告界面_茉 : 界面基础_韩
     [SerializeField] private Button 确认打印;
     void Awake()
     {
+        初始化选项组();
         显示信息 += 显示档案详情;
         返回按钮.OnClicked.AddListener(() =>
      {
@@ -202,7 +233,15 @@ public class 打印报告界面_茉 : 界面基础_韩
         // 根据勾选状态显示对应界面
         控制界面显示();
 
+        // 基本与背景信息
+        显示基本信息(当前显示档案);
+        显示背景信息(当前显示档案);
+        还原背景信息选项组(当前显示档案);
+
         显示量表评估分数(当前显示档案);
+
+        // 显示综合信息（综合评价和指导建议）
+        显示综合信息(当前显示档案);
 
         // 如果显示量表表格，更新可视化
         if (显示量表表格 && 量表表格可视化 != null)
@@ -279,6 +318,7 @@ public class 打印报告界面_茉 : 界面基础_韩
             if (颜色识别总分 != null) 颜色识别总分.Text = 档案.命名记录.颜色识别总分.ToString();
             if (颜色命名总分 != null) 颜色命名总分.Text = 档案.命名记录.颜色命名总分.ToString();
             if (反应性命名总分 != null) 反应性命名总分.Text = 档案.命名记录.反应性命名总分.ToString();
+            if (列名总分 != null) 列名总分.Text = 档案.命名记录.列名 ?? "";
         }
 
         // 阅读记录
@@ -356,6 +396,17 @@ public class 打印报告界面_茉 : 界面基础_韩
         BDAE严重程度.Text = 描述;
 
         Debug.Log($"[打印报告] BDAE严重程度: {等级}级 - {描述}");
+    }
+
+    /// <summary>
+    /// 显示综合信息（综合评价和指导建议）
+    /// </summary>
+    void 显示综合信息(档案 档案)
+    {
+        if (综合评价 != null) 综合评价.Text = 档案.综合评价 ?? "";
+        if (指导建议 != null) 指导建议.Text = 档案.指导建议 ?? "";
+
+        Debug.Log($"[打印报告] 综合评价: {档案.综合评价 ?? "无"}, 指导建议: {档案.指导建议 ?? "无"}");
     }
 
     /// <summary>
@@ -446,6 +497,84 @@ public class 打印报告界面_茉 : 界面基础_韩
         量表表格可视化.设置分数(分数字典);
 
         Debug.Log($"[打印报告] 量表表格可视化已更新，共{分数字典.Count}个维度");
+    }
+
+    void 初始化选项组()
+    {
+        选项组性列表.Clear();
+        选项组性多选列表.Clear();
+
+        选项组性列表.AddRange(GetComponentsInChildren<选项组性_茉>(true));
+        选项组性多选列表.AddRange(GetComponentsInChildren<选项组性多选_茉>(true));
+
+        Debug.Log($"[打印报告] 找到 {选项组性列表.Count} 个选项组性，{选项组性多选列表.Count} 个选项组性多选");
+    }
+
+    async void 还原背景信息选项组(档案 档案)
+    {
+        if (档案 == null || 档案.背景信息选项组选择 == null || 档案.背景信息选项组选择.Count == 0) return;
+        await UniTask.Delay(100);
+
+        foreach (var 选项组 in 选项组性列表)
+        {
+            if (选项组 != null && !string.IsNullOrEmpty(选项组.选项组名称) &&
+                档案.背景信息选项组选择.ContainsKey(选项组.选项组名称))
+            {
+                var 数据 = 档案.背景信息选项组选择[选项组.选项组名称].Split('|');
+                if (数据.Length == 2 && int.TryParse(数据[1], out int 索引))
+                    选项组.设置选中选项(索引);
+            }
+        }
+
+        foreach (var 选项组 in 选项组性多选列表)
+        {
+            if (选项组 != null && !string.IsNullOrEmpty(选项组.选项组名称) &&
+                档案.背景信息选项组选择.ContainsKey(选项组.选项组名称))
+            {
+                var 数据 = 档案.背景信息选项组选择[选项组.选项组名称].Split('|');
+                if (数据.Length == 2)
+                {
+                    var 索引列表 = new List<int>();
+                    foreach (var 索引字符串 in 数据[1].Split(','))
+                    {
+                        if (int.TryParse(索引字符串, out int 索引))
+                            索引列表.Add(索引);
+                    }
+                    选项组.批量设置选中选项(索引列表);
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// 显示基本信息与评定人/日期
+    /// </summary>
+    void 显示基本信息(档案 档案)
+    {
+        if (姓名 != null) 姓名.Text = 档案.姓名 ?? "";
+        if (性别 != null) 性别.Text = 档案.性别 ?? "";
+        if (出生日期 != null) 出生日期.Text = 档案.出生日期 ?? "";
+        if (编号 != null) 编号.Text = 档案.编号 ?? "";
+        if (年龄 != null) 年龄.Text = 档案.年龄 ?? "";
+        if (评估人员 != null) 评估人员.Text = 档案.评估人员 ?? "";
+        if (评估时间 != null) 评估时间.Text = 档案.评估时间 ?? "";
+    }
+
+    /// <summary>
+    /// 显示背景资料
+    /// </summary>
+    void 显示背景信息(档案 档案)
+    {
+        if (身份证 != null) 身份证.Text = 档案.身份证 ?? "";
+        if (联系方式 != null) 联系方式.Text = 档案.联系方式 ?? "";
+        if (发病日期 != null) 发病日期.Text = 档案.发病日期 ?? "";
+        if (文化程度 != null) 文化程度.Text = 档案.文化程度 ?? "";
+        if (血压 != null) 血压.Text = 档案.血压 ?? "";
+        if (神志状态 != null) 神志状态.Text = 档案.神志状态 ?? "";
+        if (家庭成员 != null) 家庭成员.Text = 档案.家庭成员 ?? "";
+        if (发病前后语言状态 != null) 发病前后语言状态.Text = 档案.发病前后语言状态 ?? "";
+        if (发病时状况 != null) 发病时状况.Text = 档案.发病时状况 ?? "";
+        if (既往病史 != null) 既往病史.Text = 档案.既往病史 ?? "";
     }
 
     void OnDestroy()

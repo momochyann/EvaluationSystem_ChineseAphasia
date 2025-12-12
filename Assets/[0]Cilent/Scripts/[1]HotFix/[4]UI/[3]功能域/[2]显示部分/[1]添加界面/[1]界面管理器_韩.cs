@@ -173,6 +173,42 @@ public class 界面管理器_韩 : MonoBehaviour, IController
     }
 
     /// <summary>
+    /// 预加载面板到缓存但不显示
+    /// </summary>
+    public async UniTask 预加载界面(string panelKey)
+    {
+        if (string.IsNullOrEmpty(panelKey)) return;
+        if (_loadedPanels.ContainsKey(panelKey)) return;
+        try
+        {
+            GameObject panelPrefab = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb(panelKey);
+            if (panelPrefab == null)
+            {
+                Debug.LogError($"预加载面板 {panelKey} 失败: 预制体为空");
+                return;
+            }
+
+            GameObject panelObj = Instantiate(panelPrefab);
+            panelObj.transform.SetParent(transform, false);
+
+            界面基础_韩 panel = panelObj.GetComponent<界面基础_韩>();
+            if (panel == null)
+            {
+                Debug.LogError($"面板 {panelKey} 缺少 界面基础_韩 组件，请检查预制体");
+                Destroy(panelObj);
+                return;
+            }
+
+            panel.隐藏界面(); // 确保不显示
+            _loadedPanels[panelKey] = panel;
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"预加载面板 {panelKey} 失败: {e.Message}");
+        }
+    }
+
+    /// <summary>
     /// 获取面板类型对应的唯一标识（资源路径）
     /// </summary>
     /// <typeparam name="T">面板类型</typeparam>

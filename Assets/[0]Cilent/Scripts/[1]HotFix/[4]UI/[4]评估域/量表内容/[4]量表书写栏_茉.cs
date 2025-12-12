@@ -94,13 +94,21 @@ public class 量表书写栏_茉 : 量表评估基类_茉
     protected override void 还原其他数据(object 记录)
     {
         var 书写记录 = 记录 as 书写记录;
+        Debug.Log($"[量表书写栏] 还原其他数据: {书写记录.写病情分数}");
         if (书写记录 == null) return;
 
         // 还原写病情分数
         写病情当前分数 = 书写记录.写病情分数;
         if (写病情输入框 != null)
         {
-            写病情输入框.Text = 写病情当前分数.ToString();
+            if(写病情当前分数 <= 0)
+            {
+                写病情输入框.Text = "";
+            }
+            else
+            {
+                写病情输入框.Text = 写病情当前分数.ToString();
+            }
         }
         
         Debug.Log($"[量表书写栏] 还原写病情分数: {写病情当前分数}");

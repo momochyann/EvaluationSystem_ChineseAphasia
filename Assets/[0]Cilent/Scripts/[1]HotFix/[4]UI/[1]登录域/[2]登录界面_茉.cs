@@ -57,6 +57,7 @@ public class 登录界面_茉 : MonoBehaviour, IController
     // 初始化方法
     void Start()
     {
+        
         // 保存原始的占位符文本
         用户名原始占位符文本 = 用户名占位符.Text;
         密码原始占位符文本 = 密码占位符.Text;

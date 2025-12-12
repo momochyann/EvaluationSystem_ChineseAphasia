@@ -130,6 +130,8 @@ public class 书写记录 : 档案记录接口
 
     // 存储选项组名称和选中索引的映射（表分择性使用）
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
+    // 存储表分择性名称和选中索引的映射（用于还原/保存表分择性）
+    public Dictionary<string, int> 表分择性选择 = new Dictionary<string, int>();
 }
 /// <summary>
 /// 结构与空间记录 - 包含2个维度的评估数据

@@ -9,12 +9,13 @@ public class 软件名称自动修改 : MonoBehaviour, IController
 {
     // Start is called before the first frame update
     TextBlock 软件名称;
+    软件配置录 配置录;
     void Start()
     {
         软件名称 = GetComponent<TextBlock>();
         加载软件名称();
-        var 软件配置录 = this.GetModel<软件配置录>();
-        软件配置录.软件修改事件 += 自动加载名称;
+        配置录 = this.GetModel<软件配置录>();
+        配置录.软件修改事件 += 自动加载名称;
     }
 
     private void 自动加载名称(软件配置 arg0)
@@ -45,5 +46,13 @@ public class 软件名称自动修改 : MonoBehaviour, IController
     public IArchitecture GetArchitecture()
     {
         return HotFixTemplateArchitecture.Interface;
+    }
+
+    void OnDestroy()
+    {
+        if (配置录 != null)
+        {
+            配置录.软件修改事件 -= 自动加载名称;
+        }
     }
 }

@@ -8426,7 +8426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u53D6\u6D88"
+  m_text: "\u8FD4\u56DE"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c21557c0ffc6be4686510e08712fb09, type: 2}
   m_sharedMaterial: {fileID: -7730855064177753811, guid: 9c21557c0ffc6be4686510e08712fb09, type: 2}
@@ -15208,8 +15208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u63D0\u4EA4\u6309\u94AE": {fileID: 3649941513193840671}
-  "\u53D6\u6D88\u6309\u94AE": {fileID: 366325738253204846}
-  "\u8FD4\u56DE\u6309\u94AE": {fileID: 0}
+  "\u53D6\u6D88\u6309\u94AE": {fileID: 0}
+  "\u8FD4\u56DE\u6309\u94AE": {fileID: 366325738253204846}
 --- !u!1 &3183048561038863681
 GameObject:
   m_ObjectHideFlags: 0
@@ -31536,7 +31536,7 @@ GameObject:
   - component: {fileID: 6220680291017347179}
   - component: {fileID: 366325738253204846}
   m_Layer: 0
-  m_Name: "\u53D6\u6D88"
+  m_Name: "\u8FD4\u56DE"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
