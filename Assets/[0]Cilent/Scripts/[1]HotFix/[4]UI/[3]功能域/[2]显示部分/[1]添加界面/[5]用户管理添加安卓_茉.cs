@@ -121,7 +121,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         {
             选择发病日期().Forget();
         });
-
+        
         // 初始化选项组性和选项组性多选（延迟一帧，等待所有子物体加载完成）
         延迟初始化背景信息选项组().Forget();
     }
@@ -244,6 +244,10 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         selector.OnFocused += () =>
         {
             选中动画(true, 输入框.transform.parent.parent);
+            if (性别.Visuals.IsExpanded)
+            {
+                性别.Collapse();
+            }
         };
         selector.OnFocusLost += () =>
         {
@@ -382,6 +386,7 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         新用户.发病时状况 = 发病时状况 != null ? 发病时状况.Text : "";
         新用户.既往病史 = 既往病史 != null ? 既往病史.Text : "";
         新用户.神志状态 = 神志状态 != null ? 神志状态.Text : "";
+        新用户.添加时间 = System.DateTime.Now.ToString("yyyy-MM-dd");
         // 背景信息 - 从子物体中的选项组性获取
         新用户.背景信息选项组选择.Clear();
 
@@ -535,6 +540,8 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
     }
     protected override void OnHide()
     {
+        // 择日器显示 = false;
+        清空信息();
         Debug.Log("[ [3] 用户管理添加_韩]OnHide");
     }
     void OnDestroy()

@@ -57,7 +57,8 @@ public static class BleManager
 
 		Debug.Log($"发送数据: {BitConverter.ToString(data)}+{address}{serviceUUID}{characteristicUUID}");
 		var signedData = Array.ConvertAll(data, b => unchecked((sbyte)b));
-		BluetoothLEHardwareInterface.WriteCharacteristic(address, serviceUUID, characteristicUUID, signedData, signedData.Length, false, (_) =>
+        // 使用有响应写入，降低丢包概率
+        BluetoothLEHardwareInterface.WriteCharacteristic(address, serviceUUID, characteristicUUID, signedData, signedData.Length, true, (_) =>
 		{
 			Debug.Log($"实际发送数据: {signedData.Length}");
 		});

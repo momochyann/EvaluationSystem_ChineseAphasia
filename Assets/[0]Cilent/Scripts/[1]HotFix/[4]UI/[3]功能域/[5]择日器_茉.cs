@@ -124,6 +124,15 @@ public class 择日器_茉 : MonoBehaviour
             return;
         }
 
+        // 设置最大年份为当前年份
+        DateTime 当前日期时间 = DateTime.Now;
+        最大年份 = 当前日期时间.Year;
+        
+        // 设置默认日期为当前日期
+        默认年份 = 当前日期时间.Year;
+        默认月份 = 当前日期时间.Month;
+        默认日期 = 当前日期时间.Day;
+
         // 初始化默认值
         当前年份 = 默认年份;
         当前月份 = 默认月份;

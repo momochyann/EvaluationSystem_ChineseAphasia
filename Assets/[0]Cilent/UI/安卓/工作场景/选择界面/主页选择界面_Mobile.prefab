@@ -14402,6 +14402,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1490157387725608404, guid: dbbbb0b9bffe84d4faa91de010db21aa, type: 3}
+      propertyPath: allowNewlines
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986696429922921104, guid: dbbbb0b9bffe84d4faa91de010db21aa, type: 3}
+      propertyPath: allowNewlines
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3987769963228483292, guid: dbbbb0b9bffe84d4faa91de010db21aa, type: 3}
       propertyPath: m_Name
       value: "\u7F16\u53F7\u7BA1\u7406\u680F_Mobile"
@@ -14413,13 +14421,71 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3987769963228483292, guid: dbbbb0b9bffe84d4faa91de010db21aa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6468388696427061837}
   m_SourcePrefab: {fileID: 100100000, guid: dbbbb0b9bffe84d4faa91de010db21aa, type: 3}
 --- !u!4 &244971511584219334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 861031039523184058, guid: dbbbb0b9bffe84d4faa91de010db21aa, type: 3}
   m_PrefabInstance: {fileID: 618311882608754044}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4594736801125036960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3987769963228483292, guid: dbbbb0b9bffe84d4faa91de010db21aa, type: 3}
+  m_PrefabInstance: {fileID: 618311882608754044}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6468388696427061837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4594736801125036960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2541297f90fa9c14eab33d90c1489959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstructDrags: 0
+  DragThreshold: 1
+  LowAccuracyDragThreshold: 30
+  ClickBehavior: 2
+  navigable: 1
+  onSelect: 2
+  autoSelect: 0
+  Navigation:
+    Left:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Right:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Down:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Up:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Forward:
+      Type: 1
+      Fallback: 1
+      Target: {fileID: 0}
+    Back:
+      Type: 1
+      Fallback: 1
+      Target: {fileID: 0}
+  OverscrollEffect: 0
+  VectorScrollMultiplier: 1
+  dragScrolling: 1
+  vectorScrolling: 1
+  scrollbarVisual: {fileID: 0}
+  draggableScrollbar: 0
 --- !u!1001 &2983613156321563710
 PrefabInstance:
   m_ObjectHideFlags: 0

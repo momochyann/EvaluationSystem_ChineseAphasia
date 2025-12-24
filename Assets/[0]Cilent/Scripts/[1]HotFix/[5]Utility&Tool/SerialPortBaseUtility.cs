@@ -38,7 +38,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
 
     // 串口桥接接口（从Main程序集调用P/Invoke）
     private static ISerialPortBridge _serialPortBridge;
-    
+
     /// <summary>
     /// 获取串口桥接实例
     /// </summary>
@@ -79,14 +79,15 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
 
     /// <summary>
     /// 连接超时时间（毫秒）
+    /// （适当调小，加快每个串口握手失败时的退出速度）
     /// </summary>
-    protected virtual int ConnectionTimeoutMs => 2000;
+    protected virtual int ConnectionTimeoutMs => 100;
 
     /// <summary>
     /// 获取保存端口名称的PlayerPrefs键名
     /// </summary>
     protected virtual string SavedPortNameKey => $"SerialPort_{DeviceName}_LastPortName";
-    
+
     /// <summary>
     /// 获取保存端口序号的PlayerPrefs键名（保留用于兼容性）
     /// </summary>
@@ -118,10 +119,10 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
         {
             string savedPortName = PlayerPrefs.GetString(SavedPortNameKey);
             Debug.Log($"[{DeviceName}] 加载保存的端口名称: {savedPortName}");
-            
+
             // 获取当前系统中的所有COM端口
             var comPorts = await GetComPortsWithSkip();
-            
+
             // 查找保存的端口名称对应的Skip值
             var portInfo = comPorts.FirstOrDefault(port => port.portName == savedPortName);
             if (portInfo.portName == savedPortName)
@@ -134,16 +135,16 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
                 Debug.LogWarning($"[{DeviceName}] 保存的端口 {savedPortName} 不在当前系统端口列表中");
             }
         }
-        
+
         // 如果没有保存的端口名称，尝试使用旧的Skip值（兼容性）
         if (PlayerPrefs.HasKey(SavedPortSkipKey))
         {
             int savedPortSkip = PlayerPrefs.GetInt(SavedPortSkipKey);
             Debug.Log($"[{DeviceName}] 加载保存的端口序号（兼容模式）: {savedPortSkip}");
-            
+
             // 获取当前系统中的所有COM端口
             var comPorts = await GetComPortsWithSkip();
-            
+
             // 查找对应的端口
             if (savedPortSkip >= 0 && savedPortSkip < comPorts.Count)
             {
@@ -152,10 +153,10 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
                 return (portInfo.portName, portInfo.portSkip);
             }
         }
-        
+
         return null;
     }
-    
+
     /// <summary>
     /// 加载保存的端口序号（保留用于兼容性，但建议使用LoadSavedPortInfo）
     /// </summary>
@@ -287,22 +288,19 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
             }
             else
             {
-                // 检查保存的端口是否在排除列表中
-                if (!savedPortName.Contains("COM12") && !savedPortName.Contains("COM27") &&
-                    !savedPortName.Contains("COM11") && !savedPortName.Contains("COM17"))
+
+                // 保存的端口跳过握手，直接打开并验证加密狗
+                if (await TryConnectPort(savedPortName, savedPortSkip, skipHandshake: true))
                 {
-                    // 保存的端口跳过握手，直接打开并验证加密狗
-                    if (await TryConnectPort(savedPortName, savedPortSkip, skipHandshake: true))
-                    {
-                        OnDeviceFound?.Invoke($"在端口 {savedPortName} 发现{DeviceName}设备");
-                        return true;
-                    }
-                    else
-                    {
-                        Debug.Log($"[{DeviceName}] 保存的端口连接失败，清除缓存后开始全量搜索...");
-                        ClearSavedPortSkip();
-                    }
+                    OnDeviceFound?.Invoke($"在端口 {savedPortName} 发现{DeviceName}设备");
+                    return true;
                 }
+                else
+                {
+                    Debug.Log($"[{DeviceName}] 保存的端口连接失败，清除缓存后开始全量搜索...");
+                    ClearSavedPortSkip();
+                }
+
             }
         }
 
@@ -312,19 +310,10 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
             return false;
         }
 
-        // 逐个尝试连接COM端口
+        // 逐个尝试连接COM端口（包含之前保存的端口，避免因直接验证失败而被跳过）
         foreach (var (portName, portSkip) in comPorts)
         {
-            // 跳过已尝试的保存端口
-            if (savedPortInfo.HasValue && portName == savedPortInfo.Value.portName)
-            {
-                continue;
-            }
 
-            if (portName.Contains("COM12") || portName.Contains("COM27") || portName.Contains("COM11") || portName.Contains("COM17"))
-            {
-                continue;
-            }
             if (await TryConnectPort(portName, portSkip))
             {
                 OnDeviceFound?.Invoke($"在端口 {portName} 发现{DeviceName}设备");
@@ -587,7 +576,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
             }
         }
 
-     
+
         // serialPort = null;
     }
 

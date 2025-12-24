@@ -23,7 +23,7 @@ public class 评定人管理添加安卓_茉 : 界面基础_韩
     [SerializeField] public NovaSamples.UIControls.Button 取消;
     [SerializeField] public NovaSamples.UIControls.Button 返回;
 
-    bool 择日器显示 = false;
+    
     I记贞 旧记;
     private void Awake()
     {
@@ -58,6 +58,7 @@ public class 评定人管理添加安卓_茉 : 界面基础_韩
     private void OnEnable()
     {
         旧记 = null;
+        
     }
     private void 返回上个界面()
     {
@@ -86,18 +87,15 @@ public class 评定人管理添加安卓_茉 : 界面基础_韩
     }
     async UniTaskVoid 选择出生日期()
     {
-        if (择日器显示)
-        {
-            return;
-        }
-        择日器显示 = true;
+       
+      
         var 择日器气 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("择日器");
         var 择日器 = Instantiate(择日器气, this.transform);
         择日器.GetComponent<择日器_茉>().On保存日期 += (年, 月, 日) =>
         {
             Debug.Log("出生日期选择");
             出生日期文本.Text = $"{年}-{月}-{日}";
-            择日器显示 = false;
+           
         };
     }
     void 性别等下拉选择框点击(Dropdown 选择框)
@@ -121,6 +119,11 @@ public class 评定人管理添加安卓_茉 : 界面基础_韩
         selector.OnFocused += () =>
         {
             选中动画(true, 输入框.transform.parent.parent);
+            // 如果性别下拉框是展开状态，自动收起
+            if (性别.Visuals.IsExpanded)
+            {
+                性别.Collapse();
+            }
         };
         selector.OnFocusLost += () =>
         {
@@ -255,6 +258,7 @@ public class 评定人管理添加安卓_茉 : 界面基础_韩
     }
     protected override void OnHide()
     {
+       清空文本框内容();
         Debug.Log("[ [2] 评定人管理添加_韩]OnHide");
     }
 

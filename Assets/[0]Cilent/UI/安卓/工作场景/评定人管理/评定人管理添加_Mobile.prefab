@@ -1520,7 +1520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 129202361355773164}
   selector: {fileID: 1320938780269173691}
-  allowNewlines: 1
+  allowNewlines: 0
   keyboardType: 6
   autoCorrect: 1
   secure: 0
@@ -1538,7 +1538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 129202361355773164}
   selector: {fileID: 1320938780269173691}
-  allowNewlines: 1
+  allowNewlines: 0
   fireSubmitEvents: 0
 --- !u!1 &830248478008716520
 GameObject:
@@ -4635,7 +4635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 8631874118537110174}
   selector: {fileID: 5374448589148121602}
-  allowNewlines: 1
+  allowNewlines: 0
   keyboardType: 6
   autoCorrect: 1
   secure: 0
@@ -4653,7 +4653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 8631874118537110174}
   selector: {fileID: 5374448589148121602}
-  allowNewlines: 1
+  allowNewlines: 0
   fireSubmitEvents: 0
 --- !u!1 &1967496558427998960
 GameObject:
@@ -15586,7 +15586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1500848671148713802}
   selector: {fileID: 8361221711619071682}
-  allowNewlines: 1
+  allowNewlines: 0
   keyboardType: 6
   autoCorrect: 1
   secure: 0
@@ -15604,7 +15604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1500848671148713802}
   selector: {fileID: 8361221711619071682}
-  allowNewlines: 1
+  allowNewlines: 0
   fireSubmitEvents: 0
 --- !u!1 &6363557713849023403
 GameObject:
@@ -16294,7 +16294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 3015922783489988892}
   selector: {fileID: 5303178757111314916}
-  allowNewlines: 1
+  allowNewlines: 0
   keyboardType: 6
   autoCorrect: 1
   secure: 0
@@ -16312,7 +16312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 3015922783489988892}
   selector: {fileID: 5303178757111314916}
-  allowNewlines: 1
+  allowNewlines: 0
   fireSubmitEvents: 0
 --- !u!1 &6496237804526545345
 GameObject:
@@ -18384,7 +18384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1561441805090557590}
   selector: {fileID: 1463201019967079357}
-  allowNewlines: 1
+  allowNewlines: 0
   keyboardType: 5
   autoCorrect: 1
   secure: 0
@@ -18402,7 +18402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1561441805090557590}
   selector: {fileID: 1463201019967079357}
-  allowNewlines: 1
+  allowNewlines: 0
   fireSubmitEvents: 0
 --- !u!1 &7391082601960932490
 GameObject:

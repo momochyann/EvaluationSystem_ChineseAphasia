@@ -31,7 +31,8 @@ public class 电脑端加密狗串口检测 : MonoBehaviour, IController
     }
     public async UniTask<bool> 启动连接加密狗()
     {
-        await UniTask.Delay(100);
+        // 缩短启动前等待时间，加快整体验证流程
+        await UniTask.Delay(20);
         var dongleUtility = this.GetUtility<SerialPortDongleUtility>();
 
         // 注册加密狗事件
@@ -56,7 +57,8 @@ public class 电脑端加密狗串口检测 : MonoBehaviour, IController
 
         // 绑定串口工具到加密狗工具类
         dongleUtility.BindSreialPortUtility(serialPortUtility);
-        await UniTask.Delay(100);
+        // 绑定后无需长时间等待，只保留极短延时防止极端情况下的立即调用问题
+        await UniTask.Delay(20);
 
         // 搜索并连接加密狗设备
         bool dongleConnected = await dongleUtility.SearchAndConnectAsync();

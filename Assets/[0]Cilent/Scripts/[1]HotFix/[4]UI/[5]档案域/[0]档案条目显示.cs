@@ -133,7 +133,7 @@ public class 档案条目显示 : MonoBehaviour, IentryDis, IController
 
         var 界面管理器 = FindObjectOfType<界面管理器_韩>();
         var tips = Instantiate(prefab, 界面管理器.transform);
-        bool 确认删除 = await tips.GetComponent<告示_茉>().等待确认显示("删除档案", "是否确认删除该档案？\n该档案将移动到删除档案录。");
+        bool 确认删除 = await tips.GetComponent<告示_茉>().等待确认显示("删除档案", "是否确认删除该档案?");
         Destroy(tips);
 
         if (!确认删除)

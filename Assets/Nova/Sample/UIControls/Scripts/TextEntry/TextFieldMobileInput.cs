@@ -36,6 +36,21 @@ namespace NovaSamples.UIControls
         /// </summary>
         private bool updatingText = false;
 
+        /// <summary>
+        /// Additional cleanup when the component is destroyed (e.g., during scene transitions).
+        /// </summary>
+        private void OnDestroy()
+        {
+            // Ensure keyboard is closed when component is destroyed
+            if (inputRoutine != null)
+            {
+                StopCoroutine(inputRoutine);
+                inputRoutine = null;
+            }
+            Debug.Log("Destroy");                                                                
+            touchScreenKeyboardController.RequestHide(this);
+        }
+
         protected override void OnEnable()
         {
             if (!TouchScreenKeyboard.isSupported)
@@ -53,6 +68,15 @@ namespace NovaSamples.UIControls
 
         protected override void OnDisable()
         {
+            // Ensure keyboard is closed when component is disabled (e.g., during scene transitions)
+            if (inputRoutine != null)
+            {
+                StopCoroutine(inputRoutine);
+                inputRoutine = null;
+            }
+
+            touchScreenKeyboardController.RequestHide(this);
+
             base.OnDisable();
             inputField.OnTextSelectionChanged -= UpdateTouchScreenKeyboardSelection;
         }
@@ -231,6 +255,17 @@ namespace NovaSamples.UIControls
                     return;
                 }
 
+                // Check if the previous controller was destroyed (null reference but keyboard still exists)
+                // This can happen during scene transitions when the old TextFieldMobileInput is destroyed
+                // but the static controller still holds a reference to the old keyboard instance
+                if (currentKeyboardController == null && keyboard != null)
+                {
+                    // Previous controller was destroyed, force close the old keyboard
+                    keyboard.active = false;
+                    keyboard = null;
+                    currentConfig = default;
+                }
+
                 currentKeyboardController = requestor;
 
                 if (keyboard != null && currentConfig.Equals(config))
@@ -240,24 +275,37 @@ namespace NovaSamples.UIControls
                 }
                 else
                 {
-                    // It's a different type of keyboard, so open a new one
+                    // It's a different type of keyboard, or keyboard is null, so open a new one
+                    // First, ensure any existing keyboard is closed
+                    if (keyboard != null)
+                    {
+                        keyboard.active = false;
+                        keyboard = null;
+                    }
+
                     currentConfig = config;
-                    // Different keyboard type, so re-open
+                    // Open a new keyboard
                     keyboard = TouchScreenKeyboard.Open(text, config.KeyboardType, config.Autocorrection, config.Multiline, config.Secure, config.Alert);
                 }
             }
 
             public void RequestHide(TextFieldMobileInput requestor)
             {
-                if (requestor != currentKeyboardController)
+                // If requestor is null (destroyed), or it's the current controller, hide the keyboard
+                if (requestor != null && requestor != currentKeyboardController)
                 {
                     // The requestor is not the current controller, nothing to do
                     return;
                 }
 
+                // Hide the keyboard if it exists
+                if (keyboard != null)
+                {
+                    keyboard.active = false;
+                    keyboard = null;
+                }
+
                 currentKeyboardController = null;
-                keyboard.active = false;
-                keyboard = null;
                 currentConfig = default;
             }
         }

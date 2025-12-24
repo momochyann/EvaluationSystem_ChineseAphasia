@@ -699,6 +699,7 @@ GameObject:
   - component: {fileID: 7883509769316063227}
   - component: {fileID: 1225324404090979095}
   - component: {fileID: 6292071251597720272}
+  - component: {fileID: 5550014008805220821}
   m_Layer: 0
   m_Name: "\u84DD\u7259\u8FDE\u63A5\u754C\u9762_Mobile"
   m_TagString: Untagged
@@ -751,7 +752,7 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 0.9760001
+        Raw: 1
         Type: 1
       Y:
         Raw: 1
@@ -761,10 +762,10 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: -3.0080001
+        Raw: 0
         Type: 0
       Y:
-        Raw: 0.13000001
+        Raw: 0
         Type: 0
       Z:
         Raw: 0
@@ -870,7 +871,7 @@ MonoBehaviour:
       Y: 0
       Z: 0
     AutoSize:
-      X: 0
+      X: 1
       Y: 1
       Z: 0
     RotateSize: 0
@@ -913,7 +914,7 @@ MonoBehaviour:
     ReceiveShadows: 1
   PreviewSize: {x: 1, y: 1, z: 0}
   visuals:
-    Color: {r: 0, g: 0, b: 0, a: 0.5568628}
+    Color: {r: 0, g: 0, b: 0, a: 0.76862746}
     CornerRadius:
       Raw: 0
       Type: 0
@@ -999,6 +1000,56 @@ MonoBehaviour:
   "\u8BBE\u5907\u663E\u793A\u9884\u5236\u4F53": {fileID: 4482508740072941222, guid: f20ba08eea678ce49816b7e6f797da5a, type: 3}
   "\u8BBE\u5907\u5217\u8868\u7236\u7EA7": {fileID: 8291142893366605381}
   "\u7279\u5F81\u503CUUID": 0000fff1-0000-1000-8000-00805f9b34fb
+--- !u!114 &5550014008805220821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557884396448463536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2541297f90fa9c14eab33d90c1489959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstructDrags: 0
+  DragThreshold: 1
+  LowAccuracyDragThreshold: 30
+  ClickBehavior: 2
+  navigable: 1
+  onSelect: 2
+  autoSelect: 0
+  Navigation:
+    Left:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Right:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Down:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Up:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Forward:
+      Type: 1
+      Fallback: 1
+      Target: {fileID: 0}
+    Back:
+      Type: 1
+      Fallback: 1
+      Target: {fileID: 0}
+  OverscrollEffect: 0
+  VectorScrollMultiplier: 1
+  dragScrolling: 1
+  vectorScrolling: 1
+  scrollbarVisual: {fileID: 0}
+  draggableScrollbar: 1
 --- !u!1 &1674159334401158578
 GameObject:
   m_ObjectHideFlags: 0

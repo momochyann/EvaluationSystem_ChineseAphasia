@@ -24,7 +24,7 @@ public class 用户 : I记贞
     public string 发病前后语言状态;
     public string 发病时状况;
     public string 既往病史;
-    
+    public string 添加时间;
     // 用于存储选项组性和选项组性多选的选择结果（格式："内容|索引"）
     public Dictionary<string, string> 背景信息选项组选择 = new Dictionary<string, string>();
 }

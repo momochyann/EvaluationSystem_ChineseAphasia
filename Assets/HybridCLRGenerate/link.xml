@@ -25,10 +25,16 @@
     <type fullname="LitJson.JsonMapper" preserve="all" />
   </assembly>
   <assembly fullname="Main">
+    <type fullname="FilePickerBridge" preserve="all" />
     <type fullname="HotBadgeConfig" preserve="all" />
     <type fullname="HotFixAssetsProgress" preserve="all" />
+    <type fullname="IFilePickerBridge" preserve="all" />
+    <type fullname="ISerialPortBridge" preserve="all" />
+    <type fullname="IWindowTitleBridge" preserve="all" />
     <type fullname="LoadYooAssetsTool" preserve="all" />
+    <type fullname="SerialPortBridge" preserve="all" />
     <type fullname="SupplementaryMetadata" preserve="all" />
+    <type fullname="WindowTitleBridge" preserve="all" />
   </assembly>
   <assembly fullname="NativeGallery.Runtime">
     <type fullname="NativeGallery" preserve="all" />
@@ -39,6 +45,7 @@
   </assembly>
   <assembly fullname="Nova">
     <type fullname="Nova.AutoLayout" preserve="all" />
+    <type fullname="Nova.AutoSize" preserve="all" />
     <type fullname="Nova.Axis" preserve="all" />
     <type fullname="Nova.AxisIndex" preserve="all" />
     <type fullname="Nova.Border" preserve="all" />
@@ -59,6 +66,7 @@
     <type fullname="Nova.Scroller" preserve="all" />
     <type fullname="Nova.Shadow" preserve="all" />
     <type fullname="Nova.TextBlock" preserve="all" />
+    <type fullname="Nova.ThreeD`1" preserve="all" />
     <type fullname="Nova.UIBlock" preserve="all" />
     <type fullname="Nova.UIBlock2D" preserve="all" />
     <type fullname="Nova.UIEventHandler`1" preserve="all" />
@@ -158,6 +166,7 @@
     <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.AndroidJNIModule">
+    <type fullname="UnityEngine.Android.Permission" preserve="all" />
     <type fullname="UnityEngine.AndroidJavaClass" preserve="all" />
     <type fullname="UnityEngine.AndroidJavaObject" preserve="all" />
     <type fullname="UnityEngine.AndroidJavaRunnable" preserve="all" />
@@ -220,9 +229,12 @@
     <type fullname="UnityEngine.TextureFormat" preserve="all" />
     <type fullname="UnityEngine.Time" preserve="all" />
     <type fullname="UnityEngine.TooltipAttribute" preserve="all" />
+    <type fullname="UnityEngine.TouchScreenKeyboard" preserve="all" />
     <type fullname="UnityEngine.Transform" preserve="all" />
     <type fullname="UnityEngine.Vector2" preserve="all" />
+    <type fullname="UnityEngine.Vector2Int" preserve="all" />
     <type fullname="UnityEngine.Vector3" preserve="all" />
+    <type fullname="UnityEngine.WaitForEndOfFrame" preserve="all" />
     <type fullname="UnityEngine.WaitForSeconds" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.IMGUIModule">
@@ -381,13 +393,13 @@
     <type fullname="System.RuntimeTypeHandle" preserve="all" />
     <type fullname="System.Single" preserve="all" />
     <type fullname="System.String" preserve="all" />
+    <type fullname="System.StringComparison" preserve="all" />
     <type fullname="System.StringSplitOptions" preserve="all" />
     <type fullname="System.Text.Encoding" preserve="all" />
     <type fullname="System.Text.StringBuilder" preserve="all" />
     <type fullname="System.Threading.CancellationToken" preserve="all" />
     <type fullname="System.Threading.CancellationTokenSource" preserve="all" />
     <type fullname="System.Threading.Interlocked" preserve="all" />
-    <type fullname="System.Threading.Monitor" preserve="all" />
     <type fullname="System.Threading.Tasks.Task" preserve="all" />
     <type fullname="System.Threading.Tasks.Task`1" preserve="all" />
     <type fullname="System.TimeSpan" preserve="all" />

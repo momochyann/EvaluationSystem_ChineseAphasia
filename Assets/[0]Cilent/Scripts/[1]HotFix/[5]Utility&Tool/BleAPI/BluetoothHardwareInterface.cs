@@ -454,8 +454,9 @@ public class BluetoothLEHardwareInterface
 		}
         else
         {
-            if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
-                Permission.RequestUserPermission(Permission.FineLocation);
+            // 使用字符串形式的权限名称，兼容新版本Unity
+            if (!Permission.HasUserAuthorizedPermission("android.permission.ACCESS_FINE_LOCATION"))
+                Permission.RequestUserPermission("android.permission.ACCESS_FINE_LOCATION");
 
 			afterPermissionAction();
         }
