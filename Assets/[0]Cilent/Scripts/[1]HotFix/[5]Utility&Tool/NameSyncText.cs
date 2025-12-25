@@ -12,6 +12,16 @@ public class NameSyncText : MonoBehaviour
 	[SerializeField, HideInInspector]
 	private string _lastSyncedName;
 
+	// If set, use this GameObject's name instead of this GameObject's name
+	public GameObject targetObject;
+	// When true, set text alignment to left (horizontal left); otherwise center
+	public bool alignTextTop = false;
+	// Track last-known alignment/target so changing them re-applies alignment even if name is unchanged
+	[SerializeField, HideInInspector]
+	private bool _lastAlignTextTop;
+	[SerializeField, HideInInspector]
+	private GameObject _lastTargetObject;
+
 	void OnValidate()
 	{
 		SyncNameToText();
@@ -26,15 +36,18 @@ public class NameSyncText : MonoBehaviour
 
 	private void SyncNameToText()
 	{
-		var currentName = gameObject.name;
-		if (currentName == _lastSyncedName) return;
+		var sourceObject = targetObject != null ? targetObject : gameObject;
+		var currentName = sourceObject != null ? sourceObject.name : string.Empty;
+
+		// If name, alignment choice, or target object changed since last sync, proceed; otherwise skip.
+		if (currentName == _lastSyncedName && alignTextTop == _lastAlignTextTop && targetObject == _lastTargetObject) return;
 
 		// 1) Try UnityEngine.UI.Text
 		var uiText = GetComponent<Text>();
 		if (uiText != null)
 		{
 			if (uiText.text != currentName) uiText.text = currentName;
-			uiText.alignment = TextAnchor.MiddleCenter;
+			uiText.alignment = alignTextTop ? TextAnchor.MiddleLeft : TextAnchor.MiddleCenter;
 			_lastSyncedName = currentName;
 #if UNITY_EDITOR
 			// Ensure editor updates the serialized UI.Text after change
@@ -54,16 +67,16 @@ public class NameSyncText : MonoBehaviour
 				var textProp = t.GetProperty("text");
 				if (textProp != null) textProp.SetValue(comp, currentName);
 
-				// try to set alignment to Center (uses TMPro.TextAlignmentOptions.Center)
+				// try to set alignment (uses TMPro.TextAlignmentOptions enum names)
 				var alignProp = t.GetProperty("alignment");
 				if (alignProp != null)
 				{
 					var enumType = alignProp.PropertyType;
 					try
 					{
-						// "Center" is the enum name used by TextAlignmentOptions for center alignment
-						var centerVal = Enum.Parse(enumType, "Center");
-						alignProp.SetValue(comp, centerVal);
+						var alignName = alignTextTop ? "Left" : "Center";
+						var alignVal = Enum.Parse(enumType, alignName);
+						alignProp.SetValue(comp, alignVal);
 					}
 					catch
 					{
@@ -116,8 +129,9 @@ public class NameSyncText : MonoBehaviour
 							var enumType = alignPropOnTmp.PropertyType;
 							try
 							{
-								var centerVal = Enum.Parse(enumType, "Center");
-								alignPropOnTmp.SetValue(tmpObj, centerVal);
+								var alignName = alignTextTop ? "Left" : "Center";
+								var alignVal = Enum.Parse(enumType, alignName);
+								alignPropOnTmp.SetValue(tmpObj, alignVal);
 							}
 							catch { }
 						}
@@ -161,6 +175,10 @@ public class NameSyncText : MonoBehaviour
 
 		// No supported text component found; still remember name to avoid repeated work
 		_lastSyncedName = currentName;
+
+		// remember current control values so future changes reapply
+		_lastAlignTextTop = alignTextTop;
+		_lastTargetObject = targetObject;
 	}
 }
 
