@@ -103,6 +103,10 @@ public class 界面管理界面_茉 : 界面基础_韩
         图片选择器.SetDisplayImage(texture2D);
         // 图片选择器会自动加载上次的图片（如果启用了显示默认图片）
         同步窗口标题(config.软件名称);
+
+        // 设置截图工具的单位名称
+        this.GetUtility<IScreenshotPDFUtility>().SetCompanyName(config.单位名称);
+
         Debug.Log("配置数据已加载到界面");
     }
 
@@ -126,6 +130,9 @@ public class 界面管理界面_茉 : 界面基础_韩
             {
                 配置录.保存配置(新配置);
                 同步窗口标题(新配置.软件名称);
+
+                // 更新截图工具的单位名称
+                this.GetUtility<IScreenshotPDFUtility>().SetCompanyName(新配置.单位名称);
             }
         }
         catch (System.Exception e)

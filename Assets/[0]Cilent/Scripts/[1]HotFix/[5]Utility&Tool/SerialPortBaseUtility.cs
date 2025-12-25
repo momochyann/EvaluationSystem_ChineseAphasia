@@ -81,7 +81,7 @@ public abstract class SerialPortBaseUtility : ISerialPortBaseUtility
     /// 连接超时时间（毫秒）
     /// （适当调小，加快每个串口握手失败时的退出速度）
     /// </summary>
-    protected virtual int ConnectionTimeoutMs => 100;
+    protected virtual int ConnectionTimeoutMs => 200;
 
     /// <summary>
     /// 获取保存端口名称的PlayerPrefs键名

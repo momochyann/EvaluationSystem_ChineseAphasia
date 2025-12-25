@@ -53,15 +53,29 @@ public interface IScreenshotPDFUtility : IUtility
     /// 获取导出目录
     /// </summary>
     string GetExportDirectory();
+
+    /// <summary>
+    /// 设置页脚显示的单位名称
+    /// </summary>
+    void SetCompanyName(string companyName);
 }
 
 public class ScreenshotPDFUtility : IScreenshotPDFUtility
 {
     private const string EXPORT_FOLDER = "Screenshots";
+    private string _companyName = "北京心智超航科技有限公司";
     
     public string GetExportDirectory()
     {
         return Path.Combine(Application.persistentDataPath, EXPORT_FOLDER);
+    }
+
+    /// <summary>
+    /// 设置页脚显示的单位名称
+    /// </summary>
+    public void SetCompanyName(string companyName)
+    {
+        _companyName = string.IsNullOrEmpty(companyName) ? "北京心智超航科技有限公司" : companyName;
     }
     
     /// <summary>
@@ -376,7 +390,7 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
         <div class='image-wrapper' style='position: absolute; top: -{scaledOffsetY:F0}px; left: 0; width: {A4_WIDTH}px; height: {scaledHeight:F0}px;'>
             <img src='{base64Image}' alt='截图第{page + 1}页' style='width: {A4_WIDTH}px; height: {scaledHeight:F0}px; object-fit: contain; display: block;' />
         </div>
-        <div class='footer'>© 北京心智超航科技有限公司 All Rights Reserved</div>
+        <div class='footer'>{_companyName}</div>
     </div>";
             }
             
@@ -484,7 +498,7 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
 <body>
     <div class='content'>
         <img src='file:///{imagePath.Replace("\\", "/")}' alt='截图' class='image'>
-        <div class='footer'>© 北京心智超航科技有限公司 All Rights Reserved</div>
+        <div class='footer'>{_companyName}</div>
     </div>
     <div class='no-print' style='position: fixed; top: 10px; right: 10px; z-index: 1000;'>
         <button onclick='window.print()' style='padding: 10px 20px; font-size: 14px;'>打印文档</button>
