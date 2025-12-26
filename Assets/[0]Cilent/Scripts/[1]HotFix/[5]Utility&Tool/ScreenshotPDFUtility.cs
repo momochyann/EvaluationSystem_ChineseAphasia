@@ -356,7 +356,16 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
             
             // 计算需要的页数（基于缩放后的高度）
             int totalPages = Mathf.CeilToInt(scaledHeight / A4_HEIGHT);
-            UnityEngine.Debug.Log($"图片尺寸: {imageSize.x}x{imageSize.y}，缩放后: {A4_WIDTH}x{scaledHeight:F0}，将分割为 {totalPages} 页");
+            // 如果页数大于4页，则只保留前4页
+            if (totalPages > 4)
+            {
+                totalPages = 4;
+                UnityEngine.Debug.Log($"图片尺寸: {imageSize.x}x{imageSize.y}，缩放后: {A4_WIDTH}x{scaledHeight:F0}，原需 {Mathf.CeilToInt(scaledHeight / A4_HEIGHT)} 页，限制为最多 4 页");
+            }
+            else
+            {
+                UnityEngine.Debug.Log($"图片尺寸: {imageSize.x}x{imageSize.y}，缩放后: {A4_WIDTH}x{scaledHeight:F0}，将分割为 {totalPages} 页");
+            }
             
             // 将图片转换为base64，避免文件路径问题
             string base64Image = "";
@@ -382,7 +391,7 @@ public class ScreenshotPDFUtility : IScreenshotPDFUtility
                 // 计算当前页在缩放后图片中的位置（从顶部开始）
                 float scaledOffsetY = page * A4_HEIGHT;
                 float pageHeight = Mathf.Min(A4_HEIGHT, scaledHeight - scaledOffsetY);
-                
+
                 // 使用img标签配合绝对定位和overflow hidden来实现分页
                 // 每页显示图片的一个区域
             pageContent += $@"

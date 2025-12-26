@@ -9,6 +9,8 @@ using Cysharp.Threading.Tasks;
 public class 打印报告界面_茉 : 界面基础_韩
 {
     [Header("基本信息")]
+
+    [SerializeField] private List<TextBlock> 报告编号列表 = new List<TextBlock>(); // 多个报告编号显示位置
     [SerializeField] private TextBlock 姓名;
     [SerializeField] private TextBlock 性别;
     [SerializeField] private TextBlock 出生日期;
@@ -551,6 +553,15 @@ public class 打印报告界面_茉 : 界面基础_韩
     /// </summary>
     void 显示基本信息(档案 档案)
     {
+        string 报告编号文本 = $"报告编号:{档案.编号 ?? ""}";
+
+     
+        // 设置多个报告编号显示位置
+        foreach (var textBlock in 报告编号列表)
+        {
+            if (textBlock != null) textBlock.Text = 报告编号文本;
+        }
+
         if (姓名 != null) 姓名.Text = 档案.姓名 ?? "";
         if (性别 != null) 性别.Text = 档案.性别 ?? "";
         if (出生日期 != null) 出生日期.Text = 档案.出生日期 ?? "";

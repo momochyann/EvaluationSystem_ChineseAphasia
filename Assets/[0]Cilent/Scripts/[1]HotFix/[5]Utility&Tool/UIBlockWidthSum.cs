@@ -10,6 +10,7 @@ using UnityEditor;
 [DisallowMultipleComponent]
 public class UIBlockWidthSum : MonoBehaviour
 {
+	
 	[Tooltip("Target Nova UIBlock (UIBlock2D). If null, the script will use the UIBlock on this GameObject.")]
 	public UIBlock targetBlock;
 
