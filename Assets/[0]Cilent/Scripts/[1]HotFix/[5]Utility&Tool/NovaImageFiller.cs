@@ -10,8 +10,8 @@ public class NovaImageFiller : MonoBehaviour
 	// The clickable Nova UI button GameObject (can be any GameObject that receives pointer clicks)
 	public GameObject novaButton;
 
-	// The source image GameObject (expected to have a UnityEngine.UI.Image, but reflection fallbacks are attempted)
-	public GameObject sourceImageObject;
+	// The source sprite to fill into the target block
+	public Sprite sourceSprite;
 
 	// The target UI block (UIBlock2D) which will receive the image/sprite/fill
 	public GameObject targetBlock2D;
@@ -79,76 +79,40 @@ public class NovaImageFiller : MonoBehaviour
 		_isHooked = true;
 	}
 
-	// Main action: copy source image into the target block when button is pressed
+	// Main action: copy source sprite into the target block when button is pressed
 	public void OnButtonPressed()
 	{
-		if (sourceImageObject == null || targetBlock2D == null) return;
+		if (sourceSprite == null || targetBlock2D == null) return;
 
-		// Try fast path: both source and target are UnityEngine.UI.Image
-		var srcImg = sourceImageObject.GetComponent<Image>();
+		// Try fast path: target is UnityEngine.UI.Image
 		var tgtImg = targetBlock2D.GetComponent<Image>();
-		if (srcImg != null && tgtImg != null)
+		if (tgtImg != null)
 		{
-			tgtImg.sprite = srcImg.sprite;
-			// copy fill amount if applicable
-			try { tgtImg.fillAmount = srcImg.fillAmount; } catch { }
+			tgtImg.sprite = sourceSprite;
 			return;
 		}
 
-		// Fallback: copy sprite/texture via reflection from any component that exposes a 'sprite' or 'texture' property
-		Sprite srcSprite = null;
-		if (srcImg != null) srcSprite = srcImg.sprite;
-
-		if (srcSprite != null)
+		// Fallback: copy sprite/texture via reflection to any component that exposes a 'sprite' or 'texture' property
+		var comps = targetBlock2D.GetComponents<Component>();
+		foreach (var comp in comps)
 		{
-			var comps = targetBlock2D.GetComponents<Component>();
-			foreach (var comp in comps)
+			if (comp == null) continue;
+			var t = comp.GetType();
+			// try property 'sprite' or 'Sprite'
+			var prop = t.GetProperty("sprite");
+			if (prop == null) prop = t.GetProperty("Sprite");
+			if (prop != null && prop.PropertyType == typeof(Sprite))
 			{
-				if (comp == null) continue;
-				var t = comp.GetType();
-				// try property 'sprite' or 'Sprite'
-				var prop = t.GetProperty("sprite");
-				if (prop == null) prop = t.GetProperty("Sprite");
-				if (prop != null && prop.PropertyType == typeof(Sprite))
-				{
-					try { prop.SetValue(comp, srcSprite); } catch { }
-					return;
-				}
-
-				// try texture properties
-				var texProp = t.GetProperty("texture");
-				if (texProp != null && texProp.PropertyType == typeof(Texture))
-				{
-					try { texProp.SetValue(comp, srcSprite.texture); } catch { }
-					return;
-				}
+				try { prop.SetValue(comp, sourceSprite); } catch { }
+				return;
 			}
-		}
 
-		// If no sprite found, try to copy a raw Texture from a component named 'RawImage' or property 'texture'
-		var rawSrc = sourceImageObject.GetComponent("RawImage");
-		if (rawSrc != null)
-		{
-			var rawType = rawSrc.GetType();
-			var texProp = rawType.GetProperty("texture");
-			if (texProp != null)
+			// try texture properties
+			var texProp = t.GetProperty("texture");
+			if (texProp != null && texProp.PropertyType == typeof(Texture))
 			{
-				var tex = texProp.GetValue(rawSrc) as Texture;
-				if (tex != null)
-				{
-					var comps = targetBlock2D.GetComponents<Component>();
-					foreach (var comp in comps)
-					{
-						if (comp == null) continue;
-						var t = comp.GetType();
-						var tp = t.GetProperty("texture");
-						if (tp != null && tp.PropertyType == typeof(Texture))
-						{
-							try { tp.SetValue(comp, tex); } catch { }
-							return;
-						}
-					}
-				}
+				try { texProp.SetValue(comp, sourceSprite.texture); } catch { }
+				return;
 			}
 		}
 	}
