@@ -158,6 +158,25 @@ public class 图片选择组件 : MonoBehaviour, IController
     }
 
     /// <summary>
+    /// 设置显示的Sprite（用于YooAssets内置图片）
+    /// </summary>
+    public void SetDisplayImage(Sprite sprite)
+    {
+        if (imageDisplay == null || sprite == null) return;
+
+        // 切换为Sprite显示时，释放当前运行时Texture
+        if (currentTexture != null)
+        {
+            UnityEngine.Object.Destroy(currentTexture);
+            currentTexture = null;
+        }
+
+        imageDisplay.SetImage(sprite);
+        imageDisplay.Color = Color.white;
+        Debug.Log($"Sprite显示成功: {sprite.name}");
+    }
+
+    /// <summary>
     /// 设置默认图片显示
     /// </summary>
     private void SetDefaultImage()
@@ -167,6 +186,14 @@ public class 图片选择组件 : MonoBehaviour, IController
             imageDisplay.SetImage((Texture2D)null); // 清空图片
             imageDisplay.Color = new Color(0.8f, 0.8f, 0.8f, 1f); // 浅灰色背景
         }
+    }
+
+    /// <summary>
+    /// 恢复到默认显示（用于外部主动重置图片）
+    /// </summary>
+    public void 恢复默认显示()
+    {
+        SetDefaultImage();
     }
 
     /// <summary>

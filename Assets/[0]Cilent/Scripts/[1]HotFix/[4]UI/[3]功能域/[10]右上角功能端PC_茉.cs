@@ -42,7 +42,10 @@ public class 右上角功能端PC_茉 : MonoBehaviour, IController
             uwOriginalWidth = Screen.width;
             uwOriginalHeight = Screen.height;
         }
-        
+        if(管员录.登陆管理员 == null)
+        {
+            编号管理按钮.gameObject.SetActive(false);
+        }
         Debug.Log($"[右上角功能端] 初始化 - 全屏状态: {bIsFullScreen}, 分辨率: {uwOriginalWidth}x{uwOriginalHeight}");
     }
 
@@ -106,8 +109,27 @@ public class 右上角功能端PC_茉 : MonoBehaviour, IController
 
     async private void 执行编号管理()
     {
+        // 检查管理员权限
+        if (管员录.登陆管理员 == null)
+        {
+            // 评定人登录时，弹出权限提示
+            await 显示权限提示();
+            return;
+        }
+
         var 编号管理界面 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("编号管理栏");
         var 编号管理界面实例 = Instantiate(编号管理界面, transform.parent.parent);
+    }
+
+    /// <summary>
+    /// 显示权限不足的提示
+    /// </summary>
+    private async UniTask 显示权限提示()
+    {
+        var 告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
+        var 告示实例 = Instantiate(告示, FindObjectOfType<界面管理器_韩>().transform);
+        await 告示实例.GetComponent<告示_茉>().等待确认显示("权限不足", "此仅为管理员权限，请登录管理员账号");
+        Destroy(告示实例.gameObject, 0.1f);
     }
 
     async private void 执行用户名管理()

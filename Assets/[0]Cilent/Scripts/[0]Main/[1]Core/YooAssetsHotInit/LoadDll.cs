@@ -98,8 +98,26 @@ public class LoadDll : MonoBehaviour
         }
         return _targetBadge;
     }
+    private void 更新窗口标题()
+    {
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
+        try
+        {
+            var 配置 = PlayerPrefs.GetString("sofewareName");
+            Debug.Log("读取软件名称" + 配置);
+            var 标题 = string.IsNullOrEmpty(配置) ? "汉语失语症ABC法评估管理系统" : 配置;
+            var 窗口标题桥 = new WindowTitleBridge();
+            窗口标题桥?.SetTitle(标题, "");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning($"启动时更新窗口标题失败: {e.Message}");
+        }
+#endif
+    }
     private void Start()
     {
+        更新窗口标题();
         // LoadStart().Forget();
     }
     public void Button_LoadStart(bool isLocal)

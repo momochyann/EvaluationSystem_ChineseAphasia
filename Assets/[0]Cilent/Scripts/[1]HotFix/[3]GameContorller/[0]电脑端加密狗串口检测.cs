@@ -23,10 +23,11 @@ public class 电脑端加密狗串口检测 : MonoBehaviour, IController
         if (isLock)
         {
            //解锁文本.text = "解锁成功";
+           
         }
         else
         {
-            解锁文本.text = "设备未连接或未解锁";
+            解锁文本.text = "加密狗验证出错！\r\n请联系厂家：18731600771";
         }
     }
     public async UniTask<bool> 启动连接加密狗()

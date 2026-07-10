@@ -29,9 +29,11 @@
     <type fullname="HotBadgeConfig" preserve="all" />
     <type fullname="HotFixAssetsProgress" preserve="all" />
     <type fullname="IFilePickerBridge" preserve="all" />
+    <type fullname="IPrinterBridge" preserve="all" />
     <type fullname="ISerialPortBridge" preserve="all" />
     <type fullname="IWindowTitleBridge" preserve="all" />
     <type fullname="LoadYooAssetsTool" preserve="all" />
+    <type fullname="PrinterBridge" preserve="all" />
     <type fullname="SerialPortBridge" preserve="all" />
     <type fullname="SupplementaryMetadata" preserve="all" />
     <type fullname="WindowTitleBridge" preserve="all" />
@@ -55,6 +57,8 @@
     <type fullname="Nova.GestureRecognizer" preserve="all" />
     <type fullname="Nova.ImageAdjustment" preserve="all" />
     <type fullname="Nova.ImageScaleMode" preserve="all" />
+    <type fullname="Nova.Interaction" preserve="all" />
+    <type fullname="Nova.Interaction/Update" preserve="all" />
     <type fullname="Nova.Length" preserve="all" />
     <type fullname="Nova.Length2" preserve="all" />
     <type fullname="Nova.Length3" preserve="all" />
@@ -132,12 +136,19 @@
     <type fullname="System.ComponentModel.EditorBrowsableState" preserve="all" />
     <type fullname="System.Diagnostics.Process" preserve="all" />
     <type fullname="System.Diagnostics.ProcessStartInfo" preserve="all" />
+    <type fullname="System.Diagnostics.ProcessWindowStyle" preserve="all" />
+    <type fullname="System.IO.Compression.CompressionLevel" preserve="all" />
   </assembly>
   <assembly fullname="System.Core">
     <type fullname="System.Collections.Generic.HashSet`1" preserve="all" />
     <type fullname="System.Collections.Generic.HashSet`1/Enumerator" preserve="all" />
     <type fullname="System.Linq.Enumerable" preserve="all" />
     <type fullname="System.Linq.IOrderedEnumerable`1" preserve="all" />
+  </assembly>
+  <assembly fullname="System.IO.Compression">
+    <type fullname="System.IO.Compression.ZipArchive" preserve="all" />
+    <type fullname="System.IO.Compression.ZipArchiveEntry" preserve="all" />
+    <type fullname="System.IO.Compression.ZipArchiveMode" preserve="all" />
   </assembly>
   <assembly fullname="UniTask">
     <type fullname="Cysharp.Threading.Tasks.CancellationTokenSourceExtensions" preserve="all" />
@@ -161,12 +172,12 @@
   <assembly fullname="Unity.TextMeshPro">
     <type fullname="TMPro.FontStyles" preserve="all" />
     <type fullname="TMPro.TMP_Text" preserve="all" />
+    <type fullname="TMPro.TMP_TextInfo" preserve="all" />
     <type fullname="TMPro.TextAlignmentOptions" preserve="all" />
     <type fullname="TMPro.TextMeshPro" preserve="all" />
     <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.AndroidJNIModule">
-    <type fullname="UnityEngine.Android.Permission" preserve="all" />
     <type fullname="UnityEngine.AndroidJavaClass" preserve="all" />
     <type fullname="UnityEngine.AndroidJavaObject" preserve="all" />
     <type fullname="UnityEngine.AndroidJavaRunnable" preserve="all" />
@@ -187,6 +198,7 @@
     <type fullname="UnityEngine.ContextMenu" preserve="all" />
     <type fullname="UnityEngine.Coroutine" preserve="all" />
     <type fullname="UnityEngine.Debug" preserve="all" />
+    <type fullname="UnityEngine.DisallowMultipleComponent" preserve="all" />
     <type fullname="UnityEngine.Events.UnityAction" preserve="all" />
     <type fullname="UnityEngine.Events.UnityAction`1" preserve="all" />
     <type fullname="UnityEngine.Events.UnityAction`2" preserve="all" />
@@ -194,6 +206,7 @@
     <type fullname="UnityEngine.Events.UnityEvent" preserve="all" />
     <type fullname="UnityEngine.Events.UnityEventBase" preserve="all" />
     <type fullname="UnityEngine.Events.UnityEvent`1" preserve="all" />
+    <type fullname="UnityEngine.ExecuteAlways" preserve="all" />
     <type fullname="UnityEngine.FullScreenMode" preserve="all" />
     <type fullname="UnityEngine.GameObject" preserve="all" />
     <type fullname="UnityEngine.Graphics" preserve="all" />
@@ -210,10 +223,12 @@
     <type fullname="UnityEngine.Quaternion" preserve="all" />
     <type fullname="UnityEngine.Random" preserve="all" />
     <type fullname="UnityEngine.RangeAttribute" preserve="all" />
+    <type fullname="UnityEngine.Ray" preserve="all" />
     <type fullname="UnityEngine.Rect" preserve="all" />
     <type fullname="UnityEngine.RenderTexture" preserve="all" />
     <type fullname="UnityEngine.RenderTextureFormat" preserve="all" />
     <type fullname="UnityEngine.RenderTextureReadWrite" preserve="all" />
+    <type fullname="UnityEngine.Renderer" preserve="all" />
     <type fullname="UnityEngine.RuntimePlatform" preserve="all" />
     <type fullname="UnityEngine.SceneManagement.LoadSceneMode" preserve="all" />
     <type fullname="UnityEngine.SceneManagement.Scene" preserve="all" />
@@ -229,12 +244,10 @@
     <type fullname="UnityEngine.TextureFormat" preserve="all" />
     <type fullname="UnityEngine.Time" preserve="all" />
     <type fullname="UnityEngine.TooltipAttribute" preserve="all" />
-    <type fullname="UnityEngine.TouchScreenKeyboard" preserve="all" />
     <type fullname="UnityEngine.Transform" preserve="all" />
     <type fullname="UnityEngine.Vector2" preserve="all" />
     <type fullname="UnityEngine.Vector2Int" preserve="all" />
     <type fullname="UnityEngine.Vector3" preserve="all" />
-    <type fullname="UnityEngine.WaitForEndOfFrame" preserve="all" />
     <type fullname="UnityEngine.WaitForSeconds" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.IMGUIModule">
@@ -251,9 +264,13 @@
   <assembly fullname="UnityEngine.ScreenCaptureModule">
     <type fullname="UnityEngine.ScreenCapture" preserve="all" />
   </assembly>
+  <assembly fullname="UnityEngine.TextRenderingModule">
+    <type fullname="UnityEngine.TextAnchor" preserve="all" />
+  </assembly>
   <assembly fullname="UnityEngine.UI">
     <type fullname="UnityEngine.UI.Button" preserve="all" />
     <type fullname="UnityEngine.UI.Button/ButtonClickedEvent" preserve="all" />
+    <type fullname="UnityEngine.UI.CanvasUpdate" preserve="all" />
     <type fullname="UnityEngine.UI.InputField" preserve="all" />
     <type fullname="UnityEngine.UI.Selectable" preserve="all" />
     <type fullname="UnityEngine.UI.Text" preserve="all" />
@@ -303,6 +320,9 @@
     <type fullname="XCharts.Runtime.YAxis" preserve="all" />
   </assembly>
   <assembly fullname="mscorlib">
+    <type fullname="Microsoft.Win32.Registry" preserve="all" />
+    <type fullname="Microsoft.Win32.RegistryKey" preserve="all" />
+    <type fullname="Microsoft.Win32.RegistryValueKind" preserve="all" />
     <type fullname="System.Action" preserve="all" />
     <type fullname="System.Action`1" preserve="all" />
     <type fullname="System.Action`2" preserve="all" />
@@ -332,6 +352,7 @@
     <type fullname="System.Collections.Generic.List`1/Enumerator" preserve="all" />
     <type fullname="System.Collections.IEnumerable" preserve="all" />
     <type fullname="System.Collections.IEnumerator" preserve="all" />
+    <type fullname="System.Collections.ObjectModel.ReadOnlyCollection`1" preserve="all" />
     <type fullname="System.Convert" preserve="all" />
     <type fullname="System.Converter`2" preserve="all" />
     <type fullname="System.DateTime" preserve="all" />
@@ -359,10 +380,19 @@
     <type fullname="System.IO.Directory" preserve="all" />
     <type fullname="System.IO.DirectoryInfo" preserve="all" />
     <type fullname="System.IO.File" preserve="all" />
+    <type fullname="System.IO.FileAccess" preserve="all" />
     <type fullname="System.IO.FileInfo" preserve="all" />
+    <type fullname="System.IO.FileMode" preserve="all" />
+    <type fullname="System.IO.FileShare" preserve="all" />
+    <type fullname="System.IO.FileStream" preserve="all" />
     <type fullname="System.IO.FileSystemInfo" preserve="all" />
     <type fullname="System.IO.Path" preserve="all" />
     <type fullname="System.IO.SearchOption" preserve="all" />
+    <type fullname="System.IO.Stream" preserve="all" />
+    <type fullname="System.IO.StreamReader" preserve="all" />
+    <type fullname="System.IO.StreamWriter" preserve="all" />
+    <type fullname="System.IO.TextReader" preserve="all" />
+    <type fullname="System.IO.TextWriter" preserve="all" />
     <type fullname="System.Int32" preserve="all" />
     <type fullname="System.Int64" preserve="all" />
     <type fullname="System.Math" preserve="all" />
@@ -375,6 +405,8 @@
     <type fullname="System.Reflection.BindingFlags" preserve="all" />
     <type fullname="System.Reflection.FieldInfo" preserve="all" />
     <type fullname="System.Reflection.MemberInfo" preserve="all" />
+    <type fullname="System.Reflection.MethodBase" preserve="all" />
+    <type fullname="System.Reflection.MethodInfo" preserve="all" />
     <type fullname="System.Reflection.PropertyInfo" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.AsyncStateMachineAttribute" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.AsyncVoidMethodBuilder" preserve="all" />
@@ -391,17 +423,22 @@
     <type fullname="System.Runtime.InteropServices.InAttribute" preserve="all" />
     <type fullname="System.RuntimeFieldHandle" preserve="all" />
     <type fullname="System.RuntimeTypeHandle" preserve="all" />
+    <type fullname="System.Security.SecurityElement" preserve="all" />
     <type fullname="System.Single" preserve="all" />
     <type fullname="System.String" preserve="all" />
     <type fullname="System.StringComparison" preserve="all" />
     <type fullname="System.StringSplitOptions" preserve="all" />
     <type fullname="System.Text.Encoding" preserve="all" />
     <type fullname="System.Text.StringBuilder" preserve="all" />
+    <type fullname="System.Text.UTF8Encoding" preserve="all" />
     <type fullname="System.Threading.CancellationToken" preserve="all" />
     <type fullname="System.Threading.CancellationTokenSource" preserve="all" />
     <type fullname="System.Threading.Interlocked" preserve="all" />
     <type fullname="System.Threading.Tasks.Task" preserve="all" />
     <type fullname="System.Threading.Tasks.Task`1" preserve="all" />
+    <type fullname="System.Threading.Thread" preserve="all" />
+    <type fullname="System.Threading.ThreadPool" preserve="all" />
+    <type fullname="System.Threading.WaitCallback" preserve="all" />
     <type fullname="System.TimeSpan" preserve="all" />
     <type fullname="System.TimeoutException" preserve="all" />
     <type fullname="System.Type" preserve="all" />

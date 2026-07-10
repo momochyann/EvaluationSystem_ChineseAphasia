@@ -206,6 +206,13 @@ public class 评估模板选择界面 : 界面基础_韩
         界面管理器.显示界面("档案管理报告界面");
         await UniTask.WaitUntil(() => 界面管理器._currentPanel != null && 界面管理器._currentPanel.name.Contains("档案管理报告界面"));
         界面管理器._currentPanel.显示信息?.Invoke(更新档案);
+
+        // 如果是电脑端，切换左目录到档案管理
+        if (Is电脑端())
+        {
+            切换左目录到档案管理();
+        }
+
         // 界面管理器._currentPanel.GetComponent<档案管理报告界面显示>().On取消确认 += () =>
         // {
         //     // Destroy(界面管理器._currentPanel.gameObject);
@@ -263,5 +270,53 @@ public class 评估模板选择界面 : 界面基础_韩
         var 确认 = await 告示实例.GetComponent<告示_茉>().等待确认显示(标题, 内容);
         Destroy(告示实例.gameObject, 0.1f);
         return 确认;
+    }
+
+    /// <summary>
+    /// 检测是否为电脑端
+    /// </summary>
+    private bool Is电脑端()
+    {
+        RuntimePlatform platform = Application.platform;
+        return platform == RuntimePlatform.WindowsPlayer ||
+               platform == RuntimePlatform.WindowsEditor ||
+               platform == RuntimePlatform.OSXPlayer ||
+               platform == RuntimePlatform.OSXEditor ||
+               platform == RuntimePlatform.LinuxPlayer ||
+               platform == RuntimePlatform.LinuxEditor;
+    }
+
+    /// <summary>
+    /// 切换左目录到档案管理
+    /// </summary>
+    private void 切换左目录到档案管理()
+    {
+        var 左帜象 = FindObjectOfType<左帜象_茉>();
+        if (左帜象 == null)
+        {
+            Debug.LogWarning("[评估模板选择] 未找到左帜象组件");
+            return;
+        }
+
+        var 左目录选择 = 左帜象.GetComponent<左目录选择_韩>();
+        if (左目录选择 == null || 左目录选择.目录列表 == null)
+        {
+            Debug.LogWarning("[评估模板选择] 未找到左目录选择组件或目录列表为空");
+            return;
+        }
+
+        // 查找名为"档案管理"的按钮
+        foreach (var 按钮 in 左目录选择.目录列表)
+        {
+            if (按钮 != null && 按钮.name == "档案管理")
+            {
+                // 调用显切象方法切换选中状态
+                左帜象.显切象(按钮);
+                Debug.Log("[评估模板选择] 已切换左目录到档案管理");
+                return;
+            }
+        }
+
+        Debug.LogWarning("[评估模板选择] 未找到名为'档案管理'的目录按钮");
     }
 }

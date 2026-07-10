@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
+using Nova;
 using NovaSamples.UIControls;
 using QFramework;
 using UnityEngine;
@@ -37,6 +38,21 @@ public abstract class 量表评估基类_茉 : 界面基础_韩
     {
         base.OnShow();
         等待初始化后还原().Forget();
+    }
+
+    protected override void OnHide()
+    {
+        base.OnHide();
+
+        // 滚动条滚动到最高处
+        var scroller = GetComponentInChildren<Scroller>(true);
+        if (scroller != null && scroller.UIBlock != null)
+        {
+            var autoLayout = scroller.UIBlock.AutoLayout;
+            autoLayout.Offset = 0;
+            scroller.UIBlock.AutoLayout = autoLayout;
+            scroller.UIBlock.CalculateLayout();
+        }
     }
 
     private async UniTaskVoid 等待初始化后还原()

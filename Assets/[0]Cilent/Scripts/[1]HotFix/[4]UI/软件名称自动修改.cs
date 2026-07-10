@@ -23,11 +23,11 @@ public class 软件名称自动修改 : MonoBehaviour, IController
         Debug.Log("自动加载名称");
         if (arg0 != null)
         {
-            软件名称.Text = string.IsNullOrEmpty(arg0.软件名称) ? "汉语失语症评测系统" : arg0.软件名称;
+            软件名称.Text = string.IsNullOrEmpty(arg0.软件名称) ? "汉语失语症检查表（ABC法）评估管理系统" : arg0.软件名称;
         }
         else
         {
-            软件名称.Text = "汉语失语症评测系统";
+            软件名称.Text = "汉语失语症检查表（ABC法）评估管理系统";
         }
     }
 
@@ -36,11 +36,11 @@ public class 软件名称自动修改 : MonoBehaviour, IController
         var 软件配置录 = this.GetModel<软件配置录>();
         if (软件配置录.当前配置 != null)
         {
-            软件名称.Text = string.IsNullOrEmpty(软件配置录.当前配置.软件名称) ? "汉语失语症评测系统" : 软件配置录.当前配置.软件名称;
+            软件名称.Text = string.IsNullOrEmpty(软件配置录.当前配置.软件名称) ? "汉语失语症检查表（ABC法）评估管理系统" : 软件配置录.当前配置.软件名称;
         }
         else
         {
-            软件名称.Text = "汉语失语症评测系统";
+            软件名称.Text = "汉语失语症检查表（ABC法）评估管理系统";
         }
     }
     public IArchitecture GetArchitecture()

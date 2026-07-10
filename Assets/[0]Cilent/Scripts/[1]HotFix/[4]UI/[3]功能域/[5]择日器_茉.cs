@@ -20,7 +20,9 @@ public class 择日器_茉 : MonoBehaviour
     [Header("输入模式组件")]
     [SerializeField] private GameObject 选择器容器;
     [SerializeField] private GameObject 输入框容器;
-    [SerializeField] private TextField 日期输入框;
+    [SerializeField] private TextField 年输入框;
+    [SerializeField] private TextField 月输入框;
+    [SerializeField] private TextField 日输入框;
 
     [Header("日期范围设置")]
     [SerializeField] private int 最小年份 = 1900;
@@ -75,7 +77,7 @@ public class 择日器_茉 : MonoBehaviour
     /// <summary>
     /// 获取输入框当前内容（输入模式下可用）
     /// </summary>
-    public string 当前输入内容 => 日期输入框 != null ? 日期输入框.Text : string.Empty;
+    public string 当前输入内容 => 获取整合输入内容();
 
     /// <summary>
     /// 输入框内容是否为有效日期
@@ -105,6 +107,7 @@ public class 择日器_茉 : MonoBehaviour
         取消按钮.OnClicked.AddListener(取消选择);
         绑定切换按钮事件();
         初始化输入模式UI();
+        绑定输入框事件();
     }
 
     private void 取消选择()
@@ -166,10 +169,7 @@ public class 择日器_茉 : MonoBehaviour
             选择器容器.SetActive(true);
         }
 
-        if (日期输入框 != null)
-        {
-            日期输入框.Text = 获取格式化日期();
-        }
+        设置输入框日期(当前选择日期);
     }
 
     /// <summary>
@@ -607,6 +607,27 @@ public class 择日器_茉 : MonoBehaviour
     }
 
     /// <summary>
+    /// 测试输入框自动跳转功能（开发调试用）
+    /// </summary>
+    [System.Diagnostics.Conditional("UNITY_EDITOR")]
+    public void 测试输入框跳转()
+    {
+        Debug.Log("=== 测试输入框自动跳转功能 ===");
+
+        // 切换到输入模式
+        if (!使用输入模式)
+        {
+            使用输入模式 = true;
+            更新模式显示();
+            设置输入框日期(当前选择日期);
+        }
+
+        Debug.Log($"当前输入框状态 - 年: '{年输入框?.Text}', 月: '{月输入框?.Text}', 日: '{日输入框?.Text}'");
+        Debug.Log("请尝试在年输入框输入4个数字，观察是否自动跳转到月输入框");
+        Debug.Log("然后在月输入框输入2个数字，观察是否自动跳转到日输入框");
+    }
+
+    /// <summary>
     /// 清理事件绑定
     /// </summary>
     private void OnDestroy()
@@ -624,6 +645,14 @@ public class 择日器_茉 : MonoBehaviour
             保存按钮.RemoveGestureHandler<Gesture.OnClick>(保存按钮点击时);
         if (切换输入按钮 != null)
             切换输入按钮.RemoveGestureHandler<Gesture.OnClick>(切换输入模式);
+
+        // 清理输入框事件
+        if (年输入框 != null)
+            年输入框.OnTextChanged -= 年输入框文本改变;
+        if (月输入框 != null)
+            月输入框.OnTextChanged -= 月输入框文本改变;
+        if (日输入框 != null)
+            日输入框.OnTextChanged -= 日输入框文本改变;
     }
 
     /// <summary>
@@ -636,15 +665,12 @@ public class 择日器_茉 : MonoBehaviour
         if (切换到输入模式)
         {
             // 切到输入模式时，用当前选择的日期预填
-            if (日期输入框 != null)
-            {
-                日期输入框.Text = 获取格式化日期();
-            }
+            设置输入框日期(当前选择日期);
         }
         else
         {
             // 切回选择模式时，如果输入可解析则同步到下拉框
-            if (日期输入框 != null && DateTime.TryParse(日期输入框.Text, out var 解析日期))
+            if (尝试解析输入日期(out var 解析日期))
             {
                 设置日期(解析日期.Year, 解析日期.Month, 解析日期.Day);
             }
@@ -663,8 +689,12 @@ public class 择日器_茉 : MonoBehaviour
             选择器容器.SetActive(!使用输入模式);
         if (输入框容器 != null)
             输入框容器.SetActive(使用输入模式);
-        if (日期输入框 != null)
-            日期输入框.gameObject.SetActive(使用输入模式);
+        if (年输入框 != null)
+            年输入框.gameObject.SetActive(使用输入模式);
+        if (月输入框 != null)
+            月输入框.gameObject.SetActive(使用输入模式);
+        if (日输入框 != null)
+            日输入框.gameObject.SetActive(使用输入模式);
     }
 
     /// <summary>
@@ -672,12 +702,203 @@ public class 择日器_茉 : MonoBehaviour
     /// </summary>
     private bool 尝试解析输入日期(out DateTime 解析结果)
     {
-        if (日期输入框 == null)
+        解析结果 = default;
+
+        if (年输入框 == null || 月输入框 == null || 日输入框 == null)
         {
-            解析结果 = default;
             return false;
         }
 
-        return DateTime.TryParse(日期输入框.Text, out 解析结果);
+        string 年文本 = 年输入框.Text.Trim();
+        string 月文本 = 月输入框.Text.Trim();
+        string 日文本 = 日输入框.Text.Trim();
+
+        // 验证输入格式
+        if (string.IsNullOrEmpty(年文本) || string.IsNullOrEmpty(月文本) || string.IsNullOrEmpty(日文本))
+        {
+            return false;
+        }
+
+        if (!int.TryParse(年文本, out int 年) ||
+            !int.TryParse(月文本, out int 月) ||
+            !int.TryParse(日文本, out int 日))
+        {
+            return false;
+        }
+
+        try
+        {
+            解析结果 = new DateTime(年, 月, 日);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// 绑定输入框事件
+    /// </summary>
+    private void 绑定输入框事件()
+    {
+        if (年输入框 != null)
+        {
+            年输入框.OnTextChanged += 年输入框文本改变;
+        }
+        if (月输入框 != null)
+        {
+            月输入框.OnTextChanged += 月输入框文本改变;
+        }
+        if (日输入框 != null)
+        {
+            日输入框.OnTextChanged += 日输入框文本改变;
+        }
+    }
+
+    /// <summary>
+    /// 年输入框文本改变事件
+    /// </summary>
+    private void 年输入框文本改变()
+    {
+        // 年份输入4个数字后自动跳转到月输入框
+        if (年输入框 != null && 年输入框.Text.Length == 4 && 月输入框 != null)
+        {
+            // 延迟一帧执行跳转，避免与当前输入冲突
+            StartCoroutine(延迟跳转输入框(月输入框));
+        }
+    }
+
+    /// <summary>
+    /// 月输入框文本改变事件
+    /// </summary>
+    private void 月输入框文本改变()
+    {
+        // 月份输入2个数字后自动跳转到日输入框
+        if (月输入框 != null && 月输入框.Text.Length == 2 && 日输入框 != null)
+        {
+            // 延迟一帧执行跳转，避免与当前输入冲突
+            StartCoroutine(延迟跳转输入框(日输入框));
+        }
+    }
+
+    /// <summary>
+    /// 日输入框文本改变事件
+    /// </summary>
+    private void 日输入框文本改变()
+    {
+        // 日输入框可以输入1-2个数字，无需特殊处理
+    }
+
+    /// <summary>
+    /// 延迟跳转到输入框
+    /// </summary>
+    private System.Collections.IEnumerator 延迟跳转输入框(TextField 目标输入框)
+    {
+        // 等待一帧，让当前的文本输入完成
+        yield return null;
+        设置输入框焦点(目标输入框);
+    }
+
+    /// <summary>
+    /// 设置输入框焦点
+    /// </summary>
+    private void 设置输入框焦点(TextField 目标输入框)
+    {
+        if (目标输入框 == null) return;
+
+        // 首先清除所有输入框的焦点
+        清除所有输入框焦点();
+
+        var selector = 目标输入框.GetComponent<TextFieldSelector>();
+        if (selector != null)
+        {
+            // 使用TextFieldSelector的HandleClick方法来正确设置焦点
+            // 创建一个模拟的点击事件
+            var uiBlock = selector.GetComponent<Nova.UIBlock>();
+            if (uiBlock != null)
+            {
+                // 创建一个Interaction.Update对象
+                var ray = new Ray(uiBlock.transform.position, Vector3.forward);
+                var interactionUpdate = new Interaction.Update(ray, 0, null);
+
+                var clickEvent = new Gesture.OnClick()
+                {
+                    Target = uiBlock,
+                    Receiver = uiBlock,
+                    Interaction = interactionUpdate,
+                    ID = 0
+                };
+
+                // 通过反射调用HandleClick方法
+                var handleClickMethod = selector.GetType().GetMethod("HandleClick", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                if (handleClickMethod != null)
+                {
+                    handleClickMethod.Invoke(selector, new object[] { clickEvent });
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// 清除所有输入框的焦点
+    /// </summary>
+    private void 清除所有输入框焦点()
+    {
+        TextField[] 输入框数组 = { 年输入框, 月输入框, 日输入框 };
+
+        foreach (var 输入框 in 输入框数组)
+        {
+            if (输入框 != null)
+            {
+                var selector = 输入框.GetComponent<TextFieldSelector>();
+                if (selector != null)
+                {
+                    // 调用RemoveFocus方法
+                    selector.RemoveFocus();
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// 获取整合的输入内容
+    /// </summary>
+    private string 获取整合输入内容()
+    {
+        if (年输入框 == null || 月输入框 == null || 日输入框 == null)
+        {
+            return string.Empty;
+        }
+
+        string 年文本 = 年输入框.Text.Trim();
+        string 月文本 = 月输入框.Text.Trim();
+        string 日文本 = 日输入框.Text.Trim();
+
+        if (string.IsNullOrEmpty(年文本) || string.IsNullOrEmpty(月文本) || string.IsNullOrEmpty(日文本))
+        {
+            return string.Empty;
+        }
+
+        return $"{年文本}年{月文本}月{日文本}日";
+    }
+
+    /// <summary>
+    /// 设置输入框的日期
+    /// </summary>
+    private void 设置输入框日期(DateTime 日期)
+    {
+        if (年输入框 != null)
+        {
+            年输入框.Text = 日期.Year.ToString();
+        }
+        if (月输入框 != null)
+        {
+            月输入框.Text = 日期.Month.ToString("D2");
+        }
+        if (日输入框 != null)
+        {
+            日输入框.Text = 日期.Day.ToString("D2");
+        }
     }
 }

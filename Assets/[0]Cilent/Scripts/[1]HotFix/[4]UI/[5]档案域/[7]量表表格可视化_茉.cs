@@ -10,7 +10,7 @@ public class 量表表格可视化_茉 : MonoBehaviour
     {
         public string 维度名称;
         public Transform 分数点容器; // 包含0-100分点的父物体
-        public int 当前分数;
+        public float 当前分数;
         [HideInInspector] public Vector3 显示点位置; // 记录当前显示的点的位置
     }
 
@@ -34,7 +34,7 @@ public class 量表表格可视化_茉 : MonoBehaviour
     /// <summary>
     /// 设置所有维度的分数并刷新显示
     /// </summary>
-    public void 设置分数(Dictionary<string, int> 分数字典)
+    public void 设置分数(Dictionary<string, float> 分数字典)
     {
         foreach (var 维度 in 维度列表)
         {
@@ -111,7 +111,7 @@ public class 量表表格可视化_茉 : MonoBehaviour
         Vector3 本地坐标 = Vector3.zero;
 
         // 计算应该显示哪个点：取分数的十位数
-        int 十位数 = 维度.当前分数 / 10;
+        int 十位数 = Mathf.FloorToInt(维度.当前分数 / 10);
         // 计算索引：从后往前数
         int 目标索引 = Mathf.Max(0, 子物体数量 - 1 - 十位数);
 
@@ -218,7 +218,7 @@ public class 量表表格可视化_茉 : MonoBehaviour
     /// <summary>
     /// 添加维度（运行时调用）
     /// </summary>
-    public void 添加维度(string 名称, Transform 容器, int 分数 = 0)
+    public void 添加维度(string 名称, Transform 容器, float 分数 = 0)
     {
         维度数据 新维度 = new 维度数据
         {
@@ -240,7 +240,7 @@ public class 量表表格可视化_茉 : MonoBehaviour
     /// <summary>
     /// 设置单个维度的分数
     /// </summary>
-    public void 设置单个维度分数(string 维度名称, int 分数)
+    public void 设置单个维度分数(string 维度名称, float 分数)
     {
         var 维度 = 维度列表.Find(v => v.维度名称 == 维度名称);
         if (维度 != null)

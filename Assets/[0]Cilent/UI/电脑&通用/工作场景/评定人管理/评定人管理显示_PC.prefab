@@ -7066,10 +7066,10 @@ MonoBehaviour:
   "\u4E0B\u62C9\u6846\u5E1C\u96C6":
   - "\u793A": "\u59D3\u540D"
     "\u5E1C": "\u540D"
+  - "\u793A": "\u8EAB\u4EFD\u8BC1"
+    "\u5E1C": "\u8EAB\u4EFD\u8BC1"
   - "\u793A": "\u8D26\u53F7"
     "\u5E1C": "\u8D26\u53F7"
-  - "\u793A": "\u6027\u522B"
-    "\u5E1C": "\u6027\u522B"
   "\u8F93\u5165\u6846": {fileID: 6524803714818548436}
   "\u4E0B\u62C9\u6846": {fileID: 8127764724809934052}
   "\u7D22\u6309\u94AE": {fileID: 3422386270232924669}
@@ -8811,8 +8811,8 @@ MonoBehaviour:
     SelectedIndex: 0
     Options:
     - "\u59D3\u540D"
+    - "\u8EAB\u4EFD\u8BC1\u53F7"
     - "\u8D26\u53F7"
-    - "\u6027\u522B"
 --- !u!1 &4837449487521673051
 GameObject:
   m_ObjectHideFlags: 0

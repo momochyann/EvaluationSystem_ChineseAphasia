@@ -61,6 +61,8 @@ public class 软件配置录 : 录元<软件配置>
         dataList[0] = 配置;
         当前配置 = 配置;
         SaveData();
+        PlayerPrefs.SetString("sofewareName", 配置.软件名称);
+        PlayerPrefs.Save();
         // Save();
     }
 

@@ -1,0 +1,7 @@
+<linker>
+  <!-- 打包时保留 WinForms/Drawing，避免反射取类型为 null -->
+  <assembly fullname="System.Windows.Forms" preserve="all" />
+  <assembly fullname="System.Drawing" preserve="all" />
+  <assembly fullname="System.Drawing.Common" preserve="all" />
+  <assembly fullname="System.Drawing.Primitives" preserve="all" />
+</linker>

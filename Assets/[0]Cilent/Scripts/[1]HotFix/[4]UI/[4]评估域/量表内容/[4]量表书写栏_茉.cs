@@ -17,7 +17,7 @@ public class 量表书写栏_茉 : 量表评估基类_茉
     [Tooltip("被启用的目标对象")]
     [SerializeField] private GameObject 需要启用的对象;
     
-    private int 写病情当前分数 = 0;
+    private float 写病情当前分数 = 0;
     
     protected override string 获取记录字段名称() => "书写记录";
 
@@ -127,23 +127,23 @@ public class 量表书写栏_茉 : 量表评估基类_茉
             switch (栏目组.维度名称)
             {
                 case "写姓名地址":
-                    书写记录.写姓名地址总分 = 栏目组.当前总分;
+                    书写记录.写姓名地址总分 = 栏目组.当前总分原始值;
                     Debug.Log($"[量表书写栏] 保存写姓名地址总分: {栏目组.当前总分}");
                     break;
                 case "抄写":
-                    书写记录.抄写总分 = 栏目组.当前总分;
+                    书写记录.抄写总分 = 栏目组.当前总分原始值;
                     Debug.Log($"[量表书写栏] 保存抄写总分: {栏目组.当前总分}");
                     break;
                 case "系列书写":
-                    书写记录.系列书写总分 = 栏目组.当前总分;
+                    书写记录.系列书写总分 = 栏目组.当前总分原始值;
                     Debug.Log($"[量表书写栏] 保存系列书写总分: {栏目组.当前总分}");
                     break;
                 case "听写":
-                    书写记录.听写总分 = 栏目组.当前总分;
+                    书写记录.听写总分 = 栏目组.当前总分原始值;
                     Debug.Log($"[量表书写栏] 保存听写总分: {栏目组.当前总分}");
                     break;
                 case "看图写字":
-                    书写记录.看图写字总分 = 栏目组.当前总分;
+                    书写记录.看图写字总分 = 栏目组.当前总分原始值;
                     Debug.Log($"[量表书写栏] 保存看图写字总分: {栏目组.当前总分}");
                     break;
             }
@@ -158,7 +158,7 @@ public class 量表书写栏_茉 : 量表评估基类_茉
     /// 公共方法：设置写病情分数（供UI调用）
     /// </summary>
     /// <param name="分数">0-5分</param>
-    public void 设置写病情分数(int 分数)
+    public void 设置写病情分数(float 分数)
     {
         if (分数 < 0 || 分数 > 5)
         {
@@ -181,7 +181,7 @@ public class 量表书写栏_茉 : 量表评估基类_茉
     /// <param name="分数文本">分数字符串</param>
     public void 从文本设置写病情分数(string 分数文本)
     {
-        if (int.TryParse(分数文本, out int 分数))
+        if (float.TryParse(分数文本, out float 分数))
         {
             设置写病情分数(分数);
         }
@@ -194,7 +194,7 @@ public class 量表书写栏_茉 : 量表评估基类_茉
     /// <summary>
     /// 获取当前写病情分数
     /// </summary>
-    public int 获取写病情分数()
+    public float 获取写病情分数()
     {
         return 写病情当前分数;
     }

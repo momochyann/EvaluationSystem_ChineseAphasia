@@ -83,7 +83,7 @@ public class 写病情分数控制器_示例 : MonoBehaviour
     /// <summary>
     /// 按钮点击事件处理
     /// </summary>
-    private void 点击分数按钮(int 分数)
+    private void 点击分数按钮(float 分数)
     {
         if (书写栏 == null)
         {
@@ -107,7 +107,7 @@ public class 写病情分数控制器_示例 : MonoBehaviour
         }
         
         // 从选中的索引获取分数（索引就是分数）
-        int 分数 = 分数下拉框.DropdownOptions.SelectedIndex;
+        float 分数 = 分数下拉框.DropdownOptions.SelectedIndex;
         书写栏.设置写病情分数(分数);
         
         Debug.Log($"[写病情分数控制器] 通过下拉框设置分数: {分数}");

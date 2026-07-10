@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 946145255
+CRC: 3852579994
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -19,34 +19,38 @@ AssetBundleManifest:
       Name: localdefaultpackage_assets_[1]local_scenes.bundle
       Dependencies:
         Dependency_0: localdefaultpackage_assets_[1]local_textures_hotinit.bundle
-        Dependency_1: "localdefaultpackage_assets_[1]local_textures_ui\u754C\u9762_\u767B\u5F55\u754C\u97629.bundle"
-        Dependency_2: localdefaultpackage_share_assets_proceduraluiimage_resources.bundle
-        Dependency_3: localdefaultpackage_share_assets_[0]cilent_prefabs.bundle
-        Dependency_4: localdefaultpackage_share_assets_[0]cilent_config.bundle
-        Dependency_5: localdefaultpackage_share_assets_plugins_allin1spriteshader_demo_textures.bundle
+        Dependency_1: localdefaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle
+        Dependency_2: "localdefaultpackage_share_assets_[0]cilent_ui_\u5B89\u5353_\u7EC4\u4EF6.bundle"
+        Dependency_3: localdefaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle
+        Dependency_4: localdefaultpackage_share_assets_[0]cilent_fonts.bundle
+        Dependency_5: localdefaultpackage_share_assets_[0]cilent_config.bundle
+        Dependency_6: "localdefaultpackage_share_assets_[0]cilent_textures_\u84DD\u7259icon.bundle"
+        Dependency_7: localdefaultpackage_share_assets_proceduraluiimage_resources.bundle
+        Dependency_8: localdefaultpackage_share_assets_[0]cilent_prefabs.bundle
+        Dependency_9: localdefaultpackage_share_assets_plugins_allin1spriteshader_demo_textures.bundle
     Info_5:
-      Name: "localdefaultpackage_assets_[1]local_textures_5-\u901A\u7528_\u5F39\u51FA\u6548\u679C\u56FE.bundle"
+      Name: localdefaultpackage_assets_[1]local_textures.bundle
       Dependencies: {}
     Info_6:
-      Name: "localdefaultpackage_assets_[1]local_textures_1018\u91CF\u8868\u8BC4\u4F30&\u6863\u6848\u7BA1\u7406.bundle"
+      Name: "localdefaultpackage_assets_[1]local_textures_5-\u901A\u7528_\u5F39\u51FA\u6548\u679C\u56FE.bundle"
       Dependencies: {}
     Info_7:
-      Name: "localdefaultpackage_assets_[1]local_textures_1018\u91CF\u8868\u8BC4\u4F30&\u6863\u6848\u7BA1\u7406_1018\u65B0\u7528\u6237\u6DFB\u52A0.bundle"
+      Name: "localdefaultpackage_assets_[1]local_textures_1018\u91CF\u8868\u8BC4\u4F30&\u6863\u6848\u7BA1\u7406.bundle"
       Dependencies: {}
     Info_8:
-      Name: "localdefaultpackage_assets_[1]local_textures_1018\u91CF\u8868\u8BC4\u4F30&\u6863\u6848\u7BA1\u7406_1018\u6863\u6848\u7BA1\u7406.bundle"
+      Name: "localdefaultpackage_assets_[1]local_textures_1018\u91CF\u8868\u8BC4\u4F30&\u6863\u6848\u7BA1\u7406_1018\u65B0\u7528\u6237\u6DFB\u52A0.bundle"
       Dependencies: {}
     Info_9:
-      Name: "localdefaultpackage_assets_[1]local_textures_1027\u7535\u8111\u8BC4\u4F30.bundle"
+      Name: "localdefaultpackage_assets_[1]local_textures_1018\u91CF\u8868\u8BC4\u4F30&\u6863\u6848\u7BA1\u7406_1018\u6863\u6848\u7BA1\u7406.bundle"
       Dependencies: {}
     Info_10:
-      Name: "localdefaultpackage_assets_[1]local_textures_1104\u9A6C\u5E86.bundle"
+      Name: "localdefaultpackage_assets_[1]local_textures_1027\u7535\u8111\u8BC4\u4F30.bundle"
       Dependencies: {}
     Info_11:
-      Name: localdefaultpackage_assets_[1]local_textures_hotinit.bundle
+      Name: "localdefaultpackage_assets_[1]local_textures_1104\u9A6C\u5E86.bundle"
       Dependencies: {}
     Info_12:
-      Name: localdefaultpackage_assets_[1]local_textures.bundle
+      Name: localdefaultpackage_assets_[1]local_textures_hotinit.bundle
       Dependencies: {}
     Info_13:
       Name: "localdefaultpackage_assets_[1]local_textures_ui\u754C\u9762_\u754C\u9762\u7BA1\u7406.bundle"
@@ -70,17 +74,60 @@ AssetBundleManifest:
       Name: localdefaultpackage_share_assets_qframework_toolkits__corekit_packagekit_markdown_resources_skin.bundle
       Dependencies: {}
     Info_20:
-      Name: localdefaultpackage_share_assets_editor_proceduraluiimage_editor.bundle
+      Name: localdefaultpackage_share_assets_nova_icons.bundle
       Dependencies: {}
     Info_21:
-      Name: localdefaultpackage_share_assets_proceduraluiimage_resources.bundle
+      Name: localdefaultpackage_share_assets_nova_sample_uicontrols_textures.bundle
       Dependencies: {}
     Info_22:
-      Name: localdefaultpackage_share_assets_[0]cilent_prefabs.bundle
-      Dependencies: {}
+      Name: localdefaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark_textfield_dark.bundle
+      Dependencies:
+        Dependency_0: localdefaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
     Info_23:
-      Name: localdefaultpackage_share_assets_[0]cilent_config.bundle
+      Name: localdefaultpackage_share_assets_[0]cilent_textures.bundle
       Dependencies: {}
     Info_24:
+      Name: "localdefaultpackage_share_assets_[0]cilent_ui_\u5B89\u5353_\u7EC4\u4EF6.bundle"
+      Dependencies:
+        Dependency_0: localdefaultpackage_share_assets_[0]cilent_textures.bundle
+        Dependency_1: localdefaultpackage_share_assets.bundle
+    Info_25:
+      Name: localdefaultpackage_unityshaders.bundle
+      Dependencies: {}
+    Info_26:
+      Name: localdefaultpackage_share_assets_nova_sample_uicontrols_prefabs_style_dark.bundle
+      Dependencies:
+        Dependency_0: localdefaultpackage_share_assets_nova_sample_uicontrols_textures.bundle
+        Dependency_1: localdefaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
+    Info_27:
+      Name: localdefaultpackage_share_assets_nova_sample_uicontrols_fonts_nunito_sans.bundle
+      Dependencies:
+        Dependency_0: localdefaultpackage_unityshaders.bundle
+    Info_28:
+      Name: localdefaultpackage_share_assets.bundle
+      Dependencies: {}
+    Info_29:
+      Name: localdefaultpackage_share_packages_com_unity_textmeshpro_editor_resources_gizmos.bundle
+      Dependencies: {}
+    Info_30:
+      Name: localdefaultpackage_share_assets_[0]cilent_fonts.bundle
+      Dependencies:
+        Dependency_0: localdefaultpackage_unityshaders.bundle
+    Info_31:
+      Name: localdefaultpackage_share_assets_[0]cilent_config.bundle
+      Dependencies: {}
+    Info_32:
+      Name: localdefaultpackage_share_assets_editor_proceduraluiimage_editor.bundle
+      Dependencies: {}
+    Info_33:
+      Name: "localdefaultpackage_share_assets_[0]cilent_textures_\u84DD\u7259icon.bundle"
+      Dependencies: {}
+    Info_34:
+      Name: localdefaultpackage_share_assets_proceduraluiimage_resources.bundle
+      Dependencies: {}
+    Info_35:
+      Name: localdefaultpackage_share_assets_[0]cilent_prefabs.bundle
+      Dependencies: {}
+    Info_36:
       Name: localdefaultpackage_share_assets_plugins_allin1spriteshader_demo_textures.bundle
       Dependencies: {}

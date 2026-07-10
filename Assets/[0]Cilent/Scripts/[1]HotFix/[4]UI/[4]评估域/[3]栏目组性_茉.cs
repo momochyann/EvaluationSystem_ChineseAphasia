@@ -58,7 +58,10 @@ public class 栏目组性_茉 : MonoBehaviour
     
     // 是否所有组件都已选择
     public bool 是否全部已选择 { get; private set; }
-    
+
+    // 是否已订阅事件（避免重复订阅）
+    private bool 已订阅事件 = false;
+
     // 总分变化事件
     public static event Action<栏目组性_茉> 总分变化事件;
     
@@ -66,7 +69,15 @@ public class 栏目组性_茉 : MonoBehaviour
     {
         // 根据获取模式初始化子组件
         初始化子组件();
-        
+
+        // 初始化计算总分
+        计算总分();
+    }
+    void OnEnable()
+    {
+        // 避免重复订阅事件
+        if (已订阅事件) return;
+
         // 根据组类型订阅事件
         if (组类型 == 栏目组类型.选项组性)
         {
@@ -76,13 +87,14 @@ public class 栏目组性_茉 : MonoBehaviour
         {
             表分择性_茉.表分选择变化事件 += 处理选择变化;
         }
-        
-        // 初始化计算总分
-        计算总分();
+
+        已订阅事件 = true;
     }
-    
-    void OnDestroy()
+    void OnDisable()
     {
+        // 只有在已订阅的情况下才取消订阅
+        if (!已订阅事件) return;
+
         // 根据组类型取消订阅事件
         if (组类型 == 栏目组类型.选项组性)
         {
@@ -91,6 +103,26 @@ public class 栏目组性_茉 : MonoBehaviour
         else if (组类型 == 栏目组类型.表分择性)
         {
             表分择性_茉.表分选择变化事件 -= 处理选择变化;
+        }
+
+        已订阅事件 = false;
+    }
+    void OnDestroy()
+    {
+        // 确保在销毁时取消订阅事件（最后的保障）
+        if (已订阅事件)
+        {
+            // 根据组类型取消订阅事件
+            if (组类型 == 栏目组类型.选项组性)
+            {
+                选项组性_茉.选择变化事件 -= 处理选择变化;
+            }
+            else if (组类型 == 栏目组类型.表分择性)
+            {
+                表分择性_茉.表分选择变化事件 -= 处理选择变化;
+            }
+
+            已订阅事件 = false;
         }
     }
     

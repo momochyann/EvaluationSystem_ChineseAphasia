@@ -27,6 +27,8 @@ MonoBehaviour:
   - mscorlib
   - System.Core
   - System
+  - System.IO.Compression
+  - System.IO.Compression.FileSystem
   - UniTask
   - Main
   - QFramework

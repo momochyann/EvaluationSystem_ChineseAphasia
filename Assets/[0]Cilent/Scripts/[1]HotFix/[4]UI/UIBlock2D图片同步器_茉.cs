@@ -11,6 +11,11 @@ public class UIBlock2D图片同步器_茉 : MonoBehaviour, IController
     [SerializeField] private UIBlock2D targetUIBlock2D;
     private 软件配置录 配置录;
     private Texture2D currentTexture;
+    private static readonly string[] 默认登录背景资源候选 =
+    {
+        "登录界面A-2000-bg.jpg",
+        "登录界面A-2000-bg"
+    };
 
     void Start()
     {
@@ -45,7 +50,12 @@ public class UIBlock2D图片同步器_茉 : MonoBehaviour, IController
             var config = 配置录.当前配置;
             if (config == null || string.IsNullOrEmpty(config.图片缓存名称))
             {
-                Debug.Log("[UIBlock2D图片同步器_茉] 配置中没有图片缓存名称");
+                Debug.Log("[UIBlock2D图片同步器_茉] 配置中没有图片缓存名称，回退默认登录背景图");
+                bool 默认图加载成功 = await 加载默认登录背景图();
+                if (!默认图加载成功)
+                {
+                    清空图片();
+                }
                 return;
             }
 
@@ -59,6 +69,11 @@ public class UIBlock2D图片同步器_茉 : MonoBehaviour, IController
             else
             {
                 Debug.LogWarning($"[UIBlock2D图片同步器_茉] 加载图片失败: {config.图片缓存名称}");
+                bool 默认图加载成功 = await 加载默认登录背景图();
+                if (!默认图加载成功)
+                {
+                    清空图片();
+                }
             }
         }
         catch (System.Exception e)
@@ -90,6 +105,69 @@ public class UIBlock2D图片同步器_茉 : MonoBehaviour, IController
 
         currentTexture = texture;
         targetUIBlock2D.SetImage(texture);
+        targetUIBlock2D.Color = Color.white;
+    }
+
+    private void 设置图片(Sprite sprite)
+    {
+        if (targetUIBlock2D == null || sprite == null) return;
+
+        if (currentTexture != null)
+        {
+            UnityEngine.Object.Destroy(currentTexture);
+            currentTexture = null;
+        }
+
+        targetUIBlock2D.SetImage(sprite);
+        targetUIBlock2D.Color = Color.white;
+    }
+
+    private async UniTask<bool> 加载默认登录背景图()
+    {
+        foreach (var 资源名 in 默认登录背景资源候选)
+        {
+            try
+            {
+                if (!LoadYooAssetsTool.CheckAssetExist(资源名))
+                {
+                    continue;
+                }
+
+                var sprite = await LoadYooAssetsTool.LoadAsset<Sprite>(资源名);
+                if (sprite != null)
+                {
+                    设置图片(sprite);
+                    return true;
+                }
+
+                var texture = await LoadYooAssetsTool.LoadAsset<Texture2D>(资源名);
+                if (texture != null)
+                {
+                    设置图片(texture);
+                    return true;
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"[UIBlock2D图片同步器_茉] 加载默认背景图失败: {资源名}, {e.Message}");
+            }
+        }
+
+        Debug.LogWarning("[UIBlock2D图片同步器_茉] 默认背景图不存在: 登录界面A-2000-bg.jpg / 登录界面A-2000-bg");
+        return false;
+    }
+
+    private void 清空图片()
+    {
+        if (targetUIBlock2D == null) return;
+
+        if (currentTexture != null)
+        {
+            UnityEngine.Object.Destroy(currentTexture);
+            currentTexture = null;
+        }
+
+        targetUIBlock2D.SetImage((Texture2D)null);
         targetUIBlock2D.Color = Color.white;
     }
 

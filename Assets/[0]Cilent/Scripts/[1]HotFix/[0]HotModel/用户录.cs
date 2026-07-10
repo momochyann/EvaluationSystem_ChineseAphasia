@@ -21,6 +21,8 @@ public class 用户 : I记贞
     public string 血压;
     public string 神志状态;
     public string 家庭成员;
+    public string 烟龄;
+    public string 酒龄;
     public string 发病前后语言状态;
     public string 发病时状况;
     public string 既往病史;

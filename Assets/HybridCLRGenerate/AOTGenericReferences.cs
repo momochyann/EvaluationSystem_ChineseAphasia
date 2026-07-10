@@ -40,11 +40,11 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<QuickScreenshot.<CaptureNovaScrollViewAsync>d__5>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<ScreenshotPDFPanel.<CaptureAndExportAsync>d__17>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<ScreenshotPDFPanel.<CaptureScreenshotAsync>d__16>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<ScreenshotPDFUtility.<CaptureAndExportToPDFAsync>d__5,object>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<ScreenshotPDFUtility.<CaptureCameraViewAsync>d__3,object>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<ScreenshotPDFUtility.<CaptureScreenshotAsync>d__2,object>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<ScreenshotPDFUtility.<CaptureScrollViewAsync>d__4,object>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<ScreenshotPDFUtility.<WaitForFileCreated>d__11>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<ScreenshotPDFUtility.<CaptureAndExportToPDFAsync>d__9,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<ScreenshotPDFUtility.<CaptureCameraViewAsync>d__7,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<ScreenshotPDFUtility.<CaptureScreenshotAsync>d__6,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<ScreenshotPDFUtility.<CaptureScrollViewAsync>d__8,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<ScreenshotPDFUtility.<WaitForFileCreated>d__38>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<SerialPortBaseUtility.<GetComPortsWithSkip>d__31,object>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<SerialPortBaseUtility.<LoadSavedPortInfo>d__28,System.Nullable<System.ValueTuple<object,int>>>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<SerialPortBaseUtility.<SearchAndConnectAsync>d__34,byte>
@@ -67,28 +67,41 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<SerialPortUtilityManager.<TryConnectPort>d__26,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<SerialPortUtilityManager.<TryHandshake>d__28,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<SerialPortUtilityManager.<TryOpenPort>d__27,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<UIBlock2D图片同步器_茉.<加载默认登录背景图>d__9,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<YooAssetCacheManager.<LoadAndCacheAsset>d__18>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<YooAssetCacheManager.<WarmupAssets>d__17>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<YooAssetPfbPoolUtility.<LoadConfig>d__14<object>,object>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<YooAssetPfbPoolUtility.<LoadPfb>d__13,object>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<YooAssetPfbPoolUtility.<PreloadCommonAssets>d__15>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<主场景背景管理_茉.<预加载首页>d__4>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<右上角功能端PC_茉.<显示权限提示>d__19>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<告示_茉.<等待确认显示>d__8,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<图片选择组件.<显示提示>d__8,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<备份管理界面_茉.<显示全选确认>d__77,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<备份管理界面_茉.<显示提示信息>d__78>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<备份管理界面_茉.<显示确认告示>d__79,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<左目录选择_韩.<显示权限提示>d__6>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<待同步数据条目显示_茉.<执行同步并更新进度>d__16,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<待同步数据条目显示_茉.<显示提示>d__18>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<待同步数据条目显示_茉.<更新同步进度>d__17>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<截图钮.<截图>d__1>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<模板条目显示.<保存通知>d__13,byte>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<用户管理添加安卓_茉.<显示提示>d__48>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<用户管理添加安卓_茉.<显示确认>d__49,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<打印报告界面_茉.<显示告示提示>d__90>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<打印管理器_茉.<克隆报告界面>d__75,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<打印管理器_茉.<导出Word模板文档>d__43,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<打印管理器_茉.<尝试Word模板打印>d__42,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<打印管理器_茉.<截图报告>d__76,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<打印管理器_茉.<截图评估表格栏目用于Word>d__50,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<打印管理器_茉.<执行打印>d__41,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<打印管理器_茉.<获取可用Word模板路径Async>d__44,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<模板条目显示.<保存通知>d__14,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<用户管理添加安卓_茉.<显示提示>d__50>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<用户管理添加安卓_茉.<显示确认>d__51,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<电脑端加密狗串口检测.<启动连接加密狗>d__3,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<电脑端蓝牙串口检测.<启动连接蓝牙>d__2>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<界面管理器_韩.<预加载界面>d__8>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<界面管理界面_茉.<显示提示>d__19,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<界面管理界面_茉.<加载并显示默认登录背景图>d__22,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<界面管理界面_茉.<应用图片缓存到选择器>d__21>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<界面管理界面_茉.<显示提示>d__26,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<蓝牙数据同步工具.<分包发送数据>d__19,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<蓝牙数据同步工具.<发送待同步数据>d__16,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<蓝牙数据同步工具.<同步数据到录>d__26,byte>
@@ -99,9 +112,10 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<评估模板选择界面.<显示提示>d__16>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<评估模板选择界面.<显示确认>d__17,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<评定人管理添加_韩.<显示提示>d__29>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<选择界面_茉.<显示权限提示>d__20>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<量表用户选择显示_茉.<添加档案>d__10>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<量表评估基类_茉.<显示提示>d__23>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<量表评估基类_茉.<显示确认>d__24,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<量表评估基类_茉.<显示提示>d__24>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask.<>c<量表评估基类_茉.<显示确认>d__25,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<GameStartAfterLoad.<WaitLoadAnimation>d__6>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<ImagePickerUtility.<LoadImageFromCacheAsync>d__17,object>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<ImagePickerUtility.<LoadTextureFromFileAsync>d__8,object>
@@ -117,11 +131,11 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<QuickScreenshot.<CaptureNovaScrollViewAsync>d__5>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<ScreenshotPDFPanel.<CaptureAndExportAsync>d__17>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<ScreenshotPDFPanel.<CaptureScreenshotAsync>d__16>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<ScreenshotPDFUtility.<CaptureAndExportToPDFAsync>d__5,object>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<ScreenshotPDFUtility.<CaptureCameraViewAsync>d__3,object>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<ScreenshotPDFUtility.<CaptureScreenshotAsync>d__2,object>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<ScreenshotPDFUtility.<CaptureScrollViewAsync>d__4,object>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<ScreenshotPDFUtility.<WaitForFileCreated>d__11>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<ScreenshotPDFUtility.<CaptureAndExportToPDFAsync>d__9,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<ScreenshotPDFUtility.<CaptureCameraViewAsync>d__7,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<ScreenshotPDFUtility.<CaptureScreenshotAsync>d__6,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<ScreenshotPDFUtility.<CaptureScrollViewAsync>d__8,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<ScreenshotPDFUtility.<WaitForFileCreated>d__38>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<SerialPortBaseUtility.<GetComPortsWithSkip>d__31,object>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<SerialPortBaseUtility.<LoadSavedPortInfo>d__28,System.Nullable<System.ValueTuple<object,int>>>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<SerialPortBaseUtility.<SearchAndConnectAsync>d__34,byte>
@@ -144,28 +158,41 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<SerialPortUtilityManager.<TryConnectPort>d__26,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<SerialPortUtilityManager.<TryHandshake>d__28,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<SerialPortUtilityManager.<TryOpenPort>d__27,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<UIBlock2D图片同步器_茉.<加载默认登录背景图>d__9,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<YooAssetCacheManager.<LoadAndCacheAsset>d__18>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<YooAssetCacheManager.<WarmupAssets>d__17>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<YooAssetPfbPoolUtility.<LoadConfig>d__14<object>,object>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<YooAssetPfbPoolUtility.<LoadPfb>d__13,object>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<YooAssetPfbPoolUtility.<PreloadCommonAssets>d__15>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<主场景背景管理_茉.<预加载首页>d__4>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<右上角功能端PC_茉.<显示权限提示>d__19>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<告示_茉.<等待确认显示>d__8,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<图片选择组件.<显示提示>d__8,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<备份管理界面_茉.<显示全选确认>d__77,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<备份管理界面_茉.<显示提示信息>d__78>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<备份管理界面_茉.<显示确认告示>d__79,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<左目录选择_韩.<显示权限提示>d__6>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<待同步数据条目显示_茉.<执行同步并更新进度>d__16,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<待同步数据条目显示_茉.<显示提示>d__18>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<待同步数据条目显示_茉.<更新同步进度>d__17>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<截图钮.<截图>d__1>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<模板条目显示.<保存通知>d__13,byte>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<用户管理添加安卓_茉.<显示提示>d__48>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<用户管理添加安卓_茉.<显示确认>d__49,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<打印报告界面_茉.<显示告示提示>d__90>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<打印管理器_茉.<克隆报告界面>d__75,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<打印管理器_茉.<导出Word模板文档>d__43,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<打印管理器_茉.<尝试Word模板打印>d__42,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<打印管理器_茉.<截图报告>d__76,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<打印管理器_茉.<截图评估表格栏目用于Word>d__50,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<打印管理器_茉.<执行打印>d__41,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<打印管理器_茉.<获取可用Word模板路径Async>d__44,object>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<模板条目显示.<保存通知>d__14,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<用户管理添加安卓_茉.<显示提示>d__50>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<用户管理添加安卓_茉.<显示确认>d__51,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<电脑端加密狗串口检测.<启动连接加密狗>d__3,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<电脑端蓝牙串口检测.<启动连接蓝牙>d__2>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<界面管理器_韩.<预加载界面>d__8>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<界面管理界面_茉.<显示提示>d__19,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<界面管理界面_茉.<加载并显示默认登录背景图>d__22,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<界面管理界面_茉.<应用图片缓存到选择器>d__21>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<界面管理界面_茉.<显示提示>d__26,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<蓝牙数据同步工具.<分包发送数据>d__19,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<蓝牙数据同步工具.<发送待同步数据>d__16,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<蓝牙数据同步工具.<同步数据到录>d__26,byte>
@@ -176,9 +203,10 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<评估模板选择界面.<显示提示>d__16>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<评估模板选择界面.<显示确认>d__17,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<评定人管理添加_韩.<显示提示>d__29>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<选择界面_茉.<显示权限提示>d__20>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<量表用户选择显示_茉.<添加档案>d__10>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<量表评估基类_茉.<显示提示>d__23>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<量表评估基类_茉.<显示确认>d__24,byte>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<量表评估基类_茉.<显示提示>d__24>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTask<量表评估基类_茉.<显示确认>d__25,byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<System.Nullable<System.ValueTuple<object,int>>>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>
@@ -188,7 +216,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<PC首页大数据页面_茉.<延迟刷新数据>d__17>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<SerialPortBaseUtility.<MonitorDeviceStatus>d__43>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<SerialPortUtilityManager.<ComPortInit>d__23>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<UIBlock2D图片同步器_茉.<加载配置图片>d__4>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<UIBlock2D图片同步器_茉.<加载配置图片>d__5>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<图片选择组件.<OnImageClicked>d__7>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<备份管理界面_茉.<处理批量同步>d__71>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<备份管理界面_茉.<处理日期确认>d__64>
@@ -197,34 +225,37 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<安卓功能栏.<删>d__18>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<安卓功能栏.<延迟设置全选>d__22>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<待同步数据条目显示_茉.<执行同步占位>d__14>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<打印报告界面_茉.<处理确认打印按钮点击>d__68>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<打印报告界面_茉.<处理返回按钮点击>d__69>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<打印报告界面_茉.<处理确认下载按钮点击>d__87>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<打印报告界面_茉.<处理确认选择打印机按钮点击>d__91>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<打印报告界面_茉.<处理返回按钮点击>d__92>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<打印管理器_茉.<测试设置显示栏目>d__40>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<择域.<长生>d__1>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<择木栏安卓_茉.<显记于目>d__15>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<显记栏_茉.<现目于栏>d__8>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<条目查看按钮_茉.<显录于增板>d__4>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<档案条目显示.<删除本条目带确认>d__19>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<档案条目显示.<显示档案管理报告界面>d__17>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<档案管理报告界面显示.<处理保存按钮点击>d__86>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<档案管理报告界面显示.<处理取消按钮点击>d__87>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<档案管理报告界面显示.<处理选择确认按钮点击>d__69>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<档案管理报告界面显示.<处理保存按钮点击>d__90>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<档案管理报告界面显示.<处理取消按钮点击>d__91>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<档案管理报告界面显示.<处理选择确认按钮点击>d__74>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<用户管理添加_韩.<选择出生日期>d__17>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<用户管理添加安卓_茉.<延迟初始化背景信息选项组>d__39>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<用户管理添加安卓_茉.<显示信息详情Async>d__54>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<用户管理添加安卓_茉.<选择出生日期>d__36>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<用户管理添加安卓_茉.<选择发病日期>d__37>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<用户管理添加安卓_茉.<验证并显示背景信息界面>d__40>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<用户管理添加安卓_茉.<验证并添加账号>d__47>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<用户管理添加安卓_茉.<延迟初始化背景信息选项组>d__41>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<用户管理添加安卓_茉.<显示信息详情Async>d__56>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<用户管理添加安卓_茉.<选择出生日期>d__38>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<用户管理添加安卓_茉.<选择发病日期>d__39>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<用户管理添加安卓_茉.<验证并显示背景信息界面>d__42>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<用户管理添加安卓_茉.<验证并添加账号>d__49>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<电脑端蓝牙串口检测.<转发蓝牙数据>d__3>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<界面管理界面_茉.<还原图片到初始状态>d__23>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<索录栏契韩_茉.<显记于目>d__9>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<蓝牙连接界面_茉.<开始扫描>d__12>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<评估模板设置显示.<加载模板条目预制体>d__9>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<评估模板设置显示.<加载模板条目预制体>d__11>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<评估模板选择界面.<保存评价和建议>d__14>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<评估模板选择界面.<返回上一界面>d__15>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<评定人管理添加_韩.<监控择日器销毁>d__19>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<评定人管理添加_韩.<选择出生日期>d__18>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<评定人管理添加_韩.<验证并添加账号>d__22>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<评定人管理添加安卓_茉.<选择出生日期>d__19>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<评定人管理添加安卓_茉.<选择出生日期>d__18>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<遂牖_茉.<显示提示>d__0>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表命名栏_茉.<取消按钮点击>d__15>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表命名栏_茉.<提交按钮点击>d__13>
@@ -234,10 +265,10 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表复述栏_茉.<提交按钮点击>d__15>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表复述栏_茉.<等待初始化后还原>d__11>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表复述栏_茉.<返回按钮点击>d__16>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表评估基类_茉.<取消按钮点击>d__22>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表评估基类_茉.<提交按钮点击>d__20>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表评估基类_茉.<等待初始化后还原>d__8>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表评估基类_茉.<返回按钮点击>d__21>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表评估基类_茉.<取消按钮点击>d__23>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表评估基类_茉.<提交按钮点击>d__21>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表评估基类_茉.<等待初始化后还原>d__9>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表评估基类_茉.<返回按钮点击>d__22>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表谈话栏_茉.<取消按钮点击>d__11>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表谈话栏_茉.<提交按钮点击>d__9>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid.<>c<量表谈话栏_茉.<等待初始化后还原>d__7>
@@ -248,7 +279,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<PC首页大数据页面_茉.<延迟刷新数据>d__17>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<SerialPortBaseUtility.<MonitorDeviceStatus>d__43>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<SerialPortUtilityManager.<ComPortInit>d__23>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<UIBlock2D图片同步器_茉.<加载配置图片>d__4>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<UIBlock2D图片同步器_茉.<加载配置图片>d__5>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<图片选择组件.<OnImageClicked>d__7>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<备份管理界面_茉.<处理批量同步>d__71>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<备份管理界面_茉.<处理日期确认>d__64>
@@ -257,34 +288,37 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<安卓功能栏.<删>d__18>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<安卓功能栏.<延迟设置全选>d__22>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<待同步数据条目显示_茉.<执行同步占位>d__14>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<打印报告界面_茉.<处理确认打印按钮点击>d__68>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<打印报告界面_茉.<处理返回按钮点击>d__69>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<打印报告界面_茉.<处理确认下载按钮点击>d__87>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<打印报告界面_茉.<处理确认选择打印机按钮点击>d__91>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<打印报告界面_茉.<处理返回按钮点击>d__92>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<打印管理器_茉.<测试设置显示栏目>d__40>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<择域.<长生>d__1>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<择木栏安卓_茉.<显记于目>d__15>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<显记栏_茉.<现目于栏>d__8>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<条目查看按钮_茉.<显录于增板>d__4>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<档案条目显示.<删除本条目带确认>d__19>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<档案条目显示.<显示档案管理报告界面>d__17>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<档案管理报告界面显示.<处理保存按钮点击>d__86>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<档案管理报告界面显示.<处理取消按钮点击>d__87>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<档案管理报告界面显示.<处理选择确认按钮点击>d__69>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<档案管理报告界面显示.<处理保存按钮点击>d__90>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<档案管理报告界面显示.<处理取消按钮点击>d__91>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<档案管理报告界面显示.<处理选择确认按钮点击>d__74>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<用户管理添加_韩.<选择出生日期>d__17>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<用户管理添加安卓_茉.<延迟初始化背景信息选项组>d__39>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<用户管理添加安卓_茉.<显示信息详情Async>d__54>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<用户管理添加安卓_茉.<选择出生日期>d__36>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<用户管理添加安卓_茉.<选择发病日期>d__37>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<用户管理添加安卓_茉.<验证并显示背景信息界面>d__40>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<用户管理添加安卓_茉.<验证并添加账号>d__47>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<用户管理添加安卓_茉.<延迟初始化背景信息选项组>d__41>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<用户管理添加安卓_茉.<显示信息详情Async>d__56>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<用户管理添加安卓_茉.<选择出生日期>d__38>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<用户管理添加安卓_茉.<选择发病日期>d__39>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<用户管理添加安卓_茉.<验证并显示背景信息界面>d__42>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<用户管理添加安卓_茉.<验证并添加账号>d__49>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<电脑端蓝牙串口检测.<转发蓝牙数据>d__3>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<界面管理界面_茉.<还原图片到初始状态>d__23>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<索录栏契韩_茉.<显记于目>d__9>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<蓝牙连接界面_茉.<开始扫描>d__12>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<评估模板设置显示.<加载模板条目预制体>d__9>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<评估模板设置显示.<加载模板条目预制体>d__11>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<评估模板选择界面.<保存评价和建议>d__14>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<评估模板选择界面.<返回上一界面>d__15>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<评定人管理添加_韩.<监控择日器销毁>d__19>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<评定人管理添加_韩.<选择出生日期>d__18>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<评定人管理添加_韩.<验证并添加账号>d__22>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<评定人管理添加安卓_茉.<选择出生日期>d__19>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<评定人管理添加安卓_茉.<选择出生日期>d__18>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<遂牖_茉.<显示提示>d__0>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表命名栏_茉.<取消按钮点击>d__15>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表命名栏_茉.<提交按钮点击>d__13>
@@ -294,10 +328,10 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表复述栏_茉.<提交按钮点击>d__15>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表复述栏_茉.<等待初始化后还原>d__11>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表复述栏_茉.<返回按钮点击>d__16>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表评估基类_茉.<取消按钮点击>d__22>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表评估基类_茉.<提交按钮点击>d__20>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表评估基类_茉.<等待初始化后还原>d__8>
-	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表评估基类_茉.<返回按钮点击>d__21>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表评估基类_茉.<取消按钮点击>d__23>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表评估基类_茉.<提交按钮点击>d__21>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表评估基类_茉.<等待初始化后还原>d__9>
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表评估基类_茉.<返回按钮点击>d__22>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表谈话栏_茉.<取消按钮点击>d__11>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表谈话栏_茉.<提交按钮点击>d__9>
 	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoid<量表谈话栏_茉.<等待初始化后还原>d__7>
@@ -648,6 +682,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.Dictionary.Enumerator<object,ES3Internal.ES3Data>
 	// System.Collections.Generic.Dictionary.Enumerator<object,Nova.Events.EventModule.Callbacks>
 	// System.Collections.Generic.Dictionary.Enumerator<object,Nova.Internal.Collections.UID<object>>
+	// System.Collections.Generic.Dictionary.Enumerator<object,float>
 	// System.Collections.Generic.Dictionary.Enumerator<object,int>
 	// System.Collections.Generic.Dictionary.Enumerator<object,object>
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<Nova.Events.EventModule.ScopedCallback,int>
@@ -661,6 +696,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<object,ES3Internal.ES3Data>
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<object,Nova.Events.EventModule.Callbacks>
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<object,Nova.Internal.Collections.UID<object>>
+	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<object,float>
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<object,int>
 	// System.Collections.Generic.Dictionary.KeyCollection.Enumerator<object,object>
 	// System.Collections.Generic.Dictionary.KeyCollection<Nova.Events.EventModule.ScopedCallback,int>
@@ -674,6 +710,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.Dictionary.KeyCollection<object,ES3Internal.ES3Data>
 	// System.Collections.Generic.Dictionary.KeyCollection<object,Nova.Events.EventModule.Callbacks>
 	// System.Collections.Generic.Dictionary.KeyCollection<object,Nova.Internal.Collections.UID<object>>
+	// System.Collections.Generic.Dictionary.KeyCollection<object,float>
 	// System.Collections.Generic.Dictionary.KeyCollection<object,int>
 	// System.Collections.Generic.Dictionary.KeyCollection<object,object>
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<Nova.Events.EventModule.ScopedCallback,int>
@@ -687,6 +724,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<object,ES3Internal.ES3Data>
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<object,Nova.Events.EventModule.Callbacks>
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<object,Nova.Internal.Collections.UID<object>>
+	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<object,float>
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<object,int>
 	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<object,object>
 	// System.Collections.Generic.Dictionary.ValueCollection<Nova.Events.EventModule.ScopedCallback,int>
@@ -700,6 +738,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.Dictionary.ValueCollection<object,ES3Internal.ES3Data>
 	// System.Collections.Generic.Dictionary.ValueCollection<object,Nova.Events.EventModule.Callbacks>
 	// System.Collections.Generic.Dictionary.ValueCollection<object,Nova.Internal.Collections.UID<object>>
+	// System.Collections.Generic.Dictionary.ValueCollection<object,float>
 	// System.Collections.Generic.Dictionary.ValueCollection<object,int>
 	// System.Collections.Generic.Dictionary.ValueCollection<object,object>
 	// System.Collections.Generic.Dictionary<Nova.Events.EventModule.ScopedCallback,int>
@@ -713,6 +752,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.Dictionary<object,ES3Internal.ES3Data>
 	// System.Collections.Generic.Dictionary<object,Nova.Events.EventModule.Callbacks>
 	// System.Collections.Generic.Dictionary<object,Nova.Internal.Collections.UID<object>>
+	// System.Collections.Generic.Dictionary<object,float>
 	// System.Collections.Generic.Dictionary<object,int>
 	// System.Collections.Generic.Dictionary<object,object>
 	// System.Collections.Generic.EqualityComparer<ES3Internal.ES3Data>
@@ -756,6 +796,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.EqualityComparer<System.ValueTuple<object,int>>
 	// System.Collections.Generic.EqualityComparer<System.ValueTuple<object,object,Nova.Internal.Core.DataStoreID>>
 	// System.Collections.Generic.EqualityComparer<byte>
+	// System.Collections.Generic.EqualityComparer<float>
 	// System.Collections.Generic.EqualityComparer<int>
 	// System.Collections.Generic.EqualityComparer<long>
 	// System.Collections.Generic.EqualityComparer<object>
@@ -777,6 +818,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<object,ES3Internal.ES3Data>>
 	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<object,Nova.Events.EventModule.Callbacks>>
 	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<object,Nova.Internal.Collections.UID<object>>>
+	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<object,float>>
 	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<object,int>>
 	// System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<object,object>>
 	// System.Collections.Generic.ICollection<System.ValueTuple<object,int>>
@@ -821,6 +863,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<object,ES3Internal.ES3Data>>
 	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<object,Nova.Events.EventModule.Callbacks>>
 	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<object,Nova.Internal.Collections.UID<object>>>
+	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<object,float>>
 	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<object,int>>
 	// System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<object,object>>
 	// System.Collections.Generic.IEnumerable<System.ValueTuple<object,int>>
@@ -847,6 +890,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<object,ES3Internal.ES3Data>>
 	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<object,Nova.Events.EventModule.Callbacks>>
 	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<object,Nova.Internal.Collections.UID<object>>>
+	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<object,float>>
 	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<object,int>>
 	// System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<object,object>>
 	// System.Collections.Generic.IEnumerator<System.ValueTuple<object,int>>
@@ -889,6 +933,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.KeyValuePair<object,ES3Internal.ES3Data>
 	// System.Collections.Generic.KeyValuePair<object,Nova.Events.EventModule.Callbacks>
 	// System.Collections.Generic.KeyValuePair<object,Nova.Internal.Collections.UID<object>>
+	// System.Collections.Generic.KeyValuePair<object,float>
 	// System.Collections.Generic.KeyValuePair<object,int>
 	// System.Collections.Generic.KeyValuePair<object,object>
 	// System.Collections.Generic.List.Enumerator<Cysharp.Threading.Tasks.UniTask>
@@ -998,6 +1043,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// System.Collections.Generic.ObjectEqualityComparer<System.ValueTuple<object,int>>
 	// System.Collections.Generic.ObjectEqualityComparer<System.ValueTuple<object,object,Nova.Internal.Core.DataStoreID>>
 	// System.Collections.Generic.ObjectEqualityComparer<byte>
+	// System.Collections.Generic.ObjectEqualityComparer<float>
 	// System.Collections.Generic.ObjectEqualityComparer<int>
 	// System.Collections.Generic.ObjectEqualityComparer<long>
 	// System.Collections.Generic.ObjectEqualityComparer<object>
@@ -1163,7 +1209,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	public void RefMethods()
 	{
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,GameStartAfterLoad.<WaitLoadAnimation>d__6>(Cysharp.Threading.Tasks.UniTask.Awaiter&,GameStartAfterLoad.<WaitLoadAnimation>d__6&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,ScreenshotPDFUtility.<WaitForFileCreated>d__11>(Cysharp.Threading.Tasks.UniTask.Awaiter&,ScreenshotPDFUtility.<WaitForFileCreated>d__11&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,ScreenshotPDFUtility.<WaitForFileCreated>d__38>(Cysharp.Threading.Tasks.UniTask.Awaiter&,ScreenshotPDFUtility.<WaitForFileCreated>d__38&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,SerialPortBluetoothUtility.<WaitForHandshake>d__15>(Cysharp.Threading.Tasks.UniTask.Awaiter&,SerialPortBluetoothUtility.<WaitForHandshake>d__15&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,SerialPortCenterUtility.<WaitForHandshake>d__20>(Cysharp.Threading.Tasks.UniTask.Awaiter&,SerialPortCenterUtility.<WaitForHandshake>d__20&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,SerialPortDongleUtility.<WaitForHandshake>d__20>(Cysharp.Threading.Tasks.UniTask.Awaiter&,SerialPortDongleUtility.<WaitForHandshake>d__20&)
@@ -1174,16 +1220,21 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,截图钮.<截图>d__1>(Cysharp.Threading.Tasks.UniTask.Awaiter&,截图钮.<截图>d__1&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,电脑端蓝牙串口检测.<启动连接蓝牙>d__2>(Cysharp.Threading.Tasks.UniTask.Awaiter&,电脑端蓝牙串口检测.<启动连接蓝牙>d__2&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,SerialPortUtilityManager.<ScanComPort>d__24>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,SerialPortUtilityManager.<ScanComPort>d__24&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,右上角功能端PC_茉.<显示权限提示>d__19>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,右上角功能端PC_茉.<显示权限提示>d__19&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,备份管理界面_茉.<显示提示信息>d__78>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,备份管理界面_茉.<显示提示信息>d__78&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,左目录选择_韩.<显示权限提示>d__6>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,左目录选择_韩.<显示权限提示>d__6&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,待同步数据条目显示_茉.<显示提示>d__18>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,待同步数据条目显示_茉.<显示提示>d__18&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,用户管理添加安卓_茉.<显示提示>d__48>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,用户管理添加安卓_茉.<显示提示>d__48&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,打印报告界面_茉.<显示告示提示>d__90>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,打印报告界面_茉.<显示告示提示>d__90&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,用户管理添加安卓_茉.<显示提示>d__50>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,用户管理添加安卓_茉.<显示提示>d__50&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,电脑端蓝牙串口检测.<启动连接蓝牙>d__2>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,电脑端蓝牙串口检测.<启动连接蓝牙>d__2&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,界面管理界面_茉.<应用图片缓存到选择器>d__21>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,界面管理界面_茉.<应用图片缓存到选择器>d__21&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,蓝牙数据同步工具.<处理接收到的蓝牙原始数据>d__12>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,蓝牙数据同步工具.<处理接收到的蓝牙原始数据>d__12&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,蓝牙数据同步工具.<显示告示>d__27>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,蓝牙数据同步工具.<显示告示>d__27&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,评估模板选择界面.<显示提示>d__16>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,评估模板选择界面.<显示提示>d__16&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,评定人管理添加_韩.<显示提示>d__29>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,评定人管理添加_韩.<显示提示>d__29&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,选择界面_茉.<显示权限提示>d__20>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,选择界面_茉.<显示权限提示>d__20&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表用户选择显示_茉.<添加档案>d__10>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表用户选择显示_茉.<添加档案>d__10&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表评估基类_茉.<显示提示>d__23>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表评估基类_茉.<显示提示>d__23&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表评估基类_茉.<显示提示>d__24>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表评估基类_茉.<显示提示>d__24&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,QuickScreenshot.<CaptureAndPrintAsync>d__4>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,QuickScreenshot.<CaptureAndPrintAsync>d__4&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,QuickScreenshot.<CaptureAsync>d__3>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,QuickScreenshot.<CaptureAsync>d__3&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,QuickScreenshot.<CaptureNovaScrollViewAsync>d__5>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,QuickScreenshot.<CaptureNovaScrollViewAsync>d__5&)
@@ -1191,15 +1242,20 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,ScreenshotPDFPanel.<CaptureScreenshotAsync>d__16>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,ScreenshotPDFPanel.<CaptureScreenshotAsync>d__16&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,SerialPortUtilityManager.<ScanComPort>d__24>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,SerialPortUtilityManager.<ScanComPort>d__24&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,YooAssetCacheManager.<LoadAndCacheAsset>d__18>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,YooAssetCacheManager.<LoadAndCacheAsset>d__18&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,右上角功能端PC_茉.<显示权限提示>d__19>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,右上角功能端PC_茉.<显示权限提示>d__19&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,左目录选择_韩.<显示权限提示>d__6>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,左目录选择_韩.<显示权限提示>d__6&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,待同步数据条目显示_茉.<显示提示>d__18>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,待同步数据条目显示_茉.<显示提示>d__18&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,截图钮.<截图>d__1>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,截图钮.<截图>d__1&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,用户管理添加安卓_茉.<显示提示>d__48>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,用户管理添加安卓_茉.<显示提示>d__48&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,打印报告界面_茉.<显示告示提示>d__90>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,打印报告界面_茉.<显示告示提示>d__90&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,用户管理添加安卓_茉.<显示提示>d__50>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,用户管理添加安卓_茉.<显示提示>d__50&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,界面管理器_韩.<预加载界面>d__8>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,界面管理器_韩.<预加载界面>d__8&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,界面管理界面_茉.<应用图片缓存到选择器>d__21>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,界面管理界面_茉.<应用图片缓存到选择器>d__21&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,蓝牙数据同步工具.<显示告示>d__27>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,蓝牙数据同步工具.<显示告示>d__27&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,评估模板选择界面.<显示提示>d__16>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,评估模板选择界面.<显示提示>d__16&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,评定人管理添加_韩.<显示提示>d__29>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,评定人管理添加_韩.<显示提示>d__29&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,选择界面_茉.<显示权限提示>d__20>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,选择界面_茉.<显示权限提示>d__20&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,量表用户选择显示_茉.<添加档案>d__10>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,量表用户选择显示_茉.<添加档案>d__10&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,量表评估基类_茉.<显示提示>d__23>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,量表评估基类_茉.<显示提示>d__23&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,量表评估基类_茉.<显示提示>d__24>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,量表评估基类_茉.<显示提示>d__24&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<System.Nullable<System.ValueTuple<object,int>>>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,SerialPortBaseUtility.<LoadSavedPortInfo>d__28>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,SerialPortBaseUtility.<LoadSavedPortInfo>d__28&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,SerialPortBaseUtility.<TryConnectPort>d__35>(Cysharp.Threading.Tasks.UniTask.Awaiter&,SerialPortBaseUtility.<TryConnectPort>d__35&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,SerialPortBluetoothUtility.<RecognizeDevice>d__14>(Cysharp.Threading.Tasks.UniTask.Awaiter&,SerialPortBluetoothUtility.<RecognizeDevice>d__14&)
@@ -1224,46 +1280,61 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,备份管理界面_茉.<显示全选确认>d__77>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,备份管理界面_茉.<显示全选确认>d__77&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,备份管理界面_茉.<显示确认告示>d__79>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,备份管理界面_茉.<显示确认告示>d__79&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,待同步数据条目显示_茉.<执行同步并更新进度>d__16>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,待同步数据条目显示_茉.<执行同步并更新进度>d__16&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,模板条目显示.<保存通知>d__13>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,模板条目显示.<保存通知>d__13&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,用户管理添加安卓_茉.<显示确认>d__49>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,用户管理添加安卓_茉.<显示确认>d__49&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,打印管理器_茉.<执行打印>d__41>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,打印管理器_茉.<执行打印>d__41&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,模板条目显示.<保存通知>d__14>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,模板条目显示.<保存通知>d__14&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,用户管理添加安卓_茉.<显示确认>d__51>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,用户管理添加安卓_茉.<显示确认>d__51&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,电脑端加密狗串口检测.<启动连接加密狗>d__3>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,电脑端加密狗串口检测.<启动连接加密狗>d__3&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,界面管理界面_茉.<显示提示>d__19>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,界面管理界面_茉.<显示提示>d__19&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,界面管理界面_茉.<显示提示>d__26>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,界面管理界面_茉.<显示提示>d__26&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,蓝牙数据同步工具.<发送待同步数据>d__16>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,蓝牙数据同步工具.<发送待同步数据>d__16&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,蓝牙数据同步工具.<处理分包数据>d__30>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,蓝牙数据同步工具.<处理分包数据>d__30&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,蓝牙数据同步工具.<处理接收到的Data区>d__29>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,蓝牙数据同步工具.<处理接收到的Data区>d__29&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,评估模板选择界面.<显示确认>d__17>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,评估模板选择界面.<显示确认>d__17&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表评估基类_茉.<显示确认>d__24>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表评估基类_茉.<显示确认>d__24&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表评估基类_茉.<显示确认>d__25>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表评估基类_茉.<显示确认>d__25&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<int>,SerialPortBluetoothUtility.<RecognizeDevice>d__14>(Cysharp.Threading.Tasks.UniTask.Awaiter<int>&,SerialPortBluetoothUtility.<RecognizeDevice>d__14&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<int>,SerialPortCenterUtility.<RecognizeDevice>d__19>(Cysharp.Threading.Tasks.UniTask.Awaiter<int>&,SerialPortCenterUtility.<RecognizeDevice>d__19&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<int>,SerialPortDongleUtility.<RecognizeDevice>d__19>(Cysharp.Threading.Tasks.UniTask.Awaiter<int>&,SerialPortDongleUtility.<RecognizeDevice>d__19&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,SerialPortBaseUtility.<SearchAndConnectAsync>d__34>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,SerialPortBaseUtility.<SearchAndConnectAsync>d__34&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,UIBlock2D图片同步器_茉.<加载默认登录背景图>d__9>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,UIBlock2D图片同步器_茉.<加载默认登录背景图>d__9&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,图片选择组件.<显示提示>d__8>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,图片选择组件.<显示提示>d__8&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,备份管理界面_茉.<显示确认告示>d__79>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,备份管理界面_茉.<显示确认告示>d__79&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,模板条目显示.<保存通知>d__13>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,模板条目显示.<保存通知>d__13&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,用户管理添加安卓_茉.<显示确认>d__49>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,用户管理添加安卓_茉.<显示确认>d__49&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,界面管理界面_茉.<显示提示>d__19>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,界面管理界面_茉.<显示提示>d__19&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,打印管理器_茉.<尝试Word模板打印>d__42>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,打印管理器_茉.<尝试Word模板打印>d__42&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,打印管理器_茉.<执行打印>d__41>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,打印管理器_茉.<执行打印>d__41&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,模板条目显示.<保存通知>d__14>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,模板条目显示.<保存通知>d__14&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,用户管理添加安卓_茉.<显示确认>d__51>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,用户管理添加安卓_茉.<显示确认>d__51&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,界面管理界面_茉.<加载并显示默认登录背景图>d__22>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,界面管理界面_茉.<加载并显示默认登录背景图>d__22&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,界面管理界面_茉.<显示提示>d__26>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,界面管理界面_茉.<显示提示>d__26&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,评估模板选择界面.<显示确认>d__17>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,评估模板选择界面.<显示确认>d__17&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,量表评估基类_茉.<显示确认>d__24>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,量表评估基类_茉.<显示确认>d__24&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,量表评估基类_茉.<显示确认>d__25>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,量表评估基类_茉.<显示确认>d__25&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,SerialPortBaseUtility.<VerifyDeviceDirectly>d__38>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,SerialPortBaseUtility.<VerifyDeviceDirectly>d__38&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,打印管理器_茉.<尝试Word模板打印>d__42>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,打印管理器_茉.<尝试Word模板打印>d__42&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,打印管理器_茉.<执行打印>d__41>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,打印管理器_茉.<执行打印>d__41&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter<int>,ImagePickerUtility.<RequestGalleryPermissionAsync>d__25>(System.Runtime.CompilerServices.TaskAwaiter<int>&,ImagePickerUtility.<RequestGalleryPermissionAsync>d__25&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,ImagePickerUtility.<ScanImageFilesAsync>d__11>(Cysharp.Threading.Tasks.UniTask.Awaiter&,ImagePickerUtility.<ScanImageFilesAsync>d__11&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,ScreenshotPDFUtility.<CaptureScreenshotAsync>d__2>(Cysharp.Threading.Tasks.UniTask.Awaiter&,ScreenshotPDFUtility.<CaptureScreenshotAsync>d__2&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,ScreenshotPDFUtility.<CaptureScreenshotAsync>d__6>(Cysharp.Threading.Tasks.UniTask.Awaiter&,ScreenshotPDFUtility.<CaptureScreenshotAsync>d__6&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,打印管理器_茉.<截图报告>d__76>(Cysharp.Threading.Tasks.UniTask.Awaiter&,打印管理器_茉.<截图报告>d__76&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,打印管理器_茉.<截图评估表格栏目用于Word>d__50>(Cysharp.Threading.Tasks.UniTask.Awaiter&,打印管理器_茉.<截图评估表格栏目用于Word>d__50&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,ImagePickerUtility.<PickImageFromMobileGalleryAsync>d__7>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,ImagePickerUtility.<PickImageFromMobileGalleryAsync>d__7&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,ImagePickerUtility.<PickImageFromFileDialogAsync>d__6>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,ImagePickerUtility.<PickImageFromFileDialogAsync>d__6&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,ImagePickerUtility.<PickImageFromGalleryAsync>d__5>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,ImagePickerUtility.<PickImageFromGalleryAsync>d__5&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,ImagePickerUtility.<PickImageFromMobileGalleryAsync>d__7>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,ImagePickerUtility.<PickImageFromMobileGalleryAsync>d__7&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,ImagePickerUtility.<ShowCustomFilePickerAsync>d__10>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,ImagePickerUtility.<ShowCustomFilePickerAsync>d__10&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,ScreenshotPDFUtility.<CaptureAndExportToPDFAsync>d__5>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,ScreenshotPDFUtility.<CaptureAndExportToPDFAsync>d__5&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,ScreenshotPDFUtility.<CaptureAndExportToPDFAsync>d__9>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,ScreenshotPDFUtility.<CaptureAndExportToPDFAsync>d__9&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,YooAssetPfbPoolUtility.<LoadConfig>d__14<object>>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,YooAssetPfbPoolUtility.<LoadConfig>d__14<object>&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,YooAssetPfbPoolUtility.<LoadPfb>d__13>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,YooAssetPfbPoolUtility.<LoadPfb>d__13&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,ScreenshotPDFUtility.<CaptureCameraViewAsync>d__3>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,ScreenshotPDFUtility.<CaptureCameraViewAsync>d__3&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,ScreenshotPDFUtility.<CaptureScreenshotAsync>d__2>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,ScreenshotPDFUtility.<CaptureScreenshotAsync>d__2&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,ScreenshotPDFUtility.<CaptureScrollViewAsync>d__4>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,ScreenshotPDFUtility.<CaptureScrollViewAsync>d__4&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,打印管理器_茉.<导出Word模板文档>d__43>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,打印管理器_茉.<导出Word模板文档>d__43&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,打印管理器_茉.<截图报告>d__76>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,打印管理器_茉.<截图报告>d__76&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,打印管理器_茉.<截图评估表格栏目用于Word>d__50>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,打印管理器_茉.<截图评估表格栏目用于Word>d__50&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,打印管理器_茉.<获取可用Word模板路径Async>d__44>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,打印管理器_茉.<获取可用Word模板路径Async>d__44&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,ScreenshotPDFUtility.<CaptureCameraViewAsync>d__7>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,ScreenshotPDFUtility.<CaptureCameraViewAsync>d__7&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,ScreenshotPDFUtility.<CaptureScreenshotAsync>d__6>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,ScreenshotPDFUtility.<CaptureScreenshotAsync>d__6&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,ScreenshotPDFUtility.<CaptureScrollViewAsync>d__8>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,ScreenshotPDFUtility.<CaptureScrollViewAsync>d__8&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,SerialPortBaseUtility.<GetComPortsWithSkip>d__31>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,SerialPortBaseUtility.<GetComPortsWithSkip>d__31&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,SerialPortUtilityManager.<GetComPorts>d__25>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,SerialPortUtilityManager.<GetComPorts>d__25&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,打印管理器_茉.<克隆报告界面>d__75>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,打印管理器_茉.<克隆报告界面>d__75&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,打印管理器_茉.<截图评估表格栏目用于Word>d__50>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,打印管理器_茉.<截图评估表格栏目用于Word>d__50&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter,ImagePickerUtility.<SaveImageToCacheAsync>d__16>(System.Runtime.CompilerServices.TaskAwaiter&,ImagePickerUtility.<SaveImageToCacheAsync>d__16&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter,ScreenshotPDFUtility.<CaptureCameraViewAsync>d__3>(System.Runtime.CompilerServices.TaskAwaiter&,ScreenshotPDFUtility.<CaptureCameraViewAsync>d__3&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter,ScreenshotPDFUtility.<CaptureScrollViewAsync>d__4>(System.Runtime.CompilerServices.TaskAwaiter&,ScreenshotPDFUtility.<CaptureScrollViewAsync>d__4&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter,ScreenshotPDFUtility.<CaptureCameraViewAsync>d__7>(System.Runtime.CompilerServices.TaskAwaiter&,ScreenshotPDFUtility.<CaptureCameraViewAsync>d__7&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter,ScreenshotPDFUtility.<CaptureScrollViewAsync>d__8>(System.Runtime.CompilerServices.TaskAwaiter&,ScreenshotPDFUtility.<CaptureScrollViewAsync>d__8&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter<object>,ImagePickerUtility.<LoadImageFromCacheAsync>d__17>(System.Runtime.CompilerServices.TaskAwaiter<object>&,ImagePickerUtility.<LoadImageFromCacheAsync>d__17&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter<object>,ImagePickerUtility.<LoadTextureFromFileAsync>d__8>(System.Runtime.CompilerServices.TaskAwaiter<object>&,ImagePickerUtility.<LoadTextureFromFileAsync>d__8&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<GameStartAfterLoad.<WaitLoadAnimation>d__6>(GameStartAfterLoad.<WaitLoadAnimation>d__6&)
@@ -1272,7 +1343,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<QuickScreenshot.<CaptureNovaScrollViewAsync>d__5>(QuickScreenshot.<CaptureNovaScrollViewAsync>d__5&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<ScreenshotPDFPanel.<CaptureAndExportAsync>d__17>(ScreenshotPDFPanel.<CaptureAndExportAsync>d__17&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<ScreenshotPDFPanel.<CaptureScreenshotAsync>d__16>(ScreenshotPDFPanel.<CaptureScreenshotAsync>d__16&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<ScreenshotPDFUtility.<WaitForFileCreated>d__11>(ScreenshotPDFUtility.<WaitForFileCreated>d__11&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<ScreenshotPDFUtility.<WaitForFileCreated>d__38>(ScreenshotPDFUtility.<WaitForFileCreated>d__38&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<SerialPortBluetoothUtility.<WaitForHandshake>d__15>(SerialPortBluetoothUtility.<WaitForHandshake>d__15&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<SerialPortCenterUtility.<WaitForHandshake>d__20>(SerialPortCenterUtility.<WaitForHandshake>d__20&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<SerialPortDongleUtility.<WaitForHandshake>d__20>(SerialPortDongleUtility.<WaitForHandshake>d__20&)
@@ -1281,19 +1352,24 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<YooAssetCacheManager.<WarmupAssets>d__17>(YooAssetCacheManager.<WarmupAssets>d__17&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<YooAssetPfbPoolUtility.<PreloadCommonAssets>d__15>(YooAssetPfbPoolUtility.<PreloadCommonAssets>d__15&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<主场景背景管理_茉.<预加载首页>d__4>(主场景背景管理_茉.<预加载首页>d__4&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<右上角功能端PC_茉.<显示权限提示>d__19>(右上角功能端PC_茉.<显示权限提示>d__19&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<备份管理界面_茉.<显示提示信息>d__78>(备份管理界面_茉.<显示提示信息>d__78&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<左目录选择_韩.<显示权限提示>d__6>(左目录选择_韩.<显示权限提示>d__6&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<待同步数据条目显示_茉.<显示提示>d__18>(待同步数据条目显示_茉.<显示提示>d__18&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<待同步数据条目显示_茉.<更新同步进度>d__17>(待同步数据条目显示_茉.<更新同步进度>d__17&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<截图钮.<截图>d__1>(截图钮.<截图>d__1&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<用户管理添加安卓_茉.<显示提示>d__48>(用户管理添加安卓_茉.<显示提示>d__48&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<打印报告界面_茉.<显示告示提示>d__90>(打印报告界面_茉.<显示告示提示>d__90&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<用户管理添加安卓_茉.<显示提示>d__50>(用户管理添加安卓_茉.<显示提示>d__50&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<电脑端蓝牙串口检测.<启动连接蓝牙>d__2>(电脑端蓝牙串口检测.<启动连接蓝牙>d__2&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<界面管理器_韩.<预加载界面>d__8>(界面管理器_韩.<预加载界面>d__8&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<界面管理界面_茉.<应用图片缓存到选择器>d__21>(界面管理界面_茉.<应用图片缓存到选择器>d__21&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<蓝牙数据同步工具.<处理接收到的蓝牙原始数据>d__12>(蓝牙数据同步工具.<处理接收到的蓝牙原始数据>d__12&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<蓝牙数据同步工具.<显示告示>d__27>(蓝牙数据同步工具.<显示告示>d__27&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<评估模板选择界面.<显示提示>d__16>(评估模板选择界面.<显示提示>d__16&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<评定人管理添加_韩.<显示提示>d__29>(评定人管理添加_韩.<显示提示>d__29&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<选择界面_茉.<显示权限提示>d__20>(选择界面_茉.<显示权限提示>d__20&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<量表用户选择显示_茉.<添加档案>d__10>(量表用户选择显示_茉.<添加档案>d__10&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<量表评估基类_茉.<显示提示>d__23>(量表评估基类_茉.<显示提示>d__23&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<量表评估基类_茉.<显示提示>d__24>(量表评估基类_茉.<显示提示>d__24&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<System.Nullable<System.ValueTuple<object,int>>>.Start<SerialPortBaseUtility.<LoadSavedPortInfo>d__28>(SerialPortBaseUtility.<LoadSavedPortInfo>d__28&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<ImagePickerUtility.<RequestGalleryPermissionAsync>d__25>(ImagePickerUtility.<RequestGalleryPermissionAsync>d__25&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<SerialPortBaseUtility.<CheckDeviceHealth>d__44>(SerialPortBaseUtility.<CheckDeviceHealth>d__44&)
@@ -1312,22 +1388,26 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<SerialPortUtilityManager.<TryConnectPort>d__26>(SerialPortUtilityManager.<TryConnectPort>d__26&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<SerialPortUtilityManager.<TryHandshake>d__28>(SerialPortUtilityManager.<TryHandshake>d__28&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<SerialPortUtilityManager.<TryOpenPort>d__27>(SerialPortUtilityManager.<TryOpenPort>d__27&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<UIBlock2D图片同步器_茉.<加载默认登录背景图>d__9>(UIBlock2D图片同步器_茉.<加载默认登录背景图>d__9&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<告示_茉.<等待确认显示>d__8>(告示_茉.<等待确认显示>d__8&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<图片选择组件.<显示提示>d__8>(图片选择组件.<显示提示>d__8&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<备份管理界面_茉.<显示全选确认>d__77>(备份管理界面_茉.<显示全选确认>d__77&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<备份管理界面_茉.<显示确认告示>d__79>(备份管理界面_茉.<显示确认告示>d__79&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<待同步数据条目显示_茉.<执行同步并更新进度>d__16>(待同步数据条目显示_茉.<执行同步并更新进度>d__16&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<模板条目显示.<保存通知>d__13>(模板条目显示.<保存通知>d__13&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<用户管理添加安卓_茉.<显示确认>d__49>(用户管理添加安卓_茉.<显示确认>d__49&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<打印管理器_茉.<尝试Word模板打印>d__42>(打印管理器_茉.<尝试Word模板打印>d__42&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<打印管理器_茉.<执行打印>d__41>(打印管理器_茉.<执行打印>d__41&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<模板条目显示.<保存通知>d__14>(模板条目显示.<保存通知>d__14&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<用户管理添加安卓_茉.<显示确认>d__51>(用户管理添加安卓_茉.<显示确认>d__51&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<电脑端加密狗串口检测.<启动连接加密狗>d__3>(电脑端加密狗串口检测.<启动连接加密狗>d__3&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<界面管理界面_茉.<显示提示>d__19>(界面管理界面_茉.<显示提示>d__19&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<界面管理界面_茉.<加载并显示默认登录背景图>d__22>(界面管理界面_茉.<加载并显示默认登录背景图>d__22&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<界面管理界面_茉.<显示提示>d__26>(界面管理界面_茉.<显示提示>d__26&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<蓝牙数据同步工具.<分包发送数据>d__19>(蓝牙数据同步工具.<分包发送数据>d__19&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<蓝牙数据同步工具.<发送待同步数据>d__16>(蓝牙数据同步工具.<发送待同步数据>d__16&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<蓝牙数据同步工具.<同步数据到录>d__26>(蓝牙数据同步工具.<同步数据到录>d__26&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<蓝牙数据同步工具.<处理分包数据>d__30>(蓝牙数据同步工具.<处理分包数据>d__30&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<蓝牙数据同步工具.<处理接收到的Data区>d__29>(蓝牙数据同步工具.<处理接收到的Data区>d__29&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<评估模板选择界面.<显示确认>d__17>(评估模板选择界面.<显示确认>d__17&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<量表评估基类_茉.<显示确认>d__24>(量表评估基类_茉.<显示确认>d__24&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<byte>.Start<量表评估基类_茉.<显示确认>d__25>(量表评估基类_茉.<显示确认>d__25&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<ImagePickerUtility.<LoadImageFromCacheAsync>d__17>(ImagePickerUtility.<LoadImageFromCacheAsync>d__17&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<ImagePickerUtility.<LoadTextureFromFileAsync>d__8>(ImagePickerUtility.<LoadTextureFromFileAsync>d__8&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<ImagePickerUtility.<PickImageFromFileDialogAsync>d__6>(ImagePickerUtility.<PickImageFromFileDialogAsync>d__6&)
@@ -1337,14 +1417,19 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<ImagePickerUtility.<ScanImageFilesAsync>d__11>(ImagePickerUtility.<ScanImageFilesAsync>d__11&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<ImagePickerUtility.<ShowCustomFilePickerAsync>d__10>(ImagePickerUtility.<ShowCustomFilePickerAsync>d__10&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<LoadYooAssetsTool.<LoadAsset>d__4<object>>(LoadYooAssetsTool.<LoadAsset>d__4<object>&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<ScreenshotPDFUtility.<CaptureAndExportToPDFAsync>d__5>(ScreenshotPDFUtility.<CaptureAndExportToPDFAsync>d__5&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<ScreenshotPDFUtility.<CaptureCameraViewAsync>d__3>(ScreenshotPDFUtility.<CaptureCameraViewAsync>d__3&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<ScreenshotPDFUtility.<CaptureScreenshotAsync>d__2>(ScreenshotPDFUtility.<CaptureScreenshotAsync>d__2&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<ScreenshotPDFUtility.<CaptureScrollViewAsync>d__4>(ScreenshotPDFUtility.<CaptureScrollViewAsync>d__4&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<ScreenshotPDFUtility.<CaptureAndExportToPDFAsync>d__9>(ScreenshotPDFUtility.<CaptureAndExportToPDFAsync>d__9&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<ScreenshotPDFUtility.<CaptureCameraViewAsync>d__7>(ScreenshotPDFUtility.<CaptureCameraViewAsync>d__7&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<ScreenshotPDFUtility.<CaptureScreenshotAsync>d__6>(ScreenshotPDFUtility.<CaptureScreenshotAsync>d__6&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<ScreenshotPDFUtility.<CaptureScrollViewAsync>d__8>(ScreenshotPDFUtility.<CaptureScrollViewAsync>d__8&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<SerialPortBaseUtility.<GetComPortsWithSkip>d__31>(SerialPortBaseUtility.<GetComPortsWithSkip>d__31&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<SerialPortUtilityManager.<GetComPorts>d__25>(SerialPortUtilityManager.<GetComPorts>d__25&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<YooAssetPfbPoolUtility.<LoadConfig>d__14<object>>(YooAssetPfbPoolUtility.<LoadConfig>d__14<object>&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<YooAssetPfbPoolUtility.<LoadPfb>d__13>(YooAssetPfbPoolUtility.<LoadPfb>d__13&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<打印管理器_茉.<克隆报告界面>d__75>(打印管理器_茉.<克隆报告界面>d__75&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<打印管理器_茉.<导出Word模板文档>d__43>(打印管理器_茉.<导出Word模板文档>d__43&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<打印管理器_茉.<截图报告>d__76>(打印管理器_茉.<截图报告>d__76&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<打印管理器_茉.<截图评估表格栏目用于Word>d__50>(打印管理器_茉.<截图评估表格栏目用于Word>d__50&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<打印管理器_茉.<获取可用Word模板路径Async>d__44>(打印管理器_茉.<获取可用Word模板路径Async>d__44&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,BleConnecter.<ConnectBLE>d__10>(Cysharp.Threading.Tasks.UniTask.Awaiter&,BleConnecter.<ConnectBLE>d__10&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,BleConnecter.<SendDataLoop>d__9>(Cysharp.Threading.Tasks.UniTask.Awaiter&,BleConnecter.<SendDataLoop>d__9&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,BleScaner.<StartScan>d__12>(Cysharp.Threading.Tasks.UniTask.Awaiter&,BleScaner.<StartScan>d__12&)
@@ -1357,33 +1442,37 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,安卓功能栏.<删>d__18>(Cysharp.Threading.Tasks.UniTask.Awaiter&,安卓功能栏.<删>d__18&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,安卓功能栏.<延迟设置全选>d__22>(Cysharp.Threading.Tasks.UniTask.Awaiter&,安卓功能栏.<延迟设置全选>d__22&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,待同步数据条目显示_茉.<执行同步占位>d__14>(Cysharp.Threading.Tasks.UniTask.Awaiter&,待同步数据条目显示_茉.<执行同步占位>d__14&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,打印报告界面_茉.<处理确认打印按钮点击>d__68>(Cysharp.Threading.Tasks.UniTask.Awaiter&,打印报告界面_茉.<处理确认打印按钮点击>d__68&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,打印报告界面_茉.<处理返回按钮点击>d__69>(Cysharp.Threading.Tasks.UniTask.Awaiter&,打印报告界面_茉.<处理返回按钮点击>d__69&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,打印报告界面_茉.<处理确认下载按钮点击>d__87>(Cysharp.Threading.Tasks.UniTask.Awaiter&,打印报告界面_茉.<处理确认下载按钮点击>d__87&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,打印报告界面_茉.<处理确认选择打印机按钮点击>d__91>(Cysharp.Threading.Tasks.UniTask.Awaiter&,打印报告界面_茉.<处理确认选择打印机按钮点击>d__91&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,打印报告界面_茉.<处理返回按钮点击>d__92>(Cysharp.Threading.Tasks.UniTask.Awaiter&,打印报告界面_茉.<处理返回按钮点击>d__92&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,打印管理器_茉.<测试设置显示栏目>d__40>(Cysharp.Threading.Tasks.UniTask.Awaiter&,打印管理器_茉.<测试设置显示栏目>d__40&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,条目查看按钮_茉.<显录于增板>d__4>(Cysharp.Threading.Tasks.UniTask.Awaiter&,条目查看按钮_茉.<显录于增板>d__4&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,档案条目显示.<显示档案管理报告界面>d__17>(Cysharp.Threading.Tasks.UniTask.Awaiter&,档案条目显示.<显示档案管理报告界面>d__17&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,档案管理报告界面显示.<处理选择确认按钮点击>d__69>(Cysharp.Threading.Tasks.UniTask.Awaiter&,档案管理报告界面显示.<处理选择确认按钮点击>d__69&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,用户管理添加安卓_茉.<显示信息详情Async>d__54>(Cysharp.Threading.Tasks.UniTask.Awaiter&,用户管理添加安卓_茉.<显示信息详情Async>d__54&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,用户管理添加安卓_茉.<验证并显示背景信息界面>d__40>(Cysharp.Threading.Tasks.UniTask.Awaiter&,用户管理添加安卓_茉.<验证并显示背景信息界面>d__40&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,档案管理报告界面显示.<处理选择确认按钮点击>d__74>(Cysharp.Threading.Tasks.UniTask.Awaiter&,档案管理报告界面显示.<处理选择确认按钮点击>d__74&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,用户管理添加安卓_茉.<显示信息详情Async>d__56>(Cysharp.Threading.Tasks.UniTask.Awaiter&,用户管理添加安卓_茉.<显示信息详情Async>d__56&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,用户管理添加安卓_茉.<验证并显示背景信息界面>d__42>(Cysharp.Threading.Tasks.UniTask.Awaiter&,用户管理添加安卓_茉.<验证并显示背景信息界面>d__42&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,电脑端蓝牙串口检测.<转发蓝牙数据>d__3>(Cysharp.Threading.Tasks.UniTask.Awaiter&,电脑端蓝牙串口检测.<转发蓝牙数据>d__3&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,蓝牙连接界面_茉.<开始扫描>d__12>(Cysharp.Threading.Tasks.UniTask.Awaiter&,蓝牙连接界面_茉.<开始扫描>d__12&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,评估模板选择界面.<保存评价和建议>d__14>(Cysharp.Threading.Tasks.UniTask.Awaiter&,评估模板选择界面.<保存评价和建议>d__14&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,评定人管理添加_韩.<验证并添加账号>d__22>(Cysharp.Threading.Tasks.UniTask.Awaiter&,评定人管理添加_韩.<验证并添加账号>d__22&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,量表命名栏_茉.<等待初始化后还原>d__9>(Cysharp.Threading.Tasks.UniTask.Awaiter&,量表命名栏_茉.<等待初始化后还原>d__9&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,量表复述栏_茉.<等待初始化后还原>d__11>(Cysharp.Threading.Tasks.UniTask.Awaiter&,量表复述栏_茉.<等待初始化后还原>d__11&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,量表评估基类_茉.<提交按钮点击>d__20>(Cysharp.Threading.Tasks.UniTask.Awaiter&,量表评估基类_茉.<提交按钮点击>d__20&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,量表评估基类_茉.<等待初始化后还原>d__8>(Cysharp.Threading.Tasks.UniTask.Awaiter&,量表评估基类_茉.<等待初始化后还原>d__8&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,量表评估基类_茉.<提交按钮点击>d__21>(Cysharp.Threading.Tasks.UniTask.Awaiter&,量表评估基类_茉.<提交按钮点击>d__21&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,量表评估基类_茉.<等待初始化后还原>d__9>(Cysharp.Threading.Tasks.UniTask.Awaiter&,量表评估基类_茉.<等待初始化后还原>d__9&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,量表谈话栏_茉.<等待初始化后还原>d__7>(Cysharp.Threading.Tasks.UniTask.Awaiter&,量表谈话栏_茉.<等待初始化后还原>d__7&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,SerialPortBaseUtility.<MonitorDeviceStatus>d__43>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,SerialPortBaseUtility.<MonitorDeviceStatus>d__43&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,SerialPortUtilityManager.<ComPortInit>d__23>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,SerialPortUtilityManager.<ComPortInit>d__23&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,UIBlock2D图片同步器_茉.<加载配置图片>d__5>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,UIBlock2D图片同步器_茉.<加载配置图片>d__5&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,备份管理界面_茉.<处理批量同步>d__71>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,备份管理界面_茉.<处理批量同步>d__71&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,备份管理界面_茉.<处理日期确认>d__64>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,备份管理界面_茉.<处理日期确认>d__64&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,安卓功能栏.<删>d__18>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,安卓功能栏.<删>d__18&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,待同步数据条目显示_茉.<执行同步占位>d__14>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,待同步数据条目显示_茉.<执行同步占位>d__14&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,打印报告界面_茉.<处理确认打印按钮点击>d__68>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,打印报告界面_茉.<处理确认打印按钮点击>d__68&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,打印报告界面_茉.<处理确认选择打印机按钮点击>d__91>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,打印报告界面_茉.<处理确认选择打印机按钮点击>d__91&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,档案条目显示.<删除本条目带确认>d__19>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,档案条目显示.<删除本条目带确认>d__19&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,档案管理报告界面显示.<处理保存按钮点击>d__86>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,档案管理报告界面显示.<处理保存按钮点击>d__86&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,档案管理报告界面显示.<处理取消按钮点击>d__87>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,档案管理报告界面显示.<处理取消按钮点击>d__87&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,用户管理添加安卓_茉.<验证并添加账号>d__47>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,用户管理添加安卓_茉.<验证并添加账号>d__47&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,档案管理报告界面显示.<处理保存按钮点击>d__90>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,档案管理报告界面显示.<处理保存按钮点击>d__90&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,档案管理报告界面显示.<处理取消按钮点击>d__91>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,档案管理报告界面显示.<处理取消按钮点击>d__91&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,用户管理添加安卓_茉.<验证并添加账号>d__49>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,用户管理添加安卓_茉.<验证并添加账号>d__49&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,界面管理界面_茉.<还原图片到初始状态>d__23>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,界面管理界面_茉.<还原图片到初始状态>d__23&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,评估模板选择界面.<保存评价和建议>d__14>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,评估模板选择界面.<保存评价和建议>d__14&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,评估模板选择界面.<返回上一界面>d__15>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,评估模板选择界面.<返回上一界面>d__15&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表命名栏_茉.<取消按钮点击>d__15>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表命名栏_茉.<取消按钮点击>d__15&)
@@ -1392,32 +1481,33 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表复述栏_茉.<取消按钮点击>d__17>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表复述栏_茉.<取消按钮点击>d__17&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表复述栏_茉.<提交按钮点击>d__15>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表复述栏_茉.<提交按钮点击>d__15&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表复述栏_茉.<返回按钮点击>d__16>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表复述栏_茉.<返回按钮点击>d__16&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表评估基类_茉.<取消按钮点击>d__22>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表评估基类_茉.<取消按钮点击>d__22&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表评估基类_茉.<提交按钮点击>d__20>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表评估基类_茉.<提交按钮点击>d__20&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表评估基类_茉.<返回按钮点击>d__21>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表评估基类_茉.<返回按钮点击>d__21&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表评估基类_茉.<取消按钮点击>d__23>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表评估基类_茉.<取消按钮点击>d__23&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表评估基类_茉.<提交按钮点击>d__21>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表评估基类_茉.<提交按钮点击>d__21&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表评估基类_茉.<返回按钮点击>d__22>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表评估基类_茉.<返回按钮点击>d__22&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表谈话栏_茉.<取消按钮点击>d__11>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表谈话栏_茉.<取消按钮点击>d__11&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表谈话栏_茉.<提交按钮点击>d__9>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表谈话栏_茉.<提交按钮点击>d__9&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表谈话栏_茉.<返回按钮点击>d__10>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表谈话栏_茉.<返回按钮点击>d__10&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,UIBlock2D图片同步器_茉.<加载配置图片>d__4>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,UIBlock2D图片同步器_茉.<加载配置图片>d__4&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,UIBlock2D图片同步器_茉.<加载配置图片>d__5>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,UIBlock2D图片同步器_茉.<加载配置图片>d__5&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,图片选择组件.<OnImageClicked>d__7>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,图片选择组件.<OnImageClicked>d__7&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,备份管理界面_茉.<处理批量同步>d__71>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,备份管理界面_茉.<处理批量同步>d__71&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,备份管理界面_茉.<打开择日器>d__60>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,备份管理界面_茉.<打开择日器>d__60&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,安卓功能栏.<删>d__18>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,安卓功能栏.<删>d__18&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,待同步数据条目显示_茉.<执行同步占位>d__14>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,待同步数据条目显示_茉.<执行同步占位>d__14&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,打印报告界面_茉.<处理确认打印按钮点击>d__68>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,打印报告界面_茉.<处理确认打印按钮点击>d__68&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,打印报告界面_茉.<处理确认下载按钮点击>d__87>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,打印报告界面_茉.<处理确认下载按钮点击>d__87&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,打印报告界面_茉.<处理确认选择打印机按钮点击>d__91>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,打印报告界面_茉.<处理确认选择打印机按钮点击>d__91&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,择域.<长生>d__1>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,择域.<长生>d__1&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,择木栏安卓_茉.<显记于目>d__15>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,择木栏安卓_茉.<显记于目>d__15&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,显记栏_茉.<现目于栏>d__8>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,显记栏_茉.<现目于栏>d__8&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,档案条目显示.<删除本条目带确认>d__19>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,档案条目显示.<删除本条目带确认>d__19&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,档案管理报告界面显示.<处理保存按钮点击>d__86>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,档案管理报告界面显示.<处理保存按钮点击>d__86&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,档案管理报告界面显示.<处理取消按钮点击>d__87>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,档案管理报告界面显示.<处理取消按钮点击>d__87&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,档案管理报告界面显示.<处理保存按钮点击>d__90>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,档案管理报告界面显示.<处理保存按钮点击>d__90&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,档案管理报告界面显示.<处理取消按钮点击>d__91>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,档案管理报告界面显示.<处理取消按钮点击>d__91&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,用户管理添加_韩.<选择出生日期>d__17>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,用户管理添加_韩.<选择出生日期>d__17&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,用户管理添加安卓_茉.<选择出生日期>d__36>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,用户管理添加安卓_茉.<选择出生日期>d__36&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,用户管理添加安卓_茉.<选择发病日期>d__37>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,用户管理添加安卓_茉.<选择发病日期>d__37&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,用户管理添加安卓_茉.<选择出生日期>d__38>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,用户管理添加安卓_茉.<选择出生日期>d__38&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,用户管理添加安卓_茉.<选择发病日期>d__39>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,用户管理添加安卓_茉.<选择发病日期>d__39&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,索录栏契韩_茉.<显记于目>d__9>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,索录栏契韩_茉.<显记于目>d__9&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,评估模板设置显示.<加载模板条目预制体>d__9>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,评估模板设置显示.<加载模板条目预制体>d__9&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,评估模板设置显示.<加载模板条目预制体>d__11>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,评估模板设置显示.<加载模板条目预制体>d__11&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,评定人管理添加_韩.<选择出生日期>d__18>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,评定人管理添加_韩.<选择出生日期>d__18&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,评定人管理添加安卓_茉.<选择出生日期>d__19>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,评定人管理添加安卓_茉.<选择出生日期>d__19&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,评定人管理添加安卓_茉.<选择出生日期>d__18>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,评定人管理添加安卓_茉.<选择出生日期>d__18&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,遂牖_茉.<显示提示>d__0>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,遂牖_茉.<显示提示>d__0&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,量表命名栏_茉.<取消按钮点击>d__15>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,量表命名栏_茉.<取消按钮点击>d__15&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,量表命名栏_茉.<提交按钮点击>d__13>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,量表命名栏_茉.<提交按钮点击>d__13&)
@@ -1428,8 +1518,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,量表谈话栏_茉.<取消按钮点击>d__11>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,量表谈话栏_茉.<取消按钮点击>d__11&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,量表谈话栏_茉.<提交按钮点击>d__9>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,量表谈话栏_茉.<提交按钮点击>d__9&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,量表谈话栏_茉.<返回按钮点击>d__10>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,量表谈话栏_茉.<返回按钮点击>d__10&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,打印报告界面_茉.<处理确认打印按钮点击>d__68>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,打印报告界面_茉.<处理确认打印按钮点击>d__68&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,用户管理添加安卓_茉.<延迟初始化背景信息选项组>d__39>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,用户管理添加安卓_茉.<延迟初始化背景信息选项组>d__39&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,用户管理添加安卓_茉.<延迟初始化背景信息选项组>d__41>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,用户管理添加安卓_茉.<延迟初始化背景信息选项组>d__41&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.YieldAwaitable.Awaiter,评定人管理添加_韩.<监控择日器销毁>d__19>(Cysharp.Threading.Tasks.YieldAwaitable.Awaiter&,评定人管理添加_韩.<监控择日器销毁>d__19&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<BleConnecter.<ConnectBLE>d__10>(BleConnecter.<ConnectBLE>d__10&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<BleConnecter.<SendDataLoop>d__9>(BleConnecter.<SendDataLoop>d__9&)
@@ -1437,7 +1526,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<PC首页大数据页面_茉.<延迟刷新数据>d__17>(PC首页大数据页面_茉.<延迟刷新数据>d__17&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<SerialPortBaseUtility.<MonitorDeviceStatus>d__43>(SerialPortBaseUtility.<MonitorDeviceStatus>d__43&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<SerialPortUtilityManager.<ComPortInit>d__23>(SerialPortUtilityManager.<ComPortInit>d__23&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<UIBlock2D图片同步器_茉.<加载配置图片>d__4>(UIBlock2D图片同步器_茉.<加载配置图片>d__4&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<UIBlock2D图片同步器_茉.<加载配置图片>d__5>(UIBlock2D图片同步器_茉.<加载配置图片>d__5&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<图片选择组件.<OnImageClicked>d__7>(图片选择组件.<OnImageClicked>d__7&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<备份管理界面_茉.<处理批量同步>d__71>(备份管理界面_茉.<处理批量同步>d__71&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<备份管理界面_茉.<处理日期确认>d__64>(备份管理界面_茉.<处理日期确认>d__64&)
@@ -1446,34 +1535,37 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<安卓功能栏.<删>d__18>(安卓功能栏.<删>d__18&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<安卓功能栏.<延迟设置全选>d__22>(安卓功能栏.<延迟设置全选>d__22&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<待同步数据条目显示_茉.<执行同步占位>d__14>(待同步数据条目显示_茉.<执行同步占位>d__14&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<打印报告界面_茉.<处理确认打印按钮点击>d__68>(打印报告界面_茉.<处理确认打印按钮点击>d__68&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<打印报告界面_茉.<处理返回按钮点击>d__69>(打印报告界面_茉.<处理返回按钮点击>d__69&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<打印报告界面_茉.<处理确认下载按钮点击>d__87>(打印报告界面_茉.<处理确认下载按钮点击>d__87&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<打印报告界面_茉.<处理确认选择打印机按钮点击>d__91>(打印报告界面_茉.<处理确认选择打印机按钮点击>d__91&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<打印报告界面_茉.<处理返回按钮点击>d__92>(打印报告界面_茉.<处理返回按钮点击>d__92&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<打印管理器_茉.<测试设置显示栏目>d__40>(打印管理器_茉.<测试设置显示栏目>d__40&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<择域.<长生>d__1>(择域.<长生>d__1&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<择木栏安卓_茉.<显记于目>d__15>(择木栏安卓_茉.<显记于目>d__15&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<显记栏_茉.<现目于栏>d__8>(显记栏_茉.<现目于栏>d__8&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<条目查看按钮_茉.<显录于增板>d__4>(条目查看按钮_茉.<显录于增板>d__4&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<档案条目显示.<删除本条目带确认>d__19>(档案条目显示.<删除本条目带确认>d__19&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<档案条目显示.<显示档案管理报告界面>d__17>(档案条目显示.<显示档案管理报告界面>d__17&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<档案管理报告界面显示.<处理保存按钮点击>d__86>(档案管理报告界面显示.<处理保存按钮点击>d__86&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<档案管理报告界面显示.<处理取消按钮点击>d__87>(档案管理报告界面显示.<处理取消按钮点击>d__87&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<档案管理报告界面显示.<处理选择确认按钮点击>d__69>(档案管理报告界面显示.<处理选择确认按钮点击>d__69&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<档案管理报告界面显示.<处理保存按钮点击>d__90>(档案管理报告界面显示.<处理保存按钮点击>d__90&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<档案管理报告界面显示.<处理取消按钮点击>d__91>(档案管理报告界面显示.<处理取消按钮点击>d__91&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<档案管理报告界面显示.<处理选择确认按钮点击>d__74>(档案管理报告界面显示.<处理选择确认按钮点击>d__74&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<用户管理添加_韩.<选择出生日期>d__17>(用户管理添加_韩.<选择出生日期>d__17&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<用户管理添加安卓_茉.<延迟初始化背景信息选项组>d__39>(用户管理添加安卓_茉.<延迟初始化背景信息选项组>d__39&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<用户管理添加安卓_茉.<显示信息详情Async>d__54>(用户管理添加安卓_茉.<显示信息详情Async>d__54&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<用户管理添加安卓_茉.<选择出生日期>d__36>(用户管理添加安卓_茉.<选择出生日期>d__36&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<用户管理添加安卓_茉.<选择发病日期>d__37>(用户管理添加安卓_茉.<选择发病日期>d__37&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<用户管理添加安卓_茉.<验证并显示背景信息界面>d__40>(用户管理添加安卓_茉.<验证并显示背景信息界面>d__40&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<用户管理添加安卓_茉.<验证并添加账号>d__47>(用户管理添加安卓_茉.<验证并添加账号>d__47&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<用户管理添加安卓_茉.<延迟初始化背景信息选项组>d__41>(用户管理添加安卓_茉.<延迟初始化背景信息选项组>d__41&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<用户管理添加安卓_茉.<显示信息详情Async>d__56>(用户管理添加安卓_茉.<显示信息详情Async>d__56&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<用户管理添加安卓_茉.<选择出生日期>d__38>(用户管理添加安卓_茉.<选择出生日期>d__38&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<用户管理添加安卓_茉.<选择发病日期>d__39>(用户管理添加安卓_茉.<选择发病日期>d__39&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<用户管理添加安卓_茉.<验证并显示背景信息界面>d__42>(用户管理添加安卓_茉.<验证并显示背景信息界面>d__42&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<用户管理添加安卓_茉.<验证并添加账号>d__49>(用户管理添加安卓_茉.<验证并添加账号>d__49&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<电脑端蓝牙串口检测.<转发蓝牙数据>d__3>(电脑端蓝牙串口检测.<转发蓝牙数据>d__3&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<界面管理界面_茉.<还原图片到初始状态>d__23>(界面管理界面_茉.<还原图片到初始状态>d__23&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<索录栏契韩_茉.<显记于目>d__9>(索录栏契韩_茉.<显记于目>d__9&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<蓝牙连接界面_茉.<开始扫描>d__12>(蓝牙连接界面_茉.<开始扫描>d__12&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<评估模板设置显示.<加载模板条目预制体>d__9>(评估模板设置显示.<加载模板条目预制体>d__9&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<评估模板设置显示.<加载模板条目预制体>d__11>(评估模板设置显示.<加载模板条目预制体>d__11&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<评估模板选择界面.<保存评价和建议>d__14>(评估模板选择界面.<保存评价和建议>d__14&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<评估模板选择界面.<返回上一界面>d__15>(评估模板选择界面.<返回上一界面>d__15&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<评定人管理添加_韩.<监控择日器销毁>d__19>(评定人管理添加_韩.<监控择日器销毁>d__19&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<评定人管理添加_韩.<选择出生日期>d__18>(评定人管理添加_韩.<选择出生日期>d__18&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<评定人管理添加_韩.<验证并添加账号>d__22>(评定人管理添加_韩.<验证并添加账号>d__22&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<评定人管理添加安卓_茉.<选择出生日期>d__19>(评定人管理添加安卓_茉.<选择出生日期>d__19&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<评定人管理添加安卓_茉.<选择出生日期>d__18>(评定人管理添加安卓_茉.<选择出生日期>d__18&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<遂牖_茉.<显示提示>d__0>(遂牖_茉.<显示提示>d__0&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表命名栏_茉.<取消按钮点击>d__15>(量表命名栏_茉.<取消按钮点击>d__15&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表命名栏_茉.<提交按钮点击>d__13>(量表命名栏_茉.<提交按钮点击>d__13&)
@@ -1483,10 +1575,10 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表复述栏_茉.<提交按钮点击>d__15>(量表复述栏_茉.<提交按钮点击>d__15&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表复述栏_茉.<等待初始化后还原>d__11>(量表复述栏_茉.<等待初始化后还原>d__11&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表复述栏_茉.<返回按钮点击>d__16>(量表复述栏_茉.<返回按钮点击>d__16&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表评估基类_茉.<取消按钮点击>d__22>(量表评估基类_茉.<取消按钮点击>d__22&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表评估基类_茉.<提交按钮点击>d__20>(量表评估基类_茉.<提交按钮点击>d__20&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表评估基类_茉.<等待初始化后还原>d__8>(量表评估基类_茉.<等待初始化后还原>d__8&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表评估基类_茉.<返回按钮点击>d__21>(量表评估基类_茉.<返回按钮点击>d__21&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表评估基类_茉.<取消按钮点击>d__23>(量表评估基类_茉.<取消按钮点击>d__23&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表评估基类_茉.<提交按钮点击>d__21>(量表评估基类_茉.<提交按钮点击>d__21&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表评估基类_茉.<等待初始化后还原>d__9>(量表评估基类_茉.<等待初始化后还原>d__9&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表评估基类_茉.<返回按钮点击>d__22>(量表评估基类_茉.<返回按钮点击>d__22&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表谈话栏_茉.<取消按钮点击>d__11>(量表谈话栏_茉.<取消按钮点击>d__11&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表谈话栏_茉.<提交按钮点击>d__9>(量表谈话栏_茉.<提交按钮点击>d__9&)
 		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<量表谈话栏_茉.<等待初始化后还原>d__7>(量表谈话栏_茉.<等待初始化后还原>d__7&)
@@ -1567,30 +1659,37 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Collections.Generic.List<object> System.Linq.Enumerable.ToList<object>(System.Collections.Generic.IEnumerable<object>)
 		// System.Collections.Generic.IEnumerable<object> System.Linq.Enumerable.Where<object>(System.Collections.Generic.IEnumerable<object>,System.Func<object,bool>)
 		// System.Collections.Generic.IEnumerable<int> System.Linq.Enumerable.Iterator<object>.Select<int>(System.Func<object,int>)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,GameStartAfterLoad.<GameLoadedInit>d__4>(Cysharp.Threading.Tasks.UniTask.Awaiter&,GameStartAfterLoad.<GameLoadedInit>d__4&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,PC端条目功能按钮_茉.<删除>d__5>(Cysharp.Threading.Tasks.UniTask.Awaiter&,PC端条目功能按钮_茉.<删除>d__5&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,右上角功能端PC_茉.<执行用户名管理>d__19>(Cysharp.Threading.Tasks.UniTask.Awaiter&,右上角功能端PC_茉.<执行用户名管理>d__19&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,右上角功能端PC_茉.<执行用户名管理>d__20>(Cysharp.Threading.Tasks.UniTask.Awaiter&,右上角功能端PC_茉.<执行用户名管理>d__20&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,右上角功能端PC_茉.<执行编号管理>d__18>(Cysharp.Threading.Tasks.UniTask.Awaiter&,右上角功能端PC_茉.<执行编号管理>d__18&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,备份管理界面_茉.<执行还原>d__43>(Cysharp.Threading.Tasks.UniTask.Awaiter&,备份管理界面_茉.<执行还原>d__43&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,安卓功能栏.<<寻>b__17_0>d>(Cysharp.Threading.Tasks.UniTask.Awaiter&,安卓功能栏.<<寻>b__17_0>d&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,安卓功能栏.<消寻>d__16>(Cysharp.Threading.Tasks.UniTask.Awaiter&,安卓功能栏.<消寻>d__16&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,打印报告界面_茉.<还原背景信息选项组>d__78>(Cysharp.Threading.Tasks.UniTask.Awaiter&,打印报告界面_茉.<还原背景信息选项组>d__78&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,左目录选择_韩.<执行功能>d__4>(Cysharp.Threading.Tasks.UniTask.Awaiter&,左目录选择_韩.<执行功能>d__4&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,打印报告界面_茉.<还原背景信息选项组>d__113>(Cysharp.Threading.Tasks.UniTask.Awaiter&,打印报告界面_茉.<还原背景信息选项组>d__113&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,条目组性_茉.<OnEnable>d__8>(Cysharp.Threading.Tasks.UniTask.Awaiter&,条目组性_茉.<OnEnable>d__8&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,条目组性_茉.<择>d__10>(Cysharp.Threading.Tasks.UniTask.Awaiter&,条目组性_茉.<择>d__10&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,条目组性_茉.<长生>d__7>(Cysharp.Threading.Tasks.UniTask.Awaiter&,条目组性_茉.<长生>d__7&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,档案管理报告界面显示.<还原背景信息选项组>d__83>(Cysharp.Threading.Tasks.UniTask.Awaiter&,档案管理报告界面显示.<还原背景信息选项组>d__83&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,档案管理报告界面显示.<还原背景信息选项组>d__87>(Cysharp.Threading.Tasks.UniTask.Awaiter&,档案管理报告界面显示.<还原背景信息选项组>d__87&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,用户显示条目_韩.<查看信息>d__15>(Cysharp.Threading.Tasks.UniTask.Awaiter&,用户显示条目_韩.<查看信息>d__15&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,界面管理界面_茉.<LoadConfigData>d__20>(Cysharp.Threading.Tasks.UniTask.Awaiter&,界面管理界面_茉.<LoadConfigData>d__20&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,登录界面_韩.<跳转界面>d__21>(Cysharp.Threading.Tasks.UniTask.Awaiter&,登录界面_韩.<跳转界面>d__21&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,评定人显示条目_韩.<查看信息>d__14>(Cysharp.Threading.Tasks.UniTask.Awaiter&,评定人显示条目_韩.<查看信息>d__14&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,选择界面_茉.<执行功能>d__18>(Cysharp.Threading.Tasks.UniTask.Awaiter&,选择界面_茉.<执行功能>d__18&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,选择界面_茉.<执行编号管理>d__12>(Cysharp.Threading.Tasks.UniTask.Awaiter&,选择界面_茉.<执行编号管理>d__12&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,量表用户选择显示_茉.<确认>d__9>(Cysharp.Threading.Tasks.UniTask.Awaiter&,量表用户选择显示_茉.<确认>d__9&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,PC端条目功能按钮_茉.<删除>d__5>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,PC端条目功能按钮_茉.<删除>d__5&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,备份管理界面_茉.<执行备份>d__42>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,备份管理界面_茉.<执行备份>d__42&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,备份管理界面_茉.<执行还原>d__43>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,备份管理界面_茉.<执行还原>d__43&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,模板条目显示.<删除模板>d__11>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,模板条目显示.<删除模板>d__11&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,界面管理界面_茉.<保存配置>d__17>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,界面管理界面_茉.<保存配置>d__17&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,模板条目显示.<删除模板>d__12>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,模板条目显示.<删除模板>d__12&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,界面管理界面_茉.<保存配置>d__24>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,界面管理界面_茉.<保存配置>d__24&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,登录界面_茉.<退出应用程序>d__28>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,登录界面_茉.<退出应用程序>d__28&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,蓝牙连接界面_茉.<订阅成功回调>d__16>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,蓝牙连接界面_茉.<订阅成功回调>d__16&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,评定人显示条目_韩.<删除信息>d__15>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,评定人显示条目_韩.<删除信息>d__15&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表用户选择显示_茉.<取消>d__12>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表用户选择显示_茉.<取消>d__12&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<byte>,量表用户选择显示_茉.<确认>d__9>(Cysharp.Threading.Tasks.UniTask.Awaiter<byte>&,量表用户选择显示_茉.<确认>d__9&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,GameStartAfterLoad.<GameLoadedInit>d__4>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,GameStartAfterLoad.<GameLoadedInit>d__4&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,LoadNewGameVesionUI.<OnClickConfimButton>d__5>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,LoadNewGameVesionUI.<OnClickConfimButton>d__5&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,PC端条目功能按钮_茉.<删除>d__5>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,PC端条目功能按钮_茉.<删除>d__5&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,右上角功能端PC_茉.<执行编号管理>d__18>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,右上角功能端PC_茉.<执行编号管理>d__18&)
@@ -1599,7 +1698,6 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,备份管理界面_茉.<执行还原>d__43>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,备份管理界面_茉.<执行还原>d__43&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,安卓功能栏.<寻>d__17>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,安卓功能栏.<寻>d__17&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,界面管理器_韩.<加载界面>d__7>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,界面管理器_韩.<加载界面>d__7&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,界面管理界面_茉.<LoadConfigData>d__16>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,界面管理界面_茉.<LoadConfigData>d__16&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,登录界面_茉.<退出应用程序>d__28>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,登录界面_茉.<退出应用程序>d__28&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,登录界面_韩.<跳转界面>d__21>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,登录界面_韩.<跳转界面>d__21&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,蓝牙标识提示.<初始化蓝牙状态监听>d__6>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,蓝牙标识提示.<初始化蓝牙状态监听>d__6&)
@@ -1616,7 +1714,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<GameStartAfterLoad.<GameLoadedInit>d__4>(GameStartAfterLoad.<GameLoadedInit>d__4&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<LoadNewGameVesionUI.<OnClickConfimButton>d__5>(LoadNewGameVesionUI.<OnClickConfimButton>d__5&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<PC端条目功能按钮_茉.<删除>d__5>(PC端条目功能按钮_茉.<删除>d__5&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<右上角功能端PC_茉.<执行用户名管理>d__19>(右上角功能端PC_茉.<执行用户名管理>d__19&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<右上角功能端PC_茉.<执行用户名管理>d__20>(右上角功能端PC_茉.<执行用户名管理>d__20&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<右上角功能端PC_茉.<执行编号管理>d__18>(右上角功能端PC_茉.<执行编号管理>d__18&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<图片选择组件.<LoadLastImage>d__9>(图片选择组件.<LoadLastImage>d__9&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<备份管理界面_茉.<执行备份>d__42>(备份管理界面_茉.<执行备份>d__42&)
@@ -1624,17 +1722,18 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<安卓功能栏.<<寻>b__17_0>d>(安卓功能栏.<<寻>b__17_0>d&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<安卓功能栏.<寻>d__17>(安卓功能栏.<寻>d__17&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<安卓功能栏.<消寻>d__16>(安卓功能栏.<消寻>d__16&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<打印报告界面_茉.<还原背景信息选项组>d__78>(打印报告界面_茉.<还原背景信息选项组>d__78&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<左目录选择_韩.<执行功能>d__4>(左目录选择_韩.<执行功能>d__4&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<打印报告界面_茉.<还原背景信息选项组>d__113>(打印报告界面_茉.<还原背景信息选项组>d__113&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<条目组性_茉.<OnEnable>d__8>(条目组性_茉.<OnEnable>d__8&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<条目组性_茉.<择>d__10>(条目组性_茉.<择>d__10&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<条目组性_茉.<择>d__11>(条目组性_茉.<择>d__11&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<条目组性_茉.<长生>d__7>(条目组性_茉.<长生>d__7&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<档案管理报告界面显示.<还原背景信息选项组>d__83>(档案管理报告界面显示.<还原背景信息选项组>d__83&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<模板条目显示.<删除模板>d__11>(模板条目显示.<删除模板>d__11&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<档案管理报告界面显示.<还原背景信息选项组>d__87>(档案管理报告界面显示.<还原背景信息选项组>d__87&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<模板条目显示.<删除模板>d__12>(模板条目显示.<删除模板>d__12&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<用户显示条目_韩.<查看信息>d__15>(用户显示条目_韩.<查看信息>d__15&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<界面管理器_韩.<加载界面>d__7>(界面管理器_韩.<加载界面>d__7&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<界面管理界面_茉.<LoadConfigData>d__16>(界面管理界面_茉.<LoadConfigData>d__16&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<界面管理界面_茉.<保存配置>d__17>(界面管理界面_茉.<保存配置>d__17&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<界面管理界面_茉.<LoadConfigData>d__20>(界面管理界面_茉.<LoadConfigData>d__20&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<界面管理界面_茉.<保存配置>d__24>(界面管理界面_茉.<保存配置>d__24&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<登录界面_茉.<跳转界面>d__29>(登录界面_茉.<跳转界面>d__29&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<登录界面_茉.<退出应用程序>d__28>(登录界面_茉.<退出应用程序>d__28&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<登录界面_韩.<跳转界面>d__21>(登录界面_韩.<跳转界面>d__21&)
@@ -1642,6 +1741,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<蓝牙连接界面_茉.<订阅成功回调>d__16>(蓝牙连接界面_茉.<订阅成功回调>d__16&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<评定人显示条目_韩.<删除信息>d__15>(评定人显示条目_韩.<删除信息>d__15&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<评定人显示条目_韩.<查看信息>d__14>(评定人显示条目_韩.<查看信息>d__14&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<选择界面_茉.<执行功能>d__18>(选择界面_茉.<执行功能>d__18&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<选择界面_茉.<执行用户名管理>d__16>(选择界面_茉.<执行用户名管理>d__16&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<选择界面_茉.<执行编号管理>d__12>(选择界面_茉.<执行编号管理>d__12&)
 		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<选择界面_茉.<执行蓝牙连接>d__15>(选择界面_茉.<执行蓝牙连接>d__15&)
@@ -1664,6 +1764,7 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// object UnityEngine.AndroidJavaObject._GetStatic<object>(string)
 		// object UnityEngine.Component.GetComponent<object>()
 		// object UnityEngine.Component.GetComponentInChildren<object>()
+		// object UnityEngine.Component.GetComponentInChildren<object>(bool)
 		// object UnityEngine.Component.GetComponentInParent<object>()
 		// object[] UnityEngine.Component.GetComponents<object>()
 		// object[] UnityEngine.Component.GetComponentsInChildren<object>()
@@ -1673,6 +1774,8 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// object UnityEngine.GameObject.GetComponent<object>()
 		// object UnityEngine.GameObject.GetComponentInChildren<object>()
 		// object UnityEngine.GameObject.GetComponentInChildren<object>(bool)
+		// object UnityEngine.GameObject.GetComponentInParent<object>()
+		// object UnityEngine.GameObject.GetComponentInParent<object>(bool)
 		// object[] UnityEngine.GameObject.GetComponents<object>()
 		// object[] UnityEngine.GameObject.GetComponentsInChildren<object>(bool)
 		// bool UnityEngine.GameObject.TryGetComponent<object>(object&)

@@ -58,39 +58,53 @@
             "BundleID": 6
         },
         {
+            "Address": "System.IO.Compression.dll",
+            "AssetPath": "Assets/[1]Local/CodeMetadata/System.IO.Compression.dll.bytes",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 7
+        },
+        {
+            "Address": "System.IO.Compression.FileSystem.dll",
+            "AssetPath": "Assets/[1]Local/CodeMetadata/System.IO.Compression.FileSystem.dll.bytes",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 8
+        },
+        {
             "Address": "UniTask.dll",
             "AssetPath": "Assets/[1]Local/CodeMetadata/UniTask.dll.bytes",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 7
+            "BundleID": 9
         },
         {
             "Address": "UniTask.Linq.dll",
             "AssetPath": "Assets/[1]Local/CodeMetadata/UniTask.Linq.dll.bytes",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 8
+            "BundleID": 10
         },
         {
             "Address": "UnityEngine.AndroidJNIModule.dll",
             "AssetPath": "Assets/[1]Local/CodeMetadata/UnityEngine.AndroidJNIModule.dll.bytes",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 9
+            "BundleID": 11
         },
         {
             "Address": "UnityEngine.CoreModule.dll",
             "AssetPath": "Assets/[1]Local/CodeMetadata/UnityEngine.CoreModule.dll.bytes",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 10
+            "BundleID": 12
         },
         {
             "Address": "UnityEngine.ScreenCaptureModule.dll",
             "AssetPath": "Assets/[1]Local/CodeMetadata/UnityEngine.ScreenCaptureModule.dll.bytes",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 11
+            "BundleID": 13
         }
     ],
     "BundleList": [
@@ -160,6 +174,26 @@
             "FileHash": "6d6728d02ef1cf279710137ebadf0f79",
             "FileCRC": "00000000",
             "FileSize": 837120,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "localrawfilepackage_assets_[1]local_codemetadata_system_io_compression_dll_bytes.rawfile",
+            "UnityCRC": 0,
+            "FileHash": "7d69e96128ab1d7f416c27f2db69cab8",
+            "FileCRC": "00000000",
+            "FileSize": 266888,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "localrawfilepackage_assets_[1]local_codemetadata_system_io_compression_filesystem_dll_bytes.rawfile",
+            "UnityCRC": 0,
+            "FileHash": "ac63dfd57bec3177e504957b47295a20",
+            "FileCRC": "00000000",
+            "FileSize": 16032,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []

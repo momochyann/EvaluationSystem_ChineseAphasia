@@ -117,7 +117,7 @@ public class 失语症类型条形图_茉 : MonoBehaviour, IController
             var serie2 = 条形图组件.GetSerie(1);
             if (serie2 == null)
             {
-                serie2 = 条形图组件.AddSerie<Bar>("背景");
+                serie2 = 条形图组件.AddSerie<Bar>("差值");
             }
             
             // 配置条形样式
@@ -195,7 +195,7 @@ public class 失语症类型条形图_茉 : MonoBehaviour, IController
         var serie2 = 条形图组件.GetSerie(1);
         if (serie2 == null)
         {
-            serie2 = 条形图组件.AddSerie<Bar>("背景");
+            serie2 = 条形图组件.AddSerie<Bar>("差值");
         }
         
         // 设置堆叠

@@ -32,6 +32,8 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
     [SerializeField] public NovaSamples.UIControls.TextField 文化程度;
     [SerializeField] public NovaSamples.UIControls.TextField 血压;
     [SerializeField] public NovaSamples.UIControls.TextField 家庭成员;
+    [SerializeField] public NovaSamples.UIControls.TextField 烟龄;
+    [SerializeField] public NovaSamples.UIControls.TextField 酒龄;
     [SerializeField] public NovaSamples.UIControls.TextField 发病前后语言状态;
     [SerializeField] public NovaSamples.UIControls.TextField 发病时状况;
     [SerializeField] public NovaSamples.UIControls.TextField 既往病史;
@@ -105,6 +107,8 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         if (文化程度 != null) 输入文本框点击(文化程度);
         if (血压 != null) 输入文本框点击(血压);
         if (家庭成员 != null) 输入文本框点击(家庭成员);
+        if (烟龄 != null) 输入文本框点击(烟龄);
+        if (酒龄 != null) 输入文本框点击(酒龄);
         if (发病前后语言状态 != null) 输入文本框点击(发病前后语言状态);
         if (发病时状况 != null) 输入文本框点击(发病时状况);
         if (既往病史 != null) 输入文本框点击(既往病史);
@@ -382,6 +386,8 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         新用户.文化程度 = 文化程度 != null ? 文化程度.Text : "";
         新用户.血压 = 血压 != null ? 血压.Text : "";
         新用户.家庭成员 = 家庭成员 != null ? 家庭成员.Text : "";
+        新用户.烟龄 = 烟龄 != null ? 烟龄.Text : "";
+        新用户.酒龄 = 酒龄 != null ? 酒龄.Text : "";
         新用户.发病前后语言状态 = 发病前后语言状态 != null ? 发病前后语言状态.Text : "";
         新用户.发病时状况 = 发病时状况 != null ? 发病时状况.Text : "";
         新用户.既往病史 = 既往病史 != null ? 既往病史.Text : "";
@@ -444,6 +450,8 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         if (文化程度 != null) 文化程度.Text = "";
         if (血压 != null) 血压.Text = "";
         if (家庭成员 != null) 家庭成员.Text = "";
+        if (烟龄 != null) 烟龄.Text = "";
+        if (酒龄 != null) 酒龄.Text = "";
         if (发病前后语言状态 != null) 发病前后语言状态.Text = "";
         if (发病时状况 != null) 发病时状况.Text = "";
         if (既往病史 != null) 既往病史.Text = "";
@@ -491,6 +499,8 @@ public class 用户管理添加安卓_茉 : 界面基础_韩
         if (文化程度 != null) 文化程度.Text = 用户.文化程度 ?? "";
         if (血压 != null) 血压.Text = 用户.血压 ?? "";
         if (家庭成员 != null) 家庭成员.Text = 用户.家庭成员 ?? "";
+        if (烟龄 != null) 烟龄.Text = 用户.烟龄 ?? "";
+        if (酒龄 != null) 酒龄.Text = 用户.酒龄 ?? "";
         if (发病前后语言状态 != null) 发病前后语言状态.Text = 用户.发病前后语言状态 ?? "";
         if (发病时状况 != null) 发病时状况.Text = 用户.发病时状况 ?? "";
         if (既往病史 != null) 既往病史.Text = 用户.既往病史 ?? "";

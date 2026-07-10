@@ -115,12 +115,12 @@ public class 登录界面_茉 : MonoBehaviour, IController
         var 软件配置录 = this.GetModel<软件配置录>();
         if (软件配置录.当前配置 != null)
         {
-            软件名称.Text = string.IsNullOrEmpty(软件配置录.当前配置.软件名称) ? "汉语失语症评测系统" : 软件配置录.当前配置.软件名称;
+            软件名称.Text = string.IsNullOrEmpty(软件配置录.当前配置.软件名称) ? "汉语失语症检查表（ABC法）评估管理系统" : 软件配置录.当前配置.软件名称;
 
         }
         else
         {
-            软件名称.Text = "汉语失语症评测系统";
+            软件名称.Text = "汉语失语症检查表（ABC法）评估管理系统";
         }
     }
     // 密码输入变化时触发
@@ -321,7 +321,7 @@ public class 登录界面_茉 : MonoBehaviour, IController
             // 在编辑器中根据选择的平台返回后缀
             if (UnityEditor.EditorPrefs.GetInt("TestPlatform", 0) == 0)
             {
-                  静态传递_韩.SwitchSceneWithPanel("主场景online", "评定人管理显示");
+                  静态传递_韩.SwitchSceneWithPanel("主场景online", "首页界面显示");
             }
             else
             {
@@ -330,7 +330,7 @@ public class 登录界面_茉 : MonoBehaviour, IController
 #elif UNITY_ANDROID || UNITY_IOS
        跳转界面("选择场景");
 #else
-        静态传递_韩.SwitchSceneWithPanel("主场景online", "评定人管理显示");
+        静态传递_韩.SwitchSceneWithPanel("主场景online", "首页界面显示");
 #endif
         }
     }

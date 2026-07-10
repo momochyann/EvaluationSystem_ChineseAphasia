@@ -98,6 +98,13 @@ public class 量表评估显示 : 界面基础_韩
         }
     }
 
+    protected override void OnHide()
+    {
+        base.OnHide();
+        // 重置所有按钮的显示状态（隐藏所有标记）
+        重置按钮显示状态();
+    }
+
     /// <summary>
     /// 更新所有评估按钮的显示状态
     /// </summary>
@@ -112,6 +119,52 @@ public class 量表评估显示 : 界面基础_韩
 
         // 检查是否所有评估都已完成，更新下一步按钮的显示状态
         更新下一步按钮状态();
+    }
+
+    /// <summary>
+    /// 重置所有评估按钮的显示状态（隐藏所有标记）
+    /// </summary>
+    private void 重置按钮显示状态()
+    {
+        if (评估按钮 == null) return;
+
+        foreach (var 按钮 in 评估按钮)
+        {
+            重置单个按钮状态(按钮);
+        }
+
+        // 隐藏下一步按钮
+        if (下一步按钮 != null)
+        {
+            下一步按钮.gameObject.SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// 重置单个按钮的显示状态（隐藏所有标记）
+    /// </summary>
+    /// <param name="按钮">要重置的按钮</param>
+    private void 重置单个按钮状态(Button 按钮)
+    {
+        // 获取按钮的子物体标记（在内框的子物体中）
+        Transform 内框 = 按钮.transform.Find("内框");
+        if (内框 == null)
+        {
+            return;
+        }
+
+        Transform 完成标记 = 内框.Find("记录完成标记");
+        Transform 待完成标记 = 内框.Find("记录待完成标记");
+
+        // 隐藏所有标记，回到初始状态
+        if (完成标记 != null)
+        {
+            完成标记.gameObject.SetActive(false);
+        }
+        if (待完成标记 != null)
+        {
+            待完成标记.gameObject.SetActive(false);
+        }
     }
 
     /// <summary>

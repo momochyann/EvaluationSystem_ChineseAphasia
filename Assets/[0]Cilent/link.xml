@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="Main">
+    <type fullname="IPrinterBridge" preserve="all" />
+    <type fullname="PrinterBridge" preserve="all" />
+  </assembly>
+  <assembly fullname="System.IO.Compression">
+    <type fullname="System.IO.Compression.CompressionLevel" preserve="all" />
+    <type fullname="System.IO.Compression.ZipArchive" preserve="all" />
+    <type fullname="System.IO.Compression.ZipArchiveEntry" preserve="all" />
+    <type fullname="System.IO.Compression.ZipArchiveMode" preserve="all" />
+  </assembly>
+  <assembly fullname="System.IO.Compression.FileSystem">
+    <type fullname="System.IO.Compression.ZipFile" preserve="all" />
+    <type fullname="System.IO.Compression.ZipFileExtensions" preserve="all" />
+  </assembly>
+</linker>

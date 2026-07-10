@@ -12,7 +12,7 @@ public static class 失语症评定工具
     /// <param name="档案">包含各项评估数据的档案</param>
     /// <returns>失语症类型字符串</returns>
     /// static int 谈话流利性满分 = 54;
-    static int 听辨认满分 = 20;
+    static int 听辨认满分 = 20; 
     static int 复述满分 = 100;
     static int 词命名满分 = 40;
     static int 谈话流利性满分 = 54;
@@ -34,11 +34,11 @@ public static class 失语症评定工具
         }
 
         // 提取关键分数
-        int 谈话流利性 = 档案.谈话记录.谈话流利性总分;
-        int 听辨认 = 档案.理解记录.听辨认图形总分; // 使用听辨认图形总分
-        int 词复述 = 档案.复述记录.词复述总分;
-        int 句复述 = 档案.复述记录.句复述总分;
-        int 词命名 = 档案.命名记录.词命名总分;
+        float 谈话流利性 = 档案.谈话记录.谈话流利性总分+档案.谈话记录.系列语言总分+档案.谈话记录.谈话信息量总分;
+        float 听辨认 = 档案.理解记录.听辨认图形总分+档案.理解记录.听辨认实物总分; // 使用听辨认图形总分
+        float 词复述 = 档案.复述记录.词复述总分;
+        float 句复述 = 档案.复述记录.句复述总分;
+        float 词命名 = 档案.命名记录.词命名总分;
 
         Debug.Log($"[失语症评定] 谈话流利性:{谈话流利性}, 听辨认:{听辨认}, 词复述:{词复述}, 句复述:{句复述}, 词命名:{词命名}");
 
@@ -49,7 +49,7 @@ public static class 失语症评定工具
     /// <summary>
     /// 执行决策树判断
     /// </summary>
-    private static string 执行决策树判断(int 谈话流利性, int 听辨认, int 词复述, int 句复述, int 词命名)
+    private static string 执行决策树判断(float 谈话流利性, float 听辨认, float 词复述, float 句复述, float 词命名)
     {
         // 第一级：谈话流利性判断
         if (谈话流利性 / 谈话流利性满分 * 100f >= 67)
@@ -67,7 +67,7 @@ public static class 失语症评定工具
     /// <summary>
     /// 判断流畅组失语症类型
     /// </summary>
-    private static string 判断流畅组(int 听辨认, int 词复述, int 句复述)
+    private static string 判断流畅组(float 听辨认, float 词复述, float 句复述)
     {
         // 第二级：听辨认判断
         if (听辨认 / 听辨认满分 * 100f >= 80)
@@ -85,7 +85,7 @@ public static class 失语症评定工具
     /// <summary>
     /// 判断流畅组-听辨认好的类型
     /// </summary>
-    private static string 判断流畅组_听辨认好(int 词复述, int 句复述)
+    private static string 判断流畅组_听辨认好(float 词复述, float 句复述)
     {
         // 第三级：句复述判断
         if ((句复述+词复述) / 复述满分 * 100f >= 86)
@@ -101,7 +101,7 @@ public static class 失语症评定工具
     /// <summary>
     /// 判断流畅组-听辨认差的类型
     /// </summary>
-    private static string 判断流畅组_听辨认差(int 词复述, int 句复述)
+    private static string 判断流畅组_听辨认差(float 词复述, float 句复述)
     {
         // 第三级：句复述判断
         if ((句复述+词复述) / 复述满分 * 100f >= 75)
@@ -117,7 +117,7 @@ public static class 失语症评定工具
     /// <summary>
     /// 判断不流畅组失语症类型
     /// </summary>
-    private static string 判断不流畅组(int 听辨认, int 词复述, int 句复述, int 词命名)
+    private static string 判断不流畅组(float 听辨认, float 词复述, float 句复述, float 词命名)
     {
         // 第二级：听辨认判断
         if (听辨认 / 听辨认满分 * 100f >= 55)
@@ -135,7 +135,7 @@ public static class 失语症评定工具
     /// <summary>
     /// 判断不流畅组-听辨认好的类型
     /// </summary>
-    private static string 判断不流畅组_听辨认好(int 词复述, int 句复述, int 词命名)
+    private static string 判断不流畅组_听辨认好(float 词复述, float 句复述, float 词命名)
     {
         // 第三级：句复述判断
         if ((句复述+词复述) / 复述满分 * 100f >= 72)
@@ -153,7 +153,7 @@ public static class 失语症评定工具
     /// <summary>
     /// 判断不流畅组-听辨认好-复述好的类型
     /// </summary>
-    private static string 判断不流畅组_复述好(int 词命名)
+    private static string 判断不流畅组_复述好(float 词命名)
     {
         // 第四级：词命名判断
         if (词命名 / 词命名满分 * 100f >= 80)
@@ -169,7 +169,7 @@ public static class 失语症评定工具
     /// <summary>
     /// 判断不流畅组-听辨认差的类型
     /// </summary>
-    private static string 判断不流畅组_听辨认差(int 词复述, int 句复述)
+    private static string 判断不流畅组_听辨认差(float 词复述, float 句复述)
     {
         // 第三级：句复述判断
         if ((句复述+词复述) / 复述满分 * 100f >= 58)

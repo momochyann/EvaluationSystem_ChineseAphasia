@@ -176,7 +176,7 @@ public class BDAE严重程度条形图_茉 : MonoBehaviour, IController
         var serie2 = 条形图组件.GetSerie(1);
         if (serie2 == null)
         {
-            serie2 = 条形图组件.AddSerie<Bar>("背景");
+            serie2 = 条形图组件.AddSerie<Bar>("差值");
         }
         
         // 设置堆叠
@@ -269,7 +269,7 @@ public class BDAE严重程度条形图_茉 : MonoBehaviour, IController
         // 统计每个等级的数量
         foreach (var 档案 in 档案列表)
         {
-            if (档案 == null)
+            if (档案 == null || 档案.评估状态 != 评估状态.评估完成)
                 continue;
             
             // 获取BDAE严重程度等级（0-5级）

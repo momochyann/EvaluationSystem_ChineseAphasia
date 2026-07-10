@@ -21,10 +21,12 @@ public class 模板条目显示 : MonoBehaviour, IController
     [SerializeField] private Button 保存按钮;
     [SerializeField] private Button 选择按钮;
     [SerializeField] private Button 删除按钮;
+    [SerializeField] private Button 预览按钮;
     private 评估模板 当前模板;
     private 评估模板设置显示 父界面;
     private 评估模板类型 模板类型;
     private System.Action<评估模板> 选择回调;
+
 
     /// <summary>
     /// 初始化模板条目
@@ -58,7 +60,7 @@ public class 模板条目显示 : MonoBehaviour, IController
             选择按钮.OnClicked.AddListener(() =>
             {
                 // 选择前先保存当前编辑
-                保存当前编辑();
+                保存当前编辑(false);
                 选择回调?.Invoke(当前模板);
             });
         }
@@ -79,6 +81,16 @@ public class 模板条目显示 : MonoBehaviour, IController
                 删除模板();
             });
         }
+
+        if (预览按钮 != null)
+        {
+            预览按钮.OnClicked.RemoveAllListeners();
+            预览按钮.OnClicked.AddListener(() =>
+            {
+                父界面.预览模板(模板内容文本.Text.Trim());
+            });
+        }
+
     }
 
     async private void 删除模板()
@@ -95,7 +107,7 @@ public class 模板条目显示 : MonoBehaviour, IController
     /// <summary>
     /// 保存当前编辑的内容
     /// </summary>
-    private void 保存当前编辑()
+    private void 保存当前编辑(bool 是否未改动通知 = true)
     {
         if (父界面 == null || 当前模板 == null)
             return;
@@ -107,6 +119,8 @@ public class 模板条目显示 : MonoBehaviour, IController
         // 检查是否有修改
         if (新名称 == 当前模板.模板名称 && 新内容 == 当前模板.模板内容)
         {
+            if(是否未改动通知)
+            保存通知("提示", "当前没有修改,无需保存").Forget();
             return; // 没有修改，不需要保存
         }
 

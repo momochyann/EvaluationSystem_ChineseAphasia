@@ -33,6 +33,8 @@ public class 档案管理报告界面显示 : 界面基础_韩
     [SerializeField] private TextBlock 血压;
     [SerializeField] private TextBlock 神志状态;
     [SerializeField] private TextBlock 家庭成员;
+    [SerializeField] private TextBlock 烟龄;
+    [SerializeField] private TextBlock 酒龄;
     [SerializeField] private TextBlock 发病前后语言状态;
     [SerializeField] private TextBlock 发病时状况;
     [SerializeField] private TextBlock 既往病史;
@@ -79,7 +81,9 @@ public class 档案管理报告界面显示 : 界面基础_韩
     [SerializeField] private TextBlock 利手评定结果;
     [SerializeField] private TextBlock 失语症评定;
     [SerializeField] private TextBlock BDAE严重程度;
-    [SerializeField] private Dropdown BDAE严重程度下拉框;
+    [SerializeField] private 选项组性_茉 BDAE严重程度选项组;
+    [SerializeField] private Button 打开BDAE选择按钮;
+    [SerializeField] private NovaSamples.UIControls.Button 确认选择BDAE按钮;
     bool 是否已经初始化严重程度;
 
     [Header("操作按钮")]
@@ -87,6 +91,7 @@ public class 档案管理报告界面显示 : 界面基础_韩
     [SerializeField] private NovaSamples.UIControls.Button 取消按钮;
     [SerializeField] private Button 打印按钮;
     [SerializeField] private Button 下载按钮;
+    [SerializeField] private TextBlock 选择界面描述;
     [SerializeField] private Toggle 量表报告勾选;
     [SerializeField] private Toggle 量表表格勾选;
     [SerializeField] private Button 选择确认按钮;
@@ -118,11 +123,11 @@ public class 档案管理报告界面显示 : 界面基础_韩
         保存按钮?.OnClicked.AddListener(() => 处理保存按钮点击().Forget());
         取消按钮?.OnClicked.AddListener(() => 处理取消按钮点击().Forget());
         //打印按钮?.OnClicked.AddListener(() => 处理打印按钮点击().Forget());
-        下载按钮?.OnClicked.AddListener(() => 是否是打印 = false);
-        打印按钮?.OnClicked.AddListener(() => 是否是打印 = true);
+        下载按钮?.OnClicked.AddListener(() => { 是否是打印 = false; 选择界面描述.Text = "下载选择"; });
+        打印按钮?.OnClicked.AddListener(() => { 是否是打印 = true; 选择界面描述.Text = "打印选择"; });
         选择确认按钮?.OnClicked.AddListener(() => 处理选择确认按钮点击().Forget());
-        // 初始化BDAE严重程度下拉框
-        初始化BDAE严重程度下拉框();
+        // 绑定确认选择BDAE按钮事件
+        确认选择BDAE按钮?.OnClicked.AddListener(() => 处理确认选择BDAE按钮点击());
     }
 
     private async UniTaskVoid 处理选择确认按钮点击()
@@ -157,69 +162,43 @@ public class 档案管理报告界面显示 : 界面基础_韩
 
 
     /// <summary>
-    /// 初始化BDAE严重程度下拉框
+    /// 处理确认选择BDAE按钮点击
     /// </summary>
-    void 初始化BDAE严重程度下拉框()
+    void 处理确认选择BDAE按钮点击()
     {
-        if (BDAE严重程度下拉框 == null) return;
-
-
-        // 获取等级选项列表
-        var 等级选项 = BDAE严重程度评定工具.获取等级选项列表();
-
-        // 设置下拉框选项（使用DropdownOptions.Options）
-        BDAE严重程度下拉框.DropdownOptions.Options.Clear();
-        foreach (var 选项 in 等级选项)
+        if (BDAE严重程度选项组 == null || 当前显示档案 == null)
         {
-            BDAE严重程度下拉框.DropdownOptions.Options.Add(选项);
+            Debug.LogWarning("[档案报告] BDAE严重程度选项组或当前档案为空");
+            return;
         }
 
-        // 绑定选择变化事件
-        BDAE严重程度下拉框.OnValueChanged.AddListener(处理BDAE严重程度选择变化);
+        // 获取选中的索引
+        int 选中索引 = BDAE严重程度选项组.当前选中索引;
+        if (选中索引 == -1)
+        {
+            Debug.LogWarning("[档案报告] 未选中任何BDAE严重程度等级");
+            return;
+        }
 
-        Debug.Log($"[档案报告] BDAE严重程度下拉框初始化完成，选项数: {等级选项.Length}");
-    }
-
-    /// <summary>
-    /// 处理BDAE严重程度下拉框选择变化
-    /// </summary>
-    void 处理BDAE严重程度选择变化(string 选中值)
-    {
-        if (BDAE严重程度 == null || 当前显示档案 == null || string.IsNullOrEmpty(选中值)) return;
-
-        // 从选中值解析等级（例如"0级" -> 0）
-        int 等级 = 解析等级(选中值);
-        if (等级 == -1) return;
+        // 获取严重程度描述
+        string 描述 = BDAE严重程度评定工具.获取严重程度描述(选中索引);
 
         // 更新显示文本
-        string 描述 = BDAE严重程度评定工具.获取严重程度描述(等级);
-        BDAE严重程度.Text = 描述;
+        if (BDAE严重程度 != null)
+        {
+            BDAE严重程度.Text = 描述;
+        }
 
         // 保存到档案中
         var 更新档案 = 当前显示档案;
-        更新档案.BDAE严重程度等级 = 等级;
+        更新档案.BDAE严重程度等级 = 选中索引;
         更新档案.是否选择BDAE等级 = true;
         this.SendCommand(new 改记于录(当前显示档案, 更新档案, "档案录"));
-        BDAE严重程度下拉框.gameObject.SetActive(false);
-        Debug.Log($"[档案报告] BDAE严重程度选择变化: {等级}级 - {描述}");
+
+        Debug.Log($"[档案报告] 确认选择BDAE严重程度: {选中索引}级 - {描述}");
     }
 
-    /// <summary>
-    /// 从字符串解析等级（例如"0级" -> 0）
-    /// </summary>
-    int 解析等级(string 等级字符串)
-    {
-        if (string.IsNullOrEmpty(等级字符串)) return -1;
 
-        // 尝试提取数字
-        string 数字部分 = 等级字符串.Replace("级", "").Trim();
-        if (int.TryParse(数字部分, out int 等级))
-        {
-            return 等级;
-        }
-
-        return -1;
-    }
 
     /// <summary>
     /// 初始化所有子物体中的选项组性和选项组性多选
@@ -270,14 +249,11 @@ public class 档案管理报告界面显示 : 界面基础_韩
 
         // 还原选项组选择
         还原背景信息选项组(当前显示档案);
-        if (当前显示档案.是否选择BDAE等级)
+        // 还原BDAE严重程度选项组选择
+        还原BDAE严重程度选项组(当前显示档案);
+        if (当前显示档案.BDAE严重程度等级 > 0)
         {
-            BDAE严重程度下拉框.gameObject.SetActive(false);
-            //  string 描述 = BDAE严重程度评定工具.获取严重程度描述(等级);
-        }
-        else
-        {
-            BDAE严重程度下拉框.gameObject.SetActive(true);
+            打开BDAE选择按钮.gameObject.SetActive(false);
         }
     }
 
@@ -324,6 +300,8 @@ public class 档案管理报告界面显示 : 界面基础_韩
         if (血压 != null) 血压.Text = 档案.血压 ?? "";
         if (神志状态 != null) 神志状态.Text = 档案.神志状态 ?? "";
         if (家庭成员 != null) 家庭成员.Text = 档案.家庭成员 ?? "";
+        if (烟龄 != null) 烟龄.Text = 档案.烟龄 ?? "";
+        if (酒龄 != null) 酒龄.Text = 档案.酒龄 ?? "";
         if (发病前后语言状态 != null) 发病前后语言状态.Text = 档案.发病前后语言状态 ?? "";
         if (发病时状况 != null) 发病时状况.Text = 档案.发病时状况 ?? "";
         if (既往病史 != null) 既往病史.Text = 档案.既往病史 ?? "";
@@ -448,48 +426,44 @@ public class 档案管理报告界面显示 : 界面基础_韩
         档案.失语症类型 = 失语症类型;
 
         Debug.Log($"[档案报告] 失语症评定结果: {完整名称}");
-
-        // 自动推荐BDAE严重程度等级
-        显示BDAE严重程度推荐(档案, 失语症类型);
     }
 
     /// <summary>
-    /// 显示BDAE严重程度推荐
+    /// 显示BDAE严重程度选择（用于恢复已保存的选择）
     /// </summary>
-    void 显示BDAE严重程度推荐(档案 档案, string 失语症类型)
+    void 显示BDAE严重程度选择(档案 档案)
     {
-        if (BDAE严重程度下拉框 == null || BDAE严重程度 == null) return;
+        if (BDAE严重程度选项组 == null || BDAE严重程度 == null) return;
 
-        int 等级 = 0;
-
-        // 检查档案中是否已有保存的等级
-        if (档案.BDAE严重程度等级 >= 0 && 档案.BDAE严重程度等级 <= 5)
+        // 只处理已保存的选择，不再进行推荐
+        if (档案.是否选择BDAE等级 && 档案.BDAE严重程度等级 >= 0 && 档案.BDAE严重程度等级 <= 5)
         {
-            等级 = 档案.BDAE严重程度等级;
-            Debug.Log($"[档案报告] 使用档案中保存的BDAE严重程度: {等级}级");
+            int 等级 = 档案.BDAE严重程度等级;
+            Debug.Log($"[档案报告] 恢复BDAE严重程度选择: {等级}级");
+
+            // 设置选项组选中项
+            BDAE严重程度选项组.设置选中选项(等级);
+
+            // 更新文本显示
+            string 描述 = BDAE严重程度评定工具.获取严重程度描述(等级);
+            BDAE严重程度.Text = 描述;
         }
         else
         {
-            // 根据失语症类型推荐严重程度等级
-            等级 = BDAE严重程度评定工具.推荐严重程度等级(档案, 失语症类型);
-            Debug.Log($"[档案报告] BDAE严重程度推荐: {等级}级");
+            // 没有保存的选择时，清空显示
+            BDAE严重程度.Text = "";
+            BDAE严重程度选项组.清除所有选择();
+            Debug.Log("[档案报告] 无保存的BDAE严重程度选择，清空显示");
         }
+    }
 
-        // 设置下拉框选中项（使用SelectedIndex）
-        BDAE严重程度下拉框.DropdownOptions.SelectedIndex = 等级;
-
-        // 手动更新文本显示
-        string 描述 = BDAE严重程度评定工具.获取严重程度描述(等级);
-        BDAE严重程度.Text = 描述;
-
-        // 如果下拉框的Visuals可用，更新显示
-        if (BDAE严重程度下拉框.Visuals != null && BDAE严重程度下拉框.Visuals.SelectionLabel != null)
-        {
-            BDAE严重程度下拉框.Visuals.SelectionLabel.Text = $"{等级}级";
-        }
-
-        // 保存到档案
-        档案.BDAE严重程度等级 = 等级;
+    /// <summary>
+    /// 还原BDAE严重程度选项组选择
+    /// </summary>
+    void 还原BDAE严重程度选项组(档案 档案)
+    {
+        // 调用显示方法来处理选择和文本显示
+        显示BDAE严重程度选择(档案);
     }
 
     /// <summary>
@@ -549,6 +523,16 @@ public class 档案管理报告界面显示 : 界面基础_韩
     {
         base.OnHide();
         Debug.Log("[档案报告] 界面隐藏");
+
+        // 滚动条滚动到最高处
+        var scroller = GetComponentInChildren<Scroller>(true);
+        if (scroller != null && scroller.UIBlock != null)
+        {
+            var autoLayout = scroller.UIBlock.AutoLayout;
+            autoLayout.Offset = 0;
+            scroller.UIBlock.AutoLayout = autoLayout;
+            scroller.UIBlock.CalculateLayout();
+        }
 
         // 清空当前显示的档案
         当前显示档案 = null;
@@ -615,6 +599,7 @@ public class 档案管理报告界面显示 : 界面基础_韩
         // 清理按钮事件
         保存按钮?.OnClicked.RemoveAllListeners();
         取消按钮?.OnClicked.RemoveAllListeners();
+        确认选择BDAE按钮?.OnClicked.RemoveAllListeners();
 
         // 取消订阅显示信息事件
         显示信息 -= 显示档案详情;

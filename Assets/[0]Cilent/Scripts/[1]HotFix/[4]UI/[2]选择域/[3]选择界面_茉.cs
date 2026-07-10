@@ -47,6 +47,20 @@ public class 选择界面_茉 : MonoBehaviour, IController
 
     async private void 执行编号管理()
     {
+        Debug.Log("执行编号管理功能");
+        Debug.Log($"当前管理员状态: {管员录.登陆管理员 != null}");
+        Debug.Log($"当前评定人状态: {评人录.登陆评人 != null}");
+
+        // 检查管理员权限 - 编号管理需要管理员权限
+        if (管员录.登陆管理员 == null)
+        {
+            Debug.Log("编号管理需要管理员权限，当前为评定人登录，弹出权限提示");
+            // 评定人登录时，弹出权限提示
+            await 显示权限提示();
+            return;
+        }
+
+        Debug.Log("编号管理权限检查通过，开始加载界面");
         var 编号管理界面 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("编号管理栏");
         var 编号管理界面实例 = Instantiate(编号管理界面, transform);
       //  var 编号管理界面安卓 = 编号管理界面实例.GetComponent<编号管理界面_茉>();
@@ -116,19 +130,84 @@ public class 选择界面_茉 : MonoBehaviour, IController
 
     }
 
-    public void 执行功能(string 功能名称)
+    public async void 执行功能(string 功能名称)
     {
+        Debug.Log("执行功能：" + 功能名称);
+        Debug.Log($"当前管理员状态: {管员录.登陆管理员 != null}");
+        Debug.Log($"当前评定人状态: {评人录.登陆评人 != null}");
+
+        // 检查是否为管理员权限功能
+        if (是否需要管理员权限(功能名称))
+        {
+            Debug.Log("此功能需要管理员权限");
+            if (管员录.登陆管理员 == null)
+            {
+                Debug.Log("当前为评定人登录，弹出权限提示");
+                // 评定人登录时，弹出权限提示
+                await 显示权限提示();
+                return;
+            }
+            else
+            {
+                Debug.Log("当前为管理员登录，允许执行");
+            }
+        }
+        else
+        {
+            Debug.Log("此功能不需要管理员权限");
+        }
+
         // 防止多次点击导致重复跳转
         if (正在跳转)
         {
             Debug.Log("正在跳转中,忽略重复点击");
             return;
         }
-        
+
         正在跳转 = true;
-        Debug.Log("执行功能：" + 功能名称);
         功能名称 = 功能名称 + "显示";
+        Debug.Log("执行跳转: " + 功能名称);
         静态传递_韩.SwitchSceneWithPanel("主场景online", 功能名称);
+    }
+
+    /// <summary>
+    /// 检查功能是否需要管理员权限
+    /// </summary>
+    private bool 是否需要管理员权限(string 功能名称)
+    {
+        Debug.Log($"检查权限 - 功能名称: '{功能名称}'");
+
+        // 需要管理员权限的功能列表
+        string[] 管理员功能 = new string[]
+        {
+            "评定人管理",
+            "界面管理",
+            "备份还原"
+        };
+
+        foreach (var 功能 in 管理员功能)
+        {
+            Debug.Log($"检查是否包含 '{功能}'");
+            if (功能名称.Contains(功能))
+            {
+                Debug.Log($"匹配到管理员功能: {功能}");
+                return true;
+            }
+        }
+
+        Debug.Log("不需要管理员权限");
+        return false;
+    }
+
+    /// <summary>
+    /// 显示权限不足的提示
+    /// </summary>
+    private async UniTask 显示权限提示()
+    {
+        var 告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
+        var 告示实例 = Instantiate(告示, transform);
+        await 告示实例.GetComponent<告示_茉>().等待确认显示("权限不足", "此仅为管理员权限，请登录管理员账号");
+        Destroy(告示实例.gameObject, 0.1f);
     }
 
     public IArchitecture GetArchitecture()

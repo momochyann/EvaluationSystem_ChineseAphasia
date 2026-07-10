@@ -60,11 +60,11 @@ public static class BDAE严重程度评定工具
         }
 
         // 计算综合评估分数（用于辅助判断）
-        int 谈话流利性 = 档案.谈话记录.谈话流利性总分;
-        int 谈话信息量 = 档案.谈话记录.谈话信息量总分;
-        int 系列语言 = 档案.谈话记录.系列语言总分;
-        int 听辨认 = 档案.理解记录.听辨认图形总分;
-        int 口头指令 = 档案.理解记录.口头指令总分;
+        float 谈话流利性 = 档案.谈话记录.谈话流利性总分;
+        float 谈话信息量 = 档案.谈话记录.谈话信息量总分;
+        float 系列语言 = 档案.谈话记录.系列语言总分;
+        float 听辨认 = 档案.理解记录.听辨认图形总分;
+        float 口头指令 = 档案.理解记录.口头指令总分;
         
         // 计算理解能力平均分
         float 理解能力平均 = (听辨认 + 口头指令) / 2f;
@@ -121,7 +121,7 @@ public static class BDAE严重程度评定工具
         return 2;
     }
 
-    private static int 推荐等级_布洛卡失语(int 流利性, float 理解)
+    private static int 推荐等级_布洛卡失语(float 流利性, float 理解)
     {
         // 布洛卡失语：表达严重受损，理解相对较好
         // 通常是1-3级
@@ -131,7 +131,7 @@ public static class BDAE严重程度评定工具
         return 2;
     }
 
-    private static int 推荐等级_韦尼克失语(int 流利性, float 理解)
+    private static int 推荐等级_韦尼克失语(float 流利性, float 理解)
     {
         // 韦尼克失语：理解严重受损，流利但无意义
         // 通常是1-3级
@@ -141,7 +141,7 @@ public static class BDAE严重程度评定工具
         return 3;
     }
 
-    private static int 推荐等级_经皮质运动性失语(int 流利性, float 理解)
+    private static int 推荐等级_经皮质运动性失语(float 流利性, float 理解)
     {
         // 经皮质运动性失语：理解好，表达受损但复述好
         // 通常是2-4级
@@ -151,7 +151,7 @@ public static class BDAE严重程度评定工具
         return 3;
     }
 
-    private static int 推荐等级_经皮质感觉性失语(int 流利性, float 理解)
+    private static int 推荐等级_经皮质感觉性失语(float 流利性, float 理解)
     {
         // 经皮质感觉性失语：流利但理解差，复述相对好
         // 通常是2-3级
@@ -160,7 +160,7 @@ public static class BDAE严重程度评定工具
         return 3;
     }
 
-    private static int 推荐等级_传导性失语(int 流利性, float 理解)
+    private static int 推荐等级_传导性失语(float 流利性, float 理解)
     {
         // 传导性失语：流利且理解好，但复述差
         // 通常是3-4级

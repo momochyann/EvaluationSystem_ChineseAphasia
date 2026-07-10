@@ -15,10 +15,12 @@ public class SupplementaryMetadata : MonoBehaviour
             "mscorlib.dll",
             "System.dll",
             "System.Core.dll",
+            "System.IO.Compression.dll",
+            "System.IO.Compression.FileSystem.dll",
             "UniTask.dll",
             "Main.dll",
             "QFramework.dll",
-            "QFramework.Core.dll",
+            "QFramework.CoreKit.dll",
             "DOTween.dll",
             "UnityEngine.CoreModule.dll",
             "UniTask.Linq.dll",
@@ -40,8 +42,27 @@ public class SupplementaryMetadata : MonoBehaviour
         progress.PlaySupplementaryMetadataStartAnimation();
         foreach (var aotDllName in aotMetaAssemblyFiles)
         {
-            var dllBytes = await LoadYooAssetsTool.LoadRawFile_DP(aotDllName);
+            byte[] dllBytes = null;
+            try
+            {
+                dllBytes = await LoadYooAssetsTool.LoadRawFile_DP(aotDllName);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning($"LoadMetadataForAOTAssembly skip(not found): {aotDllName}, err: {ex.Message}");
+                progress.PlaySupplementaryMetadataLoadingAnimation(++currentCount / (float)totalCount);
+                continue;
+            }
+
+            if (dllBytes == null || dllBytes.Length == 0)
+            {
+                Debug.LogWarning($"LoadMetadataForAOTAssembly skip(empty): {aotDllName}");
+                progress.PlaySupplementaryMetadataLoadingAnimation(++currentCount / (float)totalCount);
+                continue;
+            }
+
             LoadImageErrorCode err = RuntimeApi.LoadMetadataForAOTAssembly(dllBytes, mode);
+            Debug.Log($"LoadMetadataForAOTAssembly: {aotDllName}, ret: {err}");
             progress.PlaySupplementaryMetadataLoadingAnimation(++currentCount / (float)totalCount);
         }
         Debug.Log("LoadDLL");

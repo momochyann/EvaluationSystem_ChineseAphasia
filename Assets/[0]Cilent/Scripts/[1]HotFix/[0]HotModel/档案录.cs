@@ -21,9 +21,9 @@ public class 谈话记录 : 档案记录接口
     public 评估状态 是否完成 { get; set; }
 
     // 三个维度的分数
-    public int 谈话信息量总分;
-    public int 谈话流利性总分;
-    public int 系列语言总分;
+    public float 谈话信息量总分;
+    public float 谈话流利性总分;
+    public float 系列语言总分;
 
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
@@ -39,18 +39,18 @@ public class 理解记录 : 档案记录接口
     public 评估状态 是否完成 { get; set; }
 
     // 四个维度的分数
-    public int 是否题总分;
-    public int 听辨认实物总分;
-    public int 听辨认图形总分;
-    public int 口头指令总分;
+    public float 是否题总分;
+    public float 听辨认实物总分;
+    public float 听辨认图形总分;
+    public float 口头指令总分;
 
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
 }
 public class 复述记录 : 档案记录接口
 {
-    public int 词复述总分;
-    public int 句复述总分;
+    public float 词复述总分;
+    public float 句复述总分;
     public string 评估时间 { get; set; }
     public 评估状态 是否完成 { get; set; }
 
@@ -66,11 +66,11 @@ public class 命名记录 : 档案记录接口
     public 评估状态 是否完成 { get; set; }
 
     // 五个维度的分数
-    public int 词命名总分;
+    public float 词命名总分;
     public string 列名; // 输入方式
-    public int 颜色识别总分;
-    public int 颜色命名总分;
-    public int 反应性命名总分;
+    public float 颜色识别总分;
+    public float 颜色命名总分;
+    public float 反应性命名总分;
 
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
@@ -85,13 +85,13 @@ public class 阅读记录 : 档案记录接口
     public 评估状态 是否完成 { get; set; }
 
     // 七个维度的分数
-    public int 视读总分;
-    public int 阅读指令总分;
-    public int 字画匹配朗读总分;
-    public int 字画匹配配画总分;
-    public int 执行指令朗读总分;
-    public int 执行指令配画总分;
-    public int 填空总分;
+    public float 视读总分;
+    public float 阅读指令总分;
+    public float 字画匹配朗读总分;
+    public float 字画匹配配画总分;
+    public float 执行指令朗读总分;
+    public float 执行指令配画总分;
+    public float 填空总分;
 
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
@@ -106,7 +106,7 @@ public class 计算记录 : 档案记录接口
     public 评估状态 是否完成 { get; set; }
 
     // 一个维度的分数
-    public int 运算总分;
+    public float 运算总分;
 
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
@@ -121,12 +121,12 @@ public class 书写记录 : 档案记录接口
     public 评估状态 是否完成 { get; set; }
 
     // 六个维度的分数
-    public int 写姓名地址总分;
-    public int 抄写总分;
-    public int 系列书写总分;
-    public int 听写总分;
-    public int 看图写字总分;
-    public int 写病情分数; // 直接输入0-5分
+    public float 写姓名地址总分;
+    public float 抄写总分;
+    public float 系列书写总分;
+    public float 听写总分;
+    public float 看图写字总分;
+    public float 写病情分数; // 直接输入0-5分
 
     // 存储选项组名称和选中索引的映射（表分择性使用）
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
@@ -142,8 +142,8 @@ public class 结构与空间记录 : 档案记录接口
     public 评估状态 是否完成 { get; set; }
 
     // 两个维度的分数
-    public int 照画图总分;
-    public int 摆方块总分;
+    public float 照画图总分;
+    public float 摆方块总分;
 
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
@@ -164,7 +164,7 @@ public class 运用记录 : 档案记录接口
     // 三个维度的分数
     public float 面部动作总分;
     public float 上肢动作总分;
-    public int 复杂动作总分;
+    public float 复杂动作总分;
 
     // 存储选项组名称和选中索引的映射
     public Dictionary<string, int> 选项组选择 = new Dictionary<string, int>();
@@ -224,6 +224,8 @@ public class 档案 : I记贞
     public string 血压;
     public string 神志状态;
     public string 家庭成员;
+    public string 烟龄;
+    public string 酒龄;
     public string 发病前后语言状态;
     public string 发病时状况;
     public string 既往病史;

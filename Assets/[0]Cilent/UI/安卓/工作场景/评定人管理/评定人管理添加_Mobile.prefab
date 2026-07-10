@@ -21981,6 +21981,7 @@ GameObject:
   - component: {fileID: 1741377004318492007}
   - component: {fileID: 7082005543862669019}
   - component: {fileID: 1695191363772769042}
+  - component: {fileID: 3949272287266689482}
   m_Layer: 0
   m_Name: "\u8BC4\u5B9A\u4EBA\u7BA1\u7406\u6DFB\u52A0_Mobile"
   m_TagString: Untagged
@@ -22288,6 +22289,56 @@ MonoBehaviour:
   "\u786E\u5B9A": {fileID: 5825002212283114093}
   "\u53D6\u6D88": {fileID: 496719620871651080}
   "\u8FD4\u56DE": {fileID: 537824807242376188}
+--- !u!114 &3949272287266689482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9054922440489734993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2541297f90fa9c14eab33d90c1489959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstructDrags: 0
+  DragThreshold: 1
+  LowAccuracyDragThreshold: 30
+  ClickBehavior: 2
+  navigable: 1
+  onSelect: 2
+  autoSelect: 0
+  Navigation:
+    Left:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Right:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Down:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Up:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Forward:
+      Type: 1
+      Fallback: 1
+      Target: {fileID: 0}
+    Back:
+      Type: 1
+      Fallback: 1
+      Target: {fileID: 0}
+  OverscrollEffect: 0
+  VectorScrollMultiplier: 1
+  dragScrolling: 1
+  vectorScrolling: 1
+  scrollbarVisual: {fileID: 0}
+  draggableScrollbar: 1
 --- !u!1 &9064134777331609419
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.IO;
 using UnityEngine;
 using QFramework;
 using Nova;
 using NovaSamples.UIControls;
 using Cysharp.Threading.Tasks;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class 打印报告界面_茉 : 界面基础_韩
 {
@@ -27,6 +32,8 @@ public class 打印报告界面_茉 : 界面基础_韩
     [SerializeField] private TextBlock 血压;
     [SerializeField] private TextBlock 神志状态;
     [SerializeField] private TextBlock 家庭成员;
+    [SerializeField] private TextBlock 烟龄;
+    [SerializeField] private TextBlock 酒龄;
     [SerializeField] private TextBlock 发病前后语言状态;
     [SerializeField] private TextBlock 发病时状况;
     [SerializeField] private TextBlock 既往病史;
@@ -35,6 +42,8 @@ public class 打印报告界面_茉 : 界面基础_韩
     [SerializeField] private GameObject 量表报告界面;
     [SerializeField] private GameObject 量表表格界面;
     [SerializeField] private 量表表格可视化_茉 量表表格可视化;
+
+
 
     [Header("量表评估分数")]
     [SerializeField] private TextBlock 谈话信息量总分;
@@ -72,8 +81,27 @@ public class 打印报告界面_茉 : 界面基础_韩
 
     [Header("打印相关")]
     [SerializeField] private Scroller 报告Scroller; // 原始报告滚动容器
-    [SerializeField] private UIBlock2D 打印根Block; // 顶部需要铺满X、Y自适应的Block
-    [SerializeField] private List<GameObject> 打印时隐藏对象; // 打印时需要去除的按钮/控件
+    [SerializeField] private GameObject 打印机选择界面;
+    [SerializeField] private Dropdown 打印机下拉框;
+    [SerializeField] private Button 刷新打印机按钮;
+    [SerializeField] private Button 确认选择打印机按钮;
+    [SerializeField] private Button 取消选择打印机按钮;
+    [SerializeField] private TextBlock 打印机状态文本;
+    [SerializeField] private bool 仅显示真实打印机 = true;
+    [SerializeField] private List<string> 虚拟打印机关键词 = new List<string>
+    {
+        "pdf",
+        "xps",
+        "fax",
+        "onenote",
+        "send to onenote",
+        "microsoft print to pdf",
+        "microsoft xps document writer"
+    };
+    private 打印管理器_茉 打印管理器; // 打印管理器
+    private IScreenshotPDFUtility 截图打印工具;
+    private readonly List<string> 可用打印机列表 = new List<string>();
+    private string 当前选中打印机名 = string.Empty;
 
     [Header("评估结果")]
     [SerializeField] private TextBlock 利手评定结果;
@@ -97,6 +125,11 @@ public class 打印报告界面_茉 : 界面基础_韩
     [SerializeField] private Button 返回按钮;
     [SerializeField] private Button 返回按钮1;
     [SerializeField] private Button 确认打印;
+    [SerializeField] private TextBlock 确认打印按钮文本;
+    [SerializeField] private string 确认打印文案 = "确认打印";
+    [SerializeField] private string 确认下载文案 = "确认下载";
+    private bool 打印机下拉框已初始化;
+    private bool 打印机选择按钮已初始化;
     void Awake()
     {
         初始化选项组();
@@ -110,13 +143,172 @@ public class 打印报告界面_茉 : 界面基础_韩
         {
             处理返回按钮点击().Forget();
         });
-        确认打印.OnClicked.AddListener(() =>
+        确认打印.OnClicked.AddListener(处理确认打印按钮点击);
+
+        // 初始化打印管理器
+        if (打印管理器 == null)
         {
-            处理确认打印按钮点击().Forget();
-        });
+            打印管理器 = gameObject.GetComponent<打印管理器_茉>();
+        }
+        截图打印工具 = this.GetUtility<IScreenshotPDFUtility>();
+        初始化打印机下拉框();
+        初始化打印机选择按钮();
+        隐藏打印机选择界面();
+
+     
     }
-    async UniTaskVoid 处理确认打印按钮点击()
+    void 处理确认打印按钮点击()
     {
+        if (!是否为打印)
+        {
+            处理确认下载按钮点击().Forget();
+            return;
+        }
+
+        显示打印机选择界面();
+        if (!打印机下拉框已初始化)
+        {
+            初始化打印机下拉框();
+            return;
+        }
+        刷新打印机列表();
+    }
+
+    async UniTaskVoid 处理确认下载按钮点击()
+    {
+        if (当前显示档案 == null)
+        {
+            Debug.LogError("[打印报告] 当前档案为空，无法下载Word文档");
+            return;
+        }
+
+        if (打印管理器 == null)
+        {
+            打印管理器 = gameObject.GetComponent<打印管理器_茉>();
+        }
+        if (打印管理器 == null)
+        {
+            Debug.LogError("[打印报告] 打印管理器未初始化，无法下载Word文档");
+            return;
+        }
+
+        string 默认文件名 = $"评估报告_{当前显示档案.编号 ?? "未知"}_{DateTime.Now:yyyyMMdd_HHmmss}.docx";
+        string 目标路径 = 选择下载保存路径(默认文件名);
+        if (string.IsNullOrWhiteSpace(目标路径))
+        {
+            Debug.Log("[打印报告] 用户取消下载保存位置选择");
+            return;
+        }
+
+        string 导出文件路径 = await 打印管理器.导出Word模板文档(当前显示档案);
+        if (string.IsNullOrWhiteSpace(导出文件路径) || !File.Exists(导出文件路径))
+        {
+            Debug.LogError("[打印报告] Word文档导出失败，未生成可下载文件");
+            return;
+        }
+
+        try
+        {
+            string 目标目录 = Path.GetDirectoryName(目标路径);
+            if (!string.IsNullOrWhiteSpace(目标目录))
+            {
+                Directory.CreateDirectory(目标目录);
+            }
+
+            string 标准目标路径 = Path.GetFullPath(目标路径);
+            string 标准导出路径 = Path.GetFullPath(导出文件路径);
+            if (!标准目标路径.EndsWith(".docx", StringComparison.OrdinalIgnoreCase))
+            {
+                标准目标路径 += ".docx";
+            }
+
+            if (!string.Equals(标准导出路径, 标准目标路径, StringComparison.OrdinalIgnoreCase))
+            {
+                File.Copy(标准导出路径, 标准目标路径, true);
+            }
+
+            Debug.Log($"[打印报告] 下载完成: {标准目标路径}");
+            await 显示告示提示("下载成功", $"文档已保存");
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"[打印报告] 复制下载文件失败: {ex.Message}");
+            await 显示告示提示("下载失败", ex.Message);
+        }
+    }
+
+    string 选择下载保存路径(string 默认文件名)
+    {
+#if UNITY_EDITOR
+        string editorPath = EditorUtility.SaveFilePanel("选择下载位置", "", 默认文件名, "docx");
+        return string.IsNullOrWhiteSpace(editorPath) ? null : editorPath;
+#else
+        try
+        {
+            IFilePickerBridge filePicker = new FilePickerBridge();
+            string 初始目录 = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            return filePicker.SaveFileDialog(
+                "选择下载位置",
+                默认文件名,
+                "Word文档|*.docx|所有文件|*.*",
+                初始目录);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"[打印报告] 打开下载保存对话框失败: {ex.Message}");
+            return null;
+        }
+#endif
+    }
+
+    void 刷新确认按钮文案()
+    {
+        if (确认打印按钮文本 == null && 确认打印 != null)
+        {
+            确认打印按钮文本 = 确认打印.GetComponentInChildren<TextBlock>(true);
+        }
+
+        if (确认打印按钮文本 == null)
+        {
+            return;
+        }
+
+        确认打印按钮文本.Text = 是否为打印 ? 确认打印文案 : 确认下载文案;
+    }
+
+    async UniTask 显示告示提示(string 标题, string 内容)
+    {
+        try
+        {
+            var 告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
+            var 界面管理器 = FindObjectOfType<界面管理器_韩>();
+            if (告示 == null || 界面管理器 == null)
+            {
+                return;
+            }
+
+            var ins = Instantiate(告示, 界面管理器.transform);
+            var 组件 = ins.GetComponent<告示_茉>();
+            if (组件 != null)
+            {
+                await 组件.等待确认显示(标题, 内容);
+            }
+            Destroy(ins);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogWarning($"[打印报告] 显示告示失败: {ex.Message}");
+        }
+    }
+
+    async UniTaskVoid 处理确认选择打印机按钮点击()
+    {
+        if (打印机选择界面 == null || !打印机选择界面.activeSelf)
+        {
+            显示打印机选择界面();
+            return;
+        }
+
         var 告示 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("告示");
         var 界面管理器 = FindObjectOfType<界面管理器_韩>();
         var ins = Instantiate(告示, 界面管理器.transform);
@@ -127,91 +319,39 @@ public class 打印报告界面_茉 : 界面基础_韩
             return;
         }
 
-        var screenshotUtil = this.GetUtility<IScreenshotPDFUtility>();
-        if (screenshotUtil == null)
+        if (打印管理器 == null)
         {
-            Debug.LogError("[打印报告] 未找到 ScreenshotPDFUtility");
+            Debug.LogError("[打印报告] 打印管理器未初始化");
+            return;
+        }
+        if (string.IsNullOrWhiteSpace(当前选中打印机名))
+        {
+            自动选择默认打印机();
+        }
+        if (string.IsNullOrWhiteSpace(当前选中打印机名))
+        {
+            Debug.LogError("[打印报告] 未选择有效打印机，请先选择打印机");
             return;
         }
 
-        if (报告Scroller == null)
+        // if (当前显示档案 == null)
+        // {
+        //     Debug.LogError("[打印报告] 当前显示档案为空");
+        //     return;
+        // }
+
+        // 调用打印管理器执行打印
+        bool 打印成功 = await 打印管理器.执行打印(当前显示档案, 当前选中打印机名);
+        隐藏打印机选择界面();
+
+        if (打印成功)
         {
-            Debug.LogError("[打印报告] 报告Scroller 未绑定，无法截图");
-            return;
+            await 显示告示提示("打印成功", $"报告已发送到打印机：{当前选中打印机名}");
         }
-
-        string fileBaseName = $"评估报告_{当前显示档案?.编号 ?? "未知"}_{System.DateTime.Now:yyyyMMdd_HHmmss}";
-
-        // 1) 克隆用于打印的 Scroller
-        var cloneGO = Instantiate(报告Scroller.gameObject, 报告Scroller.transform.parent.parent, false);
-        cloneGO.name = 报告Scroller.gameObject.name + "_PrintCopy";
-        cloneGO.SetActive(true); // 确保克隆体被激活并可见
-        await UniTask.Yield(); // 等一帧让父容器完成布局
-        cloneGO.transform.SetAsLastSibling(); // 放到父物体最后
-        var cloneScroller = cloneGO.GetComponentInChildren<Scroller>(true);
-        if (cloneScroller == null)
+        else
         {
-            Debug.LogError("[打印报告] 克隆的 Scroller 获取失败");
-            Destroy(cloneGO);
-            return;
+            await 显示告示提示("打印失败", "未能发送到打印机，请检查打印机状态后重试。");
         }
-        Debug.Log("克隆的 Scroller 获取成功" + cloneScroller.gameObject.name);
-
-        // 2) 去除打印时不需要的按钮/控件
-        if (打印时隐藏对象 != null)
-        {
-            foreach (var go in 打印时隐藏对象)
-            {
-                if (go == null) continue;
-                var target = 在克隆中按名查找(cloneGO.transform, go.name);
-                if (target != null)
-                {
-                    Destroy(target.gameObject);
-                }
-            }
-        }
-        var cloneRoot = cloneGO?.GetComponent<UIBlock2D>();
-        // 3) 调整顶部Block：X铺满，Y自适应
-        if (cloneRoot != null)
-        {
-            cloneRoot.AutoLayout.Offset = 0;
-            cloneRoot.AutoSize.Y = AutoSize.Expand;
-            cloneRoot.AutoSize.X = AutoSize.Expand;
-            cloneRoot.CornerRadius = 0;
-            cloneRoot.Position.Y=0;
-            cloneRoot.Position.X=0;
-        }
-        // 再次确保克隆排在最后，避免上面操作改变顺序
-        cloneGO.transform.SetAsLastSibling();
-
-        // 4) 用克隆的 Scroller 截图打印
-        string imgPath = await screenshotUtil.CaptureScrollViewAsync(cloneScroller, fileBaseName);
-        await UniTask.Delay(2000);
-        if (string.IsNullOrEmpty(imgPath))
-        {
-            Debug.LogError("[打印报告] 报告截图失败");
-            Destroy(cloneGO);
-            return;
-        }
-        Debug.Log($"[打印报告] 报告截图完成: {imgPath}");
-
-        string htmlPath = screenshotUtil.ConvertImageToHTML(imgPath, "评估报告");
-
-        if (string.IsNullOrEmpty(htmlPath))
-        {
-            Debug.LogError("[打印报告] 生成 HTML 失败");
-            Destroy(cloneGO);
-            return;
-        }
-        Debug.Log($"[打印报告] HTML 生成完成: {htmlPath}");
-
-        if (!screenshotUtil.PrintFile(htmlPath))
-        {
-            Debug.LogWarning("[打印报告] 发送打印失败，已尝试打开文件请手动打印");
-        }
-
-        // 5) 清理克隆
-        Destroy(cloneGO);
     }
     async UniTaskVoid 处理返回按钮点击()
     {
@@ -220,9 +360,346 @@ public class 打印报告界面_茉 : 界面基础_韩
         await UniTask.WaitUntil(() => 界面管理器._currentPanel != null && 界面管理器._currentPanel.name.Contains("档案管理报告界面"));
         界面管理器._currentPanel.显示信息?.Invoke(当前显示档案);
     }
+
+    void 初始化打印机下拉框()
+    {
+        确保打印机选择界面激活();
+
+        if (打印机下拉框已初始化)
+        {
+            刷新打印机列表();
+            return;
+        }
+
+        if (打印机下拉框 == null)
+        {
+            var 下拉框列表 = GetComponentsInChildren<Dropdown>(true);
+            foreach (var item in 下拉框列表)
+            {
+                if (item != null && item.name.Contains("打印机"))
+                {
+                    打印机下拉框 = item;
+                    break;
+                }
+            }
+        }
+
+        if (打印机下拉框 == null)
+        {
+            Debug.LogWarning("[打印报告] 未绑定打印机下拉框，无法使用自定义打印机选择");
+            自动选择默认打印机();
+            return;
+        }
+
+        打印机下拉框.OnValueChanged.AddListener(打印机下拉框值变化);
+        if (刷新打印机按钮 != null)
+        {
+            刷新打印机按钮.OnClicked.AddListener(刷新打印机列表);
+        }
+
+        打印机下拉框已初始化 = true;
+        刷新打印机列表();
+    }
+
+    void 初始化打印机选择按钮()
+    {
+        if (打印机选择按钮已初始化)
+        {
+            return;
+        }
+
+        if (打印机选择界面 == null)
+        {
+            var 所有节点 = GetComponentsInChildren<Transform>(true);
+            foreach (var 节点 in 所有节点)
+            {
+                if (节点 != null && 节点.name.Contains("打印机选择"))
+                {
+                    打印机选择界面 = 节点.gameObject;
+                    break;
+                }
+            }
+        }
+
+        if (打印机选择界面 != null && (确认选择打印机按钮 == null || 取消选择打印机按钮 == null))
+        {
+            var 按钮列表 = 打印机选择界面.GetComponentsInChildren<Button>(true);
+            foreach (var 按钮 in 按钮列表)
+            {
+                if (按钮 == null)
+                {
+                    continue;
+                }
+
+                if (确认选择打印机按钮 == null && 按钮.name.Contains("确认选择"))
+                {
+                    确认选择打印机按钮 = 按钮;
+                }
+                else if (取消选择打印机按钮 == null && (按钮.name.Contains("取消") || 按钮.name.Contains("关闭")))
+                {
+                    取消选择打印机按钮 = 按钮;
+                }
+            }
+        }
+
+        if (确认选择打印机按钮 != null)
+        {
+            确认选择打印机按钮.OnClicked.AddListener(() =>
+            {
+                处理确认选择打印机按钮点击().Forget();
+            });
+        }
+        else
+        {
+            Debug.LogWarning("[打印报告] 未绑定“确认选择打印机”按钮，无法在打印机选择界面中执行打印");
+        }
+
+        if (取消选择打印机按钮 != null)
+        {
+            取消选择打印机按钮.OnClicked.AddListener(隐藏打印机选择界面);
+        }
+
+        打印机选择按钮已初始化 = true;
+    }
+
+    void 显示打印机选择界面()
+    {
+        确保打印机选择界面激活();
+    }
+
+    void 隐藏打印机选择界面()
+    {
+        if (打印机选择界面 == null)
+        {
+            return;
+        }
+
+        if (打印机选择界面.activeSelf)
+        {
+            打印机选择界面.SetActive(false);
+        }
+    }
+
+    void 确保打印机选择界面激活()
+    {
+        if (打印机选择界面 == null)
+        {
+            var 所有节点 = GetComponentsInChildren<Transform>(true);
+            foreach (var 节点 in 所有节点)
+            {
+                if (节点 != null && 节点.name.Contains("打印机选择"))
+                {
+                    打印机选择界面 = 节点.gameObject;
+                    break;
+                }
+            }
+        }
+
+        if (打印机选择界面 != null && !打印机选择界面.activeSelf)
+        {
+            打印机选择界面.SetActive(true);
+            Debug.Log("[打印报告] 初始化打印机前激活打印机选择界面");
+        }
+    }
+
+    void 打印机下拉框值变化(string _)
+    {
+        更新当前选中打印机();
+    }
+
+    void 刷新打印机列表()
+    {
+        if (打印机下拉框 == null)
+        {
+            return;
+        }
+
+        可用打印机列表.Clear();
+        if (截图打印工具 != null)
+        {
+            var 列表 = 截图打印工具.GetAvailablePrinterNames();
+            if (列表 != null)
+            {
+                可用打印机列表.AddRange(列表);
+            }
+        }
+        过滤打印机列表(可用打印机列表);
+
+        打印机下拉框.DropdownOptions.Options.Clear();
+
+        if (可用打印机列表.Count == 0)
+        {
+            打印机下拉框.DropdownOptions.Options.Add("未检测到打印机");
+            打印机下拉框.DropdownOptions.SelectedIndex = 0;
+            当前选中打印机名 = string.Empty;
+            刷新打印机下拉框显示();
+            更新打印机状态文本();
+            Debug.LogWarning("[打印报告] 未检测到可用打印机");
+            return;
+        }
+
+        foreach (var 打印机 in 可用打印机列表)
+        {
+            打印机下拉框.DropdownOptions.Options.Add(打印机);
+        }
+
+        int 默认索引 = 0;
+        if (截图打印工具 != null)
+        {
+            string 默认打印机 = 截图打印工具.GetDefaultPrinterName();
+            if (!string.IsNullOrEmpty(默认打印机))
+            {
+                int idx = 可用打印机列表.IndexOf(默认打印机);
+                if (idx >= 0)
+                {
+                    默认索引 = idx;
+                }
+            }
+        }
+
+        打印机下拉框.DropdownOptions.SelectedIndex = 默认索引;
+        当前选中打印机名 = 可用打印机列表[默认索引];
+
+        刷新打印机下拉框显示();
+        更新打印机状态文本();
+        Debug.Log($"[打印报告] 打印机列表已刷新，共 {可用打印机列表.Count} 台，当前: {当前选中打印机名}");
+    }
+
+    void 自动选择默认打印机()
+    {
+        可用打印机列表.Clear();
+        if (截图打印工具 != null)
+        {
+            var 列表 = 截图打印工具.GetAvailablePrinterNames();
+            if (列表 != null)
+            {
+                可用打印机列表.AddRange(列表);
+            }
+        }
+        过滤打印机列表(可用打印机列表);
+
+        if (可用打印机列表.Count == 0)
+        {
+            当前选中打印机名 = string.Empty;
+            更新打印机状态文本();
+            return;
+        }
+
+        int 默认索引 = 0;
+        string 默认打印机 = 截图打印工具?.GetDefaultPrinterName();
+        if (!string.IsNullOrEmpty(默认打印机))
+        {
+            int idx = 可用打印机列表.IndexOf(默认打印机);
+            if (idx >= 0)
+            {
+                默认索引 = idx;
+            }
+        }
+
+        当前选中打印机名 = 可用打印机列表[默认索引];
+        更新打印机状态文本();
+        Debug.Log($"[打印报告] 自动选择打印机: {当前选中打印机名}");
+    }
+
+    void 过滤打印机列表(List<string> 打印机列表)
+    {
+        if (!仅显示真实打印机 || 打印机列表 == null || 打印机列表.Count == 0)
+        {
+            return;
+        }
+
+        var 过滤后列表 = new List<string>();
+        foreach (var 名称 in 打印机列表)
+        {
+            if (string.IsNullOrWhiteSpace(名称))
+            {
+                continue;
+            }
+
+            string lowerName = 名称.Trim().ToLowerInvariant();
+            bool 是虚拟打印机 = false;
+            foreach (var 关键词 in 虚拟打印机关键词)
+            {
+                if (string.IsNullOrWhiteSpace(关键词))
+                {
+                    continue;
+                }
+
+                if (lowerName.Contains(关键词.ToLowerInvariant()))
+                {
+                    是虚拟打印机 = true;
+                    break;
+                }
+            }
+
+            if (!是虚拟打印机)
+            {
+                过滤后列表.Add(名称);
+            }
+        }
+
+        if (过滤后列表.Count > 0)
+        {
+            打印机列表.Clear();
+            打印机列表.AddRange(过滤后列表);
+        }
+    }
+
+    void 更新当前选中打印机()
+    {
+        if (打印机下拉框 == null || 可用打印机列表.Count == 0)
+        {
+            当前选中打印机名 = string.Empty;
+            更新打印机状态文本();
+            return;
+        }
+
+        int 索引 = 打印机下拉框.DropdownOptions.SelectedIndex;
+        if (索引 < 0 || 索引 >= 可用打印机列表.Count)
+        {
+            当前选中打印机名 = string.Empty;
+            更新打印机状态文本();
+            return;
+        }
+
+        当前选中打印机名 = 可用打印机列表[索引];
+        更新打印机状态文本();
+    }
+
+    void 刷新打印机下拉框显示()
+    {
+        if (打印机下拉框 == null)
+        {
+            return;
+        }
+
+        if (打印机下拉框.Visuals != null && 打印机下拉框.Visuals.OptionsView != null)
+        {
+            打印机下拉框.Visuals.OptionsView.Refresh();
+        }
+
+        if (打印机下拉框.Visuals != null && 打印机下拉框.Visuals.SelectionLabel != null)
+        {
+            打印机下拉框.Visuals.SelectionLabel.Text = 打印机下拉框.DropdownOptions.CurrentSelection;
+        }
+    }
+
+    void 更新打印机状态文本()
+    {
+        if (打印机状态文本 == null)
+        {
+            return;
+        }
+
+        打印机状态文本.Text = string.IsNullOrEmpty(当前选中打印机名)
+            ? "当前打印机：未选择"
+            : $"当前打印机：{当前选中打印机名}";
+    }
     void 显示档案详情(I记贞 记)
     {
         当前显示档案 = 记 as 档案;
+        刷新确认按钮文案();
+        隐藏打印机选择界面();
 
         if (当前显示档案 == null)
         {
@@ -416,7 +893,7 @@ public class 打印报告界面_茉 : 界面基础_韩
     /// </summary>
     void 更新量表表格可视化(档案 档案)
     {
-        Dictionary<string, int> 分数字典 = new Dictionary<string, int>();
+        Dictionary<string, float> 分数字典 = new Dictionary<string, float>();
 
         // 谈话记录
         if (档案.谈话记录 != null)
@@ -583,6 +1060,8 @@ public class 打印报告界面_茉 : 界面基础_韩
         if (血压 != null) 血压.Text = 档案.血压 ?? "";
         if (神志状态 != null) 神志状态.Text = 档案.神志状态 ?? "";
         if (家庭成员 != null) 家庭成员.Text = 档案.家庭成员 ?? "";
+        if (烟龄 != null) 烟龄.Text = 档案.烟龄 ?? "";
+        if (酒龄 != null) 酒龄.Text = 档案.酒龄 ?? "";
         if (发病前后语言状态 != null) 发病前后语言状态.Text = 档案.发病前后语言状态 ?? "";
         if (发病时状况 != null) 发病时状况.Text = 档案.发病时状况 ?? "";
         if (既往病史 != null) 既往病史.Text = 档案.既往病史 ?? "";
@@ -593,16 +1072,4 @@ public class 打印报告界面_茉 : 界面基础_韩
         显示信息 -= 显示档案详情;
     }
 
-    /// <summary>
-    /// 在克隆的层级中按名称查找节点
-    /// </summary>
-    Transform 在克隆中按名查找(Transform root, string name)
-    {
-        var all = root.GetComponentsInChildren<Transform>(true);
-        foreach (var t in all)
-        {
-            if (t.name == name) return t;
-        }
-        return null;
-    }
 }

@@ -17,6 +17,9 @@ public class 评估模板设置显示 : 界面基础_韩
     [SerializeField] private Button 关闭按钮;
     [SerializeField] private Transform 模板列表容器;
     [SerializeField] private GameObject 模板条目预制体;
+  
+    public TextBlock 综合评价模板预览界面;
+    public TextBlock 指导建议模板预览界面;
 
     [Header("当前设置")]
     private 评估模板类型 当前模板类型;
@@ -25,7 +28,7 @@ public class 评估模板设置显示 : 界面基础_韩
 
     void Start()
     {
-      
+
         // 添加模板按钮事件
         if (添加模板按钮 != null)
         {
@@ -43,16 +46,32 @@ public class 评估模板设置显示 : 界面基础_韩
                 隐藏界面();
             });
         }
-       加载模板条目预制体().Forget();
+
+        加载模板条目预制体().Forget();
     }
-async UniTaskVoid 加载模板条目预制体()
-{
-    var 模板条目预制体 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("评估评价模板");
-    if (模板条目预制体 != null)
+    async UniTaskVoid 加载模板条目预制体()
     {
-        this.模板条目预制体 = 模板条目预制体;
+        var 模板条目预制体 = await this.GetUtility<YooAssetPfbPoolUtility>().LoadPfb("评估评价模板");
+        if (模板条目预制体 != null)
+        {
+            this.模板条目预制体 = 模板条目预制体;
+        }
     }
-}
+    public void 预览模板(string 模板内容)
+    {
+        综合评价模板预览界面.transform.parent.parent.parent.parent.parent.parent.gameObject.SetActive(true);
+        if (当前模板类型 == 评估模板类型.综合评价)
+        {
+            综合评价模板预览界面.transform.parent.parent.parent.parent.parent.gameObject.SetActive(true);
+            综合评价模板预览界面.Text = 模板内容;
+        }
+        else if (当前模板类型 == 评估模板类型.指导建议)
+        {
+            指导建议模板预览界面.transform.parent.parent.parent.parent.parent.gameObject.SetActive(true);
+            指导建议模板预览界面.Text = 模板内容;
+        }
+    }
+
     /// <summary>
     /// 初始化界面
     /// </summary>
@@ -62,7 +81,7 @@ async UniTaskVoid 加载模板条目预制体()
     {
         当前模板类型 = 模板类型;
         this.选择回调 = 选择回调;
-        
+
         // 清空输入框
         if (新模板内容输入 != null)
             新模板内容输入.Text = "";
@@ -171,7 +190,7 @@ async UniTaskVoid 加载模板条目预制体()
             if (条目显示 != null)
             {
                 条目显示.初始化(模板, this, 当前模板类型,
-                    (选中模板) => 
+                    (选中模板) =>
                     {
                         // 选择模板回调
                         选择回调?.Invoke(选中模板);
